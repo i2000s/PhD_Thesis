@@ -99,7 +99,9 @@
 % for table captions.
 \usepackage{tabularx,ragged2e,booktabs,caption}
 
-
+% packages for drawing
+\usepackage{tikz}
+\usetikzlibrary{calc}
 
 
 
@@ -252,13 +254,13 @@ In Green's function language, we can obtain the electrical field as
 \begin{align}\label{EGd}
 \mathbf{E} &= k^2 \int \mathbf{G}(\br,\br')\mathbf{d}(\br') \mathrm{d}\br', 
 \end{align}
-where $ \mathbf{G}(\br,\br') $ is the dyadic Green's functions for a dipole located at $ \br' $ with a dipole momentum $ \mathbf{d}(\br') $. $\mathbf{G}(\br,\br')$ can be determined from the scalar Green's function $\mathbf{G}_0(\br,\br')$ by 
+where $ \mathbf{G}(\br,\br') $ is the dyadic Green's functions for a dipole located at $ \br' $ with a dipole momentum $ \mathbf{d}(\br') $. $\mathbf{G}(\br,\br')$ can be determined from the scalar Green's function $G_0(\br,\br')$ by 
 \begin{align}
-\mathbf{G}(\br,\br') = \left[\mathbf{I} + \frac{1}{k^2}\nabla\nabla \right]\mathbf{G}_0(\br,\br')
+\mathbf{G}(\br,\br') = \left[\mathbf{I} + \frac{1}{k^2}\nabla\nabla \right]G_0(\br,\br')
 \end{align}
 with the scalar Green's function I got in the last section given by
-\begin{align}
-\mathbf{G}_0(\br,\br') = \frac{e^{ik|\br-\br'|}}{|\br-\br'|}. 
+\begin{align}\label{scalarG}
+G_0(\br,\br') = \frac{e^{ik|\br-\br'|}}{|\br-\br'|}. 
 \end{align}
 
 
@@ -829,18 +831,112 @@ The free space dipole emits an electromagnetic field described by
 \mathcal{A} &= -ik \mathbf{d}_0 \frac{e^{ik|\br-\br'|}}{|\br-\br'|},
 \end{align}
 \begin{align}
-\mathcal{B} &= \nabla\times \mathcal{A}\nonumber \\
-&=(\frac{1}{r\!_\perp}\pp{A_z}{\phi}-\pp{A_\phi}{z})\mathbf{e}_{r\!_{\perp}}+(\pp{A_{r\!_\perp}}{z}-\pp{A_z}{r\!_\perp})\mathbf{e}_\phi + \frac{1}{r\!_\perp}(\pp{(r\!_\perp A_\phi)}{r\!_\perp}-\pp{A_{r\!_\perp}}{\phi})\mathbf{e}_z,\\
-\mathcal{E} &= \frac{i}{k} \nabla\times \mathcal{H}=\frac{i}{k}\nabla\times \mathcal{B},
+\mathcal{B}^{(0)} &= \nabla\times \mathcal{A}\nonumber \\
+&=-ik\nabla(\frac{e^{ik|\br-\br'|}}{|\br-\br'|})\times\mathbf{d}_0=-ik\nabla G_0(\br,\br')\times\mathbf{d}_0\nonumber\\
+&=\quad\left[\frac{d_z}{r\!_\perp}\pp{G_0(\br,\br')}{\phi}\!-\! d_\phi\pp{G_0(\br,\br')}{z}\right]\mathbf{e}_{r\!_{\perp}}\nonumber\\
+&\quad+\left[d_{r\!_\perp}\pp{G_0(\br,\br')}{z}\!-\!d_z\pp{G_0(\br,\br')}{r\!_\perp} \right]\mathbf{e}_\phi \nonumber\\
+&\quad+ \left[d_\phi\pp{G_0(\br,\br')}{r\!_\perp}\!-\! \frac{d_{r\!_\perp}}{r\!_\perp}\pp{G_0(\br,\br')}{\phi} \right]\mathbf{e}_z\\
+&=\mathcal{B}^{(0)}_{r\!_\perp}\mathbf{e}_{r\!_{\perp}} +\mathcal{B}^{(0)}_\phi\mathbf{e}_\phi + \mathcal{B}^{(0)}_z\mathbf{e}_z,\\
+\mathcal{E}^{(0)} &= \frac{i}{k} \nabla\times \mathcal{H}^{(0)}=\frac{i}{k}\nabla\times \mathcal{B}^{(0)}\nonumber\\
+&=\frac{i}{k}(\frac{1}{r\!_\perp}\!\pp{\mathcal{B}^{(0)}_z}{\phi}\!-\! \pp{\mathcal{B}^{(0)}_\phi}{z})\mathbf{e}_{r\!_{\perp}} \!\!+\! \frac{i}{k}(\pp{\mathcal{B}^{(0)}_{r\!_\perp}}{z} \!-\! \pp{\mathcal{B}^{(0)}_z}{r\!_\perp})\mathbf{e}_\phi \!\!+\! \frac{i}{r\!_\perp\! k}(\pp{(r\!_\perp \mathcal{B}^{(0)}_\phi)}{r\!_\perp} \!\!-\! \pp{\mathcal{B}^{(0)}_{r\!_\perp}}{\phi})\mathbf{e}_z\\
+&=\mathcal{E}^{(0)}_{r\!_\perp}\mathbf{e}_{r\!_{\perp}} +\mathcal{E}^{(0)}_\phi\mathbf{e}_\phi + \mathcal{E}^{(0)}_z\mathbf{e}_z,
 \end{align}
-or, by Equ.~\ref{EGd}. Here, $ \mathbf{d}_0 $ is the dipole momentum in vacuum. where ${\rm {\bf r}}=\left( {r\!_\perp ,\phi ,z}\right) $ and ${\rm 
-{\bf {r}^{\prime }}}=\left( {{r\!_\perp }^{\prime },{\phi }^{\prime },{z}%
-^{\prime }}\right) $ are radius vectors of observation point and atom
-position. Using the expansion for the space $ \left(r\!_\perp <r_\perp ^{\prime}\right) $ that 
+or, by Equ.~\eqref{EGd}. Here, $ \mathbf{d}_0 $ is the dipole momentum in vacuum. We denote $d_{r\!_\perp},\, d_\phi$ and $d_z$ as the cylindrical components of the dipole momentum at arbitrary observation point ${\rm {\bf r}}=\left( {r\!_\perp ,\phi ,z}\right) $; while we use $d^0_{r\!_\perp}$, $d^0_\phi$ and $d^0_z$ to indicate the cylindrical components of the dipole momentum at the dipole position ${\rm 
+{\bf {r}^{\prime }}}=\left( {{r\!_\perp }^{\prime },{\phi }^{\prime },{z}^{\prime }}\right) $. As shown in Fig.(\ref{fig:dipolemomentumtransmission}) on page~\pageref{fig:dipolemomentumtransmission}, we define the vector from the center of the nanofiber's core pointing to the atom position as $x$-axis, and the rotating symmetric axis of the nanofiber as the $z$-axis. The relationships between the dipole momentum components at $\mathbf{r}$ and $\mathbf{r}'$ can be given by
 \begin{align}
-{\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
-\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}
-={\frac{{i}}{{2}}%
+d_{r\!_\perp}\! &= \cos(\phi\!-\!\phi')d^0_{r\!_\perp}\!\!+\!\sin(\phi\!-\!\phi')d^0_\phi=\frac{1}{\sqrt{2}}\left(-e^{-i(\phi\!-\!\phi')}d_++e^{i(\phi\!-\!\phi')}d_- \right),\\
+d_\phi &=\cos(\phi\!-\!\phi')d^0_\phi\!-\!\sin(\phi\!-\!\phi')d^0_{r\!_\perp}=\frac{i}{\sqrt{2}}\left(e^{-i(\phi\!-\!\phi')}d_++e^{i(\phi\!-\!\phi')}d_- \right),\\
+d_z &= d^0_z,
+\end{align}
+where I have defined the position-independent reduced dipole vector components
+\begin{align}
+d_\pm \equiv \mp \frac{1}{\sqrt{2}}(d^0_{r\!_\perp}\pm id^0_{\phi}).
+\end{align}
+The terms associated with $d_\pm$ in the dipole momentum formula lower or raise the mode index by $1$. Notice that we have used $\phi\!-\!\phi'$ as the projected angle between $\mathbf{r}$ and $\mathbf{r}'$ to make the relationship work in general. 
+
+\begin{figure}
+\centering\makebox[\textwidth]{
+\begin{tikzpicture}[scale=2,cap=round]
+% Local definitions
+  \def\AngleAtr{60}	% angle of r w.r.t x-axis
+  \def\AngleOfd{30}	% angle of d w.r.t. x-axis
+  \def\LenOfd{1cm} % length of the dipole momentum vector
+  \def\drp{0.8660cm}	% drp at r'
+  \def\dphi{0.5cm}	% dphi at r'
+  \def\drpr{0.8660}	% drp at r
+  \def\dphir{-0.5}	% dphi at r
+  \def\Angledrp{\AngleAtr}	% angle of drp w.r.t. x-axis
+  \def\Angledphi{150}
+  
+  \coordinate (O) at (0,0);		% origin
+  \coordinate (R) at (2.0cm,0); % position of the dipole at r'
+  \coordinate (r) at (\AngleAtr:1.3cm);	% position of observation point
+
+  % Colors
+  \colorlet{anglecolor}{green!50!black}
+  \colorlet{rvectorcolor}{red}
+  \colorlet{assisvectorcolor}{orange!80!black}
+  \colorlet{momentumcolor}{blue}
+
+  % Styles
+  \tikzstyle{axes}=[]
+  \tikzstyle{important line}=[very thick]
+  \tikzstyle{information text}=[rounded corners,fill=red!10,inner sep=1ex]
+
+  % The graphic
+  % help grid
+  %\draw[style=help lines,step=0.5cm] (-2.0,-2.0) grid (2.0,2.0);
+  
+  % circle for the nanofiber scope
+  \draw (0,0) circle (1cm); 
+  \draw[<->] (0,0) --node[left=1mm] {$a$} (225:1cm) ;
+  \draw (-30:1.8cm) node {\text{nanofiber intersection}};
+  % coordinates
+  \begin{scope}[style=axes]
+    \draw[->] (-1.3cm,0) -- (3.0cm,0) node[right] {$\mathbf{x}$};
+    \draw[->] (0,-1.3cm) -- (0,2.0cm) node[above] {$\mathbf{y}$};
+    \draw (-1mm,1mm) node {$O$};
+  \end{scope}
+  
+  % angle and position vector for r
+  \filldraw[fill=green!20,draw=anglecolor] (0,0) -- (3mm,0pt) arc(0:\AngleAtr:3mm);
+    \draw (20:6mm) node[anglecolor] {$\phi\!-\! \phi'$};
+  \draw[->,style=important line,rvectorcolor] (O) -- (r) node[left=1.5mm] {$\mathbf{r}$};
+  % arc between two decomposition approaches
+  \filldraw[fill=green!20,draw=anglecolor] (r.center)--($(r.center)+(2mm,0)$) arc (0:\AngleAtr:2mm);
+  \draw ($(r.center)+(10:4.4mm)$) node[anglecolor] {$\phi\!-\! \phi'$};
+  % dipole momentum vector at r
+  \draw[->,style=important line,momentumcolor] (r) -- +(\AngleOfd:\LenOfd) node[right] {$\mathbf{d}_0$};
+  
+  % d vector components at r
+  \draw[->,dashed,thick,assisvectorcolor] (r) -- +(0:\drp) node[right] {$d^0_{r\!_\perp}$};
+  \draw[style=dotted,assisvectorcolor] ($(r.center)+(0:\drp)$) -- ($(r.center)+(\AngleOfd:\LenOfd)$);
+  \draw[->,dashed,thick,assisvectorcolor] (r) -- +(90:\dphi) node[left] {$d^0_\phi$};
+  \draw[style=dotted,assisvectorcolor] ($(r.center)+(90:\dphi)$) -- ($(r.center)+(\AngleOfd:\LenOfd)$);
+  \draw[->,thick,dashed,anglecolor] (r) -- +(\Angledrp:\drpr) node[yshift=8mm,xshift=1.8cm,anchor=north] {$d_{r\!_\perp}\!=\frac{1}{\sqrt{2}}\left(-e^{-i(\phi\!-\!\phi')}d_++e^{i(\phi\!-\!\phi')}d_- \right)$};
+  \draw[style=dotted,anglecolor] ($(r.center)+(\Angledrp:\drpr)$) -- ($(r.center)+(\AngleOfd:\LenOfd)$);
+  \draw[->,thick,dashed,anglecolor] (r) -- +(\Angledphi:\dphir) node[right] {$d_\phi=\frac{i}{\sqrt{2}}\left(e^{-i(\phi\!-\!\phi')}d_++e^{i(\phi\!-\!\phi')}d_- \right)$};
+  \draw[style=dotted,anglecolor] ($(r.center)+(\Angledphi:\dphir)$) -- ($(r.center)+(\AngleOfd:\LenOfd)$);
+  \draw [fill=blue] (r) circle (0.2mm) node {}; % starting point at r
+   
+  % dipole momentum vector for r'
+  \draw[->,style=important line,rvectorcolor] (O) -- (R) node[below=1mm] {$\mathbf{r}'$};
+  \draw[->,style=important line,momentumcolor] (R) -- +(\AngleOfd:\LenOfd) node[right] {$\mathbf{d}_0$};
+  \draw[->,very thick,dashed,assisvectorcolor] (R) -- +(0:\drp) node[below] {$d^0_{r\!_\perp}$};
+  \draw[style=dotted,assisvectorcolor] ($(R.center)+(0:\drp)$) -- ($(R.center)+(\AngleOfd:\LenOfd)$);
+  \draw[->,thick,dashed,assisvectorcolor] (R) -- +(90:\dphi) node[left] {$d^0_\phi$};
+  \draw[style=dotted,assisvectorcolor] ($(R.center)+(90:\dphi)$) -- ($(R.center)+(\AngleOfd:\LenOfd)$);
+  \draw [fill=blue] (R) circle (0.2mm) node {}; % starting point at r'
+\end{tikzpicture}}
+\caption{Dipole momentum decompositions in the $xy$-plane.}
+\label{fig:dipolemomentumtransmission}
+\end{figure}
+
+Using the expansion of the free-space dipole scalar Green function (Equ.~\eqref{scalarG})for the space $ \left(r\!_\perp <r_\perp ^{\prime}\right) $ that 
+\begin{align}
+G_0(\br,\br') &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
+\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}\nonumber\\
+&={\frac{{i}}{{2}}%
 }{\sum\limits_{m=-\infty }^{\infty } {{\oint\limits_{C_{1}}{\mathrm{d}\beta \;e^{im\left( {\phi -{\phi }%
 ^{\prime }}\right) +i\beta \left( {z-{z}^{\prime }}\right) }J_{m}\left( {pr\!_\perp
 }\right) H_{m}^{\left( {1}\right) }\left( pr_\perp ^{\prime
@@ -848,48 +944,107 @@ position. Using the expansion for the space $ \left(r\!_\perp <r_\perp ^{\prime}
 \end{align}
 and for $ \left(r\!_\perp >r_\perp ^{\prime}\right) $
 \begin{align}
-{\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
-\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}
-={\frac{{i}}{{2}}%
+G_0(\br,\br') &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
+\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}\nonumber\\
+&={\frac{{i}}{{2}}%
 }{\sum\limits_{m=-\infty }^{\infty } {{\oint\limits_{C_{1}}{\mathrm{d}\beta \;e^{im\left( {\phi -{\phi }%
 ^{\prime }}\right) +i\beta \left( {z-{z}^{\prime }}\right) }J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr_\perp \right) }}}},
 \end{align}
-one can obtain the free space dipole radiation field components in Equ.~\ref{ET0Rexpand} and~\ref{BT0Rexpand}. The contour $ C_1 $ and field components can be found in Ref.~\cite{Klimov2004}. Below, we present the field components that the reference did not include for the case of $ r\!_\perp>r'\!_\perp $ \textcolor{red}{(also, if we exchange $ J_m $ and $ H^{(1)}_m $ functions below, the result should recover the result for $ r\!_\perp<r'\!_\perp $ case. By comparing the result with Klimov's paper for the $ r\!_\perp<r'\!_\perp $ case, it seems Klimov has used some tricks, because there are some derivatives with respect to $r\!_\perp$ in the paper which can be either obtained from the factor $  e^{im\phi' + i\beta z'}  $ that we announced earlier or from some symmetry of the Bessel functions. The boundary condition solution is to be double checked.)}. The magnetic field components for $ \br\!_\perp>\br'\!_\perp $ are 
-\begin{align}
-\mathcal{B}_{z,m\beta}^{(0)} &= \frac{k}{2r\!_\perp}\left[(d^0_\phi\!-\! id^0_{r\!_\perp}m) J_m(pr'\!\!_\perp)H_m^{(1)}(pr\!_\perp) \!+\! d^0_\phi r\!_\perp J_m(pr'\!_\perp) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}(pr\!_\perp)\right]\\
-\mathcal{B}_{\phi,m\beta}^{(0)} &= \frac{k}{2}\left[ id^0_{r\!_\perp}\beta J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)-d^0_z J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right) \right]\\
-\mathcal{B}_{r\!_\perp, m\beta}^{(0)} &= \frac{k}{2}\left[(\frac{id^0_z m}{r\!_\perp}- id^0_\phi \beta)J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)   \right]\\
-\mathcal{E}_{z,m\beta}^{(0)} &= \frac{1}{r\!_\perp}\left[\frac{k}{2}\left[ id^0_{r\!_\perp}\beta J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)-d^0_z J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right) \right]\right.\nonumber\\
-&\qquad + \frac{kr\!_\perp}{2}\left[ id^0_{r\!_\perp}\beta J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)-d^0_z J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right) \right] \nonumber\\
-&\qquad -\left. \frac{imk}{2}(\frac{id^0_z m}{r\!_\perp}- id^0_\phi \beta)J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)  \right]\\
-&= \frac{k}{2r\!_\perp}\left[ (\dfrac{d^0_z m^2}{r\!_\perp}-d^0_\phi m \beta + i d^0_{r\!_\perp}\beta)J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)\right. \nonumber \\
-&\qquad\qquad +(id^0_{r\!_\perp}\beta r\!_\perp -d^0_z)J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)\nonumber\\
-&\qquad\qquad \left. - d^0_z r\!_\perp J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right) \right]\\
-\mathcal{E}_{\phi,m\beta}^{(0)} &= \frac{ik\beta}{2}\left[ id^0_{r\!_\perp}\beta J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr_\perp \right)-d^0_z J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_{m}^{\left( {1}\right) }\left( pr_\perp \right) \right]\nonumber\\
-&\quad +\frac{k}{2r^2\!\!_\perp}\left[(d^0_\phi\!-\! id^0_{r\!_\perp}m) J_m(pr'\!\!_\perp)H_m^{(1)}(pr\!_\perp) \!+\! d^0_\phi r\!_\perp J_m(pr'\!_\perp) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}(pr\!_\perp)\right]\nonumber\\
-&\quad -\! \frac{k}{2r\!_\perp}\left[(d^0_\phi\!-\! id^0_{r\!_\perp}m) J_m(pr'\!\!_\perp)\frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}(pr\!_\perp) \!+\! d^0_\phi  J_m(pr'\!_\perp) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}(pr\!_\perp)\right. \nonumber\\
-&\qquad\left. + d^0_\phi r\!_\perp  J_m(pr'\!_\perp) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}H_m^{(1)}(pr\!_\perp) \right]\\
-&= (\frac{d^0_\phi k}{2r^2\!\!_\perp}-\frac{d^0_{r\!_\perp}\beta^2k}{2}-\frac{id^0_{r\!_\perp}km}{2r^2\!\!_\perp}) J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr_\perp \right)\nonumber\\
-&\qquad +( \frac{d^0_\phi k}{2r\!_\perp }+\frac{id^0_{r\!_\perp}km}{2r\!_\perp}-\frac{id^0_zk\beta}{2} ) J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_{m}^{\left( {1}\right) }\left( pr_\perp \right)\nonumber\\
-&\qquad - \frac{d^0_\phi k}{2}  J_m(pr'\!_\perp) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}H_m^{(1)}(pr\!_\perp)\\
-\mathcal{E}_{r\!_\perp,m\beta}^{(0)} &= \frac{imk}{2r^2\!\!_\perp}\left[(d^0_\phi\!-\! id^0_{r\!_\perp}m) J_m(pr'\!\!_\perp)H_m^{(1)}(pr\!_\perp) \!+\! d^0_\phi r\!_\perp J_m(pr'\!_\perp) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}(pr\!_\perp)\right]\nonumber\\
-&\quad -\! \frac{ik\beta}{2}\left[ id^0_{r\!_\perp}\beta J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right) \!-\! d^0_z J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right) \right]\\
-&= \left(\frac{d^0_{r\!_\perp} k}{2}(\frac{m^2}{r^2\!\!_\perp}+\beta^2)+\frac{id^0_\phi mk}{2r^2\!\!_\perp}\right)J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)\nonumber\\
-&\qquad +\frac{ik}{2}(\frac{d^0_\phi m}{r\!_\perp}+d^0_z \beta)J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)
-\end{align}
- 
+one can obtain the free space dipole radiation field components in Equ.~\eqref{ET0Rexpand} and~\eqref{BT0Rexpand}. The contour $ C_1 $ and field components can be found in Ref.~\cite{Klimov2004}. 
 
+The free radiation field components associated with the $ e^{im\phi+i\beta z} $ term (the $m$-th mode components) for the $r\!_\perp<r'\!_\perp$ region can be given by
+\begin{align}
+\mathcal{B}_{z,m\beta}^{(0)} &= \frac{ikp}{2\sqrt{2}}J_m(pr\!_\perp)\left[ d_{+}m H_m^{(1)}(pr'\!\!_\perp)J_m(pr\!_\perp) \!+\! d_\phi r\!_\perp H_m^{(1)}(pr'\!_\perp) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_m(pr\!_\perp)\right]\\
+&= \frac{k}{2}\left[\frac{-\! i}{r\!_\perp}\left(\cos(\phi\!-\!\phi')d^0_{r\!_\perp}\!\!+\!\sin(\phi\!-\!\phi')d^0_\phi\right)m H_m^{(1)}(pr'\!\!_\perp)J_m(pr\!_\perp)\right. \nonumber\\
+&\quad\quad \left.+ \left(\cos(\phi\!-\!\phi')d^0_\phi\!-\!\sin(\phi\!-\!\phi')d^0_{r\!_\perp}\right)  H_m^{(1)}(pr'\!_\perp) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_m(pr\!_\perp)\right]\\
+\mathcal{B}_{\phi,m\beta}^{(0)} &= \frac{k}{2}\left[ id_{r\!_\perp}\beta H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) J_m\left( pr\!_\perp \right)-d_z H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_m\left( pr\!_\perp \right) \right]\\
+&=\frac{k}{2}\left[ i\left(\cos(\phi\!-\!\phi')d^0_{r\!_\perp}\!\!+\!\sin(\phi\!-\!\phi')d^0_\phi\right)\beta H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) J_m\left( pr\!_\perp \right)\phantom{\frac{d}{dr\!_\perp}}\right.\nonumber\\
+&\quad\quad\left.-d^0_z H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_m\left( pr\!_\perp \right) \right]\\
+\mathcal{B}_{r\!_\perp, m\beta}^{(0)} &= \frac{k}{2}\left[(\frac{id_z m}{r\!_\perp}- id_\phi \beta)H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) J_m\left( pr\!_\perp \right)   \right]\\
+&= \frac{k}{2}\left[\left(\frac{id^0_z m}{r\!_\perp}- i\left(\cos(\phi\!-\!\phi')d^0_\phi\!-\!\sin(\phi\!-\!\phi')d^0_{r\!_\perp}\right) \beta\right)\right.\nonumber\\
+&\qquad\qquad\left.\phantom{\frac{id^0_z m}{r\!_\perp}} H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right)J_m\left( pr\!_\perp \right)   \right]\\
+\mathcal{E}_{z,m\beta}^{(0)} 
+%&= \frac{i}{r\!_\perp}\left[\frac{1}{2}\left[ id_{r\!_\perp}\beta H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) J_m\left( pr\!_\perp \right)-d_z H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_{m}\left( pr\!_\perp \right) \right]\right.\nonumber\\
+%&\qquad + \frac{r\!_\perp}{2}\left[ id_{r\!_\perp}\beta H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_m\left( pr\!_\perp \right)-d_z H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}J_{m}\left( pr\!_\perp \right) \right] \nonumber\\
+%&\qquad -\left. \frac{im}{2}(\frac{id_z m}{r\!_\perp}- id_\phi \beta)H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) J_m\left( pr\!_\perp \right)  \right]\\
+&= \frac{im}{2r\!_\perp}\left[ \dfrac{d^0_z m}{r\!_\perp}+d^0_{r\!_\perp}\beta \sin(\phi\!-\!\phi')-d^0_\phi  \beta\cos(\phi\!-\!\phi')\right]H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) J_{m}\left( pr\!_\perp \right) \nonumber \\
+&\quad -\frac{1}{2}\left[d^0_{r\!_\perp}\beta \cos(\phi\!-\!\phi') + d^0_\phi \beta\sin(\phi\!-\!\phi')+\frac{id^0_z}{r\!_\perp} \right] H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_m\left( pr\!_\perp \right)\nonumber\\
+&\quad  -\frac{i}{2} d^0_z H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}J_m\left( pr\!_\perp \right), \\
+\mathcal{E}_{\phi,m\beta}^{(0)} 
+%&= -\frac{i}{2}\left[ (-\frac{d_z \beta m }{r\!_\perp}+\beta^2d_\phi) H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right)J_m\left( pr_\perp \right)\right.\nonumber\\
+%&\quad -\frac{1}{r\!_\perp}(d_\phi-id_{r\!_\perp}m) H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_m\left( pr_\perp \right) \nonumber\\
+%&\quad -\left.  d_\phi H_m^{(1)}(pr'\!\!_\perp) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}J_m(pr\!_\perp) \right]\\
+&= \frac{1}{2}\left[ d^0_{r\!_\perp}\left(\frac{m}{r\!_\perp^2}\cos(\phi\!-\!\phi') \!-\! i\beta^2\sin(\phi\!-\!\phi') \right)\right. \nonumber\\
+&\quad\quad\left.+d^0_\phi\left(\frac{m}{r\!_\perp^2}\sin(\phi\!-\!\phi') \!+\! i\beta^2\cos(\phi\!-\!\phi') \right) \!-\! \frac{id^0_z m\beta}{r\!_\perp} \right] H_m^{(1)}\!\left( {pr\!_\perp^{\prime} }\right) J_m\!\left( pr_\perp \right) \nonumber\\
+&\quad -\frac{m}{2r\!_\perp} \left(d^0_{r\!_\perp}\cos(\phi\!-\!\phi') \!+\! d^0_\phi\sin(\phi\!-\!\phi') \right) H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_m\left( pr_\perp \right)\nonumber\\
+&\quad +\frac{i}{2}\left(d^0_{r\!_\perp}\sin(\phi\!-\!\phi') - d^0_\phi\cos(\phi\!-\!\phi')\right)  H_m^{(1)}(pr'\!_\perp) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}J_m(pr\!_\perp),\\
+\mathcal{E}_{r\!_\perp,m\beta}^{(0)} 
+%&= -\frac{m}{2r^2\!\!_\perp}\left[(d_\phi\!-\! id_{r\!_\perp}m) H_m^{(1)}(pr'\!\!_\perp)J_m(pr\!_\perp) \!+\! d_\phi r\!_\perp H_m^{(1)}(pr'\!_\perp) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_m(pr\!_\perp)\right]\nonumber\\
+%&\quad +\! \frac{\beta}{2}\left[ id_{r\!_\perp}\beta H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) J_{m}\left( pr\!_\perp \right) \!-\! d_z H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}J_{m}\left( pr\!_\perp \right) \right]\\
+&= \frac{1}{2}\left\{ d^0_{r\!_\perp}\left[ \left( i\beta^2+\frac{im^2}{r^2\!\!_\perp}\right)\cos(\phi\!-\!\phi')-\frac{m}{r^2\!\!_\perp}\sin(\phi\!-\!\phi')\right]\right.\nonumber\\
+&\quad\quad\left.+d^0_\phi\left[ \left( i\beta^2+\frac{im^2}{r^2\!\!_\perp}\right)\sin(\phi\!-\!\phi')+\frac{m}{r^2\!\!_\perp}\cos(\phi\!-\!\phi')\right]\right\}H_m^{(1)}\left( {pr\!_\perp^{\prime} }\right) J_{m}\left( pr\!_\perp \right)\nonumber\\
+&\quad -\frac{1}{2}\left[\frac{d^0_{r\!_\perp}}{r\!_\perp}\left(i\cos(\phi\!-\!\phi') \!-\! m\sin(\phi\!-\!\phi') \right)\right.\nonumber\\ &\quad\qquad\left.+\frac{d^0_\phi}{r\!_\perp}\left(i\sin(\phi\!-\!\phi') \!+\! m\cos(\phi\!-\!\phi') \right) \!+\! d^0_z \beta\right]\! H_m^{(1)}\!\left( {pr\!_\perp^{\prime} }\right)\! \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}\! J_{m}\!\left( pr\!_\perp \right).
+\end{align}
+More details on deriving the E-field components can be found in \textit{Derivation of free-space E-field components.pdf}.
+
+By exchanging $J_m$ and $H_m^{(1)}$ functions, one can also obtain the field components that the reference~\cite{Klimov2004} did not include for the case of $ r\!_\perp>r'\!_\perp $. The magnetic and electrical fields components for $ \br\!_\perp>\br'\!_\perp $ are 
+\begin{align}
+\mathcal{B}_{z,m\beta}^{(0)} &= \frac{k}{2r\!_\perp}\left[-\! id_{r\!_\perp}m J_m(pr'\!\!_\perp)H_m^{(1)}(pr\!_\perp) \!+\! d_\phi r\!_\perp J_m(pr'\!_\perp) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}(pr\!_\perp)\right]\\
+&=\frac{k}{2}\left[\frac{-\! i}{r\!_\perp}\left(\cos(\phi\!-\!\phi')d^0_{r\!_\perp}\!\!+\!\sin(\phi\!-\!\phi')d^0_\phi\right)m J_m(pr'\!\!_\perp)H_m^{(1)}(pr\!_\perp)\right. \nonumber\\
+&\quad\quad \left.+ \left(\cos(\phi\!-\!\phi')d^0_\phi\!-\!\sin(\phi\!-\!\phi')d^0_{r\!_\perp}\right)  J_m(pr'\!_\perp) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}(pr\!_\perp)\right]\\
+\mathcal{B}_{\phi,m\beta}^{(0)} &= \frac{k}{2}\left[ id_{r\!_\perp}\beta J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)-d_z J_{m}\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right) \right]\\
+&=\frac{k}{2}\left[ i\left(\cos(\phi\!-\!\phi')d^0_{r\!_\perp}\!\!+\!\sin(\phi\!-\!\phi')d^0_\phi\right)\beta J_m\left( {pr\!_\perp^{\prime} }\right) H_m^{(1)}\left( pr\!_\perp \right)\phantom{\frac{d}{dr\!_\perp}}\right.\nonumber\\
+&\quad\quad\left.-d^0_z J_m\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}\left( pr\!_\perp \right) \right]\\
+\mathcal{B}_{r\!_\perp, m\beta}^{(0)} &= \frac{k}{2}\left[(\frac{id_z m}{r\!_\perp}- id_\phi \beta)J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr\!_\perp \right)   \right]\\
+&= \frac{k}{2}\left[\left(\frac{id^0_z m}{r\!_\perp}- i\left(\cos(\phi\!-\!\phi')d^0_\phi\!-\!\sin(\phi\!-\!\phi')d^0_{r\!_\perp}\right) \beta\right)\right.\nonumber\\
+&\qquad\qquad\left.\phantom{\frac{id^0_z m}{r\!_\perp}} J_m\left( {pr\!_\perp^{\prime} }\right)H_m^{(1)}\left( pr\!_\perp \right)   \right]\\
+\mathcal{E}_{z,m\beta}^{(0)} 
+&= \frac{im}{2r\!_\perp}\left[ \dfrac{d^0_z m}{r\!_\perp}+d^0_{r\!_\perp}\beta \sin(\phi\!-\!\phi')-d^0_\phi  \beta\cos(\phi\!-\!\phi')\right]J_m\left( {pr\!_\perp^{\prime} }\right) H_m^{(1)}\left( pr\!_\perp \right) \nonumber \\
+&\quad -\frac{1}{2}\left[d^0_{r\!_\perp}\beta \cos(\phi\!-\!\phi') + d^0_\phi \beta\sin(\phi\!-\!\phi')+\frac{id^0_z}{r\!_\perp} \right] J_m\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}\left( pr\!_\perp \right)\nonumber\\
+&\quad  -\frac{i}{2} d^0_z J_m\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}H_m^{(1)}\left( pr\!_\perp \right), \\
+\mathcal{E}_{\phi,m\beta}^{(0)} 
+&= \frac{1}{2}\left[ d^0_{r\!_\perp}\left(\frac{m}{r\!_\perp^2}\cos(\phi\!-\!\phi') \!-\! i\beta^2\sin(\phi\!-\!\phi') \right)\right. \nonumber\\
+&\quad\quad\left.+d^0_\phi\left(\frac{m}{r\!_\perp^2}\sin(\phi\!-\!\phi') \!+\! i\beta^2\cos(\phi\!-\!\phi') \right) \!-\! \frac{id^0_z m\beta}{r\!_\perp} \right] J_m\!\left( {pr\!_\perp^{\prime} }\right) H_m^{(1)}\!\left( pr_\perp \right) \nonumber\\
+&\quad -\frac{m}{2r\!_\perp} \left(d^0_{r\!_\perp}\cos(\phi\!-\!\phi') \!+\! d^0_\phi\sin(\phi\!-\!\phi') \right) J_m\left( {pr\!_\perp^{\prime} }\right) \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}H_m^{(1)}\left( pr_\perp \right)\nonumber\\
+&\quad +\frac{i}{2}\left(d^0_{r\!_\perp}\sin(\phi\!-\!\phi') - d^0_\phi\cos(\phi\!-\!\phi')\right)  J_m(pr'\!_\perp) \frac{\mathrm{d}^2}{\mathrm{d}r^2\!\!_\perp}H_m^{(1)}(pr\!_\perp),\\
+\mathcal{E}_{r\!_\perp,m\beta}^{(0)} 
+&= \frac{1}{2}\left\{ d^0_{r\!_\perp}\left[ \left( i\beta^2+\frac{im^2}{r^2\!\!_\perp}\right)\cos(\phi\!-\!\phi')-\frac{m}{r^2\!\!_\perp}\sin(\phi\!-\!\phi')\right]\right.\nonumber\\
+&\quad\quad\left.+d^0_\phi\left[ \left( i\beta^2+\frac{im^2}{r^2\!\!_\perp}\right)\sin(\phi\!-\!\phi')+\frac{m}{r^2\!\!_\perp}\cos(\phi\!-\!\phi')\right]\right\}J_m\left( {pr\!_\perp^{\prime} }\right) H_m^{(1)}\left( pr\!_\perp \right)\nonumber\\
+&\quad -\frac{1}{2}\left[\frac{d^0_{r\!_\perp}}{r\!_\perp}\left(i\cos(\phi\!-\!\phi') \!-\! m\sin(\phi\!-\!\phi') \right)\right.\nonumber\\ &\quad\qquad\left.+\frac{d^0_\phi}{r\!_\perp}\left(i\sin(\phi\!-\!\phi') \!+\! m\cos(\phi\!-\!\phi') \right) \!+\! d^0_z \beta\right]\! J_m\!\left( {pr\!_\perp^{\prime} }\right)\! \frac{\mathrm{d}}{\mathrm{d}r\!_\perp}\! H_m^{(1)}\!\left( pr\!_\perp \right).
+\end{align}
+
+
+\textcolor{red}{By comparing the result with Klimov's paper for the $ r\!_\perp<r'\!_\perp $ case, it seems Klimov and others had used some tricks, or they were more carefully to deal with the dipole orientations and components than we did here. By using the definitions of Bessel function to our expressions, all the second derivatives of Bessel functions can be transforming to zero- or first-order derivatives. The biggest difference between our expressions above and the results presented in the papers of Klimov and Nha~\cite{Nha1997} is that our expression of field components are $\phi$-dependent while others are not. There are also $r\!_\perp^{\prime}$'s on the denominators of Klimov's expressions, which may indicate that Klimov and colleagues might have used $r\!_\perp=r\!_\perp^{\prime}$ case to build the general expression. Nha also used the dipole momentum components in Cartesian coordinate which shows only the reduced tensor components of the dipole momentum vectors matter to the field components.}
 
 By using the boundary conditions at $ r\!_\perp=a $ and Equ.~\ref{Etotalfiber} that
 \begin{align}
-\varepsilon_f \mathcal{E}_{r\!_\perp}(r\!_\perp =a^< ) = \mathcal{E}_{r\!_\perp}(r\!_\perp =a^> ),\\
-\mathcal{E}_{\phi}(r\!_\perp =a^< ) = \mathcal{E}_{\phi}(r\!_\perp =a^> ),\\
-\mathcal{E}_{z}(r\!_\perp =a^< ) = \mathcal{E}_{z}(r\!_\perp =a^> ),\\
-\mathcal{B}_{r\!_\perp}(r\!_\perp =a^< ) = \mathcal{B}_{r\!_\perp}(r\!_\perp =a^> ),\\
-\mathcal{B}_{\phi}(r\!_\perp =a^< ) = \mathcal{B}_{\phi}(r\!_\perp =a^> ),\\
-\mathcal{B}_{z}(r\!_\perp =a^< ) = \mathcal{B}_{z}(r\!_\perp =a^> ),
+%\varepsilon_f \mathcal{E}_{r\!_\perp}(r\!_\perp =a^> ) = \mathcal{E}_{r\!_\perp}(r\!_\perp =a^< ),\\
+\mathcal{E}_{z}(r\!_\perp =a^> ) = \mathcal{E}_{z}(r\!_\perp =a^< ),\\
+%\mathcal{B}_{r\!_\perp}(r\!_\perp =a^> ) = \mathcal{B}_{r\!_\perp}(r\!_\perp =a^< ),\\
+\mathcal{B}_{z}(r\!_\perp =a^> ) = \mathcal{B}_{z}(r\!_\perp =a^< ),\\
+\mathcal{E}_{\phi}(r\!_\perp =a^> ) = \mathcal{E}_{\phi}(r\!_\perp =a^< ),\\
+\mathcal{B}_{\phi}(r\!_\perp =a^> ) = \mathcal{B}_{\phi}(r\!_\perp =a^< ),
 \end{align}
-where $ a^< $ and $ a^> $ denote the boundaries at the sides less and larger than $ a $, we can obtain all unknown coefficients. The results are given in Ref.~\cite{Klimov2004}. We also have
+where $ a^< $ and $ a^> $ denote the boundaries at the sides less and larger than $ a $, and the connections between field components (Equ.(\ref{EHzgauss})), we can obtain all unknown coefficients. In details, the boundary conditions yield
+\begin{align}
+a_{m\beta}H_m^{(1)}(pa)+\mathcal{E}_{z,m\beta}^{(0)}(r\!_\perp =a ) &= c_{m\beta}J_m(ha),\\
+b_{m\beta}H_m^{(1)}(pa)+\mathcal{B}_{z,m\beta}^{(0)}(r\!_\perp =a ) &= d_{m\beta}J_m(ha),\\
+\frac{m\! \beta}{p^2\! a}a_{m\!\beta} H\!_m^{(1)}\!(pa)\! &+\! \frac{i\!k}{p^2}\! b\!_{m\!\beta}\! \left. \pp{H\!_m^{( 1 )}(p r\!_\perp)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a}\!\! -\! \mathcal{E}\! _{\phi,m\! \beta}^{(0)}(r\!_\perp\! =\! a ) \nonumber \\
+&= \frac{m\! \beta}{h^2\! a}\! c_{m\! \beta} J\!_m(ha)\! +\! \frac{i\!k}{h^2}\!d\!_{m\!\beta} \! \left. \pp{J\!_m(h r\!_\perp \!)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a},\\
+\frac{m\! \beta}{p^2\! a}b_{m\!\beta} H\!_m^{(1)}\!(pa)\! &+\! \frac{i\!k}{p^2}\! a\!_{m\!\beta}\! \left. \pp{H\!_m^{( 1 )}(p r\!_\perp)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a}\!\! +\! \mathcal{B}\! _{\phi,m\! \beta}^{(0)}(r\!_\perp\! =\! a ) \nonumber \\
+&= \frac{m\! \beta}{h^2\! a}\! d_{m\! \beta} J\!_m(ha)\! +\! \frac{i\!k\varepsilon}{h^2}\!c\!_{m\!\beta} \! \left. \pp{J\!_m(h r\!_\perp \!)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a}.
+\end{align}
+One can substitute the first two equations into the last two equations, and obtain a equation set of $a_{m\beta}$ and $b_{m\beta}$ as below:
+\begin{align}
+&\quad \left[\frac{m\! \beta}{p^2\! a} H\!_m^{(1)}\!(pa) \!-\! \frac{m\! \beta}{h^2\! a}\!H_m^{(1)}(pa) \right] a_{m\!\beta}\nonumber\\
+&\quad +\left[\! \frac{i\!k}{p^2}\! \left. \pp{H\!_m^{( 1 )}(p r\!_\perp)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a}\!\!-\! \frac{i\!k}{h^2J_m(ha)}\! \left. \pp{J\!_m(h r\!_\perp \!)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a} H_m^{(1)}(pa) \right]b\!_{m\!\beta} \nonumber\\
+&= \frac{m\! \beta}{h^2\! a}\! \mathcal{E}_{z,m\beta}^{(0)}(r\!_\perp =a ) \!+\! \! \frac{i\!k}{h^2J_m(ha)}\! \left. \pp{J\!_m(h r\!_\perp \!)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a}\mathcal{B}_{z,m\beta}^{(0)}(r\!_\perp =a )  \!+\!\mathcal{E}\! _{\phi,m\! \beta}^{(0)}(r\!_\perp\! =\! a )\\
+&\quad \left[\frac{m\! \beta}{p^2\! a} H\!_m^{(1)}\!(pa) \!-\! \frac{m\! \beta}{h^2\! a}\!H_m^{(1)}(pa) \right] b_{m\!\beta}\nonumber\\
+&\quad +\left[\! \frac{i\!k}{p^2}\! \left. \pp{H\!_m^{( 1 )}(p r\!_\perp)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a}\!\!-\! \frac{i\!k\varepsilon}{h^2J_m(ha)}\! \left. \pp{J\!_m(h r\!_\perp \!)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a} H_m^{(1)}(pa) \right]a\!_{m\!\beta} \nonumber\\
+&= \frac{m\! \beta}{h^2\! a}\! \mathcal{B}_{z,m\beta}^{(0)}(r\!_\perp =a ) \!+\! \! \frac{i\!k\varepsilon}{h^2J_m(ha)}\! \left. \pp{J\!_m(h r\!_\perp \!)}{r\!_\perp}\! \right|_{r\!_\perp\! =\! a}\mathcal{E}_{z,m\beta}^{(0)}(r\!_\perp =a )  \!-\!\mathcal{B}\! _{\phi,m\! \beta}^{(0)}(r\!_\perp\! =\! a ).
+\end{align}
+
+The solutions of $a_{m\beta}$ and $b_{m\beta}$ are given by Equs.(47-50) in Ref.~\cite{Klimov2004}. We also have
 \begin{align}
 c_{m\beta} &= \frac{\mathcal{E}_{z,m\beta}^{(0)}(r\!_\perp\!=\!a)+ H_m^{(1)}(pa)a_{m\beta}}{J_m(ha)},\\
 d_{m\beta} &= \frac{\mathcal{H}_{z,m\beta}^{(0)}(r\!_\perp\!=\!a)+ H_m^{(1)}(pa)b_{m\beta}}{J_m(ha)}.
@@ -1049,7 +1204,7 @@ e^{i\mathbf{k}\cdot \mathbf{r}} &= \sum_{m=-\infty}^{\infty}c_{m}(k\!_\perp r\!_
 \end{align}
 where the coefficients $ c_{m}(k\!_\perp r\!_\perp) $ is associated with Bessel's first integral~\footnote{see Jackson's E\&M, p140, or \url{http://physics.stackexchange.com/questions/44761/plane-wave-expansion-in-cylindrical-coordinates}.}
 \begin{align}
-c_{m}(k\!_\perp r\!_\perp)&= \frac{1}{2\pi} \int_0^{2\pi} e^{ik\!_\perp r\!_\perp\cos \Delta\phi}e^{-m\Delta\phi}\mathrm{d}\Delta\phi\\
+c_{m}(k\!_\perp r\!_\perp)&= \frac{1}{2\pi} \int_0^{2\pi} e^{ik\!_\perp r\!_\perp\cos \Delta\phi}e^{-im\Delta\phi}\mathrm{d}\Delta\phi\\
 &=i^mJ_m(k\!_\perp r\!_\perp).
 \end{align}
 Therefore, we have

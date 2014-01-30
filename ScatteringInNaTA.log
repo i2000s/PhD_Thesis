@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.11.3)  14 OCT 2013 11:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.11.3)  29 JAN 2014 18:37
 entering extended mode
 **ScatteringInNaTA.tex
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\ScatteringInNaTA.tex
@@ -779,26 +779,30 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count177
 \@thisrulewidth=\dimen202
 )
+(E:\Base\Editors\MikTex\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrar
+ycalc.code.tex
+File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
+)
 \@indexfile=\write4
 
 Writing index file ScatteringInNaTA.idx
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\ScatteringInNaTA.aux
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\MaxwellEquations.aux)
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
 \c@lstlisting=\count178
  (E:\Base\Editors\MikTex\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -815,7 +819,7 @@ LaTeX Font Info:    ... okay on input line 114.
 \everyMPtoPDFconversion=\toks43
 )
 \AtBeginShipoutBox=\box45
-Package hyperref Info: Link coloring ON on input line 114.
+Package hyperref Info: Link coloring ON on input line 116.
  (E:\Base\Editors\MikTex\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/07/31 v2.42 Cross-referencing by name of section
 
@@ -824,9 +828,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count185
 )
-LaTeX Info: Redefining \ref on input line 114.
-LaTeX Info: Redefining \pageref on input line 114.
-LaTeX Info: Redefining \nameref on input line 114.
+LaTeX Info: Redefining \ref on input line 116.
+LaTeX Info: Redefining \pageref on input line 116.
+LaTeX Info: Redefining \nameref on input line 116.
 
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\ScatteringInNaTA.out)
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\ScatteringInNaTA.out)
@@ -837,13 +841,13 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 114.
-LaTeX Font Info:    Try loading font information for U+msa on input line 116.
+LaTeX Info: Redefining \selectfont on input line 116.
+LaTeX Font Info:    Try loading font information for U+msa on input line 118.
 
 (E:\Base\Editors\MikTex\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 116.
+LaTeX Font Info:    Try loading font information for U+msb on input line 118.
 
 (E:\Base\Editors\MikTex\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -854,14 +858,14 @@ tination with the same identifier (name{page.1}) has been already used, duplica
 te ignored
 <to be read again> 
                    \relax 
-l.119 \end{abstract}
+l.121 \end{abstract}
                      [1]
 Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.160 \end{equation}
+l.162 \end{equation}
                      [1
 
 ]
@@ -869,118 +873,118 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
  [2] [3]
-Overfull \hbox (0.43793pt too wide) in paragraph at lines 273--273
+Overfull \hbox (0.43793pt too wide) in paragraph at lines 275--275
 []\OT1/cmr/bx/n/14.4 Light scat-ter-ing with-out con-sid-er-ing the me-
  []
 
 [4] [5] [6] [7] [8] [9]
-Overfull \hbox (19.07489pt too wide) in paragraph at lines 456--456
+Overfull \hbox (19.07489pt too wide) in paragraph at lines 458--458
 [] 
  []
 
 [10] [11] <Figs/Cr1.pdf, id=242, 418.56375pt x 314.17375pt>
 File: Figs/Cr1.pdf Graphic file (type pdf)
  <use Figs/Cr1.pdf>
-Package pdftex.def Info: Figs/Cr1.pdf used on input line 483.
+Package pdftex.def Info: Figs/Cr1.pdf used on input line 485.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 483--484
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 485--486
  [][] 
  []
 
 <Figs/Cr2.pdf, id=243, 418.56375pt x 314.17375pt>
 File: Figs/Cr2.pdf Graphic file (type pdf)
  <use Figs/Cr2.pdf>
-Package pdftex.def Info: Figs/Cr2.pdf used on input line 487.
+Package pdftex.def Info: Figs/Cr2.pdf used on input line 489.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 487--488
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 489--490
  [][] 
  []
 
 
-Overfull \hbox (6.89621pt too wide) in paragraph at lines 481--489
+Overfull \hbox (6.89621pt too wide) in paragraph at lines 483--491
 []$[]$$[]$ 
  []
 
 <Figs/Cphi1.pdf, id=244, 418.56375pt x 314.17375pt>
 File: Figs/Cphi1.pdf Graphic file (type pdf)
  <use Figs/Cphi1.pdf>
-Package pdftex.def Info: Figs/Cphi1.pdf used on input line 492.
+Package pdftex.def Info: Figs/Cphi1.pdf used on input line 494.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 492--493
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 494--495
  [][] 
  []
 
 <Figs/Cphi2.pdf, id=245, 418.56375pt x 314.17375pt>
 File: Figs/Cphi2.pdf Graphic file (type pdf)
  <use Figs/Cphi2.pdf>
-Package pdftex.def Info: Figs/Cphi2.pdf used on input line 496.
+Package pdftex.def Info: Figs/Cphi2.pdf used on input line 498.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 496--497
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 498--499
  [][] 
  []
 
 
-Overfull \hbox (6.89621pt too wide) in paragraph at lines 490--498
+Overfull \hbox (6.89621pt too wide) in paragraph at lines 492--500
 []$[]$$[]$ 
  []
 
 [12] <Figs/Az.pdf, id=253, 418.56375pt x 314.17375pt>
 File: Figs/Az.pdf Graphic file (type pdf)
  <use Figs/Az.pdf>
-Package pdftex.def Info: Figs/Az.pdf used on input line 507.
+Package pdftex.def Info: Figs/Az.pdf used on input line 509.
 (pdftex.def)             Requested size: 209.28136pt x 157.08649pt.
 
 <Figs/Cr.pdf, id=254, 418.56375pt x 314.17375pt>
 File: Figs/Cr.pdf Graphic file (type pdf)
  <use Figs/Cr.pdf>
-Package pdftex.def Info: Figs/Cr.pdf used on input line 511.
+Package pdftex.def Info: Figs/Cr.pdf used on input line 513.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 511--512
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 513--514
  [][] 
  []
 
 <Figs/Cphi.pdf, id=255, 418.56375pt x 314.17375pt>
 File: Figs/Cphi.pdf Graphic file (type pdf)
  <use Figs/Cphi.pdf>
-Package pdftex.def Info: Figs/Cphi.pdf used on input line 515.
+Package pdftex.def Info: Figs/Cphi.pdf used on input line 517.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 515--516
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 517--518
  [][] 
  []
 
 
-Overfull \hbox (6.89621pt too wide) in paragraph at lines 509--517
+Overfull \hbox (6.89621pt too wide) in paragraph at lines 511--519
  []$[]$$[]$ 
  []
 
 <Figs/Sr.pdf, id=256, 418.56375pt x 314.17375pt>
 File: Figs/Sr.pdf Graphic file (type pdf)
  <use Figs/Sr.pdf>
-Package pdftex.def Info: Figs/Sr.pdf used on input line 520.
+Package pdftex.def Info: Figs/Sr.pdf used on input line 522.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 520--521
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 522--523
  [][] 
  []
 
 <Figs/Sphi.pdf, id=257, 418.56375pt x 314.17375pt>
 File: Figs/Sphi.pdf Graphic file (type pdf)
  <use Figs/Sphi.pdf>
-Package pdftex.def Info: Figs/Sphi.pdf used on input line 524.
+Package pdftex.def Info: Figs/Sphi.pdf used on input line 526.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 524--525
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 526--527
  [][] 
  []
 
 
-Overfull \hbox (6.89621pt too wide) in paragraph at lines 518--526
+Overfull \hbox (6.89621pt too wide) in paragraph at lines 520--528
  []$[]$$[]$ 
  []
 
@@ -1000,113 +1004,113 @@ erTrappedAtoms/Notes/Scattering/Figs/Sphi.pdf>]
 File: Figs/InterferencePeriods.pdf Graphic file (type pdf)
 
 <use Figs/InterferencePeriods.pdf>
-Package pdftex.def Info: Figs/InterferencePeriods.pdf used on input line 531.
+Package pdftex.def Info: Figs/InterferencePeriods.pdf used on input line 533.
 (pdftex.def)             Requested size: 207.0021pt x 155.37506pt.
  [15 <F:/Research/Works/NanofiberTrappedAtoms/Notes/Scattering/Figs/Interferenc
 ePeriods.pdf>]
 <Figs/Cr1_1.pdf, id=336, 418.56375pt x 314.17375pt>
 File: Figs/Cr1_1.pdf Graphic file (type pdf)
  <use Figs/Cr1_1.pdf>
-Package pdftex.def Info: Figs/Cr1_1.pdf used on input line 540.
+Package pdftex.def Info: Figs/Cr1_1.pdf used on input line 542.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 540--541
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 542--543
  [][] 
  []
 
 <Figs/Cr2_1.pdf, id=337, 418.56375pt x 314.17375pt>
 File: Figs/Cr2_1.pdf Graphic file (type pdf)
  <use Figs/Cr2_1.pdf>
-Package pdftex.def Info: Figs/Cr2_1.pdf used on input line 544.
+Package pdftex.def Info: Figs/Cr2_1.pdf used on input line 546.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 544--545
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 546--547
  [][] 
  []
 
 
-Overfull \hbox (6.89621pt too wide) in paragraph at lines 538--546
+Overfull \hbox (6.89621pt too wide) in paragraph at lines 540--548
 []$[]$$[]$ 
  []
 
 <Figs/Cphi1_1.pdf, id=338, 418.56375pt x 314.17375pt>
 File: Figs/Cphi1_1.pdf Graphic file (type pdf)
  <use Figs/Cphi1_1.pdf>
-Package pdftex.def Info: Figs/Cphi1_1.pdf used on input line 549.
+Package pdftex.def Info: Figs/Cphi1_1.pdf used on input line 551.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 549--550
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 551--552
  [][] 
  []
 
 <Figs/Cphi2_1.pdf, id=339, 418.56375pt x 314.17375pt>
 File: Figs/Cphi2_1.pdf Graphic file (type pdf)
  <use Figs/Cphi2_1.pdf>
-Package pdftex.def Info: Figs/Cphi2_1.pdf used on input line 553.
+Package pdftex.def Info: Figs/Cphi2_1.pdf used on input line 555.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 553--554
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 555--556
  [][] 
  []
 
 
-Overfull \hbox (6.89621pt too wide) in paragraph at lines 547--555
+Overfull \hbox (6.89621pt too wide) in paragraph at lines 549--557
 []$[]$$[]$ 
  []
 
 <Figs/Az_1.pdf, id=340, 418.56375pt x 314.17375pt>
 File: Figs/Az_1.pdf Graphic file (type pdf)
  <use Figs/Az_1.pdf>
-Package pdftex.def Info: Figs/Az_1.pdf used on input line 564.
+Package pdftex.def Info: Figs/Az_1.pdf used on input line 566.
 (pdftex.def)             Requested size: 209.28136pt x 157.08649pt.
 
 <Figs/Cr_1.pdf, id=341, 418.56375pt x 314.17375pt>
 File: Figs/Cr_1.pdf Graphic file (type pdf)
  <use Figs/Cr_1.pdf>
-Package pdftex.def Info: Figs/Cr_1.pdf used on input line 568.
+Package pdftex.def Info: Figs/Cr_1.pdf used on input line 570.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 568--569
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 570--571
  [][] 
  []
 
 <Figs/Cphi_1.pdf, id=342, 418.56375pt x 314.17375pt>
 File: Figs/Cphi_1.pdf Graphic file (type pdf)
  <use Figs/Cphi_1.pdf>
-Package pdftex.def Info: Figs/Cphi_1.pdf used on input line 572.
+Package pdftex.def Info: Figs/Cphi_1.pdf used on input line 574.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 572--573
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 574--575
  [][] 
  []
 
 
-Overfull \hbox (6.89621pt too wide) in paragraph at lines 566--574
+Overfull \hbox (6.89621pt too wide) in paragraph at lines 568--576
  []$[]$$[]$ 
  []
 
 <Figs/Sr_1.pdf, id=343, 418.56375pt x 314.17375pt>
 File: Figs/Sr_1.pdf Graphic file (type pdf)
  <use Figs/Sr_1.pdf>
-Package pdftex.def Info: Figs/Sr_1.pdf used on input line 577.
+Package pdftex.def Info: Figs/Sr_1.pdf used on input line 579.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 577--578
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 579--580
  [][] 
  []
 
 <Figs/Sphi_1.pdf, id=344, 418.56375pt x 314.17375pt>
 File: Figs/Sphi_1.pdf Graphic file (type pdf)
  <use Figs/Sphi_1.pdf>
-Package pdftex.def Info: Figs/Sphi_1.pdf used on input line 581.
+Package pdftex.def Info: Figs/Sphi_1.pdf used on input line 583.
 (pdftex.def)             Requested size: 184.16861pt x 138.23686pt.
 
-Overfull \hbox (8.2205pt too wide) in paragraph at lines 581--582
+Overfull \hbox (8.2205pt too wide) in paragraph at lines 583--584
  [][] 
  []
 
 
-Overfull \hbox (6.89621pt too wide) in paragraph at lines 575--583
+Overfull \hbox (6.89621pt too wide) in paragraph at lines 577--585
  []$[]$$[]$ 
  []
 
@@ -1123,48 +1127,62 @@ rappedAtoms/Notes/Scattering/Figs/Sphi_1.pdf>] [18]
 File: Figs/scatteredmode.png Graphic file (type png)
 
 <use Figs/scatteredmode.png>
-Package pdftex.def Info: Figs/scatteredmode.png used on input line 671.
+Package pdftex.def Info: Figs/scatteredmode.png used on input line 673.
 (pdftex.def)             Requested size: 276.00105pt x 207.00528pt.
  [19] [20 <F:/Research/Works/NanofiberTrappedAtoms/Notes/Scattering/Figs/scatte
 redmode.png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 771.
+(caption)                particular \caption on input line 773.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 769--783
+Overfull \hbox (15.0pt too wide) in paragraph at lines 771--785
 []$[]$ 
  []
 
 [21] [22]
-Overfull \hbox (0.81815pt too wide) in paragraph at lines 879--879
+Overfull \hbox (19.98674pt too wide) in paragraph at lines 935--936
+[]\OT1/cmr/m/n/10 Using the ex-pan-sion of the free-space dipole scalar Green f
+unc-tion (Equ. [])for
+ []
+
+[23]
+Overfull \hbox (10.08829pt too wide) in paragraph at lines 987--987
 [] 
  []
 
-[23] [24] [25] [26] [27]
-<Figs/contourpath2.pdf, id=587, 418.56375pt x 314.17375pt>
+[24]
+Overfull \hbox (10.08829pt too wide) in paragraph at lines 1014--1014
+[] 
+ []
+
+[25] [26] [27] [28] [29] [30]
+<Figs/contourpath2.pdf, id=620, 418.56375pt x 314.17375pt>
 File: Figs/contourpath2.pdf Graphic file (type pdf)
 
 <use Figs/contourpath2.pdf>
-Package pdftex.def Info: Figs/contourpath2.pdf used on input line 1009.
+Package pdftex.def Info: Figs/contourpath2.pdf used on input line 1164.
 (pdftex.def)             Requested size: 276.00105pt x 207.16354pt.
- [28 <F:/Research/Works/NanofiberTrappedAtoms/Notes/Scattering/Figs/contourpath
-2.pdf>] [29] [30]
+ [31] [32 <F:/Research/Works/NanofiberTrappedAtoms/Notes/Scattering/Figs/contou
+rpath2.pdf>] [33]
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\MaxwellEquations.tex
 Appendix A.
+
+Package natbib Warning: Citation `Wait' on page 34 undefined on input line 4.
+
 
 Overfull \hbox (8.29448pt too wide) in paragraph at lines 34--34
 []\OT1/cmr/bx/n/14.4 Fields of trans-la-tion-ally in-vari-ant waveg-uides 
  []
 
-[31
+[34
 
 
-] [32]) [33]
+] [35]) [36]
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\ScatteringInNaTA.bbl)
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\ScatteringInNaTA.ind
-[34
+[37
 
 
 ]
@@ -1175,30 +1193,32 @@ Overfull \hbox (1.69469pt too wide) in paragraph at lines 9--10
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
-[35
+[38
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1087.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1087.
 
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1242.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1242.
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\ScatteringInNaTA.aux
 (F:\Research\Works\NanofiberTrappedAtoms\Notes\Scattering\MaxwellEquations.aux)
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1087.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1087.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1242.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1242.
 
 Package rerunfilecheck Info: File `ScatteringInNaTA.out' has not changed.
 (rerunfilecheck)             Checksum: DB499C9342F2DBCDA9B633AB657B2E73;902.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1087.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1242.
  ) 
 Here is how much of TeX's memory you used:
- 19248 strings out of 493921
- 326835 string characters out of 3149293
- 550746 words of memory out of 3000000
- 21810 multiletter control sequences out of 15000+200000
+ 19481 strings out of 493921
+ 331600 string characters out of 3149293
+ 559746 words of memory out of 3000000
+ 22017 multiletter control sequences out of 15000+200000
  19425 words of font info for 72 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 63i,19n,96p,1556b,550s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,19n,96p,1556b,754s stack positions out of 5000i,500n,10000p,200000b,50000s
 <E:/Base/Editors/MikTex/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><E:/Base/E
 ditors/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/Base/Editors/MikTex
 /fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Base/Editors/MikTex/fonts/type1/
@@ -1225,9 +1245,9 @@ type1/public/amsfonts/cm/cmti10.pfb><E:/Base/Editors/MikTex/fonts/type1/public/
 amsfonts/cm/cmtt10.pfb><E:/Base/Editors/MikTex/fonts/type1/public/amsfonts/cm/c
 mtt8.pfb><E:/Base/Editors/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb
 >
-Output written on ScatteringInNaTA.pdf (37 pages, 618929 bytes).
+Output written on ScatteringInNaTA.pdf (40 pages, 636921 bytes).
 PDF statistics:
- 866 PDF objects out of 1000 (max. 8388607)
- 299 named destinations out of 1000 (max. 500000)
+ 907 PDF objects out of 1000 (max. 8388607)
+ 322 named destinations out of 1000 (max. 500000)
  198 words of extra memory for PDF output out of 10000 (max. 10000000)
 
