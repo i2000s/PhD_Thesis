@@ -1,9 +1,9 @@
-\chapter{Maxwell's Equations of an waveguide}
+\chapter{Maxwell's Equations for an waveguide}
 This chapter will dedicate to some fundamental theory of Maxwell's equations. More detailed 
-discussions can be found in Ref.\cite{Snyder1983}. Some detailed solution of Maxwell's equation 
-applied to  cylindrical structures can be found in Ref.\cite{Wait}. 
+discussions can be found in Ref.~\cite{Snyder1983}. Some detailed solution of Maxwell's equation 
+applied to cylindrical structures can be found in Ref.~\cite{Wait1959}. 
 
-For nonmagnetic materials which normally constitute an optical waveguide with $ \mu=\mu_0 $, the 
+For non-magnetic materials which normally constitute an optical waveguide with $ \mu=\mu_0 $, the 
 spatial dependence of the electrical field $ \boldsymbol{\mathcal{E}}(\br) $ and the magnetic field $ 
 \boldsymbol{\mathcal{H}}(\br) $ of an optical waveguide is determined by Maxwell's equations:
 \begin{align}
@@ -15,21 +15,39 @@ spatial dependence of the electrical field $ \boldsymbol{\mathcal{E}}(\br) $ and
 \end{align}
 where $ \boldsymbol{\mathcal{J}} $ and $ \rho $ are the current density and charge density, $ 
 \varepsilon=n^2 \varepsilon_0 $ is the dielectric constant of the waveguide as a function of space, and $ 
-k=2\pi/\lambda=\omega/c $.  We usually assume an implicit time dependence $ \exp(-i\omega t) $ in the 
-full field vectors. These equations are written in MKS units, which are used by default. 
+k=2\pi/\lambda=\omega/c $.  We usually assume an implicit chromatic time dependence factor $ \exp(-i\omega t) $ in the 
+full field vectors. These equations above are written in MKS units. 
 
 Sometimes, to avoid the dielectric constant $ \varepsilon_0 $ and magnetic permeability $ \mu_0 $ of 
-free space, we can rewrite the Maxwell's equations in Gaussian units, which yield
+free space, we can rewrite the Maxwell's equations in Gauss units, which yield
 \begin{align}
 \nabla \times \boldsymbol{\mathcal{E}} &= -\frac{1}{c} \pt{\boldsymbol{\mathcal{B}}}=i 
 k\boldsymbol{\mathcal{B}}, & \nabla \times 
 \boldsymbol{\mathcal{H}} &= \frac{4\pi}{c} \boldsymbol{\mathcal{J}} + 
 \frac{1}{c}\pt{\boldsymbol{\mathcal{D}}}= \frac{4\pi}{c}\boldsymbol{\mathcal{J}} 
--ik\boldsymbol{\mathcal{D}},\\
-\nabla \cdot \boldsymbol{\mathcal{D}} &= 4\pi \rho, & \nabla \cdot \boldsymbol{\mathcal{B}} &=0,
+-ik\boldsymbol{\mathcal{D}}, \label{eq:maxwelldiv}\\
+\nabla \cdot \boldsymbol{\mathcal{D}} &= 4\pi \rho, & \nabla \cdot \boldsymbol{\mathcal{B}} &=0,\label{eq:maxwellgrad}
 \end{align}
-where $ \boldsymbol{\mathcal{D}} = \varepsilon \boldsymbol{\mathcal{E}} $ and $ 
-\boldsymbol{\mathcal{H}}= \boldsymbol{\mathcal{B}} $. 
+where $ \boldsymbol{\mathcal{D}} = \varepsilon \boldsymbol{\mathcal{E}}=\varepsilon_r \boldsymbol{\mathcal{E}} $ and $ 
+\boldsymbol{\mathcal{B}}= \mu\boldsymbol{\mathcal{H}}\approx \boldsymbol{\mathcal{H}} $ for non-magnetic materials. By default, we will use Gauss units in this piece of work, and only consider non-magnetic materials. Notice that, we make the dielectric constant equal to the relative dielectric constant ($ \varepsilon=\varepsilon $) in the Gauss units convention.  
+
+Equations~\eqref{eq:maxwelldiv} can lead to the wave equation for a chromatic electric field in Gauss units as
+\begin{align}
+-\nabla \times (\nabla \times \boldsymbol{\mathcal{E}})+\varepsilon k^2\boldsymbol{\mathcal{E}}=-ik\frac{4\pi}{c} \boldsymbol{\mathcal{J}}. \label{eq:waveeqGaussU}
+\end{align}
+Similarly, the corresponding wave equation in SI units can be given by
+\begin{align}
+-\nabla \times (\nabla \times \boldsymbol{\mathcal{E}})+ n^2 k^2\boldsymbol{\mathcal{E}}=-ik\sqrt{\frac{\mu_0}{\varepsilon_0}} \boldsymbol{\mathcal{J}}.
+\end{align}
+
+We can further simplify the equation above by using 
+\begin{align}
+\nabla\times (\nabla\times \bmc{E}) &= -\nabla(\nabla\cdot \bmc{E})+ \nabla^2\bmc{E}. 
+\end{align}
+In the case that there is no net charge and current in the space, the wave equations above in both Gauss and SI units can be simplified to be
+\begin{align}\label{eq:freespacewaveeq}
+(\nabla^2 + n^2k^2) \boldsymbol{\mathcal{E}}=0.
+\end{align}
 
 \section{Fields of translationally invariant waveguides}
 We define the axis of the waveguide is along $ z $-direction, and the refractive index profile of the 
@@ -118,17 +136,5 @@ Correspondingly, the component relationships in Gauss units are
 \end{subequations}
 
 
-\textcolor{red}{Vector and Scalar operators...}
+\textcolor{red}{Vector and Scalar operators in various coordinate systems...}
 
-\textcolor{red}{Vector wave equations...}
-
-In Gauss units, we have 
-\begin{align}
--\nabla\times (\nabla\times \mathbf{E})-\frac{\varepsilon}{c^2} \spt{\mathbf{E}} = 
--\frac{4\pi}{c}\mathbf{J}.
-\end{align}
-We can further simplify the equation above by using 
-\begin{align}
-\nabla\times (\nabla\times \bmc{E}) &= -\nabla(\nabla\cdot \bmc{E})+ \nabla^2\bmc{E}\\
--\frac{\varepsilon}{c^2} \spt{\mathbf{E}} &= \frac{\varepsilon\omega^2}{c^2}\spt{\bmc{E}}.
-\end{align}
