@@ -144,7 +144,7 @@ This is a study on the Nanofiber Trapped Atoms project (NaTA) in the perspective
 
 
 
-\chapter{One atom trapped aside a nanofiber}
+\chapter{Spontaneous emission of an atom present outside of a nanofiber}
 
 \section{Green function for the classical light}
 In this section, we look at the case that only one atom is trapped aside the nanofiber. To be specific, we consider the following scenario: a laser beam propagates through a nanofiber along $ z $ direction; a Cesium (Cs) atom (can be other atoms) allocates at $ \mathbf{r}_{atom} =\mathbf{r}'$ close by the nanofiber, and responds to the optical field. Due to the response of the atom, a light is re-emitted
@@ -163,7 +163,7 @@ In general, $\mathcal{E}(\br)$ is a complex scalar and $\mathbf{u}(\br)$ is a co
 We assume the nanofiber is a linear medium with no absorption to the traveling wave. The refractive intrinsic index\index{refractive index} of the nanofiber can be given by
 \begin{align}
 n_0(\br) = \begin{cases} 
-n_1=1.46, &\quad r_\perp \leq a,\\
+n_1=1.45, &\quad r_\perp \leq a,\\
 n_2=1, &\quad r_\perp >a,
 \end{cases} 
 \end{align}
@@ -427,6 +427,7 @@ In Equs.~\ref{Ertcrla} and~\ref{Ertcrga}, we denote the normalized bound fundame
 E_i^{lin} = \frac{1}{\sqrt{2}}(E_i^+ + E_i^-)\quad \mathrm{or}\quad \mathcal{E}_i^{lin} = \frac{1}{\sqrt{2}}(\mathcal{E}_i^+ + \mathcal{E}_i^-),\quad i\in(r_\perp,\phi,z).
 \end{align}
 
+\subsection{Power flow and normalization factor $ A $}
 As discussed in Vetsch's dissertation~\cite{Vetsch2010a}, the real-valued amplitude factor $ A $ can be calculated by normalizing the total power of the light propagating in the fiber via the Poynting vector\index{Poynting vector}
 \begin{align}
 \left<\mathbf{S}\right>=\frac{1}{2} \Re\left[\boldsymbol{\mathcal{E}}^g(\br)\times{\boldsymbol{\mathcal{H}}^g(\br)}^* \right],
@@ -448,7 +449,51 @@ D_{in} &= (1-s_{11})\left[ 1+(1-s_{11})\frac{\beta_{11}^2}{h_{11}^2}\right] \lef
 D_{out} &= \frac{J_1^2(h_{11}a)}{K_1^2(q_{11}a)}\left\{ (1-s_{11})\left[ 1-(1-s_{11})\frac{\beta_{11}^2}{q_{11}^2}\right] \left(K_0^2(q_{11}a) - K_1^2(q_{11}a) \right)\right. \nonumber\\
 &\quad \left. + (1\!+\! s_{11})\left[ 1\!-\! (1\!+\! s_{11})\frac{\beta_{11}^2}{q_{11}^2}\right] \left(K_2^2(q_{11}a)\! -\! K_1(q_{11}a)K_3(q_{11}a) \right) \right\}.
 \end{align}
+The ratio of $ D_{in} $ and $ D_{out} $ indicates the intensity distribution division inside and outside of the nanofiber. 
 
+\subsection{Energy density and normalization factor for traveling field quantization}
+The energy per unit length stored in the waveguide is defined as
+\begin{align}
+W &= \frac{1}{2} \int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2.
+\end{align} 
+In our case, we can reform the integral over the transverse plane into the inside of the nanofiber and outside of the nanofiber parts. That is to say
+\begin{align}
+\int \mathrm{d} \br\!_\perp &= \int_0^{2\pi}\!\!\!\! \mathrm{d} \phi \int_0^a\!\!r\!_\perp \mathrm{d}r\!_\perp + \int_0^{2\pi}\!\!\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp.
+\end{align}
+Hence, the energy stored per unit distance of propagation can be rewritten as 
+\begin{align}
+W &= n_1^2P_1+n_2^2P_2,
+\end{align}
+where the power flow or the intensity distribution factors $ P_1 $ and $ P_2 $ can be found by
+\begin{align}
+\!\!\!\!\! P_1 &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!\mathrm{d}r\!_\perp r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
+&= \frac{\beta^2}{4h^2}\!\left\{(1\!-\! s)^2\!\left[J_0^2(ha)\!+\! J_1^2(ha) \right] \!+\!(1\!+\!s)^2\!\left[J_2^2(ha)\!-\!J_1(ha)J_3(ha) \right]\right\}\nonumber\\
+&\quad +\frac{1}{2}\left[J_1^2(ha)-J_0(ha)J_2(ha) \right] \\
+\!\!\!\!\! P_2 &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_a^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
+&= \frac{\beta^2J_1^2(ha)}{4q^2K_1^2(qa)}\!\left\{\phantom{\frac{1}{1}}\!\!\!\!(1\!-\!s)^2\!\left[K_1^2(qa)\!-\!K_0^2(qa) \right]\right.\nonumber\\
+&\quad\left. \!+(1\!+\!s)^2\!\!\left[K\!_1\!(qa)K\!_3\!(qa)\!-\! K_2^2\!(qa) \right]\!+\!\frac{2q^2}{\beta^2}\!\!\left[K\!_0\!(qa)K\!_2\!(qa)\!-\!K_1^2\!(qa) \right]  \right\}.
+\end{align}
+
+Also, to quantize the traveling field of waveguide modes, we can define the normalization factor to be~\cite{LeKien2005}
+\begin{align}
+N_g &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp\,  n^2(\br\!_\perp)|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
+&= 2\pi A^2 a^2 (n_1^2P_1 + n_2^2P_2),
+\end{align}
+where the factor $ A $ is defined in Equ.~\eqref{eq:A} related to the input power. The full expression of radiative modes of the nanofiber system can also be found in Ref.~\cite{LeKien2005}.
+
+For some cases, the total power $ P $ can also be defined as
+\begin{align}
+P &= \int \mathrm{d}\br\!_\perp \langle S(\br\!_\perp)\rangle =\int \mathrm{d} \br\!_\perp I(\br\!_\perp)=\frac{\varepsilon_0 c n_{e\!f\!f}}{2}\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2,
+\end{align}
+where $ n_{e\!f\!f} $ is the effective index of refraction of the waveguide. 
+By plugging in the field expression from Equs.~\eqref{Ertcrla} and~\eqref{Ertcrga}, we find the effective index of refraction for the HE11 modes of the nanofiber can be given by
+\begin{align}
+n_{e\!f\!f} &=\frac{\int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}{\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
+&= \frac{n_1^2\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + n_2^2\int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}
+{\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + \int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
+&= \frac{n_1^2P_1+n_2^2P_2}{P_1+P_2}.
+\end{align}
+Notice that, the group index of refraction is not the same as the $ n_{e\!f\!f} $ defined above. We will discuss group velocity and group index of refraction of a waveguide later. See also the notes on \textit{Group velocity of the nanofiber}. 
 
 
 \section{Bound and radiation modes}\label{sec:boundrad}
@@ -500,8 +545,7 @@ and $ \mathcal{B} (r_\perp, \phi, z)$ turns into a problem of solving a two dime
 (mode) equation for $ \psi(r_\perp,\phi) $ and $ \zeta(r_\perp,\phi) $. 
 
 There are two special cases for the modes, in general. If $ \psi=0 $ as a constant, which means there is 
-no $ z $-component of the electrical field, then the propagating mode is call a TE mode\index{mode!TE 
-mode}. Similarly, if $ \zeta=0 $ as a constant, which corresponds to zero magnetic $ z $-component, 
+no $ z $-component of the electrical field, then the propagating mode is call a TE mode\index{mode!TE mode}. Similarly, if $ \zeta=0 $ as a constant, which corresponds to zero magnetic $ z $-component, 
 then this mode is called a TM mode\index{mode!TM mode}. However, the modes in a waveguide with 
 cylindrical symmetry cannot be grouped into TE and TM guided waves. In general, the modes with 
 both electrical and magnetic nonzero $ z $-components are known as EH and HE hybrid 
@@ -876,7 +920,7 @@ where I have defined the position-independent reduced dipole vector components
 \begin{align}
 d_\pm \equiv \mp \frac{1}{\sqrt{2}}(d^0_{r\!_\perp}\pm id^0_{\phi}).
 \end{align}
-The terms associated with $d_\pm$ in the dipole momentum formula lower or raise the mode index by $1$. Notice that we have used $\phi\!-\!\phi'$ as the projected angle between $\mathbf{r}$ and $\mathbf{r}'$ to make the relationship work in general. 
+The terms associated with $d_\pm$ in the dipole moment formula lower or raise the mode index by $1$. Notice that we have used $\phi\!-\!\phi'$ as the projected angle between $\mathbf{r}$ and $\mathbf{r}'$ to make the relationship work in general. 
 
 \begin{figure}
 \centering\makebox[\textwidth]{
@@ -1055,155 +1099,92 @@ d_{m\beta} &= \frac{\mathcal{H}_{z,m\beta}^{(0)}(r\!_\perp\!=\!a)+ H_m^{(1)}(pa)
 \end{align}
 
 \begin{figure}
-\centering\makebox[\textwidth]{\includegraphics{./Figs/contourplot_transf}
-%\begin{tikzpicture}[scale=0.99,cap=round]
-%% Configurable parameters
-%\def\gap{0.25}
-%\def\bigradius{3}
-%\def\littleradius{0.2}
-%
-%% Styles
-%\tikzstyle{axes}=[arrows={-latex}]
-%%\tikzstyle{integralpath}={decorate, decoration={ markings,  % This schema allows for fine-tuning the arrows.
-%%      mark=at position 0.33 with {\arrow{latex}}, 
-%%      mark=at position 0.66 with {\arrow{latex}}}}
-%\tikzstyle{important line}=[thick]
-%\tikzstyle{branch cut}=[densely dashed]
-%%\tikzstyle{information text}=[rounded corners,fill=red!10,inner sep=1ex]
-%\tikzstyle{dot}=[circle,inner sep=1pt,fill,label={#1},name=#1]
-%
-%% Coordinates and points.
-%\coordinate (O) at (0,0);	% Origin.
-%\coordinate (A) at ({-sqrt(\bigradius^2-\gap^2)},\gap);	% Left-bottom end of the integral path.
-%\coordinate (B) at ({sqrt(\bigradius^2-\gap^2)},-\gap);	% Right-bottom end of the integral path.
-%\coordinate (C) at (\gap,{sqrt(\bigradius^2-\gap^2)});	% Top right point on the circle.
-%\coordinate (D) at (-\gap,{sqrt(\bigradius^2-\gap^2)});	% Top left point on the circle.
-%\coordinate (E) at (\bigradius/3,0); 	% The k point.
-%\coordinate (F) at (\bigradius*0.55,0); 	% The pole at the positive side of the real axis.
-%\coordinate (G) at (\bigradius*2.4/3,0);	% The k\sqrt{\epsilon} point.
-%\coordinate (H) at (-\bigradius/3,0);	% The -k point.
-%\coordinate (I) at (-\bigradius*2.4/3,0); 	% The -k\sqrtt{\epsilon} point. 
-%
-%% The graphic
-% % help grid
-%% \draw[style=help lines,step=0.5cm] (-2.0,-2.0) grid (2.0,2.0);
-%  
-%% Draw axes.
-%\draw [axes] (-1.25*\bigradius, 0) -- (1.25*\bigradius,0) node [above] {$Re(\beta)$};
-%\draw [axes] (0, -1.2*\bigradius) -- (0, 1.25*\bigradius) node [right] {$Im(\beta)$};
-%\draw (O) node [below left,xshift=0.99*\bigradius,yshift=0.5*\bigradius] {O};
-%
-%% Draw Integral path C1 along the real axis. 
-%\draw [blue, decoration={ markings,  % This schema allows for fine-tuning the arrows.
-%      mark=at position 0.33 with {\arrow{latex'}}, 
-%      mark=at position 0.66 with {\arrow{latex'}}},postaction={decorate}] (A) -- (-1.414*\gap,\gap) to [out=0,in=135] (O)  
-%to [out=-45,in=180] (1.414*\gap,-\gap) -- (B);
-%
-%% Draw the half circle path with correct ends.
-%\begin{scope} [even odd rule]
-%\clip (-\bigradius*1.1,-\gap) rectangle (\bigradius*1.1,\bigradius*1.1) 
-%{(-\bigradius*1.1,-\gap) -- (-\bigradius*1.1,\gap) -- (-\gap,\gap) -- (-\gap,\bigradius*1.1) -- (\gap,\bigradius*1.1) -- (\gap,-\gap) -- cycle};
-%\draw[red, decoration={ markings,  % This schema allows for fine-tuning the arrows.
-%      mark=at position 0.125 with {\arrow{latex'}}, 
-%      mark=at position 0.375 with {\arrow{latex'}}},postaction={decorate}] (O) circle (\bigradius);
-%\end{scope}
-%
-%% Draw branch cuts.
-%\draw[branch cut] (0.1*\gap,1.19*\bigradius) .. controls (0.2*\gap,\bigradius/15).. (E) node [above, yshift=6] {$k$};
-%\draw (E) node[dot] {};
-%\draw[branch cut] (-0.1*\gap,-1.19*\bigradius) .. controls (-0.2*\gap,-\bigradius/15).. (H) node [below] {$-k$};
-%\draw (H) node[dot] {};
-%
-%% Draw branch cut contour.
-%\draw[green,decoration={ markings, % This schema allows for fine-tuning the arrows.
-%      mark=at position 0.2 with {\arrow{latex'}}, 
-%      mark=at position 0.4 with {\arrow{latex'}},mark=at position 0.62 with {\arrow{latex'}},mark=at position 0.81 with {\arrow{latex'}}},postaction={decorate}] 
-%      plot [smooth, tension=0.7] coordinates {(C) (1.01*\gap,\bigradius/2) (1.6*\gap,\bigradius/6) (0.33*\bigradius,\bigradius/14) (0.39*\bigradius,-0.01*\bigradius) (0.3*\bigradius,-\bigradius/20) (0.03*\bigradius,0.03*\bigradius) (-0.9*\gap,\bigradius/3) (D)};
-%      %(C) ..controls (0.1*\gap,-\bigradius/8) and (\bigradius*0.3,\bigradius/8).. (0.39*\bigradius,0);
-%%\draw[green,decoration={ markings, % This schema allows for fine-tuning the arrows.
-%%      mark=at position 0.25 with {\arrow{latex'}}, 
-%%      mark=at position 0.75 with {\arrow{latex'}}},postaction={decorate}] (0.39*\bigradius,0) ..controls (\bigradius*0.33,-0.8*\gap) and (-\gap*2,-\bigradius/5).. (D);
-%
-%% Draw the contour for the pole.
-%\draw[cyan, decoration={ markings,  % This schema allows for fine-tuning the arrows.
-%      mark=at position 0.2 with {\arrow[sloped,rotate=-15,scale=0.9]{latex' reversed}}, 
-%      mark=at position 0.7 with {\arrow[sloped,rotate=-15,scale=0.9]{latex' reversed}}},postaction={decorate}] (F) circle (\bigradius/18);
-%      %arc (360:0:\bigradius/18);
-%\draw(F) node[dot] {};
-%\draw (F) node[above,yshift=5]{$\beta_0$}; 
-%
-%% Draw other nodes and labels.
-%\draw (G) node[dot] {};
-%\draw (G) node[above] {$k\sqrt{\varepsilon}$};
-%\draw (I) node[dot] {};
-%\draw (I) node[below] {$-k\sqrt{\varepsilon}$};
-%\draw (A) node[left] {$ -\infty $};
-%\draw (B) node[right] {$ \infty $};
-%\draw[->] (-0.8,1.5) node[above,xshift=-15] {Branch cut} -- (0.11,0.65);
-%\draw[->] (2.7,-0.95) node[below,xshift=5] {Pole} -- (0.56*\bigradius,-0.02*\bigradius);
-%\draw[blue] (-1.5,1.2*\gap) node[above] {$C_1$};
-%\draw[->] (0.5,-0.95) node[below,green] {$ -C_2 $} -- (0.5,-0.14);
-%%\draw[->] (0.75,-0.95) -- (0.5*\bigradius,-0.14);
-%
-%
-%\end{tikzpicture} 
-}
-\caption{Integration paths.}
+\begin{minipage}{.91\linewidth}
+\centering
+\subfloat[]{\label{contourplot_upper}\includegraphics[scale=0.75]{./Figs/contourplot_upper}}
+\end{minipage}
+\par\medskip
+\begin{minipage}{.91\linewidth}
+\centering
+\subfloat[]{\label{contourplot_lower}\includegraphics[scale=0.75]{./Figs/contourplot_lower}}
+\end{minipage}
+\caption{Integration paths. For the case that $ z>0 $, we can use the zero-valued contour integral path drawn in subfig.~\ref{contourplot_upper} to calculate the integration along path $ C_1 $. The simplified integration path by ignoring waveguide losses is given on the right-hand-side. It only contains the forward propagating mode contributions with radiation and guided mode components as divided through the real-axis integral and the loop-hole integral. For the $ z<0 $ case, the contour integral analysis is given in subfig.~\ref{contourplot_lower}, which only includes the backward propagating mode contributions.}
 \label{fig:integralpath}
 \end{figure}
 
 Now, we only consider the $ m=\pm 1 $ modes, and hence Equs.~\ref{ET0Rexpand}, ~\ref{BT0Rexpand} and the corresponding $ \phi $ and $ r\!_\perp $ components can be explicitly expressed as contour integrals as below
 \begin{subequations}\label{ET0RC1}
 \begin{align}
-\mathcal{E}^{(T)}_z &= \sum_{m=\pm 1} \oint_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} c_{m\beta} J_m (hr\!_\perp),\\
+\mathcal{E}^{(T)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} c_{m\beta} J_m (hr\!_\perp),\\
 % + B_{m\beta} Y_m(hr\!_\perp)\right],\\
-\mathcal{E}^{(0)}_{z} &= \sum_{m=\pm 1} \oint_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp)\\
-\mathcal{E}^{(R)}_z &= \sum_{m=\pm 1} \oint_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
+\mathcal{E}^{(0)}_{z} &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp)\\
+\mathcal{E}^{(R)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
 \end{align}
 \end{subequations}
 \begin{subequations}\label{BT0RC1}
 \begin{align}
-\mathcal{B}^{(T)}_z &= \sum_{m=\pm 1} \oint_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} d_{m\beta} J_m (hr\!_\perp),\\
+\mathcal{B}^{(T)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} d_{m\beta} J_m (hr\!_\perp),\\
 % + E_{m\beta} Y_m(hr\!_\perp)\right],\\
-\mathcal{B}^{(0)}_{z} &= \sum_{m=\pm 1} \oint_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp)\\
-\mathcal{B}^{(R)}_z &= \sum_{m=\pm 1} \oint_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
+\mathcal{B}^{(0)}_{z} &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp)\\
+\mathcal{B}^{(R)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
 \end{align}
 \end{subequations}
-To distinguish the bound and radiation modes contributions, one can use branch cuts and isolated poles to separate the contour integral along $ C_1 $ (see Fig.(\ref{fig:integralpath})). The bound modes are associated with poles, and hence can be represented as residues as below. 
+To distinguish the bound and radiation modes contributions, one can use the integral path along $ C_1 $ (see Fig.(\ref{fig:integralpath})) and find the equivalent integral path detouring the branch cuts and isolated poles which will be discussed next. 
+
+For the free-dipole radiation components, the $ C_1 $ integral path is almost the real integral path from $ -\infty $ to the $ +\infty $ except for the branch point at $ \pm k $. The sign of $ \beta $ indicates the propagation direction of the field. The free-dipole components only yield the radiation mode contributions to the total Green's dyadic. This is because the dipole radiation only occurs outside of the fiber, and always in the radiation potential zone using the equivalent scattering potential model. 
+
+For the reflection and transmission components of the field, there are poles in the $ a_{m\beta} $, $ b_{m\beta} $, $ c_{m\beta} $ and $ d_{m\beta} $ coefficients. There are also branch cuts hidden in the Bessel and Hankel function components of their expressions. Depending on the sign of $ (z-z') $, the integral paths and their simplification are shown in Fig.(\ref{fig:integralpath}). The bound modes are associated with poles, and hence can be represented as residues if asymptotic approximation can be made. Therefore, the guided mode contribution part of the reflection and transmission components can be given by
 \begin{subequations}\label{ET0RRes}
 \begin{align}
-\mathcal{E}^{(T)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} c_{m\beta} J_m (hr\!_\perp)\right]_{\beta=\beta_{1,m}},\\
-% + B_{m\beta} Y_m(hr\!_\perp)\right],\\
-\mathcal{E}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}},\\
-\mathcal{E}^{(R)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} a_{m\beta} H_m^{(1)} (pr\!_\perp)\right]_{\beta=\beta_{1,m}},
+\mathcal{E}^{(T)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}}  e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} c_{m\beta} J_m (hr\!_\perp),\\
+%\mathcal{E}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}},\\
+\mathcal{E}^{(R)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}} e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
 \end{align}
 \end{subequations}
 \begin{subequations}\label{BT0RRes}
 \begin{align}
-\mathcal{B}^{(T)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} d_{m\beta} J_m (hr\!_\perp)\right]_{\beta=\beta_{1,m}},\\
-% + E_{m\beta} Y_m(hr\!_\perp)\right],\\
-\mathcal{B}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}}, \\
-\mathcal{B}^{(R)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} b_{m\beta} H_m^{(1)} (pr\!_\perp)\right]_{\beta=\beta_{1,m}}.
+\mathcal{B}^{(T)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}} e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} d_{m\beta} J_m (hr\!_\perp),\\
+%\mathcal{B}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}}, \\
+\mathcal{B}^{(R)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}} e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
 \end{align}
 \end{subequations}
+%\begin{subequations}\label{ET0RRes}
+%\begin{align}
+%\mathcal{E}^{(T)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} c_{m\beta} J_m (hr\!_\perp)\right]_{\beta=\beta_{1,m}},\\
+%% + B_{m\beta} Y_m(hr\!_\perp)\right],\\
+%\mathcal{E}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}},\\
+%\mathcal{E}^{(R)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} a_{m\beta} H_m^{(1)} (pr\!_\perp)\right]_{\beta=\beta_{1,m}},
+%\end{align}
+%\end{subequations}
+%\begin{subequations}\label{BT0RRes}
+%\begin{align}
+%\mathcal{B}^{(T)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} d_{m\beta} J_m (hr\!_\perp)\right]_{\beta=\beta_{1,m}},\\
+%% + E_{m\beta} Y_m(hr\!_\perp)\right],\\
+%\mathcal{B}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}}, \\
+%\mathcal{B}^{(R)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} b_{m\beta} H_m^{(1)} (pr\!_\perp)\right]_{\beta=\beta_{1,m}}.
+%\end{align}
+%\end{subequations}
 
-The radiation modes are associated with the branch cuts $ C_2 $ which is presented in Ref.~\cite{Klimov2004} and in Fig.(\ref{fig:integralpath}).
+The radiation mode contributions of the reflection and transmission components are associated with the branch cuts $ C_2 $~\cite{Klimov2004} in Fig.(\ref{fig:integralpath}).
 \begin{subequations}\label{ET0RC2}
 \begin{align}
-\mathcal{E}^{(T)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} c_{m\beta} J_m (hr\!_\perp),\\
-% + B_{m\beta} Y_m(hr\!_\perp)\right],\\
-\mathcal{E}^{(0)}_{z} &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp),\\
-\mathcal{E}^{(R)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
+\mathcal{E}^{(T)}_z &= \sum_{m=\pm 1} \int_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} c_{m\beta} J_m (hr\!_\perp)\\
+&\approx \sum_{m=\pm 1} 2\int_{-n_2k}^{n_2k} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} c_{m\beta} J_m (hr\!_\perp),\\
+%\mathcal{E}^{(0)}_{z} &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp),\\
+\mathcal{E}^{(R)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp)\\
+&\approx \sum_{m=\pm 1} 2\int_{-n_2k}^{n_2k} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
 \end{align}
 \end{subequations}
 \begin{subequations}\label{BT0RC2}
 \begin{align}
-\mathcal{B}^{(T)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} d_{m\beta} J_m (hr\!_\perp),\\
-% + E_{m\beta} Y_m(hr\!_\perp)\right],\\
-\mathcal{B}^{(0)}_{z} &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp),\\
-\mathcal{B}^{(R)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
+\mathcal{B}^{(T)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} d_{m\beta} J_m (hr\!_\perp)\\
+&\approx \sum_{m=\pm 1} 2\int_{-n_2k}^{n_2k} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} d_{m\beta} J_m (hr\!_\perp),\\
+%\mathcal{B}^{(0)}_{z} &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp),\\
+\mathcal{B}^{(R)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp)\\
+&\approx \sum_{m=\pm 1} 2\int_{-n_2k}^{n_2k} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
 \end{align}
 \end{subequations}
+Above, the approximation works when the waveguide is lossless and hence the branch lines along the imaginary axis of the $ \beta $-plane can be ignored. The factor of $ 2 $ comes from the sign flip of the two branch lines parallel to the real axis in the $ \beta $ plane ($ 2=1-\mathrm{e}^{\pi i} $), and physically corresponds to the degeneracy of $ 2 $ degrees of freedom of the polarization of the radiation modes in the transverse plane. Although we use the integral limit from $ -n_2k $ to $ n_2k $, the integral limit, in practice, should be either $ 0 \rightarrow n_2k$ or $ -n_2k\rightarrow 0 $ depending on the propagation directions we are interested in. 
 
 One can obtain the bound and radiation field components with the dipole oriented in $ z $, $ \phi $ and $ r\!_\perp $ directions by substituting the $ \bmc{E}^{(0)}_{m\beta}(r\!_\perp) $ expressions for corresponding cases into Equs.~\ref{ET0RRes},~\ref{BT0RRes},~\ref{ET0RC2} and~\ref{BT0RC2}. 
 
@@ -1228,7 +1209,7 @@ We can rewrite Equ.~\ref{pole4beta} as
 =& \frac{h^2p^2a^2}{4} \left[hJ_m\!(ha)\! \left( H^{(\!1\!)}_{m-1}\!(pa)\!-\! H^{(\!1\!)}_{m+1}\!(pa) \right)\!-\! pH_m^{(\!1\!)}\!(pa)\left( J_{m-1}\!(ha)\!-\! J_{m+1}\!(ha) \right) \right]\nonumber\\ 
 &\left[hJ_m\!(ha) \left( H^{(\!1\!)}_{m-1}\!(pa)\!-\! H^{(\!1\!)}_{m+1}\!(pa) \right)\!-\! \varepsilon_f pH_m^{(\!1\!)}\!(pa)\left( J_{m-1}\!(ha)\!-\! J_{m+1}\!(ha) \right) \right].
 \end{align}
-Since both $ h $ and $ p $ are functions of $ \beta $, the equation above is complicated for solving $ \beta $. If $ ka<0.8 $, asymptotic approximation is good enough to solve Equ.~\ref{pole4beta2} and give an analytical solution for $ \beta $~\cite{Klimov2004}. However, in our nanofiber case, the $ ka<0.8 $ condition is not satisfied. We can only numerically solve Equ.~\ref{pole4beta2} for $ \beta $ with $ m=\pm 1 $. 
+Since both $ h $ and $ p $ are functions of $ \beta $, the equation above is complicated for solving $ \beta $. If $ ka<0.8 $, asymptotic approximation is good enough to solve Equ.~\ref{pole4beta2} and give an analytical solution for $ \beta $~\cite{Klimov2004}. However, in our nanofiber case, the $ ka<0.8 $ condition is not satisfied. We should be able to numerically solve Equ.~\ref{pole4beta2} for $ \beta $ as the characteristic constant for the guided mode with $ m=\pm 1 $. \textcolor{red}{Q: we should prove Equ.~\eqref{pole4beta2} is equivalent to the eigen equation of $ \beta $ for the bare fiber case. Useful relationship: $ K_n(x)=\frac{\pi}{2}i^{n+1}H_n^{(1)}(ix) $.}
 
 Numerically, the eigenwavevector $ \beta_0 $ is indistinguishable with the intrinsic nanofiber eigen mode wavevector, in the regime we are interested in.
 
@@ -1239,9 +1220,10 @@ Our derivation results had be checked by reproducing the decay rates following K
 
 To calculate the total decay rate of the atom with the enhancement due to the radiation, we need to find out the functions describing the branch cuts and the integration path for the radiation modes. The equation defining the branch cut is given by
 \begin{align}\label{branchcutequ}
-\mathrm{Im}\left[p \right]=0.
+\mathrm{Im}\left[p \right] &=0\\
+\mathrm{Im}\left[h\right] &=0.
 \end{align}
-By setting $ \beta=x+iy $, we can rewrite 
+By setting $ \beta=x+iy $, we can rewrite the first equation above as
 \begin{align}
 p&=\sqrt{k^2-\beta^2}\\
 &=\left[(k^2-x^2+y^2)^2 + 4x^2y^2 \right]^{1/4}e^{\frac{i}{2}\arctan\frac{-2xy}{k^2-x^2+y^2}}.
@@ -1262,13 +1244,21 @@ Obviously, the $ x $-axis between $ [-k,k] $ and the entire $ y $-axis are the b
 \begin{align}
 xy&=\delta\epsilon.
 \end{align}
-In this way, the branch cuts are symmetrically separated into top-right and lower-left parts. For the top-right branch, one can choose the integration path as shown in Fig.~\ref{Figs/contourpath2} to apply the contour integral detouring the branch cut. 
+Similarly, the condition for $ \mathrm{Im}[h]=0 $ gives the same result. To make the field components homomorphic at any point in the complex $ \beta $ plane, we choose the branch cuts that satisfy 
+\begin{align}
+xy&>\delta\epsilon>0.
+\end{align}
+Calling the physics meaning of radiation mode, we also have 
+\begin{align}
+-n_2k<x<n_2k.
+\end{align}
+In this way, the branch cuts as a hyperbola-type lines are symmetrically separated into top-right and lower-left parts, and are very close to the $ x- $ and $ y- $axes. For the top-right branch, one can choose the integration path as shown in Fig.~\ref{fig:integralpath} to apply the contour integral detouring the branch cut. 
 
-\scalefig{Figs/contourpath2}{0.8}{Integration path of the contour integral for radiation modes.}
+%\scalefig{Figs/contourpath2}{0.8}{Integration path of the contour integral for radiation modes.}
 
 In the case that the nanofiber can be treated as a lossless medium, the contour integral can be treated as an integral over real axis from $ -kn_2 $ to $ kn_2 $. 
 
-\textcolor{red}{Current issue: there is a divergence problem of calculating the guided mode contribution in the limit of $ r \rightarrow \infty $. To reduce the error, we need to carefully choose a proper integral path when we integrate around the pole to obtain the guided mode contributions (contour radius matters). However, in the regime we are interested in, the error is negligible. If we can prove that the guided mode contribution from the free-space radiation is always zero, then the numerical result of the free-space bounded mode contribution can be used to estimate numerical errors in our bounded mode contribution calculations.  }
+%\textcolor{red}{Current issue: there is a divergence problem of calculating the guided mode contribution in the limit of $ r \rightarrow \infty $. To reduce the error, we need to carefully choose a proper integral path when we integrate around the pole to obtain the guided mode contributions (contour radius matters). However, in the regime we are interested in, the error is negligible. If we can prove that the guided mode contribution from the free-space radiation is always zero, then the numerical result of the free-space bounded mode contribution can be used to estimate numerical errors in our bounded mode contribution calculations.  }
 
 
 
@@ -1332,7 +1322,7 @@ each column of which can be expressed as
 \end{align}
 where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green function of $ \mathbf{G}(\br,\br') $.  
 
-Comparing Equ.~\eqref{eq:Gi} with Equ.~\eqref{eq:Maxwellwithsource2}, we find that Equ.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a unitary dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $. That is to say that once we solve the electric field components with unitary dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components. Concretely, in the cylindrical coordinate system, the dyadic Green function elements correspond to the following electric field components emitted by a unitary dipole source orientated in the three orthogonal basis:
+Comparing Equ.~\eqref{eq:Gi} with Equ.~\eqref{eq:Maxwellwithsource2}, we find that Equ.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an amplitude of $ -4\pi k^2 $. That is to say that once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components divided by the factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis:
 \begin{equation}
 \mathbf{G}(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
   \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
@@ -1365,7 +1355,7 @@ Comparing Equ.~\eqref{eq:Gi} with Equ.~\eqref{eq:Maxwellwithsource2}, we find th
 The equivalent $ \mathbf{E} $ field has been solved in section~\ref{sec:boundrad} for the radiation problem with one atom.
 
 
-The \textit{approximate} approach:
+The \textit{eigenmode decomposition} approach:
 
 In the case that the source is extremely small, the total dyadic Green function should be effectively equal to the transverse dyadic Green function. To illustrate this idea, we can expand the current source of the dipole into transverse and longitudinal parts by
 \begin{align}
@@ -1445,21 +1435,23 @@ Meanwhile, the sum over the mode index can be written as an integral over $ \bet
 \begin{align}
 \sum_{\beta} \rightarrow \frac{L}{2\pi}\int \mathrm{d}\beta.
 \end{align}
-This  transformation comes from the consideration that, under the continuous limit, the propagating guided wave is periodic within the quantization length period $ L $ and the periodicity condition is that $ \beta_n L=2\pi n $, where $ n=1,\,2,\,\ldots $. Hence, the dyadic Green function for the guided modes (Equ.~\eqref{eq:Gganaly}) can be written as
+This  transformation comes from the consideration that, in the continuous limit, the propagating guided wave is periodic within the quantization length period $ L $ and the periodicity condition is that $ \beta_n L=2\pi n $, where $ n=1,\,2,\,\ldots $. Hence, the dyadic Green function for the guided modes (Equ.~\eqref{eq:Gganaly}) can be written as
 \begin{align}
 \mathbf{G}^g(\br,\br') &= \frac{L}{2\pi}\sum_{m,f=\pm 1}\int \mathrm{d}\beta \frac{c^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{(\omega_0+\omega_\beta)(\omega_0-\omega_\beta)}e^{if\beta(z-z')+im(\phi-\phi')}\\
-&\approx -\frac{L}{2\pi}\sum_{m,f=\pm 1}\int \mathrm{d}\beta \frac{c^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{2\omega_0v_g(\beta-\beta_0)}e^{if\beta(z-z')+im(\phi-\phi')}\\
-&= -\frac{L}{2\pi} \! \sum_{m,f=\pm 1}\! 2\pi i\, \mathrm{Res}\left[ \frac{c^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{2\omega_0v_g(\beta-\beta_0)}e^{if\beta(z-z')+im(\phi-\phi')}\right]\\
-&= -\frac{ic^2L}{2\omega_0v_g} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')},
+&\approx -\frac{L}{2\pi}\sum_{m,f=\pm 1}\int \mathrm{d}\beta \frac{c^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{2\omega_0v_g(\beta-\beta_0)}e^{if\beta(z-z')+im(\phi-\phi')}\label{eq:eigGFintegral}\\
+&= -\frac{L}{2\pi} \! \sum_{m,f=\pm 1}\! \pi i\, \mathrm{Res}\left[ \frac{c^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{2\omega_0v_g(\beta-\beta_0)}e^{if\beta(z-z')+im(\phi-\phi')}\right]\\
+&= -\frac{ic^2L}{4\omega_0v_g} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')},
 \end{align}
-where $ \beta_0 $ is the propagation constant with a given $ \omega_0 $ for the input/emission field. By using the relation that 
+where $ \beta_0 $ is the propagation constant with a given $ \omega_0 $ for the input/emission field. The integral path and the equivalence to the residue at $ \beta_0 $ is illustrated in part (c) of Fig.(\ref{fig:integralpaths}). We have ignored the principal value integral part in processing the equivalence due to the discreteness of guided modes. \textcolor{red}{Note: Need to check the factor of $ 1/2 $ more carefully starting from the equation above.} 
+
+By using the relation that 
 \begin{align}
 k_0 &=\frac{\omega_0}{c}\\
-n_{e\!f\!f}&=\sqrt{\varepsilon_{e\!f\!f}}= \frac{c}{v_g}
+n_g&=\sqrt{\varepsilon_g}= \frac{c}{v_g}
 \end{align}
 the dyadic Green function for the guided modes can also be written as
 \begin{align}
-\mathbf{G}^g(\br,\br') &\approx -\frac{in_{e\!f\!f}L}{2k_0} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')}.
+\mathbf{G}^g(\br,\br') &\approx -\frac{in_gL}{4k_0} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')}.
 \end{align}
 We make $ L=1 $ for now, which should be canceled through multiplying with the quantization factor. 
 
@@ -1470,56 +1462,54 @@ Alternatively, one can also use the transformation that
 to derive the dyadic Green function for the guided modes expressions above from Equ.~\eqref{eq:Gganaly}. 
 
 
+The numerical comparison of the two approaches has been done and confirmed that these two approaches match up really well as long as we treat the integration paths under the same physics scenario.  
 
-\textcolor{red}{The problem is that the expression of the dyadic Green function of the guided modes fit from the normal numerical approach should be 
-\begin{align}
-\mathbf{G}^g(\br,\br') &\approx -\frac{i}{2n_{e\!f\!f}\beta_0} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')}.
-\end{align}
-It means that we should make $ L=k_0/\varepsilon_{e\!f\!f}\beta_0 $ which does not have a clear physics meaning. I will check the numerical calculation shortly. 
-}
+\begin{figure}
+\centering\makebox[\textwidth]{
+\includegraphics[width=0.85\textwidth]{./Figs/integratepath_GF}}
+\caption{Integral paths for the dyadic Green function calculations. Part (a) is the integral path for the dipole's free-space field contribution calculation (see, for example, Equ.~\eqref{ET0RC1}). Part (b) is the integral path for the reflected and transmitted field contributions calculation (see, for example, Equ.~\eqref{ET0RC1}). Part (c) is the integral path for the dyadic Green function calculation using the eigenmode decomposition method (see Equ.~\eqref{eq:eigGFintegral}). The integral paths on the left-hand-side (in blue) indicate the backward propagating contributions, while the right-hand-side (in red) parts corresponding to the forward propagating contributions. For the eigenmode decomposition method in part (c), if one choose to use $ f=\pm 1 $ to indicate the propagation direction, then only the $ \beta>0 $ portion of integral path will be applied. }
+\label{fig:integralpaths}
+\end{figure}
 
-\textbf{Calculation of $ v_g $ and $ n_{e\!f\!f} $}:
+As shown in an earlier section, the guided and radiation modes contribution to the dyadic Green function can be identified through the specific choice of integral paths. In Fig.~\ref{fig:integralpaths}, part (a) shows the integral path to calculate the dipole free-space contribution which does not yield guided mode contribution to the total dyadic Green function. Part (b) of the figure shows the loop and real-valued integral paths of the guided and radiation mode divisions to the reflected and transmitted field components. The $ \mathrm{Re}(\beta)<0 $ and $ \mathrm{Re}(\beta)>0 $ parts correspond to the backward and forward propagating contributions, respectively. Part (c) of the figure indicates the integral path using the eigenmode decomposition method in the case that the sign of $ \mathrm{Re}(\beta) $ indicates the propagation directions. Depending on the propagation directions, we should choose the right integral paths for the corresponding methods adopted, and different methods should yield the same result. 
 
-By its definition, the group velocity for a guided mode in a waveguide is given by
+For the decay rate calculation, both forward and backward propagation contributions should be considered. \textcolor{red}{The choice of integral paths seems not as we have analyzed in Fig.~\ref{fig:integralpath}.} 
+
+
+\subsection{Calculation of group velocity and group index of refraction ($ v_g $ and $ n_g $)}
+For a guided mode in a waveguide, the phase index of refraction is defined as
 \begin{align}
-v_g &= \frac{P}{W},
+n_p &= \frac{\beta}{k}.
 \end{align}
-where the total power $ P $ and the energy per unit length stored in the waveguide are defined respectively as
+Correspondingly, the group velocity and group index of refraction for a guided mode in a waveguide can be given by
 \begin{align}
-P &= \int \mathrm{d}\br\!_\perp \langle S(\br\!_\perp)\rangle =\int \mathrm{d} \br\!_\perp I(\br\!_\perp)=\frac{\varepsilon_0 c n_{e\!f\!f}}{2}\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
-W &= \frac{1}{2} \int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2.
-\end{align} 
-In our case, we can reform the integral over the transverse plane into the inside of the nanofiber and outside of the nanofiber parts. That is to say
-\begin{align}
-\int \mathrm{d} \br\!_\perp &= \int_0^{2\pi}\!\!\!\! \mathrm{d} \phi \int_0^a\!\!r\!_\perp \mathrm{d}r\!_\perp + \int_0^{2\pi}\!\!\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp.
+v_g &= \dd{\omega}{\beta},\\
+n_g &= \frac{c}{v_g}=\dd{\beta}{k}.
 \end{align}
-By plugging in the field expression from Equs.~\eqref{Ertcrla} and~\eqref{Ertcrga}, we find the effective index of refraction for the HE11 modes of the nanofiber can be given by
+Therefore, the group velocity and group index of refraction of the $ HE_{11} $ mode can calculated from the eigen function of $ \beta $ (see Appendix A of Ref.~\cite{LeKien2005}). 
+
+In general, the eigen function of $ \beta $ can be expressed as
 \begin{align}
-n_{e\!f\!f} &=\frac{\int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}{\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
-&= \frac{n_1^2\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + n_2^2\int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}
-{\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + \int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
-&= \frac{n_1^2P_1+n_2^2P_2}{P_1+P_2},
+f(h,q,k,\beta) &=0
 \end{align}
-where the power flow or the intensity distribution factors $ P_1 $ and $ P_2 $ can be found by
+with $ h $ and $ q $ are both functions of $ k $ and $ \beta $. 
+We differentiate the equation above with respect to $ \beta $ on both sides, and obtain
 \begin{align}
-\!\!\!\!\! P_1 &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!\mathrm{d}r\!_\perp r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
-&= \frac{\beta^2}{4h^2}\!\left\{(1\!-\! s)^2\!\left[J_0^2(ha)\!+\! J_1^2(ha) \right] \!+\!(1\!+\!s)^2\!\left[J_2^2(ha)\!-\!J_1(ha)J_3(ha) \right]\right\}\nonumber\\
-&\quad +\frac{1}{2}\left[J_1^2(ha)-J_0(ha)J_2(ha) \right] \\
-\!\!\!\!\! P_2 &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_a^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
-&= \frac{\beta^2J_1^2(ha)}{4q^2K_1^2(qa)}\!\left\{\phantom{\frac{1}{1}}\!\!\!\!(1\!-\!s)^2\!\left[K_1^2(qa)\!-\!K_0^2(qa) \right]\right.\nonumber\\
-&\quad\left. \!+(1\!+\!s)^2\!\!\left[K\!_1\!(qa)K\!_3\!(qa)\!-\! K_2^2\!(qa) \right]\!+\!\frac{2q^2}{\beta^2}\!\!\left[K\!_0\!(qa)K\!_2\!(qa)\!-\!K_1^2\!(qa) \right]  \right\}.
+\dd{f}{\beta} &= \pp{f}{h} \left(\pp{h}{k}\dd{k}{\beta}+\pp{h}{\beta} \right) + \pp{f}{q}\left(\pp{q}{k}\dd{k}{\beta}+\pp{q}{\beta} \right) +\pp{f}{k}\dd{k}{\beta}+\pp{f}{\beta}=0\\
+\Rightarrow & \left( \pp{f}{h}\pp{h}{k}+\pp{f}{q}\pp{q}{k}+\pp{f}{k} \right)\dd{k}{\beta} = -\left(\pp{f}{h}\pp{h}{\beta}+\pp{f}{q}\pp{q}{\beta}+\pp{f}{\beta} \right)
 \end{align}
-Now that, the group velocity can be retrieved through
 \begin{align}
-v_g&=\frac{c}{n_{e\!f\!f}}.
+\Rightarrow &\quad\quad n_g = \dd{\beta}{k} = -\frac{\pp{f}{h}\pp{h}{k}+\pp{f}{q}\pp{q}{k}+\pp{f}{k}}
+{\pp{f}{h}\pp{h}{\beta}+\pp{f}{q}\pp{q}{\beta}+\pp{f}{\beta}}.
 \end{align}
 
-Also, to normalize the guided mode functions, we can define the normalization factor to be~\cite{LeKien2005}
+Physically, the group index of refraction indicates the waveguide dispersion for a given propagating mode. Here, we can ignore the material dispersion due to the small response delay of the silica molecules of the waveguide substrate. Since the waveguide dispersion is merely a property of the waveguide, the presence of the radiating atom does not affect the group index of refraction at all (have checked numerically through solving the eigen function of $ \beta $ in presence of an atom). 
+
+From the perspective of energy flowing, the group velocity can also be given by
 \begin{align}
-N_g &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp\,  n^2(\br\!_\perp)|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
-&= 2\pi A^2 a^2 (n_1^2P_1 + n_2^2P_2),
+v_g&=\frac{P}{W}.
 \end{align}
-where the factor $ A $ is defined in Equ.~\eqref{eq:A} related to the input power. 
+The physics interpretation of group and phase velocity of a waveguide mode can be found in the notes on \textit{Group velocity of the nanofiber}. The effective zig-zag ray model is also described in the notes for understanding the mechanism of group and phase index of refractions. For our nanofiber case, the $ D_2 $ transition line of Cs atoms does not have a strong enhancement of group index of refraction for the guided mode, compared to the phase index of refraction. The $ D_1 $ line has a relatively strong enhancement of group index since the wave can penetrate into the clad much deeper compared to the $ D_2 $ line case. 
 
 \section{Phase shift and polarizability transformation}
 Using the results for the dyadic Green function of the guided modes, one can write the output electric field due to the guided modes (from Equ.~\eqref{eq:EoutG}) as 
@@ -1547,32 +1537,32 @@ C_{mf} &= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\math
 \end{align}
 Using the transverse mode approximation of the dyadic Green function, these coefficients become
 \begin{align}
-C_{mf} &= i2\pi k_0 n_{e\!f\!f}\alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp,z)\cdot\!\!\!\!\!\! \sum_{f',m'=\pm 1}\!\!\!\! \left[\mathbf{u}_{m'}^{f'}(\mathbf{r}\!_\perp,z){\mathbf{u}^{f'}_{m'}}^*(\mathbf{r}^\prime\!_\perp,z') \right]\!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp,z')\\
-&= i2\pi k_0 n_{e\!f\!f}\alpha \sum_{f'=\pm 1} \mathbf{u}^*_m(\br'_{\!\perp})\cdot \mathbf{u}_1(\br'_{\!\perp})e^{i\beta_0 (f'-f)(z-z')}.
+C_{mf} &= i\pi k_0 n_{e\!f\!f}\alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp,z)\cdot\!\!\!\!\!\! \sum_{f',m'=\pm 1}\!\!\!\! \left[\mathbf{u}_{m'}^{f'}(\mathbf{r}\!_\perp,z){\mathbf{u}^{f'}_{m'}}^*(\mathbf{r}^\prime\!_\perp,z') \right]\!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp,z')\\
+&= i\pi k_0 n_{e\!f\!f}\alpha \sum_{f'=\pm 1} \mathbf{u}^*_m(\br'_{\!\perp})\cdot \mathbf{u}_1(\br'_{\!\perp})e^{i\beta_0 (f'-f)(z-z')}.
 \end{align}
 Notice that, in the sum over $ f'=\pm 1 $, the fast beating term will be averaged out when the resolution along $ z $ is big. Hence, the projection coefficients can be written as 
 \begin{align}
-C_{mf} &\approx C_m\equiv  i2\pi k_0 n_{e\!f\!f}\alpha  \mathbf{u}^*_m(\br'_{\!\perp})\cdot \mathbf{u}_1(\br'_{\!\perp})\\
-&= i2\pi k_0 n_{e\!f\!f}\alpha  \mathbf{u}^*_m(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i(1-m)\phi'}.
+C_{mf} &\approx C_m\equiv  i\pi k_0 n_{e\!f\!f}\alpha  \mathbf{u}^*_m(\br'_{\!\perp})\cdot \mathbf{u}_1(\br'_{\!\perp})\\
+&= i\pi k_0 n_{e\!f\!f}\alpha  \mathbf{u}^*_m(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i(1-m)\phi'}.
 \end{align}
 
 Therefore, the output $ m=1 $ HE11 mode component in presence of the atom in the forward direction is then given by
 \begin{align}
 \mathbf{E}_+(\br) &= (1+C_{11})E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
-&=\left[1 +i2\pi k_0 n_{e\!f\!f}\alpha  | \mathbf{u}_1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
-&= \exp\left[i2\pi k_0 n_{e\!f\!f}\alpha  | \mathbf{u}_1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
+&=\left[1 +i\pi k_0 n_{e\!f\!f}\alpha  | \mathbf{u}_1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
+&= \exp\left[i\pi k_0 n_{e\!f\!f}\alpha  | \mathbf{u}_1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
 &= te^{i\delta\phi}E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br), 
 \end{align}
 where the factor change of the mode's amplitude is 
 \begin{align}
-t=\exp\left[\Im[C_{11}]\right]=\exp\left[ -2\pi k_0 n_{e\!f\!f}\Im[\alpha]  | \mathbf{u}_1(r'_{\!\perp})|^2 \right]
+t=\exp\left[\Im[C_{11}]\right]=\exp\left[ -\pi k_0 n_{e\!f\!f}\Im[\alpha]  | \mathbf{u}_1(r'_{\!\perp})|^2 \right]
 \end{align}
 and the phase shift is
 \begin{align}
 \delta\phi &= \Re[C_{11}]\\
-&=2\pi k_0 n_{e\!f\!f}\Re[\alpha]  | \mathbf{u}_1(r'_{\!\perp})|^2\\
-&= 2\pi \Re[\alpha] \frac{\omega_0}{v_g}  | \mathbf{u}_1(r'_{\!\perp})|^2\\
-&= 2\pi \Re[\alpha] \frac{\omega_0}{v_gA'_{e\!f\!f}},
+&=\pi k_0 n_{e\!f\!f}\Re[\alpha]  | \mathbf{u}_1(r'_{\!\perp})|^2\\
+&= \pi \Re[\alpha] \frac{\omega_0}{v_g}  | \mathbf{u}_1(r'_{\!\perp})|^2\\
+&= \pi \Re[\alpha] \frac{\omega_0}{v_gA'_{e\!f\!f}},
 \end{align}
 where the symbols $ \Im[\cdot] $ and $ \Re[\cdot] $ indicate the imaginary and real parts of the variable inside; the effective area at the atom position defined as $ A'_{e\!f\!f}=1/| \mathbf{u}_1(r'_{\!\perp})|^2 $. 
 
@@ -1607,7 +1597,7 @@ The phase shift is then
 
 Similarly, the field goes into the forward propagating $ m=-1 $ HE11 mode has the form of 
 \begin{align}
-\mathbf{E}_{-}(\br) &=  i2\pi k_0 n_{e\!f\!f}\alpha  \mathbf{u}^*_{-1}(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i2\phi'}E_0n_{e\!f\!f}\mathbf{u}_{-1}^1(\br).
+\mathbf{E}_{-}(\br) &=  i\pi k_0 n_{e\!f\!f}\alpha  \mathbf{u}^*_{-1}(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i2\phi'}E_0n_{e\!f\!f}\mathbf{u}_{-1}^1(\br).
 \end{align}
 $ \mathbf{E}_{+}(\br) $ and $\mathbf{E}_{-}(\br)$ defines the transformation of polarization of the light. 
 
