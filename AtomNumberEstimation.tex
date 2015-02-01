@@ -1,5 +1,7 @@
 \chapter{Atom number estimation for Clock-state atoms surrounding a nanofiber}
-In the nanofiber dispersively coupled atom ensemble, the Hamiltonian can be rewritten as below using the Stokes operators, $ \hat{S}_q $, and collective spin operators, $ \hat{J}_q $, with $ q=0,1,2,3 $:
+In the case that a nanofiber dispersively coupled to an atomic ensemble, if we ignore tensor 
+polarizability contributions, the Hamiltonian can be rewritten as below using the Stokes operators, $ 
+\hat{S}_q $, and collective spin operators, $ \hat{J}_q $, with $ q=0,1,2,3 $:
 \begin{align}
 H_{\rm eff} 
 =\frac{\hbar}{\tau} \Big\{ & \left[ \big( \chi_{H,\uparrow} + \chi_{H,\downarrow}\big) + \big(\chi_{V,\uparrow} + \chi_{V,\downarrow}\big) \right] \hat{J}_0 \hat{S}_0 \nonumber \\
@@ -7,11 +9,32 @@ H_{\rm eff}
 + & \left[ \big( \chi_{H,\uparrow} - \chi_{H,\downarrow}\big) + \big(\chi_{V,\uparrow} - \chi_{V,\downarrow} \big) \right] \hat{J}_3 \hat{S}_0 \nonumber \\
 + & \left[ \big( \chi_{H,\uparrow} - \chi_{H,\downarrow}\big) - \big(\chi_{V,\uparrow} - \chi_{V,\downarrow} \big) \right]  \hat{J}_3 \hat{S}_1\Big\}.\label{eq:JScoupling}
 \end{align}
-Here, we assume the detuning of the optical field is much larger than the natural linewidth of the coupled atoms, and hence have ignored the tensor contribution of the atomic polarizability. We have also restricted the atomic ground state within the $ 6S_{1/2} $ $ F=3 $ ($ \ket{\downarrow} $) and $ F=4 $ ($ \ket{\uparrow} $) clock state space\index{state!clock state} which rules out the vector contribution of the atomic polarizability. Therefore, we are only considering the scalar polarizability effect of the atoms for this problem. Effectively, the ground states span into a psuedo-spin space\index{psuedo spin}, and can be used for QIP with the manipulation of light. 
+Here, we assume the detuning of the optical field is much larger than the natural linewidth of the 
+coupled atoms so that we can ignore the tensor contribution of the atomic polarizability. We have also 
+restricted the atomic ground state within the $ 6S_{1/2} $ $ F=3 $ ($ \ket{\downarrow} $) and $ F=4 $ ($ 
+\ket{\uparrow} $) clock state space\index{state!clock state} which rules out the vector contribution of 
+the atomic polarizability. Therefore, we are only considering the scalar polarizability effect of the atoms 
+for this problem. Effectively, the ground states span into a psuedo-spin space\index{psuedo spin}, and 
+can be used for QIP with the manipulation of light. 
 
-As has been discussed in the 2010 nanofiber proposal, if we want to estimate the state of the collective spins, we need to estimate the number of atoms sitting in the $ \ket{\uparrow} $ and $ \ket{\downarrow} $ states employing a dispersive QND measurement technique which has been well developed for the free-space atomic ensembles. For our system, the forth term of the Hamiltonian in Equ.~\eqref{eq:JScoupling} empowers us the possibility of measuring the atomic states without destroying them with an $ \hat{S}_3=\frac{1}{2i}(\hat{a}_H^\dagger\hat{a}_V - \hat{a}_V^\dagger\hat{a}_H) $ homodyne measurement. Yet, the third term of the Hamiltonian becomes a noisy term that brings in photon number noise into the measurement result. In the early proposal, we thought there is a magic wavelength for the probe light which allows us totally remove the third term. In the following sections, we will see that this magic wavelength does not exist for our quantum state estimation purpose. We will also see that a two-color probe setup might be useful to achieve the goal of the high-resolution atom number measurement, the sensitivity of which has been experimentally demonstrated~\cite{Beguin2014}. An approach to calculating the squeezing parameters will also be discussed.
+As has been discussed in the 2010 nanofiber proposal, if we want to estimate the state of the collective 
+spins, we need to estimate the number of atoms sitting in the $ \ket{\uparrow} $ and $ \ket{\downarrow} 
+$ states employing a dispersive QND measurement technique which has been well developed for the 
+free-space atomic ensembles. For our system, the forth term of the Hamiltonian in 
+Equ.~\eqref{eq:JScoupling} empowers us the possibility of measuring the atomic states without 
+destroying them with an $ \hat{S}_3=\frac{1}{2i}(\hat{a}_H^\dagger\hat{a}_V - 
+\hat{a}_V^\dagger\hat{a}_H) $ homodyne measurement. Yet, the third term of the Hamiltonian becomes 
+a noisy term that brings in photon number noise into the measurement result. In the early proposal, we 
+thought there is a magic wavelength for the probe light which allows us totally remove the third term. 
+In the following sections, we will see that this magic wavelength does not exist for our quantum state 
+estimation purpose with only scalar polarizability considered. We will also see that a two-color probe 
+setup might be useful to 
+achieve the goal of the high-resolution atom number measurement, the sensitivity of which has been 
+experimentally demonstrated~\cite{Beguin2014}. An approach to calculating the squeezing parameters 
+will also be discussed. A more general way to calculate the coupling strengths and magic frequencies 
+will be given in the end of this chapter.
 
-\section{Magic wavelength does not exist using a simple strategy}
+\section{Magic wavelength does not exist with merely scalar polarizability using a simple strategy}
 From the definition of the coupling strength of various $ \chi $'s (Equs.~\eqref{chiHUp} through~\eqref{eq:AeffV}), one can show that, for $ D_1 $ line, 
 \begin{align}
 \chi_H \equiv \chi_{H,\uparrow} - \chi_{H,\downarrow} &= \frac{1}{3}\sum_{F'} \left(\frac{\sigma_0}{A_{\rm eff}^H} \right) \left(\frac{\Gamma}{4\Delta_{4F'}} - \frac{\Gamma}{4\Delta_{3F'}} \right) \nonumber\\
@@ -25,7 +48,14 @@ To find the "\textit{magic wavelength}", we need to make the coupling strength f
 \begin{align}
 \chi_H+\chi_V=\frac{1}{3}\left(\Gamma_H + \Gamma_V \right)\Delta_- = 0.
 \end{align}
-We can see that $ \frac{1}{3}\left(\Gamma_H + \Gamma_V \right) $ is always positive and does not depending on wavelength. Therefore, we have to let $ \Delta_-=0 $ to find the "\textit{magic wavelength}"\index{magic wavelength}. From the definition of $ \chi_H $ and $ \chi_V $ (Equs.~\eqref{eq:chiH} and~\eqref{eq:chiV}) and the Hamiltonian (Equ.~\eqref{eq:JScoupling}), we can find that $ \chi_H=\chi_V=0 $ and the forth term of the Hamiltonian, which is what we want to keep, also becomes zero. Hence, via identifying a magic wavelength and to remove the photon flux noise in the measurement is invalid for our initial design. Maybe we can say, the \textit{magic wavelength} does not exist for one-color probe configuration. 
+We can see that $ \frac{1}{3}\left(\Gamma_H + \Gamma_V \right) $ is always positive and does not 
+depending on wavelength. Therefore, we have to let $ \Delta_-=0 $ to find the "\textit{magic 
+wavelength}"\index{magic wavelength}. From the definition of $ \chi_H $ and $ \chi_V $ 
+(Equs.~\eqref{eq:chiH} and~\eqref{eq:chiV}) and the Hamiltonian (Equ.~\eqref{eq:JScoupling}), we can 
+find that $ \chi_H=\chi_V=0 $ and the forth term of the Hamiltonian, which is what we want to keep, also 
+becomes zero. Hence, via identifying a magic wavelength and to remove the photon flux noise in the 
+measurement is invalid for our initial design. Maybe we can say, the \textit{magic wavelength} does not 
+exist for one-color probe configuration and by only considering scalar polarizability effects. 
 
 This analytical conclusion has been numerically verified. 
 
@@ -58,12 +88,12 @@ With the knowledge of the equivalent dipole orientation, we can easily calculate
 \begin{figure}
 \begin{minipage}{.91\linewidth}
 \centering
-\subfloat[]{\label{squeezingparaTerm3}\includegraphics[scale=0.75]{./Figs/squeezingparaTerm3}}
+\subfloat[]{\label{squeezingparaTerm3}\includegraphics[scale=0.55]{./Figs/squeezingparaTerm3}}
 \end{minipage}
 \par\medskip
 \begin{minipage}{.91\linewidth}
 \centering
-\subfloat[]{\label{squeezingparaTerm4}\includegraphics[scale=0.75]{./Figs/squeezingparaTerm4}}
+\subfloat[]{\label{squeezingparaTerm4}\includegraphics[scale=0.55]{./Figs/squeezingparaTerm4}}
 \end{minipage}
 \caption{Squeezing parameters associated to the third and forth terms of the Hamiltonian. The colormap shows the value of $ -10\log_{10}(\xi/N_LN_A) $. }
 \label{fig:squeezingparaTerms}
@@ -96,4 +126,90 @@ where $ \Delta_-^{1/2} $ are the detuning terms due to the two colors of the pro
 \end{align}
 Now that, the magic wavelengths canceling the third term of the Hamiltonian may not result in a zero coupling strength for the forth term of the Hamiltonian due to the inseparability of decay rates and detuning factors. Using differential speed of group velocity may be the key for the QUANTOP group in Denmark to success along this line~\cite{Beguin2014}. 
 
-\textcolor{blue}{Initially, I thought we might be able to use two colors both close to the $ D_1 $ line, but the difference of the dispersive responses may be too small to be detected. Also, I did not consider the tensor and vector polarizabilities for a more general case, which may have some difference. I would also think more about the quantum correlation theory for our system. }
+\textcolor{blue}{Initially, I thought we might be able to use two colors both close to the $ D_1 $ line, but 
+the difference of the dispersive responses may be too small to be detected. Also, I did not consider the 
+tensor and vector polarizabilities for a more general case, which may have some difference. I would also 
+think more about the quantum correlation theory for our system. }
+
+\section{Magic wavelength exists by including tensor polarizability effect}
+Now, if we include the tensor polarizability effect into the Hamiltonian, and use the $ x $-axis as the 
+quantization axis, the Hamiltonian can still be given in the form of Equ.~\ref{eq:JScoupling} yet with a 
+different definition of the coupling strengths:
+\begin{align}
+\chi_{H,\uparrow/\downarrow} & \equiv \chi_{H,F} =- \frac{2\pi \omega_0}{v_g} \bra{F,0} 
+	\mathbf{u}^*_H(r^\prime\!_\perp, \phi') \cdot \tensor{\alpha} \cdot 
+	\mathbf{u}_{H}(r^\prime\!_\perp, 
+	\phi') \ket{F,0} \\
+	& =- \frac{2\pi \omega_0}{v_g} \sum_{F'} \sum_q \alpha_0\left( F,F'  \right) |\mathbf{e}_q \cdot 
+	\mathbf{u}_H^*(r^\prime\!_\perp,\phi')|^2 |o^{J'F'}_{JF} |^2 
+	|C^{F 0;1q}_{F' q}|^2\\
+	& \approx  \frac{1}{2} \left( \sigma_0 n_g  \right) \sum_{F'} \sum_q\left( 
+		\frac{\Gamma}{2 
+		\left(\Delta_{F,F'}+i\Gamma/2\right) }  \right) |\mathbf{e}_q \cdot 
+		\mathbf{u}_H^*(r^\prime\!_\perp,\phi')|^2 |o^{J'F'}_{JF} |^2 
+		|C^{F 0;1q}_{F' q}|^2,\\
+\chi_{V,\uparrow/\downarrow} & \equiv \chi_{V,F} =- \frac{2\pi \omega_0}{v_g} \bra{F,0} 
+	\mathbf{u}^*_V(r^\prime\!_\perp, \phi') \cdot \tensor{\alpha} \cdot 
+	\mathbf{u}_{V}(r^\prime\!_\perp, 
+	\phi') \ket{F,0} \\
+	& =- \frac{2\pi \omega_0}{v_g} \sum_{F'} \sum_q \alpha_0\left( F,F'  \right) |\mathbf{e}_q \cdot 
+	\mathbf{u}_V^*(r^\prime\!_\perp,\phi')|^2 |o^{J'F'}_{JF} |^2 
+	|C^{F 0;1q}_{F' q}|^2\\
+	& \approx  \frac{1}{2} \left( \sigma_0 n_g  \right) \sum_{F'} \sum_q\left( 
+		\frac{\Gamma}{2 
+		\left(\Delta_{F,F'}+i\Gamma/2\right) }  \right) |\mathbf{e}_q \cdot 
+		\mathbf{u}_V^*(r^\prime\!_\perp,\phi')|^2 |o^{J'F'}_{JF} |^2 
+		|C^{F 0;1q}_{F' q}|^2,\\
+\end{align}
+where we have approximated $ \lambda_{J'}\approx \lambda = \frac{2\pi c}{\omega_0} $.  
+
+The magic wavelengths/frequencies using the one-probe configuration can be found close to the $ 
+F=3\rightarrow F'=3 $ and $ F=4\rightarrow F'=4 $ two transitions.
+The spin squeezing parameter can be calculated as has been discussed earlier.
+Plots for the coupling strengths and magic frequencies can be found in 
+Figs.~\ref{fig:MagicwavelengSqueezingpara},~\ref{fig:squeezingparaTerms_total} 
+and~\ref{fig:chi34_total}.
+
+\begin{figure}
+\begin{minipage}{.91\linewidth}
+\centering
+\subfloat[]{\label{MagicwavelengSqueezingpara1}\includegraphics[scale=0.65]{./Figs/MagicwavelengSqueezingpara1}}
+\end{minipage}
+\par\medskip
+\begin{minipage}{.91\linewidth}
+\centering
+\subfloat[]{\label{MagicwavelengSqueezingpara2}\includegraphics[scale=0.65]{./Figs/MagicwavelengSqueezingpara2}}
+\end{minipage}
+\caption{The magic frequencies (left axis and dashed lines) and corresponding squeezing parameters 
+(right axis and solid lines) close to the $ 
+F=3\rightarrow F'=3 $ and $ F=4\rightarrow F'=4 $ transition lines. The squeezing parameters are 
+calculated for per photon per atom squeezing. }\label{fig:MagicwavelengSqueezingpara}
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{.91\linewidth}
+\centering
+\subfloat[]{\label{squeezingparaTerm3}\includegraphics[scale=0.55]{./Figs/squeezingparaTerm3_total}}
+\end{minipage}
+\par\medskip
+\begin{minipage}{.91\linewidth}
+\centering
+\subfloat[]{\label{squeezingparaTerm4}\includegraphics[scale=0.55]{./Figs/squeezingparaTerm4_total}}
+\end{minipage}
+\caption{Squeezing parameters associated to the third and forth terms of the Hamiltonian. The 
+colormap shows the value of $ -10\log_{10}(\xi/N_LN_A) $.  All atomic polarizability components are 
+included. }
+\label{fig:squeezingparaTerms_total}
+\end{figure}
+
+\begin{figure}
+\begin{minipage}{.91\linewidth}
+\centering
+{\includegraphics[scale=0.75]{./Figs/chi34_total}}
+\end{minipage}
+\caption{The coupling strengths for the third ($ \chi_3 $) and forth ($ \chi_4 $) terms of the Hamiltonian 
+expressed in Equ.~\eqref{eq:JScoupling} for the $ D_1 $ line transitions associated with the clock states. 
+All atomic polarizability components are included. The stars indicate where the magic frequencies are 
+located.} 
+\label{fig:chi34_total}
+\end{figure}
