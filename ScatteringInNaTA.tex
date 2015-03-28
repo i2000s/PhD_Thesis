@@ -179,7 +179,7 @@
 %\newcommand{\Tr}{\mbox{Tr}}
 \newcommand{\red}{\color{red}}
 \newcommand{\blue}{\color{blue}}
-
+\newcommand{\tensor}[1]{\boldsymbol{#1}}
 
 
 % % % % % % % % % % % % % % % % % % %
@@ -413,7 +413,11 @@ which includes the modification from the incident field.
 
 By solving the free-space dipole radiation problem, the imaginary part of the free-space Green function can be given by
 \begin{align}
-\Im\left[\mathbf{G}_0(\br',\br') \right] =\frac{2}{3}k^3 \mathbf{I} \approx \frac{2}{3}k^3_0\mathbf{I}.
+\mathrm{Im}\left[ \mathbf{G}^{(0)} (\br^\prime\!_\perp, \br^\prime\!_\perp) \right] &= \mathrm{Im} 
+\left[ \mathbf{G}^{rad}_{(0)}(\br'\!_\perp,\br'\!_\perp)\right]  = -\frac{ 
+k}{6\pi}\eye = -\frac{ 
+\omega}{6\pi c}\eye
+%\Im\left[\mathbf{G}_0(\br',\br') \right] =\frac{2}{3}k^3 \mathbf{I} \approx \frac{2}{3}k^3_0\mathbf{I}.
 \end{align}
 Hence the natural linewidth of an atom can be given by
 \begin{align}
@@ -2109,6 +2113,184 @@ A_{ef\!f}^H &= \frac{1}{n_g|\mathbf{u}_{H}(r^\prime\!\!_\perp,\phi')|^2}\\
 A_{ef\!f}^V &= \frac{1}{n_g | \mathbf{u}_{V}(r^\prime\!\!_\perp,\phi')|^2}.\label{eq:AeffV}
 \end{align}
 Considering the relationship between $ \Gamma_{1D} $ and $ \Gamma_{vac} $ (the same as the $ \Gamma $ above) from Equ.~\eqref{Gamma1DGammavac}, Equs.~\eqref{chiHUp} and~\eqref{chiHDown} are equivalent to Equ.~\eqref{phaseshiftGamma1D} derived from the Green function method with scalar polarizability. The scalar polarizability factor of $ C_{j',f',f}^{(0)}=\frac{1}{3} $ in Equ.~\eqref{chiHUp} through Equ.~\eqref{chiVDown} indicates the possibility of transitions back to the clock state. This factor can be absorbed into the atomic scattering cross section by treating the scattering cross section as an average over all possible quantum transitions. 
+
+\subsection{Full Hamiltonian using Clebsch-Gordan coefficients}
+From Equ.~\eqref{Eq::LightShiftHam}, the effective Hamiltonian of the light-atom interaction can be given by
+\begin{align}  
+	H_{\rm eff}   = \frac{2\pi \hbar \omega_0}{ v_g \tau} &\Big( \mathbf{u}^*_H(r^\prime\!_\perp, \phi') 
+	\!\cdot\! 
+	\tensor{\alpha} \!\cdot\! \mathbf{u}_{H}(r^\prime\!_\perp, \phi') \hat{a}\dg_H \hat{a}_H +  
+	\mathbf{u}^*_V(r^\prime\!_\perp, \phi')\! \cdot\! 
+	\tensor{\alpha} \!\cdot\! \mathbf{u}_{V}(r^\prime\!_\perp, \phi') \hat{a}\dg_V \hat{a}_V \nonumber\\
+	&\!\! + \mathbf{u}^*_H(r^\prime\!_\perp, \phi')\! \cdot\! \tensor{\alpha}\! \cdot\! 
+	\mathbf{u}_{V}(r^\prime\!_\perp, \phi') \hat{a}\dg_H \hat{a}_V 
+	+ \mathbf{u}^*_V(r^\prime\!_\perp, \phi') \!\cdot\! \tensor{\alpha}\! \cdot\! 
+	\mathbf{u}_{H}(r^\prime\!_\perp, 
+	\phi') \hat{a}\dg_V \hat{a}_H 
+	\Big).  \label{eq:LightShiftHam_CG}
+\end{align}
+The atomic polarizability tensor $\tensor{\alpha}$ is composed of a dyad of vector dipole operators,    
+\begin{align}
+	\tensor{\alpha} & =  - \frac{1}{\hbar}  \sum_{F,F'} \frac{ \mathbf{d}_{FF'} \mathbf{d}^\dagger_{F'F} 
+	}{\Delta_{FF'}+i\frac{\Gamma}{2} } \\
+		& = \sum_{q,q'}  \sum_{F,F'} \sum_{m_1, m_2, m'} \!\!\!\!\!\! \alpha_0(F,F') \mathbf{e}_q \otimes 
+		\mathbf{e}^*_{q'} | o^{J'F'}_{JF} |^2 C^{Fm_2;1q}_{F'm'} C^{Fm_1;1q'}_{F'm'} \op{F m_2}{F m_1},
+\end{align}
+with the vector raising  dipole operator,
+\begin{align}
+	\mathbf{d}^\dagger_{F'F} =  \bra{P_{J'}}| d |\ket{S_{1/2}} \sum_q \sum_{m,m'} \mathbf{e}_q^* 
+	o^{J'F'}_{JF} C^{Fm;1q}_{F'm'} \op{F'm'}{Fm}
+\end{align}
+where $o^{J'F'}_{JF}$ is the oscillator strength from Ref. \cite{Deutsch2010a} and $C^{Fm;1q}_{F'm'} 
+\equiv 
+\ip{F'm'}{Fm;1q}$ is a Clebsch-Gordan coefficient. 
+Notice that $m' = m_1 + q'$ and $m' = m_2 + q$ and thus
+\begin{align}
+	m_2 - m_1 = q-q'.
+\end{align}
+The characteristic polarizability is
+\begin{align} \label{eq:CharacteristicPolarizability}
+	\alpha_0(F,F') = - \frac{ |\bra{P_{J'}}| d |\ket{S_{1/2}}|^2 }{\hbar (\Delta_{F,F'}+i\frac{\Gamma}{2})} = - 
+	\frac{3 
+	\lambda_{J'}^3}{32 \pi^3} \frac{\Gamma}{\Delta_{F,F'}+i\frac{\Gamma}{2}}.
+\end{align}
+and the detuning is defined as
+\begin{align}
+	\Delta_{FF'} \equiv \omega - (\omega_{F'} - \omega_{F}).
+\end{align}
+Due to the hyperfine ground splitting in Cs$^{133}$ of approximately 9.2 GHz, the characteristic 
+polarizabilities for the two ground hyperfine manifolds, \erf{eq:CharacteristicPolarizability}, can in 
+general have different magnitudes and signs.  Implied in the expression above is that we have chosen a 
+$J'$ transition - generally $S_{1/2} \rightarrow P_{1/2}$ ($D_1$) or $S_{1/2} \rightarrow P_{3/2}$ ($D_2$), 
+which are 
+separated by tens of THz and thus quite resolvable.   
+
+Now suppose that rather than using the magnetic sublevels within a single ground hyperfine state $F$ as 
+in Ref.~\cite{Deutsch2010a}, we begin with a dispersive interface defined on the $m=0$ ``\textit{clock}" states 
+between the $F=3$ and $F=4$ hyperfine states.  To first order such states are insensitive to ambient 
+magnetic field fluctuations.  In the clock-state subspace, we designate the qubit states
+\begin{align} 
+	\ket{\uparrow} &\equiv \ket{F = 4,m_F = 0} \\
+ 	\ket{\downarrow} &\equiv \ket{F = 3,m_F=0}.
+\end{align}
+The light shift Hamiltonian, \erf{eq:LightShiftHam_CG}, can then be expressed in this basis by finding 
+the 
+matrix elements between our relevant states.  Since the atomic polarizability tensor is block-diagonal in 
+the ground hyperfine states, we need only consider coupling between the states within the same 
+manifold.  
+For instance, we may have a $H-V$ mode crossing term like
+\begin{align} \label{eq:ClockMatrixElement}
+	&\bra{F,0} \mathbf{u}^*_H(r^\prime\!_\perp, \phi') \cdot \tensor{\alpha} \cdot 
+	\mathbf{u}_{V}(r^\prime\!_\perp, \phi') \ket{F,0}\nonumber\\
+  =& 
+	\sum_{F'} \sum_{m'} \sum_{q, q'} \alpha_0(F,F') \big( \mathbf{e}_q \cdot 
+	\mathbf{u}^*_H(r^\prime\!_\perp, \phi') \big) 
+	\big( \mathbf{e}^*_{q'} \cdot \mathbf{u}_V(r^\prime\!_\perp, \phi') \big) |o^{J'F'}_{JF} |^2 C^{F 0;1 
+	q}_{F' m'} C^{F 
+	0;1q'}_{F' m'} \\
+ = & \sum_{F'} \sum_{q} \alpha_0(F,F') \big( \mathbf{e}_q \cdot \mathbf{u}^*_H(r^\prime\!_\perp, \phi') 
+	\big) \big( 
+	\mathbf{e}^*_{q} \cdot \mathbf{u}_V(r^\prime\!_\perp, \phi') \big) |o^{J'F'}_{JF} |^2 C^{F 0;1q}_{F' q} 
+	C^{F 0;1q}_{F' q}.
+\end{align}
+since $q+q' = 0$ and for the clock states $m' = q'$. By the nature of the nanofiber modes, if we choose 
+$V$-mode polarization axis or the $y$-axis to be the quantization axis, then with the atoms positioned 
+along the $x$-axis, the crossing term above always cancels. The same conclusion casts to other mode crossing 
+terms. In fact, the conclusion above does not depend on the choice of basis. We can show that by 
+rewriting the equations above as
+\begin{align}
+&\bra{F,0} \mathbf{u}^*_H(r^\prime\!_\perp, \phi') \cdot \tensor{\alpha} \cdot 
+	\mathbf{u}_{V}(r^\prime\!_\perp, \phi') \ket{F,0}\nonumber\\
+=& \mathbf{u}^*_H(r^\prime\!_\perp, 
+ \phi')\cdot \left[  \sum_{q} \sum_{F'}\alpha_0(F,F') 
+   |o^{J'F'}_{JF} |^2 C^{F 	0;1q}_{F' q} C^{F 0;1q}_{F' q}
+     	  \mathbf{e}_q \mathbf{e}^*_{q}  \right]\cdot \mathbf{u}_V(r^\prime\!_\perp, \phi') \\
+=& \mathbf{u}^*_H(r^\prime\!_\perp,  \phi')\cdot \boldsymbol{\alpha}^{F0;F0}]\cdot 
+\mathbf{u}_V(r^\prime\!_\perp, \phi') \\
+=& \tr\left[ \left(  \mathbf{u}_V(r^\prime\!_\perp, \phi')  \mathbf{u}^*_H(r^\prime\!_\perp,  \phi')\right)
+\cdot  \boldsymbol{\alpha}^{F0;F0} \right],
+\end{align}
+where $  \boldsymbol{\alpha}^{F0;F0} = \bra{F,0}\boldsymbol{\alpha}\ket{F,0} = \sum_{q} 
+\sum_{F'}\alpha_0(F,F') 
+   |o^{J'F'}_{JF} |^2 C^{F 	0;1q}_{F' q} C^{F 0;1q}_{F' q}
+     	  \mathbf{e}_q \mathbf{e}^*_{q} $ is the atomic 
+polarizability tensor restricted to the $ (F,m_F=0) $ atomic space. The first block inside of the big bracket 
+is a dyad. Obviously, the result as a trace does not depend on how we rotate the basis inside. 
+% by 
+%$\tr\left[ \mathbf{P} \left(  \mathbf{u}_V(r^\prime\!_\perp, \phi')  \mathbf{u}^*_H(r^\prime\!_\perp,  
+%\phi')\right) \mathbf{P}^{-1}
+%\cdot \mathbf{P}  \boldsymbol{\alpha}^{F0;F0}\mathbf{P}^{-1} \right]  $, where $ \mathbf{P} $ is the 
+%rotation matrix. 
+ 
+We stick to the choice of quantization axis used above, and have
+\begin{align}
+H_{\rm eff} & = \frac{ \hbar }{ \tau}\Big( \chi_{H,\uparrow}\op{\uparrow}{\uparrow} +  
+\chi_{H,\downarrow} \op{\downarrow}{\downarrow} \Big) \hat{a}_H\dg \hat{a}_H \nonumber\\
+&\quad +  \frac{ \hbar }{ \tau} \Big( \chi_{V,\uparrow}\op{\uparrow}{\uparrow} +  \chi_{V,\downarrow} 
+\op{\downarrow}{\downarrow} \Big) \hat{a}_V\dg \hat{a}_V  ,
+\end{align}
+where the coupling strengths are defined as
+\begin{align}
+\chi_{H,\uparrow} &=  -\frac{2\pi\omega_0}{v_g} \bra{F=4,m=0} 
+\mathbf{u}^*_{H}(r^\prime\!\!_\perp,\phi') \!\cdot\!\tensor{\alpha}\!\cdot\! 
+\mathbf{u}_{H}(r^\prime\!\!_\perp,\phi') \ket{F=4,m=0}\\
+\chi_{H,\downarrow} &=  -\frac{2\pi\omega_0}{v_g}  \bra{F=3,m=0} 
+\mathbf{u}^*_{H}(r^\prime\!\!_\perp,\phi') \!\cdot\!\tensor{\alpha}\!\cdot\! 
+\mathbf{u}_{H}(r^\prime\!\!_\perp,\phi') \ket{F=3,m=0} \\
+\chi_{V,\uparrow} &=  -\frac{2\pi\omega_0}{v_g}   \bra{F=4,m=0} 
+\mathbf{u}^*_{V}(r^\prime\!\!_\perp,\phi') \!\cdot\!\tensor{\alpha}\!\cdot\! 
+\mathbf{u}_{V}(r^\prime\!\!_\perp,\phi') \ket{F=4,m=0}  \\
+\chi_{V,\downarrow} &=  -\frac{2\pi\omega_0}{v_g}  \bra{F=3,m=0} 
+\mathbf{u}^*_{V}(r^\prime\!\!_\perp,\phi') \!\cdot\!\tensor{\alpha}\!\cdot\! 
+\mathbf{u}_{V}(r^\prime\!\!_\perp,\phi') \ket{F=3,m=0}. 
+\end{align}
+
+To write down the Hamiltonian in the clock space,
+\begin{align}
+\chi_{H,\uparrow/\downarrow} & \equiv \chi_{H,F} =- \frac{2\pi \omega_0}{v_g} \bra{F,0} 
+	\mathbf{u}^*_H(r^\prime\!_\perp, \phi') \cdot \tensor{\alpha} \cdot 
+	\mathbf{u}_{H}(r^\prime\!_\perp, 
+	\phi') \ket{F,0} \\
+	& =- \frac{2\pi \omega_0}{v_g} \sum_{F'} \sum_q \alpha_0\left( F,F'  \right) |\mathbf{e}_q \cdot 
+	\mathbf{u}_H^*(r^\prime\!_\perp,\phi')|^2 |o^{J'F'}_{JF} |^2 
+	|C^{F 0;1q}_{F' q}|^2\\
+	& \approx  \left( \sigma_0 n_g  \right)  \sum_q \sum_{F'} \left( 
+		\frac{\Gamma}{4 
+		\left(\Delta_{F,F'}+i\Gamma/2\right) }  \right) |\mathbf{e}_q \cdot 
+		\mathbf{u}_H^*(r^\prime\!_\perp,\phi')|^2 |o^{J'F'}_{JF} |^2 
+		|C^{F 0;1q}_{F' q}|^2,\label{eq:chiHeu}\\
+\chi_{V,\uparrow/\downarrow} & \equiv \chi_{V,F} =- \frac{2\pi \omega_0}{v_g} \bra{F,0} 
+	\mathbf{u}^*_V(r^\prime\!_\perp, \phi') \cdot \tensor{\alpha} \cdot 
+	\mathbf{u}_{V}(r^\prime\!_\perp, 
+	\phi') \ket{F,0} \\
+	& =- \frac{2\pi \omega_0}{v_g} \sum_{F'} \sum_q \alpha_0\left( F,F'  \right) |\mathbf{e}_q \cdot 
+	\mathbf{u}_V^*(r^\prime\!_\perp,\phi')|^2 |o^{J'F'}_{JF} |^2 
+	|C^{F 0;1q}_{F' q}|^2\\
+	& \approx   \left( \sigma_0 n_g  \right)  \sum_q\sum_{F'} \left( 
+		\frac{\Gamma}{4 
+		\left(\Delta_{F,F'}+i\Gamma/2\right) }  \right) |\mathbf{e}_q \cdot 
+		\mathbf{u}_V^*(r^\prime\!_\perp,\phi')|^2 |o^{J'F'}_{JF} |^2 
+		|C^{F 0;1q}_{F' q}|^2,\label{eq:chiVeu}
+\end{align}
+where we have approximated $ \lambda_{J'}\approx \lambda = \frac{2\pi c}{\omega_0} $.  We can also 
+rewrite the result above in terms of dyadic Green functions and tensor polarizabilities as
+\begin{align}
+\chi_{H,\uparrow/\downarrow} & \equiv \chi_{H,F} = 4\pi k_0^2 \tr \left\{ \mathrm{Im}\left[ 
+\mathbf{G}^*_{HH}(\br^\prime\!_\perp,\br^\prime\!_\perp) \right] \cdot \boldsymbol{\alpha}^{F0;F0} 
+\right\}\label{eq:chiHGalpha}\\
+\chi_{V,\uparrow/\downarrow} & \equiv \chi_{V,F} = 4\pi k_0^2 \tr \left\{ \mathrm{Im}\left[ 
+\mathbf{G}^*_{VV}(\br^\prime\!_\perp,\br^\prime\!_\perp) \right] \cdot \boldsymbol{\alpha}^{F0;F0} 
+\right\},\label{eq:chiGalpha}
+\end{align}
+where 
+\begin{align} 
+\!\!\!\! \mathbf{G}_{HH/VV}(\br',\br') &= -\frac{in_g}{2k_0} 
+\mathbf{u}_{H/V}(r^\prime\!_\perp,\phi')\mathbf{u}_{H/V}^*(r^\prime\!_\perp,\phi')\\
+\boldsymbol{\alpha}^{F0;F0} &\approx \frac{\sigma_0\lambda_{J'}}{4\pi^2}  \sum_q \sum_{F'} \left( 
+		\frac{\Gamma}{4 
+		\left(\Delta_{F,F'}+i\Gamma/2\right) }  \right)   |o^{J'F'}_{JF} |^2 
+		|C^{F 0;1q}_{F' q}|^2  \mathbf{e}_q \mathbf{e}_q^*.
+\end{align}
  
 % Rewrite the Hamiltonian in the Stokes and collective spin representation. 
 \subsubsection{Polarization measurement and spin squeezing}
@@ -2142,17 +2324,33 @@ The maximum possible angular momentum is $ J=\frac{N_A}{2} $. Each $ J_z $ measu
 \end{align}
 The minimum uncertainty for $ \ket{J,M=\pm J} $ gives $ \Delta J_\perp=\Delta J_x=\Delta J_y = \sqrt{\frac{J}{2}} $ while $ \expect{J_\parallel}=\expect{J_z^2}=M^2=J^2 $. 
 
-Notice that, the $ SU(2) $ symmetry of Stokes operators makes the commutation relationships formally analog to the commutator between $ \hat{X} $ and $ \hat{P} $. If the photon number $ N_L $ is large compared to its square root, we can approximately treat one of the Stokes operator as a number, for example setting $ \hat{S}_2 \approx \frac{\hat{N}_L}{2}\approx \frac{N_L}{2} $, and such that
+For now, we consider the birefringence measurement with an initial input laser polarization state of $ \vec{D}=\left( \vec{H}+\vec{V}\right)/\sqrt{2} $ which is pointing along $ S_2 $ direction on the Poincare sphere. For a large number of photon incidence, we can set 
 \begin{align}
-[\hat{S}_3,\hat{S}_1] = i \hat{S}_2 \approx i\frac{N_L}{2}\\
-\left[\frac{\hat{S}_3}{\sqrt{N_L/2}},\frac{\hat{S}_1}{\sqrt{N_L/2}}\right] = i.
+\hat{a}_H \rightarrow i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_H\\
+\hat{a}_V \rightarrow i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_V,
 \end{align}
-Comparing to the relation that $ [\hat{X}_L,\hat{P}_L]=i $, one can map that 
+where each operator has a classical photon flux number and a quantum operator to indicate the quantum fluctuation of the photon flux. In the case of $ \dot{N}_L\gg \sqrt{\dot{N}_L}\gg 1 $, the Stokes operators can be given by
 \begin{align}
-\frac{\hat{S}_3}{\sqrt{N_L/2}} &= \hat{X}_L\\
-\frac{\hat{S}_1}{\sqrt{N_L/2}} &= \hat{P}_L. 
+\hat{S}_1 &= \frac{1}{2}\left[ \Big( -i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_H\dg \Big) \Big( i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_H\Big) -  \Big( -i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_V\dg\Big)  \Big(i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_V \Big) \right]\\
+&= \sqrt{\frac{\dot{N}_L}{2}} \frac{i}{\sqrt{2}} \left[\frac{\hat{a}_H\dg-\hat{a}_V\dg}{\sqrt{2}} - \frac{\hat{a}_H-\hat{a}_V}{\sqrt{2}} \right] + \frac{1}{2} \Big( \hat{a}_H\dg \hat{a}_H -  \hat{a}_V\dg \hat{a}_V \Big)\\
+&\approx \sqrt{\frac{\dot{N}_L}{2}} \frac{i}{\sqrt{2}} \left( \hat{a}_{\bar{D}}\dg-\hat{a}_{\bar{D}}\right)\\
+&= \sqrt{\frac{\dot{N}_L}{2}} \hat{P}_{\bar{D}},\\
+\hat{S}_3 &= \frac{1}{2i} \left[ \Big( -i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_H\dg \Big) \Big(i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_V \Big) -  \Big( -i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_V\dg\Big) \Big( i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_H\Big) \right]\\
+&= \sqrt{\frac{\dot{N}_L}{2}}  \frac{1}{\sqrt{2}}\left[ \frac{\hat{a}_H\dg-\hat{a}_V\dg}{\sqrt{2}} + \frac{\hat{a}_H-\hat{a}_V}{\sqrt{2}} \right] +\frac{1}{2i} \Big( \hat{a}_H\dg \hat{a}_V -  \hat{a}_V\dg \hat{a}_H \Big)\\
+&\approx \sqrt{\frac{\dot{N}_L}{2}} \hat{X}_{\bar{D}},\\
+\hat{S}_2 &\approx \frac{\dot{N}_L}{2},\\
+\hat{S}_0 &\approx \frac{\dot{N}_L}{2},
 \end{align}
-This approximation is known as \textit{Holstein-Primakoff approximation}\index{approximation!Holstein-Primakoff approximation}. Using this approximation, the uncertainty area on the Bloch sphere can be mapped to a flat phase plane. 
+where we have defined $ \hat{a}_{\bar{D}} = \frac{\hat{a}_H -\hat{a}_V}{\sqrt{2}} $ as the photon annihilation operator of the anti-diagonal linearly polarized light modes, and $ \hat{P}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}-\hat{a}_{\bar{D}\dg}}{\sqrt{i2}} $ and $ \hat{X}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}+\hat{a}_{\bar{D}\dg}}{\sqrt{2}} $ as the two quadratures in the phase space of the complex amplitude represented by $ \hat{a}_{\bar{D}} $. The approximation we made above is known as \textit{Holstein-Primakoff approximation}\index{approximation!Holstein-Primakoff approximation}. Using this approximation, the uncertainty area on the Poincare sphere can be mapped to a flat phase plane. 
+
+
+Notice that, the $ \hat{S}_1 $ and $ \hat{S}_3 $ still satisfy the usual $ SU(2) $ Lie algebra relationship that 
+\begin{align}
+[\hat{S}_3,\hat{S}_1] = i \hat{S}_2 \approx i\frac{\dot{N}_L}{2}
+\end{align}
+which is important for us to choose $ \hat{S}_1 $ as the rotation axis and $ \hat{S}_3 $ as the observation axis on the Poincare sphere for our QND measurement as will be discussed later. 
+
+
 
 Similarly, when the atom number is large, one can also map the angular momentum/spin operators to the quadrature operators. However, we will try to avoid applying this approximation to the spin operators, since the total number of the atoms are not too large in the context of the nanofiber platform. 
 
