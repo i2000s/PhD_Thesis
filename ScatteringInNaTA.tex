@@ -2115,18 +2115,39 @@ A_{ef\!f}^V &= \frac{1}{n_g | \mathbf{u}_{V}(r^\prime\!\!_\perp,\phi')|^2}.\labe
 Considering the relationship between $ \Gamma_{1D} $ and $ \Gamma_{vac} $ (the same as the $ \Gamma $ above) from Equ.~\eqref{Gamma1DGammavac}, Equs.~\eqref{chiHUp} and~\eqref{chiHDown} are equivalent to Equ.~\eqref{phaseshiftGamma1D} derived from the Green function method with scalar polarizability. The scalar polarizability factor of $ C_{j',f',f}^{(0)}=\frac{1}{3} $ in Equ.~\eqref{chiHUp} through Equ.~\eqref{chiVDown} indicates the possibility of transitions back to the clock state. This factor can be absorbed into the atomic scattering cross section by treating the scattering cross section as an average over all possible quantum transitions. 
 
 \subsection{Full Hamiltonian using Clebsch-Gordan coefficients}
-From Equ.~\eqref{Eq::LightShiftHam}, the effective Hamiltonian of the light-atom interaction can be given by
+We can also work in the time-domain to include the wave-propagation process much carefully. \textcolor{red}{Note: part of the content below is directly from Ben's notes.}
+
+For the nanofiber interface, we specify to the single-mode condition that only the HE$_{11}$ spatial mode propagates in the fiber with propagation constant $\beta_0$.  We can further make the first Markov approximation that the coupling is dominated by frequencies near an atomic transition frequency $\omega_0$ and then extend the limit of integration to $-\infty$ as a mathematical convenience.  We then define Fourier-transformed \emph{input-output field operators} that describe propagating modes in the nanofiber,
+	\begin{align}
+		\hat{a}_{\mu}(z,t) \equiv \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \hat{a}_{\mu}(\omega) e^{i f \beta_0 z -i\omega_0 t}.
+	\end{align}	
+They satisfy the white-noise commutation relations
+	\begin{align}
+		[\hat{a}_{\mu}(z,t), \hat{a}\dg_{\mu'}(z',t')] = \delta_{p,p'} \delta_{f,f'} \delta(t-t' - |z-z'|/v_p).
+	\end{align}	
+Note that the commutation relation is related to the \emph{phase retarded time} which is related to the phase velocity, $v_p = \omega_0/\beta_0$, rather than the group velocity.  More details on this can be found in several of Le Kien's papers, including \emph{Correlations between photons emitted by multi-atom fluorescence into a nanofiber} (http://journals.aps.org/pra/pdf/10.1103/PhysRevA.77.033826).
+
+The guided-mode electric field operator can then be written in terms of the input-output field operators
+	\begin{align}
+		\hat{\mathbf{E}}_g^{(+)}(\mathbf{r}) = \sum_{f ,p} \sqrt{\frac{2 \pi \hbar \omega_0}{v_g}} \hat{a}_{\mu}(z,t) \mathbf{u}_{\mu}(\mathbf{r}_\perp) 
+	\end{align}
+We have dropped the $\omega(\beta)$ label on the mode functions as it is only for the fundamental propagation constant $\beta_0$.
+
+Atoms can be trapped around the surface of the nanofiber using a handful of techniques.  In the interaction Hamiltonian $z=z' =z_A$ for the two field operators that appear, so we drop the $z$ label on the field operators $\hat{a}(z,t) \rightarrow \hat{a}(t)$.  This will not in general be valid when calculating the output propagating field operators, as their interaction will depend on the positions of the multiple atoms throughout the ensemble.  However, we make the assumption that the transit time through the nanofiber region is short compared to the collective atomic dynamics, and thus we can ignore the retarded group time.  
+
+From Equ.~\eqref{Eq::LightShiftHam}, the effective Hamiltonian of the light-atom interaction at time $ t $ can then be given by
 \begin{align}  
-	H_{\rm eff}   = \frac{2\pi \hbar \omega_0}{ v_g \tau} &\Big( \mathbf{u}^*_H(r^\prime\!_\perp, \phi') 
+	H_{\rm eff}   = \frac{2\pi \hbar \omega_0}{ v_g } &\Big( \mathbf{u}^*_H(r^\prime\!_\perp, \phi') 
 	\!\cdot\! 
-	\tensor{\alpha} \!\cdot\! \mathbf{u}_{H}(r^\prime\!_\perp, \phi') \hat{a}\dg_H \hat{a}_H +  
+	\tensor{\alpha} \!\cdot\! \mathbf{u}_{H}(r^\prime\!_\perp, \phi') \hat{a}\dg_H(t) \hat{a}_H(t) \nonumber\\
+	&\!\! +  
 	\mathbf{u}^*_V(r^\prime\!_\perp, \phi')\! \cdot\! 
-	\tensor{\alpha} \!\cdot\! \mathbf{u}_{V}(r^\prime\!_\perp, \phi') \hat{a}\dg_V \hat{a}_V \nonumber\\
+	\tensor{\alpha} \!\cdot\! \mathbf{u}_{V}(r^\prime\!_\perp, \phi') \hat{a}\dg_V(t) \hat{a}_V(t) \nonumber\\
 	&\!\! + \mathbf{u}^*_H(r^\prime\!_\perp, \phi')\! \cdot\! \tensor{\alpha}\! \cdot\! 
-	\mathbf{u}_{V}(r^\prime\!_\perp, \phi') \hat{a}\dg_H \hat{a}_V 
-	+ \mathbf{u}^*_V(r^\prime\!_\perp, \phi') \!\cdot\! \tensor{\alpha}\! \cdot\! 
+	\mathbf{u}_{V}(r^\prime\!_\perp, \phi') \hat{a}\dg_H(t) \hat{a}_V(t) \nonumber\\
+	&\!\! + \mathbf{u}^*_V(r^\prime\!_\perp, \phi') \!\cdot\! \tensor{\alpha}\! \cdot\! 
 	\mathbf{u}_{H}(r^\prime\!_\perp, 
-	\phi') \hat{a}\dg_V \hat{a}_H 
+	\phi') \hat{a}\dg_V(t) \hat{a}_H(t) 
 	\Big).  \label{eq:LightShiftHam_CG}
 \end{align}
 The atomic polarizability tensor $\tensor{\alpha}$ is composed of a dyad of vector dipole operators,    
@@ -2224,10 +2245,10 @@ is a dyad. Obviously, the result as a trace does not depend on how we rotate the
  
 We stick to the choice of quantization axis used above, and have
 \begin{align}
-H_{\rm eff} & = \frac{ \hbar }{ \tau}\Big( \chi_{H,\uparrow}\op{\uparrow}{\uparrow} +  
-\chi_{H,\downarrow} \op{\downarrow}{\downarrow} \Big) \hat{a}_H\dg \hat{a}_H \nonumber\\
-&\quad +  \frac{ \hbar }{ \tau} \Big( \chi_{V,\uparrow}\op{\uparrow}{\uparrow} +  \chi_{V,\downarrow} 
-\op{\downarrow}{\downarrow} \Big) \hat{a}_V\dg \hat{a}_V  ,
+H_{\rm eff} & =  \hbar \Big( \chi_{H,\uparrow}\op{\uparrow}{\uparrow} +  
+\chi_{H,\downarrow} \op{\downarrow}{\downarrow} \Big) \hat{a}_H\dg(t) \hat{a}_H(t) \nonumber\\
+&\quad +  \hbar  \Big( \chi_{V,\uparrow}\op{\uparrow}{\uparrow} +  \chi_{V,\downarrow} 
+\op{\downarrow}{\downarrow} \Big) \hat{a}_V\dg(t) \hat{a}_V(t)  ,
 \end{align}
 where the coupling strengths are defined as
 \begin{align}
@@ -2294,17 +2315,18 @@ where
  
 % Rewrite the Hamiltonian in the Stokes and collective spin representation. 
 \subsubsection{Polarization measurement and spin squeezing}
+
 Now, we consider to rewrite the Hamiltonian in terms of the Stokes vector operators and the collective spin operators with the total atom number of $ N_A $. We assume the photon number, $ N_L $, is large and all atoms interact with the photon package at the same time, and hence interactions among atoms and the interference effect due to photon propagation are ignored during every measurement time step. 
 
 The polarization state of the light can be represented on the Poincare sphere via Stokes vector $ \mathbf{S} $. The quantized operators in the Schwinger representation with respect to the three Poincare sphere axes are defined as  
 \begin{align}
-\hat{S}_1&= \frac{1}{2} \Big( \hat{a}_H\dg \hat{a}_H -  \hat{a}_V\dg \hat{a}_V \Big) \\
-\hat{S}_2&= \frac{1}{2} \Big( \hat{a}_H\dg \hat{a}_V +  \hat{a}_V\dg \hat{a}_H \Big)\\
-\hat{S}_3&= \frac{1}{2i} \Big( \hat{a}_H\dg \hat{a}_V -  \hat{a}_V\dg \hat{a}_H \Big)
+\hat{S}_1(z,t)&= \frac{1}{2} \Big( \hat{a}_H\dg(z,t) \hat{a}_H(z,t) -  \hat{a}_V\dg(z,t) \hat{a}_V(z,t) \Big) \\
+\hat{S}_2(z,t)&= \frac{1}{2} \Big( \hat{a}_H\dg(z,t) \hat{a}_V(z,t) +  \hat{a}_V\dg(z,t) \hat{a}_H(z,t) \Big)\\
+\hat{S}_3(z,t)&= \frac{1}{2i} \Big( \hat{a}_H\dg(z,t) \hat{a}_V(z,t) -  \hat{a}_V\dg(z,t) \hat{a}_H(z,t) \Big)
 \end{align}
-satisfying the $ SU(2) $ algebra $ [S_i,S_j]=i\varepsilon_{ijk}S_k $. The total number operator is defined as
+satisfying the $ SU(2) $ algebra $ [S_i(z,t),S_j(z',t')]=i\varepsilon_{ijk}S_k(z,t)\delta (t-t' - (z-z')/c ) $. The total number operator is defined as
 \begin{align}
-\hat{S}_0&= \frac{1}{2} \Big( \hat{a}_H\dg \hat{a}_H +  \hat{a}_V\dg \hat{a}_V \Big).
+\hat{S}_0(z,t)&= \frac{1}{2} \Big( \hat{a}_H\dg(z,t) \hat{a}_H(z,t) +  \hat{a}_V\dg(z,t) \hat{a}_V(z,t) \Big).
 \end{align}
 
 We define the pseudo-spin operator in the corresponding subspace for one atom is defined as $ \mathbf{j}=\frac{\boldsymbol{\sigma}}{2} $. We will use  the following spin components, which can be expressed as
@@ -2451,11 +2473,11 @@ Now, we go back to the effective Hamiltonian of the spin-photon system described
 \end{align}
 and sum over all spins. We can obtain
 \begin{align}
-H_{\rm eff} = \frac{\hbar}{\tau} \Big\{ & \big( \chi_{H,\uparrow} + \chi_{H,\downarrow} + \chi_{V,\uparrow} + \chi_{V,\downarrow}\big) \hat{J}_0 \hat{S}_0 \nonumber \\
+H_{\rm eff} = \hbar \Big\{ & \big( \chi_{H,\uparrow} + \chi_{H,\downarrow} + \chi_{V,\uparrow} + \chi_{V,\downarrow}\big) \hat{J}_0 \hat{S}_0 \nonumber \\
 + & \big( \chi_{H, \uparrow} + \chi_{H,\downarrow} - \chi_{V,\uparrow} - \chi_{V,\downarrow} \big)  \hat{J}_0 \hat{S}_1 \nonumber \\
 + & \big( \chi_{H,\uparrow} - \chi_{H,\downarrow} + \chi_{V,\uparrow} - \chi_{V,\downarrow} \big)  \hat{J}_z \hat{S}_0 \nonumber \\
 + & \big( \chi_{H,\uparrow} - \chi_{H,\downarrow} - \chi_{V,\uparrow} + \chi_{V,\downarrow} \big)  \hat{J}_z \hat{S}_1\Big\}\\
-=\frac{\hbar}{\tau} \Big\{ & \left[ \big( \chi_{H,\uparrow} + \chi_{H,\downarrow}\big) + \big(\chi_{V,\uparrow} + \chi_{V,\downarrow}\big) \right] \hat{J}_0 \hat{S}_0 \nonumber \\
+=\hbar \Big\{ & \left[ \big( \chi_{H,\uparrow} + \chi_{H,\downarrow}\big) + \big(\chi_{V,\uparrow} + \chi_{V,\downarrow}\big) \right] \hat{J}_0 \hat{S}_0 \nonumber \\
 + & \left[ \big( \chi_{H, \uparrow} + \chi_{H,\downarrow}\big) - \big( \chi_{V,\uparrow} + \chi_{V,\downarrow} \big)\right]  \hat{J}_0 \hat{S}_1 \nonumber \\
 + & \left[ \big( \chi_{H,\uparrow} - \chi_{H,\downarrow}\big) + \big(\chi_{V,\uparrow} - \chi_{V,\downarrow} \big) \right] \hat{J}_z \hat{S}_0 \nonumber \\
 + & \left[ \big( \chi_{H,\uparrow} - \chi_{H,\downarrow}\big) - \big(\chi_{V,\uparrow} - \chi_{V,\downarrow} \big) \right]  \hat{J}_z \hat{S}_1\Big\}
@@ -2469,19 +2491,19 @@ The final term describes the QND Faraday interaction we wish to isolate (similar
 	\end{align}
 which can be satisfied if we carefully choose the detuning of the probe light. The wavelength to choose to cancel the third term is atom position related, since the condition is determined by the effective mode areas which may have different ratios for the $ H $ and $ V $ modes at different locals. We can the exact wavelength to satisfy this condition as the \textit{magic wavelength}\index{magic wavelength}. If this condition can be met, then we can achieve an interaction of the form,
 \begin{align}
-	H_{\rm eff} = \frac{\hbar}{\tau} \chi_{\rm eff} \hat{J}_z \hat{S}_1
+	H_{\rm eff} = \hbar \chi_{\rm eff} \hat{J}_z \hat{S}_1
 \end{align}
 where $\chi_{\rm eff} = 2(\chi_{H,\uparrow} - \chi_{H,\downarrow})$.  
 
-Using this, we can prepare the spins in $ D $ state on the Bloch sphere and characterize the collective spin state along the $ z $-axis after the rotation along $ S_1 $ axis due to the photon-atom interaction. To achieve this, we use the $ \hat{S}_3 $ Stokes vector component measurement. As a result of the backaction of the polarization measurement, there is a squeezing to the collective spin state which results in a reduced uncertainty of measurement output. To see this, we assume the photon number is large and apply the Holstein-Primakoff approximation to set $ \hat{S}_1=\sqrt{\frac{N_L}{2}}\hat{P}_L $ and $ \hat{S}_3=\sqrt{\frac{N_L}{2}}\hat{X}_L $. Now the effective Hamiltonian can be written as
+Using this, we can prepare the spins in $ D $ state on the Bloch sphere and characterize the collective spin state along the $ z $-axis after the rotation along $ S_1 $ axis due to the photon-atom interaction. To achieve this, we use the $ \hat{S}_3 $ Stokes vector component measurement. As a result of the backaction of the polarization measurement, there is a squeezing to the collective spin state which results in a reduced uncertainty of measurement output. To see this, we assume the photon number is large and apply the Holstein-Primakoff approximation to set $ \hat{S}_1=\sqrt{\frac{\dot{N}_L}{2}}\hat{P}_{\bar{D}} $ and $ \hat{S}_3=\sqrt{\frac{\dot{N}_L}{2}}\hat{X}_{\bar{D}} $. Now the effective Hamiltonian can be written as
 \begin{align}
-H_{\rm eff} = \frac{\hbar}{\tau} \chi_{\rm eff} \sqrt{\frac{N_L}{2}}\hat{J}_z \hat{P}_L. 
+H_{\rm eff} = \hbar \chi_{\rm eff} \sqrt{\frac{\dot{N}_L}{2}}\hat{J}_z \hat{P}_{\bar{D}}. 
 \end{align}
-The $ \hat{S}_3 $ measurement is achieved through sending the signal light to one input port of a beam splitter along as a vacuum input on the other input port and then performing a balanced Homodyne measurement of the $ X_L $ quadrature. The equivalent Kraus operator conditional on this measurement is 
+The $ \hat{S}_3 $ measurement is achieved through sending the signal light to one input port of a beam splitter along as a vacuum input on the other input port and then performing a balanced Homodyne measurement of the $ X_{\bar{D}} $ quadrature. The equivalent Kraus operator conditional on this measurement is 
 \begin{align}
-\hat{A}_{X_L} &= \bra{X_L} e^{-i\chi_{\rm eff} \sqrt{\frac{N_L}{2}}\hat{J}_z \hat{P}_L} \ket{0_L}\propto \exp\left\{ -\frac{\kappa T}{4}(m-\hat{J}_z)^2 \right\},
+\hat{A}_{X_{\bar{D}}} &= \bra{X_{\bar{D}}} e^{-i\chi_{\rm eff} \sqrt{\frac{\dot{N}_L}{2}}\hat{J}_z \hat{P}_{\bar{D}}} \ket{0}\propto \exp\left\{ -\frac{\kappa }{4}(m-\hat{J}_z)^2 \right\},
 \end{align} 
-where $ m=\frac{X_L}{\chi_{\rm eff} \sqrt{N_L/2}} $ is the measurement outcome in angular momentum units, and $ \kappa T=\chi_{\rm eff}^2N_L $ is the integrated measurement strength per spin. The shot noise resolution of the QND measurement is $ \sigma^2=\frac{1}{\kappa T} $. The Kraus operator is exactly the same as Equ.~\eqref{KrausOpSq} to generate a spin squeezing
+where $ m=\frac{X_{\bar{D}}}{\chi_{\rm eff} \sqrt{\dot{N}_L/2}} $ is the measurement outcome in angular momentum units, and $ \kappa =\chi_{\rm eff}^2\dot{N}_L $ is the integrated measurement strength per spin. The shot noise resolution of the QND measurement is $ \sigma^2=\frac{1}{\kappa } $. The Kraus operator is exactly the same as Equ.~\eqref{KrausOpSq} to generate a spin squeezing
  state. For a SCS input state, the output state probability distribution is given by 
  %(from Ben's dissertation)
 %\begin{align}
@@ -2491,7 +2513,7 @@ where $ m=\frac{X_L}{\chi_{\rm eff} \sqrt{N_L/2}} $ is the measurement outcome i
 \begin{align}
 P_{M|m} \propto e^{-\frac{(M-\bar{M}(m))^2}{2\Delta J_{out}^2}},
 \end{align}
-where $ \Delta J_{out}^2 =\frac{\Delta J_{in}^2}{1+\xi}=\frac{J}{2(1+\xi)} $, $ \bar{M}(m)=\frac{m}{1+\xi} $, and $ \xi\equiv \frac{\Delta J_{in}^2}{\sigma^2}=\frac{J}{2\sigma^2}=\frac{\chi_{e\!f\!f}^2}{4}N_AN_L $ is the measurement strength which characterizes the measurement backaction and the squeezing effect. The ability to resolve the initial quantum variance of $ J_z $ within the resolution of the meter is the key to QND squeezing. 
+where $ \Delta J_{out}^2 =\frac{\Delta J_{in}^2}{1+\xi}=\frac{J}{2(1+\xi)} $, $ \bar{M}(m)=\frac{m}{1+\xi} $, and $ \xi\equiv \frac{\Delta J_{in}^2}{\sigma^2}=\frac{J}{2\sigma^2}=\frac{\chi_{e\!f\!f}^2}{4}N_A\dot{N}_L $ is the measurement strength which characterizes the measurement backaction and the squeezing effect. The ability to resolve the initial quantum variance of $ J_z $ within the resolution of the meter is the key to QND squeezing. 
 
 \subsection{Sensitivity of the birefringence measurement using the clock states}
 \textcolor{red}{To answer the question in this section: How to relate this to the critical shot noise limit--Equ.~\eqref{eq:shotnoise}?}  
