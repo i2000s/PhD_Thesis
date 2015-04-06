@@ -2568,6 +2568,7 @@ and hence
 \begin{align}
 \hat{H}_{\rm eff} &= -\hbar \gamma_m \left( \op{\uparrow}{\uparrow}+\op{\downarrow}{\downarrow} \right).
 \end{align}
+\textcolor{red}{Note: this may not be true since the magic wavelength condition is only satisfied for the coherent part of the Hamiltonian.}
 
 The effective Hamiltonian has a real part that drives coherent dynamics and an imaginary part describing loss,
 \begin{align}
@@ -2582,6 +2583,7 @@ For example, the loss part of the effective Hamiltonian at a magic frequency can
 &\quad\quad\quad\quad\quad\quad\quad\quad\quad |o^{J'F'}_{J4} |^2 
 	|C^{4 0;1q}_{F' q}|^2 \left( \op{\uparrow}{\uparrow}+\op{\downarrow}{\downarrow} \right).
 \end{align}
+\textcolor{red}{Note: again, this may not be true and the imaginary parts of $ \gamma_{\uparrow\uparrow} $ and $ \gamma_{\downarrow\downarrow} $ may not be equal if the magic wavelength condition is only satisfied for the coherent part of the Hamiltonian.}
 
 Next, let us look into the jump operators.
 For a probe laser with polarization $\mathbf{e}_L=[\mathbf{u}_H(\br'\!\!_\perp)+\mathbf{u}_V(\br'\!\!_\perp)]/\sqrt{|\mathbf{u}_H(\br'\!\!_\perp)|^2+|\mathbf{u}_V(\br'\!\!_\perp)|^2}$, the jump operators for optical pumps between magnetic sublevels are \cite{Deutsch2010a}
@@ -2592,15 +2594,15 @@ For a probe laser with polarization $\mathbf{e}_L=[\mathbf{u}_H(\br'\!\!_\perp)+
 %&= \sum_{F'} \!\!\frac{\sqrt{\Gamma}\Omega(\mathbf{r}')/2}{ \Delta_{F'F_a} \!\!+\! i\Gamma/2} o^{J'F'}_{JF_b}\! o^{J'F'}_{JF_a}\!  C^{F_b 0;1q}_{F' q}\! C^{F_a 0;1q}_{F' q}\! \left(\mathbf{e}^*_{q}\! \cdot\! \mathbf{e}_L \right)\! \op{F_b,0}{F_a,0}
 %\end{align}
 \begin{align} \label{Eq::JumpOperators}
-\hat{W}_q^F &= \sum_{F'} \sqrt{\Gamma_F}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{F'F} + i\Gamma_F/2} \mathbf{e^*_q} \cdot \hat{\mathbf{D}}_{FF'} \hat{\mathbf{D}}_{F'F}^{\dagger} \cdot \mathbf{e}_L \\
-&= \sum_{F'} \sqrt{\Gamma_F}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{F'F} + i\Gamma_F/2} o^{J'F'}_{JF} o^{J'F'}_{JF}\nonumber\\
+\hat{W}_q^F &= \sum_{F'} \sqrt{\Gamma}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{F'F} + i\Gamma/2} \mathbf{e^*_q} \cdot \hat{\mathbf{D}}_{FF'} \hat{\mathbf{D}}_{F'F}^{\dagger} \cdot \mathbf{e}_L \\
+&= \sum_{F'} \sqrt{\Gamma}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{F'F} + i\Gamma/2} o^{J'F'}_{JF} o^{J'F'}_{JF}\nonumber\\
 & \quad \sum_{m=0,m'=q}\!\!\!\!\!\!\!\!\! C^{F m;1q}_{F' m'} \sum_{q'=q}C^{F m;1q'}_{F' m'} \left(\mathbf{e}^*_{q'} \cdot\mathbf{e}_L \right) \op{F,m}{F,m}\\
-&= \sum_{F'} \!\!\frac{\sqrt{\Gamma_F}\Omega(\mathbf{r}')/2}{ \Delta_{F'F} \!\!+\! i\Gamma_F/2} \! \left|o^{J'F'}_{JF}\right|^2\!  \left| C^{F 0;1q}_{F' q}\right|^2\! \left(\mathbf{e}^*_{q}\! \cdot\! \mathbf{e}_L \right)\! \op{F,0}{F,0}
+&= \sum_{F'} \!\!\frac{\sqrt{\Gamma}\Omega(\mathbf{r}')/2}{ \Delta_{F'F} \!\!+\! i\Gamma/2} \! \left|o^{J'F'}_{JF}\right|^2\!  \left| C^{F 0;1q}_{F' q}\right|^2\! \left(\mathbf{e}^*_{q}\! \cdot\! \mathbf{e}_L \right)\! \op{F,0}{F,0}
 \end{align}
-with local Rabi frequency $\Omega(\mathbf{r}') = 2\bra{P_{J'}}| d | \ket{S_{1/2}} \mathcal{E}^{(+)}_L(\mathbf{r}')$ and the positive-frequency amplitude treated as c-numbers by
+with local Rabi frequency $\Omega(\mathbf{r}') = 2\bra{P_{J'}}| d | \ket{S_{1/2}} \mathcal{E}^{(+)}_L(\mathbf{r}')/\hbar$ and the positive-frequency amplitude treated as c-numbers by
 \begin{align}
 \mathbf{E}^{(+)}_L(\mathbf{r}') &= \sqrt{\frac{2\pi\hbar\omega_0}{v_g}}e^{if\beta_0z} \left( \mathbf{u}_H(\br'\!_\perp)\hat{a}_{H}(t) + \mathbf{u}_{V}(\br'\!_\perp)\hat{a}_{V}(t) \right)\\
-\rightarrow \quad  \mathcal{E}_L^{(+)} (\br') &= \sqrt{\frac{\mathbin{\color{red}{\pi}}\hbar\omega_0}{v_g}\dot{N}_L} \left[ |u_{r\!_\perp}(\br'\!_\perp)|^2 + |u_\phi(\br'\!_\perp)|^2 +|u_z(\br'\!_\perp)|^2 \right]
+\rightarrow \quad  \mathcal{E}_L^{(+)} (\br') &= \sqrt{\frac{\mathbin{\color{red}{\pi}}\hbar\omega_0}{v_g}\dot{N}_L \left[ |u_{r\!_\perp}(\br'\!_\perp)|^2 + |u_\phi(\br'\!_\perp)|^2 +|u_z(\br'\!_\perp)|^2 \right]}
 \end{align}
 for atoms placed along $ \phi'=0 $ or $ \pi $ two-side chains. 
 
@@ -2612,7 +2614,7 @@ for atoms placed along $ \phi'=0 $ or $ \pi $ two-side chains.
 Therefore, the optical pumping rates for $ \ket{F,m_F=0} $ by a $ q $-transition can be given by
 \begin{align}
 \gamma_{F,q} &=\gamma_{F\rightarrow F}^q = \sum_{F_{a'}} \left| \bra{F} \hat{W}_q^{F_{a'}}\ket{F}\right|^2\\
-&= \frac{\Gamma_F\Omega^2(\mathbf{r}')}{4}\sum_{F'} \left|  \frac{\left| o^{J'F'}_{JF}\right|^2\!   \left| C^{F 0;1q}_{F' q}\right|^2\! \left(\mathbf{e}^*_{q}\! \cdot\! \mathbf{e}_L \right)}{ \Delta_{F'F} \!\!+\! i\Gamma_F/2} \right|^2.
+&= \frac{\Gamma\Omega^2(\mathbf{r}')}{4}\sum_{F'} \left|  \frac{\left| o^{J'F'}_{JF}\right|^2\!   \left| C^{F 0;1q}_{F' q}\right|^2\! \left(\mathbf{e}^*_{q}\! \cdot\! \mathbf{e}_L \right)}{ \Delta_{F'F} \!\!+\! i\Gamma/2} \right|^2.
 \end{align}
 Notice that, the cross-feeding transitions between ground state sublevels are not considered in this model.
 
@@ -2636,14 +2638,14 @@ For instance,
 \dt{\expect{\hat{J}_z}} &= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z} \!+\! \expect{\! \sum_{F,q,i} \!\! \gamma_{F,q} \op{F,0}{F,0}^{(i)} \hat{J}_z \op{F,0}{F,0}^{(i)} }\\
 &= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z}  + \sum_i^{N_A} \frac{1}{2}\sum_q \expect{ \gamma_{4,q} \op{\uparrow}{\uparrow}^{(i)} -  \gamma_{3,q}\op{\downarrow}{\downarrow}^{(i)}  }\\
 &= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z} + \left[\sum_q(\gamma_{4,q}-\gamma_{3,q})  \right]\frac{N_A}{2}\\
-&= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z} +\gamma_-\frac{N_A}{2},
+&= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z} +\gamma_-\frac{N_A}{2},\label{eq:expJzeq}
 \end{align}
 where $ \gamma_- =  \sum_q(\gamma_{4,q}-\gamma_{3,q})$, and we have used the fact that all atoms interact with the light in the same manner. 
 In the meantime, 
 \begin{align}
 \dt{\expect{\hat{J}_z^2}} &=  -2\Im\left[\gamma_m \right]\expect{\hat{J}_z^2} \!+\! \expect{\! \sum_{F,q,i} \!\! \gamma_{F,q} \op{F,0}{F,0}^{(i)} \hat{J}_z^2 \op{F,0}{F,0}^{(i)} }\\
 &= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z^2} \!+\! \left[\sum_q(\gamma_{4,q}+\gamma_{3,q})  \right]\frac{N_A}{4}\\
-&= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z^2} \!+\! \gamma_+\frac{N_A}{4},
+&= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z^2} \!+\! \gamma_+\frac{N_A}{4},\label{eq:expJz2eq}
 \end{align}
 with $ \gamma_+ = \sum_q(\gamma_{4,q}+\gamma_{3,q}) $.
 
@@ -2672,19 +2674,19 @@ x(t) &= x(0)e^{-At} + \frac{B}{A} (1-e^{-At}).
 Therefore, one can solve the equations for $ \expect{\hat{J}_z} $ and $ \expect{\hat{J}_z^2} $ to give
 \begin{align}
 \expect{\hat{J}_z(t)} &= \expect{\hat{J}_z(0)}e^{-2\Im\left[\gamma_m\right]t} + \frac{\gamma_-}{\Im\left[\gamma_m\right]}\frac{N_A}{4} (1-e^{-2\Im\left[\gamma_m\right]t})\\
-&= \frac{\gamma_-}{\gamma_s}\frac{N_A}{4} (1-e^{-2\gamma_st}), \\
+&= \frac{\gamma_-}{\gamma_s}\frac{N_A}{4} (1-e^{-2\gamma_st}), \label{eq:expJzsolscs}\\
 \expect{\hat{J}_z^2(t)} &= \expect{\hat{J}_z^2(0)}e^{-2\Im\left[\gamma_m\right]t} + \frac{\gamma_+}{\Im\left[\gamma_m\right]}\frac{N_A}{8} (1-e^{-2\Im\left[\gamma_m\right]t})\\
 &=\frac{N_A}{4}e^{-2\gamma_st} + \frac{\gamma_+}{\gamma_s}\frac{N_A}{8} (1-e^{-2\gamma_st})\\
-&= \frac{\gamma_+}{\gamma_s}\frac{N_A}{8} + \left(2-\frac{\gamma_+}{\gamma_s} \right)\frac{N_A}{8} e^{-2\gamma_st}
+&= \frac{\gamma_+}{\gamma_s}\frac{N_A}{8} + \left(2-\frac{\gamma_+}{\gamma_s} \right)\frac{N_A}{8} e^{-2\gamma_st} \label{eq:expJz2solscs}
 \end{align}
 with scattering rate $ \gamma_s\equiv \Im\left[ \gamma_m\right] $. 
-We have defined the initial state of the ensemble of atoms as a SCS of $ \ket{\uparrow_x}^{N_A} $ with $ N_A $ spin-$ \frac{1}{2} $ particles so that $ \expect{\hat{J}_z}=0 $ and $ \expect{\hat{J}_z^2}=N_A/4 $. 
-Hence the spin squeezing parameter after the birefringence spectroscopy measure at time $ t $ can be given by
-\begin{align}
-\!\!\!\!\!\! \Delta J_z^2(t) &= \expect{\hat{J}_z^2(t)} -\expect{\hat{J}_z}^2\\
-&= \frac{\gamma_+}{\gamma_s}\!\frac{N_A}{8} \!-\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A^2}{16} + \left( \!2\!-\!\frac{\gamma_+}{\gamma_s} \!+\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A}{2}\! \right)\! \frac{N_A}{8} e^{-2\gamma_st} \!-\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A^2}{16}e^{-4\gamma_st}.
-\end{align}
-\textcolor{red}{Note: two-body operators are not considered in this calculation.}
+We have defined the initial state of the ensemble of atoms as a SCS of $ \ket{\uparrow_x}^{N_A} $ with $ N_A $ spin-$ \frac{1}{2} $ particles so that $ \expect{\hat{J}_z(0)}=0 $ and $ \expect{\hat{J}_z^2(0)}=N_A/4 $. \textcolor{red}{Since $ \gamma_-\ll \gamma_s $, we can treat the $ \expect{\hat{J}_z}=0 $ as a constant over time (this is based on numerical evidence but may not be true since I am not sure about the definition of $ \gamma_s $). }
+%Hence the spin squeezing parameter after the birefringence spectroscopy measure at time $ t $ can be given by
+%\begin{align}
+%\!\!\!\!\!\! \Delta J_z^2(t) &= \expect{\hat{J}_z^2(t)} -\expect{\hat{J}_z}^2\\
+%&= \frac{\gamma_+}{\gamma_s}\!\frac{N_A}{8} \!-\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A^2}{16} + \left( \!2\!-\!\frac{\gamma_+}{\gamma_s} \!+\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A}{2}\! \right)\! \frac{N_A}{8} e^{-2\gamma_st} \!-\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A^2}{16}e^{-4\gamma_st}.
+%\end{align}
+
 
 Similarly, one can solve the equations for $ \expect{\hat{J}_x} $ and $ \expect{\hat{N}_A} $ to give
 \begin{align}
@@ -2692,24 +2694,62 @@ Similarly, one can solve the equations for $ \expect{\hat{J}_x} $ and $ \expect{
 \expect{\hat{N}_A(t)} &= \frac{N_A}{2}\left[ \frac{\gamma_+}{\gamma_s} + \left( 2- \frac{\gamma_+}{\gamma_s}\right)e^{-2\gamma_st}\right].
 \end{align}
 
-For a weak measurement, $ \hat{J}_\perp\approx \hat{J}_z $ and $ \hat{J}_\parallel\approx\hat{J}_x $, and the Wineland spin squeezing parameter~\cite{Wineland1992} then becomes
+%For a weak measurement, $ \hat{J}_\perp\approx \hat{J}_z $ and $ \hat{J}_\parallel\approx\hat{J}_x $, and the Wineland spin squeezing parameter~\cite{Wineland1992} then becomes
+%\begin{align}
+%\xi &= 2j\expect{\hat{N}_A}\frac{\Delta J_z^2}{\expect{\hat{J}_x}^2}\\
+%&= \left[ \frac{\gamma_+}{\gamma_s}\left(e^{2\gamma_st}-1\right) + 2\right]\nonumber\\
+%&\quad \cdot \left[ \left(\frac{\gamma_+}{4\gamma_s} \!-\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A}{8}\right)e^{2\gamma_st} + \left( \!\frac{1}{2}\!-\!\frac{\gamma_+}{4\gamma_s} \!+\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A}{8}\! \right)\! -\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A}{8}e^{-2\gamma_st} \right] .
+%\end{align}
+
+
+\textcolor{red}{To be included: the measurement effect in generating spin squeezing or the $ \Delta J_z^2 $ term. A quick fix is below:}
+Equs.~\eqref{eq:expJz2solscs} and~\eqref{eq:expJzsolscs} only describe the optical pumping dynamics of the spin system. The measurement effect will yield a $ -\kappa \left(\Delta J_z^2 \right)^2 $ term in the differential equation of $ \Delta J_z^2 $. So, we can use the relationship that
 \begin{align}
-\xi &= 2j\expect{\hat{N}_A}\frac{\Delta J_z^2}{\expect{\hat{J}_x}^2}\\
-&= \left[ \frac{\gamma_+}{\gamma_s}\left(e^{2\gamma_st}-1\right) + 2\right]\nonumber\\
-&\quad \cdot \left[ \left(\frac{\gamma_+}{4\gamma_s} \!-\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A}{8}\right)e^{2\gamma_st} + \left( \!\frac{1}{2}\!-\!\frac{\gamma_+}{4\gamma_s} \!+\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A}{8}\! \right)\! -\! \frac{\gamma_-^2}{\gamma_s^2}\!\frac{N_A}{8}e^{-2\gamma_st} \right] .
+\mathrm{d} \Delta J_z^2 &= \mathrm{d} \expect{\hat{J}_z^2} - 2\expect{\hat{J}_z}\mathrm{d}\expect{\hat{J}_z},
+\end{align}
+and hence, considering only the optical pumping effect, Equs.~\eqref{eq:expJz2eq} and~\eqref{eq:expJzeq} yield
+\begin{align}
+\dt{\Delta J_z^2} &= \dt{\expect{\hat{J}_z^2}} - 2\expect{\hat{J}_z}\dt{\expect{\hat{J}_z}}\\
+&= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z^2} \!+\! \gamma_+\frac{N_A}{4} 
+ - 2\expect{\hat{J}_z} \left[ -2\Im\left[\gamma_m \right]\expect{\hat{J}_z} +\gamma_-\frac{N_A}{2}\right]\\
+&= -2\gamma_s \Delta J_z^2 + \gamma_+\frac{N_A}{4}+4\gamma_s\expect{\hat{J}_z}^2 -N_A\gamma_-\expect{\hat{J}_z}\\
+&=  -2\gamma_s \Delta J_z^2 + \gamma_+\frac{N_A}{4},
+\end{align}
+where we have used the fact/assumption that $ \expect{\hat{J}_z(t)}\approx 0 $.
+
+Now with the measurement effect correction, we will have 
+\begin{align}
+\dt{\Delta J_z^2} &= -\kappa \left(\Delta J_z^2 \right)^2 -2\gamma_s \Delta J_z^2 + \gamma_+\frac{N_A}{4}.
+\end{align}
+The general form of the equation above can be given by
+\begin{align}
+	\frac{d x}{d t} = -A x^2 - B x + C.
+\end{align}
+which can be solved as~\cite{Baragiola2014a}
+\begin{align}
+x(t)&  = \frac{ \sqrt{B^2 + 4 AC}x_0 - (Bx_0-2C) \tanh \left( \sqrt{B^2 + 4 AC}  \frac{t}{2} \right) }{\sqrt{B^2 + 4 AC} + (2Ax_0 + B) \tanh \left( \sqrt{B^2 + 4 AC}  \frac{t}{2} \right) } .
+\end{align}
+Therefore, we can substitute 
+\begin{align}
+A = \kappa, &\quad  B = 2\gamma_s, &\quad C=\gamma_+\frac{N_A}{4} \quad\text{and}\quad &\Delta J_z^2(0)=N_A/4
+\end{align}
+to obtain the solution for $ \Delta J_z^2(t) $ as
+\begin{align}
+\Delta J_z^2(t) &= \frac{ \sqrt{4\gamma_s^2 + \kappa \gamma_+N_A}\frac{N_A}{4} - (\gamma_s -\gamma_+)\frac{N_A}{2} \tanh \left( \sqrt{4\gamma_s^2 +  \kappa \gamma_+N_A}  \frac{t}{2} \right) }{\sqrt{4\gamma_s^2 + \kappa \gamma_+N_A} + (\kappa N_A/2 + 2\gamma_s) \tanh \left( \sqrt{4\gamma_s^2 + \kappa \gamma_+N_A}  \frac{t}{2} \right) }.
+\end{align}
+\textcolor{red}{Note: two-body operators are not considered in this calculation.}
+
+In the end, For a weak measurement, $ \hat{J}_\perp\approx \hat{J}_z $ and $ \hat{J}_\parallel\approx\hat{J}_x $, we should expect the Wineland squeezing parameter~\cite{Wineland1992} to be
+\begin{align}
+\xi &= 2j\expect{\hat{N}_A}\frac{\Delta J_z^2}{\expect{\hat{J}_x}^2}.
 \end{align}
 
-%We can estimate the collective spin fluctuations using 
-%\begin{align}
-%\mathrm{d} \Delta J_z^2 &= \mathrm{d} \expect{\hat{J}_z^2} - 2\expect{\hat{J}_z}\mathrm{d}\expect{\hat{J}_z},
-%\end{align}
-%and hence
-%\begin{align}
-%\dt{\Delta J_z^2} &= \dt{\expect{\hat{J}_z^2}} - 2\expect{\hat{J}_z}\dt{\expect{\hat{J}_z}}\\
-%&= -2\Im\left[\gamma_m \right]\expect{\hat{J}_z^2} \!+\! \gamma_+\frac{N_A}{4} 
-% - 2\expect{\hat{J}_z} \left[ -2\Im\left[\gamma_m \right]\expect{\hat{J}_z} +\gamma_-\frac{N_A}{2}\right]\\
-%&= 
-%\end{align}
+\begin{figure}
+\centering\makebox[\textwidth]{
+\includegraphics[width=0.65\textwidth]{./Figs/xi_magic44}}
+\caption{Spin squeezing evolution as a function of time. Parameters used: $ \Omega/2\pi=52 $ MHz, $ N_A=100 $. }
+\end{figure}
+
 ...
 
 
