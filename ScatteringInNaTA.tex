@@ -2678,21 +2678,25 @@ Physically, the non-evenly branched polarization components in the given choice 
 
 \textcolor{red}{Note: for simplicity, I have approximate $ (\gamma_- - \gamma_s^-)\rightarrow 0 $ and so that $ \expect{\hat{J}_z(t)}=\expect{\hat{J}_z(0)}e^{-\gamma_s^+t}=0 $ for the analysis follows. However, this is not true as have been numerically checked. This needs to be fixed.}
 
-In the meantime, 
+In the meantime, we set $ \gamma_+ = \sum_q(\gamma_{4,q}+\gamma_{3,q}) $, and then 
 \begin{align}
 \dt{\expect{\hat{J}_z^2}} &=  -\gamma_s^+\expect{\hat{J}_z^2} \!-\! \frac{\gamma_s^-}{2}\expect{\sum_{i}^{N_A}\left\{\hat{\sigma}_z^{(i)},\left(\sum_{i'}^{N_A}\frac{\hat{\sigma}_z^{(i')}}{2} \right)^2 \right\} } \nonumber\\
-&\quad \!+\! \expect{\! \sum_{F,q,i} \!\! \gamma_{F,q} \op{F,0}{F,0}^{(i)} \hat{J}_z^2 \op{F,0}{F,0}^{(i)} }\\
+&\quad \!+\! \expect{\! \sum_{F,q,i} \!\! \gamma_{F,q} \op{F,0}{F,0}^{(i)} \left(\sum_{i'}^{N_A}\frac{\hat{\sigma}_z^{(i')}}{2} \right)^2 \op{F,0}{F,0}^{(i)} }\\
 &= -\gamma_s^+\expect{\hat{J}_z^2} \!-\! \frac{\gamma_s^-}{8}\expect{\sum_{i}^{N_A}\left\{\hat{\sigma}_z^{(i)}, \sum_{i'}^{N_A}\left(\hat{\sigma}_z^{(i')} \right)^2 + \sum_{i'\neq j'}^{N_A} \hat{\sigma}_z^{(i')} \hat{\sigma}_z^{(j')}  \right\} } \nonumber\\
-&\quad \!+\! \left[\sum_q(\gamma_{4,q}+\gamma_{3,q})  \right]\frac{N_A}{4}\\
+&\quad \!+\! \frac{1}{8}\sum_{F,q} \expect{\sum_{i}^{N_A} \gamma_{F,q}\left[\hat{I}^{(i)}\!+\!(\!-1\!)^F\hat{\sigma}_z^{(i)} \right]\!\!\cdot\!\! \left[\sum_{i'}^{N_A}\!\hat{I}^{(i')} \!+\! \sum_{i'\neq j'}^{N_A}\!\! \hat{\sigma}_z^{(i')} \hat{\sigma}_z^{(j')}  \right]\!\!\cdot\!\! \left[\hat{I}^{(i)}\!+\!(\!-1\!)^F\hat{\sigma}_z^{(i)}\right]}\\
+&\approx -\gamma_s^+\expect{\hat{J}_z^2} \!-\! \frac{\gamma_s^-}{8}\expect{\sum_{i}^{N_A}\left\{\hat{\sigma}_z^{(i)}, \sum_{i'}^{N_A}\left(\hat{\sigma}_z^{(i')} \right)^2 + \sum_{i'\neq j'}^{N_A} \hat{\sigma}_z^{(i')} \hat{\sigma}_z^{(j')}  \right\} } \nonumber\\
+&\quad \!+\! \gamma_+ N_A^2 \!+\! 2\gamma_+N_A \expect{\hat{J}_z}^2 \!+\! \gamma_- N_A\expect{\hat{J}_z} \!+\! \gamma_-\!\left[2\expect{\hat{J}_z}^3\!\!+\!(N_A\!-\! 1)\expect{\hat{J}_z} \right] \\
 &= -\gamma_s^+\expect{\hat{J}_z^2} \nonumber\\
 &\quad \!-\! \frac{\gamma_s^-}{8}\expect{ \sum_{i,i'}^{N_A}\left\{\hat{\sigma}_z^{(i)}, \left(\hat{\sigma}_z^{(i')} \right)^2\right\} \!+\! \sum_i^{N_A}\sum_{i'\neq j'}^{N_A} \left\{ \hat{\sigma}_z^{(i)}, \hat{\sigma}_z^{(i')} \hat{\sigma}_z^{(j')}  \right\} } \nonumber\\
-&\quad \!+\! \gamma_+\frac{N_A}{4}\\
+&\quad \!+\! \gamma_+ N_A^2 \!+\! 2\gamma_+N_A \expect{\hat{J}_z}^2 \!+\!  \gamma_-\left[2\expect{\hat{J}_z}^3+(2N_A-1)\expect{\hat{J}_z} \right]\\
 &= -\gamma_s^+\expect{\hat{J}_z^2} \!-\! \frac{\gamma_s^-}{8}\expect{ 2\!\sum_{i}^{N_A}\! \hat{\sigma}_z^{(i)} \!+\! \sum_i^{N_A}\!\sum_{i'\neq j'}^{N_A}\! \left( \delta_{i,j'} \hat{\sigma}_z^{(i')} +\delta_{i,i'}\hat{\sigma}_z^{(j')}  \right) } \nonumber\\
-&\quad \!+\! \gamma_+\frac{N_A}{4}\\
-&= -\gamma_s^+\expect{\hat{J}_z^2} \!-\! \frac{\gamma_s^-}{2}\expect{\hat{J}_z}\!-\! \frac{\gamma_s^-}{2}(N_A-1)\expect{\hat{J}_z} \!+\! \gamma_+\frac{N_A}{4}\\
-&= -\gamma_s^+\expect{\hat{J}_z^2} \!-\! \frac{\gamma_s^-}{2}N_A\expect{\hat{J}_z} \!+\! \gamma_+\frac{N_A}{4},\label{eq:expJz2eq}
+&\quad \!+\! \gamma_+ N_A^2 \!+\! 2\gamma_- \expect{\hat{J}_z}^3 \!+\! 2\gamma_+ N_A \expect{\hat{J}_z}^2 \!+\!  \gamma_-(2N_A-1)\expect{\hat{J}_z}\\
+&= -\gamma_s^+\expect{\hat{J}_z^2} \!-\! \frac{\gamma_s^-}{2}\expect{\hat{J}_z}\!-\! \frac{\gamma_s^-}{2}(N_A-1)\expect{\hat{J}_z} \nonumber\\
+&\quad \!+\! \gamma_+ N_A^2 \!+\! 2\gamma_- \expect{\hat{J}_z}^3 \!+\! 2\gamma_+ N_A \expect{\hat{J}_z}^2 \!+\!  \gamma_-(2N_A-1)\expect{\hat{J}_z}\\
+&= -\gamma_s^+\expect{\hat{J}_z^2} \!+\! \left[ \gamma_-(2N_A\!-\! 1) -\frac{\gamma_s^-}{2}N_A\right] \expect{\hat{J}_z} \!+\! \gamma_+ N_A  \!+\! 2\gamma_- \expect{\hat{J}_z}^3 \!+\! 2\gamma_+ N_A \expect{\hat{J}_z}^2.\label{eq:expJz2eq}
+%&= -\gamma_s^+\expect{\hat{J}_z^2} \!-\! \frac{\gamma_s^-}{2}N_A\expect{\hat{J}_z} \!+\! \gamma_+\frac{N_A}{4}.\label{eq:expJz2eq}
 \end{align}
-with $ \gamma_+ = \sum_q(\gamma_{4,q}+\gamma_{3,q}) $.
+
 
 Similarly, 
 \begin{align}
