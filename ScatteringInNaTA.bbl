@@ -1,4 +1,17 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Deutsch2010a}
+Ivan~H. Deutsch and Poul~S. Jessen.
+\newblock Quantum control and measurement of atomic spins in polarization
+  spectroscopy.
+\newblock {\em Optics Communications}, 283(5):681 -- 694, 2010.
+\newblock Quo vadis Quantum Optics?
+
+\bibitem{LeKien2013}
+Fam Le~Kien, Philipp Schneeweiss, and Arno Rauschenbeutel.
+\newblock Dynamical polarizability of atoms in arbitrary light fields: general
+  theory and application to cesium.
+\newblock {\em The European Physical Journal D}, 67(5):1--16, 2013.
 
 \bibitem{Lacroute2012}
 Clement Lacro{\^u}te, KS~Choi, A~Goban, DJ~Alton, D~Ding, NP~Stern, and
@@ -17,6 +30,11 @@ Eugen Vetsch.
 \newblock {\em Optical interface based on a nanofiber atom-trap}.
 \newblock PhD thesis, Johannes Gutenberg-Universitat in Mainz, 2010.
 
+\bibitem{LeKien2005}
+Fam Le~Kien, S.~Dutta Gupta, K.~P. Nayak, and K.~Hakuta.
+\newblock Nanofiber-mediated radiative transfer between two distant atoms.
+\newblock {\em Phys. Rev. A}, 72:063815, Dec 2005.
+
 \bibitem{Snyder1983}
 Allan~W Snyder and J~Love.
 \newblock {\em Optical waveguide theory}, volume 190.
@@ -32,5 +50,66 @@ H~Nha and W~Jhe.
 \newblock Cavity quantum electrodynamics for a cylinder: inside a hollow
   dielectric and near a solid dielectric cylinder.
 \newblock {\em Physical Review A}, 56(3):2213, 1997.
+
+\bibitem{Glauber1991}
+Roy~J. Glauber and M.~Lewenstein.
+\newblock Quantum optics of dielectric media.
+\newblock {\em Phys. Rev. A}, 43:467--491, Jan 1991.
+
+\bibitem{Smith2003a}
+Greg~A Smith, Souma Chaudhury, and Poul~S Jessen.
+\newblock Faraday spectroscopy in an optical lattice: a continuous probe of
+  atom dynamics.
+\newblock {\em Journal of Optics B: Quantum and Semiclassical Optics},
+  5(4):323, 2003.
+
+\bibitem{Baragiola2014a}
+B.~Q. {Baragiola}.
+\newblock {\em {Open Systems Dynamics for Propagating Quantum Fields}}.
+\newblock PhD thesis, University of New Mexico, \#aug\# 2014.
+
+\bibitem{Stockton2007}
+John~Kenton Stockton.
+\newblock {\em Continuous quantum measurement of cold alkali-atom spins}.
+\newblock PhD thesis, California Institute of Technology, 2007.
+
+\bibitem{Hammerer2006}
+Klemens Hammerer.
+\newblock {\em Quantum information processing with atomic ensembles and light}.
+\newblock PhD thesis, Universit{\"a}t M{\"u}nchen, 2006.
+
+\bibitem{Geremia2006}
+J.~M. Geremia, John~K. Stockton, and Hideo Mabuchi.
+\newblock Tensor polarizability and dispersive quantum measurement of
+  multilevel atoms.
+\newblock {\em Phys. Rev. A}, 73:042112, Apr 2006.
+
+\bibitem{Gardiner2004}
+Crispin Gardiner and Peter Zoller.
+\newblock {\em Quantum noise: a handbook of Markovian and non-Markovian quantum
+  stochastic methods with applications to quantum optics}, volume~56.
+\newblock Springer Science \& Business Media, 2004.
+
+\bibitem{Wineland1992}
+D.~J. Wineland, J.~J. Bollinger, W.~M. Itano, F.~L. Moore, and D.~J. Heinzen.
+\newblock Spin squeezing and reduced quantum noise in spectroscopy.
+\newblock {\em Phys. Rev. A}, 46:R6797--R6800, Dec 1992.
+
+\bibitem{Wait1959}
+{JR} Wait.
+\newblock {\em Electromagnetic radiation from cylindrical structures}.
+\newblock Pergamon, 1959.
+
+\bibitem{Watson1995}
+George~Neville Watson.
+\newblock {\em A treatise on the theory of Bessel functions}.
+\newblock Cambridge university press, 1995.
+
+\bibitem{Beguin2014}
+J-B B{\'e}guin, EM~Bookjans, SL~Christensen, HL~S{\o}rensen, JH~M{\"u}ller,
+  ES~Polzik, and J~Appel.
+\newblock Generation and detection of a sub-poissonian atom number distribution
+  in a one-dimensional optical lattice.
+\newblock {\em Physical Review Letters}, 113(26):263603, 2014.
 
 \end{thebibliography}
