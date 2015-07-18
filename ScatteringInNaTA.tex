@@ -630,12 +630,12 @@ where the power flow or the intensity distribution factors $ P_1 $ and $ P_2 $ c
 &\quad\left. \!+(1\!+\!s)^2\!\!\left[K\!_1\!(qa)K\!_3\!(qa)\!-\! K_2^2\!(qa) \right]\!+\!\frac{2q^2}{\beta^2}\!\!\left[K\!_0\!(qa)K\!_2\!(qa)\!-\!K_1^2\!(qa) \right]  \right\}.
 \end{align}
 
-Also, to quantize the traveling field of waveguide modes, we can define the normalization factor to be~\cite{LeKien2005}
+Also, to quantize the traveling field of waveguide modes, we can define the normalization factor to be~\cite{LeKien2005a}
 \begin{align}
 N_g &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp\,  n^2(\br\!_\perp)|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
 &= 2\pi A^2 a^2 (n_1^2P_1 + n_2^2P_2),
 \end{align}
-where the factor $ A $ is defined in Equ.~\eqref{eq:A} related to the input power. The full expression of radiative modes of the nanofiber system can also be found in Ref.~\cite{LeKien2005}.
+where the factor $ A $ is defined in Equ.~\eqref{eq:A} related to the input power. The full expression of radiative modes of the nanofiber system can also be found in Ref.~\cite{LeKien2005a}.
 
 For some cases, the total power $ P $ can also be defined as
 \begin{align}
@@ -1701,7 +1701,7 @@ Correspondingly, the group velocity and group index of refraction for a guided m
 v_g &= \dd{\omega}{\beta},\\
 n_g &= \frac{c}{v_g}=\dd{\beta}{k}.
 \end{align}
-Therefore, the group velocity and group index of refraction of the $ HE_{11} $ mode can calculated from the eigen function of $ \beta $ (see Appendix A of Ref.~\cite{LeKien2005}). 
+Therefore, the group velocity and group index of refraction of the $ HE_{11} $ mode can calculated from the eigen function of $ \beta $ (see Appendix A of Ref.~\cite{LeKien2005a}). 
 
 In general, the eigen function of $ \beta $ can be expressed as
 \begin{align}
@@ -1945,14 +1945,14 @@ N_{min} &= \sqrt{\frac{2A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
 
 
 \section{Work in the Heisenberg and Schrodinger pictures}
-The Lippmann-Schwinger solution, \erf{Eq::ScatteredField}, determines the input-output relation for linear atomic response given by the polarizability tensor $\tensor{\alpha}$.  In this section we derive the fully quantum mechanical description of dispersive atomic response and input-output relations for the quantized guided modes.  Following closely Ref. \cite{le_kien_spontaneous_2005}, we use a Heisenberg-Langevin approach for one-dimensional systems.  
+The Lippmann-Schwinger solution, \erf{Eq::ScatteredField}, determines the input-output relation for linear atomic response given by the polarizability tensor $\tensor{\alpha}$.  In this section we derive the fully quantum mechanical description of dispersive atomic response and input-output relations for the quantized guided modes.  Following closely Ref. \cite{LeKien2005a}, we use a Heisenberg-Langevin approach for one-dimensional systems.  
 
 The positive frequency component of the quantized electric field operator decomposes into guided and radiation (unguided) modes, $\hat{\mathbf{E}}^{(+)}=\hat{\mathbf{E}}_g^{(+)}+\hat{\mathbf{E}}_{r}^{(+)}$, where
 	\begin{align}
 		\hat{\mathbf{E}}_g^{(+)}(\br) &= \sum_{f,p} \int \mathrm{d}\omega  \sqrt{\frac{ \hbar \omega}{ v_g}} \awg \mathbf{u}_\mu (\br\!_\perp) e^{i f\beta(\omega) z } ,\label{Eq::QuantizedElectricField} \\
 		\hat{\mathbf{E}}_r^{(+)}(\br) &= \sum_{m,p} \int \mathrm{d}\omega   \int_{-kn_2}^{kn_2}\mathrm{d}\beta \, \sqrt{ \hbar \omega}\awr \mathbf{u}_\nu (\br\!_\perp) e^{i\beta(\omega) z },
 	\end{align}
-The four HE$_{11}$ guided modes are indexed by $\mu =(\omega, f, p)$ for two polarizations $p$ and two propagation directions $f=\pm1$ with wavenumbers $f\beta (\omega)$.  The radiation modes are indexed by  $\nu=(\omega, \beta, m, p)$ where $\omega$ is the frequency, $m$ is the azimuthal quantum number (angular momentum), $p$ labels the two orthogonal polarizations. The longitudinal propagation constant $\beta(\omega)$ can vary from $-kn_2$ to $kn_2$, with $k = \omega/c$ \cite{sondergaard_general_2001,le_kien_spontaneous_2005}.  The creation/annihilation operators satisfy the usual continuous-mode commutation relations, $[\hat{a}_\mu, \hat{a}^\dag_{\mu'} ] = \delta_{f,f'} \delta_{p,p'} \delta ( \omega - \omega ') $, $[\hat{a}_\nu ,\hat{a}^\dag_{\nu'} ] = \delta_{m,m'} \delta_{p,p'} \delta ( \omega - \omega ')  \delta ( \beta - \beta') $.
+The four HE$_{11}$ guided modes are indexed by $\mu =(\omega, f, p)$ for two polarizations $p$ and two propagation directions $f=\pm1$ with wavenumbers $f\beta (\omega)$.  The radiation modes are indexed by  $\nu=(\omega, \beta, m, p)$ where $\omega$ is the frequency, $m$ is the azimuthal quantum number (angular momentum), $p$ labels the two orthogonal polarizations. The longitudinal propagation constant $\beta(\omega)$ can vary from $-kn_2$ to $kn_2$, with $k = \omega/c$ \cite{Sondergaard2001,LeKien2005a}.  The creation/annihilation operators satisfy the usual continuous-mode commutation relations, $[\hat{a}_\mu, \hat{a}^\dag_{\mu'} ] = \delta_{f,f'} \delta_{p,p'} \delta ( \omega - \omega ') $, $[\hat{a}_\nu ,\hat{a}^\dag_{\nu'} ] = \delta_{m,m'} \delta_{p,p'} \delta ( \omega - \omega ')  \delta ( \beta - \beta') $.
 
 The Hamiltonian for the system is
 \begin{equation}
@@ -2020,7 +2020,7 @@ where the decay of excited-state correlations is given by
 		\Gamma_{ee'} = 2\pi \sum_{\mu,g} g_{\mu,e,g}g^*_{\mu,e',g} \vert_{\omega=\omega_{eg}}+2\pi 
 \sum_{m,p,g} \int d\beta \, g_{\nu,e,g}g^*_{\nu,e',g} \vert_{\omega=\omega_{eg}}, \label{Eq::TotaleeDecayRate}
 	\end{equation}
-and the small energy shift is absorbed into the transition frequency $\omega_{eg} = (E_e - E_g)/\hbar$.  Equation (\ref{Eq::TotaleeDecayRate}) captures the modification of the spontaneous emission rate due to the nanofiber, which alters the local density of states \cite{le_kien_spontaneous_2005}.  The first sum describes decay into the guided modes and the second into the unguided radiation modes \cite{ nha_cavity_1997,klimov_spontaneous_2004,le_kien_spontaneous_2005,maslov_distribution_2006}. The decay rate of a given excited state into all the guided modes is given by
+and the small energy shift is absorbed into the transition frequency $\omega_{eg} = (E_e - E_g)/\hbar$.  Equation (\ref{Eq::TotaleeDecayRate}) captures the modification of the spontaneous emission rate due to the nanofiber, which alters the local density of states \cite{LeKien2005a}.  The first sum describes decay into the guided modes and the second into the unguided radiation modes \cite{ Nha1997,Klimov2004,LeKien2005a,Maslov2006}. The decay rate of a given excited state into all the guided modes is given by
 	\begin{equation}
 		\Gamma_e^{\oneD}= 2\pi \sum_{\mu,g} |g_{\mu,e,g} |^2_{\omega = \omega_{eg}} =  \frac{ 2\pi }{\hbar} \frac{ \comment{\omega_{eg}} }{v_g} \sum_{\mu,g} \big|\bra{e}\hat{\mathbf{d}}\ket{g} \cdot \mathbf{u}_{fp}(\br'_\perp)\big|^2  .
 	\end{equation}
@@ -2029,9 +2029,9 @@ This agrees with the expected expression following from the guided-mode contribu
 		\Gamma_e^{\oneD} =  \frac{2}{\hbar} \sum_{g}  \bra{g}\hat{\mathbf{d}}\ket{e}\cdot 
 \Im \Big[\tensor{\mathbf{G}}^{(+)}_g(\br', \br'; \omega_{eg} ) \big] \cdot \bra{e}\hat{\mathbf{d}}\ket{g} ,
 	\end{equation}
-enhanced over the free-space rate by the Purcell factor.  In general, the decay rate into a given mode depends on the dipole orientation \cite{klimov_spontaneous_2004, vos_orientation-dependent_2009}. Recently, it was predicted \cite{le_kien_anisotropy_2014} and demonstrated \cite{mitsch_quantum_2014} that the decay rates into the forward and backward modes are not always equal.  Specifically, when the atomic dipole has a component rotating in the plane defined by the atom and nanofiber, the relative decay rates can differ due to the longitudinal component of the guided modes. \comment{Maybe we should include a plot of $\Gamma_{\rm 1D}/\Gamma_0$.  This is the \emph{first} thing people ask.  We must make the point that while it's not so large, we can benefit from many atoms much more easily than other systems, such as those alligator waveguide photonic crystals.}
+enhanced over the free-space rate by the Purcell factor.  In general, the decay rate into a given mode depends on the dipole orientation \cite{Klimov2004, Vos2009}. Recently, it was predicted \cite{LeKien2014a} and demonstrated \cite{Mitsch2014a} that the decay rates into the forward and backward modes are not always equal.  Specifically, when the atomic dipole has a component rotating in the plane defined by the atom and nanofiber, the relative decay rates can differ due to the longitudinal component of the guided modes. \comment{Maybe we should include a plot of $\Gamma_{\rm 1D}/\Gamma_0$.  This is the \emph{first} thing people ask.  We must make the point that while it's not so large, we can benefit from many atoms much more easily than other systems, such as those alligator waveguide photonic crystals.}
 
-Here we are interested in linear response for excitation far from resonance.  We follow Ref. \cite{le_kien_propagation_2014} and consider an atom sufficiently far from the fiber surface such that the modification of the spontaneous emission rate is small.   In this case the decay rate is approximated as $\Gamma_{ee'} \approx \delta_{e,e'} \Gamma_{e}$ (\comment{it is confusing here -- more details or references?}), where $\Gamma_e$ is the total decay rate from excited state $\ket{e}$, given by the diagonal elements of \erf{Eq::TotaleeDecayRate}.  \comment{In steady state}, by defining $ \hat{\sigma}_{ge'}(t)=\int \frac{\mathrm{d}\omega}{\sqrt{2\pi}}\hat{\sigma}_{ge'}(\omega) e^{-i\omega(t-t_0)} $, the dipole operator (from Equ.~\eqref{eq:dsigmagedt1}) in the linear regime ($\hat{\sigma}_{ee'} \rightarrow 0 $) is approximately
+Here we are interested in linear response for excitation far from resonance.  We follow Ref. \cite{LeKien2014a} and consider an atom sufficiently far from the fiber surface such that the modification of the spontaneous emission rate is small.   In this case the decay rate is approximated as $\Gamma_{ee'} \approx \delta_{e,e'} \Gamma_{e}$ (\comment{it is confusing here -- more details or references?}), where $\Gamma_e$ is the total decay rate from excited state $\ket{e}$, given by the diagonal elements of \erf{Eq::TotaleeDecayRate}.  \comment{In steady state}, by defining $ \hat{\sigma}_{ge'}(t)=\int \frac{\mathrm{d}\omega}{\sqrt{2\pi}}\hat{\sigma}_{ge'}(\omega) e^{-i\omega(t-t_0)} $, the dipole operator (from Equ.~\eqref{eq:dsigmagedt1}) in the linear regime ($\hat{\sigma}_{ee'} \rightarrow 0 $) is approximately
 	\begin{align}\label{eq:sigmagetint}
 		\hat{\sigma}_{ge}(t) \approx -\int_0^{\infty}\mathrm{d}\omega \sum_{g'} \hat{\sigma}_{gg'}\bigg( & \sum_{f,p}  
 \frac{g_{\mu, e,g'}}{\omega-\omega_{eg} \error{+} i \Gamma_{e}/2  }\, \hat{a}_\mu (t_0) \\
@@ -2047,7 +2047,7 @@ Using the definition of $ \sigma_{ge}(\omega) $ in the frequency domain ($ t\gg 
 \begin{align}\label{Eq::aguidedomega}
 \hat{a}_\mu(\omega;t )e^{i\omega t} &= \hat{a}_\mu(\omega;t_0)e^{i\omega t_0} +i \sqrt{2\pi}\sum_{g,e}g_{\mu,e,g}^*(\omega)\hat{\sigma}_{ge}(\omega). 
 \end{align}
-By substituting Equ.~\eqref{eq:sigmageomega} into \erf{Eq::aguidedomega} and defining asymptotic modes,  $\hat{a}^{\inp}(\omega) = \lim_{t_0\rightarrow -\infty} \hat{a}(t_0) e^{i\omega t_0}$, $\hat{a}^{\out}(\omega) = \lim_{t\rightarrow +\infty} \hat{a}(t) e^{i\omega t}$ \cite{fan_input-output_2010}, we obtain the input-output relationship for the guided modes,
+By substituting Equ.~\eqref{eq:sigmageomega} into \erf{Eq::aguidedomega} and defining asymptotic modes,  $\hat{a}^{\inp}(\omega) = \lim_{t_0\rightarrow -\infty} \hat{a}(t_0) e^{i\omega t_0}$, $\hat{a}^{\out}(\omega) = \lim_{t\rightarrow +\infty} \hat{a}(t) e^{i\omega t}$ \cite{Fan2010}, we obtain the input-output relationship for the guided modes,
 \begin{align} \label{Eq::aout}
 \hat{a}^{\out}_\mu (\omega) = \hat{a}^{\inp}_\mu (\omega) &- 2\pi i\sum_{p',f'} 
 \sum_{e,g,g'}\!\hat{\sigma}_{gg'}\frac{ g_{\mu,e,g}^* g_{\mu',e,g'}}{ \Delta_{eg} \error{+} i \Gamma_{e}/2 }\hat{a}^{\inp}_{\mu'}(\omega) \\
@@ -2066,13 +2066,13 @@ by noting
  (\br') \cdot \poltens \cdot \mathbf{u}_{\mu'} (\br') = - i \frac{2 \pi}{\hbar} \sum_{e,g,g'}\!\ 
  \hat{\sigma}_{gg'} \frac{g_{\mu,e,g}^* g_{\mu',e,g'}}{ \Delta_{eg} \error{+} i \Gamma_{e}/2 }, 
 	\end{equation}
-where the guided-mode dyadic Green's function is given in \erf{Eq::GreensGuided} and the atomic polarizability operator is \cite{buhmann_casimir-polder_2004, deutsch_quantum_2010,kien_dynamical_2013},
+where the guided-mode dyadic Green's function is given in \erf{Eq::GreensGuided} and the atomic polarizability operator is \cite{Buhmann2004, Deutsch2010a,LeKien2013a},
 	\begin{equation} \label{Eq::PolarizabilityOperator}
 		\poltens = - \frac{1}{\hbar} \sum_{e,g,g'}\ket{g}\frac{\bra{g}\hat{\mathbf{d}}\ket{e}\bra{e} 
 \hat{\mathbf{d}}\ket{g'}}{\Delta_{eg}  \error{+} i \Gamma_{e}/2 }\bra{g'}.
 	\end{equation}
 	
-Scattering of classical waves follows when the field is in a coherent state.  \comment{Explaining this well is of critical importance - while injection of a classical field does not change the Purcell effect or decay rate (which is tied to the atomic transition frequency) it does scatter into all field modes with the same frequency, thus promoting them from vacuum}.  The phase-shift on a guided mode with a given polarization $p$, \erf{Eq::PhaseShift}, now depends on the internal state of the atom.  Given an atom in a particular ground sublevel $\ket{g}$, this can be expressed \cite{le_kien_propagation_2014}
+Scattering of classical waves follows when the field is in a coherent state.  \comment{Explaining this well is of critical importance - while injection of a classical field does not change the Purcell effect or decay rate (which is tied to the atomic transition frequency) it does scatter into all field modes with the same frequency, thus promoting them from vacuum}.  The phase-shift on a guided mode with a given polarization $p$, \erf{Eq::PhaseShift}, now depends on the internal state of the atom.  Given an atom in a particular ground sublevel $\ket{g}$, this can be expressed \cite{LeKien2014a}
 	\begin{equation} \label{Eq::PhaseShiftMultilevel}
 		\delta  \phi_{p,g} =2\pi \frac{\comment{ \omega_{0}}}{v_g} \mathbf{u}^*_{+, p}(\br'_\perp) \cdot \Re \big[\bra{g} 
 \hat{\tensor{\boldsymbol{\alpha}}} \ket{g} \big] \cdot \mathbf{u}_{+, p}(\br'_\perp) = -\frac{1}{\hbar} \sum_e \frac{ \comment{ \omega_{0} } }{v_g} \frac{2 \pi |\bra{e}\hat{\mathbf{d}}\ket{g} \cdot \mathbf{u}_{+,p}(\br'_\perp)|^2}{ \Delta_{eg} } ,
@@ -2252,7 +2252,7 @@ Note: alternatively, the effective Hamiltonian can also be rewritten using the i
 \begin{align}  
 H_{\rm eff} &= - \sum_{f,f'}\alpha_0(\Delta_{f,f'}) \left\{ C_{j'ff}^{(0)} \hat{\mathbf{E}}^{(-)} \cdot \hat{\mathbf{E}}^{(+)} \hat{\mathbbm{1}}_f \phantom{\frac{\hat{1}}{1}}\right. \nonumber\\
 &\quad\quad\quad + i C_{j'ff'}^{(1)} \left(\hat{\mathbf{E}}^{(-)} \times \hat{\mathbf{E}}^{(+)} \right) \cdot \hat{ \mathbf{f}} \nonumber\\
-&\quad\quad\quad  \left. + C_{j'ff}^{(2)} \hat{E}_i^{(-)} \hat{E}_j^{(+)} \left( \frac{ \hat{f}_i \hat{f}_j  + \hat{f}_j \hat{f}_i  }{2} - \frac{1}{3}\delta_{ij} \hat{ \mathbf{f}} \cdot \hat{\mathbf{f}}  \right) \right\}. \label{Eq::LightShiftHam}
+&\quad\quad\quad  \left. + C_{j'ff}^{(2)} \hat{E}_i^{(-)} \hat{E}_j^{(+)} \left( \frac{ \hat{f}_i \hat{f}_j  + \hat{f}_j \hat{f}_i  }{2} - \frac{1}{3}\delta_{ij} \hat{ \mathbf{f}} \cdot \hat{\mathbf{f}}  \right) \right\}. \label{Eq::LightShiftHam_irep}
 \end{align} 
 
 In the weak excitation regime, we limit our attention to the clock state subspace, and hence the polarizability is restricted to the reduced tensor $ \bra{f,m=0}\tensor{\alpha}\ket{f,m=0}$, $f=3,4 $. We can denote such reduced atomic polarizability tensors as 
@@ -2897,12 +2897,12 @@ From the equations of motion we will show later and the physics meaning, we defi
 \begin{align}
 \Gamma_{\rm{loss},\uparrow} &\equiv \gamma_\uparrow - (\gamma_{44}+\gamma_{43})=\gamma_\uparrow - \big(\gammauu + \gammadu \big), \\
 \Gamma_{\rm{loss},\downarrow} &\equiv \gamma_\downarrow - (\gamma_{33}+\gamma_{34})=\gamma_\downarrow - \big(\gammadd + \gammaud \big),\\
-\Gamma_{\rm loss} &\equiv \frac{\Gamma_{\rm{loss},\uparrow} +\Gamma_{\rm{loss},\downarrow}}{2}=-\left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34} \right)-\gamma_s^+\right], \\
-\Gamma_{\rm pol} &\equiv -\frac{\Gamma_{\rm{loss},\uparrow} - \Gamma_{\rm{loss},\downarrow}}{2}=\left[\frac{1}{2}\left(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34}\right) -\gamma_s^-\right],\\
+\Gamma_{\rm loss} &\equiv \frac{\Gamma_{\rm{loss},\uparrow} +\Gamma_{\rm{loss},\downarrow}}{2}=-\left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34} \right)-\gamma_s^+\right]=-\gamma_{00}, \\
+\Gamma_{\rm pol} &\equiv -\frac{\Gamma_{\rm{loss},\uparrow} - \Gamma_{\rm{loss},\downarrow}}{2}=\left[\frac{1}{2}\left(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34}\right) -\gamma_s^-\right]=\gamma_{30},\\
 \Gamma_1 &\equiv \frac{\gammauu + \gammadd + \gammaud + \gammadu}{2}=\frac{\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34}}{2},\\
 \Gamma_3 &\equiv \gammaud+\gammadu=\gamma_{43}+\gamma_{34},\\
-\Gamma_a &= \Gamma_{\rm pol}+\gamma_{34}-\gamma_{43}= \left[\frac{1}{2}\left(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34}\right) -\gamma_s^-\right],\\
-\Gamma_b &= \Gamma_{\rm loss}+\gamma_{34}+\gamma_{43}=-\left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} \right)-\gamma_s^+\right] .
+\Gamma_a &= \Gamma_{\rm pol}+\gamma_{34}-\gamma_{43}= \left[\frac{1}{2}\left(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34}\right) -\gamma_s^-\right]=\gamma_{03},\\
+\Gamma_b &= \Gamma_{\rm loss}+\gamma_{34}+\gamma_{43}=-\left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} \right)-\gamma_s^+\right]=\gamma_{33} .
 \end{align}
 $ \Gamma_1 $ is the rate of $ \expect{\hat{J}_x} $ depolarization, and $ \Gamma_3 $ is the rate of $ \expect{\hat{J}_z} $ depolarization. 
 
@@ -3038,7 +3038,9 @@ Now with the measurement effect correction, we will have
 &= -\kappa \left(\Delta J_z^2 \right)^2 -\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
 &\quad -\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \expect{\hat{N}_A }\nonumber\\
 &\quad +\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
-&\quad +\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\Delta J_z \Delta N_A}.
+&\quad +\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\Delta J_z \Delta N_A}\\
+&= -\kappa(\Delta J_z^2)^2 +2\Gamma_b\Delta J_z^2 + \left(2\Gamma_b-\Gamma_{\rm loss}\right)\frac{\expect{\hat{N}_A}}{4} +\left(\frac{\Gamma_a}{2}-\Gamma_{\rm pol} \right)\expect{\hat{J}_z}\nonumber\\
+&\quad +\Gamma_{\rm pol}\left( \expect{\hat{N}_A\hat{J}_z}-\expect{\hat{N}_A}\expect{\hat{J}_z} \right) .
 \end{align}
 We have defined the two-body operator covariance $ \expect{\Delta J_z \Delta N_A}=\expect{\Delta N_A\Delta J_z}\equiv  \frac{N_A(N_A-1)}{2}\expect{\mathrm{Sym}(\hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) } - \expect{\hat{J}_z }\expect{\hat{N}_A}$. Along this line, we can define the following two-body operator covariances,
 \begin{align}
@@ -3152,7 +3154,7 @@ To simplify and understand the Heisenberg equations of motion derived above, we 
 \begin{align}
 \gamma_{\rm{loss},\uparrow} &\equiv \gamma_\uparrow - (\gamma_{44}+\gamma_{43})=\gamma_\uparrow - \big(\gammauu + \gammadu \big), \\
 \gamma_{\rm{loss},\downarrow} &\equiv \gamma_\downarrow - (\gamma_{33}+\gamma_{34})=\gamma_\downarrow - \big(\gammadd + \gammaud \big),\\
-\gamma_{\rm loss} &\equiv \frac{\gamma_{\rm{loss},\uparrow} +\gamma_{\rm{loss},\downarrow}}{2}\\
+\gamma_{\rm loss} &\equiv \frac{\gamma_{\rm{loss},\uparrow} +\gamma_{\rm{loss},\downarrow}}{2}=-\gamma_{00}\\
 \gamma_{\rm pol} &\equiv \frac{\gamma_{\rm{loss},\uparrow} - \gamma_{\rm{loss},\downarrow}}{2},\\
 \gamma_{\rm flip} &\equiv \frac{\gammauu + \gammadd + \gammaud + \gammadu}{2}.
 \end{align}
