@@ -3021,7 +3021,7 @@ Equs.~\eqref{eq:expJz2eq} and~\eqref{eq:expJzeq} only describe the optical pumpi
 and hence, considering only the optical pumping effect, Equs.~\eqref{eq:expJz2eq} and~\eqref{eq:expJzeq} yield
 \begin{align}
 \!\!\!\! \dt{\Delta J_z^2} &= \dt{\expect{\hat{J}_z^2}} - 2\expect{\hat{J}_z}\dt{\expect{\hat{J}_z}}\\
-&= -\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
+&= \left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
 &\quad -\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \expect{\hat{N}_A }\nonumber\\
 &\quad +\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
 &\quad -\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\hat{J}_z }\expect{\hat{N}_A}\nonumber\\
@@ -3030,16 +3030,20 @@ and hence, considering only the optical pumping effect, Equs.~\eqref{eq:expJz2eq
 
 Now with the measurement effect correction, we will have 
 \begin{align}
-\dt{\Delta J_z^2} &= -\kappa \left(\Delta J_z^2 \right)^2 -\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
+\dt{\Delta J_z^2} &= -\kappa \left(\Delta J_z^2 \right)^2 +\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
 &\quad -\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \expect{\hat{N}_A }\nonumber\\
 &\quad +\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
 &\quad -\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\hat{J}_z }\expect{\hat{N}_A}\nonumber\\
 &\quad +\frac{N_A(N_A-1)}{4} \left[ (\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\\
-&= -\kappa \left(\Delta J_z^2 \right)^2 -\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
+&= -\kappa \left(\Delta J_z^2 \right)^2 +\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
 &\quad -\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \expect{\hat{N}_A }\nonumber\\
 &\quad +\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
 &\quad +\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\Delta J_z \Delta N_A}\\
-&= -\kappa(\Delta J_z^2)^2 +2\Gamma_b\Delta J_z^2 + \left(2\Gamma_b-\Gamma_{\rm loss}\right)\frac{\expect{\hat{N}_A}}{4} +\left(\frac{\Gamma_a}{2}-\Gamma_{\rm pol} \right)\expect{\hat{J}_z}\nonumber\\
+&=-\kappa \left(\Delta J_z^2 \right)^2 +\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
+&\quad -\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \frac{\expect{\hat{N}_A }}{4}\nonumber\\
+&\quad -\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}+3\gamma_{43}-3\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
+&\quad +\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \left(\expect{\hat{N}_A \hat{J}_z}-\expect{\hat{N}_A}\expect{\hat{J}_z}\right)\\
+&= -\kappa(\Delta J_z^2)^2 -2\Gamma_b\Delta J_z^2 + \left(2\Gamma_b-\Gamma_{\rm loss}\right)\frac{\expect{\hat{N}_A}}{4} +\left(\frac{\Gamma_a}{2}-\Gamma_{\rm pol} \right)\expect{\hat{J}_z}\nonumber\\
 &\quad +\Gamma_{\rm pol}\left( \expect{\hat{N}_A\hat{J}_z}-\expect{\hat{N}_A}\expect{\hat{J}_z} \right) .
 \end{align}
 We have defined the two-body operator covariance $ \expect{\Delta J_z \Delta N_A}=\expect{\Delta N_A\Delta J_z}\equiv  \frac{N_A(N_A-1)}{2}\expect{\mathrm{Sym}(\hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) } - \expect{\hat{J}_z }\expect{\hat{N}_A}$. Along this line, we can define the following two-body operator covariances,
