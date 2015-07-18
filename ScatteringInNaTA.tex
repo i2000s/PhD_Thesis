@@ -2780,25 +2780,25 @@ Because $\alpha_0(F,F')$ is a complex number in general, one can decompose the e
 
 In our case, we are only interested in the \textit{clock-state} subspace of the atoms, which fixes $ m=0 $ for the ground states and $ m'=q $ for the excited states to have non-zero contributions from the corresponding quantum transitions. We also want to restrict our attention to the magic frequency case, in which the coherent transition rates for the two ground sublevels, $ \ket{\uparrow}=\ket{F=4,m_F=0} $ and $ \ket{\downarrow}=\ket{F=3,m_F=0} $, are equal and do not contribute to the dynamics of the system ($ [\hat{H}_{\rm coh}\hat{\rho}-\hat{\rho}\hat{H}_{\rm coh}]=0 $ using $ y $-axis as the quantization axis). The loss part of the effective Hamiltonian at a magic frequency can be given by
 \begin{align}
-\hat{H}_{\rm loss} &= i\hbar  \left( \Im\left[ \gamma_{\uparrow}\right] \op{\uparrow}{\uparrow} + \Im\left[ \gamma_{\downarrow}\right] \op{\downarrow}{\downarrow} \right)\\
-&=  i\hbar  \left[ \frac{\Im\left[ \gamma_{\uparrow}\right]}{2} \left(\hat{I}+\hat{\sigma}_z \right) + \frac{\Im\left[ \gamma_{\downarrow}\right]}{2} \left(\hat{I}-\hat{\sigma}_z \right) \right]\\
-&= \frac{i\hbar}{2} \left( \Im \left[\gamma_{\uparrow}+\gamma_{\downarrow}\right] \hat{I} + \Im\left[\gamma_{\uparrow}-\gamma_{\downarrow}\right]\hat{\sigma}_z  \right)\\
+\hat{H}_{\rm loss} &= -i\hbar  \left(  \frac{\gamma_{\uparrow}}{2} \op{\uparrow}{\uparrow} + \frac{\gamma_{\downarrow}}{2} \op{\downarrow}{\downarrow} \right)\\
+&=  -\frac{i\hbar}{2}  \left[ \frac{ \gamma_{\uparrow}}{2} \left(\hat{I}+\hat{\sigma}_z \right) + \frac{ \gamma_{\downarrow}}{2} \left(\hat{I}-\hat{\sigma}_z \right) \right]\\
+&= -\frac{i\hbar}{2} \left(  \frac{\gamma_{\uparrow}+\gamma_{\downarrow}}{2} \hat{I} + \frac{\gamma_{\uparrow}-\gamma_{\downarrow}}{2} \hat{\sigma}_z  \right)\\
 &= -\frac{i\hbar}{2}\left(\gamma_s^+\hat{I} + \gamma_s^-\hat{\sigma}_z \right)
 \end{align}
 where 
 \begin{align}
- \gamma_s^+ &= -\Im\left[\gamma_{\uparrow}+\gamma_{\downarrow} \right]\\
-\gamma_s^- &= -\Im\left[\gamma_{\uparrow}-\gamma_{\downarrow} \right]\\
-\!\!\!\!\!\!\!\! \Im\left[\gamma_{\uparrow}\right] &= \!-\! \sum_{F'} \! \frac{|\bra{J'}|d|\ket{J}|^2\Gamma/2}{\hbar^2(\Delta_{4,F'}^2+\Gamma^2/4)}|\mathcal{E}^{(+)}(\br')|^2\!\! \sum_{q}\! |o^{J'F'}_{J4}\! C^{4 0;1q}_{F' q} |^2 |\mathbf{e}_q\!\cdot\! \mathbf{e}_L^*|^2\\
-&= \!-\! \sum_{F'} \! \frac{\Gamma\Omega^2/8}{\Delta_{4,F'}^2+\Gamma^2/4}\!\! \sum_{q}\! |o^{J'F'}_{J4}\! C^{4 0;1q}_{F' q} |^2 |\mathbf{e}_q\!\cdot\! \mathbf{e}_L^*|^2\\
-&= -\frac{\dot{N}_L}{2}\frac{\pi \omega_0}{\hbar v_g} \!\!\sum_{F'\! , q}\! \frac{\Gamma |\bra{J'}|d|\ket{J}|^2}{\Delta_{4,F'}^2+\Gamma^2/4} |o^{J'F'}_{J4}\! C^{4 0;1q}_{F' q}|^2  %\nonumber\\
+ \gamma_s^+ &= \frac{\gamma_{\uparrow}+\gamma_{\downarrow} }{2}\\
+\gamma_s^- &= \frac{\gamma_{\uparrow}-\gamma_{\downarrow} }{2}\\
+\!\!\!\!\!\!\!\! \gamma_{\uparrow} &=  \sum_{F'} \! \frac{|\bra{J'}|d|\ket{J}|^2\Gamma}{\hbar^2(\Delta_{4,F'}^2+\Gamma^2/4)}|\mathcal{E}^{(+)}(\br')|^2\!\! \sum_{q}\! |o^{J'F'}_{J4}\! C^{4 0;1q}_{F' q} |^2 |\mathbf{e}_q\!\cdot\! \mathbf{e}_L^*|^2\\
+&=  \sum_{F'} \! \frac{\Gamma\Omega^2/4}{\Delta_{4,F'}^2+\Gamma^2/4}\!\! \sum_{q}\! |o^{J'F'}_{J4}\! C^{4 0;1q}_{F' q} |^2 |\mathbf{e}_q\!\cdot\! \mathbf{e}_L^*|^2\\
+&= \dot{N}_L \frac{\pi \omega_0}{\hbar v_g} \!\!\sum_{F'\! , q}\! \frac{\Gamma |\bra{J'}|d|\ket{J}|^2}{\Delta_{4,F'}^2+\Gamma^2/4} |o^{J'F'}_{J4}\! C^{4 0;1q}_{F' q}|^2  %\nonumber\\
 %&\quad\quad\quad\quad\quad\quad\quad\quad\quad   
 |\mathbf{e}_q \!\cdot\! 
 \left( \mathbf{u}_{H}^*(\br^\prime\!\!_\perp) \!+\! 
 \mathbf{u}_{V}^*(\br^\prime\!\!_\perp)\right) |^2\\
-\Im\left[\gamma_{\downarrow}\right] &=\!-\! \sum_{F'} \! \frac{|\bra{J'}|d|\ket{J}|^2\Gamma/2}{\hbar^2(\Delta_{3,F'}^2+\Gamma^2/4)}|\mathcal{E}^{(+)}(\br')|^2\!\! \sum_{q}\! |o^{J'F'}_{J3}\! C^{3 0;1q}_{F' q} |^2 |\mathbf{e}_q\!\cdot\! \mathbf{e}_L^*|^2\\
-&= \!-\! \sum_{F'} \! \frac{\Gamma\Omega^2/8}{\Delta_{3,F'}^2+\Gamma^2/4}\!\! \sum_{q}\! |o^{J'F'}_{J3}\! C^{3 0;1q}_{F' q} |^2 |\mathbf{e}_q\!\cdot\! \mathbf{e}_L^*|^2\\
-&= -\frac{\dot{N}_L}{2}\frac{\pi \omega_0}{\hbar v_g} \!\!\sum_{F'\! , q}\! \frac{\Gamma |\bra{J'}|d|\ket{J}|^2}{\Delta_{3,F'}^2+\Gamma^2/4} |o^{J'F'}_{J3}\! C^{3 0;1q}_{F' q}|^2  %\nonumber\\
+\gamma_{\downarrow} &= \sum_{F'} \! \frac{|\bra{J'}|d|\ket{J}|^2\Gamma}{\hbar^2(\Delta_{3,F'}^2+\Gamma^2/4)}|\mathcal{E}^{(+)}(\br')|^2\!\! \sum_{q}\! |o^{J'F'}_{J3}\! C^{3 0;1q}_{F' q} |^2 |\mathbf{e}_q\!\cdot\! \mathbf{e}_L^*|^2\\
+&=  \sum_{F'} \! \frac{\Gamma\Omega^2/4}{\Delta_{3,F'}^2+\Gamma^2/4}\!\! \sum_{q}\! |o^{J'F'}_{J3}\! C^{3 0;1q}_{F' q} |^2 |\mathbf{e}_q\!\cdot\! \mathbf{e}_L^*|^2\\
+&= \dot{N}_L\frac{\pi \omega_0}{\hbar v_g} \!\!\sum_{F'\! , q}\! \frac{\Gamma |\bra{J'}|d|\ket{J}|^2}{\Delta_{3,F'}^2+\Gamma^2/4} |o^{J'F'}_{J3}\! C^{3 0;1q}_{F' q}|^2  %\nonumber\\
 %&\quad\quad\quad\quad\quad\quad\quad\quad\quad   
 |\mathbf{e}_q \!\cdot\! 
 \left( \mathbf{u}_{H}^*(\br^\prime\!\!_\perp) \!+\! 
@@ -2872,7 +2872,7 @@ Hence the master equation describing the expectation values of an arbitrary Herm
 &= \expect{\mathcal{D}^{(i)\dagger}\left[\hat{O}^{(i)} \right] }
 %&= -\gamma_s^+\expect{\hat{O}} \!-\! \frac{\gamma_s^-}{2}\sum_i^{N_A}\expect{\!\left\{ \hat{\sigma}_z^{(i)},\hat{O} \right\}\!} \!+\! \expect{\!\!\sum_{F_b,F_a,i}\!\! \gamma_{F_bF_a} \op{F_b,0}{F_a,0}^{(i)} \hat{O} \op{F_a,0}{F_b,0}^{(i)} },
 \end{align}
-In fact, to ensure $ \hat{\rho}^{(i)} $ Hermitian, Equ.~\eqref{eq:drhoidtDi} implies that $ \mathcal{D}^{(i)\dagger}=\mathcal{D}^{(i)} $. 
+%In fact, to ensure $ \hat{\rho}^{(i)} $ Hermitian, Equ.~\eqref{eq:drhoidtDi} implies that $ \mathcal{D}^{(i)\dagger}=\mathcal{D}^{(i)} $. 
 
 Similarly, for a joint density operator between different atoms $ i $ and $ j $, the master equation gives
 \begin{align}
@@ -2893,24 +2893,40 @@ There are some useful properties we can use for our calculations below:
 \op{\downarrow}{\uparrow} &= \hat{\sigma}_-=\frac{1}{2}(\hat{\sigma}_x-i\hat{\sigma}_y).
 \end{align}
 
+From the equations of motion we will show later and the physics meaning, we define
+\begin{align}
+\Gamma_{\rm{loss},\uparrow} &\equiv \gamma_\uparrow - (\gamma_{44}+\gamma_{43})=\gamma_\uparrow - \big(\gammauu + \gammadu \big), \\
+\Gamma_{\rm{loss},\downarrow} &\equiv \gamma_\downarrow - (\gamma_{33}+\gamma_{34})=\gamma_\downarrow - \big(\gammadd + \gammaud \big),\\
+\Gamma_{\rm loss} &\equiv \frac{\Gamma_{\rm{loss},\uparrow} +\Gamma_{\rm{loss},\downarrow}}{2}=-\left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34} \right)-\gamma_s^+\right], \\
+\Gamma_{\rm pol} &\equiv -\frac{\Gamma_{\rm{loss},\uparrow} - \Gamma_{\rm{loss},\downarrow}}{2}=\left[\frac{1}{2}\left(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34}\right) -\gamma_s^-\right],\\
+\Gamma_1 &\equiv \frac{\gammauu + \gammadd + \gammaud + \gammadu}{2}=\frac{\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34}}{2},\\
+\Gamma_3 &\equiv \gammaud+\gammadu=\gamma_{43}+\gamma_{34},\\
+\Gamma_a &= \Gamma_{\rm pol}+\gamma_{34}-\gamma_{43}= \left[\frac{1}{2}\left(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34}\right) -\gamma_s^-\right],\\
+\Gamma_b &= \Gamma_{\rm loss}+\gamma_{34}+\gamma_{43}=-\left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} \right)-\gamma_s^+\right] .
+\end{align}
+$ \Gamma_1 $ is the rate of $ \expect{\hat{J}_x} $ depolarization, and $ \Gamma_3 $ is the rate of $ \expect{\hat{J}_z} $ depolarization. 
+
 We can calculate the fluctuation of the collective spin operators, $ \hat{\mathbf{J}}=\sum_i^{N_A}\hat{\boldsymbol{\sigma}}^{(i)}/2 $, using the master equation above. 
 For instance, 
 \begin{align}
 \dt{\expect{\hat{J}_z}} &= \frac{1}{2}\sum_i^{N_A} \dt{\expect{\hat{\sigma}_z^{(i)}}}\\
-&= \left[ \frac{1}{2}\left(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} \right)-\gamma_s^+\right]\expect{\hat{J}_z} \nonumber \\
-&\quad + \frac{1}{2}\left[ \frac{1}{2}(\gamma_{44} -\gamma_33+\gamma_{43}-\gamma_{34})- \gamma_s^-\right] \expect{\hat{N}_A}.\label{eq:expJzeq}
+&= \left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} \right)-\gamma_s^+\right]\expect{\hat{J}_z} \nonumber \\
+&\quad + \left[\left(\gamma_{44} -\gamma_{33}+\gamma_{43}-\gamma_{34}\right)- 2\gamma_s^-\right] \frac{\expect{\hat{N}_A}}{4}\\
+&= -\Gamma_b \expect{\hat{J}_z} +\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_A}.\label{eq:expJzeq}
 \end{align}
 
 The evolution of the atom population operator on the clock-state subspace, $ \hat{N}_A=\sum_i^{N_A}\hat{I}^{(i)} $, evolves as
 \begin{align}
 \dt{\expect{\hat{N}_A}} &= \sum_i^{N_A} \dt{ \expect{\hat{I}^{(i)}}}  =\sum_i^{N_A} \expect{\mathcal{D}^{(i)\dagger}\left[\hat{I}^{(i)}\right] }\\
 &= \left[\frac{1}{2}(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34}) -\gamma_s^+\right]\expect{\hat{N}_A} \nonumber \\
-&\quad + \left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34}) -2\gamma_s^- \right] \expect{\hat{J}_z}.
+&\quad + \left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34}) -2\gamma_s^- \right] \expect{\hat{J}_z}\\
+&= -\Gamma_{\rm loss}\expect{\hat{N}_A} +2\Gamma_a \expect{\hat{J}_z}. \label{Eq:NAt}
 \end{align}
 Similarly, 
 \begin{align}
 \dt{\expect{\hat{J}_x}} &= \frac{1}{2} \sum_i^{N_A} \expect{\mathcal{D}^{(i)\dagger}\left[\hat{\sigma}_x^{(i)} \right] }\\
-&= -\gamma_s^+\expect{\hat{J}_x} .
+&= -\gamma_s^+\expect{\hat{J}_x}\\
+&= -\left(\Gamma_{\rm loss} +\Gamma_1 \right)\expect{\hat{J}_x} .
 \end{align}
 
 %We know the solution for the differential equation 
@@ -2933,8 +2949,8 @@ In the meantime, we use the property that $ \hat{J}_z^2=\frac{1}{4} \sum_{i,j} \
 \dt{\expect{\hat{J}_z^2}} &=  \frac{1}{4}\dt{\expect{\hat{N}_A}} \!+\! \frac{1}{4}\sum_{i\neq j}^{N_A}\dt{}\expect{\hat{\sigma}_z^{(i)}\hat{\sigma}_z^{(j)}}\\
 &= \frac{1}{4}\left[ \frac{1}{2} (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -\gamma_s^+\right]\expect{\hat{N}_A} \nonumber\\
 &\quad \!+\! \frac{1}{4} \left[  (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right] \expect{\hat{J}_z} \nonumber\\
-&\quad \!+\! \frac{1}{4}\sum_{i\neq j}^{N_A} \left[ (\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\sigma}_z^{(i)} \hat{\sigma}_z^{(j)}} \nonumber\\
-&\quad \!+\! \frac{1}{4}\sum_{i\neq j}^{N_A} \left[ (\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(i)}\hat{\sigma}_z^{(j)} ) }\\
+&\quad \!+\! \frac{1}{4}\sum_{i,j\neq i}^{N_A} \left[ (\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\sigma}_z^{(i)} \hat{\sigma}_z^{(j)}} \nonumber\\
+&\quad \!+\! \frac{1}{4}\sum_{i,j\neq i}^{N_A} \left[ (\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(i)}\hat{\sigma}_z^{(j)} ) }\\
 &= \frac{1}{4}\left[ \frac{1}{2} (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -\gamma_s^+\right]\expect{\hat{N}_A} \nonumber\\
 &\quad \!+\! \frac{1}{4} \left[  (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right] \expect{\hat{J}_z} \nonumber\\
 &\quad \!+\! \frac{N_A(N_A-1)}{4} \left[ (\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} \nonumber\\
@@ -2953,11 +2969,50 @@ To calculate the equation above, we also have a set of equations for some other 
 &\quad + \left[ \frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -\gamma_s^-\right]\expect{\hat{I}^{(1)} \hat{I}^{(2)}}\\
 \left.\dt{}\expect{\hat{I}^{(i)} \hat{I}^{(j)}}\right|_{i\neq j} &= \dt{}\expect{\hat{I}^{(1)} \hat{I}^{(2)}}\\
 &= \left[ (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{I}^{(1)} \hat{I}^{(2)}}\nonumber\\
-&\quad +\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right]\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} .
+&\quad +\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(1)} \hat{\sigma}_z^{(2)})} .
 \end{align}
+Note: when $ i\neq j $, $ \sum_{i,j\neq i}\mathrm{Sym}(\hat{I}^{(i)}\hat{\sigma}_z^{(j)} )= \sum_{i,j\neq i}\hat{I}^{(i)}\hat{\sigma}_z^{(j)}$.
 
-
-
+Using the relationship that 
+\begin{align}
+\expect{\hat{J}_z^2} &= \sum_{m,n}^{N_A} \hat{j}_z^{(m)}\hat{j}_z^{(n)} = \frac{\expect{\hat{N}_A}}{4} + \sum_{m,n\neq m}^{N_A} \hat{j}_z^{(m)}\hat{j}_z^{(n)}\\
+&= \frac{\expect{\hat{N}_A}}{4} + \frac{N_A(N_A-1)}{4} \expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}}\\
+\expect{\hat{N}_A \hat{J}_z} &= \expect{\hat{J}_z } + \frac{N_A(N_A-1)}{2} \expect{\mathrm{Sym}(\hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\\
+\expect{\hat{N}_A^2} &= \expect{\hat{N}_A} + N_A(N_A-1)\expect{\hat{I}^{(1)}\hat{I}^{(2)}},
+\end{align}
+Equ.~\eqref{eq:expJz2eq} can be rewritten as
+\begin{align}
+\dt{\expect{\hat{J}_z^2}} &=\left[ (\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{J}_z^2} \nonumber\\
+&\quad \!+\!  \left[ \frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -\gamma_s^-\right]\expect{\hat{N}_{A}\hat{J}_z } \nonumber\\
+&\quad \!+\!  \frac{1}{4}\left[ -\frac{1}{2} (\gamma_{44}+\gamma_{33} - 3\gamma_{43} -3\gamma_{34})  +\gamma_s^+\right]\expect{\hat{N}_A} \nonumber\\
+&\quad \!-\! \frac{1}{4} \left[  (\gamma_{44}-\gamma_{33}+3\gamma_{43}-3\gamma_{34})  -2\gamma_s^-\right] \expect{\hat{J}_z}\\
+&= -2\Gamma_b\expect{\hat{J}_z^2}+\Gamma_{\rm pol}\expect{\hat{N}_{A}\hat{J}_z }\nonumber\\
+&\quad +\left(2\Gamma_b-\Gamma_{\rm loss} \right)\frac{\expect{\hat{N}_A}}{4} +\left(\frac{\Gamma_a}{2}-\Gamma_{\rm pol} \right) \expect{\hat{J}_z},\label{eq:expJz2eq_op}
+\end{align}
+together with
+\begin{align}
+\dt{\expect{\hat{N}_A\hat{J}_z}} &=\dt{} \expect{\hat{J}_z } + \frac{N_A(N_A-1)}{2} \dt{}\expect{\mathrm{Sym}(\hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\\
+&= -\Gamma_b \expect{\hat{J}_z} +\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_A} \nonumber\\
+&\quad +\frac{N_A(N_A-1)}{2}\left[(\gamma_{44}+\gamma_{33})-2\gamma_s^+ \right] \expect{\mathrm{Sym}( \hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\nonumber\\
+&\quad +\frac{N_A(N_A-1)}{4}\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}}\nonumber\\
+&\quad \!\!+\! \frac{N_A(N_A-1)}{4}\left[ (\gamma_{44}\!-\!\gamma_{33}\!+\!\gamma_{43}\!-\!\gamma_{34})  \!-\! 2\gamma_s^-\right]\! \expect{\mathrm{Sym}(\hat{I}^{(\!1\!)}\!\hat{I}^{(2)} )}\\
+&= -\Gamma_b \expect{\hat{J}_z} +\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_A} \nonumber\\
+&\quad +\left[(\gamma_{44}+\gamma_{33})-2\gamma_s^+ \right] \left( \expect{ \hat{N}_A\hat{J}_z }-\expect{\hat{J}_z}\right)\nonumber\\
+&\quad+\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right]\left(\expect{\hat{J}_z^2 }-\frac{\expect{\hat{N}_A}}{4}\right)\nonumber\\
+&\quad+\frac{1}{4}\left[ (\gamma_{44}\!-\!\gamma_{33}\!+\!\gamma_{43}\!-\!\gamma_{34})  \!-\! 2\gamma_s^-\right]\left(\expect{\hat{N}_A^2}-\expect{\hat{N}_A}\right)\\
+&=-\left(\Gamma_{\rm loss}+\Gamma_b\right)\expect{\hat{N}_A \hat{J}_z} +2\Gamma_a\expect{\hat{J}_z^2}+\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_A^2 }\nonumber\\ 
+&\quad+\Gamma_{\rm loss} \expect{\hat{J}_z} -\frac{\Gamma_a}{2}\expect{\hat{N}_A}
+\end{align}
+\begin{align}
+\dt{\expect{\hat{N}_A^2}} &= \dt{}\expect{\hat{N}_A} + N_A(N_A-1)\dt{}\expect{\hat{I}^{(1)}\hat{I}^{(2)}}\\
+&= -\Gamma_{\rm loss}\expect{\hat{N}_A} +2\Gamma_a \expect{\hat{J}_z}\nonumber\\
+&\quad +N_A(N_A-1)\left[ (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{I}^{(1)} \hat{I}^{(2)}}\nonumber\\
+&\quad +N_A(N_A-1)\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(1)} \hat{\sigma}_z^{(2)})}\\
+&= -\Gamma_{\rm loss}\expect{\hat{N}_A} +2\Gamma_a \expect{\hat{J}_z}\nonumber\\
+&\quad + \left[ (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right] \left(\expect{\hat{N}_A^2}-\expect{\hat{N}_A} \right)\nonumber\\
+&\quad + 2\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right] \left(\expect{\hat{N}_A\hat{J}_z} -\expect{\hat{J}_z} \right)\\
+&= 4\Gamma_a \expect{\hat{N}_A\hat{J}_z} -2\Gamma_{\rm loss}\expect{\hat{N}_A^2} -2\Gamma_a \expect{\hat{J}_z} +\Gamma_{\rm loss}\expect{\hat{N}_A} .
+\end{align}
 \textcolor{red}{To be included: the measurement effect in generating spin squeezing or the $ \Delta J_z^2 $ term. A quick fix is given below:}
 Equs.~\eqref{eq:expJz2eq} and~\eqref{eq:expJzeq} only describe the optical pumping dynamics of the spin system. The measurement effect will yield a $ -\kappa \left(\Delta J_z^2 \right)^2 $ term in the differential equation of $ \Delta J_z^2 $. So, we can use the relationship that
 \begin{align}
@@ -2979,31 +3034,139 @@ Now with the measurement effect correction, we will have
 &\quad -\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \expect{\hat{N}_A }\nonumber\\
 &\quad +\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
 &\quad -\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\hat{J}_z }\expect{\hat{N}_A}\nonumber\\
-&\quad +\frac{N_A(N_A-1)}{4} \left[ (\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }.
+&\quad +\frac{N_A(N_A-1)}{4} \left[ (\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\\
+&= -\kappa \left(\Delta J_z^2 \right)^2 -\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
+&\quad -\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \expect{\hat{N}_A }\nonumber\\
+&\quad +\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
+&\quad +\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\Delta J_z \Delta N_A}.
+\end{align}
+We have defined the two-body operator covariance $ \expect{\Delta J_z \Delta N_A}=\expect{\Delta N_A\Delta J_z}\equiv  \frac{N_A(N_A-1)}{2}\expect{\mathrm{Sym}(\hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) } - \expect{\hat{J}_z }\expect{\hat{N}_A}$. Along this line, we can define the following two-body operator covariances,
+\begin{align}
+\expect{\Delta N_A \Delta N_A} &\equiv N_A(N_A-1)\expect{\hat{I}^{(1)}\hat{I}^{(2)} } - \expect{\hat{N}_A}^2\\
+\expect{\Delta J_z \Delta J_z} &\equiv \frac{N_A(N_A-1)}{4}\expect{\hat{\sigma}_z^{(1)}\hat{\sigma}_z^{(2)} } - \expect{\hat{J}_z }^2.
+\end{align}
+Notice that the two-body covariances $ \expect{\Delta J_z \Delta J_z} $ and $ \expect{\Delta N_A \Delta N_A} $ may be related to the collective spin variances $ \Delta J_z^2 $ and $\Delta N_A^2 $ by
+\begin{align}
+\Delta J_z^2 &= \expect{\Delta J_z \Delta J_z} + \frac{1}{4} \expect{\hat{N}_A}\\
+\Delta N_A^2 &= \expect{\Delta N_A \Delta N_A} + \expect{\hat{N}_A}.
+\end{align}
+But these are not obviously from the equations of motion of those operators as will be discussed shortly.
+If the relationships above are valid, then $ \Delta J_z^2 $ could be non-zero in the steady state limit if two-body covariance exists--even though $\expect{\hat{N}_A}\rightarrow 0  $.  
+
+From the two-body covariances, one may also define two-body operator correlations given by
+\begin{align}
+\mathrm{cor}(\hat{J}_z,\hat{J}_z) &= \frac{\expect{\Delta J_z \Delta J_z}}{\Delta J_z^2}\\
+\mathrm{cor}(\hat{N}_A,\hat{N}_A) &= \frac{\expect{\Delta N_A \Delta N_A}}{\Delta N_A^2}\\
+\mathrm{cor}(\hat{J}_z,\hat{N}_A) &= \frac{\expect{\Delta J_z \Delta N_A}}{\sqrt{\Delta J_z^2\Delta N_A^2}}.
 \end{align}
 
+The three two-body covariances are governed by a close set of equations of motion as given below:
+\begin{align}
+\dt{} \expect{\Delta J_z \Delta N_A} &= \left[(\gamma_{44}+\gamma_{33})-2\gamma_s^+ \right] \expect{\Delta J_z \Delta N_A} \nonumber \\
+&\quad +  \frac{1}{2} \left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})-\gamma_s^- \right]\expect{\Delta N_A \Delta N_A}\nonumber\\
+&\quad + \left[(\gamma_{44}-\gamma_{33} - \gamma_{43}+\gamma_{34})-2\gamma_s^- \right]\expect{\Delta J_z \Delta J_z}\\
+\dt{} \expect{\Delta N_A \Delta N_A} &= \left[(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})-2\gamma_s^+ \right]\expect{\Delta N_A \Delta N_A}\nonumber\\
+&\quad +2 \left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})-2\gamma_s^- \right]\expect{\Delta J_z \Delta N_A}\\
+\dt{}\expect{\Delta J_z \Delta J_z} &= \left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})-2\gamma_s^+ \right]\expect{\Delta J_z \Delta J_z}\nonumber\\
+&\quad +\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})-\gamma_s^- \right]\expect{\Delta J_z \Delta N_A}.
+\end{align}
+In the steady state, all two-body correlations vanish.
+It implies that variance like $ \Delta J_z^2 $ would also vanish in the steady state limit. 
 
-For an simple estimation of the solution of the equation above, we can assume $ \expect{\hat{J}_z}\approx 0 $ and $ \expect{\hat{N}_A}=N_A $. 
+Notice that, since the equations for those covariances have not considered measurement backaction which is a second-order but important effect, the model of covariance dynamics is not complete.
+
+\todo[inline]{Todo: include measurement effect in the derivation above; link two-body covariances to entanglement measures and quantum metrology quantities. }
+
+\textbf{Back to the solution of $ \Delta J_z^2 $ and spin squeezing measure:}
+For an attempting estimation of the solution of the equation above, we can assume $ \expect{\hat{J}_z}\approx 0 $ and $ \expect{\hat{N}_A}=N_A $. 
 The general form of the equation above can be given by
 \begin{align}
 	\frac{d x}{d t} = -A x^2 - B x + C
 \end{align}
-for $ x=\Delta J_z^2 $, $ A = \kappa $, $ B=(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+ $ and $ C=-\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right]  $. 
+for $ x=\Delta J_z^2 $, $ A = \kappa $, $ B=(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+ $ and $ C=-\frac{N_A}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right]  $. 
 It can be solved as~\cite{Baragiola2014a}
 \begin{align}
 x(t)&  = \frac{ \sqrt{B^2 + 4 AC}x_0 - (Bx_0-2C) \tanh \left( \sqrt{B^2 + 4 AC}  \frac{t}{2} \right) }{\sqrt{B^2 + 4 AC} + (2Ax_0 + B) \tanh \left( \sqrt{B^2 + 4 AC}  \frac{t}{2} \right) } ,
 \end{align}
 with the initial condition $x_0=\Delta J_z^2(0)=N_A/4$. 
 
+If we consider $ \expect{\hat{N}_A}\rightarrow N_A(t) $ is a pure decay function governed by $ \dt{\expect{\hat{N}_A}} = -\Gamma_{\rm loss}\expect{\hat{N}_A} $ with $ \Gamma_{\rm loss}= \gamma_s^+ - \frac{1}{2}(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34}) $ from Equ.\eqref{Eq:NAt}, then the equation for $ \Delta J_z^2 $ can be approximated in the follow form:
+\begin{align}
+	\frac{d x}{d t} = -A x^2 - B x + C e^{-\Gamma_{\rm loss}t},
+\end{align}
+where $ x=\Delta J_z^2 $, $ x_0=\Delta J_z^2(0)=N_A^2/4=d $, $ A = \kappa $, $ B=(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+ $ and $ C=-\frac{N_A}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right]  $.
+The solution for $ x(t) $ or $ \Delta J_z^2(t) $ can be given by
+\begin{align}
+&\Delta J_z^2(t) = x(t)\nonumber\\
+% Solution with initial value included in the equation explicitly.
+%&\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!=\left. \frac{e^{\frac{Bt}{2}-k t} \left(\frac{AC}{k^2}\right)^{-\frac{B}{k}}  
+%\left(2 k \left(\frac{ AC e^{-k t}}{k^2}\right)^{\frac{ B}{k}} \left((A d+B) \, _0\tilde{F}_1\left(;1-\frac{B}{k};\frac{A C}{k^2}\right)+k \, _0\tilde{F}_1\left(;-\frac{B}{k};\frac{A C}{k^2}\right)\right) \left(A C \, _0\tilde{F}_1\left(;\frac{B}{k}+2;\frac{A C e^{-k t}}{k^2}\right)+k e^{k t} \left(k \, _0\tilde{F}_1\left(;\frac{B}{k};\frac{A C e^{-k x}}{k^2}\right)+B \, _0\tilde{F}_1\left(;\frac{B+k}{k};\frac{A C e^{-k t}}{k^2}\right)\right)\right)
+%-2 A C \left(\frac{AC}{k^2}\right)^{\frac{B}{k}} \left(k \left((2 A d+B) \, _0\tilde{F}_1\left(;\frac{B+k}{k};\frac{A C}{k^2}\right)+k \, _0\tilde{F}_1\left(;\frac{B}{k};\frac{A C}{k^2}\right)\right)+A C \, _0\tilde{F}_1\left(;\frac{B}{k}+2;\frac{A C}{k^2}\right)\right) \, _0\tilde{F}_1\left(;2-\frac{B}{k};\frac{A C e^{-k t}}{k^2}\right)\right)}
+%% Bottom part
+%{k^2 \left(\frac{2 A  e^{\frac{Bt}{2}} \left(k \left((2 A d+B) \, _0\tilde{F}_1\left(;\frac{B+k}{k};\frac{A C}{k^2}\right)+k \, _0\tilde{F}_1\left(;\frac{B}{k};\frac{A C}{k^2}\right)\right)+A C \, _0\tilde{F}_1\left(;\frac{B}{k}+2;\frac{A C}{k^2}\right)\right) \, _0\tilde{F}_1\left(;1-\frac{B}{k};\frac{A C e^{-k x}}{k^2}\right)}{k}
+%-4 A \left(\frac{AC}{k^2}\right)^{-\frac{B}{2k}} \left((A d+B) \, _0\tilde{F}_1\left(;1-\frac{B}{k};\frac{A C}{k^2}\right)+k \, _0\tilde{F}_1\left(;-\frac{B}{k};\frac{A C}{k^2}\right)\right) I_{\frac{B}{k}}\left(\frac{2 \sqrt{AC} \sqrt{e^{-k t}}}{k}\right)\right)}\right\}
+% Solution with initial value separated.
+%&\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!= -\frac{D\sqrt{ACe^{\Gamma_{\rm loss}  (-t)}} \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{1\!-\!\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{ACe^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)+D B \Gamma \left(1-\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)+D \sqrt{ACe^{\Gamma_{\rm loss}  (-t)}} \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)+ (-1)^{B/\Gamma_{\rm loss} } \sqrt{AC e^{\Gamma_{\rm loss}  (-t)}} \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }\!-\!1}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right) + (-1)^{B/\Gamma_{\rm loss} }B \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right) 
+%+ (-1)^{B/\Gamma_{\rm loss} } \sqrt{AC e^{\Gamma_{\rm loss}  (-t)}} \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)}
+%{2 A D \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)
+%+(-1)^{B/\Gamma_{\rm loss} } \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)}\\
+&= \frac{\mathcal{P}+\mathcal{Q}+\mathcal{R}+\mathcal{S}+\mathcal{T}+\mathcal{U} }
+{\mathcal{V}+\mathcal{W}},
+\end{align}
+where 
+\begin{align}
+\mathcal{P} &= D\sqrt{ACe^{-\Gamma_{\rm loss}  t}} \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{1\!-\!\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{ACe^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{Q} &= D B \Gamma \left(1-\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{R} &= D \sqrt{ACe^{-\Gamma_{\rm loss} t}} \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{S} &= (-1)^{B/\Gamma_{\rm loss} } \sqrt{AC e^{-\Gamma_{\rm loss} t}} \Gamma \left(\!\frac{B\!+\!\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\!\right) I_{\frac{B}{\Gamma_{\rm loss} }-1}\left(\!\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\!\right)\\
+\mathcal{T} &= (-1)^{B/\Gamma_{\rm loss} }B \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-\Gamma_{\rm loss} t}}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{U} &= (-1)^{B/\Gamma_{\rm loss} } \sqrt{AC e^{-\Gamma_{\rm loss}  t}} \Gamma \left(\!\frac{B\!+\!\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\!\right) I_{\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }}\left(\!\frac{2 \sqrt{AC e^{- \Gamma_{\rm loss}t }}}{\Gamma_{\rm loss} }\!\right)\\
+\mathcal{V} &= 2 A D \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-\Gamma_{\rm loss}t }}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{W} &= (-1)^{B/\Gamma_{\rm loss} } \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-\Gamma_{\rm loss}t }}}{\Gamma_{\rm loss} }\right)
+\end{align}
+with 
+\begin{align}
+D &\!= \frac{- \left(-\frac{AC }{\Gamma_{\rm loss}^2 }\right)^{\frac{ B}{\Gamma_{\rm loss} }} e^{-(B+\Gamma_{\rm loss})t} \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) }
+{\Gamma_{\rm loss}  \left(2 (A d+B) \, _0F_1\left(;1-\frac{B}{\Gamma_{\rm loss} };\frac{A C e^{-\Gamma_{\rm loss} t}}{\Gamma_{\rm loss} ^2}\right)-2 B \, _0F_1\left(;-\frac{B}{\Gamma_{\rm loss} };\frac{A C e^{-\Gamma_{\rm loss}t }}{\Gamma_{\rm loss} ^2}\right)\right)}\nonumber\\
+&\cdot\! \left\{\!\Gamma_{\rm loss}  e^{\Gamma_{\rm loss}  t}\! \left[\!(2 A d \!+\! B) \, _0\!\tilde{F}_1\!\!\left(\!;\!\frac{B}{\Gamma_{\rm loss} }\!+\!1;\!\frac{A C e^{-\Gamma_{\rm loss} t}}{\Gamma_{\rm loss} ^2}\!\right)\!+\!\Gamma_{\rm loss}  \, _0\!\tilde{F}_1\!\left(\!;\!\frac{B}{\Gamma_{\rm loss} }\!;\!\frac{A C e^{-\Gamma_{\rm loss} t}}{\Gamma_{\rm loss} ^2}\!\right)\!\right]\right. \nonumber\\
+&\quad \quad \left. +A C \, _0\!\tilde{F}_1\!\!\left(\!;\!\frac{B}{\Gamma_{\rm loss} }\!+\! 2;\!\frac{A C e^{-\Gamma_{\rm loss} t }}{\Gamma_{\rm loss} ^2}\!\right)\!\right\}.
+\end{align}
+
 To obtain the solution for $ \Delta J_z^2(t) $ exactly, numerical methods can be applied to the full set of equations discussed above in this section. 
-The variance, $\Delta J_z^2 $, can be characterized by the normalized rate $ \gamma_{\rm norm}= \sqrt{B^2 + 4 AC}$. 
+The variance, $\Delta J_z^2 $, can be characterized by the normalized rate $ \gamma_{\rm norm}= \sqrt{B^2 + 4 AC}$ or by the characteristic decay rate $ \gamma_s $. 
 
 In the end, for a weak measurement, $ \hat{J}_\perp\approx \hat{J}_z $ and $ \hat{J}_\parallel\approx\hat{J}_x $, we should expect the Wineland squeezing parameter~\cite{Wineland1992} to be
 \begin{align}
-\xi &= 2j\expect{\hat{N}_A}\frac{\Delta J_z^2}{\expect{\hat{J}_x}^2}.
+\xi &= 2j\expect{\hat{N}_A(t=0)}\frac{\Delta J_z^2}{\expect{\hat{J}_x}^2}
+=N_A\frac{\Delta J_z^2}{\expect{\hat{J}_x}^2}.
 \end{align}
 The dynamics of the expectation values of collective spin operators and their variance can be seen in Fig.~\ref{fig:clockdynamics_m_yq_rp1d5}. The squeezing parameter is shown in Fig.~\ref{fig:xi_magic}. 
 In the plots, we have normalized the time scale in accordance to $ 1/\gamma_{\rm norm} $, where $ \gamma_{\rm norm} = \sqrt{ (\gamma_{44} +\gamma_{33} -\gamma_{43} -\gamma_{34} -2\gamma_s^+ )^2 -\kappa [\frac{1}{2}(\gamma_{44} +\gamma_{33} -3\gamma_{43} -3\gamma_{34}) -\gamma_s^+ ] N_A } $.
+
+
+To simplify and understand the Heisenberg equations of motion derived above, we can consider the following two aspects (from Ivan and Ben):
+
+1. During the measurement period, the atom number is fixed and hence one can ignore the quantum nature of atom number operators--that is no fluctuation and correlations with the atom number operator. In our equations, for example, $ \expect{\hat{J}_z\hat{N}_A}=\expect{\hat{J}_z}\expect{\hat{N}_A} $ or $ \expect{\hat{I}\hat{\sigma}_z}+\expect{\hat{\sigma}_z\hat{I}}=2\expect{\hat{\sigma}_z} $. \textcolor{red}{This is no longer valid for the accurate solution!}
+
+2. Considering the physics meaning of different decay rates, the $ \gamma_\uparrow $ and $ \gamma_\downarrow $ coming from the imaginary part of the effective Hamiltonian indicate the population loss from the $ \ket{\uparrow} $ and $ \ket{\downarrow} $ respectively; the other rates from the expectation values of jump operators, like $ \gamma_{34} $, are the optical pumping terms indicate population refeeding from one sublevel to another for the collective spins. Since the process we consider is not trace-preserving and the atomic state will be polarized in the end, from the equation of $ \expect{\hat{N}_A} $, one can interpret the coefficient associated with the $ \expect{\hat{N}_A} $ as the loss rate while the coefficient associated with the $ \expect{\hat{J}_z} $ as the polarization rate. Therefore, we define
+\begin{align}
+\gamma_{\rm{loss},\uparrow} &\equiv \gamma_\uparrow - (\gamma_{44}+\gamma_{43})=\gamma_\uparrow - \big(\gammauu + \gammadu \big), \\
+\gamma_{\rm{loss},\downarrow} &\equiv \gamma_\downarrow - (\gamma_{33}+\gamma_{34})=\gamma_\downarrow - \big(\gammadd + \gammaud \big),\\
+\gamma_{\rm loss} &\equiv \frac{\gamma_{\rm{loss},\uparrow} +\gamma_{\rm{loss},\downarrow}}{2}\\
+\gamma_{\rm pol} &\equiv \frac{\gamma_{\rm{loss},\uparrow} - \gamma_{\rm{loss},\downarrow}}{2},\\
+\gamma_{\rm flip} &\equiv \frac{\gammauu + \gammadd + \gammaud + \gammadu}{2}.
+\end{align}
+$ \gamma_{\rm{loss},\uparrow} $ is the total rate of population loss for the state $\ket{\uparrow}$ and similarly for $\gamma_{\rm{loss},\downarrow}$.
+There are two important features of this map that are not typical in a QND measurement of an ensemble of spin-1/2 particles.  Firstly, since $\gamma_{\rm{loss},\uparrow} \neq \gamma_{\uparrow \rightarrow \downarrow}$ and  $\gamma_{\rm{loss},\downarrow} \neq \gamma_{\downarrow \rightarrow \uparrow}$, the map is {\em not} trace preserving to account for atoms optically pumped out of the clock subspace.  
+In addition, since $\gamma_{\rm{loss},\uparrow} \neq \gamma_{\rm{loss},\downarrow}$, optical pumping will lead to a polarization of the mean along $\hat{J}_z$, different from the value found in a QND measurement.
+
+Similarly, one can introduce $\tilde{\gamma}_\uparrow  \equiv \gamma_\uparrow - \gamma_{\uparrow \rightarrow \uparrow}$ is the rate of optical pumping out of the state $\ket{\uparrow}$ without considering the optical pumping effect from itself to itself, and similarly for $\tilde{\gamma}_\downarrow$. Then one can define 
+\begin{align}
+\Gamma_1 &= \frac{\tilde{\gamma}_\uparrow + \tilde{\gamma}_\downarrow}{2}\\
+\Gamma_2 &= \frac{\tilde{\gamma}_\uparrow - \tilde{\gamma}_\downarrow}{2},
+\end{align}
+which appear in the equations of motion of some expectation values of operators.
+
 
 \begin{figure}
 \begin{minipage}{.5\linewidth}
@@ -3079,9 +3242,25 @@ where the measurement strength per atom is defined as $ \kappa = \chi_{\rm eff}^
 
 Using the result above, Equ.~\ref{eq:Mxout} gives
 \begin{align}
-\hat{\mathcal{M}} &= N_A\int_0^T\mathrm{d}t \hat{X}_{\bar{D}}(0,t-z_D/v_p) + N_AT\sqrt{\frac{\kappa}{2}}\hat{F}_z.
+\hat{\mathcal{M}}(T) &= N_A\int_0^T\mathrm{d}t \hat{X}_{\bar{D}}(0,t-z_D/v_p) + N_A \sqrt{\frac{\kappa}{2}}\int_0^T\mathrm{d}t\hat{F}_z(t)\\
+&\approx N_A\int_0^T\mathrm{d}t \hat{X}_{\bar{D}}(0,t-z_D/v_p) + N_AT\sqrt{\frac{\kappa}{2}}\hat{F}_z.
 \end{align}
-We have used the fact that all atoms around a nanofiber are interacting with the probe light in the same manner, and we have assumed the transition time of the light passing through the ensemble of atoms is much shorter than the atomic dynamics and the sampling time of the detector. 
+In the last step, we have used the fact that all atoms around a nanofiber are interacting with the probe light in the same manner, and we have assumed the transition time of the light passing through the ensemble of atoms is much shorter than the atomic dynamics and the sampling time of the detector. 
+
+Since the setup of the photon detectors imply a vacuum state of the photonic operators. The mean value of the measurement can be given by 
+\begin{align}
+\expect{\hat{\mathcal{M}}}(T) &\approx N_AT\sqrt{\frac{\kappa}{2}}\expect{\hat{F}_z(0)}.
+\end{align}
+
+The variance of the measurement can be described by
+\begin{align}
+\Delta \mathcal{M}^2(T) &= \expect{\hat{\mathcal{M}}^2}-\expect{\hat{\mathcal{M}}}^2\\
+&= N_A^2 \int_0^T\mathrm{d}t \int_0^T\mathrm{d}t'  \expect{\Delta\hat{X}_{\bar{D}}(0,t-z_D/v_p)\Delta\hat{X}_{\bar{D}}(0,t'-z_D/v_p)} \nonumber\\
+&\quad + N_A^2 \frac{\kappa}{2} \int_0^T\mathrm{d}t \int_0^T\mathrm{d}t'\expect{\Delta\hat{F}_z(t)\Delta\hat{F}_z(t')}\\
+&\approx \frac{N_A^2T}{2} + \frac{\kappa N_A^2T^2}{2} \Delta\hat{F}_z^2\\
+&\equiv \Delta \mathcal{M}_{\rm SN}^2 + \Delta\mathcal{M}_{\rm PN}^2.
+\end{align}
+To derive the result above, we have used the fact that the covariance $ \expect{\Delta\hat{X}_{\bar{D}}(0,t-z_D/v_p)\Delta\hat{X}_{\bar{D}}(0,t'-z_D/v_p)}\equiv \expect{\hat{X}_{\bar{D}}(0,t-z_D/v_p)\hat{X}_{\bar{D}}(0,t'-z_D/v_p)}-\expect{\hat{X}_{\bar{D}}(0,t-z_D/v_p)}\expect{\hat{X}_{\bar{D}}(0,t'-z_D/v_p)}=\delta(t-t')/2 $ for the vacuum fluctuations, which leads to the vacuum shot noise $ \Delta \mathcal{M}_{\rm SN}^2=\frac{N_A^2T}{2} $. The additional projection noise, $ \Delta\mathcal{M}_{\rm PN}^2=\frac{\kappa N_A^2T^2}{2} \Delta\hat{F}_z^2(0) $, is the signal comes from the variance of the $ z $-projection of the collective spin state.  
 
 ...
 
@@ -3093,7 +3272,8 @@ Using the results above, one can write the stochastic master equation for the co
 
 For the birefringence measurement of the clock states discussed above, the fluctuation of the $ S_3 $ measurement is a combination effect of the shot noise fluctuation of the photon detector and the projection noise as the signal to determine the collective spin state:
 \begin{align}
-\Delta M^2 &= \Delta P^2_{SN} + \Delta P^2_S .
+\Delta M^2 &= \Delta\mathcal{M}_{\rm SN}^2 + \Delta\mathcal{M}_{\rm PN}^2\\
+&\equiv \Delta P^2_{SN} + \Delta P^2_S .
 \end{align}
 As have been discussed in Section~\ref{sec:birefringenceresolution}, the smallest detectable spin polarization is determined by the shot noise limit condition that 
 \begin{align}
