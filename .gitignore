@@ -1,0 +1,7 @@
+#TempFiles for tex.
+*.aux
+*.ilg
+*.log
+*.synctex.gz
+ScatteringInNaTA.pdf
+FactorOf2.pdf

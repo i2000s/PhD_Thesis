@@ -1,0 +1,10 @@
+*.tex text eol=lf
+*.eps text eol=lf
+*.bbl text eol=lf
+*.bib text eol=lf
+README text eol=lf
+.git* text eol=lf
+
+*.pdf binary
+*.png binary
+*.one binary
