@@ -1,0 +1,4357 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    165184,       4348]
+NotebookOptionsPosition[    163926,       4303]
+NotebookOutlinePosition[    164275,       4318]
+CellTagsIndexPosition[    164232,       4315]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"fullsolvey", "=", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "A"}], "*", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"y", "[", "t", "]"}], ")"}], "^", "2"}]}], "-", 
+        RowBox[{"B", "*", 
+         RowBox[{"y", "[", "t", "]"}]}], "+", 
+        RowBox[{"C", "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "\[Gamma]"}], "*", "t"}], "]"}]}]}]}], ",", " ", 
+      RowBox[{
+       RowBox[{"y", "[", "0", "]"}], "\[Equal]", " ", "d"}]}], "}"}], ",", 
+    RowBox[{"y", "[", "t", "]"}], ",", "t"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.645296001717469*^9, 3.6452961337289953`*^9}, {
+  3.645296275061189*^9, 3.6452962900547523`*^9}, {3.645299505547782*^9, 
+  3.645299515096172*^9}, {3.6453013596643376`*^9, 3.645301376371739*^9}, {
+  3.6453049970465155`*^9, 3.6453050092145367`*^9}, {3.645305098367436*^9, 
+  3.645305106085898*^9}, {3.6453051399044385`*^9, 3.6453051481541376`*^9}, {
+  3.6453909283902583`*^9, 3.64539093503587*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"y", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"A", " ", "C", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{"A", " ", "C", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{"A", " ", "C", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{"A", " ", "C", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{"A", " ", "C", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{"A", " ", "C", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{"A", " ", "C", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{"A", " ", "C", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{
+        SqrtBox["A"], " ", "B", " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", 
+         RowBox[{"3", "/", "2"}]], " ", 
+        SqrtBox["C"], " ", "d", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{
+        SqrtBox["A"], " ", "B", " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", 
+         RowBox[{"3", "/", "2"}]], " ", 
+        SqrtBox["C"], " ", "d", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{
+        SqrtBox["A"], " ", "B", " ", 
+        SqrtBox["C"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{
+        SqrtBox["A"], " ", "B", " ", 
+        SqrtBox["C"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{
+        SqrtBox["A"], " ", "B", " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{
+        SqrtBox["A"], " ", "B", " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["B", "2"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{
+        SqrtBox["A"], " ", "B", " ", 
+        SqrtBox["C"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{
+        SqrtBox["A"], " ", "B", " ", 
+        SqrtBox["C"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{
+        SuperscriptBox["B", "2"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{"2", " ", "A", " ", "B", " ", "d", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", 
+         RowBox[{"3", "/", "2"}]], " ", 
+        SqrtBox["C"], " ", "d", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["A", 
+         RowBox[{"3", "/", "2"}]], " ", 
+        SqrtBox["C"], " ", "d", " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+       RowBox[{"2", " ", "A", " ", "B", " ", "d", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"2", " ", "A", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           SqrtBox["A"]}], " ", 
+          SqrtBox["C"], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           RowBox[{"1", "+", 
+            FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+         RowBox[{
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"1", "+", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           RowBox[{"1", "+", 
+            FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+         RowBox[{"B", " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            FractionBox["B", "\[Gamma]"], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           RowBox[{"1", "+", 
+            FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+         RowBox[{"2", " ", "A", " ", "d", " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            FractionBox["B", "\[Gamma]"], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           FractionBox[
+            RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+         RowBox[{
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1"}], "-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            FractionBox["B", "\[Gamma]"], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           FractionBox[
+            RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+         RowBox[{
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"1", "-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            FractionBox["B", "\[Gamma]"], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           FractionBox[
+            RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+         RowBox[{"B", " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            FractionBox["B", "\[Gamma]"], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           FractionBox[
+            RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+         RowBox[{"2", " ", "A", " ", "d", " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            FractionBox["B", "\[Gamma]"], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           FractionBox[
+            RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}]}], 
+      ")"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.645296141540114*^9, 3.6452962944850655`*^9, {3.645299569814501*^9, 
+   3.6452995980387697`*^9}, 3.645300025481804*^9, 3.6453000923617287`*^9, 
+   3.6453001483463397`*^9, 3.6453002116804423`*^9, 3.645305114101993*^9, 
+   3.6453908107938614`*^9, 3.645390939310278*^9, 3.6454442425411515`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.6452963739618073`*^9, 3.6452963841048775`*^9}, {
+  3.645299333501789*^9, 3.6452993459055147`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"y", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{
+           SqrtBox["A"], " ", 
+           SqrtBox["C"]}], "\[Gamma]"], ")"}], 
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}]], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{
+           SqrtBox["A"], " ", 
+           SqrtBox["C"], " ", 
+           SqrtBox[
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"], ")"}], 
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "2"}], " ", "A", " ", "C", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            FractionBox[
+             RowBox[{
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"], ")"}], 
+           FractionBox[
+            RowBox[{"2", " ", "B"}], "\[Gamma]"]], " ", 
+          RowBox[{"Hypergeometric0F1Regularized", "[", 
+           RowBox[{
+            RowBox[{"2", "-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"A", " ", "C", " ", 
+              SuperscriptBox["\[ExponentialE]", 
+               RowBox[{
+                RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+             SuperscriptBox["\[Gamma]", "2"]]}], "]"}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"A", " ", "C", " ", 
+             RowBox[{"Hypergeometric0F1Regularized", "[", 
+              RowBox[{
+               RowBox[{"2", "+", 
+                FractionBox["B", "\[Gamma]"]}], ",", 
+               FractionBox[
+                RowBox[{"A", " ", "C"}], 
+                SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+            RowBox[{"\[Gamma]", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"\[Gamma]", " ", 
+                RowBox[{"Hypergeometric0F1Regularized", "[", 
+                 RowBox[{
+                  FractionBox["B", "\[Gamma]"], ",", 
+                  FractionBox[
+                   RowBox[{"A", " ", "C"}], 
+                   SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"B", "+", 
+                  RowBox[{"2", " ", "A", " ", "d"}]}], ")"}], " ", 
+                RowBox[{"Hypergeometric0F1Regularized", "[", 
+                 RowBox[{
+                  FractionBox[
+                   RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], ",", 
+                  FractionBox[
+                   RowBox[{"A", " ", "C"}], 
+                   SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}]}], ")"}]}]}], 
+           ")"}]}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            FractionBox[
+             RowBox[{
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"], 
+            ")"}], 
+           FractionBox[
+            RowBox[{"2", " ", "B"}], "\[Gamma]"]], " ", "\[Gamma]", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"B", "+", 
+               RowBox[{"A", " ", "d"}]}], ")"}], " ", 
+             RowBox[{"Hypergeometric0F1Regularized", "[", 
+              RowBox[{
+               RowBox[{"1", "-", 
+                FractionBox["B", "\[Gamma]"]}], ",", 
+               FractionBox[
+                RowBox[{"A", " ", "C"}], 
+                SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+            RowBox[{"\[Gamma]", " ", 
+             RowBox[{"Hypergeometric0F1Regularized", "[", 
+              RowBox[{
+               RowBox[{"-", 
+                FractionBox["B", "\[Gamma]"]}], ",", 
+               FractionBox[
+                RowBox[{"A", " ", "C"}], 
+                SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}]}], ")"}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"A", " ", "C", " ", 
+             RowBox[{"Hypergeometric0F1Regularized", "[", 
+              RowBox[{
+               RowBox[{"2", "+", 
+                FractionBox["B", "\[Gamma]"]}], ",", 
+               FractionBox[
+                RowBox[{"A", " ", "C", " ", 
+                 SuperscriptBox["\[ExponentialE]", 
+                  RowBox[{
+                   RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+                SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+            RowBox[{
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{"t", " ", "\[Gamma]"}]], " ", "\[Gamma]", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"\[Gamma]", " ", 
+                RowBox[{"Hypergeometric0F1Regularized", "[", 
+                 RowBox[{
+                  FractionBox["B", "\[Gamma]"], ",", 
+                  FractionBox[
+                   RowBox[{"A", " ", "C", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{
+                    RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+                   SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+               RowBox[{"B", " ", 
+                RowBox[{"Hypergeometric0F1Regularized", "[", 
+                 RowBox[{
+                  FractionBox[
+                   RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], ",", 
+                  FractionBox[
+                   RowBox[{"A", " ", "C", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{
+                    RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+                   SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}]}], ")"}]}]}], 
+           ")"}]}]}], ")"}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["\[Gamma]", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "4"}], " ", "A", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            FractionBox[
+             RowBox[{
+              SqrtBox["A"], " ", 
+              SqrtBox["C"]}], "\[Gamma]"], ")"}], 
+           RowBox[{"-", 
+            FractionBox["B", "\[Gamma]"]}]], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            FractionBox["B", "\[Gamma]"], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"B", "+", 
+               RowBox[{"A", " ", "d"}]}], ")"}], " ", 
+             RowBox[{"Hypergeometric0F1Regularized", "[", 
+              RowBox[{
+               RowBox[{"1", "-", 
+                FractionBox["B", "\[Gamma]"]}], ",", 
+               FractionBox[
+                RowBox[{"A", " ", "C"}], 
+                SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+            RowBox[{"\[Gamma]", " ", 
+             RowBox[{"Hypergeometric0F1Regularized", "[", 
+              RowBox[{
+               RowBox[{"-", 
+                FractionBox["B", "\[Gamma]"]}], ",", 
+               FractionBox[
+                RowBox[{"A", " ", "C"}], 
+                SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}]}], ")"}]}], "+", 
+         RowBox[{
+          RowBox[{"1", "/", "\[Gamma]"}], 
+          RowBox[{"2", " ", "A", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             FractionBox[
+              RowBox[{
+               SqrtBox["A"], " ", 
+               SqrtBox["C"]}], "\[Gamma]"], ")"}], 
+            RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             FractionBox[
+              RowBox[{
+               SqrtBox["A"], " ", 
+               SqrtBox["C"], " ", 
+               SqrtBox[
+                SuperscriptBox["\[ExponentialE]", 
+                 RowBox[{
+                  RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"], 
+             ")"}], 
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}]], " ", 
+           RowBox[{"Hypergeometric0F1Regularized", "[", 
+            RowBox[{
+             RowBox[{"1", "-", 
+              FractionBox["B", "\[Gamma]"]}], ",", 
+             FractionBox[
+              RowBox[{"A", " ", "C", " ", 
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+              SuperscriptBox["\[Gamma]", "2"]]}], "]"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"A", " ", "C", " ", 
+              RowBox[{"Hypergeometric0F1Regularized", "[", 
+               RowBox[{
+                RowBox[{"2", "+", 
+                 FractionBox["B", "\[Gamma]"]}], ",", 
+                FractionBox[
+                 RowBox[{"A", " ", "C"}], 
+                 SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+             RowBox[{"\[Gamma]", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"\[Gamma]", " ", 
+                 RowBox[{"Hypergeometric0F1Regularized", "[", 
+                  RowBox[{
+                   FractionBox["B", "\[Gamma]"], ",", 
+                   FractionBox[
+                    RowBox[{"A", " ", "C"}], 
+                    SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"B", "+", 
+                   RowBox[{"2", " ", "A", " ", "d"}]}], ")"}], " ", 
+                 RowBox[{"Hypergeometric0F1Regularized", "[", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], ",", 
+                   FractionBox[
+                    RowBox[{"A", " ", "C"}], 
+                    SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}]}], ")"}]}]}], 
+            ")"}]}]}]}], ")"}]}], ")"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.6452963884416847`*^9, 3.645301954919819*^9, 
+  3.645306867987142*^9, 3.645445937033891*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "A"}], "*", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"y", "[", "t", "]"}], ")"}], "^", "2"}]}], "-", 
+     RowBox[{"B", "*", 
+      RowBox[{"y", "[", "t", "]"}]}], "+", 
+     RowBox[{"C", "*", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "\[Gamma]"}], "*", "t"}], "]"}]}]}]}], ",", 
+   RowBox[{"y", "[", "t", "]"}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6452964867124557`*^9, 3.6452964927091637`*^9}, {
+  3.645299527910243*^9, 3.6452995343096094`*^9}, {3.645301390630164*^9, 
+  3.645301401378583*^9}, {3.6453057628257494`*^9, 3.6453057660549545`*^9}, {
+  3.6453079968568273`*^9, 3.645307997309228*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"y", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"C", "[", "1", "]"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox["1", "2"]}], " ", 
+           SuperscriptBox["A", 
+            RowBox[{
+             FractionBox["1", "2"], "+", 
+             FractionBox["B", 
+              RowBox[{"2", " ", "\[Gamma]"}]]}]], " ", 
+           SuperscriptBox["C", 
+            RowBox[{
+             FractionBox["1", "2"], "+", 
+             FractionBox["B", 
+              RowBox[{"2", " ", "\[Gamma]"}]]}]], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]], ")"}], 
+            RowBox[{
+             FractionBox["1", "2"], "+", 
+             FractionBox["B", 
+              RowBox[{"2", " ", "\[Gamma]"}]]}]], " ", 
+           SuperscriptBox["\[Gamma]", 
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}]], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"BesselI", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "1"}], "-", 
+                FractionBox["B", "\[Gamma]"]}], ",", 
+               FractionBox[
+                RowBox[{"2", " ", 
+                 SqrtBox["A"], " ", 
+                 SqrtBox["C"], " ", 
+                 SqrtBox[
+                  SuperscriptBox["\[ExponentialE]", 
+                   RowBox[{
+                    RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+              "]"}], "+", 
+             RowBox[{"BesselI", "[", 
+              RowBox[{
+               RowBox[{"1", "-", 
+                FractionBox["B", "\[Gamma]"]}], ",", 
+               FractionBox[
+                RowBox[{"2", " ", 
+                 SqrtBox["A"], " ", 
+                 SqrtBox["C"], " ", 
+                 SqrtBox[
+                  SuperscriptBox["\[ExponentialE]", 
+                   RowBox[{
+                    RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+              "]"}]}], ")"}], " ", 
+           RowBox[{"Gamma", "[", 
+            RowBox[{"1", "-", 
+             FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+          RowBox[{
+           FractionBox["1", "2"], " ", 
+           SuperscriptBox["A", 
+            FractionBox["B", 
+             RowBox[{"2", " ", "\[Gamma]"}]]], " ", "B", " ", 
+           SuperscriptBox["C", 
+            FractionBox["B", 
+             RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]], ")"}], 
+            FractionBox["B", 
+             RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+           SuperscriptBox["\[Gamma]", 
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}]], " ", 
+           RowBox[{"BesselI", "[", 
+            RowBox[{
+             RowBox[{"-", 
+              FractionBox["B", "\[Gamma]"]}], ",", 
+             FractionBox[
+              RowBox[{"2", " ", 
+               SqrtBox["A"], " ", 
+               SqrtBox["C"], " ", 
+               SqrtBox[
+                SuperscriptBox["\[ExponentialE]", 
+                 RowBox[{
+                  RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+            "]"}], " ", 
+           RowBox[{"Gamma", "[", 
+            RowBox[{"1", "-", 
+             FractionBox["B", "\[Gamma]"]}], "]"}]}]}], ")"}]}], "-", 
+       RowBox[{
+        FractionBox["1", "2"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+        SuperscriptBox["A", 
+         RowBox[{
+          FractionBox["1", "2"], "+", 
+          FractionBox["B", 
+           RowBox[{"2", " ", "\[Gamma]"}]]}]], " ", 
+        SuperscriptBox["C", 
+         RowBox[{
+          FractionBox["1", "2"], "+", 
+          FractionBox["B", 
+           RowBox[{"2", " ", "\[Gamma]"}]]}]], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{
+            RowBox[{"-", "t"}], " ", "\[Gamma]"}]], ")"}], 
+         RowBox[{
+          FractionBox["1", "2"], "+", 
+          FractionBox["B", 
+           RowBox[{"2", " ", "\[Gamma]"}]]}]], " ", 
+        SuperscriptBox["\[Gamma]", 
+         RowBox[{"-", 
+          FractionBox["B", "\[Gamma]"]}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], "+", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"1", "+", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}]}], ")"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{
+        FractionBox["1", "2"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+        SuperscriptBox["A", 
+         FractionBox["B", 
+          RowBox[{"2", " ", "\[Gamma]"}]]], " ", "B", " ", 
+        SuperscriptBox["C", 
+         FractionBox["B", 
+          RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{
+            RowBox[{"-", "t"}], " ", "\[Gamma]"}]], ")"}], 
+         FractionBox["B", 
+          RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+        SuperscriptBox["\[Gamma]", 
+         RowBox[{"-", 
+          FractionBox["B", "\[Gamma]"]}]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"A", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["A", 
+           FractionBox["B", 
+            RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+          SuperscriptBox["C", 
+           FractionBox["B", 
+            RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]], ")"}], 
+           FractionBox["B", 
+            RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+          SuperscriptBox["\[Gamma]", 
+           RowBox[{"-", 
+            FractionBox["B", "\[Gamma]"]}]], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"C", "[", "1", "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           RowBox[{"1", "-", 
+            FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"-", "1"}], ")"}], 
+           RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+          SuperscriptBox["A", 
+           FractionBox["B", 
+            RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+          SuperscriptBox["C", 
+           FractionBox["B", 
+            RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]], ")"}], 
+           FractionBox["B", 
+            RowBox[{"2", " ", "\[Gamma]"}]]], " ", 
+          SuperscriptBox["\[Gamma]", 
+           RowBox[{"-", 
+            FractionBox["B", "\[Gamma]"]}]], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            FractionBox["B", "\[Gamma]"], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}], " ", 
+          RowBox[{"Gamma", "[", 
+           RowBox[{"1", "+", 
+            FractionBox["B", "\[Gamma]"]}], "]"}]}]}], ")"}]}], ")"}]}]}], 
+   "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.6452964992198935`*^9, 3.6453080103933797`*^9, 
+  3.6453086506067457`*^9, 3.6454477956903553`*^9, 3.645447884118667*^9, 
+  3.64544791940627*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Simplify", "[", "%", "]"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.6452965396084633`*^9, 3.6452965859401016`*^9}, {
+   3.645296791424583*^9, 3.6452967931717863`*^9}, {3.6453080512740693`*^9, 
+   3.645308057953131*^9}, {3.6453080943530045`*^9, 3.6453081249446583`*^9}, {
+   3.6453081808873672`*^9, 3.6453081819169693`*^9}, {3.6453086281603575`*^9, 
+   3.645308641510964*^9}, {3.6453087151689763`*^9, 3.645308773872325*^9}, 
+   3.6454478444826684`*^9, 3.6454479590347195`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Y", "[", "t_", "]"}], ":=", " ", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", "D", " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "-", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{"B", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", "D", " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "-", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", "D", " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "-", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", "B", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}]}], 
+    "/", 
+    RowBox[{"(", 
+     RowBox[{"2", " ", "A", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"BesselI", "[", 
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox["B", "\[Gamma]"]}], ",", 
+           FractionBox[
+            RowBox[{"2", " ", 
+             SqrtBox["A"], " ", 
+             SqrtBox["C"], " ", 
+             SqrtBox[
+              SuperscriptBox["\[ExponentialE]", 
+               RowBox[{
+                RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+          "]"}], " ", 
+         RowBox[{"C", "[", "1", "]"}], " ", 
+         RowBox[{"Gamma", "[", 
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"-", "1"}], ")"}], 
+          RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+         RowBox[{"BesselI", "[", 
+          RowBox[{
+           FractionBox["B", "\[Gamma]"], ",", 
+           FractionBox[
+            RowBox[{"2", " ", 
+             SqrtBox["A"], " ", 
+             SqrtBox["C"], " ", 
+             SqrtBox[
+              SuperscriptBox["\[ExponentialE]", 
+               RowBox[{
+                RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+          "]"}], " ", 
+         RowBox[{"Gamma", "[", 
+          FractionBox[
+           RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}]}], 
+     ")"}]}]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.6452965396084633`*^9, 3.6452965859401016`*^9}, {
+   3.645296791424583*^9, 3.6452967931717863`*^9}, {3.6453080512740693`*^9, 
+   3.645308057953131*^9}, {3.6453080943530045`*^9, 3.6453081249446583`*^9}, {
+   3.6453081808873672`*^9, 3.6453081819169693`*^9}, {3.6453086281603575`*^9, 
+   3.645308641510964*^9}, {3.6453087151689763`*^9, 3.645308773872325*^9}, 
+   3.6454478444826684`*^9, {3.6454479590347195`*^9, 3.6454479965578966`*^9}, {
+   3.6454497534472637`*^9, 3.6454497535408635`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Y", "[", "0", "]"}], " ", "\[Equal]", " ", "d"}], ",", " ", 
+   "D"}], "]"}]], "Input",
+ CellChangeTimes->{{3.645296589356508*^9, 3.6452965949101176`*^9}, {
+   3.6452967298583555`*^9, 3.645296763487342*^9}, {3.6453081898261833`*^9, 
+   3.6453081991549993`*^9}, {3.6453888059500713`*^9, 3.6453888512362633`*^9}, 
+   3.6453888968488817`*^9, 3.645389072815588*^9, {3.6453893197668304`*^9, 
+   3.6453893209524326`*^9}, {3.6453894221459627`*^9, 
+   3.6453894313499784`*^9}, {3.6453894618866343`*^9, 
+   3.6453895043525524`*^9}, {3.6453901236122684`*^9, 3.645390135556942*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"D", "\[Rule]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], " ", "A", " ", "d", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"C", "[", "1", "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "-", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "-", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", "B", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "-", 
+       RowBox[{"2", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", "A", " ", "d", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "-", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"1", "-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}]}], "+", 
+         RowBox[{"B", " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox["B", "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}]}], "+", 
+         RowBox[{
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+          RowBox[{"BesselI", "[", 
+           RowBox[{
+            RowBox[{"-", 
+             FractionBox[
+              RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"]}], ",", 
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", 
+              SqrtBox["C"], " ", 
+              SqrtBox[
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+           "]"}]}]}], ")"}], " ", 
+       RowBox[{"Gamma", "[", 
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], "]"}]}], ")"}]}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.6453893222628345`*^9, 3.6453894339083834`*^9, {3.6453894665510426`*^9, 
+   3.6453895184972477`*^9}, 3.6453901381777463`*^9, 3.6454478595003576`*^9, 
+   3.6454479327754936`*^9, 3.645447966975134*^9, 3.6454480247848644`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "2"}], " ", "A", " ", "d", " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"C", "[", "1", "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "-", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], 
+       RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+      SqrtBox["A"], " ", 
+      SqrtBox["C"], " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       FractionBox[
+        RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "-", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], 
+       RowBox[{"B", "/", "\[Gamma]"}]], " ", "B", " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       FractionBox[
+        RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "-", 
+     RowBox[{"2", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], 
+       RowBox[{"B", "/", "\[Gamma]"}]], " ", "A", " ", "d", " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       FractionBox[
+        RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "-", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], 
+       RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+      SqrtBox["A"], " ", 
+      SqrtBox["C"], " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       FractionBox[
+        RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}]}], "+", 
+       RowBox[{"B", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}]}], "+", 
+       RowBox[{
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        SqrtBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}]}]}], ")"}], " ", 
+     RowBox[{"Gamma", "[", 
+      RowBox[{"1", "-", 
+       FractionBox["B", "\[Gamma]"]}], "]"}]}], ")"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6452968867168055`*^9, 3.6452968922964697`*^9}, 
+   3.64530824202344*^9, 3.6454480681407723`*^9}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"2", " ", "A", " ", "d", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"t", " ", "\[Gamma]"}]], " ", "\[Gamma]", " ", 
+      RowBox[{"C", "[", "1", "]"}], " ", 
+      RowBox[{"Hypergeometric0F1", "[", 
+       RowBox[{
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"A", " ", "C", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{
+            RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+         SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], 
+       RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox[
+         RowBox[{
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"], ")"}], 
+       FractionBox[
+        RowBox[{"2", " ", "B"}], "\[Gamma]"]], " ", 
+      RowBox[{"Gamma", "[", 
+       FractionBox[
+        RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"A", " ", "C", " ", 
+         RowBox[{"Hypergeometric0F1Regularized", "[", 
+          RowBox[{
+           RowBox[{"2", "+", 
+            FractionBox["B", "\[Gamma]"]}], ",", 
+           FractionBox[
+            RowBox[{"A", " ", "C", " ", 
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+            SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"t", " ", "\[Gamma]"}]], " ", "\[Gamma]", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"\[Gamma]", " ", 
+            RowBox[{"Hypergeometric0F1Regularized", "[", 
+             RowBox[{
+              FractionBox["B", "\[Gamma]"], ",", 
+              FractionBox[
+               RowBox[{"A", " ", "C", " ", 
+                SuperscriptBox["\[ExponentialE]", 
+                 RowBox[{
+                  RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+               SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"B", "+", 
+              RowBox[{"2", " ", "A", " ", "d"}]}], ")"}], " ", 
+            RowBox[{"Hypergeometric0F1Regularized", "[", 
+             RowBox[{
+              FractionBox[
+               RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], ",", 
+              FractionBox[
+               RowBox[{"A", " ", "C", " ", 
+                SuperscriptBox["\[ExponentialE]", 
+                 RowBox[{
+                  RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+               SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}]}], ")"}]}]}], 
+       ")"}]}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{"2", " ", "A", " ", "C", " ", 
+     RowBox[{"Gamma", "[", 
+      RowBox[{"1", "-", 
+       FractionBox["B", "\[Gamma]"]}], "]"}], " ", 
+     RowBox[{"Hypergeometric0F1Regularized", "[", 
+      RowBox[{
+       RowBox[{"2", "-", 
+        FractionBox["B", "\[Gamma]"]}], ",", 
+       FractionBox[
+        RowBox[{"A", " ", "C", " ", 
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+        SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.6454483920726824`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DCoeff", ":=", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", " ", "A", " ", "d", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"t", " ", "\[Gamma]"}]], " ", "\[Gamma]", " ", 
+        RowBox[{"C", "[", "1", "]"}], " ", 
+        RowBox[{"Hypergeometric0F1", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"A", " ", "C", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+           SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"-", "1"}], ")"}], 
+         RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          FractionBox[
+           RowBox[{
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"], ")"}], 
+         FractionBox[
+          RowBox[{"2", " ", "B"}], "\[Gamma]"]], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"A", " ", "C", " ", 
+           RowBox[{"Hypergeometric0F1Regularized", "[", 
+            RowBox[{
+             RowBox[{"2", "+", 
+              FractionBox["B", "\[Gamma]"]}], ",", 
+             FractionBox[
+              RowBox[{"A", " ", "C", " ", 
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+              SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"t", " ", "\[Gamma]"}]], " ", "\[Gamma]", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"\[Gamma]", " ", 
+              RowBox[{"Hypergeometric0F1Regularized", "[", 
+               RowBox[{
+                FractionBox["B", "\[Gamma]"], ",", 
+                FractionBox[
+                 RowBox[{"A", " ", "C", " ", 
+                  SuperscriptBox["\[ExponentialE]", 
+                   RowBox[{
+                    RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+                 SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"B", "+", 
+                RowBox[{"2", " ", "A", " ", "d"}]}], ")"}], " ", 
+              RowBox[{"Hypergeometric0F1Regularized", "[", 
+               RowBox[{
+                FractionBox[
+                 RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], ",", 
+                FractionBox[
+                 RowBox[{"A", " ", "C", " ", 
+                  SuperscriptBox["\[ExponentialE]", 
+                   RowBox[{
+                    RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+                 SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}]}], ")"}]}]}], 
+         ")"}]}]}], ")"}]}], "/", 
+    RowBox[{"(", 
+     RowBox[{"2", " ", "A", " ", "C", " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "-", 
+        FractionBox["B", "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Hypergeometric0F1Regularized", "[", 
+       RowBox[{
+        RowBox[{"2", "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"A", " ", "C", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{
+            RowBox[{"-", "t"}], " ", "\[Gamma]"}]]}], 
+         SuperscriptBox["\[Gamma]", "2"]]}], "]"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.645387561107013*^9, 3.645387561263014*^9}, {
+  3.645449630455965*^9, 3.6454496507250776`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"S", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"Y", "[", "t", "]"}], "/.", 
+   RowBox[{"{", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Y", "[", "0", "]"}], " ", "\[Equal]", " ", "d"}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"A", "\[Rule]", "0.0559"}], ",", 
+         RowBox[{"B", "\[Rule]", 
+          RowBox[{"-", "1.7525"}]}], ",", 
+         RowBox[{"C", "\[Rule]", "715.0111"}], ",", 
+         RowBox[{"d", "\[Rule]", 
+          RowBox[{"2500", "/", "4"}]}], ",", 
+         RowBox[{"\[Gamma]", "\[Rule]", "0.6085"}]}], "}"}]}], ",", " ", 
+      "D"}], "]"}], "}"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"S", "[", "t", "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"A", "\[Rule]", "0.0559"}], ",", 
+      RowBox[{"B", "\[Rule]", 
+       RowBox[{"-", "1.7525"}]}], ",", 
+      RowBox[{"C", "\[Rule]", "715.0111"}], ",", 
+      RowBox[{"d", "\[Rule]", 
+       RowBox[{"2500", "/", "4"}]}], ",", 
+      RowBox[{"\[Gamma]", "\[Rule]", "0.6085"}]}], "}"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<DeltaJz2\>\""}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.6453883149357014`*^9, 3.6453884516537457`*^9}, {
+   3.645388707595087*^9, 3.645388717984706*^9}, {3.645388885975662*^9, 
+   3.6453888883156667`*^9}, {3.6453889390224733`*^9, 
+   3.6453889413780775`*^9}, {3.6453893356710443`*^9, 3.6453893363418455`*^9}, 
+   3.645389395506068*^9, 3.6453895648559227`*^9, {3.6453897337024317`*^9, 
+   3.6453897344980335`*^9}, {3.6453898098465815`*^9, 
+   3.6453898339784584`*^9}, {3.645389888881443*^9, 3.6453899407623205`*^9}, {
+   3.6453903697492695`*^9, 3.645390370058287*^9}, {3.64544419153141*^9, 
+   3.645444206148636*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2.6583830054075925`*^-11", " ", 
+       SqrtBox["A"], " ", 
+       SqrtBox["C"], " ", 
+       SqrtBox[
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "3.356301546598045`*^8"}], "-", 
+           RowBox[{"1.3284529165778774`*^8", " ", "\[ImaginaryI]"}]}], ")"}], 
+         "+", 
+         RowBox[{"3.926499784664908`*^8", " ", 
+          RowBox[{"715.0111`", "[", "1", "]"}]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"625.`", "\[VeryThinSpace]", "-", 
+         FractionBox[
+          RowBox[{"3.2154209952015667`*^10", "+", 
+           RowBox[{"1.2726911869497843`*^10", " ", "\[ImaginaryI]"}]}], 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "3.356301546598045`*^8"}], "-", 
+             RowBox[{"1.3284529165778774`*^8", " ", "\[ImaginaryI]"}]}], 
+            ")"}], "+", 
+           RowBox[{"3.926499784664908`*^8", " ", 
+            RowBox[{"715.0111`", "[", "1", "]"}]}]}]]}], ")"}], " ", 
+       RowBox[{"BesselI", "[", 
+        RowBox[{
+         RowBox[{"1", "-", 
+          FractionBox["B", "\[Gamma]"]}], ",", 
+         FractionBox[
+          RowBox[{"2", " ", 
+           SqrtBox["A"], " ", 
+           SqrtBox["C"], " ", 
+           SqrtBox[
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}],
+        " ", 
+       RowBox[{"Gamma", "[", 
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+      RowBox[{"2.6583830054075925`*^-11", " ", "B", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "3.356301546598045`*^8"}], "-", 
+           RowBox[{"1.3284529165778774`*^8", " ", "\[ImaginaryI]"}]}], ")"}], 
+         "+", 
+         RowBox[{"3.926499784664908`*^8", " ", 
+          RowBox[{"715.0111`", "[", "1", "]"}]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"625.`", "\[VeryThinSpace]", "-", 
+         FractionBox[
+          RowBox[{"3.2154209952015667`*^10", "+", 
+           RowBox[{"1.2726911869497843`*^10", " ", "\[ImaginaryI]"}]}], 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "3.356301546598045`*^8"}], "-", 
+             RowBox[{"1.3284529165778774`*^8", " ", "\[ImaginaryI]"}]}], 
+            ")"}], "+", 
+           RowBox[{"3.926499784664908`*^8", " ", 
+            RowBox[{"715.0111`", "[", "1", "]"}]}]}]]}], ")"}], " ", 
+       RowBox[{"BesselI", "[", 
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["B", "\[Gamma]"]}], ",", 
+         FractionBox[
+          RowBox[{"2", " ", 
+           SqrtBox["A"], " ", 
+           SqrtBox["C"], " ", 
+           SqrtBox[
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}],
+        " ", 
+       RowBox[{"Gamma", "[", 
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+      RowBox[{"2.6583830054075925`*^-11", " ", 
+       SqrtBox["A"], " ", 
+       SqrtBox["C"], " ", 
+       SqrtBox[
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "3.356301546598045`*^8"}], "-", 
+           RowBox[{"1.3284529165778774`*^8", " ", "\[ImaginaryI]"}]}], ")"}], 
+         "+", 
+         RowBox[{"3.926499784664908`*^8", " ", 
+          RowBox[{"715.0111`", "[", "1", "]"}]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"625.`", "\[VeryThinSpace]", "-", 
+         FractionBox[
+          RowBox[{"3.2154209952015667`*^10", "+", 
+           RowBox[{"1.2726911869497843`*^10", " ", "\[ImaginaryI]"}]}], 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "3.356301546598045`*^8"}], "-", 
+             RowBox[{"1.3284529165778774`*^8", " ", "\[ImaginaryI]"}]}], 
+            ")"}], "+", 
+           RowBox[{"3.926499784664908`*^8", " ", 
+            RowBox[{"715.0111`", "[", "1", "]"}]}]}]]}], ")"}], " ", 
+       RowBox[{"BesselI", "[", 
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"]}], ",", 
+         FractionBox[
+          RowBox[{"2", " ", 
+           SqrtBox["A"], " ", 
+           SqrtBox["C"], " ", 
+           SqrtBox[
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}],
+        " ", 
+       RowBox[{"Gamma", "[", 
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+       SqrtBox["A"], " ", 
+       SqrtBox["C"], " ", 
+       SqrtBox[
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+       RowBox[{"BesselI", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          FractionBox["B", "\[Gamma]"]}], ",", 
+         FractionBox[
+          RowBox[{"2", " ", 
+           SqrtBox["A"], " ", 
+           SqrtBox["C"], " ", 
+           SqrtBox[
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}],
+        " ", 
+       RowBox[{"Gamma", "[", 
+        FractionBox[
+         RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "-", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"B", "/", "\[Gamma]"}]], " ", "B", " ", 
+       RowBox[{"BesselI", "[", 
+        RowBox[{
+         FractionBox["B", "\[Gamma]"], ",", 
+         FractionBox[
+          RowBox[{"2", " ", 
+           SqrtBox["A"], " ", 
+           SqrtBox["C"], " ", 
+           SqrtBox[
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}],
+        " ", 
+       RowBox[{"Gamma", "[", 
+        FractionBox[
+         RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "-", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+       SqrtBox["A"], " ", 
+       SqrtBox["C"], " ", 
+       SqrtBox[
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+       RowBox[{"BesselI", "[", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], ",", 
+         FractionBox[
+          RowBox[{"2", " ", 
+           SqrtBox["A"], " ", 
+           SqrtBox["C"], " ", 
+           SqrtBox[
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{
+              RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}],
+        " ", 
+       RowBox[{"Gamma", "[", 
+        FractionBox[
+         RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"2", " ", "A", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"BesselI", "[", 
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox["B", "\[Gamma]"]}], ",", 
+           FractionBox[
+            RowBox[{"2", " ", 
+             SqrtBox["A"], " ", 
+             SqrtBox["C"], " ", 
+             SqrtBox[
+              SuperscriptBox["\[ExponentialE]", 
+               RowBox[{
+                RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+          "]"}], " ", 
+         RowBox[{"C", "[", "1", "]"}], " ", 
+         RowBox[{"Gamma", "[", 
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"-", "1"}], ")"}], 
+          RowBox[{"B", "/", "\[Gamma]"}]], " ", 
+         RowBox[{"BesselI", "[", 
+          RowBox[{
+           FractionBox["B", "\[Gamma]"], ",", 
+           FractionBox[
+            RowBox[{"2", " ", 
+             SqrtBox["A"], " ", 
+             SqrtBox["C"], " ", 
+             SqrtBox[
+              SuperscriptBox["\[ExponentialE]", 
+               RowBox[{
+                RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+          "]"}], " ", 
+         RowBox[{"Gamma", "[", 
+          FractionBox[
+           RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}]}], 
+     ")"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6453884535198483`*^9, 3.645388722664714*^9, {3.6453888901876698`*^9, 
+   3.6453889037762938`*^9}, 3.645388942843144*^9, 3.6453890942053947`*^9, 
+   3.645389338104648*^9, 3.645389452886918*^9, 3.645389568178729*^9, 
+   3.6453897378520393`*^9, 3.6453898121709857`*^9, 3.6453899488367767`*^9, 
+   3.6453903736264915`*^9, 3.6454496718295317`*^9, {3.6454497317195625`*^9, 
+   3.6454497597028747`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"t\"", TraditionalForm], 
+    FormBox["\"DeltaJz2\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  Method->{},
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.6453884535198483`*^9, 3.645388722664714*^9, {3.6453888901876698`*^9, 
+   3.6453889037762938`*^9}, 3.645388942843144*^9, 3.6453890942053947`*^9, 
+   3.645389338104648*^9, 3.645389452886918*^9, 3.645389568178729*^9, 
+   3.6453897378520393`*^9, 3.6453898121709857`*^9, 3.6453899488367767`*^9, 
+   3.6453903736264915`*^9, 3.6454496718295317`*^9, {3.6454497317195625`*^9, 
+   3.645449759905675*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"y", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"y", "[", "t", "]"}], "/.", 
+   "fullsolvey"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"y", "[", "t", "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"A", "\[Rule]", "0.0559"}], ",", 
+      RowBox[{"B", "\[Rule]", 
+       RowBox[{"-", "1.7525"}]}], ",", 
+      RowBox[{"C", "\[Rule]", "715.0111"}], ",", 
+      RowBox[{"d", "\[Rule]", 
+       RowBox[{"2500", "/", "4"}]}], ",", 
+      RowBox[{"\[Gamma]", "\[Rule]", "0.6085"}]}], "}"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<DeltaJz2\>\""}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.645390846908921*^9, 3.6453908473613214`*^9}, {
+  3.6453909950225506`*^9, 3.6453910067225714`*^9}, {3.645391102701865*^9, 
+  3.6453911030762653`*^9}, {3.645444215399452*^9, 3.6454442188470583`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"A", " ", "C", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+     RowBox[{"A", " ", "C", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{"A", " ", "C", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{"A", " ", "C", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+     RowBox[{"A", " ", "C", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+     RowBox[{"A", " ", "C", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{"A", " ", "C", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{"A", " ", "C", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{
+      SqrtBox["A"], " ", "B", " ", 
+      SqrtBox["C"], " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["A", 
+       RowBox[{"3", "/", "2"}]], " ", 
+      SqrtBox["C"], " ", "d", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{
+      SqrtBox["A"], " ", "B", " ", 
+      SqrtBox["C"], " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["A", 
+       RowBox[{"3", "/", "2"}]], " ", 
+      SqrtBox["C"], " ", "d", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+     RowBox[{
+      SqrtBox["A"], " ", "B", " ", 
+      SqrtBox["C"], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+     RowBox[{
+      SqrtBox["A"], " ", "B", " ", 
+      SqrtBox["C"], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "+", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+     RowBox[{
+      SqrtBox["A"], " ", "B", " ", 
+      SqrtBox["C"], " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+     RowBox[{
+      SqrtBox["A"], " ", "B", " ", 
+      SqrtBox["C"], " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+     RowBox[{
+      SuperscriptBox["B", "2"], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{
+      SqrtBox["A"], " ", "B", " ", 
+      SqrtBox["C"], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{
+      SqrtBox["A"], " ", "B", " ", 
+      SqrtBox["C"], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{
+      SuperscriptBox["B", "2"], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+     RowBox[{"2", " ", "A", " ", "B", " ", "d", " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{"1", "+", 
+        FractionBox["B", "\[Gamma]"]}], "]"}]}], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["A", 
+       RowBox[{"3", "/", "2"}]], " ", 
+      SqrtBox["C"], " ", "d", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       FractionBox[
+        RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["A", 
+       RowBox[{"3", "/", "2"}]], " ", 
+      SqrtBox["C"], " ", "d", " ", 
+      SqrtBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "t"}], " ", "\[Gamma]"}]]], " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"1", "-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       FractionBox[
+        RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+     RowBox[{"2", " ", "A", " ", "B", " ", "d", " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["B", "\[Gamma]"]}], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"], " ", 
+          SqrtBox[
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], "]"}], 
+      " ", 
+      RowBox[{"BesselI", "[", 
+       RowBox[{
+        FractionBox["B", "\[Gamma]"], ",", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SqrtBox["A"], " ", 
+          SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+      RowBox[{"Gamma", "[", 
+       FractionBox[
+        RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{"2", " ", "A", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         SqrtBox["A"]}], " ", 
+        SqrtBox["C"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "+", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{"B", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         RowBox[{"1", "+", 
+          FractionBox["B", "\[Gamma]"]}], "]"}]}], "-", 
+       RowBox[{"2", " ", "A", " ", "d", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+       RowBox[{
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+       RowBox[{
+        SqrtBox["A"], " ", 
+        SqrtBox["C"], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"1", "-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+       RowBox[{"B", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}], "+", 
+       RowBox[{"2", " ", "A", " ", "d", " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["B", "\[Gamma]"]}], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"]}], "\[Gamma]"]}], "]"}], " ", 
+        RowBox[{"BesselI", "[", 
+         RowBox[{
+          FractionBox["B", "\[Gamma]"], ",", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            SqrtBox["A"], " ", 
+            SqrtBox["C"], " ", 
+            SqrtBox[
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{
+               RowBox[{"-", "t"}], " ", "\[Gamma]"}]]]}], "\[Gamma]"]}], 
+         "]"}], " ", 
+        RowBox[{"Gamma", "[", 
+         FractionBox[
+          RowBox[{"B", "+", "\[Gamma]"}], "\[Gamma]"], "]"}]}]}], ")"}]}], 
+    ")"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6453908564047775`*^9, 3.6453910090947757`*^9, 
+  3.645391104527068*^9, 3.6454510637101088`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1: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
+l66VQjn0+39A7ltU
+     "]], LineBox[CompressedData["
+1:eJxTTMoPSmViYGCwA2IQvX6xutEppjv2Agpp6/396h3Y9u77asJ+x75auuZ+
+xtWqA5wlwTk7ueHyB3YEX3hgJ4jg7+JKDT8silD/4nQxb4cUwrzpqz808iog
+5I/k/De/pILQL2vRoXtd8479HJG5y/kUShwW8nYnyejfsQ8SWmE/+3HjgfPn
+Zko8NIapz3fQmKXE98wCbp5DaLThkVW2cPUONw1Mfr53gvELD7B/clq/xR1h
+/yrOnLxtPgjz+eZ6SNoHweSzDtjEhZ9nDke4b6rmgyMcMQj/HH71rupsAsK8
+wlPZ74PS7tg/E5vE3xRTdmB+d9VS8WyE+8otpt6JzkeoVw99dzapDCG/8q1I
+m1oVwnymnXOrtesR/oluUSs0aIGZn3aAQ/14hkkHQv0OZ4Uo636Ee1OfHQi0
+n4zw3+Tl59lZZiDsN9v/4xjrXLh7HQJ2qN3SXoyQ9zQKeia8AmGe4v0c2Yg1
+CH7Vqq9CsRsR6gPDBbwWbkXI/1+9qNh+F0I+Vkz9guxBhHtMRAICPY8h5HfU
+fqnadRoRfh+mtrk5XULwDwTYnptzDaHerjz/n81thHnl/YynjjxEyPv1anl/
+eIYIH9Xu4DPSbxDhF55QPO/SR3h6OnC1bem5om+I8Egw3vNxyx+E/VvDxRc3
+sN2Fm1d003dGpdBduPw3p08HX4nfhae36jXTXkfL3oW7h0HMWvSs0l24/S31
+9+3sNBD6o2s5DmTqIvjPNeUfrza+C0+PQnvO7J5ogeBPUy18ymSHsE+qX5S/
+xBnhvk89dhPmeyDkAWti2BA=
+     "]], LineBox[CompressedData["
+1:eJxNVHs0lGkcpu0QSu6X0jKt5lirVdjk+n2FXFpkUsqWWbl0MWayyJqUSxis
+prBZNDRLjjYrlGFp175p0jFLctlyas03lRgOq4aNk8tezjHvb/+Y853nPM/7
+PM/v937f0I5xGFGrVFRU0v79/fd0ue2hcOwbJhh6N4irr+KQXgMrPuIJxuR4
+3ZVZ/nMlDkcbL4g6vV6AfiZN6h03Okyc3ZhCnfidS1oeXDa1mhwmRo0K12cc
+OYNmdUTfZ7wB/h6dQUS8g/PM5Wji3iLodyxeQpOq0hX9KdQW5TBxVF2K+7j3
+Dun3rpVi/d2/ND05ulhPelfSjjcaA3Yo0aZ3milxHrLgL4w8oyn90tG6THnV
+NB2w/v5wlpcN5I9xOmim2zFPqpk8nKnfgfsg9IXg2m4XZZ9sVBeUGxZCYkym
+syf0P/GSErEmsmDLZ8dRtlvEH2l+UryP0FBxQXAg+KmZO+pEB0P+x/mWIxqh
+uD+ZJWybLWZCHl1r9XfyCDhv8yyF6X5SSuR8aHKq7nEsUpkbNtBjw74mJyUD
+9HiYt2abMLU1Cfp2Dl0P2ncO5r3zqEAnKgPyheLzvck86JffFsPn54N/csMh
+/6oCPB/y72ldlVQMeQyB3W/dV4EnCs3zXgghzyZnre+7auijUh273HXzf/tJ
+GO00b8B5pOLkQJaDCPIpJvL0bQP/dInGWFk75P+0t6zjKzHw1bt46bwu4Asd
+E0jBI8CpW8P/bhiA+2J9FND+YAh4gqyPLx2Gvl7rrVynX8I8pja5bzvGgBe/
+WeAMTkK+pYSbwVaAfn70uePuOZi3+wO3KcNFKf7++vtFohhVCuurp41iCDWM
+UW37JfsrWhTWlzSlKH7QofB+Mm+ebGw3BH2c8ODpgQ0U7hdW7GErN8cYqahe
+7HOypHCfnRmb6nStKfjev9Zk0W3Bb/7bGNp7e8DGbqdnLjtB34nDfTci3fF5
+9DSw/XiyB/Bir1o634cilgy3mfKSDqBGl5LXlf7gV7E963oLg8Lv46HE0H1+
+IRT+vpI2MTe/OELh9/PJutIiQTj0Dbigmvc0GuZxbu7/pT8G8unjVW97ToNe
+zyxxS1ci9M0tGN64+iz0kacbX/w1FfY32CRHbZlKPgihsdZZUS741274xqqR
+D/6aWg9KWUXgp31fzBgrAT/2neX7leUUITAor9G2SEA9VTs/C6sEvWc9N4Cq
+gXl9+oQj+nXgb5bqUXSpkSJ0LKLrAwNSSfXbBg/zmkGvGHn9PusuYKlxy6fp
+COuRxC/nWMoD4EXnDhcnSeB9MmAXqdv3KvtlovxXC0uxg5D3ZUHFj+ND1Mr/
+0VEU4VsRFSmF/gEpnFLmK4pgGnpKKGkkcq4ne0Ll4Fd2jetuNAV55SHcucsK
+uI9F76YTn88BlnOzBN6LcL+bc3nlOnoyjB8Hd7OWtgDe82eT2lkrGT7/M69c
+OG8tw33taNnOZ7bK8D5q2tiDM7agNwsOYcfZyXD/wilizbQD5sk1PKtKliPo
+z1vouk44Ab5lcmvW21WG93tq/0vOa3fgZZMSjYhd4H8g+06VzAP6SMwFbmF7
+4DzZmvn0uY9sZV/RqJkRG3d4r1LPQaN+mtYt/qD/ByjzBK8=
+     "]], LineBox[CompressedData["
+1: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
+wXxtbhIP/x+zBwhb
+     "]], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQ3cYzj+1I5F37Z2KT+Jtiyg5smOd9f2Ucgm/C8YFD
+OgXOdziwhU0nNuuufbV0zf2Mq1UH7G5bxPzNg/MdDrncbc0rQeh3W9e4/n7l
+XfsgoRX2sx8XHjglrnYzoB4hv1DUP6qmBSF/+VWejnEXgr/6xfS1cf0I/tme
+OdFnpiDsq+uc9FFiNsK8SX+qq20X3LUXUEhb7+9X75D1a8mfjKUI/b2eD27X
+roTLH2j8x1EyZQPMvKwDSxbxKjFtQ5hfs8Bsse5uhPmvHVoeaO9DhAcAn66g
+Iw==
+     "]], 
+    LineBox[{{0.43394496274842964`, 572.4508050089446}, {0.434294211013497, 
+     644.0071556350626}, {0.43453929751529863`, -572.4508050089446}, {
+     0.4348456556425506, 429.33810375670845`}, {0.43515201376980267`, 
+     572.4508050089446}, {0.4354583718970547, -572.4508050089446}, {
+     0.43576473002430677`, 250.44722719141328`}, {0.4360710881515588, 
+     500.89445438282655`}, {0.4363774462788108, -214.66905187835422`}, {
+     0.43665316859333764`, -500.89445438282655`}}]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"t\"", TraditionalForm], 
+    FormBox["\"DeltaJz2\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  Method->{},
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6453908564047775`*^9, 3.6453910090947757`*^9, 
+  3.645391104527068*^9, 3.64545109520569*^9}]
+}, Open  ]]
+},
+WindowSize->{1662, 1005},
+WindowMargins->{{1278, Automatic}, {Automatic, -69}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1177, 29, 31, "Input"],
+Cell[1759, 53, 31528, 920, 765, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33324, 978, 186, 3, 31, "Input"],
+Cell[33513, 983, 10554, 274, 343, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44104, 1262, 823, 22, 31, "Input"],
+Cell[44930, 1286, 9840, 277, 163, "Output"]
+}, Open  ]],
+Cell[54785, 1566, 527, 8, 52, "Input"],
+Cell[55315, 1576, 6806, 197, 209, "Input"],
+Cell[CellGroupData[{
+Cell[62146, 1777, 645, 12, 31, "Input"],
+Cell[62794, 1791, 6377, 187, 163, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69208, 1983, 5845, 182, 193, "Input"],
+Cell[75056, 2167, 3581, 97, 168, "Output"]
+}, Open  ]],
+Cell[78652, 2267, 3897, 101, 277, "Input"],
+Cell[CellGroupData[{
+Cell[82574, 2372, 1974, 49, 52, "Input"],
+Cell[84551, 2423, 9281, 260, 267, "Output"],
+Cell[93835, 2685, 770, 18, 247, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[94642, 2708, 1065, 28, 52, "Input"],
+Cell[95710, 2738, 29401, 914, 765, "Output"],
+Cell[125114, 3654, 38796, 646, 238, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -30,10 +30,11 @@ Eugen Vetsch.
 \newblock {\em Optical interface based on a nanofiber atom-trap}.
 \newblock PhD thesis, Johannes Gutenberg-Universitat in Mainz, 2010.
 
-\bibitem{LeKien2005}
-Fam Le~Kien, S.~Dutta Gupta, K.~P. Nayak, and K.~Hakuta.
-\newblock Nanofiber-mediated radiative transfer between two distant atoms.
-\newblock {\em Phys. Rev. A}, 72:063815, Dec 2005.
+\bibitem{LeKien2005a}
+Fam Le~Kien, S~Dutta Gupta, VI~Balykin, and K~Hakuta.
+\newblock Spontaneous emission of a cesium atom near a nanofiber: Efficient
+  coupling of light to guided modes.
+\newblock {\em Physical Review A}, 72(3):032509, 2005.
 
 \bibitem{Snyder1983}
 Allan~W Snyder and J~Love.
@@ -62,6 +63,54 @@ Greg~A Smith, Souma Chaudhury, and Poul~S Jessen.
   atom dynamics.
 \newblock {\em Journal of Optics B: Quantum and Semiclassical Optics},
   5(4):323, 2003.
+
+\bibitem{Sondergaard2001}
+T.~S\o{}ndergaard and B.~Tromborg.
+\newblock General theory for spontaneous emission in active dielectric
+  microstructures: Example of a fiber amplifier.
+\newblock {\em Phys. Rev. A}, 64:033812, Aug 2001.
+
+\bibitem{Maslov2006}
+A.~V. Maslov, M.~I. Bakunov, and C.~Z. Ning.
+\newblock Distribution of optical emission between guided modes and free space
+  in a semiconductor nanowire.
+\newblock {\em Journal of Applied Physics}, 99(2):--, 2006.
+
+\bibitem{Vos2009}
+Willem~L. Vos, A.~Femius Koenderink, and Ivan~S. Nikolaev.
+\newblock Orientation-dependent spontaneous emission rates of a two-level
+  quantum emitter in any nanophotonic environment, green function, green's
+  function.
+\newblock {\em Phys. Rev. A}, 80:053802, Nov 2009.
+
+\bibitem{LeKien2014a}
+F.~{Le Kien} and A.~{Rauschenbeutel}.
+\newblock Propagation of nanofiber-guided light through an array of atoms.
+\newblock {\em ArXiv e-prints}, \#sep\# 2014.
+
+\bibitem{Mitsch2014a}
+R~Mitsch, C~Sayrin, B~Albrecht, P~Schneeweiss, and A~Rauschenbeutel.
+\newblock Quantum state-controlled directional spontaneous emission of photons
+  into a nanophotonic waveguide.
+\newblock {\em Nature communications}, 5, 2014.
+
+\bibitem{Fan2010}
+Shanhui Fan, \ifmmode \mbox{\c{S}}\else \c{S}\fi{}\"ukr\"u~Ekin
+  Kocaba\ifmmode~\mbox{\c{s}}\else \c{s}\fi{}, and Jung-Tsung Shen.
+\newblock Input-output formalism for few-photon transport in one-dimensional
+  nanophotonic waveguides coupled to a qubit.
+\newblock {\em Phys. Rev. A}, 82:063821, Dec 2010.
+
+\bibitem{Buhmann2004}
+Stefan~Yoshi Buhmann, Ludwig Kn\"oll, Dirk-Gunnar Welsch, and Ho~Trung Dung.
+\newblock Casimir-polder forces: A nonperturbative approach.
+\newblock {\em Phys. Rev. A}, 70:052117, 2004.
+
+\bibitem{LeKien2013a}
+F.~Le~Kien, P.~Schneeweiss, and A.~Rauschenbeutel.
+\newblock State-dependent potentials in a nanofiber-based two-color trap for
+  cold atoms.
+\newblock {\em {ArXiv} e-prints}, \#jun\# 2013.
 
 \bibitem{Baragiola2014a}
 B.~Q. {Baragiola}.
@@ -111,5 +160,34 @@ J-B B{\'e}guin, EM~Bookjans, SL~Christensen, HL~S{\o}rensen, JH~M{\"u}ller,
 \newblock Generation and detection of a sub-poissonian atom number distribution
   in a one-dimensional optical lattice.
 \newblock {\em Physical Review Letters}, 113(26):263603, 2014.
+
+\bibitem{Tanji-Suzukia2011}
+Haruka Tanji-Suzukia, Ian~D Lerouxa, Monika~H Schleier-Smitha, Marko Cetinaa,
+  Andrew Griera, Jonathan Simonb, and Vladan Vuletica.
+\newblock Interaction between atomic ensembles and optical resonators:
+  Classical.
+\newblock In {\em Advances In Atomic, Molecular, and Optical Physics},
+  volume~60, page 201. Academic Press, 2011.
+
+\bibitem{Vuletic2000}
+Vladan Vuleti{\'c} and Steven Chu.
+\newblock Laser cooling of atoms, ions, or molecules by coherent scattering.
+\newblock {\em Physical Review Letters}, 84(17):3787, 2000.
+
+\bibitem{Kimble1998}
+HJ~Kimble.
+\newblock Strong interactions of single atoms and photons in cavity qed.
+\newblock {\em Physica Scripta}, 1998:127, 1998.
+
+\bibitem{Saleh2007}
+Bahaa~EA Saleh and Malvin~Carl Teich.
+\newblock {\em Fundamentals of Photonics}.
+\newblock Wiley, 2 edition, March 2007.
+
+\bibitem{Hunger2010}
+David Hunger, Tilo Steinmetz, Yves Colombe, Christian Deutsch, Theodor~W
+  H{\"a}nsch, and Jakob Reichel.
+\newblock A fiber fabry--perot cavity with high finesse.
+\newblock {\em New Journal of Physics}, 12(6):065038, 2010.
 
 \end{thebibliography}

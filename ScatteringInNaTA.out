@@ -1,10 +1,33 @@
-\BOOKMARK [0][-]{chapter.1}{One atom trapped aside a nanofiber}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Spontaneous emission of an atom present outside of a nanofiber}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Green function for the classical light}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Paraxial expansion of the mode}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.3}{Dipole oscillation and emission of polarized light}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.4}{Light scattering without considering the mediation to the polarizability of the atom}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.5}{Bound and radiation modes}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.6}{Bound and unbound modes of a nanofiber with a tilt incident plane wave}{chapter.1}% 7
-\BOOKMARK [0][-]{appendix.A}{Maxwell's Equations of an waveguide}{}% 8
-\BOOKMARK [1][-]{section.A.1}{Fields of translationally invariant waveguides}{appendix.A}% 9
-\BOOKMARK [1][-]{section.A.2}{Relationships between field components}{appendix.A}% 10
+\BOOKMARK [1][-]{section.1.4}{Fiber modes in absence of the trapped atoms}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.4.1}{Power flow and normalization factor \040A }{section.1.4}% 6
+\BOOKMARK [2][-]{subsection.1.4.2}{Energy density and normalization factor for traveling field quantization}{section.1.4}% 7
+\BOOKMARK [1][-]{section.1.5}{Bound and radiation modes}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.6}{Green function formalism for the atom-nanofiber system}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.6.1}{Calculation of group velocity and group index of refraction \( vg \040and \040ng \)}{section.1.6}% 10
+\BOOKMARK [1][-]{section.1.7}{Phase shift and polarizability transformation}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.8}{Resolution of birefringence spectroscopy measurement for the nanofiber trapped atom system}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.9}{Work in the Heisenberg and Schrodinger pictures}{chapter.1}% 13
+\BOOKMARK [1][-]{section.1.10}{Polarization spectroscopy for Cs atoms}{chapter.1}% 14
+\BOOKMARK [2][-]{subsection.1.10.1}{Atomic polarizability}{section.1.10}% 15
+\BOOKMARK [2][-]{subsection.1.10.2}{Irreducible tensor representation of atomic polarizability}{section.1.10}% 16
+\BOOKMARK [2][-]{subsection.1.10.3}{Clock states as the pseudo-spin states for polarimetry}{section.1.10}% 17
+\BOOKMARK [2][-]{subsection.1.10.4}{Full Hamiltonian using Clebsch-Gordan coefficients}{section.1.10}% 18
+\BOOKMARK [2][-]{subsection.1.10.5}{Optical pumping and spin squeezing with continuous measurement}{section.1.10}% 19
+\BOOKMARK [2][-]{subsection.1.10.6}{Sensitivity of the birefringence measurement using the clock states}{section.1.10}% 20
+\BOOKMARK [0][-]{appendix.A}{Maxwell's Equations for an waveguide}{}% 21
+\BOOKMARK [1][-]{section.A.1}{Fields of translationally invariant waveguides}{appendix.A}% 22
+\BOOKMARK [1][-]{section.A.2}{Relationships between field components}{appendix.A}% 23
+\BOOKMARK [0][-]{appendix.B}{Some Basic Properties of Bessel Functions}{}% 24
+\BOOKMARK [0][-]{appendix.C}{Cylindrical function decomposition of a tilt incident plane wave}{}% 25
+\BOOKMARK [0][-]{appendix.D}{Atom number estimation for Clock-state atoms surrounding a nanofiber}{}% 26
+\BOOKMARK [1][-]{section.D.1}{Magic wavelength does not exist with merely scalar polarizability using a simple strategy}{appendix.D}% 27
+\BOOKMARK [1][-]{section.D.2}{Calculating coupling strength and squeezing parameters}{appendix.D}% 28
+\BOOKMARK [1][-]{section.D.3}{Estimate psuedo-spin state and atom number in a high resolution}{appendix.D}% 29
+\BOOKMARK [1][-]{section.D.4}{Magic wavelength exists by including tensor polarizability effect}{appendix.D}% 30
+\BOOKMARK [0][-]{appendix.E}{Some useful formulas of atomic physics}{}% 31
+\BOOKMARK [1][-]{section.E.1}{Relationship between measurement strength and scattering rates}{appendix.E}% 32
+\BOOKMARK [1][-]{section.E.2}{Relationship between OD/atom and cooperativity}{appendix.E}% 33

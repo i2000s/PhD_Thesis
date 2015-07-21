@@ -1,0 +1,37 @@
+\contentsline {chapter}{\numberline {1}Spontaneous emission of an atom present outside of a nanofiber}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Green function for the classical light}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Paraxial expansion of the mode}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}Dipole oscillation and emission of polarized light}{7}{section.1.3}
+\contentsline {section}{\numberline {1.4}Fiber modes in absence of the trapped atoms}{9}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Power flow and normalization factor $ A $}{12}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Energy density and normalization factor for traveling field quantization}{13}{subsection.1.4.2}
+\contentsline {section}{\numberline {1.5}Bound and radiation modes}{14}{section.1.5}
+\contentsline {section}{\numberline {1.6}Green function formalism for the atom-nanofiber system}{30}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}Calculation of group velocity and group index of refraction ($ v_g $ and $ n_g $)}{36}{subsection.1.6.1}
+\contentsline {section}{\numberline {1.7}Phase shift and polarizability transformation}{39}{section.1.7}
+\contentsline {section}{\numberline {1.8}Resolution of birefringence spectroscopy measurement for the nanofiber trapped atom system}{43}{section.1.8}
+\contentsline {section}{\numberline {1.9}Work in the Heisenberg and Schrodinger pictures}{45}{section.1.9}
+\contentsline {section}{\numberline {1.10}Polarization spectroscopy for Cs atoms}{49}{section.1.10}
+\contentsline {subsection}{\numberline {1.10.1}Atomic polarizability}{49}{subsection.1.10.1}
+\contentsline {subsection}{\numberline {1.10.2}Irreducible tensor representation of atomic polarizability}{53}{subsection.1.10.2}
+\contentsline {subsection}{\numberline {1.10.3}Clock states as the pseudo-spin states for polarimetry}{54}{subsection.1.10.3}
+\contentsline {subsection}{\numberline {1.10.4}Full Hamiltonian using Clebsch-Gordan coefficients}{57}{subsection.1.10.4}
+\contentsline {subsubsection}{Polarization measurement and spin squeezing}{61}{section*.12}
+\contentsline {subsubsection}{Spin coherent states and spin squeezing through weak measurements}{63}{section*.13}
+\contentsline {subsection}{\numberline {1.10.5}Optical pumping and spin squeezing with continuous measurement}{68}{subsection.1.10.5}
+\contentsline {subsubsection}{Quantum theory of optical pumping for atom number estimation}{68}{section*.14}
+\contentsline {subsubsection}{The microscopic perspective analysis of continuous measurement and spin squeezing}{84}{section*.18}
+\contentsline {subsection}{\numberline {1.10.6}Sensitivity of the birefringence measurement using the clock states}{85}{subsection.1.10.6}
+\contentsline {chapter}{\numberline {A}Maxwell's Equations for an waveguide}{87}{appendix.A}
+\contentsline {section}{\numberline {A.1}Fields of translationally invariant waveguides}{88}{section.A.1}
+\contentsline {section}{\numberline {A.2}Relationships between field components}{88}{section.A.2}
+\contentsline {chapter}{\numberline {B}Some Basic Properties of Bessel Functions}{90}{appendix.B}
+\contentsline {chapter}{\numberline {C}Cylindrical function decomposition of a tilt incident plane wave}{91}{appendix.C}
+\contentsline {chapter}{\numberline {D}Atom number estimation for Clock-state atoms surrounding a nanofiber}{93}{appendix.D}
+\contentsline {section}{\numberline {D.1}Magic wavelength does not exist with merely scalar polarizability using a simple strategy}{94}{section.D.1}
+\contentsline {section}{\numberline {D.2}Calculating coupling strength and squeezing parameters}{95}{section.D.2}
+\contentsline {section}{\numberline {D.3}Estimate psuedo-spin state and atom number in a high resolution}{98}{section.D.3}
+\contentsline {section}{\numberline {D.4}Magic wavelength exists by including tensor polarizability effect}{99}{section.D.4}
+\contentsline {chapter}{\numberline {E}Some useful formulas of atomic physics}{104}{appendix.E}
+\contentsline {section}{\numberline {E.1}Relationship between measurement strength and scattering rates}{104}{section.E.1}
+\contentsline {section}{\numberline {E.2}Relationship between OD/atom and cooperativity}{105}{section.E.2}
