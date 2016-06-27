@@ -97,7 +97,7 @@
 	%\input{F:/Research/Works/Templates/Mydef.tex} % %
 	\input{F:/Research/Works/Templates/Mydef.tex} % 
 \else
-	\input{/media/F/Research/Works/Templates/Mydef.tex} %
+	\input{/media/E/Research/Works/Templates/Mydef.tex} %
 \fi
 
 %\includeonly{VectorTensor}
@@ -2213,7 +2213,7 @@ The $\hat{f}_i$ are dimensionless hyperfine spin operators satisfying
 with total angular momentum $f$ for each ground hyperfine manifold.  The tensor coefficients are~\cite{Deutsch2010a}
 		\begin{align}
 			C_{j' f f'}^{(0)} &= (-1)^{3f - f' + 1} \frac{1}{ \sqrt{3} } \frac{2f'+1}{\sqrt{2f+1}}  \left\{ \begin{array}{ccc} f& 1 & f' \\ 1 & f & 0 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
-			C_{j' f f'}^{(1)} &= (-1)^{3f - f' } \frac{3}{ \sqrt{2} } \frac{2f'+1}{ \sqrt{f(f+1)(2f+1)} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 1 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
+			C_{j' f f'}^{(1)} &= (-1)^{3f - f' } \sqrt{\frac{3}{ 2} } \frac{2f'+1}{ \sqrt{f(f+1)(2f+1)} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 1 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
 			C_{j' f f'}^{(2)} &= (-1)^{3f - f' } \frac{\sqrt{30} (2f'+1)}{\sqrt{ f(f+1)(2f+1)(2f-1)(2f+3))} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 2 \end{array} \right\} |o^{j' f'}_{j f}|^2 .
 		\end{align}	
 These coefficients depend on the fine-structure quantum numbers $\{j, j'\}$ through the relative oscillator strengths, $o^{j' f'}_{j f}$, given in \erf{Eq::OscStrength}.  Note that the notation in \erf{Eq::alphaij} is different from that for the full polarizability tensor, \erf{Eq::AtomicPolarizabilityF}, (and different from that in Ref. \cite{Deutsch2010a}) in that it contains no units, detunings, or sums over excited states.  Instead its intention is to isolate the irreducible tensor components.   
@@ -2284,7 +2284,7 @@ Suppose the probe laser is in a near resonance regime of the lower frequency sid
 \end{align}
 with $ \alpha_0(\Delta_{f,f'})=-\frac{3\lambda_{j'j}^3}{32\pi^3} \frac{\Gamma}{\Delta_{f,f'}} $. In our case, we can make $ \lambda_{j'j}\approx\lambda= \frac{2\pi c}{\omega_0}$. Therefore, we have
 \begin{align}
-\frac{2\pi\omega_0}{v_g}\alpha_0(\Delta_{f,f'})=-\frac{n_g\sigma_0}{4}
+\frac{2\pi\omega_0}{v_g}\alpha_0(\Delta_{f,f'})=-\frac{n_g\sigma_0}{4} \frac{\Gamma}{\Delta_{f,f'}}
 \end{align}
 with the 3D atomic scattering cross section $ \sigma_0= \frac{3\lambda^2}{2\pi}  $. 
 
@@ -2555,7 +2555,7 @@ where each operator has a classical photon flux number and a quantum operator to
 \hat{S}_2 &\approx \frac{\dot{N}_L}{2},\\
 \hat{S}_0 &\approx \frac{\dot{N}_L}{2},
 \end{align}
-where we have defined $ \hat{a}_{\bar{D}} = \frac{\hat{a}_H -\hat{a}_V}{\sqrt{2}} $ as the photon annihilation operator of the anti-diagonal linearly polarized light modes, and $ \hat{P}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}-\hat{a}_{\bar{D}\dg}}{\sqrt{i2}} $ and $ \hat{X}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}+\hat{a}_{\bar{D}\dg}}{\sqrt{2}} $ as the two quadratures in the phase space of the complex amplitude represented by $ \hat{a}_{\bar{D}} $. The approximation we made above is known as \textit{Holstein-Primakoff approximation}\index{approximation!Holstein-Primakoff approximation}. Using this approximation, the uncertainty area on the Poincare sphere can be mapped to a flat phase plane. 
+where we have defined $ \hat{a}_{\bar{D}} = \frac{\hat{a}_H -\hat{a}_V}{\sqrt{2}} $ as the photon annihilation operator of the anti-diagonal linearly polarized light modes, and $ \hat{P}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}-\hat{a}_{\bar{D}\dg}}{i\sqrt{2}} $ and $ \hat{X}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}+\hat{a}_{\bar{D}\dg}}{\sqrt{2}} $ as the two quadratures in the phase space of the complex amplitude represented by $ \hat{a}_{\bar{D}} $. The approximation we made above is known as \textit{Holstein-Primakoff approximation}\index{approximation!Holstein-Primakoff approximation}. Using this approximation, the uncertainty area on the Poincare sphere can be mapped to a flat phase plane. 
 
 
 Notice that, the $ \hat{S}_1 $ and $ \hat{S}_3 $ still satisfy the usual $ SU(2) $ Lie algebra relationship that 
@@ -2814,11 +2814,12 @@ Note that, in general, the loss Hamiltonian, $ \hat{H}_{\rm loss}=\sum_q \hat{L}
 Next, let us look into the jump operators.
 For atoms placed along $ \phi'=0 $ or $ \pi $ two-side chains, the jump operators for optical pumps between magnetic sublevels are \cite{Deutsch2010a}
 \begin{align} \label{Eq::JumpOperators}
-\hat{W}_q^{F_bF_a} &= \sum_{F'} \sqrt{\Gamma}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{F'F_a} + i\Gamma/2} \mathbf{e^*_q} \cdot \hat{\mathbf{D}}_{F_bF'} \hat{\mathbf{D}}_{F'F_a}^{\dagger} \cdot \mathbf{e}_L \\
+\hat{W}_q^{F_bF_a} &= \sum_{F'} \sqrt{\Gamma}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{F'F_a} + i\Gamma/2} \mathbf{e^*_q} \cdot \hat{\boldsymbol{\sigma}}_{F_bF'} \hat{\boldsymbol{\sigma}}_{F'F_a}^{\dagger} \cdot \mathbf{e}_L \\
 &= \sum_{F'} \sqrt{\Gamma}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{F'F_a} + i\Gamma/2} o^{J'F'}_{JF_b} o^{J'F'}_{JF_a}\nonumber\\
 & \sum_{m_b=0,m_a=0,m'=q}\!\!\!\!\!\!\!\!\!\! C^{F_b m_b;1q}_{F' m'} \sum_{q'=q}C^{F_a m_a;1q'}_{F' m'} \left(\mathbf{e}^*_{q'} \cdot\mathbf{e}_L \right) \op{F_b,m_b}{F_a,m_a}\\
 &= \sum_{F'} \!\!\frac{\sqrt{\Gamma}\Omega(\mathbf{r}')/2}{ \Delta_{F'F_a} \!\!+\! i\Gamma/2} o^{J'F'}_{JF_b}\! o^{J'F'}_{JF_a}\!  C^{F_b 0;1q}_{F' q}\! C^{F_a 0;1q}_{F' q}\! \left(\mathbf{e}^*_{q}\! \cdot\! \mathbf{e}_L \right)\! \op{F_b,0}{F_a,0}
 \end{align}
+with $ \hat{\boldsymbol{\sigma}}_{F'F}^{\dagger}=\hat{\mathbf{D}}_{F'F}^{\dagger}/\bra{J'}| d |\ket{J} $.
 %\begin{align} \label{Eq::JumpOperators}
 %\hat{W}_q^F &= \sum_{F'} \sqrt{\Gamma}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{F'F} + i\Gamma/2} \mathbf{e^*_q} \cdot \hat{\mathbf{D}}_{FF'} \hat{\mathbf{D}}_{F'F}^{\dagger} \cdot \mathbf{e}_L \\
 %&= \sum_{F'} \sqrt{\Gamma}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{F'F} + i\Gamma/2} o^{J'F'}_{JF} o^{J'F'}_{JF}\nonumber\\
@@ -2962,15 +2963,18 @@ To calculate the equation above, we also have a set of equations for some other 
 \left.\dt{}\expect{\hat{\sigma}_z^{(i)} \hat{\sigma}_z^{(j)}}\right|_{i\neq j} &= \dt{}\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}}\\
 &= \left[ (\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}}\nonumber\\
 &\quad \!\!+\! \left[ (\gamma_{44}\!-\!\gamma_{33}\!+\!\gamma_{43}\!-\!\gamma_{34})  \!-\! 2\gamma_s^-\right]\! \expect{\mathrm{Sym}(\hat{I}^{(\!1\!)}\!\hat{\sigma}_z^{(2)} )}\\
-&=-2\Gamma_b \expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} \!\!+\! 2\Gamma_{\rm pol}\! \expect{\mathrm{Sym}(\hat{I}^{(\!1\!)}\!\hat{\sigma}_z^{(2)} )}\\
+&=-2\Gamma_b \expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} \!+\! 2\Gamma_{\rm pol} \expect{\mathrm{Sym}(\hat{I}^{(\!1\!)}\!\hat{\sigma}_z^{(2)} )}\\
 \left.\dt{}\expect{\mathrm{Sym}(\hat{I}^{(i)}\hat{\sigma}_z^{(j)} ) }\right|_{i\neq j} &\equiv \dt{}\expect{\frac{1}{2}\left( \hat{I}^{(i)}\hat{\sigma}_z^{(j)}+\hat{\sigma}_z^{(i)}\hat{I}^{(j)} \right) }\\
 &= \dt{}\expect{\mathrm{Sym}( \hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\\
 &= \left[(\gamma_{44}+\gamma_{33})-2\gamma_s^+ \right] \expect{\mathrm{Sym}( \hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\nonumber\\
 &\quad + \left[ \frac{1}{2}(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -\gamma_s^-\right]\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} \nonumber\\
 &\quad + \left[ \frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -\gamma_s^-\right]\expect{\hat{I}^{(1)} \hat{I}^{(2)}}\\
+&= -(\Gamma_{\rm loss}+\Gamma_b )\expect{\mathrm{Sym}( \hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) } \nonumber\\
+&\quad +\Gamma_a \expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} + \Gamma_{\rm pol}\expect{\hat{I}^{(1)} \hat{I}^{(2)}}\\
 \left.\dt{}\expect{\hat{I}^{(i)} \hat{I}^{(j)}}\right|_{i\neq j} &= \dt{}\expect{\hat{I}^{(1)} \hat{I}^{(2)}}\\
 &= \left[ (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{I}^{(1)} \hat{I}^{(2)}}\nonumber\\
-&\quad +\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(1)} \hat{\sigma}_z^{(2)})} .
+&\quad +\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(1)} \hat{\sigma}_z^{(2)})} \nonumber\\
+&= -2\Gamma_{\rm loss}\expect{\hat{I}^{(1)} \hat{I}^{(2)}}+2\Gamma_a \expect{\mathrm{Sym}(\hat{I}^{(1)} \hat{\sigma}_z^{(2)})}.
 \end{align}
 Note: when $ i\neq j $, $ \sum_{i,j\neq i}\mathrm{Sym}(\hat{I}^{(i)}\hat{\sigma}_z^{(j)} )= \sum_{i,j\neq i}\hat{I}^{(i)}\hat{\sigma}_z^{(j)}$.
 
@@ -2994,24 +2998,20 @@ together with
 \begin{align}
 \dt{\expect{\hat{N}_A\hat{J}_z}} &=\dt{} \expect{\hat{J}_z } + \frac{N_A(N_A-1)}{2} \dt{}\expect{\mathrm{Sym}(\hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\\
 &= -\Gamma_b \expect{\hat{J}_z} +\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_A} \nonumber\\
-&\quad +\frac{N_A(N_A-1)}{2}\left[(\gamma_{44}+\gamma_{33})-2\gamma_s^+ \right] \expect{\mathrm{Sym}( \hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\nonumber\\
-&\quad +\frac{N_A(N_A-1)}{4}\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}}\nonumber\\
-&\quad \!\!+\! \frac{N_A(N_A-1)}{4}\left[ (\gamma_{44}\!-\!\gamma_{33}\!+\!\gamma_{43}\!-\!\gamma_{34})  \!-\! 2\gamma_s^-\right]\! \expect{\mathrm{Sym}(\hat{I}^{(\!1\!)}\!\hat{I}^{(2)} )}\\
+&\quad -\frac{N_A(N_A-1)}{2}(\Gamma_{\rm loss}+\Gamma_b) \expect{\mathrm{Sym}( \hat{I}^{(1)}\hat{\sigma}_z^{(2)} ) }\nonumber\\
+&\quad +\frac{N_A(N_A-1)}{2}\Gamma_a\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} \!+\! \frac{N_A(N_A-1)}{2}\Gamma_{\rm pol} \expect{\hat{I}^{(\!1\!)}\!\hat{I}^{(2)} }\\
 &= -\Gamma_b \expect{\hat{J}_z} +\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_A} \nonumber\\
-&\quad +\left[(\gamma_{44}+\gamma_{33})-2\gamma_s^+ \right] \left( \expect{ \hat{N}_A\hat{J}_z }-\expect{\hat{J}_z}\right)\nonumber\\
-&\quad+\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right]\left(\expect{\hat{J}_z^2 }-\frac{\expect{\hat{N}_A}}{4}\right)\nonumber\\
-&\quad+\frac{1}{4}\left[ (\gamma_{44}\!-\!\gamma_{33}\!+\!\gamma_{43}\!-\!\gamma_{34})  \!-\! 2\gamma_s^-\right]\left(\expect{\hat{N}_A^2}-\expect{\hat{N}_A}\right)\\
+&\quad -(\Gamma_{\rm loss}+\Gamma_b) \left( \expect{ \hat{N}_A\hat{J}_z }-\expect{\hat{J}_z}\right)\nonumber\\
+&\quad+2\Gamma_a\left(\expect{\hat{J}_z^2 }-\frac{\expect{\hat{N}_A}}{4}\right)+\frac{\Gamma_{\rm pol}}{2}\left(\expect{\hat{N}_A^2}-\expect{\hat{N}_A}\right)\\
 &=-\left(\Gamma_{\rm loss}+\Gamma_b\right)\expect{\hat{N}_A \hat{J}_z} +2\Gamma_a\expect{\hat{J}_z^2}+\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_A^2 }\nonumber\\ 
 &\quad+\Gamma_{\rm loss} \expect{\hat{J}_z} -\frac{\Gamma_a}{2}\expect{\hat{N}_A}
 \end{align}
 \begin{align}
 \dt{\expect{\hat{N}_A^2}} &= \dt{}\expect{\hat{N}_A} + N_A(N_A-1)\dt{}\expect{\hat{I}^{(1)}\hat{I}^{(2)}}\\
 &= -\Gamma_{\rm loss}\expect{\hat{N}_A} +2\Gamma_a \expect{\hat{J}_z}\nonumber\\
-&\quad +N_A(N_A-1)\left[ (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{I}^{(1)} \hat{I}^{(2)}}\nonumber\\
-&\quad +N_A(N_A-1)\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{I}^{(1)} \hat{\sigma}_z^{(2)})}\\
+&\quad -2N_A(N_A-1)\Gamma_{\rm loss}\expect{\hat{I}^{(1)} \hat{I}^{(2)}} +2N_A(N_A-1)\Gamma_a\expect{\mathrm{Sym}(\hat{I}^{(1)} \hat{\sigma}_z^{(2)})}\nonumber\\
 &= -\Gamma_{\rm loss}\expect{\hat{N}_A} +2\Gamma_a \expect{\hat{J}_z}\nonumber\\
-&\quad + \left[ (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right] \left(\expect{\hat{N}_A^2}-\expect{\hat{N}_A} \right)\nonumber\\
-&\quad + 2\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right] \left(\expect{\hat{N}_A\hat{J}_z} -\expect{\hat{J}_z} \right)\\
+&\quad - 2\Gamma_{\rm loss} \left(\expect{\hat{N}_A^2}-\expect{\hat{N}_A} \right) + 4\Gamma_a \left(\expect{\hat{N}_A\hat{J}_z} -\expect{\hat{J}_z} \right)\\
 &= 4\Gamma_a \expect{\hat{N}_A\hat{J}_z} -2\Gamma_{\rm loss}\expect{\hat{N}_A^2} -2\Gamma_a \expect{\hat{J}_z} +\Gamma_{\rm loss}\expect{\hat{N}_A} .
 \end{align}
 \textcolor{red}{To be included: the measurement effect in generating spin squeezing or the $ \Delta J_z^2 $ term. A quick fix is given below:}
