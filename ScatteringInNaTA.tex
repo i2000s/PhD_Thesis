@@ -95,7 +95,7 @@
 % judge platform and include correct definiation package
 \ifwindows
 	%\input{F:/Research/Works/Templates/Mydef.tex} % %
-	\input{F:/Research/Works/Templates/Mydef.tex} % 
+	\input{E:/Research/Works/Templates/Mydef.tex} % 
 \else
 	\input{/media/E/Research/Works/Templates/Mydef.tex} %
 \fi
@@ -199,7 +199,7 @@
 \newcommand{\poltens}{\hat{\tensor{\boldsymbol{\alpha}}}}
 \newcommand{\charpol}{\alpha_0(\Delta_{F'F})}
 \newcommand{\fidx}{\eta}
-\newcommand{\unittens}{\tensor{\mathbf{I}}}
+\newcommand{\unittens}{\tensor{\mathbbm{1}}}
 \newcommand{\chibir}{\chi_{\rm bir}}
 \newcommand{\chieff}{\chi_{\rm eff}}
 \newcommand{\fwd}{+}
@@ -302,47 +302,47 @@ The total field will satisfy the \textit{Maxwell-Helmholtz equation}\index{Maxwe
 \end{align}
 Notice that the total index of refraction $ n(\br) $ we used above has already included the scattering effect caused by the atom on the nanofiber, which usually has a complicated form. It is not in general possible to solve the differential equation as given above. The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Equ.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
 \begin{align}\label{eq:Maxwellwithsource}
-\left[\! -\! \nabla\!\times\!\nabla\!\times + \frac{\omega^2}{c^2} \right]\! \boldsymbol{\mathcal{E}}(\br) &=\! -i4\pi\frac{\omega}{c^2} \mathbf{J}(\br) =\! -4\pi\frac{\omega^2}{c^2} \mathbf{P}(\br)=\! -4\pi \frac{\omega^2}{c^2} \boldsymbol{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
+\left[\! -\! \nabla\!\times\!\nabla\!\times + \frac{\omega^2}{c^2} \right]\! \boldsymbol{\mathcal{E}}(\br) &=\! -i4\pi\frac{\omega}{c^2} \mathbf{J}(\br) =\! -4\pi\frac{\omega^2}{c^2} \mathbf{P}(\br)=\! -4\pi \frac{\omega^2}{c^2} \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-where we have defined the current $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega \boldsymbol{\chi}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \boldsymbol{\chi}(\br)=[n^2(\br)-1]/4\pi=[\varepsilon_r(\br)-1]/4\pi = \sum_{\br'}\delta(\br-\mathbf{r}')\boldsymbol{\alpha} \, (\br')$ \footnote{We have used Gauss units here. In SI units, the corresponding relationship is $ \boldsymbol{\chi}(\br)=n^2(\br)-1=\varepsilon(\br)/\varepsilon_0-1 = \sum_{\br'}\delta(\br-\mathbf{r}')\boldsymbol{\alpha} \, (\br')$ and $\boldsymbol{\chi}^{SI}=4\pi\boldsymbol{\chi}^{G}  $. The factor of $ 4\pi $ defines the transformation between the SI and Gauss units. } where $ \varepsilon_r(\br) $ is the relative permittivity\index{permittivity!relative permittivity} or dielectric constant\index{dielectric constant} at $ \br $ and $ \boldsymbol{\alpha} $ is the polarizability\index{polarizability} of the atoms at $ \br' $. Specifically, using dipole approximation, the polarizability $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\boldsymbol{\alpha} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $ where $ \mathbf{d}(\br') $ is the induced dipole moment at $ \br' $.
+where we have defined the current $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega \tensor{\chi}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\chi}(\br)=[\tensor{\varepsilon}_r(\br)-\mathbbm{1}]/4\pi = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ \footnote{We have used Gauss units here. In SI units, the corresponding relationship is $ \tensor{\chi}(\br)=\tensor{\varepsilon}(\br)/\varepsilon_0-\mathbbm{1} = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ and $\tensor{\chi}^{SI}=4\pi\tensor{\chi}^{G}  $. The factor of $ 4\pi $ defines the transformation between the SI and Gauss units. } where $\tensor{ \varepsilon}_r(\br) $ is the relative permittivity\index{permittivity!relative permittivity} or dielectric constant\index{dielectric constant} at $ \br $ and $ \tensor{\alpha} $ is the polarizability\index{polarizability} of the atoms at $ \br' $. Specifically, using dipole approximation, the polarizability $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\alpha} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $ where $ \mathbf{d}(\br') $ is the induced dipole moment at $ \br' $.
 %~\footnote{\textcolor{red}{This electric susceptibility needs to be fixed.} Aside on multiple atoms case: if there are many atoms distributed along the nanofiber, we can in general use 
 %$\boldsymbol{\chi}(\br)=\sum_i \delta(\br-\br_{i})\boldsymbol{\alpha}^i$,
 %where $ i $ counts over all atoms.}. 
 
 Noting that the terms on all the right-hand sides of Equ.~\eqref{eq:Maxwellwithsource} are the generator or source for the electromagnetic field. In absence of the generators, the field will propagate in the background medium (free-space) as described by the left-hand side of the equation. In other word, the generators in terms of $ \mathbf{J}(\br) $, $ \mathbf{P}(\br) $ or $ \boldsymbol{\chi}(\br) $ describes the property of the fiber as a medium other than the vacuum. In contrast, if we consider the fiber as the background medium and the atoms outside the fiber as sources of electromagnetic field emitters, we can formally rewrite the chromatic wave equation as 
 \begin{align}\label{eq:Maxwellwithsource2}
-\left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega^2}{c^2}\! \boldsymbol{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
+\left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
 where the only difference from Equ.~\eqref{eq:Maxwellwithsource} is that we bring in the $ n(\br) $ as the index of refraction of the background medium instead of using $ n(\br)=1 $ for the homogeneous vacuum as the background medium. This has also been derived in the appendix (see Equ.~\eqref{eq:waveeqGaussU}) from the Maxwell equation for general cases. We will use Equ.~\eqref{eq:Maxwellwithsource2} to study the optical properties of the nanofiber in presence of atoms outside. 
 
 The Equ.~\eqref{eq:Maxwellwithsource2} above has a source term 
 \begin{align}
-S(\br)=-4\pi \frac{\omega^2}{c^2} \boldsymbol{\chi}(\br),% \boldsymbol{\mathcal{E}}(\br),
+\tensor{S}(\br)=\tensor{\chi}(\br),% \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-and can be solved by solving the corresponding dyadic Green functions\index{Green function!dyadic Green function} in the frequency domain
+and can be solved by solving the corresponding dyadic Green functions\index{Green function!dyadic Green function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \mathbf{G}(\br,\br') = \mathbbm{1}\delta(\br-\br')$, then the source term of the corresponding field will be $S(\br)=-4\pi \frac{\omega^2}{c^2} \boldsymbol{\chi}(\br)$; there will be a $4\pi\omega^2/c^2$ factor over other quantities as well. }
 \begin{align}
-\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \mathbf{G}(\br,\br') &= \mathbf{I}\delta(\br-\br'). \label{eq:dyadicGF}
+\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \mathbf{G}(\br,\br') &= -4\pi \frac{\omega^2}{c^2}\mathbbm{1}\delta(\br-\br'). \label{eq:dyadicGF}
 \end{align}
 
 Without loosing generality, we consider a simple free-space case that there is no net charge and current in a vacuum medium. The wave equation can be given in Equ.~\eqref{eq:freespacewaveeq} with $ n=1 $, where we have replaced $ -\nabla\times\nabla\times $ with $ \nabla^2 $ from Equ.~\eqref{eq:Maxwellwithsource2}. As a result, all vector components of the field vectors are independent to each other. The corresponding Green function equation for this problem becomes a scalar equation,
 \begin{align}
-(\spp{}{x_i} + k^2) G_i(\br,\br')=\delta(\br-\br'), 
+(\spp{}{x_i} + k^2) G_i(\br,\br')=-4\pi \frac{\omega^2}{c^2}\delta(\br-\br'), 
 \end{align}
 where $ x_i $ are the coordinate components and $ G_i(\br,\br') $ is the scalar Green function responding to a unit source with only $ x_i $ field component. 
 The only physical solution for the scalar Green function\index{Green function} in free space is 
 \begin{align}
-G_0(\br,\br') =\frac{e^{\pm i\mathbf{k}\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
+G_0(\br,\br') =k^2\frac{e^{\pm i\mathbf{k}\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
 \end{align}
 where we only look at the \textit{positive} signed solution for our example. 
 
 Assuming the boundary contributions vanish, we may have
 \begin{align}
-\boldsymbol{\mathcal{E}}(\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + \int_V S(\br') \! \cdot\! \boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r', \label{Etotal0}
+\boldsymbol{\mathcal{E}}(\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + \int_V \tensor{S}(\br') \! \cdot\! \boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r', \label{Etotal0}
 \end{align}
-where $ \boldsymbol{\mathcal{E}}_0 (\br) $ is the homogeneous Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation!homogeneous Maxwell-Helmholtz equation} in the limit that $ S(\br)\longrightarrow 0 $, $ \mathbf{R}=\br-\mathbf{r}' $. Therefore, the scattering field is
+where $ \boldsymbol{\mathcal{E}}_0 (\br) $ is the homogeneous Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation!homogeneous Maxwell-Helmholtz equation} in the limit that $ \tensor{S}(\br)\longrightarrow 0 $, $ \mathbf{R}=\br-\mathbf{r}' $. Therefore, the scattering field is
 \begin{align}
-\boldsymbol{\mathcal{E}}_s(\br) &=  \int_V S(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
-&= -4\pi \int_V \frac{\omega^2}{c^2} \boldsymbol{\chi}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'.
+\boldsymbol{\mathcal{E}}_s(\br) &=  \int_V \tensor{S}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br')k^2 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
+&= \int_V \frac{\omega^2}{c^2} \tensor{\chi}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'.
 \end{align}
 
 
@@ -350,22 +350,22 @@ where $ \boldsymbol{\mathcal{E}}_0 (\br) $ is the homogeneous Maxwell-Helmholtz 
 In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field. By the use of Green function method, we have converted our differential equation for the scattered field into volume integral equations. They are very important since they form the basis for various formalisms such as the \textit{method of moments}\index{method of moments}, the \textit{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \textit{coupled dipole method}\index{coupled dipole method}. In general, these integral equations can be solved numerically using the methods mentioned above. Alternatively, we may develop a Liouville–Neumann series\index{Liouville–Neumann series} solution to the equation, namely the Born series\index{Born series}.
 
 The Born series is typically derived by assuming that the scattering potential is very
-weak, and may be written as $ S(\br)\rightarrow \delta S(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series solution for the total field of the form
+weak, and may be written as $ \tensor{S}(\br)\rightarrow \delta \tensor{S}(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series of solutions for the total field of the form
 \begin{align}
 \boldsymbol{\mathcal{E}}(\br) &= \sum_{n=0}^{\infty} \delta^n \mathbf{V}_n(\br).
 \end{align}
 On substituting the expression above into Equ.~\ref{Etotal0}, we find the series
 \begin{align}
 \mathbf{V}_0 &= \boldsymbol{\mathcal{E}}_0,\\
-\mathbf{V}_1 &= \int_V S(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',\\
+\mathbf{V}_1 &= k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',\\
 \ldots & \ldots\\
-\mathbf{V}_n &= \int_V S(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_{n-1} \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',
+\mathbf{V}_n &= k^2\int_V \tensor{S}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_{n-1} \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',
 \end{align}
 where the \textit{Born approximation}\index{Born series!Born approximation} only includes up to the first-order term. Under the Born approximation, the solution for the electrical field with one single atom can be given by
 \begin{align}
-\boldsymbol{\mathcal{E}} (\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + \int_V S(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
-&= \boldsymbol{\mathcal{E}}_0(\br) -4\pi \sum_{\br'}\frac{\omega^2}{c^2} \boldsymbol{\alpha}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|}\\
-&=\boldsymbol{\mathcal{E}}_0(\br) -4\pi \frac{\omega^2}{c^2} \boldsymbol{\alpha}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|},
+\boldsymbol{\mathcal{E}} (\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
+&= \boldsymbol{\mathcal{E}}_0(\br) +\sum_{\br'}\frac{\omega^2}{c^2} \tensor{\alpha}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|}\\
+&=\boldsymbol{\mathcal{E}}_0(\br) + \frac{\omega^2}{c^2} \tensor{\alpha}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|},
 \end{align}
 where $ \boldsymbol{\alpha}(\br') $ denotes the polarizability of the atom at $ \br' $. 
 
@@ -404,32 +404,32 @@ Here we present some results of electrical dipole radiations.
 
 In the Green function language, we can obtain the electrical field emitted by an electric dipole source by
 \begin{align}\label{EGd}
-\mathbf{E}(\br) &= -4\pi \int k^2\mathbf{G}(\br,\br')\cdot \mathbf{d}(\br') \mathrm{d}\br', 
+\mathbf{E}(\br) &=  \int\mathbf{G}(\br,\br')\cdot \mathbf{d}(\br') \mathrm{d}\br', 
 \end{align}
 where $ \mathbf{G}(\br,\br') $ is the dyadic Green functions for a dipole located at $ \br' $ with a dipole moment of $ \mathbf{d}(\br') $. $\mathbf{G}(\br,\br')$ can be determined from the scalar Green's function $G_0(\br,\br')$ by 
 \begin{align}
-\mathbf{G}(\br,\br') = \left[\mathbf{I} + \frac{1}{k^2}\nabla\nabla \right]G_0(\br,\br')
+\mathbf{G}(\br,\br') = \left[\mathbbm{1} + \frac{1}{k^2}\nabla\nabla \right]G_0(\br,\br')
 \end{align}
 with the scalar Green's function I got in the last section given by
 \begin{align}\label{scalarG}
-G_0(\br,\br') = \frac{e^{ik|\br-\br'|}}{|\br-\br'|}. 
+G_0(\br,\br') = k^2\frac{e^{ik|\br-\br'|}}{|\br-\br'|}. 
 \end{align}
 
 For a discrete dipole source with $ \mathbf{d}(\br)= \mathbf{d}\delta(\br-\br') = \mathbf{d}(\br')  $, the electrical field at an arbitrary position $\br$ can be given by
 \begin{align}
- \mathbf{E}(\br) &=-4\pi k^2 \mathbf{G}(\br,\br')\cdot \mathbf{d}(\br'), 
+ \mathbf{E}(\br) &= \mathbf{G}(\br,\br')\cdot \mathbf{d}(\br'), 
 \end{align}
 where Gaussian units have been applied. This equation describes how a dipole emits electromagnetic wave and how the electromagnetic field distributes in space due to the oscillation of the electrical dipole source. 
 
 In a classical picture, if there is a field $ \mathbf{E}_0 $ propagates cross the dipole source, the dipole will respond and generate a scattered field which overlaps with the incident field to yield a total field described by
 \begin{align}
-\mathbf{E}(\br) &= \mathbf{E}_0(\br)-4\pi k^2\mathbf{G}(\br,\br')\cdot \mathbf{d}(\br')\\
-&=\mathbf{E}_0(\br)-4\pi k^2 \mathbf{G}(\br,\br')\cdot \boldsymbol{\alpha}\cdot \mathbf{E}(\br'),
+\mathbf{E}(\br) &= \mathbf{E}_0(\br)+\mathbf{G}(\br,\br')\cdot \mathbf{d}(\br')\\
+&=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\alpha}\cdot \mathbf{E}(\br'),
 \end{align}
-where $ \boldsymbol{\alpha} $ is the atomic polarizability and $ k=\omega/c $. Under the Born approximation, the total field can be given by
+where $ \tensor{\alpha} $ is the atomic polarizability and $ k=\omega/c $. Under the Born approximation, the total field can be given by
 \begin{align}
 \mathbf{E}(\br) 
-&=\mathbf{E}_0(\br)-4\pi k^2 \mathbf{G}(\br,\br')\cdot \boldsymbol{\alpha}\cdot \mathbf{E}_0(\br').\label{eq:EoutG}
+&=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\alpha}\cdot \mathbf{E}_0(\br').\label{eq:EoutG}
 \end{align}
 
 In the context of nanofiber and atoms system, the dyadic Green function can be written as
@@ -445,7 +445,7 @@ where the subscript $ 0,\,R\,\text{and}\,T $ denote free-space, reflective and t
 The atomic polarizability can be calculated through emission response models. For now, we only look at a very simple scalar response case where the polarizability tensor becomes a scalar quantity. A self-consistent equation for an atom at $ \br' $ excited by an incident electrical field can be given by 
 \begin{align}
 (-\omega^2+\omega_0^2)\br' &= -\frac{e}{m}\mathbf{E}(\br')\\
-&=-\frac{e}{m}\left[\mathbf{E}_0(\br')-4\pi k^2 {\alpha}\mathbf{G}(\br',\br')\cdot  \mathbf{E}(\br') \right],
+&=-\frac{e}{m}\left[\mathbf{E}_0(\br')+ {\alpha}\mathbf{G}(\br',\br')\cdot  \mathbf{E}(\br') \right],
 \end{align}
 where $\omega_0$ is the atomic resonance. Using the definitions that 
 \begin{align}
@@ -454,16 +454,16 @@ where $\omega_0$ is the atomic resonance. Using the definitions that
 \end{align}
 and only consider the near-resonance case, we can obtain
 \begin{align}
-\left(-\Delta\mathbf{I} +\frac{2\pi k^2 e^2}{m\omega_0}\mathbf{G}(\br',\br') \right) &\cdot \mathbf{d}(\br') = \frac{e^2}{2m\omega_0}\mathbf{E}_0(\br')\\
-\Rightarrow\qquad d &=\frac{\frac{e^2}{2m\omega_0}}{-\Delta+\frac{2\pi k^2 e^2}{m\omega_0}\hat{d}\cdot\mathbf{G}(\br',\br')\cdot \hat{d}}E_0(\br')\\
+\left(-\Delta\mathbbm{1} -\frac{e^2}{2m\omega_0}\mathbf{G}(\br',\br') \right) &\cdot \mathbf{d}(\br') = \frac{e^2}{2m\omega_0}\mathbf{E}_0(\br')\\
+\Rightarrow\qquad d &=\frac{\frac{e^2}{2m\omega_0}}{-\Delta-\frac{ e^2}{2m\omega_0}\hat{d}\cdot\mathbf{G}(\br',\br')\cdot \hat{d}}E_0(\br')\\
 &=\frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma}E_0(\br'),
 \end{align}
-where we have defined the Lamb shift $ \delta \Delta= \frac{2\pi k^2 e^2}{m\omega_0}\Re\left[\hat{d}\cdot\mathbf{G}(\br',\br')\cdot \hat{d} \right]$ with the dipole direction $ \hat{d} $ and the radiation reaction decay rate 
+where we have defined the Lamb shift $ \delta \Delta= \frac{e^2}{2m\omega_0}\Re\left[\hat{d}^\dagger\cdot\mathbf{G}(\br',\br')\cdot \hat{d} \right]$ with the dipole direction $ \hat{d} $ and the radiation reaction decay rate 
 \begin{align}
-\Gamma &= \frac{4\pi k^2e^2}{m\omega_0}\Im\left[\hat{d}\cdot\mathbf{G}(\br',\br')\cdot \hat{d}\right]\\
+\Gamma &= \frac{e^2}{m\omega_0}\Im\left[\hat{d}^\dagger\cdot\mathbf{G}(\br',\br')\cdot \hat{d}\right]\\
 &= \Gamma_0 + \delta \Gamma,
 \end{align}
-with the natural linewidth $ \Gamma_0=\frac{4\pi k^2 e^2}{m\omega_0}\Im\left[\hat{d}\cdot\mathbf{G}_0(\br',\br')\cdot \hat{d}\right] $ and the shift in decay rate $ \delta\Gamma=\frac{4\pi k^2e^2}{m\omega_0}\Im\left[\hat{d}\cdot\mathbf{G}_R(\br',\br')\cdot \hat{d}\right] $. The scripts $ \Re $ and $ \Im $ correspond to extracting real and imaginary parts operations. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the dipole oscillating direction. Therefore, the scalar atomic polarizability can be given by
+with the natural linewidth $ \Gamma_0=\frac{e^2}{m\omega_0}\Im\left[\hat{d}^\dagger\cdot\mathbf{G}_0(\br',\br')\cdot \hat{d}\right] $ and the shift in decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\Im\left[\hat{d}^\dagger\cdot\mathbf{G}_R(\br',\br')\cdot \hat{d}\right] $. The scripts $ \Re $ and $ \Im $ correspond to extracting real and imaginary parts operations. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the dipole oscillating direction. Therefore, the scalar atomic polarizability can be given by
 \begin{align}
 \alpha &= \frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma},
 \end{align}
@@ -472,10 +472,10 @@ which includes the modification from the incident field.
 By solving the free-space dipole radiation problem, the imaginary part of the free-space Green function can be given by
 \begin{align}
 \mathrm{Im}\left[ \mathbf{G}^{(0)} (\br^\prime\!_\perp, \br^\prime\!_\perp) \right] &= \mathrm{Im} 
-\left[ \mathbf{G}^{rad}_{(0)}(\br'\!_\perp,\br'\!_\perp)\right]  = -\frac{ 
-k}{6\pi}\eye = -\frac{ 
-\omega}{6\pi c}\eye
-%\Im\left[\mathbf{G}_0(\br',\br') \right] =\frac{2}{3}k^3 \mathbf{I} \approx \frac{2}{3}k^3_0\mathbf{I}.
+\left[ \mathbf{G}^{rad}_{(0)}(\br'\!_\perp,\br'\!_\perp)\right]  = \frac{ 
+2k^3}{3}\eye = \frac{2}{3}\left(\frac{ 
+\omega}{c}\right)^3\eye
+%\Im\left[\mathbf{G}_0(\br',\br') \right] =\frac{k^3}{6\pi} \mathbbm{1} \approx \frac{1}{6\pi}k^3_0\mathbbm{1}.
 \end{align}
 Hence the natural linewidth of an atom can be given by
 \begin{align}
@@ -483,6 +483,7 @@ Hence the natural linewidth of an atom can be given by
 \end{align}
 where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the classical radius of the atom. After considering quantum effects, there will be a factor $ f=\frac{2m\omega_0}{\hbar e^2}|d_{eg}|^2 $ modification to the decay rates. 
 
+\todo{Double check with Ivan's notes on Photon Scattering of An Atom Near A Nanofiber. Unify notations of tensors, $k=\omega/c $ or $\omega_0/c$ and Green's function with/without the $4\pi k^2$ factor for later parts.}
 \textcolor{red}{To be continued: total dipole momentum and vacuum dipole momentum, more details on quantum model for the polarizability...}
 \begin{align}
 \boldsymbol{\alpha} &= \sum_e \frac{\mathbf{d}_{ge}\mathbf{d}_{eg}}{-\hbar(\Delta+i\gamma_{eg}/2)}
@@ -1172,7 +1173,7 @@ The terms associated with $d_\pm$ in the dipole moment formula lower or raise th
 
 Using the expansion of the free-space scalar Green function (Equ.~\eqref{scalarG}) for the space $ \left(r\!_\perp <r_\perp ^{\prime}\right) $ that 
 \begin{align}
-G_0(\br,\br') &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
+\frac{G_0(\br,\br')}{k^2} &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
 \left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}\nonumber\\
 &={\frac{{i}}{{2}}%
 }{\sum\limits_{m=-\infty }^{\infty } {{\oint\limits_{C_{1}}{\mathrm{d}\beta \;e^{im\left( {\phi -{\phi }%
@@ -1182,7 +1183,7 @@ G_0(\br,\br') &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\r
 \end{align}
 and for $ \left(r\!_\perp >r_\perp ^{\prime}\right) $
 \begin{align}
-G_0(\br,\br') &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
+\frac{G_0(\br,\br')}{k^2} &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
 \left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}\nonumber\\
 &={\frac{{i}}{{2}}%
 }{\sum\limits_{m=-\infty }^{\infty } {{\oint\limits_{C_{1}}{\mathrm{d}\beta \;e^{im\left( {\phi -{\phi }%
@@ -1486,14 +1487,14 @@ where $ \mathbf{u}^{+}(r\!_\perp ) $ denotes the normalized bare nanofiber HE11 
 \end{align}
 The completeness relationships of the modes can be given by
 \begin{align}
-\sum_{f,p}\int \mathrm{d}\mathbf{k} \,n_r^2\mathbf{u}^{(\mu)}(r\!_\perp )\mathbf{u}^{(\mu)*}(r'\!_\perp ) &= \mathbf{I}\delta^T(r\!_\perp-r'\!_\perp),\\
-\sum_{m,p}\int \mathrm{d}\mathbf{k} \, n_r^2\mathbf{u}^{(\nu)}(r\!_\perp )\mathbf{u}^{(\nu)*}(r'\!_\perp ) &=\mathbf{I}\delta^T(r\!_\perp-r'\!_\perp).
+\sum_{f,p}\int \mathrm{d}\mathbf{k} \,n_r^2\mathbf{u}^{(\mu)}(r\!_\perp )\mathbf{u}^{(\mu)*}(r'\!_\perp ) &= \mathbbm{1}\delta^T(r\!_\perp-r'\!_\perp),\\
+\sum_{m,p}\int \mathrm{d}\mathbf{k} \, n_r^2\mathbf{u}^{(\nu)}(r\!_\perp )\mathbf{u}^{(\nu)*}(r'\!_\perp ) &=\mathbbm{1}\delta^T(r\!_\perp-r'\!_\perp).
 \end{align}
 
 As shown in the earlier sections, in general, the output field in presence of a single atom can be written as
 \begin{align}
 \mathbf{E}(\br) 
-&=\mathbf{E}_0(\br)-4\pi k^2\alpha \mathbf{G}(\br,\br')\cdot \mathbf{E}_0(\br')
+&=\mathbf{E}_0(\br)+\alpha \mathbf{G}(\br,\br')\cdot \mathbf{E}_0(\br')
 \end{align}
 where we only treat the polarizability as a scalar. The only barrier for solving the output E-field is to solve the dyadic Green function.
 
@@ -1503,11 +1504,11 @@ The \textit{normal} approach:
 
 We recall that the equation governs the dyadic Green function can be written as below:
 \begin{align}
-\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}(\br,\br') &= \mathbf{I}\delta(\br-\br'),
+\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}(\br,\br') &= -4\pi k_0^2\mathbbm{1}\delta(\br-\br'),
 \end{align}
 each column of which can be expressed as
 \begin{align}
-\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}_i(\br,\br') &= \mathbf{e}_i\delta(\br-\br'), \label{eq:Gi}
+\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}_i(\br,\br') &= -4\pi k_0^2\mathbf{e}_i\delta(\br-\br'), \label{eq:Gi}
 \end{align}
 where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green function of $ \mathbf{G}(\br,\br') $. Here, we used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
 
@@ -1569,7 +1570,7 @@ Notice that, the longitudinal current equation (Equ.~\eqref{eq:Jl_cg}) will beco
 
 The Green function for our nanofiber problem satisfies (Equ.~\eqref{eq:dyadicGF})
 \begin{align}
-\left[ -\nabla\times\nabla\times + n^2k_0^2 \right] \mathbf{G}(\br,\br') &= \mathbf{I}\delta^{(3)}(\br-\br'),
+\left[ -\nabla\times\nabla\times + n^2k_0^2 \right] \mathbf{G}(\br,\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br'),
 \end{align}
 where $n=n(\br\!_\perp)=\sqrt{\varepsilon(\br\!_\perp)}$ and $k_0=\omega_0/c$. Correspondingly, the bare-fiber modes (eigenmodes), $ \mathbf{u}^{(\mu)}(\br) $, satisfy the Maxwell-Helmholtz equation (Equ.~\eqref{MaxwellHelmholtz0}), that is
 \begin{align}
@@ -1616,7 +1617,7 @@ Similar to the integration in the general biorthogonality relationship, if we on
 From those eigensolutions, we can define a dyad, $ \mathbf{G}_\epsilon(\br,\br') $, satisfying
 \begin{align}
 \mathbf{G}_\epsilon(\br,\br') &= n(\br) \mathbf{G}(\br,\br') n(\br'),\\
-\mathcal{H}_{k_0} \mathbf{G}_\epsilon(\br,\br') &= \mathbf{I}\delta^{(3)}(\br-\br').\label{eq:HGtilde}
+\mathcal{H}_{k_0} \mathbf{G}_\epsilon(\br,\br') &= \mathbbm{1}\delta^{(3)}(\br-\br').\label{eq:HGtilde}
 \end{align}
 
 One can expand the dyadic function $ \mathbf{G}_\epsilon(\br,\br') $ in terms of the transverse eigenmodes by
@@ -1626,24 +1627,24 @@ One can expand the dyadic function $ \mathbf{G}_\epsilon(\br,\br') $ in terms of
 where the coefficient vector $\mathbf{A}_\epsilon^{(\mu)}(\br')  $ does not depend on $ \br $.
 Substituting Equ.~\eqref{eq:transGappr} into Equ.~\eqref{eq:HGtilde}, we obtain
 \begin{align}
-\sum_{\mathbf{k}} \left[ \mathcal{H}_{k_0}  \mathbf{u}_\epsilon^{(\mu)}(\br)\right] \mathbf{A}_\epsilon^{(\mu)}(\br') &= \mathbf{I}\delta^{(3)}(\br-\br')\\
-\Leftrightarrow \sum_\mu (k_0^2-k^2) \mathbf{u}_\epsilon^{(\mu)}(\br) \mathbf{A}_\epsilon^{(\mu)}(\br') &= \mathbf{I}\delta^{(3)}(\br-\br') = \sum_{\mu} \mathbf{u}_\epsilon^{(\mu)}(\mathbf{r} )\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\mathbf{r}^\prime )\right]^*.
+\sum_{\mathbf{k}} \left[ \mathcal{H}_{k_0}  \mathbf{u}_\epsilon^{(\mu)}(\br)\right] \mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br')\\
+\Leftrightarrow \sum_\mu (k_0^2-k^2) \mathbf{u}_\epsilon^{(\mu)}(\br) \mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br') = -4\pi k_0^2\sum_{\mu} \mathbf{u}_\epsilon^{(\mu)}(\mathbf{r} )\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\mathbf{r}^\prime )\right]^*.
 \end{align}
 Therefore, we can solve the coefficient vector for an arbitrary eigenmode to give
 \begin{align}
-\mathbf{A}_\epsilon^{(\mu)}(\br') &= \frac{c^2 \left[ \tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br')\right]^*}{\omega_0^2-\omega_{\mathbf{k}}^2}.
+\mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi\frac{\omega_0^2 \left[ \tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br')\right]^*}{\omega_0^2-\omega_{\mathbf{k}}^2}.
 \end{align}
 Hence, 
 \begin{align}
-\mathbf{G}_\epsilon(\br,\br')= \sum_{\mu} \frac{c^2\mathbf{u}_\epsilon^{(\mu)}(\br)\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br')\right]^*}{\omega_0^2-\omega_{\mathbf{k}}^2} = n(\br) \left[\sum_{\mu} \frac{c^2 {\mathbf{u}}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2} \right]n(\br').
+\mathbf{G}_\epsilon(\br,\br')= -4\pi\sum_{\mu} \frac{\omega_0^2\mathbf{u}_\epsilon^{(\mu)}(\br)\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br')\right]^*}{\omega_0^2-\omega_{\mathbf{k}}^2} = -4\pi n(\br) \left[\sum_{\mu} \frac{\omega_0^2 {\mathbf{u}}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2} \right]n(\br').
 \end{align}
 By the definition of $\mathbf{G}_\epsilon(\br,\br')  $, the dyadic Green function can be written by 
 \begin{align}
-\mathbf{G}(\br,\br')\approx \sum_{\mu} \frac{c^2\mathbf{u}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2}.
+\mathbf{G}(\br,\br')\approx -4\pi\sum_{\mu} \frac{\omega_0^2\mathbf{u}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2}.
 \end{align}
 For the guided $\mathrm{HE}_{11}$ modes, we have 
 \begin{align}
-\mathbf{G}^g(\br,\br') &= \sum_{\beta,m,f=\pm 1} \frac{c^2\mathbf{u}_{\mu}(r\!_\perp)\mathbf{u}^*_{\mu}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')},\label{eq:Gganaly}
+\mathbf{G}^g(\br,\br') &= -4\pi\sum_{\beta,m,f=\pm 1} \frac{\omega_0^2\mathbf{u}_{\mu}(r\!_\perp)\mathbf{u}^*_{\mu}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')},\label{eq:Gganaly}
 \end{align}
 where $ \omega_\beta $ is the angular frequency of the guided HE11 modes with the amplitude $ z $-component of the wave vector being $ \beta $. \textcolor{red}{The mode index should be $ \mu=(\beta_0,m=\pm 1,f=\pm 1) $. This notation should be unified starting here.} Now, we can use the dispersion expansion of $ \omega_\beta $ around $ \omega_0 $ with a group velocity $ v_g $ that 
 \begin{align}
@@ -1657,10 +1658,10 @@ Meanwhile, the sum over the mode index can be written as an integral over $ \bet
 \end{align}
 This  transformation comes from the consideration that, in the continuous limit, the propagating guided wave is periodic within the quantization length period $ L $ and the periodicity condition is that $ \beta_n L=2\pi n $, where $ n=1,\,2,\,\ldots $. Hence, the dyadic Green function for the guided modes (Equ.~\eqref{eq:Gganaly}) can be written as
 \begin{align}
-\!\!\!\!\!\!\!\!\! \mathbf{G}^g(\br,\br') &= \frac{L}{2\pi}\sum_{m,f=\pm 1}\int_0^\infty \mathrm{d}\beta \frac{c^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')}\\
-&= -\frac{c^2 L}{2\pi}\!\!\sum_{m,f=\pm 1}\int_0^\infty\!\! \mathrm{d}\omega_\beta \frac{\mathrm{d}\beta}{\mathrm{d}\omega_\beta} \frac{\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{(\omega_0\! +\!\omega_\beta) (\omega_0\!-\!\omega_\beta)} e^{i\!f\!\beta(z\!-\!z')+im(\phi\!-\!\phi')}\label{eq:eigGFintegral}\\
-&\approx -\frac{c^2L}{2\pi} \!\!\! \sum_{m,f=\pm 1}\!\!\!\!\! \pi i\,\!  \frac{f}{fv_g} \mathrm{Res}\!\! \left[\! \frac{\mathbf{u}_{m}\!(r\!_\perp\! ) \mathbf{u}^*_{m}\! (r_{\!\perp}^\prime\! ) e^{i\! f\! \beta(z \!-\! z')+im(\phi\!-\! \phi')} }{(\omega_0+\omega_\beta)(\omega_0-\omega_\beta)} \!\right]\!\!\!\!_{\begin{array}{l} \omega_\beta\! =\!\omega_0 \\ \beta\! =\!\beta_0\end{array} }\\
-&= -\frac{ic^2L}{4\omega_0v_g} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')},
+\!\!\!\!\!\!\!\!\! \mathbf{G}^g(\br,\br') &= -2L\sum_{m,f=\pm 1}\int_0^\infty \mathrm{d}\beta \frac{\omega_0^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')}\\
+&= 2\omega_0^2 L\!\!\sum_{m,f=\pm 1}\int_0^\infty\!\! \mathrm{d}\omega_\beta \frac{\mathrm{d}\beta}{\mathrm{d}\omega_\beta} \frac{\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{(\omega_0\! +\!\omega_\beta) (\omega_0\!-\!\omega_\beta)} e^{i\!f\!\beta(z\!-\!z')+im(\phi\!-\!\phi')}\label{eq:eigGFintegral}\\
+&\approx 2\omega_0^2L \!\!\! \sum_{m,f=\pm 1}\!\!\!\!\! \pi i\,\!  \frac{f}{fv_g} \mathrm{Res}\!\! \left[\! \frac{\mathbf{u}_{m}\!(r\!_\perp\! ) \mathbf{u}^*_{m}\! (r_{\!\perp}^\prime\! ) e^{i\! f\! \beta(z \!-\! z')+im(\phi\!-\! \phi')} }{(\omega_0+\omega_\beta)(\omega_0-\omega_\beta)} \!\right]\!\!\!\!_{\begin{array}{l} \omega_\beta\! =\!\omega_0 \\ \beta\! =\!\beta_0\end{array} }\\
+&= \pi\frac{iL}{v_g} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')},
 \end{align}
 where $ \beta_0 $ is the propagation constant with a given $ \omega_0 $ for the input/emission field. The integral path and the equivalence to the residue at $ \beta_0 $ is illustrated in part (c) of Fig.(\ref{fig:integralpaths}). We have used the fact that $ \int_{0-if\epsilon}^{\infty-if\epsilon} \mathrm{\omega_\beta}g(\omega_\beta) = P\left[ g(\omega_\beta)\right] +f\pi i \mathrm{Res}\left[g(\omega_\beta) \right] $, and ignored the principal value integral part, $ P\left[ g(\omega_\beta)\right] $. The principal value part yields the level shift of the atom due to the fiber modes, which should be negligible in the dispersive regime we are considering about. \todo[inline]{Note: the figure of integral path needs to be changed to have integrals always from $0$ to $\infty$ for $\omega_\beta$ and choose the shift of the integral path based on the sign of $f(z-z')$.} 
 
@@ -1671,7 +1672,7 @@ n_g&=\sqrt{\varepsilon_g}= \frac{c}{v_g}
 \end{align}
 the dyadic Green function for the guided modes can also be written as
 \begin{align}
-\mathbf{G}^g(\br,\br') &\approx -\frac{in_gL}{4k_0} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')}.
+\mathbf{G}^g(\br,\br') &\approx i\pi n_gL\sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')}.
 \end{align}
 We make $ L=1 $ for now, which should be canceled through multiplying with the quantization factor. 
  
@@ -2279,8 +2280,8 @@ where the single atom light shifts per photon or the coupling strengths for the 
 
 Suppose the probe laser is in a near resonance regime of the lower frequency side of the $ D_1 $ line so that the detuning from the ground $ 6S_{1/2} $ $ \ket{f=4} $ hyperfine level to the excited $ 6P_{1/2} $ $ \ket{f=3} $ hyperfine level is far greater than the hyperfine structure splitting of the excited states. We can then ignore the tensor component and the imaginary part of the atomic polarizability, as well as the higher level of excited states above the $ 6P_{1/2} $ energy levels. Baring that the vector component of the polarizability for the clock state vanishes, we only have the scalar coefficient $C_{j' f}^{(0)} =1/3  $ (from Equ.~\eqref{Eq::ScalarCoefSum}) non-zero.~\footnote{Similar case for the $ D_2 $ line will lead to $ C_{j' f}^{(0)} =2/3 $.} Therefore, the atomic polarizability can be given by
 \begin{align}
-\tensor{\alpha}_{\uparrow} &\approx\sum_{f'=3,4}\frac{\alpha_0(\Delta_{4,f'})}{3}\mathbf{I} \\
-\tensor{\alpha}_{\downarrow} &\approx\sum_{f'=3,4}\frac{\alpha_0(\Delta_{3,f'})}{3}\mathbf{I},
+\tensor{\alpha}_{\uparrow} &\approx\sum_{f'=3,4}\frac{\alpha_0(\Delta_{4,f'})}{3}\mathbbm{1} \\
+\tensor{\alpha}_{\downarrow} &\approx\sum_{f'=3,4}\frac{\alpha_0(\Delta_{3,f'})}{3}\mathbbm{1},
 \end{align}
 with $ \alpha_0(\Delta_{f,f'})=-\frac{3\lambda_{j'j}^3}{32\pi^3} \frac{\Gamma}{\Delta_{f,f'}} $. In our case, we can make $ \lambda_{j'j}\approx\lambda= \frac{2\pi c}{\omega_0}$. Therefore, we have
 \begin{align}
