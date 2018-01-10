@@ -1,6 +1,6 @@
 \chapter{Atom-waveguide interfaces}
 
-\section{Green function for the classical light}
+\section{Photon emission in the perspective of Green's function method}
 In this section, we look at the case that only one atom is trapped aside the nanofiber. To be specific, we consider the following scenario: a laser beam propagates through a nanofiber along $ z $ direction; a Cesium (Cs) atom (can be other atoms) allocates at $ \mathbf{r}_{atom} =\mathbf{r}'$ close by the nanofiber, and responds to the optical field. Due to the response of the atom, a light is re-emitted
 from the atom with a phase shift propagating in all directions, and interferes with the guided mode, which causes attenuation and a change of the index of refraction\index{index of refraction} of the nanofiber effectively. 
 
@@ -105,7 +105,7 @@ Notice that Born series does not necessarily converge. Usually, we need to verif
 
 \textcolor{red}{To be continued: Retard Green function for forward and backward solutions, propagator and transverse dyadic Green function...}
 
-\section{Paraxial expansion of the mode}
+\subsection{Paraxial expansion of the mode}
 In the case that the light fields propagate along a certain direction $ z $ and spread out only slowly in the transverse direction, we can use the \textit{paraxial approximation}\index{paraxial approximation} to simplify the light propagation problem, especially the analytical integral of the Fourier integrals of the fields. In that case, the $ z $ component of the wavevectors can be expanded in a series as
 \begin{align}
 k_z=k\sqrt{1-(k^2_x+k^2_y)/k^2}\approx k-\frac{(k^2_x+k^2_y)}{2k}.
@@ -131,7 +131,7 @@ A far field from a point light emitter is usually paraxial approximation obedien
 
 
 
-\section{Dipole oscillation and emission of polarized light}
+\subsection{Dipole oscillation and emission of polarized light}
 Here we present some results of electrical dipole radiations.
 
 In the Green function language, we can obtain the electrical field emitted by an electric dipole source by
@@ -228,7 +228,7 @@ The irreducible tensor decomposition can be found in the spin control and measur
 
 
 
-\section{Fiber modes in absence of the trapped atoms}
+\section{Fundamental eigenmodes of an optical nanofiber}
 To simplify the problem of light scattering in a nanofiber trapped atoms system, we treat the atoms as a dipole oscillator moving in a classical electrical field $ \mathrm{E}_{g}(\br,t) $ guided along the nanofiber, and re-emit a scattered optical field described by $ \mathrm{E}^s(\br,t) $ to interfere with the initial guided optical field. Formally, the total optical field $ \mathrm{E}(\br,t)= \mathrm{E}^g(\br,t)  + \mathrm{E}^s(\br,t) $ implies a change of index of refraction and decoherence\index{decoherence} due to the presence of the atoms. 
 
 In the case of a nanofiber with a sub-wavelength radius, the high-order modes of the nanofiber can hardly be supported, which only leaves over the HE11 mode\index{HE11 mode} propagating along the nanofiber. Assuming the incident light is quasi-linearly polarized, the Cartesian components of the bound optical field are given, for $ r_\perp>a $ (outside the fiber), by~\cite{Lacroute2012,LeKien2004}
@@ -385,7 +385,7 @@ n_{e\!f\!f} &=\frac{\int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\ma
 Notice that, the group index of refraction is not the same as the $ n_{e\!f\!f} $ defined above. We will discuss group velocity and group index of refraction of a waveguide later. See also the notes on \textit{Group velocity of the nanofiber}. 
 
 
-\section{Bound and radiation modes}\label{sec:boundrad}
+\section{Dipole radiation coupled to the guided and radiative modes of an optical nanofiber}\label{sec:boundrad}
 In our study, it is critical to separate the bound mode and the radiation mode. In this section, we will 
 go through a light propagation theory in the scenario of a nanofiber with a trapped atom. 
 
@@ -1198,7 +1198,7 @@ In the case that the nanofiber can be treated as a lossless medium, the contour 
 
 
 
-\section{Green function formalism for the atom-nanofiber system}
+\section{Green function formalism for the atom-waveguide system}
 So far, we have studied two basic aspects for the nanofiber boundary value problem: one is the eigenmode problem, in which we studied the permitted guided nanofiber modes propagating along the nanofiber in absence of atoms; the other one is the single-dipole radiation problem, in which we studied the propagating modes when there is a dipole radiating electromagnetic wave around a nanofiber. Now, we can combine the conclusions of the two cases studied, and to study the full radiation reaction problem of the dipole-nanofiber system, in which we assume there is a guided mode incident to the nanofiber, and then excites one atom outside of the nanofiber which radiates light into the nanofiber and interferes with the nanofiber modes. 
 
 
@@ -1604,6 +1604,12 @@ where $\mathbf{u}_{00}(\br')  $ is the TEM00 mode of a Gaussian laser field at t
 \frac{\delta\phi^{nano}}{\delta\phi^{vac}} &=\frac{A_{e\!f\!f}^{vac'}}{A_{e\!f\!f}^{11}}= \frac{A}{2} \!n_g\! \frac{|\mathbf{u}_1(r_\perp^{nano'})|^2}{|\mathbf{u}_{00}(r_\perp^{vac'})|^2}.
 \end{align}
 In the vacuum case, the strongest mode is given by $ |\mathbf{u}_{00}(r_\perp^{vac'})|=1 $ when the atom is placed at the center of the beam waist. 
+
+
+
+\section{Modification of the spontaneous emission of atoms trapped near a nanophotonic waveguide}
+
+\comment{To be continued...}
 
 \section{Resolution of birefringence spectroscopy measurement for the nanofiber trapped atom system}\label{sec:birefringenceresolution}
 The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence spectroscopy analysis for our nanofiber case.
