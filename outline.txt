@@ -29,6 +29,10 @@ Chapter 5: QND measurement and spin squeezing using the Faraday effect
     5.3 Quantum dynamics of spin squeezing using the Faraday effect
     5.4 Including the modification of spontaneous emissions of atoms
 
+Chapter 6: Two-color scheme for cancelling the tensor light shift.
+
+Or, 
+
 Chapter 6: Sideband cooling of neutral atoms on a waveguide interface
 
 Chapter 7: Conclusion and outlook
