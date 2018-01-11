@@ -3,5 +3,11 @@
 *.ilg
 *.log
 *.synctex.gz
-ScatteringInNaTA.pdf
-FactorOf2.pdf
+*.out
+*.bbl
+*.blg
+*.idx
+*.ind
+*.toc
+main.pdf
+
