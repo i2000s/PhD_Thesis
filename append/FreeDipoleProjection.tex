@@ -117,7 +117,7 @@ where $ \mathcal{C}_{r_\perp}^p(z) $ and $ \mathcal{C}_\phi^p(z) $ correspond to
 
 We made $ \br'=(r'_\perp,\phi',z')=(2a,0,0) $ and $ \lambda_0=937.1 $ nm, and numerically calculated the projection coefficients for the forward propagating and counterclockwise polarized fundamental mode. The results are shown in Figs~\ref{Cz} and~\ref{ACSz}. Notice that, due to numerical inaccuracy, there are some divergent integration noises for $ z<5 $ cm. As we can see from the figures, $ \mathcal{A}(z) $ is a result of the interference of the point-scattered light and the bound mode, which decays as a function of $ \frac{1}{z-z'} $ with a periodical phase change. The phase change should have a period of $ 2\pi/(k_0-\beta_{11})\sim \lambda_0 $, where $ \beta_{11} $ is about one tenth of $ k_0 $. Due to limited computing resolution, the plots in Fig.~\ref{ACSz} does not reflect the correct phase changing period. $ \mathcal{C}^{(\mu)}(z) $ reflects how the scattered light synchronizes and better coupled with the bound mode as $ z $ increases. Combining these factors, the total projection factor $ \mathcal{S}^{(\mu)}(z) $ decays dramatically when $ z $ is small as the $ \frac{1}{z-z'} $ propagating decay dominates, and then increases with a periodical-like oscillation as the scattered light is close to a plane wave and can be well coupled and interfered with the bound mode. The beating frequency increases as the light propagates until it can be well coupled with the bound mode. Both $ r_\perp $ and $ \phi $ components of the projection coefficients have some difference as $ z $ is large. 
 
-\textcolor{red}{Here are some phenomena needed to further explain}: the different periods of changes for $ r_\perp< a $ and $ r_\perp>a $ cases; interference periods and beating periods are not as simple as normal interference model predicted (see Fig.~\ref{Figs/InterferencePeriods})--this is because we used a rough resolution in $ z $-direction to save computing time; the different behaviors of the two transverse components of the projection coefficients...
+\textcolor{red}{Here are some phenomena needed to further explain}: the different periods of changes for $ r_\perp< a $ and $ r_\perp>a $ cases; interference periods and beating periods are not as simple as normal interference model predicted (see Fig.~\ref{../media/Figs/InterferencePeriods})--this is because we used a rough resolution in $ z $-direction to save computing time; the different behaviors of the two transverse components of the projection coefficients...
 
 \textcolor{red}{Technical problem: numerical integration does not work well for high oscillating functions. We need to artificially set up a very fine integrating $ x $-axis to make it work properly. To fully solve this problem, we may need to consider better integration method, such as chebfun developed by Oxford (\url{http://www2.maths.ox.ac.uk/chebfun/}) which, I believe, is powerful to solve problems including definite integration, ordinary differential equations, contour integrals and roots finding. }
 
@@ -125,20 +125,20 @@ We made $ \br'=(r'_\perp,\phi',z')=(2a,0,0) $ and $ \lambda_0=937.1 $ nm, and nu
 \begin{figure}[H] 
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_{r_\perp}(z) $ for $ r_\perp < a $]{\label{Cza}\includegraphics[scale=.44]{Figs/Cr1}}
+\subfloat[$ \mathcal{C}_{r_\perp}(z) $ for $ r_\perp < a $]{\label{Cza}\includegraphics[scale=.44]{../media/Figs/Cr1}}
 \end{minipage}%
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_{r_\perp}(z) $ for $ r_\perp > a $]{\label{Czb}\includegraphics[scale=.44]{Figs/Cr2}}
+\subfloat[$ \mathcal{C}_{r_\perp}(z) $ for $ r_\perp > a $]{\label{Czb}\includegraphics[scale=.44]{../media/Figs/Cr2}}
 \end{minipage}
 \par\medskip
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_\phi(z) $ for $ r_\perp < a $]{\label{Czc}\includegraphics[scale=.44]{Figs/Cphi1}}
+\subfloat[$ \mathcal{C}_\phi(z) $ for $ r_\perp < a $]{\label{Czc}\includegraphics[scale=.44]{../media/Figs/Cphi1}}
 \end{minipage}%
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_\phi(z) $ for $ r_\perp > a $]{\label{Czd}\includegraphics[scale=.44]{Figs/Cphi2}}
+\subfloat[$ \mathcal{C}_\phi(z) $ for $ r_\perp > a $]{\label{Czd}\includegraphics[scale=.44]{../media/Figs/Cphi2}}
 \end{minipage}
 \caption{$ \mathcal{C}^{(\omega,p=+,f=+)}(z) $. The values of these coefficients are in an arbitrary unit. }
 \label{Cz}
@@ -149,31 +149,31 @@ We made $ \br'=(r'_\perp,\phi',z')=(2a,0,0) $ and $ \lambda_0=937.1 $ nm, and nu
 
 \begin{figure}[H] 
 \centering
-\subfloat[$ \mathcal{A}(z) $]{\label{Az}\includegraphics[scale=.5]{Figs/Az}}
+\subfloat[$ \mathcal{A}(z) $]{\label{Az}\includegraphics[scale=.5]{../media/Figs/Az}}
 \par\medskip
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_{r_\perp}(z) $]{\label{Crz}\includegraphics[scale=.44]{Figs/Cr}}
+\subfloat[$ \mathcal{C}_{r_\perp}(z) $]{\label{Crz}\includegraphics[scale=.44]{../media/Figs/Cr}}
 \end{minipage}%
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_\phi(z) $ ]{\label{Cphiz}\includegraphics[scale=.44]{Figs/Cphi}}
+\subfloat[$ \mathcal{C}_\phi(z) $ ]{\label{Cphiz}\includegraphics[scale=.44]{../media/Figs/Cphi}}
 \end{minipage}
 \par\medskip
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{S}_{r_\perp}(z) $ ]{\label{Srz}\includegraphics[scale=.44]{Figs/Sr}}
+\subfloat[$ \mathcal{S}_{r_\perp}(z) $ ]{\label{Srz}\includegraphics[scale=.44]{../media/Figs/Sr}}
 \end{minipage}%
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{S}_\phi(z) $]{\label{Sphiz}\includegraphics[scale=.44]{Figs/Sphi}}
+\subfloat[$ \mathcal{S}_\phi(z) $]{\label{Sphiz}\includegraphics[scale=.44]{../media/Figs/Sphi}}
 \end{minipage}
 \caption{$ \mathcal{A}(z) $, $ \mathcal{C}^{(\omega,p=+,f=+)}(z) $ and $ \mathcal{S}^{(\omega,p=+,f=+)}(z) $. The values of these coefficients are in an arbitrary unit. There should be some fast chopping in $ \mathcal{A}(z) $ and $ \mathcal{S}^{(\mu)}(z) $. However, due to the cost of computing time, we did not give a fine enough calculation in our plots. See following plots for the calculation results with an improved resolution.  }
 \label{ACSz}
 \end{figure}
 
 
-\scalefig{Figs/InterferencePeriods}{0.6}{Wave path-difference of the interference between a monochromatic light emitted from a point atom located at $ \br'=(r'_\perp,\phi',z')=(2a,0,0) $ and a laser beam propagating along the $ z $-axis at the same wavelength $ \lambda_0=937.1 $ nm. The  horizontal axis of the plot is scaled in terms of the radium $ a $ of the nanofiber. The vertical axis is the wave path-difference measured along the laser's propagation direction of $ z $-axis, which is scaled by the wavelength $ \lambda=\lambda_0 $. As we can see, the interference period is uniform, and is on the order of $ 4.2a $.  This rough calculation implies that the chopping frequency in $ z $-direction should on the order of the wavelength, which should be reflected in Fig.~\ref{ACSz} and related plots. }
+\scalefig{../media/Figs/InterferencePeriods}{0.6}{Wave path-difference of the interference between a monochromatic light emitted from a point atom located at $ \br'=(r'_\perp,\phi',z')=(2a,0,0) $ and a laser beam propagating along the $ z $-axis at the same wavelength $ \lambda_0=937.1 $ nm. The  horizontal axis of the plot is scaled in terms of the radium $ a $ of the nanofiber. The vertical axis is the wave path-difference measured along the laser's propagation direction of $ z $-axis, which is scaled by the wavelength $ \lambda=\lambda_0 $. As we can see, the interference period is uniform, and is on the order of $ 4.2a $.  This rough calculation implies that the chopping frequency in $ z $-direction should on the order of the wavelength, which should be reflected in Fig.~\ref{ACSz} and related plots. }
 
 
 \newpage
@@ -182,20 +182,20 @@ Notice that, calculation resolution matters to the results. For comparison, we r
 \begin{figure}[H] 
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_{r_\perp}(z) $ for $ r_\perp < a $]{\label{Cza_1}\includegraphics[scale=.44]{Figs/Cr1_1}}
+\subfloat[$ \mathcal{C}_{r_\perp}(z) $ for $ r_\perp < a $]{\label{Cza_1}\includegraphics[scale=.44]{../media/Figs/Cr1_1}}
 \end{minipage}%
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_{r_\perp}(z) $ for $ r_\perp > a $]{\label{Czb_1}\includegraphics[scale=.44]{Figs/Cr2_1}}
+\subfloat[$ \mathcal{C}_{r_\perp}(z) $ for $ r_\perp > a $]{\label{Czb_1}\includegraphics[scale=.44]{../media/Figs/Cr2_1}}
 \end{minipage}
 \par\medskip
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_\phi(z) $ for $ r_\perp < a $]{\label{Czc_1}\includegraphics[scale=.44]{Figs/Cphi1_1}}
+\subfloat[$ \mathcal{C}_\phi(z) $ for $ r_\perp < a $]{\label{Czc_1}\includegraphics[scale=.44]{../media/Figs/Cphi1_1}}
 \end{minipage}%
 \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_\phi(z) $ for $ r_\perp > a $]{\label{Czd_1}\includegraphics[scale=.44]{Figs/Cphi2_1}}
+\subfloat[$ \mathcal{C}_\phi(z) $ for $ r_\perp > a $]{\label{Czd_1}\includegraphics[scale=.44]{../media/Figs/Cphi2_1}}
 \end{minipage}
 \caption{$ \mathcal{C}^{(\omega,p=+,f=+)}(z) $. The values of these coefficients are in an arbitrary unit. Resolution is improved (see text).}
 \label{Cz_1}
@@ -206,24 +206,24 @@ Notice that, calculation resolution matters to the results. For comparison, we r
 
 \begin{figure}[H] 
 \centering
-\subfloat[$ \mathcal{A}(z) $]{\label{Az_1}\includegraphics[scale=.5]{Figs/Az_1}}
+\subfloat[$ \mathcal{A}(z) $]{\label{Az_1}\includegraphics[scale=.5]{../media/Figs/Az_1}}
 \par\medskip
 \begin{minipage}{.48\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_{r_\perp}(z) $]{\label{Crz_1}\includegraphics[scale=.42]{Figs/Cr_1}}
+\subfloat[$ \mathcal{C}_{r_\perp}(z) $]{\label{Crz_1}\includegraphics[scale=.42]{../media/Figs/Cr_1}}
 \end{minipage}%
 \begin{minipage}{.48\linewidth}
 \centering
-\subfloat[$ \mathcal{C}_\phi(z) $ ]{\label{Cphiz_1}\includegraphics[scale=.42]{Figs/Cphi_1}}
+\subfloat[$ \mathcal{C}_\phi(z) $ ]{\label{Cphiz_1}\includegraphics[scale=.42]{../media/Figs/Cphi_1}}
 \end{minipage}
 \par\medskip
 \begin{minipage}{.48\linewidth}
 \centering
-\subfloat[$ \mathcal{S}_{r_\perp}(z) $ ]{\label{Srz_1}\includegraphics[scale=.42]{Figs/Sr_1}}
+\subfloat[$ \mathcal{S}_{r_\perp}(z) $ ]{\label{Srz_1}\includegraphics[scale=.42]{../media/Figs/Sr_1}}
 \end{minipage}%
 \begin{minipage}{.48\linewidth}
 \centering
-\subfloat[$ \mathcal{S}_\phi(z) $]{\label{Sphiz_1}\includegraphics[scale=.42]{Figs/Sphi_1}}
+\subfloat[$ \mathcal{S}_\phi(z) $]{\label{Sphiz_1}\includegraphics[scale=.42]{../media/Figs/Sphi_1}}
 \end{minipage}
 \caption{$ \mathcal{A}(z) $, $ \mathcal{C}^{(\omega,p=+,f=+)}(z) $ and $ \mathcal{S}^{(\omega,p=+,f=+)}(z) $. The values of these coefficients are in an arbitrary unit. Resolution is improved (see text).}
 \label{ACSz_1}

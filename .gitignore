@@ -9,5 +9,9 @@
 *.idx
 *.ind
 *.toc
-main.pdf
+*.brf
+*.loc
+*.lof
 
+main.pdf
+chap1/Introduction.pdf

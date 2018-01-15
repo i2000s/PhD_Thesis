@@ -1,0 +1,20 @@
+\newcommand{\acronym}[2]{\makebox[6em][l]{#1} #2}% used to generate the list of acronymols
+
+\chapter{List of Acronyms}
+
+\acronym{BEC}{Bose-Einstein Condensate}\\
+\acronym{SQUID}{Superconducting Quantum Interference Device}\\
+\acronym{DFS}{Double-Fock State}\\
+\acronym{TFS}{Twin-Fock State}\\
+\acronym{GP}{Gross-Pitaevskii}\\
+\acronym{GPE}{Gross-Pitaevskii Equation}\\
+\acronym{RDM}{Reduced Density Matrix}\\
+\acronym{1RDM}{single-particle Reduced Density Matrix}\\
+\acronym{2RDM}{two-particle Reduced Density Matrix}\\
+\acronym{$q$RDM}{$q$-particle Reduced Density Matrix}\\
+\acronym{MCTDHB}{Multiconfigurational Time-Dependent Hartree Method for Bosons}\\
+\acronym{ECS}{Extended Catalytic State}\\
+\acronym{PCS}{Pair-Correlated State}\\
+\acronym{BPCS}{Bosonic Particle-Correlated State}\\
+\acronym{ODLRO}{Off-Diagonal Long Range Order}\\
+\acronym{GPS}{Gross-Pitaevskii State}

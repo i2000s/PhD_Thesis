@@ -1,240 +1,84 @@
-\documentclass[]{report}
-\usepackage{amsmath}
-\usepackage{bm}
-\usepackage{bbm}
-\usepackage{listings}
-% % \textwidth 16cm \textheight 23.5cm
-% \renewcommand{\baselinestretch}{1.2}
-\usepackage{graphicx}
-\usepackage{graphics}
-\usepackage{epsfig}
-\usepackage{color}
-\usepackage{multirow}
-\usepackage[colorlinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{calc}
-\usepackage[numbers]{natbib}
-\usepackage{bibentry}
-% underline tool
-\usepackage[normalem]{ulem}
-\usepackage{xcolor}
-%\uline{foo}	Underlines foo
-%\uuline{foo}	Double underlines foo
-%\uwave{foo}	Underlines foo with a wavy line
-%\sout{foo}	Strikesout foo
-%\xout{foo}	Crosses out foo with ¡®/6¤7¡¯
-% triple lines in colors
-\makeatletter
-\newcommand\uuuline{\bgroup\markoverwith%
-   {%
-     \textcolor{red}{\rule[-0.5ex]{2pt}{0.4pt}}%
-     \llap{\textcolor{blue}{\rule[-0.7ex]{2pt}{0.4pt}}}%
-     \llap{\textcolor{green}{\rule[-0.9ex]{2pt}{0.4pt}}}%
-   }%
-   \ULon}
-\makeatother
+%\documentclass[fleqn, final]{unmpandathesis} %which is hard to use
+\documentclass[fleqn, final, openany]{../styles/unmeethesis}
+%\usepackage{zj}
+\usepackage{../styles/qxd}
 
+%\renewcommand{\chref}{\ref}  % reset \chref{} to \ref{} so that the inter-chapter references are correct
+%\renewcommand{\id}[1]{} % uncomment everything
+%\renewcommand{\qxd}[1]{}  % uncomment everything
 
-\usepackage{amsmath,soul} % underline with a number
-% usage example: $\underset{4}{\text{\ul{This is short text}}}$
-% another package to use, but did not work for me.
-% From: http://tex.stackexchange.com/questions/45341/labeling-underlined-text-over-multiple-lines
-%\usepackage{soulpos}
-%\ulposdef{\ulnumaux}{%
-%   $\underset{\saveulnum}{\rule[-.7ex]{\ulwidth}{.4pt}}$}
-%
-%\newcommand{\ulnum}[2]{%
-%  \def\saveulnum{#1}%
-%  \ulnumaux{#2}}
-
-% todo list and commands
-\usepackage{todonotes}
-%% to avoid the conflict with amths package % not working
-%\makeatletter
-%\providecommand\@dotsep{5}
-%\makeatother
-%\listoftodos\relax
-\usepackage{makeidx}
-\allowdisplaybreaks
-% for eps transfering to pdf.
-\usepackage[update,prepend]{epstopdf}
-\usepackage{ifpdf}
-
-\ifpdf
-   \usepackage{graphicx}
-   \usepackage{epstopdf}
-   \epstopdfsetup{suffix=}
-   \DeclareGraphicsRule{.eps}{pdf}{.pdf}{`epstopdf #1}
-   \pdfcompresslevel=9
-\else
-   \usepackage{graphicx}
-\fi
-% subfig
-\usepackage{mwe}
-\usepackage{subfig}
-% to fix a figure's position using [H] option of thec figure.
-\usepackage{float}
-% to use \lesssim and other math symbols
-\usepackage{amssymb}
-
-
-% self-defined short-cuts and commands
-
-% packages we need for judging the operating system
-% compile your tex file with option -shell-escape is required: 
-% e.g. xelatex -shell-escape file.tex
-\usepackage{pdftexcmds}
-\usepackage{catchfile}
-\usepackage{ifluatex}
-\usepackage{ifplatform}
-
-% To use subfigures. From http://tex.stackexchange.com/questions/75014/is-it-possible-to-make-a-reference-to-a-subfigure-to-appear-figure-2a-with-cle
-\captionsetup[subfigure]{subrefformat=simple,labelformat=simple,listofformat=subsimple}
-\renewcommand\thesubfigure{(\alph{subfigure})}
-
-% judge platform and include correct definiation package
-\ifwindows
-	%\input{F:/Research/Works/Templates/Mydef.tex} % %
-	\input{E:/Research/Works/Templates/Mydef.tex} % 
-\else
-	\input{/media/E/Research/Works/Templates/Mydef.tex} %
-\fi
-
-%\includeonly{VectorTensor}
-% for table captions.
-\usepackage{tabularx,ragged2e,booktabs,caption}
-
-% packages for drawing
-\usepackage{tikz}
-\usepackage{xparse}
-\usetikzlibrary{calc,decorations.markings,arrows,matrix,backgrounds}
-\pgfdeclarelayer{myback}
-\pgfsetlayers{myback,background,main}
-\tikzset{mycolorEq/.style = {line width=1bp,color=#1}}%
-\tikzset{myfillcolor/.style = {draw,fill=#1}}%
-
-\NewDocumentCommand{\highlight}{O{blue!40} m m}{%
-\draw[mycolorEq=#1,rounded corners,inner sep=0pt,opacity=0.8] (#2.north west)rectangle (#3.south east);
-}
-
-\NewDocumentCommand{\fhighlight}{O{blue!40} m m}{%
-\draw[myfillcolor=#1,rounded corners,inner sep=0pt,opacity=0.8] (#2.north west)rectangle (#3.south east);
-}
-
-% Commands from Ben's nanofiberInterface note. 
-%\newcommand{\melement}[3]{\langle #1 \lvert #2 \rvert #3 \rangle}
-
-%\newcommand{\Ip}[2]{\left\langle {#1},{#2} \right\rangle}
-%\newcommand{\modsq}[1]{\lvert #1 \rvert^2}
-%\newcommand{\normsq}[1]{\lVert #1 \rVert^2}
-%\newcommand{\expect}[1]{\langle #1 \rangle}
-%\newcommand{\grad}{\nabla}
-%\newcommand{\partialD}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\Eq}[1]{Eq. [\ref{Eq::#1}]}
-
-\newcommand{\xit}{\xi(t)}
-\newcommand{\xits}{\xi^*(t)}
-\newcommand\foreign[1]{{\it #1\spacefactor=1000}}
-\newcommand\eg{\foreign{e.g.}}
-\newcommand\ie{\foreign{i.e.}}
-\newcommand\ibid{\foreign{ibid}}
-\newcommand\Denv{{D_{\mbox{\scriptsize env}}}}
-\newcommand\Dcl {{D_{\mbox{\scriptsize cl }}}}
-\newcommand{\sq}[1]{\left[ {#1} \right]}
-%\newcommand{\tr}[1]{{\textrm {Tr}}\sq{#1}}
-%\newcommand{\smallfrac}[2]{\mbox{$\frac{#1}{#2}$}}
-%\newcommand{\bra}[1]{\langle{#1}|}
-%\newcommand{\ket}[1]{|{#1}\rangle}
-%\newcommand{\ip}[2]{\langle{#1}|{#2}\rangle}
-%\newcommand{\op}[2]{\ket{#1}\bra{#2}}
-%\newcommand{\enavg}[1]{\mathrm{E}\sq{#1}}
-%\newcommand{\gravg}[1]{\mathbb{E}\sq{#1}}
-%\newcommand{\expt}[1]{\langle{#1}\rangle}
-%\newcommand{\dg}{^\dagger}
-\newcommand{\D}[1]{{\cal D}\sq{#1}}
-\newcommand{\J}[1]{{\cal J}\sq{#1}}
-\newcommand{\Hc}[1]{{\cal H}\sq{#1}}
-\newcommand{\Hcun}[1]{\tilde{\cal H}\sq{#1}}
-\newcommand{\Lc}[1]{{\cal L}_c\sq{#1}}
-\newcommand{\Lcun}[1]{{\tilde{\cal L}}_c\sq{#1}}
-\newcommand{\Luc}[1]{{\cal L}\sq{#1}}
-%\newcommand{\emn}[1]{ \mathbbm{E}_{#1} }
-
-\newcommand{\beq}{\begin{equation}}
-\newcommand{\eeq}{\end{equation}}
-\newcommand{\bqa}{\begin{eqnarray}}
-\newcommand{\eqa}{\end{eqnarray}}
-%\newcommand{\nn}{\nonumber}
-\newcommand{\nl}[1]{\nn \\ && {#1}\,}
-%\newcommand{\erf}[1]{Eq.~(\ref{#1})}
-%\newcommand{\frf}[1]{Fig.~\ref{#1}}
-%\newcommand{\srf}[1]{Sec.~\ref{#1}}
-%\newcommand{\dg}{^\dagger}
-\newcommand{\rt}[1]{\sqrt{#1}\,}
-%\newcommand{\smallfrac}[2]{\mbox{$\frac{#1}{#2}$}}
-%\newcommand{\half}{\smallfrac{1}{2}}
-%\newcommand{\bra}[1]{\langle{#1}|}
-%\newcommand{\ket}[1]{|{#1}\rangle}
-%\newcommand{\ip}[2]{\langle{#1}|{#2}\rangle}
-%\newcommand{\sch}{Schr\"odinger}
-%\newcommand{\hei}{Heisenberg }
-%\newcommand{\ein}{Einstein }
-%\newcommand{\Tr}{\mbox{Tr}}
-\newcommand{\red}{\color{red}}
-\newcommand{\blue}{\color{blue}}
-%\newcommand{\tensor}[1]{\boldsymbol{#1}}
-\newcommand{\tensor}[1]{\overset{\leftrightarrow}{#1}} %{\stackrel{\leftrightarrow}{#1}}
-
-%==== Ben's new macros ======
-
-\newcommand{\fidx}{\eta}
-\newcommand{\chibir}{\chi_{\rm bir}}
-
-\newcommand{\gammap}{\tilde{\gamma}_\uparrow + \tilde{\gamma}_\downarrow}
-\newcommand{\gammam}{\tilde{\gamma}_\uparrow - \tilde{\gamma}_\downarrow}
-
-%==== effective areas ======
-\newcommand{\Abiref}{A_{\rm bir}}
-\newcommand{\Aeff}{A_{\rm eff}}
-
-%==== colors for editing ======
-\newcommand{\change}[1]{{\color{blue} #1}}
-\newcommand{\comment}[1]{{\color{orange} #1}}
-\newcommand{\error}[1]{{\color{red} #1}}
 
 
 % % % % % % % % % % % % % % % % % % %
 
 % Title Page
-\title{Dispersive quantum interface with atoms and nanophotonic waveguides}
-\author{Xiaodong Qi}
+%\title{Dispersive quantum interface with atoms and nanophotonic waveguides}
+%\author{Xiaodong Qi}
 
 \makeindex
 
 \begin{document}
+\frontmatter
+
+% The filled form was generated by the function of Print as PDF in Adobe reader after filling out the approval form. The original form has all filled fields blank in rendering.
+\includepdf[pages={1}]{../inputs/approval-filled.pdf} 
+
+\title{Dispersive quantum interface with atoms and nanophotonic waveguides}
+
+\author{Xiaodong Qi}
+
+\degreesubject{Ph.D., Physics}
+
+\degree{Doctor of Philosophy \\ Physics}
+
+\documenttype{Dissertation}
+
+\previousdegrees{B.S., Shandong University of Science and Technology College, 2007
+ \\ M.S., Chinese Academy of Sciences, China, 2010 \\ M.Sc., Queen's University, Canada, 2012}
+
+\date{\today} %{April 2018}
+
 \maketitle
 
-\begin{abstract}
-This is a study on the nanophotonic waveguides trapped atoms project in the dispersive regime. 
-\end{abstract}
+\makecopyright
 
-\tableofcontents
+\input{../inputs/dedication}
 
-\newpage
-\textbf{Acknowledgment}
+\begingroup % There will be an extra blank page between dedication and acknowledgments if this commad is removed.
+\let\clearpage\relax
+\input{../inputs/acknowledgments}
+\endgroup
 
+\input{../inputs/abstract}
 
-\chapter{Introduction}
+\setlength{\headsep}{1.5em} %setting the space between the header and the text block
 
+\tableofcontents 
 
+\addcontentsline{toc}{chapter}{{\bf Contents}}
 
-\include{WaveguideInterface}
+\listoffigures
 
+%\listoftables
 
-\include{QuantumDynamics}
+\input{../inputs/listofsymbols}
+
+\input{../inputs/listofacronyms}
+
+\mainmatter
+
+\ExecuteMetaData[../chap1/Introduction.tex]{tag}
+%\input{../chap1/Introduction}
+
+%\ExecuteMetaData[../chap2/WaveguideInterface.tex]{tag}
+\input{../chap2/WaveguideInterface}
+
+%\ExecuteMetaData[../chap3/QuantumDynamics.tex]{tag}
+\input{../chap3/QuantumDynamics}
 
 %\chapter{QND measurement and spin squeezing using the birefringence effect}
-\include{chap3/Birefringence}
+%\ExecuteMetaData[../chap4/Birefringence.tex]{tag}
+\input{../chap4/Birefringence}
 
 \chapter{QND measurement and spin squeezing using the Faraday effect}
 
@@ -243,30 +87,40 @@ This is a study on the nanophotonic waveguides trapped atoms project in the disp
 \chapter{Conclusion and outlook}
 
 \appendix
-\include{MaxwellEquations}
+\input{../append/MaxwellEquations}
 
-\include{BesselFunctions}
+\input{../append/BesselFunctions}
 
-\include{PlanewaveDecomposition}
+\input{../append/PlanewaveDecomposition}
 
-%\include{FreeDipoleProjection}
+\input{../append/FreeDipoleProjection}
 
-\include{AtomNumberEstimation}
+\input{../append/AtomNumberEstimation}
 
-\include{atomicformulas}
+\input{../append/atomicformulas}
 
-\include{chap3/DetailsOfBirefringenceProtocol}
+\input{../chap4/DetailsOfBirefringenceProtocol}
 
-
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\backmatter
 %\bibliographystyle{amsplain}
-\bibliographystyle{unsrt}
+\bibliographystyle{../styles/abbrv-alpha-letters-links}
+%\bibliographystyle{unsrt}
 % \nocite{*}
 \ifwindows
-	\bibliography{F:/References/Archive/Archive}
+	\bibliography{E:/References/Archive/Archive,../chap4/Nanofiber}
 \else
-	\bibliography{/media/F/References/Archive/Archive}
+	\bibliography{/media/E/References/Archive/Archive,../chap4/Nanofiber}
 \fi
 
 \printindex
+%\cleardoublepage
+%\thispagestyle{plain}
+%\phantomsection
+%\printindex{ai}{Author Index}
+%\chaptermark{Author Index}
+%\thispagestyle{plain}
+%\printindex{si}{Subject Index}
+%\chaptermark{Subject Index}
 
 \end{document}          

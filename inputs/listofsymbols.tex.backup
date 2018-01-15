@@ -1,0 +1,33 @@
+\newcommand{\symb}[2]{\makebox[6em][l]{#1} #2}% used to generate the list of symbols
+
+\chapter{List of Symbols}
+
+\symb{$\delta_{jk}$}{Kronecker delta function}\\
+\symb{$\delta(x_1, x_2)$}{Dirac delta function}\\
+\symb{$A^\dagger$}{Hermitian conjugate of $A$}\\
+\symb{$A^*$}{Complex conjugate of $A$}\\
+\symb{$A^\transp$}{Transpose of $A$}\\
+\symb{$\det(A)$}{Determinant of $A$}\\
+\symb{$\commut{A}{B}$}{Commutator of $A$ and $B$}\\
+\symb{$\anticommut{A}{B}$}{Anticommutator of $A$ and $B$}\\
+\symb{$\re(z)$}{Real part of $z$}\\
+\symb{$\im(z)$}{Imaginary part of $z$}\\
+\symb{$\uppsi$, $\upphi$}{Upright Greek fonts for field operators}\\
+\symb{$\sH$}{\AMS\hspace{.6pt} mathcal fonts for many-body operators}\\
+\symb{$\mathsp{H}$}{Slanted sans serif fonts for matrices of symplectic structure}\\
+\symb{$\identity$, $\nullmatrix$}{The identity matrix and null matrix}\\
+%\symb{$\mathfrak{m}$}{Fraktur fonts for symplectic vectors}\\
+\symb{$\xbf$}{Vectors of spatial degrees of freedom}\\
+\symb{$\vec{x}$}{Vectors of other degrees of freedom}\\
+\symb{$\a$, $\a^\dagger$ ($\b$, $\b^\dagger$)}{Creation and annihilation operators for bosonic modes}\\
+\symb{$\alpha$}{Amplitude of a coherent state}\\
+\symb{$\psinot$}{Condensate wavefunction}\\
+\symb{$\ket{\vac}$}{Vacuum state}\\
+\symb{$i$}{Unit imaginary number}\\
+\symb{$\mathrm{c.c.}$}{Complex conjugate}\\
+\symb{$\mathrm{H.c.}$}{Hermitian conjugate}\\
+\symb{$\braket{\uppsi}{\psinot}$}{Creation operator of the orbital $\phi(\xbf)$, i.e., $\int\uppsi^\dagger(\xbf)\,\psinot(\xbf)\,\dif \xbf$}\\
+\symb{$\ket{\varPsi}$}{Slanted capital Greek letters for many-body quantum states}\\
+\symb{$\dsA$}{Double stroke fonts for subset of the Hilbert space}\\
+
+
