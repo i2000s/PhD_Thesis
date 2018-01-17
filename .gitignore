@@ -12,6 +12,11 @@
 *.brf
 *.loc
 *.lof
+*.pdf
 
-main.pdf
-chap1/Introduction.pdf
+!chap4/Fig1.pdf
+!chap4/Fig2.pdf
+!chap4/Fig3.pdf
+!chap4/Fig4.pdf
+!chap4/Fig5.pdf
+!chap4/Fig6.pdf
