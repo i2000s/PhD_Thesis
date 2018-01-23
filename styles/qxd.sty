@@ -198,6 +198,19 @@
 \newcommand{\waveguide}{ch.2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%######################### Some overall settings ############################
+%## miscellaneous  
+\newcommand{\req}[1]{Eq.~(\ref{#1})} %refer to an equation
+%\newcommand{\peq}[1]{\left\{\begin{aligned}#1 \end{aligned}\right.}%equations in parentheses
+\newcommand{\lb}[1]{\label{#1}}% These two commands \lb abd \rf will be redefined before each chapter so that I don't have to worry about conflicts of labels cross over the chapters.
+\newcommand{\rf}[1]{\ref{#1}}% When cross chapter references are needed, use \ref.
+\graphicspath{{../media/Figs/}} %include the image searching directory
+\raggedbottom %This command tells PDFLaTeX to put the extra spaces at the bottom of a page instead of stretching the texts and producing a 'bad box' warning.
+\hfuzz=5pt % Warning me only if the line is overstretched by this amount. Set is large will surpress the black boxes. See https://tex.stackexchange.com/questions/50830/do-i-have-to-care-about-bad-boxes/50850#50850
+%\setcounter{tocdepth}{3} %specify what depth to take the Table of Contents to
+%\bibliographystyle{../styles/abbrv-alpha-letters} % this bib style is based on 'alpha-letters', and the first names of authors are abbreviated.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %######################### Macros by Zhang Jiang #######################
 \providecommand{\openone}{\leavevmode\hbox{\small1\kern-3.8pt\normalsize1}}% APS openone
 \newcommand{\identity}{\mbox{\textbb{1}}}% For unknown reasons, 'bbold' and 'dsfonts' conflict with 'sansmath' in the math mode, which I have to use. This is a work around by using the text version of 'bbold'.
@@ -246,15 +259,6 @@
 \newcommand{\ssV}{{\scriptscriptstyle V}}
 \newcommand{\ssU}{{\scriptscriptstyle U}}
 \newcommand{\ssW}{{\scriptscriptstyle W}}
-%## miscellaneous  
-\newcommand{\req}[1]{Eq.~(\ref{#1})} %refer to an equation
-%\newcommand{\peq}[1]{\left\{\begin{aligned}#1 \end{aligned}\right.}%equations in parentheses
-\newcommand{\lb}[1]{\label{#1}}% These two commands \lb abd \rf will be redefined before each chapter so that I don't have to worry about conflicts of labels cross over the chapters.
-\newcommand{\rf}[1]{\ref{#1}}% When cross chapter references are needed, use \ref.
-\graphicspath{{../media/Figs/}} %include the image searching directory
-\raggedbottom %This command tells PDFLaTeX to put the extra spaces at the bottom of a page instead of stretching the texts and producing a 'bad box' warning.
-%\setcounter{tocdepth}{3} %specify what depth to take the Table of Contents to
-%\bibliographystyle{../styles/abbrv-alpha-letters} % this bib style is based on 'alpha-letters', and the first names of authors are abbreviated.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Commands from Ben's nanofiberInterface note. 
@@ -413,7 +417,8 @@
 
 
 % Green function related
-\def\GFT{\overline{\bf G}}
+\def\GFT{\tensor{\bf G}}
+\def\unittensor{\tensor{\bf I}}
 \def\IT{\overline{\bf I}}
 \def\TT{\overline{\bf T}}
 \def\MT{\overline{\bf M}}
