@@ -23,6 +23,19 @@
 
 \noindent This is left for writing a brief introduction.
 
+After billions of years of evolution since life originated on earth, human being as one of the most wondering and collaborative species have come to the point that we are working together to understand the quantum nature of matter and use our accumulated knowledge to control the flow of information on microscopic scale for various purposes. 
+
+...
+
+While solid state based systems need to be fabricated to make every individual unit indistinguishable enough, trapped ion and neutral atom based systems are provided with identical units already by nature after some basic selections which are not a big deal for our current technique. 
+In fact, the fabrication of quantum dots, superconductor Josephson junctions and defects in solid state materials are still challenging engineers, the community of trapped ions and atoms have been moving forward to the next level, which is to control the quantum systems with useful interactions and to isolate the quantum systems from the environment. 
+Therefore, atom-based systems are commonly used as a testbed for advanced techniques and theoretical ideas; themselves can also be used as the ultimate platform for quantum information processing for their obviously low requirement of energy consuming and work efficiency.
+As a general philosophy highlighted by my supervisor, Prof. Ivan Deutsch, to have a strong useful interaction and a weak damaging interaction at the same time is a key towards quantum information processing. 
+
+Between trapped ions and neutral atoms, neutral atoms have the advantage that we can have a lot of them trapped in position. 
+While neutral atoms, on the other hand, may not have strong useful interactions as trapped ions do. 
+
+This dissertation work is mainly about how to maximize the ratio between useful interactions and damaging interactions using an ensemble of neutral atoms while using a nanophotonic waveguide as an interface to enhance the atom-light interactions. 
 
 \section{Atom-light interfaces}
 
@@ -41,6 +54,13 @@ A review.
 
 For single atom and many.
 
+In general
+\begin{flalign}
+\mathbf{S}_{out} &= \mathbf{S}_{in}+\mathbf{\Theta}\times\mathbf{S}_{in}&\\
+\Theta_i &\propto \underbrace{N_A\left( \frac{\sigma_0}{A}\right)}_{OD} 
+\left(\frac{\Gamma}{2\Delta}\right)
+\end{flalign}
+
 %\begin{figure}[ht] %This figure is drew by Inkscape using the very handy tool 'parametric curves'. The fringe is the hard part, and I don't know how to do it elegantly (I just use a combination of 'cheating' methods to generate it). However, there is one command called '\pgfdeclarefunctionalshading' in the tikZ package which could be helpful. But, unfortunately, it requires knowing how to write PostScript codes.
 %   \centering
 %   \def\svgwidth{0.85\textwidth}
@@ -49,8 +69,15 @@ For single atom and many.
 %   \label{fig:double_well_interfer}
 %\end{figure}
 
-\section{Manipulating atoms for the unknown}
-
+\section{Quantum entanglement and correlations in atomic ensembles}
+\begin{align}
+\hat{U}(\tau)&=e^{i\chi \mathbin{\hat{\mathbf{S}}} \cdot \hat{\mathbf{J}}}\\
+\ket{\Psi(0)} &=\frac{1}{\sqrt{2}}(\ket{\uparrow}+\ket{\downarrow})\mathbin{\ket{\phi_L}}\\
+\ket{\Psi(\tau)}&=\frac{1}{\sqrt{2}}\left[\ket{\uparrow}e^{+i\chi \mathbin{\hat{S}_3}}\mathbin{\ket{\phi_L}} 
++\ket{\downarrow}e^{-i\chi \mathbin{\hat{S}_3}}\mathbin{\ket{\phi_L}} \right]\\
+&=\frac{1}{\sqrt{2}}\left[\ket{\uparrow}\mathbin{\ket{\phi^1_L}} 
++\ket{\downarrow}\mathbin{\ket{\phi^2_L}} \right]
+\end{align}
 
 
 \section{Outline of This Dissertation}
