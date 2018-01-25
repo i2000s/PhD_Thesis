@@ -51,9 +51,9 @@ The Equ.~\eqref{eq:Maxwellwithsource2} above has a source term
 \begin{align}
 \tensor{S}(\br)=\tensor{\chi}(\br),% \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-and can be solved by solving the corresponding dyadic Green functions\index{Green function!dyadic Green function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \mathbf{G}(\br,\br') = \mathbbm{1}\delta(\br-\br')$, then the source term of the corresponding field will be $S(\br)=-4\pi \frac{\omega^2}{c^2} \boldsymbol{\chi}(\br)$; there will be a $4\pi\omega^2/c^2$ factor over other quantities as well. }
+and can be solved by solving the corresponding dyadic Green functions\index{Green function!dyadic Green function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$, then the source term of the corresponding field will be $\tensor{\bf S}(\br)=-4\pi \frac{\omega^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega^2/c^2$ factor compared to our definition in the text. Similarly, the $4\pi\omega^2/c^2$ factor will be carried over to other quantities as well. }
 \begin{align}
-\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \mathbf{G}(\br,\br') &= -4\pi \frac{\omega^2}{c^2}\mathbbm{1}\delta(\br-\br'). \label{eq:dyadicGF}
+\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') &= -4\pi \frac{\omega^2}{c^2}\delta^{(3)}(\br-\br')\unittensor. \label{eq:dyadicGF}
 \end{align}
 
 Without loosing generality, we consider a simple free-space case that there is no net charge and current in a vacuum medium. The wave equation can be given in Equ.~\eqref{eq:freespacewaveeq} with $ n=1 $, where we have replaced $ -\nabla\times\nabla\times $ with $ \nabla^2 $ from Equ.~\eqref{eq:Maxwellwithsource2}. As a result, all vector components of the field vectors are independent to each other. The corresponding Green function equation for this problem becomes a scalar equation,
@@ -190,12 +190,12 @@ and only consider the near-resonance case, we can obtain
 \Rightarrow\qquad d &=\frac{\frac{e^2}{2m\omega_0}}{-\Delta-\frac{ e^2}{2m\omega_0}\hat{d}\cdot\mathbf{G}(\br',\br')\cdot \hat{d}}E_0(\br')\\
 &=\frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma}E_0(\br'),
 \end{align}
-where we have defined the Lamb shift $ \delta \Delta= \frac{e^2}{2m\omega_0}\Re\left[\hat{d}^\dagger\cdot\mathbf{G}(\br',\br')\cdot \hat{d} \right]$ with the dipole direction $ \hat{d} $ and the radiation reaction decay rate 
+where we have defined the Lamb shift $ \delta \Delta= \frac{e^2}{2m\omega_0}\re\left[\hat{d}^\dagger\cdot\mathbf{G}(\br',\br')\cdot \hat{d} \right]$ with the dipole direction $ \hat{d} $ and the radiation reaction decay rate 
 \begin{align}
-\Gamma &= \frac{e^2}{m\omega_0}\Im\left[\hat{d}^\dagger\cdot\mathbf{G}(\br',\br')\cdot \hat{d}\right]\\
+\Gamma &= \frac{e^2}{m\omega_0}\im\left[\hat{d}^\dagger\cdot\mathbf{G}(\br',\br')\cdot \hat{d}\right]\\
 &= \Gamma_0 + \delta \Gamma,
 \end{align}
-with the natural linewidth $ \Gamma_0=\frac{e^2}{m\omega_0}\Im\left[\hat{d}^\dagger\cdot\mathbf{G}_0(\br',\br')\cdot \hat{d}\right] $ and the shift in decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\Im\left[\hat{d}^\dagger\cdot\mathbf{G}_R(\br',\br')\cdot \hat{d}\right] $. The scripts $ \Re $ and $ \Im $ correspond to extracting real and imaginary parts operations. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the dipole oscillating direction. Therefore, the scalar atomic polarizability can be given by
+with the natural linewidth $ \Gamma_0=\frac{e^2}{m\omega_0}\im\left[\hat{d}^\dagger\cdot\mathbf{G}_0(\br',\br')\cdot \hat{d}\right] $ and the shift in decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\im\left[\hat{d}^\dagger\cdot\mathbf{G}_R(\br',\br')\cdot \hat{d}\right] $. The scripts $ \Re $ and $ \Im $ correspond to extracting real and imaginary parts operations. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the dipole oscillating direction. Therefore, the scalar atomic polarizability can be given by
 \begin{align}
 \alpha &= \frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma},
 \end{align}
@@ -1219,14 +1219,14 @@ where $ \mathbf{u}^{+}(r\!_\perp ) $ denotes the normalized bare nanofiber HE11 
 \end{align}
 The completeness relationships of the modes can be given by
 \begin{align}
-\sum_{f,p}\int \mathrm{d}\mathbf{k} \,n_r^2\mathbf{u}^{(\mu)}(r\!_\perp )\mathbf{u}^{(\mu)*}(r'\!_\perp ) &= \mathbbm{1}\delta^T(r\!_\perp-r'\!_\perp),\\
-\sum_{m,p}\int \mathrm{d}\mathbf{k} \, n_r^2\mathbf{u}^{(\nu)}(r\!_\perp )\mathbf{u}^{(\nu)*}(r'\!_\perp ) &=\mathbbm{1}\delta^T(r\!_\perp-r'\!_\perp).
+\sum_{f,p}\int \mathrm{d}\mathbf{k} \,n_r^2\mathbf{u}^{(\mu)}(r\!_\perp )\mathbf{u}^{(\mu)*}(r'\!_\perp ) &= \unittensor\delta^T(r\!_\perp-r'\!_\perp),\\
+\sum_{m,p}\int \mathrm{d}\mathbf{k} \, n_r^2\mathbf{u}^{(\nu)}(r\!_\perp )\mathbf{u}^{(\nu)*}(r'\!_\perp ) &=\unittensor\delta^T(r\!_\perp-r'\!_\perp).
 \end{align}
 
 As shown in the earlier sections, in general, the output field in presence of a single atom can be written as
 \begin{align}
 \mathbf{E}(\br) 
-&=\mathbf{E}_0(\br)+\alpha \mathbf{G}(\br,\br')\cdot \mathbf{E}_0(\br')
+&=\mathbf{E}_0(\br)+\alpha \GFT(\br,\br')\cdot \mathbf{E}_0(\br')
 \end{align}
 where we only treat the polarizability as a scalar. The only barrier for solving the output E-field is to solve the dyadic Green function.
 
@@ -1236,17 +1236,17 @@ The \textit{normal} approach:
 
 We recall that the equation governs the dyadic Green function can be written as below:
 \begin{align}
-\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}(\br,\br') &= -4\pi k_0^2\mathbbm{1}\delta(\br-\br'),
+\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \GFT(\br,\br') &= -4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,
 \end{align}
 each column of which can be expressed as
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}_i(\br,\br') &= -4\pi k_0^2\mathbf{e}_i\delta(\br-\br'), \label{eq:Gi}
 \end{align}
-where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green function of $ \mathbf{G}(\br,\br') $. Here, we used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
+where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green function of $ \GFT(\br,\br') $. Here, we used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
 
 Comparing Equ.~\eqref{eq:Gi} with Equ.~\eqref{eq:Maxwellwithsource2}, we find that Equ.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an amplitude of $ -4\pi k^2 $. That is to say that once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components divided by the factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis:
 \begin{equation}
-\mathbf{G}(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
+\GFT(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
   \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
    \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=)]
   {
@@ -1298,11 +1298,11 @@ Under Coulomb gauge, the transverse and longitudinal currents can then be writte
 \mathbf{J}_T &= -\frac{1}{\mu_0}(\nabla^2 -\frac{1}{c^2}\spp{}{t})\mathbf{A}\label{eq:Jt_cg}\\
 \mathbf{J}_L &= \varepsilon_0 \pp{}{t}\nabla\phi .\label{eq:Jl_cg}
 \end{align}
-Notice that, the longitudinal current equation (Equ.~\eqref{eq:Jl_cg}) will become purely local for an ideal dipole source, and can be ignored. The longitudinal components may become important for the case with a charged source. Below, we only consider the transverse modes for our analysis.
+Notice that, the longitudinal current equation (Equ.~\eqref{eq:Jl_cg}) will become purely local for an ideal dipole source, and can be ignored. The longitudinal components may only become important for the case with a charged source. Below, we only consider the transverse eigenmode decompositions for our analysis of neutral atoms that can be treated as neutral point dipole sources.
 
-The Green function for our nanofiber problem satisfies (Equ.~\eqref{eq:dyadicGF})
+The dyadic Green's function for a waveguide satisfies (Equ.~\eqref{eq:dyadicGF})
 \begin{align}
-\left[ -\nabla\times\nabla\times + n^2k_0^2 \right] \mathbf{G}(\br,\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br'),
+\left[ -\nabla\times\nabla\times + n^2k_0^2 \right] \GFT(\br,\br') &= -4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,
 \end{align}
 where $n=n(\br\!_\perp)=\sqrt{\varepsilon(\br\!_\perp)}$ and $k_0=\omega_0/c$. Correspondingly, the bare-fiber modes (eigenmodes), $ \mathbf{u}^{(\mu)}(\br) $, satisfy the Maxwell-Helmholtz equation (Equ.~\eqref{MaxwellHelmholtz0}), that is
 \begin{align}
