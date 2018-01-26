@@ -1,10 +1,10 @@
 \chapter{Atom-waveguide interfaces}
 
 \section{Photon emission in the perspective of Green's function method}
-In this section, we look at the case that only one atom is trapped aside the nanofiber. To be specific, we consider the following scenario: a laser beam propagates through a nanofiber along $ z $ direction; a Cesium (Cs) atom (can be other atoms) allocates at $ \mathbf{r}_{atom} =\mathbf{r}'$ close by the nanofiber, and responds to the optical field. Due to the response of the atom, a light is re-emitted
-from the atom with a phase shift propagating in all directions, and interferes with the guided mode, which causes attenuation and a change of the index of refraction\index{index of refraction} of the nanofiber effectively. 
+In this section, we look at the case that only one atom is trapped aside the waveguide. To be specific, we consider the following scenario: a laser beam propagates through a waveguide along $ z $ direction; a Cesium (Cs) atom (can be other atoms) allocates at $ \mathbf{r}_{atom} =\mathbf{r}'$ close by the waveguide, and responds to the optical field. Due to the response of the atom, a light is re-emitted
+from the atom with a phase shift propagating in all directions, and interferes with the guided mode, which causes attenuation and a change of the index of refraction\index{index of refraction} of the waveguide effectively. 
 
-We assume that the nanofiber is a infinite long cylinder with a radium of $ a $ (in our cases, $ a<\lambda $, where $ \lambda $ is the wavelength of the laser beam). The laser beam propagating in the nanofiber generates an electrical field given by
+We assume that the waveguide is a infinite long cylinder with a radium of $ a $ (in our cases, $ a<\lambda $, where $ \lambda $ is the wavelength of the laser beam). The laser beam propagating in the waveguide generates an electrical field given by
 \begin{equation}
 \mathbf{E}_0(\br,t)=\boldsymbol{\mathcal{E}}_0(\br)e^{-i\omega t} %+\frac{1}{2}\mathrm{c.c.}
 =\mathcal{E}_0(\br)\mathbf{u}_0(\br)e^{-i\omega t}, %+\frac{1}{2}\mathrm{c.c.},
@@ -14,14 +14,14 @@ where $\omega$ is the angular frequency and $\boldsymbol{\mathcal{E}}_0(\br)=\ma
 with $\mathcal{E}_0(\br)$ and $\mathbf{u}_0(\br)$ being the field amplitude and the polarization vector at $ \br $, respectively.
 In general, $\mathcal{E}(\br)$ is a complex scalar and $\mathbf{u}(\br)$ is a complex unit vector. 
 
-We assume the nanofiber is a linear medium with no absorption to the traveling wave. The refractive intrinsic index\index{refractive index} of the nanofiber can be given by
+We assume the waveguide is a linear medium with no absorption to the traveling wave. The refractive intrinsic index\index{refractive index} of the waveguide can be given by
 \begin{align}
 n_0(\br) = \begin{cases} 
 n_1=1.45, &\quad r_\perp \leq a,\\
 n_2=1, &\quad r_\perp >a,
 \end{cases} 
 \end{align}
-where we have set the $ z $-axis to be the symmetric center of the nanofiber and $ r_\perp =\sqrt{x^2+y^2} $. We would like to determine the form of the scattered field $ \boldsymbol{\mathcal{E}}_s(\br) $, and the total field $ \boldsymbol{\mathcal{E}}(\br)=\boldsymbol{\mathcal{E}}_0(\br)+\boldsymbol{\mathcal{E}}_s(\br) $. Formally, the total time-dependent electrical field can be rewritten as 
+where we have set the $ z $-axis to be the symmetric center of the waveguide and $ r_\perp =\sqrt{x^2+y^2} $. We would like to determine the form of the scattered field $ \boldsymbol{\mathcal{E}}_s(\br) $, and the total field $ \boldsymbol{\mathcal{E}}(\br)=\boldsymbol{\mathcal{E}}_0(\br)+\boldsymbol{\mathcal{E}}_s(\br) $. Formally, the total time-dependent electrical field can be rewritten as 
 \begin{equation}
 \mathbf{E}(\br,t)=\boldsymbol{\mathcal{E}}(\br)e^{-i\omega t} %+\frac{1}{2} \mathrm{c.c.}
 =\mathcal{E}(\br)\mathbf{u}(\br)e^{-i\omega t}, %+\frac{1}{2}\mathrm{c.c.},
@@ -32,12 +32,12 @@ The total field will satisfy the \textit{Maxwell-Helmholtz equation}\index{Maxwe
 \begin{align}
 \left[ -\nabla\times\nabla\times+\frac{\omega^2}{c^2}n^2(\br) \right] \boldsymbol{\mathcal{E}}(\br) &=0. \label{MaxwellHelmholtz0}
 \end{align}
-Notice that the total index of refraction $ n(\br) $ we used above has already included the scattering effect caused by the atom on the nanofiber, which usually has a complicated form. It is not in general possible to solve the differential equation as given above. The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Equ.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
+Notice that the total index of refraction $ n(\br) $ we used above has already included the scattering effect caused by the atom on the waveguide, which usually has a complicated form. It is not in general possible to solve the differential equation as given above. The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Equ.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
 \begin{align}\label{eq:Maxwellwithsource}
 \left[\! -\! \nabla\!\times\!\nabla\!\times + \frac{\omega^2}{c^2} \right]\! \boldsymbol{\mathcal{E}}(\br) &=\! -i4\pi\frac{\omega}{c^2} \mathbf{J}(\br) =\! -4\pi\frac{\omega^2}{c^2} \mathbf{P}(\br)=\! -4\pi \frac{\omega^2}{c^2} \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
 where we have defined the current $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega \tensor{\chi}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\chi}(\br)=[\tensor{\varepsilon}_r(\br)-\mathbbm{1}]/4\pi = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ \footnote{We have used Gauss units here. In SI units, the corresponding relationship is $ \tensor{\chi}(\br)=\tensor{\varepsilon}(\br)/\varepsilon_0-\mathbbm{1} = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ and $\tensor{\chi}^{SI}=4\pi\tensor{\chi}^{G}  $. The factor of $ 4\pi $ defines the transformation between the SI and Gauss units. } where $\tensor{ \varepsilon}_r(\br) $ is the relative permittivity\index{permittivity!relative permittivity} or dielectric constant\index{dielectric constant} at $ \br $ and $ \tensor{\alpha} $ is the polarizability\index{polarizability} of the atoms at $ \br' $. Specifically, using dipole approximation, the polarizability $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\alpha} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $ where $ \mathbf{d}(\br') $ is the induced dipole moment at $ \br' $.
-%~\footnote{\textcolor{red}{This electric susceptibility needs to be fixed.} Aside on multiple atoms case: if there are many atoms distributed along the nanofiber, we can in general use 
+%~\footnote{\textcolor{red}{This electric susceptibility needs to be fixed.} Aside on multiple atoms case: if there are many atoms distributed along the waveguide, we can in general use 
 %$\boldsymbol{\chi}(\br)=\sum_i \delta(\br-\br_{i})\boldsymbol{\alpha}^i$,
 %where $ i $ counts over all atoms.}. 
 
@@ -45,7 +45,7 @@ Noting that the terms on all the right-hand sides of Equ.~\eqref{eq:Maxwellwiths
 \begin{align}\label{eq:Maxwellwithsource2}
 \left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-where the only difference from Equ.~\eqref{eq:Maxwellwithsource} is that we bring in the $ n(\br) $ as the index of refraction of the background medium instead of using $ n(\br)=1 $ for the homogeneous vacuum as the background medium. This has also been derived in the appendix (see Equ.~\eqref{eq:waveeqGaussU}) from the Maxwell equation for general cases. We will use Equ.~\eqref{eq:Maxwellwithsource2} to study the optical properties of the nanofiber in presence of atoms outside. 
+where the only difference from Equ.~\eqref{eq:Maxwellwithsource} is that we bring in the $ n(\br) $ as the index of refraction of the background medium instead of using $ n(\br)=1 $ for the homogeneous vacuum as the background medium. This has also been derived in the appendix (see Equ.~\eqref{eq:waveeqGaussU}) from the Maxwell equation for general cases. We will use Equ.~\eqref{eq:Maxwellwithsource2} to study the optical properties of the waveguide in presence of atoms outside. 
 
 The Equ.~\eqref{eq:Maxwellwithsource2} above has a source term 
 \begin{align}
@@ -1199,7 +1199,7 @@ In the case that the nanofiber can be treated as a lossless medium, the contour 
 
 
 \section{Green function formalism for the atom-waveguide system}
-So far, we have studied two basic aspects for the nanofiber boundary value problem: one is the eigenmode problem, in which we studied the permitted guided nanofiber modes propagating along the nanofiber in absence of atoms; the other one is the single-dipole radiation problem, in which we studied the propagating modes when there is a dipole radiating electromagnetic wave around a nanofiber. Now, we can combine the conclusions of the two cases studied, and to study the full radiation reaction problem of the dipole-nanofiber system, in which we assume there is a guided mode incident to the nanofiber, and then excites one atom outside of the nanofiber which radiates light into the nanofiber and interferes with the nanofiber modes. 
+So far, we have studied two basic aspects for the waveguide boundary value problem: one is the eigenmode problem, in which we studied the permitted guided waveguide modes propagating along the waveguide in absence of atoms; the other one is the single-dipole radiation problem, in which we studied the propagating modes when there is a dipole radiating electromagnetic wave around a waveguide. Now, we can combine the conclusions of the two cases studied, and to study the full radiation reaction problem of the dipole-waveguide system, in which we assume there is a guided mode incident to the waveguide, and then excites one atom outside of the waveguide which radiates light into the waveguide and interferes with the waveguide modes. 
 
 
 \begin{figure}
