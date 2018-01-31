@@ -86,6 +86,7 @@
 %\makeatother
 %\listoftodos\relax
 \usepackage{imakeidx} % Instead of using makeidx, this imakeidx package allows hyperlinks on page numbers for the indexed items. The hyperlink package is required to put at the end of loading packages.
+
 \allowdisplaybreaks
 % for eps transfering to pdf.
 \usepackage[update,prepend]{epstopdf}
@@ -128,7 +129,7 @@
 % packages for drawing. Some colors are defined for a nanofiber diagram drawing.
 \usepackage{tikz}
 \usepackage{xparse}
-\usetikzlibrary{calc,decorations.markings,arrows,matrix,backgrounds}
+\usetikzlibrary{calc,decorations.markings,arrows,matrix,backgrounds,babel} % The babel package could potentially fix the catcode problem with $$. See https://tex.stackexchange.com/questions/31860/conflict-onlyamsmath-and-tikz
 \pgfdeclarelayer{myback}
 \pgfsetlayers{myback,background,main}
 \tikzset{mycolorEq/.style = {line width=1bp,color=#1}}%
@@ -174,7 +175,12 @@
 %\RequirePackage{mathtools}
 %\RequirePackage{tabularx}
 %\RequirePackage{bbm}
+%\AtBeginDocument{\catcode`\$=3} % Disable the $$ check protection feature of ams packages.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{etoolbox} % These three lines are used to fix the potential catcode problem with $$ in the TikZ environment. See https://tex.stackexchange.com/questions/31860/conflict-onlyamsmath-and-tikz
+\preto\tikzpicture{\catcode`$=3 }
+\preto\tikz{\catcode`$=3 }
 
 %\usepackage[colorlinks]{hyperref}
 %########### Customization by Zhang Jiang based on the UNM template ############
