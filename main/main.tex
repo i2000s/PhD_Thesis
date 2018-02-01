@@ -1,7 +1,6 @@
 %\documentclass[fleqn, final]{unmpandathesis} %which is hard to use
 \documentclass[fleqn, final]{../styles/unmeethesis}
 \usepackage{../styles/qxd}
-%\newtoks\temptoken
 
 %\renewcommand{\chref}{\ref}  % reset \chref{} to \ref{} so that the inter-chapter references are correct
 %\renewcommand{\id}[1]{} % uncomment everything
@@ -10,10 +9,6 @@
 
 
 % % % % % % % % % % % % % % % % % % %
-
-% Title Page
-%\title{Dispersive quantum interface with atoms and nanophotonic waveguides}
-%\author{Xiaodong Qi}
 
 \makeindex
 
@@ -31,7 +26,7 @@
 
 \degree{Doctor of Philosophy \\ Physics}
 
-\documenttype{Dissertation}
+\documenttype{Dissertation} % Use Dissertation for PhD or Thesis for MS.
 
 \previousdegrees{B.S., Shandong University of Science and Technology College, 2007
  \\ M.S., Chinese Academy of Sciences, 2010 \\ M.Sc., Queen's University, Canada, 2012}
@@ -67,43 +62,24 @@
 
 \mainmatter
 
-\ExecuteMetaData[../chap1/Introduction.tex]{tag}
+\ExecuteMetaData[../chap1/Introduction.tex]{tag} % Notice that to use this line, you have to put "%<*tag>" and "%</tag>" in ../chap1/Introduction.tex to enclose the part of content you want to be included in this document.
 %\input{../chap1/Introduction}
-%\meaning\tmp
-\ExecuteMetaData[../chap2/WaveguideInterface.tex]{waveguideinterface}
-%\CatchFileBetweenTags\temptoken{../chap2/WaveguideInterface.tex}{waveguideinterface}\the\temptoken
+
+\ExecuteMetaData[../chap2/WaveguideInterface.tex]{waveguideinterface} % Similar to chap1, to use this line, you have to use "%<*waveguideinterface>" and "%</waveguideinterface>" in ../chap2/Introduction.tex to cite content to the main thesis file.
 %\input{../chap2/WaveguideInterface}
 
 %\ExecuteMetaData[../chap3/QuantumDynamics.tex]{tag}
-\input{../chap3/QuantumDynamics}
+%\input{../chap3/QuantumDynamics}
 
-%\chapter{QND measurement and spin squeezing using the birefringence effect}
 %\ExecuteMetaData[../chap4/Birefringence.tex]{tag}
-\input{../chap4/Birefringence}
-
-\chapter{QND measurement and spin squeezing using the Faraday effect}
-
-\chapter{Sideband cooling}
-
-\chapter{Conclusion and outlook}
+%\input{../chap4/Birefringence}
 
 \appendix
 
 \ExecuteMetaData [../chap2/WaveguideInterface.tex]{eigenmode}
 
-\input{../append/MaxwellEquations}
+\input{../append/atomicformulas} % If you don't want to use the \ExecuteMetaData command, you can also use \input instead. Then you don't need to define documentclass in the cited file.
 
-\input{../append/BesselFunctions}
-
-\input{../append/PlanewaveDecomposition}
-
-\input{../append/FreeDipoleProjection}
-
-\input{../append/AtomNumberEstimation}
-
-\input{../append/atomicformulas}
-
-\input{../chap4/DetailsOfBirefringenceProtocol}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \backmatter
@@ -111,16 +87,8 @@
 \bibliographystyle{../styles/abbrv-alpha-letters-links}
 %\bibliographystyle{unsrt}
 % \nocite{*}
-\bibliography{../refs/Archive,../chap4/Nanofiber}
+\bibliography{../refs/Archive}
 
 \printindex
-%\cleardoublepage
-%\thispagestyle{plain}
-%\phantomsection
-%\printindex{ai}{Author Index}
-%\chaptermark{Author Index}
-%\thispagestyle{plain}
-%\printindex{si}{Subject Index}
-%\chaptermark{Subject Index}
 
 \end{document}          
