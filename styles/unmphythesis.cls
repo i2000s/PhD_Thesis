@@ -1,31 +1,26 @@
 %% 
-%% This is file `unmeethesis.cls', generated 
-%% on <1995/10/31> with the jwhhacks utility (v3.2zzz).
+%% This is file `unmphythesis.cls', generated 
+%% on <2018-02-01> based on the `unmeethesis.cls' (/8/24/11).
+%% Modified by Xiaodong Qi on 2018-02-01 to work with the thesis 
+%% template example.
 %% 
 %% The original source files were:
 %% 
-%% unmeethesis.dtx 
+%% unmeethesis.cls 
 %% 
 %% 
-%% This is a generated file. 
+%% This is a adapted file. 
 %% 
-%% Copyright 1995 by James W. Howse IV. All rights reserved. 
-%% Modified with permission by Neall E. Doren, January 27, 2000. 
-%% Further mods as per D. Bader, EECE, by N. Doren, March 07, 2000.
+%% Copyright 2018 by Xiaodong Qi. All rights reserved. 
 %% 
 %% This file is distributed in the hope that it will be useful, 
 %% but WITHOUT ANY WARRANTY; without even the implied warranty of 
 %% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
 %% 
 %% This file is a modified form of the standard book format book.cls.  It is
-%% based on book.cls version 1.3g dated 1995/06/26.
+%% based on unmeethesis.cls dated 2011/08/24.
 %% Modification history:
-%%   /9/17/01: Slight margin changes (top and bottom).  N. Doren
-%%   /3/27/02: Slight margin changes for title boxes.   N. Doren
-%%   /8/24/11: Removed box from thesis/dissertation title page.
-%%             Removed Abstract title page.
-%%             Removed 'final' mode (ignored if used)
-%%             Minor margin changes.                    N. Doren
+%%   /2/01/18: Add signature page and UNM logo.  Xiaodong Qi
 %% The names of the source files used are shown above. 
 %% 
 %% 
@@ -45,9 +40,9 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{unmeethesis}
-              [1995/10/31 
- UNM EECE dissertation class-mod 03/27/02]
+\ProvidesClass{unmphythesis}
+              [2018/02/01 
+ UNM Phy dissertation class-mod 02/01/18]
 \newcommand\@ptsize{}
 \newif\if@restonecol
 \newif\if@openright
@@ -125,7 +120,7 @@
 %  Changed the input file from {bk1\@ptsize.clo} since the bk??.clo 
 %  files only support two-sided formatting
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-\input{../../Styles/unm1\@ptsize.clo}
+\input{../styles/unm1\@ptsize.clo}
 \setlength\lineskip{1\p@}
 \setlength\normallineskip{1\p@}
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -504,7 +499,9 @@
     \par\vskip 24pt
     {\large \@previousdegrees}
     %\par\vskip 120pt plus6pt minus35pt
-    \par\vskip 80pt plus6pt minus35pt
+    \par\vskip 50pt plus6pt minus35pt
+    \psfig{file=../inputs/unm_logo.eps,width=1.0in} % UNM logo.
+    \vskip 10pt
     {\large \MakeUppercase{\@documenttype}}
     \par\vskip 12pt
     \@degreetext
@@ -530,8 +527,13 @@
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  The following commands define the copywrite page
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-\newcommand\makecopyright{%
+\newcommand{\purl}[1]{\gdef\@purl{#1}}
+\purl{}
+\newcommand{\rightsstatement}[1]{\gdef\@rightsstatement{#1}}
+\rightsstatement{All rights reserved}
 
+\newcommand\makecopyright{%
+  
   \thispagestyle{plain}
   \if@botnum
     \setlength{\headsep}{-50pt}
@@ -544,7 +546,8 @@
   \null\vfil%
   \begin{center}%
     \vspace{+0.56in}
-    \copyright \thisyear, \hskip 0.5em \@author
+    \copyright \thisyear, \hskip 0.5em \@author\\ \@purl \par
+       \@rightsstatement\par
   \end{center}%
   \vfil\vfil\null%
   \if@twoside%
@@ -1152,4 +1155,4 @@
 \onecolumn
 \endinput
 %% 
-%% End of file `unmeethesis.cls'.
+%% End of file `unmphythesis.cls'.
