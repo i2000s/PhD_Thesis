@@ -527,15 +527,13 @@
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  The following commands define the copywrite page
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-\newcommand{\orcid}[1]{\gdef\@orcid{#1}}
-\orcid{}
 \newcommand{\purl}[1]{\gdef\@purl{#1}}
 \purl{}
 \newcommand{\rightsstatement}[1]{\gdef\@rightsstatement{#1}}
 \rightsstatement{All rights reserved}
 
 \newcommand\makecopyright{%
-
+  
   \thispagestyle{plain}
   \if@botnum
     \setlength{\headsep}{-50pt}
@@ -548,8 +546,7 @@
   \null\vfil%
   \begin{center}%
     \vspace{+0.56in}
-    \copyright \thisyear, \hskip 0.5em \@author
-    \\ORCID: \@orcid \\ \@purl \par
+    \copyright \thisyear, \hskip 0.5em \@author\\ \@purl \par
        \@rightsstatement\par
   \end{center}%
   \vfil\vfil\null%
