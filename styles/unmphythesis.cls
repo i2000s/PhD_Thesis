@@ -42,7 +42,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{unmphythesis}
               [2018/02/01 
- UNM Phy dissertation class-mod 02/01/18]
+ UNM Physics dissertation class-mod 02/01/18]
 \newcommand\@ptsize{}
 \newif\if@restonecol
 \newif\if@openright
@@ -412,9 +412,9 @@
 \def\date#1{\gdef\@date{#1}}
   \date{\today}
 \def\degree#1{\gdef\@degree{#1}}
-  \degree{Doctor of Philosophy \\ Engineering}
+  \degree{Doctor of Philosophy \\ Physics}
 \def\degreesubject#1{\gdef\@degreesubject{#1}}
-  \degreesubject{Ph.D., Electrical Engineering}
+  \degreesubject{Ph.D., Physics}
 \def\documenttype#1{\gdef\@documenttype{#1}}
   \documenttype{Dissertation}
 \def\schoolname#1{\gdef\@schoolname{#1}} 
@@ -463,7 +463,7 @@
 }
 
 \def\@maketitle{%
-  \thispagestyle{empty}
+  \thispagestyle{plain} % Changed from empty to plain.
 %
   \setlength{\textheight}{648pt}
   \setlength{\textwidth}{427.5pt}
@@ -486,7 +486,7 @@
   \if@twoside%
     \setcounter{page}{1}%
   \else
-    \setcounter{page}{2}%
+    \setcounter{page}{1}% Changed from 2 to 1.
   \fi
   \null\vfil%
   \begin{center}%
@@ -500,7 +500,7 @@
     {\large \@previousdegrees}
     %\par\vskip 120pt plus6pt minus35pt
     \par\vskip 50pt plus6pt minus35pt
-    \psfig{file=../inputs/unm_logo.eps,width=1.0in} % UNM logo.
+    \psfig{file=../inputs/unm_logo.eps,height=0.8in} % UNM logo.
     \vskip 10pt
     {\large \MakeUppercase{\@documenttype}}
     \par\vskip 12pt
@@ -516,6 +516,7 @@
   \end{center}
   \vfil\null%
   \setcounter{footnote}{0}%
+  %\setcounter{page}{0}
 %  \if@twoside\begin{titlepage} \setcounter{page}{0}\mbox{} \end{titlepage}\fi
 \let\maketitle\relax}%
 
@@ -562,14 +563,7 @@
 \newenvironment{dedication}{%
   \clearpage
   \thispagestyle{plain}
-  \if@botnum
-    % \setlength{\headsep}{-42pt}
-    % \setlength{\topmargin}{-6pt}
-  \else
-%     \setlength{\headheight}{-2pt}
-%     \setlength{\topmargin}{-666pt}
-  \fi
- \null\vfil%
+  \null\vfil%
   \begin{flushleft}
      \if@botnum
         \vspace{.82in} %change this if "Dedication" is too high/low
