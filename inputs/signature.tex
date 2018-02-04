@@ -1,29 +1,39 @@
-\documentclass[letterpaper,10pt]{article}
-\usepackage[top=2in,left=1in,right=1.7in,bottom=1in]{geometry}
+\documentclass[letterpaper,12pt]{article}
+\usepackage[top=1in,left=1in,right=1.5in,bottom=1in]{geometry} % ,headheight=1in,headsep=1in
+\usepackage{fancyhdr}
 %opening
 %my generating signature page.  This will generate a LaTeX signature page for the UNM dissertation.  Use external PDF tools to replace the first page of the dissertation with the completed form of this document for maximum cred.
 %edit everywhere you see the # symbol to personalize this file
 
 
-%\pagenumbering{roman}
+\pagenumbering{roman}
 %Numbers in lowercase roman numerals
 
-\pagenumbering{gobble}
+%\pagenumbering{gobble}
 %Clears the page number 
 
-
-
+% Show page number on the right header. 
+%\setcounter{page}{1}
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\fancyhead[RO]{\thepage}
+%\fancyhead[LE]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+\pagestyle{plain}
 \begin{document}
-
-\vspace{0.5in}
-\begin{Large}
+%\vspace{0.5in}
+ \begin{Large}
  \noindent Xiaodong Qi 
  % # Add your name here
  \vspace{-0.2in}
  \end{Large}
 
- \noindent\makebox[\linewidth][l]{\rule{2.8in}{1pt}}
-  \textit{Candidate} \vspace{0.4in}
+ \noindent\makebox[\linewidth][l]{\rule{3.1in}{1pt}}
+  \textit{Candidate} \vspace{0.2in}
  
  \begin{Large}
  \noindent Physics and Astronomy
@@ -31,11 +41,9 @@
  \vspace{-0.2in}
  \end{Large}
  
-  \noindent\makebox[\linewidth][l]{\rule{2.8in}{1pt}} 
+  \noindent\makebox[\linewidth][l]{\rule{3.1in}{1pt}} 
   %[l] is the justification (left)
     \textit{Department, The University of New Mexico} \vspace{0.2in}
-
-
  
  
    \noindent This dissertation is approved, and it is acceptable in quality and form for publication: \vspace{0.2in}
@@ -43,14 +51,8 @@
  \noindent \textit{Approved by the Dissertation Committee:} \vspace{0.45in}
  \end{large}
  
-%  
-%  \noindent\makebox[\linewidth]{\rule{5.5in}{1pt}}
-%  
-%   \hfill The Dr., Timelord \vfill
-%  
 
 % #Copy a new version of these 5 lines for every new committee member
- 
 
  \noindent\makebox[\linewidth]{\rule{5.5in}{1pt}}
  
