@@ -1,7 +1,7 @@
 %% 
 %% This is file `unmphythesis.cls', generated 
 %% on <2018-02-01> based on the `unmeethesis.cls' (/8/24/11).
-%% Modified by Xiaodong Qi on 2018-02-01 to work with the thesis 
+%% Modified by Xiaodong Qi on 2018-02-04 to work with the thesis 
 %% template example.
 %% 
 %% The original source files were:
@@ -20,7 +20,9 @@
 %% This file is a modified form of the standard book format book.cls.  It is
 %% based on unmeethesis.cls dated 2011/08/24.
 %% Modification history:
-%%   /2/01/18: Add signature page and UNM logo.  Xiaodong Qi
+%%   /2/1/18: Add signature page and UNM logo.  Xiaodong Qi
+%%   /2/4/18: Update UNM logo according to the 2017 release; fix the page numbering issue for frontmatter pages; fix the warning of provided class.
+%%
 %% The names of the source files used are shown above. 
 %% 
 %% 
@@ -40,9 +42,10 @@
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{unmphythesis}
+% The class name is defined according to the relative directory from TeX files to this style file. See https://tex.stackexchange.com/questions/354098/you-have-requested-document-class-x-but-the-document-class-provides-y-warning
+\ProvidesClass{../styles/unmphythesis}
               [2018/02/01 
- UNM Physics dissertation class-mod 02/01/18]
+ UNM Physics dissertation class-mod 02/04/18]
 \newcommand\@ptsize{}
 \newif\if@restonecol
 \newif\if@openright
