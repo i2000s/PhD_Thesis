@@ -9,10 +9,22 @@
 %<*waveguideinterface>
 
 \chapter{Atom-waveguide interfaces}
+\section{Introduction}
+In this chapter, we look at the case that only one atom is trapped nearby a waveguide. To be specific, we consider the following scenario: a laser beam propagates through a waveguide along $ z $ direction; an alkali atom (cesium, for example) is trapped at $ \mathbf{r}_{\rm atom} =\mathbf{r}'$ in the evanescent field of the waveguide~\footnote{We will use the prime ($ ' $) notation to indicate the position of a photon emitter.} and responds to the guided optical field. Due to the response of the atom, a spontaneous photon emission interferes with the input guided mode through the waveguide, which causes intensity attenuation and the shift of the phase of the output modes. Effectively, the presence of the atom outside of the waveguide changes the index of refraction\index{index of refraction} of the waveguide. As a result of the atom-light interaction, the polarization of the light will experience one of the two optical effects, the birefringence effect and the Faraday effect~\cite{Jackson1975}, or a mixture of the two effects. 
+
+In free space, light becomes transverse. The polarization state of light can be fully described by the amplitudes and relative phase of two orthogonal electric field components, $ \mathbf{E}_x $ and $ \mathbf{E}_y $. That is we write the electric field of the light to be $ \mathbf{E}=\mathbf{E}_x+\mathbf{E}_y$ and the two orthogonal components
+\begin{align}
+\mathbf{E}_x &= E_{0x} e^{i(kz-\omega t)+i\phi_x}\\
+\mathbf{E}_x &= E_{0y} e^{i(kz-\omega t)+i\phi_y},
+\end{align}
+where $ E_{0x} $ and $ E_{0y} $ are the amplitudes, and $ \phi_x $ and $ \phi_y $ are the phases of the $ x $- and $ y $-components of the wave, respectively, while $ \mathbf{e}_x $ and $ \mathbf{e}_y $ are the respective unit vectors along the positive $ x $- and $ y $-axes. 
+
+
+To describe the polarization state of the light, there are many equivalent formalisms, including ~\cite{Mecozzi2011Unified}
+
+The change of polarization of the light can be measured using the polarization spectroscopy technique~\cite{Deutsch2010a,Salvail2013}.
 
 \section{Photon emission in the perspective of Green's function method}
-In this section, we look at the case that only one atom is trapped aside the waveguide. To be specific, we consider the following scenario: a laser beam propagates through a waveguide along $ z $ direction; a Cesium (Cs) atom (can be other atoms) allocates at $ \mathbf{r}_{atom} =\mathbf{r}'$ close by the waveguide, and responds to the optical field. Due to the response of the atom, a light is re-emitted
-from the atom with a phase shift propagating in all directions, and interferes with the guided mode, which causes attenuation and a change of the index of refraction\index{index of refraction} of the waveguide effectively. 
 
 We assume that the waveguide is a infinite long cylinder with a radium of $ a $ (in our cases, $ a<\lambda $, where $ \lambda $ is the wavelength of the laser beam). The laser beam propagating in the waveguide generates an electrical field given by
 \begin{equation}
