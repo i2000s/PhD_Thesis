@@ -10,7 +10,19 @@
 
 \chapter{Atom-waveguide interfaces}
 \section{Introduction}
-In this chapter, we look at the case that only one atom is trapped nearby a waveguide. To be specific, we consider the following scenario: a laser beam propagates through a waveguide along $ z $ direction; an alkali atom (cesium, for example) is trapped at $ \mathbf{r}_{\rm atom} =\mathbf{r}'$ in the evanescent field of the waveguide~\footnote{We will use the prime ($ ' $) notation to indicate the position of a photon emitter.} and responds to the guided optical field. Due to the response of the atom, a spontaneous photon emission interferes with the input guided mode through the waveguide, which causes intensity attenuation and the shift of the phase of the output modes. Effectively, the presence of the atom outside of the waveguide changes the index of refraction\index{index of refraction} of the waveguide. As a result of the atom-light interaction, the polarization of the light will experience one of the two optical effects, the birefringence effect and the Faraday effect~\cite{Jackson1975}, or a mixture of the two effects. 
+In this chapter, we look at the case that only one atom is trapped nearby a waveguide. As will be discussed later, in the dispersive regime, the interaction from many atoms can be treated as a sum of the interactions from all individual atoms. To be specific, for this chapter, we consider the following scenario: a laser beam propagates through a waveguide along $ z $ direction; an alkali atom (cesium, for example) is trapped at $ \mathbf{r}_{\rm atom} =\mathbf{r}'$ in the evanescent field of the waveguide~\footnote{We will use the prime ($ ' $) notation to indicate the position of a photon emitter.} and responds to the guided optical field dispersively. In the dynamics, the atom can be treated as an optical dipole that adiabatically eliminates from an excited state to the ground state as an effective two-level system. The light, on the other hand, experiences dispersive phase shift and usually negligible intensity attenuation afterwards. Effectively, the presence of the atom outside of the waveguide changes the index of refraction\index{index of refraction} of the waveguide. 
+The dispersive light shift applies when the saturation parameter is small,
+\begin{align}
+s=\frac{\Omega^2/4}{\Delta^2+\Gamma^2/4}\ll 1,
+\end{align}
+where $ \Omega $ is the Rabi frequency, $ \Gamma $ is the spontaneous emission rate of the atom, and $ \Delta=\omega-\omega_{eg} $ is the probe detuning from the atomic resonance frequency $ \omega_{eg} $ as a two-level system with the probe's frequency set to be $ \omega $. 
+
+We will first introduce the experimental setup in characterizing the dispersive light shift interaction, which is called polarization spectroscopy; then we will develop a general theory in the language of Green's function to formulate the atom-light interaction mainly from the semi-classical perspective where the light is treated as a continuous wave while the atom has discrete level structures. 
+At the end of this chapter, we will conclude with geometric explanations on the unique features and advantages of using a nanophotonic waveguide interface to implement atom-light coupling over the free-space interface commonly employed in previous experiments.
+
+\section{Polarization spectroscopy and dispersive light shift measures}
+
+As a result of the atom-light interaction, the polarization of the light will experience one of the two optical effects, the birefringence effect and the Faraday effect~\cite{Jackson1975}, or a mixture of the two effects. 
 
 In free space, light becomes transverse. The polarization state of light can be fully described by the amplitudes and relative phase of two orthogonal electric field components, $ \mathbf{E}_x $ and $ \mathbf{E}_y $. That is we write the electric field of the light to be $ \mathbf{E}=\mathbf{E}_x+\mathbf{E}_y$ and the two orthogonal components
 \begin{align}
