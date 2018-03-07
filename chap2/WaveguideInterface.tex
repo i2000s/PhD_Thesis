@@ -17,24 +17,102 @@ s=\frac{\Omega^2/4}{\Delta^2+\Gamma^2/4}\ll 1,
 \end{align}
 where $ \Omega $ is the Rabi frequency, $ \Gamma $ is the spontaneous emission rate of the atom, and $ \Delta=\omega-\omega_{eg} $ is the probe detuning from the atomic resonance frequency $ \omega_{eg} $ as a two-level system with the probe's frequency set to be $ \omega $. 
 
-We will first introduce the experimental setup in characterizing the dispersive light shift interaction, which is called polarization spectroscopy; then we will develop a general theory in the language of Green's function to formulate the atom-light interaction mainly from the semi-classical perspective where the light is treated as a continuous wave while the atom has discrete level structures. 
-At the end of this chapter, we will conclude with geometric explanations on the unique features and advantages of using a nanophotonic waveguide interface to implement atom-light coupling over the free-space interface commonly employed in previous experiments.
+In this chapter, I will first outline the basic concept of the polarization state of light and introduce the experimental setup in characterizing the dispersive light shift interaction, which is called \textit{polarization spectroscopy}\index{polarization spectroscopy}; then I will derive a general theory in the language of Green's function to formulate the atom-light interaction mainly from the semi-classical perspective where the light is treated as a continuous wave while the atom has discrete level structures. 
+I will extend the definition of polarizability of atoms from a classical oscillator picture to the multiple-level quantum representation, and then introduce the Purcell effect and derive the modified spontaneous decay rates of atoms in presence of a waveguide using the Green's function language. 
+At the end of this chapter, I will conclude with geometric explanations on the unique features and advantages of using a nanophotonic waveguide interface to implement atom-light coupling over the free-space interface commonly employed in previous experiments.
 
 \section{Polarization spectroscopy and dispersive light shift measures}
 
-As a result of the atom-light interaction, the polarization of the light will experience one of the two optical effects, the birefringence effect and the Faraday effect~\cite{Jackson1975}, or a mixture of the two effects. 
-
-In free space, light becomes transverse. The polarization state of light can be fully described by the amplitudes and relative phase of two orthogonal electric field components, $ \mathbf{E}_x $ and $ \mathbf{E}_y $. That is we write the electric field of the light to be $ \mathbf{E}=\mathbf{E}_x+\mathbf{E}_y$ and the two orthogonal components
+In free space, light is a transverse field. The polarization state of light\index{polarization} can be fully described by the amplitudes and relative phase of two orthogonal electric field components, $ \mathbf{E}_x $ and $ \mathbf{E}_y $. That is one can write the electric field of a propagating mono-chromatic light field as 
+\begin{equation} \label{eq:freeEfield}
+\mathbf{E}(\br,t)=\mathbf{E}_x(\br,t)+\mathbf{E}_y(\br,t)
+\end{equation} 
+with the two orthogonal components~\cite{Jackson1975}
 \begin{align}
-\mathbf{E}_x &= E_{0x} e^{i(kz-\omega t)+i\phi_x}\\
-\mathbf{E}_x &= E_{0y} e^{i(kz-\omega t)+i\phi_y},
+\mathbf{E}_x(\br,t) &= \mathcal{E}_{x}\mathbf{e}_x e^{i(kz-\omega t)}\\
+\mathbf{E}_y(\br,t) &= \mathcal{E}_{y}\mathbf{e}_y e^{i(kz-\omega t)},
 \end{align}
-where $ E_{0x} $ and $ E_{0y} $ are the amplitudes, and $ \phi_x $ and $ \phi_y $ are the phases of the $ x $- and $ y $-components of the wave, respectively, while $ \mathbf{e}_x $ and $ \mathbf{e}_y $ are the respective unit vectors along the positive $ x $- and $ y $-axes. 
+where $ \mathcal{E}_{0x} $ and $ \mathcal{E}_{0y} $ are the complex amplitudes, and $ \mathbf{e}_x $ and $ \mathbf{e}_y $ are the respective direction vectors along the $ x $- and $ y $-axes in the transverse plane perpendicular to the propagation direction along the $ z $-axis. 
 
+A light is said to be \textit{linearly polarized}\index{polarization!linear polarization} if $\mathcal{E}_{x}$ and $ \mathcal{E}_{y} $ have the same phase. The polarization direction is set by the polarization angle $ \theta=\arctan(\mathcal{E}_{y}/\mathcal{E}_{x}) $ from $ \mathbf{e}_x $ direction.
+The polarization magnitude is defined to be $ E=\sqrt{\mathcal{E}_{x}^2+\mathcal{E}_{y}^2} $.
 
-To describe the polarization state of the light, there are many equivalent formalisms, including ~\cite{Mecozzi2011Unified}
+A light is said to be \textit{circularly polarized}\index{polarization!circular polarization} if $\mathcal{E}_{x}$ and $ \mathcal{E}_{y} $ have the same magnitude but differ in phase by $ 90^\circ $. The wave can then by described by 
+\begin{align}\label{eq:circularlightfield}
+\mathbf{E}=E_0(\mathbf{e}_x \pm i\mathbf{e}_y)e^{i(kz-\omega t)}
+\end{align}
+with $ E_0 $ the common real amplitude. Taking any point $ \br_0=(x_0,y_0,z_0) $ in space, the combined polarization vector $ \mathbf{e}_l(z_0)=(\mathbf{e}_x \pm i\mathbf{e}_y)e^{i(kz_0-\omega t)} $ sweeps around in a circle at an angular frequency $ \omega $. The upper sign $ (\mathbf{e}_x + i\mathbf{e}_y) $ indicates the rotation is clockwise if the observer is hit by the propagating light. The light in this case is said to be \textit{left-circularly polarized}\index{polarization!circular polarization!left-circular polarization}. Correspondingly, the lower sign $ (\mathbf{e}_x - i\mathbf{e}_y) $ indicates the light is counterclockwise rotating at a fixed point and is \textit{right-circularly polarized}\index{polarization!circular polarization!right-circular polarization}. Therefore, one can define the circular polarization basis by the complex orthogonal unit vectors
+\begin{align}
+\mathbf{e}_{\pm}=\mp\frac{1}{\sqrt{2}}(\mathbf{e}_x \pm i\mathbf{e}_y)
+\end{align}
+with properties
+\begin{align}
+\mathbf{e}_q\cdot \mathbf{e}_{q'}^* &=\delta_{q,q'}\\
+\mathbf{e}_q^* &=(-1)^q\mathbf{e}_{-q}
+\end{align}
+where the field has been decomposed into the $ q=\pm $ components by 
+\begin{align} 
+\mathbf{E}&=\sum_q \mathcal{E}_q\mathbf{e}_q^*=\mathcal{E}_+ \mathbf{e}_+^*+\mathcal{E}_-\mathbf{e}_-^*=-(\mathcal{E}_+\mathbf{e}_-+\mathcal{E}_-\mathbf{e}_+)\\
+&=\mathcal{E}_L\mathbf{e}_++\mathcal{E}_R\mathbf{e}_- 
+\end{align} 
+with $ \mathcal{E}_q=\mathbf{e}_q\cdot \mathbf{E} $, and the left- and right-circular polarization amplitudes $ \mathcal{E}_L=-\mathcal{E}_- $ and $ \mathcal{E}_R=-\mathcal{E}_+ $, respectively.
+If a pair of photon detectors are set to measure the amplitudes of the circularly polarized light in the Cartesian basis, two alternating components will be detected that are proportional to the real part of the wave, Eq.\eqref{eq:circularlightfield},
+\begin{align}
+E_x(\br_0,t) &= \re\left[\mathbf{e}_x\cdot \mathbf{E}\right] =E_0\cos(kz_0-\omega t)\\
+E_y(\br_0,t) &= \re\left[\mathbf{e}_y\cdot \mathbf{E}\right] =E_0\sin(kz_0-\omega t).
+\end{align}
+The Cartesian basis of the polarization measurement is usually called as the linear polarization basis. I use $ H $ (horizontal) and $ V $ (vertical) to label the $ x $- and $ y $-components of the field.
+Alternatively, if the actual field is detected in the circular polarization basis, only one non-zero amplitude may be detected proportional to the circular polarization component 
+\begin{align}
+E_\pm(\br_0,t) &= \re\left[\mathbf{e}_\pm \cdot \mathbf{E}\right] =- E_0\cos(kz_0-\omega t).
+\end{align}
+I will label the right- and left-circular polarization bases with $ R $ and $ L $, respectively, in this dissertation. The choice of basis of polarization measurement can be operated by using beam splitters and proper wave-planes in real experiments~\cite{Born1999Principles} (will discuss later).
+
+If $\mathcal{E}_{x}$ and $ \mathcal{E}_{y} $ have different phases, the light is \textit{elliptically polarized}\index{polarization!elliptical polarization} in general. Represented in the circular polarization basis, the wave can be given by
+\begin{align}
+\mathbf{E}=-(\mathcal{E}_-\mathbf{e}_+ + \mathcal{E}_+\mathbf{e}_-)e^{i(kz-\omega t)},
+\end{align}
+where $ \mathcal{E}_\pm $ are complex amplitudes.
+When $ \mathcal{E}_+ $ and $ \mathcal{E}_- $ have different magnitudes yet the same phase, the light is elliptically polarized with the $ \mathbf{E} $ vector traced as an ellipse defined by the principle axes pointing along $ \mathbf{e}_x $ and $ \mathbf{e}_y $ directions~\cite{Jackson1975}. The semimajor and semiminor axes of the ellipse have a ratio of $ |(1+r)/(1-r)| $, where $ r=\mathcal{E}_+/\mathcal{E}_- $. 
+When the two complex amplitudes in the circular polarization basis has a phase difference, $ \phi $, or $ \mathcal{E}_+/\mathcal{E}_-=re^{i\phi} $, then the traced ellipse of the $ \mathcal{E} $ vector has its principal axes rotated by an angle $ \phi/2 $ from the $ \mathbf{e}_x $ and $ \mathbf{e}_y $ axes. 
+The real parameter $ r $ is the ellipticity\index{polarization!ellipticity} of the ellipse of the $ \mathbf{E} $ vector trace. For $ r=\pm 1 $, we recover the linear polarization case. 
+
+To help visualize the polarization state of the light, we rewrite the field amplitudes\footnote{In the terminology of modern physics, they are also the components of Jones vectors defining a polarized light~\cite{Born1999Principles}.} in the linear and circular polarization bases by
+\begin{align}
+\mathcal{E}_x &= E_x e^{i\delta_x},\quad & \mathcal{E}_y &= E_y e^{i\delta_y}\\
+\mathcal{E}_+ &= E_+ e^{i\delta_+}=E_R e^{i\delta_R},\quad & \mathcal{E}_- &= E_- e^{i\delta_-}=E_L e^{i\delta_L}
+\end{align} 
+where $ E_{x/y} $, $ E_\pm  $, $ \delta_{x/y} $ and $ \delta_\pm $ are all real parameters. Traditionally, the Stokes vector $ \mathbf{S}=(S_0,S_1,S_2,S_3) $ is usually employed in literature to uniquely project the polarization state of the light onto the famous \Poincare sphere\index{\Poincare sphere}\cite{Born1999Principles} (see Fig.\qxd{here should be a figure to show the \Poincare sphere and the map to polarizations.}). In terms of the linear polarization basis $ (\mathbf{e}_x,\mathbf{e}_y) $, the Stokes vector components are~\cite{Born1999Principles}
+\begin{subequations}
+\begin{align}
+S_0 &= |\mathbf{e}_x\cdot \mathbf{E}|^2+|\mathbf{e}_y\cdot \mathbf{E}|^2 =E_x^2+E_y^2\\
+S_1 &= |\mathbf{e}_x\cdot \mathbf{E}|^2-|\mathbf{e}_y\cdot \mathbf{E}|^2 =E_x^2-E_y^2\\
+S_2 &= 2\re\left[ (\mathbf{e}_x\cdot \mathbf{E})^*(\mathbf{e}_y\cdot \mathbf{E})\right] =2E_xE_y\cos(\delta_y-\delta_x)\\
+S_3 &= 2\im\left[ (\mathbf{e}_x\cdot \mathbf{E})^*(\mathbf{e}_y\cdot \mathbf{E})\right] =2E_xE_y\sin(\delta_y-\delta_x)
+\end{align}
+\end{subequations}
+Similarly, in the circular polarization basis $ (\mathbf{e}_+,\mathbf{e}_-) $, the Stokes vector components can be given by
+\begin{subequations}
+\begin{align}
+S_0 &= |\mathbf{e}_+\cdot \mathbf{E}|^2+|\mathbf{e}_-\cdot \mathbf{E}|^2 =E_+^2+E_-^2\\
+S_1 &= -2\re\left[ (\mathbf{e}_-\cdot \mathbf{E})^*(\mathbf{e}_+\cdot \mathbf{E})\right] = -2E_+E_-\cos(\delta_+-\delta_-)\\
+S_2 &= 2\im\left[ (\mathbf{e}_-\cdot \mathbf{E})^*(\mathbf{e}_+\cdot \mathbf{E})\right] =2E_+E_-\sin(\delta_+-\delta_-)\\
+S_3 &= |\mathbf{e}_+\cdot \mathbf{E}|^2-|\mathbf{e}_-\cdot \mathbf{E}|^2 =E_-^2-E_+^2=E_L^2-E_R^2
+\end{align}
+\end{subequations}
+(\qxd{Note: should the $S_3$ be $ E_R^2-E_L^2 $ instead?})
+The Stokes vector components are independent from the choice of basis. For a completely polarized light\footnote{A partially polarized light satisfies $ S_0^2>S_1^2+S_2^2+S_3^2 $. For the ``natural light" or completely unpolarized light, the Stokes vector components satisfy $ S_1=S_2=S_3=0 $. Such, the degree of polarization is defined by $ R=\frac{\sqrt{S_1^2+S_2^2+S_3^2}}{S_0} \le 1$. Throughout this dissertation work, the degree of polarization is not our concern, and we assume the \Poincare sphere is properly normalized.}, they satisfy the relation
+\begin{align}
+S_0^2=S_1^2+S_2^2+S_3^2
+\end{align}
+to fix one degree of freedom. In the linear polarization basis, $ E_x $, $ E_y $ and $ \delta_x-\delta_y $ uniquely define the polarization state of the light, where the phase difference between the two linear components of the field, $ \phi=\delta_x-\delta_y $, indicates the angle 
+
+describe the polarization state of the light, there are many equivalent formalisms, including ~\cite{Mecozzi2011Unified}
 
 The change of polarization of the light can be measured using the polarization spectroscopy technique~\cite{Deutsch2010a,Salvail2013}.
+
+
+As a result of the atom-light interaction, the polarization of the light will experience one of the two optical effects, the birefringence effect and the Faraday effect~\cite{Jackson1975}, or a mixture of the two effects. 
 
 \section{Photon emission in the perspective of Green's function method}
 
@@ -66,7 +144,7 @@ The total field will satisfy the \textit{Maxwell-Helmholtz equation}\index{Maxwe
 \begin{align}
 \left[ -\nabla\times\nabla\times+\frac{\omega^2}{c^2}n^2(\br) \right] \boldsymbol{\mathcal{E}}(\br) &=0. \label{MaxwellHelmholtz0}
 \end{align}
-Notice that the total index of refraction $ n(\br) $ we used above has already included the scattering effect caused by the atom on the waveguide, which usually has a complicated form. It is not in general possible to solve the differential equation as given above. The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Equ.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
+Notice that the total index of refraction $ n(\br) $ we used above has already included the scattering effect caused by the atom on the waveguide, which usually has a complicated form. It is not in general possible to solve the differential equation as given above. The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Eq.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
 \begin{align}\label{eq:Maxwellwithsource}
 \left[\! -\! \nabla\!\times\!\nabla\!\times + \frac{\omega^2}{c^2} \right]\! \boldsymbol{\mathcal{E}}(\br) &=\! -i4\pi\frac{\omega}{c^2} \mathbf{J}(\br) =\! -4\pi\frac{\omega^2}{c^2} \mathbf{P}(\br)=\! -4\pi \frac{\omega^2}{c^2} \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
@@ -75,27 +153,27 @@ where we have defined the current $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\
 %$\boldsymbol{\chi}(\br)=\sum_i \delta(\br-\br_{i})\boldsymbol{\alpha}^i$,
 %where $ i $ counts over all atoms.}. 
 
-Noting that the terms on all the right-hand sides of Equ.~\eqref{eq:Maxwellwithsource} are the generator or source for the electromagnetic field. In absence of the generators, the field will propagate in the background medium (free-space) as described by the left-hand side of the equation. In other word, the generators in terms of $ \mathbf{J}(\br) $, $ \mathbf{P}(\br) $ or $ \boldsymbol{\chi}(\br) $ describes the property of the fiber as a medium other than the vacuum. In contrast, if we consider the fiber as the background medium and the atoms outside the fiber as sources of electromagnetic field emitters, we can formally rewrite the chromatic wave equation as 
+Noting that the terms on all the right-hand sides of Eq.~\eqref{eq:Maxwellwithsource} are the generator or source for the electromagnetic field. In absence of the generators, the field will propagate in the background medium (free-space) as described by the left-hand side of the equation. In other word, the generators in terms of $ \mathbf{J}(\br) $, $ \mathbf{P}(\br) $ or $ \boldsymbol{\chi}(\br) $ describes the property of the fiber as a medium other than the vacuum. In contrast, if we consider the fiber as the background medium and the atoms outside the fiber as sources of electromagnetic field emitters, we can formally rewrite the chromatic wave equation as 
 \begin{align}\label{eq:Maxwellwithsource2}
 \left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-where the only difference from Equ.~\eqref{eq:Maxwellwithsource} is that we bring in the $ n(\br) $ as the index of refraction of the background medium instead of using $ n(\br)=1 $ for the homogeneous vacuum as the background medium. This has also been derived in the appendix (see Equ.~\eqref{eq:waveeqGaussU}) from the Maxwell equation for general cases. We will use Equ.~\eqref{eq:Maxwellwithsource2} to study the optical properties of the waveguide in presence of atoms outside. 
+where the only difference from Eq.~\eqref{eq:Maxwellwithsource} is that we bring in the $ n(\br) $ as the index of refraction of the background medium instead of using $ n(\br)=1 $ for the homogeneous vacuum as the background medium. This has also been derived in the appendix (see Eq.~\eqref{eq:waveeqGaussU}) from the Maxwell equation for general cases. We will use Eq.~\eqref{eq:Maxwellwithsource2} to study the optical properties of the waveguide in presence of atoms outside. 
 
-The Equ.~\eqref{eq:Maxwellwithsource2} above has a source term 
+The Eq.~\eqref{eq:Maxwellwithsource2} above has a source term 
 \begin{align}
 \tensor{S}(\br)=\tensor{\chi}(\br),% \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-and can be solved by solving the corresponding dyadic Green functions\index{Green function!dyadic Green function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$, then the source term of the corresponding field will be $\tensor{\bf S}(\br)=-4\pi \frac{\omega^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega^2/c^2$ factor compared to our definition in the text. Similarly, the $4\pi\omega^2/c^2$ factor will be carried over to other quantities as well. }
+and can be solved by solving the corresponding dyadic Green functions\index{Green's function!dyadic Green's function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$, then the source term of the corresponding field will be $\tensor{\bf S}(\br)=-4\pi \frac{\omega^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega^2/c^2$ factor compared to our definition in the text. Similarly, the $4\pi\omega^2/c^2$ factor will be carried over to other quantities as well. }
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') &= -4\pi \frac{\omega^2}{c^2}\delta^{(3)}(\br-\br')\unittensor. \label{eq:dyadicGF}
 \end{align}
 
-Without loosing generality, we consider a simple free-space case that there is no net charge and current in a vacuum medium. The wave equation can be given in Equ.~\eqref{eq:freespacewaveeq} with $ n=1 $, where we have replaced $ -\nabla\times\nabla\times $ with $ \nabla^2 $ from Equ.~\eqref{eq:Maxwellwithsource2}. As a result, all vector components of the field vectors are independent to each other. The corresponding Green function equation for this problem becomes a scalar equation,
+Without loosing generality, we consider a simple free-space case that there is no net charge and current in a vacuum medium. The wave equation can be given in Eq.~\eqref{eq:freespacewaveeq} with $ n=1 $, where we have replaced $ -\nabla\times\nabla\times $ with $ \nabla^2 $ from Eq.~\eqref{eq:Maxwellwithsource2}. As a result, all vector components of the field vectors are independent to each other. The corresponding Green function equation for this problem becomes a scalar equation,
 \begin{align}
 (\spp{}{x_i} + k^2) G_i(\br,\br')=-4\pi \frac{\omega^2}{c^2}\delta(\br-\br'), 
 \end{align}
 where $ x_i $ are the coordinate components and $ G_i(\br,\br') $ is the scalar Green function responding to a unit source with only $ x_i $ field component. 
-The only physical solution for the scalar Green function\index{Green function} in free space is 
+The only physical solution for the scalar Green function\index{Green's function} in free space is 
 \begin{align}
 G_0(\br,\br') =k^2\frac{e^{\pm i\mathbf{k}\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
 \end{align}
@@ -120,7 +198,7 @@ weak, and may be written as $ \tensor{S}(\br)\rightarrow \delta \tensor{S}(\br) 
 \begin{align}
 \boldsymbol{\mathcal{E}}(\br) &= \sum_{n=0}^{\infty} \delta^n \mathbf{V}_n(\br).
 \end{align}
-On substituting the expression above into Equ.~\ref{Etotal0}, we find the series
+On substituting the expression above into Eq.~\ref{Etotal0}, we find the series
 \begin{align}
 \mathbf{V}_0 &= \boldsymbol{\mathcal{E}}_0,\\
 \mathbf{V}_1 &= k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',\\
@@ -302,7 +380,7 @@ We use an ansatz that
 \mathcal{E}_z (r_\perp, \phi, z) &= \psi(r_\perp,\phi) e^{i\beta z}\\
 \mathcal{B}_z (r_\perp,\phi,z) &= \zeta(r_\perp,\phi) e^{i\beta z}.
 \end{align}
-Substituting the above into Equ.~\ref{EBz}, we obtain
+Substituting the above into Eq.~\ref{EBz}, we obtain
 \begin{align}\label{psizeta}
 \left(\nabla^2_\perp +(k^2 \varepsilon(\br_{\perp})-\beta^2 )\right) \begin{pmatrix}
 \psi(r_\perp,\phi)\\
@@ -320,7 +398,7 @@ cylindrical symmetry cannot be grouped into TE and TM guided waves. In general, 
 both electrical and magnetic nonzero $ z $-components are known as EH and HE hybrid 
 modes\index{mode!HE mode}~\cite{Snyder1983}.
 
-We focus on the electrical part for now. The magnetic field can be solved similarly. Equ.~\ref{psizeta} 
+We focus on the electrical part for now. The magnetic field can be solved similarly. Eq.~\ref{psizeta} 
 gives
 \begin{align}\label{eigenpsi}
 [\nabla^2_\perp + k^2\varepsilon(r_\perp)] \psi(r_\perp, \phi) = \beta^2\psi(r_\perp,\phi).
@@ -330,7 +408,7 @@ Compared to the time-independent Schrodinger equation
 \left[\frac{\hat{P}^2}{2m}+V(\hat{\mathbf{r}}_\perp) \right] \psi(\br_\perp)&= E\psi(\br_\perp)\\
 \text{or}\quad \left[ \nabla^2_\perp -V(r_\perp) \right] \psi (r_\perp, \phi) &= -E\psi(r_\perp,\phi),
 \end{align}
-we can conclude that the mode equation (Equ.~\ref{eigenpsi}) is basically an eigenvalue equation if we 
+we can conclude that the mode equation (Eq.~\ref{eigenpsi}) is basically an eigenvalue equation if we 
 make 
 \begin{align}
 V_{ef\!f}=-k^2\varepsilon(\br\!_\perp) &\sim V(\br\!_\perp)\\
@@ -479,7 +557,7 @@ For scattered modes, $ 0\leq \beta< k $, similarly,
  \end{array}\right.
 \end{align}
 Both $ \beta $ and $ p $ are continuous. 
-%\textcolor{red}{(Double check the general solutions and the consistence with Equ.~\ref{ET0Rexpand}.)}
+%\textcolor{red}{(Double check the general solutions and the consistence with Eq.~\ref{ET0Rexpand}.)}
 %Notice that Ref.\cite{Snyder1983} used $ J_m(hr\!_\perp)\cos m\phi $ and $ 
 %(J_m(pr\!_\perp)+CH_m^{(\!1\!)})\cos m\phi $ as the basis for the general solution of $ e $ and $ o $ 
 %light 
@@ -636,7 +714,7 @@ Due to the symmetry of equations, we also have
 where $  \mathcal{B}_{z,\beta m}(r\!_\perp) $ satisfies the same Bessel's equation as above. 
 
 Next, we consider the case that an atom--which can be treated as an electric dipole in the regime we are interested in--is placed next to the 
-nanofiber. Equ.~\eqref{Esrt0} can be rewritten as 
+nanofiber. Eq.~\eqref{Esrt0} can be rewritten as 
 \begin{align}
 \boldsymbol{\mathcal{E}}(\br) &= \boldsymbol{\mathcal{E}}_{source}(\br) + 
 \boldsymbol{\mathcal{E}}_{ref}(\br)+\boldsymbol{\mathcal{E}}_{tran}(\br)\\
@@ -675,7 +753,7 @@ For longitudinal components of the electrical and magnetic fields we expand them
 \end{align}
 \end{subequations}
 where the subscripts indicate the field components of reflection ($R$), dipole oscillation in free space ($0$) and transmission ($ T $). Notice that we have chosen $ m=\pm 1 $, as the nanofiber can only support HE$_{11}$ modes. 
-The $ r\!_\perp $ and $ \phi $ components of the fields can be obtained using Equ.~\eqref{EHzgauss} and $ \mathcal{B}=\mathcal{H} $ in Gauss units for given $ m $. Also notice, in the nanofiber case we are studying, we can define $ z'=0 $ and $ \phi'=0 $, and hence the factor $ e^{im(\phi-\phi') + i\beta (z-z')} $ in the equations above becomes $ e^{im\phi + i\beta z} $. That is what Klimov and others have used in their paper.
+The $ r\!_\perp $ and $ \phi $ components of the fields can be obtained using Eq.~\eqref{EHzgauss} and $ \mathcal{B}=\mathcal{H} $ in Gauss units for given $ m $. Also notice, in the nanofiber case we are studying, we can define $ z'=0 $ and $ \phi'=0 $, and hence the factor $ e^{im(\phi-\phi') + i\beta (z-z')} $ in the equations above becomes $ e^{im\phi + i\beta z} $. That is what Klimov and others have used in their paper.
 
 The free space dipole emits an electromagnetic field described by
 \begin{align}
@@ -692,7 +770,7 @@ The free space dipole emits an electromagnetic field described by
 &=\frac{i}{k}(\frac{1}{r\!_\perp}\!\pp{\mathcal{B}^{(\!0\!)}_z}{\phi}\!-\! \pp{\mathcal{B}^{(\!0\!)}_\phi}{z})\mathbf{e}_{r\!_{\perp}} \!\!+\! \frac{i}{k}(\!\pp{\mathcal{B}^{(\!0\!)}_{r\!_\perp}}{z} \!-\! \pp{\mathcal{B}^{(\!0\!)}_z}{r\!_\perp})\mathbf{e}_\phi \!\!+\! \frac{i}{r\!_\perp\! k} (\!\pp{(\! r\!_\perp \mathcal{B}^{(\!0\!)}_\phi)}{r\!_\perp} \!\!-\!\! \pp{\mathcal{B}^{(\!0\!)}_{r\!_\perp}}{\phi}\! )\mathbf{e}_z\\
 &=\mathcal{E}^{(0)}_{r\!_\perp}\mathbf{e}_{r\!_{\perp}} +\mathcal{E}^{(0)}_\phi\mathbf{e}_\phi + \mathcal{E}^{(0)}_z\mathbf{e}_z,
 \end{align}
-or, by Equ.~\eqref{EGd}. Here, $ \mathbf{d}_0 $ is the dipole momentum in vacuum. We denote $d_{r\!_\perp},\, d_\phi$ and $d_z$ as the cylindrical components of the dipole momentum at arbitrary observation point ${\rm {\bf r}}=\left( {r\!_\perp ,\phi ,z}\right) $; while we use $d^0_{r\!_\perp}$, $d^0_\phi$ and $d^0_z$ to indicate the cylindrical components of the dipole momentum at the dipole position ${\rm 
+or, by Eq.~\eqref{EGd}. Here, $ \mathbf{d}_0 $ is the dipole momentum in vacuum. We denote $d_{r\!_\perp},\, d_\phi$ and $d_z$ as the cylindrical components of the dipole momentum at arbitrary observation point ${\rm {\bf r}}=\left( {r\!_\perp ,\phi ,z}\right) $; while we use $d^0_{r\!_\perp}$, $d^0_\phi$ and $d^0_z$ to indicate the cylindrical components of the dipole momentum at the dipole position ${\rm 
 {\bf {r}^{\prime }}}=\left( {{r\!_\perp }^{\prime },{\phi }^{\prime },{z}^{\prime }}\right) $. As shown in Fig.(\ref{fig:dipolemomentumtransmission}) on page~\pageref{fig:dipolemomentumtransmission}, we defined the vector from the center of the nanofiber's core pointing to the atom position as $x$-axis, and the rotating symmetric axis of the nanofiber as the $z$-axis. The relationships between the dipole momentum components at $\mathbf{r}$ and $\mathbf{r}'$ can be given by
 \begin{align}
 d_{r\!_\perp}\! &= \cos(\phi\!-\!\phi')d^0_{r\!_\perp}\!\!+\!\sin(\phi\!-\!\phi')d^0_\phi=\frac{1}{\sqrt{2}}\left(-e^{-i(\phi\!-\!\phi')}d_++e^{i(\phi\!-\!\phi')}d_- \right),\\
@@ -783,7 +861,7 @@ The terms associated with $d_\pm$ in the dipole moment formula lower or raise th
 \label{fig:dipolemomentumtransmission}
 \end{figure}
 
-Using the expansion of the free-space scalar Green function (Equ.~\eqref{scalarG}) for the space $ \left(r\!_\perp <r_\perp ^{\prime}\right) $ that 
+Using the expansion of the free-space scalar Green function (Eq.~\eqref{scalarG}) for the space $ \left(r\!_\perp <r_\perp ^{\prime}\right) $ that 
 \begin{align}
 \frac{G_0(\br,\br')}{k^2} &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
 \left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}\nonumber\\
@@ -801,7 +879,7 @@ and for $ \left(r\!_\perp >r_\perp ^{\prime}\right) $
 }{\sum\limits_{m=-\infty }^{\infty } {{\oint\limits_{C_{1}}{\mathrm{d}\beta \;e^{im\left( {\phi -{\phi }%
 ^{\prime }}\right) +i\beta \left( {z-{z}^{\prime }}\right) }J_{m}\left( {pr\!_\perp^{\prime} }\right) H_{m}^{\left( {1}\right) }\left( pr_\perp \right) }}}},
 \end{align}
-one can obtain the free space dipole radiation field components in Equ.~\eqref{ET0Rexpand} and~\eqref{BT0Rexpand}. The contour $ C_1 $ and field components can be found in Ref.~\cite{Klimov2004}. ~\footnote{Similarly, the decomposition of a plane wave function can be found in Appendix~\ref{Ch:PlanewaveDecomposition}}.
+one can obtain the free space dipole radiation field components in Eq.~\eqref{ET0Rexpand} and~\eqref{BT0Rexpand}. The contour $ C_1 $ and field components can be found in Ref.~\cite{Klimov2004}. ~\footnote{Similarly, the decomposition of a plane wave function can be found in Appendix~\ref{Ch:PlanewaveDecomposition}}.
 
 The free radiation field components associated with the $ e^{im\phi+i\beta z} $ term (the $m$-th mode components) for the $r\!_\perp<r'\!_\perp$ region can be given by
 \begin{align}
@@ -847,7 +925,7 @@ By exchanging $J_m$ and $H_m^{(1)}$ functions, one can also obtain the field com
 
 The expressions above are formally different from Klimov's paper, but are consistent with Nha's paper~\cite{Nha1997}. By using some identities of Bessel functions, one should be able to reproduce Klimov's expressions, which we have checked numerically equivalent to our results.
 
-By using the boundary conditions at $ r\!_\perp=a $ and Equ.~\ref{Etotalfiber} that
+By using the boundary conditions at $ r\!_\perp=a $ and Eq.~\ref{Etotalfiber} that
 \begin{align}
 %\varepsilon_f \mathcal{E}_{r\!_\perp}(r\!_\perp =a^> ) = \mathcal{E}_{r\!_\perp}(r\!_\perp =a^< ),\\
 \mathcal{E}_{z}(r\!_\perp =a^> ) = \mathcal{E}_{z}(r\!_\perp =a^< ),\\
@@ -856,7 +934,7 @@ By using the boundary conditions at $ r\!_\perp=a $ and Equ.~\ref{Etotalfiber} t
 \mathcal{E}_{\phi}(r\!_\perp =a^> ) = \mathcal{E}_{\phi}(r\!_\perp =a^< ),\\
 \mathcal{B}_{\phi}(r\!_\perp =a^> ) = \mathcal{B}_{\phi}(r\!_\perp =a^< ),
 \end{align}
-where $ a^< $ and $ a^> $ denote the boundaries at the sides less and larger than $ a $, and the connections between field components (Equ.(\ref{EHzgauss})), we can obtain all unknown coefficients. In details, the boundary conditions yield
+where $ a^< $ and $ a^> $ denote the boundaries at the sides less and larger than $ a $, and the connections between field components (Eq.(\ref{EHzgauss})), we can obtain all unknown coefficients. In details, the boundary conditions yield
 \begin{align}
 a_{m\beta}H_m^{(1)}(pa)+\mathcal{E}_{z,m\beta}^{(0)}(r\!_\perp =a ) &= c_{m\beta}J_m(ha),\\
 b_{m\beta}H_m^{(1)}(pa)+\mathcal{B}_{z,m\beta}^{(0)}(r\!_\perp =a ) &= d_{m\beta}J_m(ha),\\
@@ -1005,18 +1083,18 @@ J_{-m}(z)=(-1)^nJ_n(z),\, &\quad H_{-m}^{(1)}(z)=e^{m\pi i}H_m^{(1)}(z),\\
 \dd{}{z}J_m(z) &= \frac{1}{2} \left( J_{m-1}(z)-J_{m+1}(z) \right),\\ 
 \dd{}{z}H^{(1)}_m(z) &= \frac{1}{2} \left( H^{(1)}_{m-1}(z)-H^{(1)}_{m+1}(z) \right).
 \end{align}
-We can rewrite Equ.~\ref{pole4beta} as
+We can rewrite Eq.~\ref{pole4beta} as
 \begin{align}\label{pole4beta2}
 &\beta^2m^2k^2\left(J_m\!(ha) H_m^{(\!1\!)}\!(pa) \right)^2 (\varepsilon_f-1)^2\nonumber\\
 =& \frac{h^2p^2a^2}{4} \left[hJ_m\!(ha)\! \left( H^{(\!1\!)}_{m-1}\!(pa)\!-\! H^{(\!1\!)}_{m+1}\!(pa) \right)\!-\! pH_m^{(\!1\!)}\!(pa)\left( J_{m-1}\!(ha)\!-\! J_{m+1}\!(ha) \right) \right]\nonumber\\ 
 &\left[hJ_m\!(ha) \left( H^{(\!1\!)}_{m-1}\!(pa)\!-\! H^{(\!1\!)}_{m+1}\!(pa) \right)\!-\! \varepsilon_f pH_m^{(\!1\!)}\!(pa)\left( J_{m-1}\!(ha)\!-\! J_{m+1}\!(ha) \right) \right].
 \end{align}
-Since both $ h $ and $ p $ are functions of $ \beta $, the equation above is complicated for solving $ \beta $. If $ ka<0.8 $, asymptotic approximation is good enough to solve Equ.~\ref{pole4beta2} and give an analytical solution for $ \beta $~\cite{Klimov2004}. However, in our nanofiber case, the $ ka<0.8 $ condition is not satisfied. We should be able to numerically solve Equ.~\ref{pole4beta2} for $ \beta $ as the characteristic constant for the guided mode with $ m=\pm 1 $. \textcolor{red}{Q: we should prove Equ.~\eqref{pole4beta2} is equivalent to the eigen equation of $ \beta $ for the bare fiber case. Useful relationship: $ K_n(x)=\frac{\pi}{2}i^{n+1}H_n^{(1)}(ix) $.}
+Since both $ h $ and $ p $ are functions of $ \beta $, the equation above is complicated for solving $ \beta $. If $ ka<0.8 $, asymptotic approximation is good enough to solve Eq.~\ref{pole4beta2} and give an analytical solution for $ \beta $~\cite{Klimov2004}. However, in our nanofiber case, the $ ka<0.8 $ condition is not satisfied. We should be able to numerically solve Eq.~\ref{pole4beta2} for $ \beta $ as the characteristic constant for the guided mode with $ m=\pm 1 $. \textcolor{red}{Q: we should prove Eq.~\eqref{pole4beta2} is equivalent to the eigen equation of $ \beta $ for the bare fiber case. Useful relationship: $ K_n(x)=\frac{\pi}{2}i^{n+1}H_n^{(1)}(ix) $.}
 
 Numerically, the eigenwavevector $ \beta_0 $ is indistinguishable with the intrinsic nanofiber eigen mode wavevector, in the regime we are interested in.
 
 Next, we can solve the bound modes by differentiating the functions inside of $ Res $ signs and inserting the values of $ \beta_{1,m=\pm 1} $. %\textcolor{red}{(Q: are those poles all of order 1?)} 
-The transverse components of the fields can be obtained from the longitudinal components using the relations of Equ.~\ref{EHzgauss}. 
+The transverse components of the fields can be obtained from the longitudinal components using the relations of Eq.~\ref{EHzgauss}. 
 %Sample numerical calculations has been performed, and results are documented in the NanofiberProjectPlots.pdf (Dropbox folder, \url{Nanofiber/Code/Matlab/Plots}). The primary plots show that there are phase shifts for the transmitted and reflected lights so that the mode profile is not symmetric to the $ x $-axis where the atom lies on; the reflected light field has a backaction on the atom tending to move it off the trapping point; the $ m=\pm 1 $ modes are not balanced... 
 Our derivation results had be checked by reproducing the decay rates following Klimov's paper~\cite{Klimov2004}. 
 
@@ -1030,7 +1108,7 @@ By setting $ \beta=x+iy $, we can rewrite the first equation above as
 p&=\sqrt{k^2-\beta^2}\\
 &=\left[(k^2-x^2+y^2)^2 + 4x^2y^2 \right]^{1/4}e^{\frac{i}{2}\arctan\frac{-2xy}{k^2-x^2+y^2}}.
 \end{align}
-Hence Equ.~\ref{branchcutequ} yields
+Hence Eq.~\ref{branchcutequ} yields
 \begin{align}
 0&= \left[(k^2-x^2+y^2)^2 + 4x^2y^2 \right]^{1/4} \sin \left[\frac{1}{2}\arctan\frac{-2xy}{k^2-x^2+y^2} \right]\\
 &= \frac{1}{\sqrt{2}} \left[(k^2\!-\! x^2\!+\! y^2)^2 \!+\! 4x^2y^2 \right]^{1/4} \sqrt{1\!-\!\cos \left(\arctan\frac{-2xy}{k^2\!-\! x^2\!+\! y^2} \right)}\\
@@ -1042,7 +1120,7 @@ which gives
 \left[(k^2-x^2+y^2)^2 + 4x^2y^2 \right]^{1/2}&=(k^2-x^2+y^2),\\
 \Leftrightarrow \qquad \qquad \qquad \qquad \qquad x^2y^2&=0.\label{branchcut2}
 \end{align}
-Obviously, the $ x $-axis between $ [-k,k] $ and the entire $ y $-axis are the branch cuts. To separate the branches into upper and lower parts, we can define an arbitrary small positive number $ \delta\epsilon\rightarrow 0 $ so that Equ.~\ref{branchcut2} gives
+Obviously, the $ x $-axis between $ [-k,k] $ and the entire $ y $-axis are the branch cuts. To separate the branches into upper and lower parts, we can define an arbitrary small positive number $ \delta\epsilon\rightarrow 0 $ so that Eq.~\ref{branchcut2} gives
 \begin{align}
 xy&=\delta\epsilon.
 \end{align}
@@ -1124,7 +1202,7 @@ each column of which can be expressed as
 \end{align}
 where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green function of $ \GFT(\br,\br') $. Here, we used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
 
-Comparing Equ.~\eqref{eq:Gi} with Equ.~\eqref{eq:Maxwellwithsource2}, we find that Equ.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an amplitude of $ -4\pi k^2 $. That is to say that once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components divided by the factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis:
+Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an amplitude of $ -4\pi k^2 $. That is to say that once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components divided by the factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis:
 \begin{equation}
 \GFT(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
   \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
@@ -1178,13 +1256,13 @@ Under Coulomb gauge, the transverse and longitudinal currents can then be writte
 \mathbf{J}_T &= -\frac{1}{\mu_0}(\nabla^2 -\frac{1}{c^2}\spp{}{t})\mathbf{A}\label{eq:Jt_cg}\\
 \mathbf{J}_L &= \varepsilon_0 \pp{}{t}\nabla\phi .\label{eq:Jl_cg}
 \end{align}
-Notice that, the longitudinal current equation (Equ.~\eqref{eq:Jl_cg}) will become purely local for an ideal dipole source, and can be ignored. The longitudinal components may only become important for the case with a charged source. Below, we only consider the transverse eigenmode decompositions for our analysis of neutral atoms that can be treated as neutral point dipole sources.
+Notice that, the longitudinal current equation (Eq.~\eqref{eq:Jl_cg}) will become purely local for an ideal dipole source, and can be ignored. The longitudinal components may only become important for the case with a charged source. Below, we only consider the transverse eigenmode decompositions for our analysis of neutral atoms that can be treated as neutral point dipole sources.
 
-The dyadic Green's function for a waveguide satisfies (Equ.~\eqref{eq:dyadicGF})
+The dyadic Green's function for a waveguide satisfies (Eq.~\eqref{eq:dyadicGF})
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2k_0^2 \right] \GFT(\br,\br') &= -4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,
 \end{align}
-where $n=n(\br\!_\perp)=\sqrt{\varepsilon(\br\!_\perp)}$ and $k_0=\omega_0/c$. Correspondingly, the bare-fiber modes (eigenmodes), $ \mathbf{u}^{(\mu)}(\br) $, satisfy the Maxwell-Helmholtz equation (Equ.~\eqref{MaxwellHelmholtz0}), that is
+where $n=n(\br\!_\perp)=\sqrt{\varepsilon(\br\!_\perp)}$ and $k_0=\omega_0/c$. Correspondingly, the bare-fiber modes (eigenmodes), $ \mathbf{u}^{(\mu)}(\br) $, satisfy the Maxwell-Helmholtz equation (Eq.~\eqref{MaxwellHelmholtz0}), that is
 \begin{align}
 [-\nabla\times\nabla\times + n^2(\br)k^2]  \mathbf{u}^{(\mu)}(\br) &=0,
 \end{align}
@@ -1237,7 +1315,7 @@ One can expand the dyadic function $ \mathbf{G}_\epsilon(\br,\br') $ in terms of
 \mathbf{G}_\epsilon(\br,\br')\approx\mathbf{G}_\epsilon^T(\br,\br')= \sum_{\mu} \mathbf{u}_\epsilon^{(\mu)}(\br) \mathbf{A}_\epsilon^{(\mu)}(\br'), \label{eq:transGappr}
 \end{align}
 where the coefficient vector $\mathbf{A}_\epsilon^{(\mu)}(\br')  $ does not depend on $ \br $.
-Substituting Equ.~\eqref{eq:transGappr} into Equ.~\eqref{eq:HGtilde}, we obtain
+Substituting Eq.~\eqref{eq:transGappr} into Eq.~\eqref{eq:HGtilde}, we obtain
 \begin{align}
 \sum_{\mathbf{k}} \left[ \mathcal{H}_{k_0}  \mathbf{u}_\epsilon^{(\mu)}(\br)\right] \mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br')\\
 \Leftrightarrow \sum_\mu (k_0^2-k^2) \mathbf{u}_\epsilon^{(\mu)}(\br) \mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br') = -4\pi k_0^2\sum_{\mu} \mathbf{u}_\epsilon^{(\mu)}(\mathbf{r} )\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\mathbf{r}^\prime )\right]^*.
@@ -1268,7 +1346,7 @@ Meanwhile, the sum over the mode index can be written as an integral over $ \bet
 \sum_{\beta} \Leftrightarrow & \frac{L}{2\pi} \int_{-\infty}^{\infty} \mathrm{d}\beta, \quad \text{if $\beta$ includes the propagation direction},\\
 \quad \mathrm{or}\quad &\frac{L}{2\pi}\sum_{f=\pm 1} \int_0^{\infty} \mathrm{d}\beta,\quad\text{if the propagation direction is separated out}.
 \end{align}
-This  transformation comes from the consideration that, in the continuous limit, the propagating guided wave is periodic within the quantization length period $ L $ and the periodicity condition is that $ \beta_n L=2\pi n $, where $ n=1,\,2,\,\ldots $. Hence, the dyadic Green function for the guided modes (Equ.~\eqref{eq:Gganaly}) can be written as
+This  transformation comes from the consideration that, in the continuous limit, the propagating guided wave is periodic within the quantization length period $ L $ and the periodicity condition is that $ \beta_n L=2\pi n $, where $ n=1,\,2,\,\ldots $. Hence, the dyadic Green function for the guided modes (Eq.~\eqref{eq:Gganaly}) can be written as
 \begin{align}
 \!\!\!\!\!\!\!\!\! \mathbf{G}^g(\br,\br') &= -2L\sum_{m,f=\pm 1}\int_0^\infty \mathrm{d}\beta \frac{\omega_0^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')}\\
 &= 2\omega_0^2 L\!\!\sum_{m,f=\pm 1}\int_0^\infty\!\! \mathrm{d}\omega_\beta \frac{\mathrm{d}\beta}{\mathrm{d}\omega_\beta} \frac{\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{(\omega_0\! +\!\omega_\beta) (\omega_0\!-\!\omega_\beta)} e^{i\!f\!\beta(z\!-\!z')+im(\phi\!-\!\phi')}\label{eq:eigGFintegral}\\
@@ -1295,7 +1373,7 @@ The numerical comparison of the two approaches has been done and confirmed that 
 \begin{figure}
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.85\textwidth]{../media/Figs/integratepath_GF}}
-\caption[Integral paths for the dyadic Green function calculations when loss is negligible.]{Integral paths for the dyadic Green function calculations. Part (a) is the integral path for the dipole's free-space field contribution calculation (see, for example, Equ.~\eqref{ET0RC1}). Part (b) is the integral path for the reflected and transmitted field contributions calculation (see, for example, Equ.~\eqref{ET0RC1}). Part (c) is the integral path for the dyadic Green function calculation using the eigenmode decomposition method (see Equ.~\eqref{eq:eigGFintegral}). The integral paths on the left-hand-side (in blue) indicate the backward propagating contributions, while the right-hand-side (in red) parts corresponding to the forward propagating contributions. For the eigenmode decomposition method in part (c), if one choose to use $ f=\pm 1 $ to indicate the propagation direction, then only the $ \beta>0 $ portion of integral path will be applied. }
+\caption[Integral paths for the dyadic Green function calculations when loss is negligible.]{Integral paths for the dyadic Green function calculations. Part (a) is the integral path for the dipole's free-space field contribution calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (b) is the integral path for the reflected and transmitted field contributions calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (c) is the integral path for the dyadic Green function calculation using the eigenmode decomposition method (see Eq.~\eqref{eq:eigGFintegral}). The integral paths on the left-hand-side (in blue) indicate the backward propagating contributions, while the right-hand-side (in red) parts corresponding to the forward propagating contributions. For the eigenmode decomposition method in part (c), if one choose to use $ f=\pm 1 $ to indicate the propagation direction, then only the $ \beta>0 $ portion of integral path will be applied. }
 \label{fig:integralpaths}
 \end{figure}
 
@@ -1340,7 +1418,7 @@ v_g&=\frac{P}{W}.
 The physics interpretation of group and phase velocity of a waveguide mode can be found in the notes on \textit{Group velocity of the nanofiber}. The effective zig-zag ray model is also described in the notes for understanding the mechanism of group and phase index of refractions. For our nanofiber case, the $ D_2 $ transition line of Cs atoms does not have a strong enhancement of group index of refraction for the guided mode, compared to the phase index of refraction. The $ D_1 $ line has a relatively strong enhancement of group index since the wave can penetrate into the clad much deeper compared to the $ D_2 $ line case. 
 
 \section{Phase shift and polarizability transformation}
-Using the results for the dyadic Green function of the guided modes, one can write the output electric field due to the guided modes (from Equ.~\eqref{eq:EoutG}) as 
+Using the results for the dyadic Green function of the guided modes, one can write the output electric field due to the guided modes (from Eq.~\eqref{eq:EoutG}) as 
 \begin{align}
 \mathbf{E}(\br) & = \mathbf{E}_0(\br) -4\pi k_0^2 \alpha \mathbf{G}^g(\br,\br')\cdot\mathbf{E}_0(\br'),
 \end{align}
@@ -1494,7 +1572,7 @@ In the vacuum case, the strongest mode is given by $ |\mathbf{u}_{00}(r_\perp^{v
 \section{Resolution of birefringence spectroscopy measurement for the nanofiber trapped atom system}\label{sec:birefringenceresolution}
 The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence spectroscopy analysis for our nanofiber case.
 
-To measure the Stocks vector rotation angle on the \Poincare sphere, that is the transformation of the polarization of the light, we launch a probe light along the bisection line between $ x $- and $ y $-axes, and trap the atom on the $ x $-axis, and then measure the output powers of the counterclockwise-rotating ($ \sigma_+ $) and the clockwise-rotating ($ \sigma_- $) components of the output. From Equ.~\eqref{eq:Faradayrotang}, the total differential phase shift between the $ \sigma_+ $ and $ \sigma_- $ components of the probed traveling light interacted with $ N $ atoms can be given by
+To measure the Stocks vector rotation angle on the \Poincare sphere, that is the transformation of the polarization of the light, we launch a probe light along the bisection line between $ x $- and $ y $-axes, and trap the atom on the $ x $-axis, and then measure the output powers of the counterclockwise-rotating ($ \sigma_+ $) and the clockwise-rotating ($ \sigma_- $) components of the output. From Eq.~\eqref{eq:Faradayrotang}, the total differential phase shift between the $ \sigma_+ $ and $ \sigma_- $ components of the probed traveling light interacted with $ N $ atoms can be given by
 \begin{align}
 \varphi_{_N} &= N\sigma_0\frac{c}{v_g}\frac{\Gamma_{vac}}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].
 \end{align}
@@ -1547,7 +1625,7 @@ We also treat the quantum efficiency $ \kappa=1 $. The critical shot noise defin
 \begin{align}
 \Delta P_{SN} &\approx \sqrt{\frac{P_0 \hbar \omega_0 \gamma_s}{2\kappa }} =P_0\sqrt{\frac{ \sigma_0 }{2A_{in}}}\frac{\Gamma_{vac}}{2\Delta}.
 \end{align}
-The signal defined in Equ.~\eqref{eq:polsignal} can be rewritten as
+The signal defined in Eq.~\eqref{eq:polsignal} can be rewritten as
 \begin{align}
 \Delta P_S &= NP_0 \frac{\sigma_0}{A_{e\!f\!f}}\frac{\Gamma_{vac}}{4\Delta},
 \end{align}
@@ -1712,7 +1790,7 @@ Also, to quantize the traveling field of waveguide modes, we can define the norm
 N_g &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp\,  n^2(\br\!_\perp)|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
 &= 2\pi A^2 a^2 (n_1^2P_1 + n_2^2P_2),
 \end{align}
-where the factor $ A $ is defined in Equ.~\eqref{eq:A} related to the input power. The full expression of radiative modes of the nanofiber system can also be found in Ref.~\cite{LeKien2005a}.
+where the factor $ A $ is defined in Eq.~\eqref{eq:A} related to the input power. The full expression of radiative modes of the nanofiber system can also be found in Ref.~\cite{LeKien2005a}.
 
 For some cases, the total power $ P $ can also be defined as
 \begin{align}
