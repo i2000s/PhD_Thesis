@@ -87,6 +87,11 @@
 %\makeatother
 %\listoftodos\relax
 \usepackage{imakeidx} % Instead of using makeidx, this imakeidx package allows hyperlinks on page numbers for the indexed items. The hyperlink package is required to put at the end of loading packages.
+%\makeindex[ % This is for index with special characters.
+%  intoc,
+%  program=xindy,
+%  options=-C utf8 
+%]
 
 \allowdisplaybreaks
 % for eps transfering to pdf.
@@ -356,7 +361,7 @@
 
 % Overline bar to be thicker.
 \RequirePackage{accents}
-\newcommand\thickbar[1]{\accentset{\rule{.4em}{.8pt}}{#1}}
+%\renewcommand\thickbar[1]{\accentset{\rule{.4em}{.8pt}}{#1}}
 
 % symbols and math operators
 \DeclareMathOperator{\spn}{span}
@@ -533,7 +538,8 @@
 \newcommand{\hei}{Heisenberg\xspace}
 \newcommand{\ein}{Einstein\xspace}
 \newcommand{\str}{Stratonovich\xspace}
-\newcommand{\Poincare}{Poincar\'e\index{Poincar\'e}\xspace}
+%\newcommand{\Poincare}{Poincar\'e\index{Poincar\'e}\xspace}
+\newcommand{\Poincare}{Poincar\'e\index{Poincar\'e sphere}\xspace}
 %========================================================================================
 % Dirac notation and commutators
 %========================================================================================
