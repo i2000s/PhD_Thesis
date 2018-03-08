@@ -244,17 +244,17 @@ The Eq.~\eqref{eq:Maxwellwithsource2} above has a source term
 \begin{align}
 \tensor{S}(\br)=\tensor{\chi}(\br),% \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-and can be solved by solving the corresponding dyadic Green functions\index{Green's function!dyadic Green's function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$, then the source term of the corresponding field will be $\tensor{\bf S}(\br)=-4\pi \frac{\omega^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega^2/c^2$ factor compared to our definition in the text. Similarly, the $4\pi\omega^2/c^2$ factor will be carried over to other quantities as well. }
+and can be solved by solving the corresponding dyadic Green's functions\index{Green's function!dyadic Green's function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$, then the source term of the corresponding field will be $\tensor{\bf S}(\br)=-4\pi \frac{\omega^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega^2/c^2$ factor compared to our definition in the text. Similarly, the $4\pi\omega^2/c^2$ factor will be carried over to other quantities as well. }
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') &= -4\pi \frac{\omega^2}{c^2}\delta^{(3)}(\br-\br')\unittensor. \label{eq:dyadicGF}
 \end{align}
 
-Without loosing generality, we consider a simple free-space case that there is no net charge and current in a vacuum medium. The wave equation can be given in Eq.~\eqref{eq:freespacewaveeq} with $ n=1 $, where we have replaced $ -\nabla\times\nabla\times $ with $ \nabla^2 $ from Eq.~\eqref{eq:Maxwellwithsource2}. As a result, all vector components of the field vectors are independent to each other. The corresponding Green function equation for this problem becomes a scalar equation,
+Without loosing generality, we consider a simple free-space case that there is no net charge and current in a vacuum medium. The wave equation can be given in Eq.~\eqref{eq:freespacewaveeq} with $ n=1 $, where we have replaced $ -\nabla\times\nabla\times $ with $ \nabla^2 $ from Eq.~\eqref{eq:Maxwellwithsource2}. As a result, all vector components of the field vectors are independent to each other. The corresponding Green's function equation for this problem becomes a scalar equation,
 \begin{align}
 (\spp{}{x_i} + k^2) G_i(\br,\br')=-4\pi \frac{\omega^2}{c^2}\delta(\br-\br'), 
 \end{align}
-where $ x_i $ are the coordinate components and $ G_i(\br,\br') $ is the scalar Green function responding to a unit source with only $ x_i $ field component. 
-The only physical solution for the scalar Green function\index{Green's function} in free space is 
+where $ x_i $ are the coordinate components and $ G_i(\br,\br') $ is the scalar Green's function responding to a unit source with only $ x_i $ field component. 
+The only physical solution for the scalar Green's function\index{Green's function} in free space is 
 \begin{align}
 G_0(\br,\br') =k^2\frac{e^{\pm i\mathbf{k}\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
 \end{align}
@@ -272,7 +272,7 @@ where $ \boldsymbol{\mathcal{E}}_0 (\br) $ is the homogeneous Maxwell-Helmholtz 
 
 
 
-In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field. By the use of Green function method, we have converted our differential equation for the scattered field into volume integral equations. They are very important since they form the basis for various formalisms such as the \emph{method of moments}\index{method of moments}, the \emph{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \emph{coupled dipole method}\index{coupled dipole method}. In general, these integral equations can be solved numerically using the methods mentioned above. Alternatively, we may develop a Liouville–Neumann series\index{Liouville–Neumann series} solution to the equation, namely the Born series\index{Born series}.
+In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field. By the use of Green's function method, we have converted our differential equation for the scattered field into volume integral equations. They are very important since they form the basis for various formalisms such as the \emph{method of moments}\index{method of moments}, the \emph{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \emph{coupled dipole method}\index{coupled dipole method}. In general, these integral equations can be solved numerically using the methods mentioned above. Alternatively, we may develop a Liouville–Neumann series\index{Liouville–Neumann series} solution to the equation, namely the Born series\index{Born series}.
 
 The Born series is typically derived by assuming that the scattering potential is very
 weak, and may be written as $ \tensor{S}(\br)\rightarrow \delta \tensor{S}(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series of solutions for the total field of the form
@@ -296,7 +296,7 @@ where $ \boldsymbol{\alpha}(\br') $ denotes the polarizability of the atom at $ 
 
 Notice that Born series does not necessarily converge. Usually, we need to verify if the perturbation fields are much weaker than the field $ \boldsymbol{\mathcal{E}}_0 $ before using Born series. 
 
-\textcolor{red}{To be continued: Retard Green function for forward and backward solutions, propagator and transverse dyadic Green function...}
+\textcolor{red}{To be continued: Retard Green's function for forward and backward solutions, propagator and transverse dyadic Green's function...}
 
 \subsection{Paraxial expansion of the mode}
 In the case that the light fields propagate along a certain direction $ z $ and spread out only slowly in the transverse direction, we can use the \emph{paraxial approximation}\index{paraxial approximation} to simplify the light propagation problem, especially the analytical integral of the Fourier integrals of the fields. In that case, the $ z $ component of the wavevectors can be expanded in a series as
@@ -311,7 +311,7 @@ Meanwhile, in paraxial approximation\index{paraxial approximation} $ \theta\righ
 &\approx \hat{\mathrm{e}}_z.
 \end{align}
 
-The Green function solution for a point emitter in free space can then be expanded to be
+The Green's function solution for a point emitter in free space can then be expanded to be
 \begin{align}
 \frac{e^{i\mathrm{k}\cdot \mathrm{R}}}{R}\approx \frac{e^{ik_0(z-z')}}{z-z'}\exp\left[ \frac{ik_0}{2(z-z')} \left| \mathrm{r}_\perp - \mathrm{r}_\perp'\right|^2 \right],
 \end{align}
@@ -327,11 +327,11 @@ A far field from a point light emitter is usually paraxial approximation obedien
 \subsection{Dipole oscillation and emission of polarized light}
 Here we present some results of electrical dipole radiations.
 
-In the Green function language, we can obtain the electrical field emitted by an electric dipole source by
+In the Green's function language, we can obtain the electrical field emitted by an electric dipole source by
 \begin{align}\label{EGd}
 \mathbf{E}(\br) &=  \int\mathbf{G}(\br,\br')\cdot \mathbf{d}(\br') \mathrm{d}\br', 
 \end{align}
-where $ \mathbf{G}(\br,\br') $ is the dyadic Green functions for a dipole located at $ \br' $ with a dipole moment of $ \mathbf{d}(\br') $. $\mathbf{G}(\br,\br')$ can be determined from the scalar Green's function $G_0(\br,\br')$ by 
+where $ \mathbf{G}(\br,\br') $ is the dyadic Green's functions for a dipole located at $ \br' $ with a dipole moment of $ \mathbf{d}(\br') $. $\mathbf{G}(\br,\br')$ can be determined from the scalar Green's function $G_0(\br,\br')$ by 
 \begin{align}
 \mathbf{G}(\br,\br') = \left[\mathbbm{1} + \frac{1}{k^2}\nabla\nabla \right]G_0(\br,\br')
 \end{align}
@@ -357,7 +357,7 @@ where $ \tensor{\alpha} $ is the atomic polarizability and $ k=\omega/c $. Under
 &=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\alpha}\cdot \mathbf{E}_0(\br').\label{eq:EoutG}
 \end{align}
 
-In the context of nanofiber and atoms system, the dyadic Green function can be written as
+In the context of nanofiber and atoms system, the dyadic Green's function can be written as
 \begin{align}
 \mathbf{G}(\br,\br') = \left\{ 
 \begin{array}{lc}
@@ -394,7 +394,7 @@ with the natural linewidth $ \Gamma_0=\frac{e^2}{m\omega_0}\im\left[\hat{d}^\dag
 \end{align}
 which includes the modification from the incident field. 
 
-By solving the free-space dipole radiation problem, the imaginary part of the free-space Green function can be given by
+By solving the free-space dipole radiation problem, the imaginary part of the free-space Green's function can be given by
 \begin{align}
 \mathrm{Im}\left[ \mathbf{G}^{(0)} (\br^\prime\!_\perp, \br^\prime\!_\perp) \right] &= \mathrm{Im} 
 \left[ \mathbf{G}^{rad}_{(0)}(\br'\!_\perp,\br'\!_\perp)\right]  = \frac{ 
@@ -942,7 +942,7 @@ The terms associated with $d_\pm$ in the dipole moment formula lower or raise th
 \label{fig:dipolemomentumtransmission}
 \end{figure}
 
-Using the expansion of the free-space scalar Green function (Eq.~\eqref{scalarG}) for the space $ \left(r\!_\perp <r_\perp ^{\prime}\right) $ that 
+Using the expansion of the free-space scalar Green's function (Eq.~\eqref{scalarG}) for the space $ \left(r\!_\perp <r_\perp ^{\prime}\right) $ that 
 \begin{align}
 \frac{G_0(\br,\br')}{k^2} &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
 \left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}\nonumber\\
@@ -1237,7 +1237,7 @@ In the case that the nanofiber can be treated as a lossless medium, the contour 
 
 
 
-\section{Green function formalism for the atom-waveguide system}
+\section{Green's function formalism for the atom-waveguide system}
 So far, we have studied two basic aspects for the waveguide boundary value problem: one is the eigenmode problem, in which we studied the permitted guided waveguide modes propagating along the waveguide in absence of atoms; the other one is the single-dipole radiation problem, in which we studied the propagating modes when there is a dipole radiating electromagnetic wave around a waveguide. Now, we can combine the conclusions of the two cases studied, and to study the full radiation reaction problem of the dipole-waveguide system, in which we assume there is a guided mode incident to the waveguide, and then excites one atom outside of the waveguide which radiates light into the waveguide and interferes with the waveguide modes. 
 
 
@@ -1267,13 +1267,13 @@ As shown in the earlier sections, in general, the output field in presence of a 
 \mathbf{E}(\br) 
 &=\mathbf{E}_0(\br)+\alpha \GFT(\br,\br')\cdot \mathbf{E}_0(\br')
 \end{align}
-where we only treat the polarizability as a scalar. The only barrier for solving the output E-field is to solve the dyadic Green function.
+where we only treat the polarizability as a scalar. The only barrier for solving the output E-field is to solve the dyadic Green's function.
 
-In general, there are two strategies to solve the dyadic Green function: one is to solve the dipole emission problem numerically; the other one involves transverse mode decomposition and only needs bare fiber modes. We call the first approach as the \emph{normal} approach, and call the other one as the \emph{approximate} approach. We will describe the two approaches in the successive paragraphs. 
+In general, there are two strategies to solve the dyadic Green's function: one is to solve the dipole emission problem numerically; the other one involves transverse mode decomposition and only needs bare fiber modes. We call the first approach as the \emph{normal} approach, and call the other one as the \emph{approximate} approach. We will describe the two approaches in the successive paragraphs. 
 
 The \emph{normal} approach:
 
-We recall that the equation governs the dyadic Green function can be written as below:
+We recall that the equation governs the dyadic Green's function can be written as below:
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \GFT(\br,\br') &= -4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,
 \end{align}
@@ -1281,9 +1281,9 @@ each column of which can be expressed as
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}_i(\br,\br') &= -4\pi k_0^2\mathbf{e}_i\delta(\br-\br'), \label{eq:Gi}
 \end{align}
-where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green function of $ \GFT(\br,\br') $. Here, we used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
+where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
 
-Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an amplitude of $ -4\pi k^2 $. That is to say that once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components divided by the factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis:
+Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an amplitude of $ -4\pi k^2 $. That is to say that once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components divided by the factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis:
 \begin{equation}
 \GFT(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
   \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
@@ -1319,7 +1319,7 @@ The equivalent $ \mathbf{E} $ field has been solved in section~\ref{sec:boundrad
 
 The \emph{eigenmode decomposition} approach:
 
-In the case that the source is extremely small, the total dyadic Green function should be effectively equal to the transverse dyadic Green function. To illustrate this idea, we can expand the current source of the dipole into transverse and longitudinal parts by
+In the case that the source is extremely small, the total dyadic Green's function should be effectively equal to the transverse dyadic Green's function. To illustrate this idea, we can expand the current source of the dipole into transverse and longitudinal parts by
 \begin{align}
 \mathbf{J}(\br) &= \mathbf{J}_T(\br) + \mathbf{J}_L(\br),
 \end{align}
@@ -1349,7 +1349,7 @@ where $n=n(\br\!_\perp)=\sqrt{\varepsilon(\br\!_\perp)}$ and $k_0=\omega_0/c$. C
 \end{align}
 where $ k^2=\frac{\omega_{\mathbf{k}}^2}{c^2} $ and $ \mathbf{k} $ is an arbitrary wave vector.
 
-To use the eigenfunction expansion method to calculate the dyadic Green function, we can define a vector function
+To use the eigenfunction expansion method to calculate the dyadic Green's function, we can define a vector function
 \begin{align}
 {\mathbf{u}}_\epsilon^{(\mu)}(\br) &= n(\br) \mathbf{u}^{(\mu)}(\br),
 \end{align}
@@ -1409,7 +1409,7 @@ Hence,
 \begin{align}
 \mathbf{G}_\epsilon(\br,\br')= -4\pi\sum_{\mu} \frac{\omega_0^2\mathbf{u}_\epsilon^{(\mu)}(\br)\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br')\right]^*}{\omega_0^2-\omega_{\mathbf{k}}^2} = -4\pi n(\br) \left[\sum_{\mu} \frac{\omega_0^2 {\mathbf{u}}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2} \right]n(\br').
 \end{align}
-By the definition of $\mathbf{G}_\epsilon(\br,\br')  $, the dyadic Green function can be written by 
+By the definition of $\mathbf{G}_\epsilon(\br,\br')  $, the dyadic Green's function can be written by 
 \begin{align}
 \mathbf{G}(\br,\br')\approx -4\pi\sum_{\mu} \frac{\omega_0^2\mathbf{u}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2}.
 \end{align}
@@ -1427,7 +1427,7 @@ Meanwhile, the sum over the mode index can be written as an integral over $ \bet
 \sum_{\beta} \Leftrightarrow & \frac{L}{2\pi} \int_{-\infty}^{\infty} \mathrm{d}\beta, \quad \text{if $\beta$ includes the propagation direction},\\
 \quad \mathrm{or}\quad &\frac{L}{2\pi}\sum_{f=\pm 1} \int_0^{\infty} \mathrm{d}\beta,\quad\text{if the propagation direction is separated out}.
 \end{align}
-This  transformation comes from the consideration that, in the continuous limit, the propagating guided wave is periodic within the quantization length period $ L $ and the periodicity condition is that $ \beta_n L=2\pi n $, where $ n=1,\,2,\,\ldots $. Hence, the dyadic Green function for the guided modes (Eq.~\eqref{eq:Gganaly}) can be written as
+This  transformation comes from the consideration that, in the continuous limit, the propagating guided wave is periodic within the quantization length period $ L $ and the periodicity condition is that $ \beta_n L=2\pi n $, where $ n=1,\,2,\,\ldots $. Hence, the dyadic Green's function for the guided modes (Eq.~\eqref{eq:Gganaly}) can be written as
 \begin{align}
 \!\!\!\!\!\!\!\!\! \mathbf{G}^g(\br,\br') &= -2L\sum_{m,f=\pm 1}\int_0^\infty \mathrm{d}\beta \frac{\omega_0^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')}\\
 &= 2\omega_0^2 L\!\!\sum_{m,f=\pm 1}\int_0^\infty\!\! \mathrm{d}\omega_\beta \frac{\mathrm{d}\beta}{\mathrm{d}\omega_\beta} \frac{\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{(\omega_0\! +\!\omega_\beta) (\omega_0\!-\!\omega_\beta)} e^{i\!f\!\beta(z\!-\!z')+im(\phi\!-\!\phi')}\label{eq:eigGFintegral}\\
@@ -1441,7 +1441,7 @@ By using the relation that
 k_0 &=\frac{\omega_0}{c}\\
 n_g&=\sqrt{\varepsilon_g}= \frac{c}{v_g}
 \end{align}
-the dyadic Green function for the guided modes can also be written as
+the dyadic Green's function for the guided modes can also be written as
 \begin{align}
 \mathbf{G}^g(\br,\br') &\approx i\pi n_gL\sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')}.
 \end{align}
@@ -1454,11 +1454,11 @@ The numerical comparison of the two approaches has been done and confirmed that 
 \begin{figure}
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.85\textwidth]{../media/Figs/integratepath_GF}}
-\caption[Integral paths for the dyadic Green function calculations when loss is negligible.]{Integral paths for the dyadic Green function calculations. Part (a) is the integral path for the dipole's free-space field contribution calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (b) is the integral path for the reflected and transmitted field contributions calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (c) is the integral path for the dyadic Green function calculation using the eigenmode decomposition method (see Eq.~\eqref{eq:eigGFintegral}). The integral paths on the left-hand-side (in blue) indicate the backward propagating contributions, while the right-hand-side (in red) parts corresponding to the forward propagating contributions. For the eigenmode decomposition method in part (c), if one choose to use $ f=\pm 1 $ to indicate the propagation direction, then only the $ \beta>0 $ portion of integral path will be applied. }
+\caption[Integral paths for the dyadic Green's function calculations when loss is negligible.]{Integral paths for the dyadic Green's function calculations. Part (a) is the integral path for the dipole's free-space field contribution calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (b) is the integral path for the reflected and transmitted field contributions calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (c) is the integral path for the dyadic Green's function calculation using the eigenmode decomposition method (see Eq.~\eqref{eq:eigGFintegral}). The integral paths on the left-hand-side (in blue) indicate the backward propagating contributions, while the right-hand-side (in red) parts corresponding to the forward propagating contributions. For the eigenmode decomposition method in part (c), if one choose to use $ f=\pm 1 $ to indicate the propagation direction, then only the $ \beta>0 $ portion of integral path will be applied. }
 \label{fig:integralpaths}
 \end{figure}
 
-As shown in an earlier section, the guided and radiation modes contribution to the dyadic Green function can be identified through the specific choice of integral paths. In Fig.~\ref{fig:integralpaths}, part (a) shows the integral path to calculate the dipole free-space contribution which does not yield guided mode contribution to the total dyadic Green function. Part (b) of the figure shows the loop and real-valued integral paths of the guided and radiation mode divisions to the reflected and transmitted field components. The $ \mathrm{Re}(\beta)<0 $ and $ \mathrm{Re}(\beta)>0 $ parts correspond to the backward and forward propagating contributions, respectively. Part (c) of the figure indicates the integral path using the eigenmode decomposition method in the case that the sign of $ \mathrm{Re}(\beta) $ indicates the propagation directions. Depending on the propagation directions, we should choose the right integral paths for the corresponding methods adopted, and different methods should yield the same result. 
+As shown in an earlier section, the guided and radiation modes contribution to the dyadic Green's function can be identified through the specific choice of integral paths. In Fig.~\ref{fig:integralpaths}, part (a) shows the integral path to calculate the dipole free-space contribution which does not yield guided mode contribution to the total dyadic Green's function. Part (b) of the figure shows the loop and real-valued integral paths of the guided and radiation mode divisions to the reflected and transmitted field components. The $ \mathrm{Re}(\beta)<0 $ and $ \mathrm{Re}(\beta)>0 $ parts correspond to the backward and forward propagating contributions, respectively. Part (c) of the figure indicates the integral path using the eigenmode decomposition method in the case that the sign of $ \mathrm{Re}(\beta) $ indicates the propagation directions. Depending on the propagation directions, we should choose the right integral paths for the corresponding methods adopted, and different methods should yield the same result. 
 
 For the decay rate calculation, both forward and backward propagation contributions should be averaged, or just include one direction.  
 
@@ -1499,7 +1499,7 @@ v_g&=\frac{P}{W}.
 The physics interpretation of group and phase velocity of a waveguide mode can be found in the notes on \emph{Group velocity of the nanofiber}. The effective zig-zag ray model is also described in the notes for understanding the mechanism of group and phase index of refractions. For our nanofiber case, the $ D_2 $ transition line of Cs atoms does not have a strong enhancement of group index of refraction for the guided mode, compared to the phase index of refraction. The $ D_1 $ line has a relatively strong enhancement of group index since the wave can penetrate into the clad much deeper compared to the $ D_2 $ line case. 
 
 \section{Phase shift and polarizability transformation}
-Using the results for the dyadic Green function of the guided modes, one can write the output electric field due to the guided modes (from Eq.~\eqref{eq:EoutG}) as 
+Using the results for the dyadic Green's function of the guided modes, one can write the output electric field due to the guided modes (from Eq.~\eqref{eq:EoutG}) as 
 \begin{align}
 \mathbf{E}(\br) & = \mathbf{E}_0(\br) -4\pi k_0^2 \alpha \mathbf{G}^g(\br,\br')\cdot\mathbf{E}_0(\br'),
 \end{align}
@@ -1523,7 +1523,7 @@ C_{mf} &= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\math
 &= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\\
 &= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^{\!\!*}(r\!_\perp)\!\cdot\! \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(r^\prime\!\!_\perp)e^{i\beta_0(z'-fz)+i(\phi'-m\phi)}.
 \end{align}
-Using the transverse mode approximation of the dyadic Green function, these coefficients become
+Using the transverse mode approximation of the dyadic Green's function, these coefficients become
 \begin{align}
 C_{mf} &= i\pi k_0 n_g\alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot\!\!\!\!\!\! \sum_{f',m'=\pm 1}\!\!\!\! \left[\mathbf{u}_{m'}^{f'}(\mathbf{r}\!_\perp){\mathbf{u}^{f'}_{m'}}^*(\mathbf{r}^\prime\!_\perp) \right]\!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\nonumber\\
 &\quad\quad\quad e^{if'\beta_0(z-z')} e^{i\beta_0(z'-fz)}\\
@@ -1734,7 +1734,7 @@ N_{min} &= \sqrt{\frac{2A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
 \chapter{Fundamental eigenmodes of an optical nanofiber}
 To simplify the problem of light scattering in a nanofiber trapped atoms system, we treat the atoms as a dipole oscillator moving in a classical electrical field $ \mathrm{E}_{g}(\br,t) $ guided along the nanofiber, and re-emit a scattered optical field described by $ \mathrm{E}^s(\br,t) $ to interfere with the initial guided optical field. Formally, the total optical field $ \mathrm{E}(\br,t)= \mathrm{E}^g(\br,t)  + \mathrm{E}^s(\br,t) $ implies a change of index of refraction and decoherence\index{decoherence} due to the presence of the atoms. 
 
-In the case of a nanofiber with a sub-wavelength radius, the high-order modes of the nanofiber can hardly be supported, which only leaves over the HE11 mode\index{HE11 mode} propagating along the nanofiber. Assuming the incident light is quasi-linearly polarized, the Cartesian components of the bound optical field are given, for $ r_\perp>a $ (outside the fiber), by~\cite{Lacroute2012,LeKien2004}
+In the case of a nanofiber with a sub-wavelength radius, the high-order modes of the nanofiber can hardly be supported, which only leaves over the HE11 mode\index{mode!HE11 mode@HE$_{11}$ mode} propagating along the nanofiber. Assuming the incident light is quasi-linearly polarized, the Cartesian components of the bound optical field are given, for $ r_\perp>a $ (outside the fiber), by~\cite{Lacroute2012,LeKien2004}
 \begin{subequations}
 \label{Ertrga}
 \begin{align}
