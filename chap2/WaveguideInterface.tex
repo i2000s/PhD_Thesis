@@ -193,28 +193,293 @@ e^{i\boldsymbol{\chi}\cdot\hat{\mathbf{S}} }\ket{\phi},
 \end{align}
 where the vector $ \boldsymbol{\chi}=(\chi_0,\chi_1,\chi_2,\chi_3) $ are the rotation angles around $ S_i (i=1,2,3) $ axes and the photon number attenuation on $ S_0 $. The strength and details of the atom-light interactions hide in the $ \boldsymbol{\chi} $ vector. The key to designing particular polarization-based interactions lay on the phase response of particular waveguide modes. With this brief introduction of the polarization rotations and waveguide setups, we will dive into the beauty of atom-light interactions and inspire non-classical applications in the rest of the dissertation.
 
-In the next section, we will step into the dispersive response of the waveguide modes due to the presence of the atoms from the perspective of Green's function approach.
+In the next section, we will step into the properties of the bare waveguide modes and the dispersive response of the waveguide modes due to the presence of the atoms from the perspective of Green's function approach.
 
-\section{Photon emission in the perspective of Green's function method}
-
-We assume that the waveguide is a infinite long cylinder with a radium of $ a $ (in our cases, $ a<\lambda $, where $ \lambda $ is the wavelength of the laser beam). The laser beam propagating in the waveguide generates an electrical field given by
-\begin{equation}
-\mathbf{E}_0(\br,t)=\boldsymbol{\mathcal{E}}_0(\br)e^{-i\omega t} %+\frac{1}{2}\mathrm{c.c.}
-=\mathcal{E}_0(\br)\mathbf{u}_0(\br)e^{-i\omega t}, %+\frac{1}{2}\mathrm{c.c.},
-\label{Ert0}
-\end{equation}
-where $\omega$ is the angular frequency and $\boldsymbol{\mathcal{E}}_0(\br)=\mathcal{E}_0\mathbf{u}_0$ is the positive-frequency electric field envelope,
-with $\mathcal{E}_0(\br)$ and $\mathbf{u}_0(\br)$ being the field amplitude and the polarization vector at $ \br $, respectively.
-In general, $\mathcal{E}(\br)$ is a complex scalar and $\mathbf{u}(\br)$ is a complex unit vector. 
-
-We assume the waveguide is a linear medium with no absorption to the traveling wave. The refractive intrinsic index\index{refractive index} of the waveguide can be given by
+\section{Dispersive light response in the perspective of Green's function approach}
+\subsection{Eigenmodes of a dielectric waveguide}
+We assume that the waveguide we are going to study is infinitely long and has a uniform profile of refractive index through the fiber axis. For a nanophotonic waveguide that can trap atoms using its evanescent field, its dimension of the cross-section is smaller than the wavelength $ \lambda $ of the trapping field (typically, a quasi-monochromatic laser beam operating around $ \lambda=894 $nm or $852  $nm which are the D1 and D2 lines of the cesium atoms considered in the numerical simulations later in this dissertation). 
+We assume the waveguide is a linear medium with no absorption to the traveling wave. The refractive bulk index\index{refractive index} of the waveguide can be given by
 \begin{align}
-n_0(\br) = \begin{cases} 
-n_1=1.45, &\quad r_\perp \leq a,\\
-n_2=1, &\quad r_\perp >a,
+n_0(\br_\perp) = \begin{cases} 
+n_1(\br_\perp), &\quad \text{core region},\\
+n_2(\br_\perp), &\quad \text{clad},
 \end{cases} 
 \end{align}
-where we have set the $ z $-axis to be the symmetric center of the waveguide and $ r_\perp =\sqrt{x^2+y^2} $. We would like to determine the form of the scattered field $ \boldsymbol{\mathcal{E}}_s(\br) $, and the total field $ \boldsymbol{\mathcal{E}}(\br)=\boldsymbol{\mathcal{E}}_0(\br)+\boldsymbol{\mathcal{E}}_s(\br) $. Formally, the total time-dependent electrical field can be rewritten as 
+where $ n_1>n_2 $, $ \br_\perp=(x,y) $ is the coordinate in the transverse plane of the waveguide, and the index of refraction defined above applies to all transverse slices along the $ z $-axis which is the waveguide axis along the light propagation direction.
+
+For a typical optical nanofiber as an example, it has a cylindrical cross-section with a radius $ a $. We use $ a=225 $nm, $ n_1=1.4496 $ as a constant in the core region ($ r_\perp\le a $) and $ n_2=1.0000 $ in vacuum clad region ($ r_\perp>a $), where we have set the $ z $-axis to be the symmetric center of the nanofiber and $ r_\perp =\sqrt{x^2+y^2} $.
+Another nanophotonic waveguide we are going to utilize is a \SWG, which has a square cross-section of the waveguide core with a width of $ w=300 $nm, $ n_1=2.0 $ for an ideal Si$_3$N$_4$ core medium $ (|x|\le w/2,|y|\le w/2) $, and the clad is also vacuum. 
+In both cases, only the fundamental guided modes are allowed to propagate through the waveguide. That is the allowed guided modes have a single propagation constant\index{propagation constant} or projected wavenumber $ \beta_0 \,(n_1k_0<\beta_0<n_2k_0)$ with wavenumber\index{wave number} $k_0=2\pi/\lambda=\omega_0/c $, where $\omega_0$ is the angular frequency of the electric field, and $ c $ is the speed of light in vacuum. 
+A monochromatic electric field propagating in such a waveguide can be given by~\cite{Jackson1975}
+\begin{equation}
+\mathbf{E}_0(\br,t)=\boldsymbol{\mathcal{E}}_0(\br_\perp)e^{i(b\beta_0 z-\omega_0 t)} %+\frac{1}{2}\mathrm{c.c.}
+=\mathcal{E}_0\mathbf{u}_0(\br_\perp)e^{i(b\beta_0 z-\omega_0 t)}, %+\frac{1}{2}\mathrm{c.c.},
+\label{Ert0}
+\end{equation}
+where $ b=\pm $ indicating the propagating direction, and $\boldsymbol{\mathcal{E}}_0(\br_\perp)=\mathcal{E}_0\mathbf{u}_0(\br_\perp)$ is the positive-frequency electric field envelope,
+with $\mathcal{E}_0$ determining the field amplitude and $\mathbf{u}_0(\br_\perp)$ as the polarization vector at $ \br_\perp=(x,y)=(r_\perp,\phi) $ in either Cartesian or cylindrical coordinate system.
+In general, $\mathcal{E}$ is a complex scalar constant and $\mathbf{u}(\br_\perp)$ is a complex vector normalized to the energy flux or power across a transverse plane. The spatial dependent part of the field $ \mathbf{u}(\br_\perp)e^{ib\beta_0 z} $ can be written as a linear combination of the \emph{eigenmodes}\index{eigenmode} that are supported by the waveguide.
+The fundamental modes of the nanofiber are the \HE modes with the degeneracy of propagation directions $ b=\pm $ and polarizations of two labeled by $ p $. For the single-mode \SWG, the quasi-\TE and the quasi-\TM modes together with degeneracy of propagation directions and polarizations of two. We use subscript $ \mu={j,\beta,p} $ to indicate a generic guided eigenmode, $ \mathbf{u}_\mu (\br) $, where $ j=1 $ and $ \beta=\beta_0 $ for the single-mode waveguides. Those eigenmodes satisfy the orthogonality condition,
+\begin{align}
+\int d^2 \mbf{r}_\perp \, n^2(r_\perp)\mathbf{u}^*_\mu (\br_\perp) \cdot \mathbf{u}_{\mu'} (\br_\perp)\big|_{\beta = \beta'} = \delta_{j,j'}\delta_{p,p'},
+\end{align}
+and have units $1/\sqrt{A}$, where $ A $ is area~\cite{LeKien2014}.
+The degeneracy of polarizations of the \HE modes allow one to write the eigenmodes of the nanofiber on arbitrary polarization basis. Two convenient guided-mode bases are the quasilinear and quasicircular polarization modes. In Figs.~\ref{fig:Modes_Rot45HV_fiber} and~\ref{fig:Modes_Rot45LR_fiber}, we show the decomposition of a diagonally polarized $ D $-mode of a nanofiber in the $ HV $- and $ LR $-bases, respectively. From the figures, if we place an atom on the $ x $-axis, we find that the $ H $-mode has a much stronger intensity at the atom position than the $ V $-mode component. This property of \emph{mode isotropy}\index{isotropy of waveguide modes} on azimuthal directions is intrinsic for the waveguides but doesn't exist in free propagating fundamental Gaussian laser beams that have been typically used in atom-light coupling experiments. In contrast, the decomposed $ R $ and $ L $ modes at the atom position have the same intensity. As we will see later, how to choose a good mode basis based on the atomic internal structure and fully utilize the isotropic property of the waveguide modes is the key to optimally designing some quantum operations on the atoms for wide applications, which yields great advantages of the nanophotonic waveguides over the atom-light quantum interface in vacuum. For now, we have to hold our breath to pave some necessary foundations.
+
+\begin{figure}
+\centering\makebox[\textwidth]{
+\includegraphics[width=12cm]{../media/Figs/Modes_Rot45HV}}
+\caption[Mode decomposition of an input quasilinear polarized laser beam in the $ |H\rangle $ and $ |V\rangle $ mode basis.]{Mode decomposition of an input quasilinear polarized $ D $ ($ \ket{\Psi_\phi}=\ket{D} $) mode. The $ D $-mode is formed by shining an input laser beam polarized along the bisection between $ x $- and $ y $-axes. It is equivalent to have one $ H $ ($ |H\rangle $) mode and one $ V $ ($ |V\rangle $) mode with input polarized along the $ x $-axis and $ y $-axis, respectively. Shown in color are the equal-potential lines of the intensities of the modes. The dark dot indicates an possible atom position on the $ x $-axis, where the intensity of the $ H $-mode is much larger than the $ V $-mode.  }\label{fig:Modes_Rot45HV_fiber}
+\end{figure}
+
+\begin{figure}
+\centering\makebox[\textwidth]{
+\includegraphics[width=12cm]{../media/Figs/Modes_Rot45LR}}
+\caption[Mode decomposition of an input quasilinear polarized laser beam in the $ L $ ($ |L\rangle $) and $ R $($ |R\rangle $) mode basis.]{Same as Fig.~\ref{fig:Modes_Rot45HV_fiber} but decomposed into the $ LR$-mode basis. At the dark dot's position, the $ L $ and $ R $ modes have the same intensity.}\label{fig:Modes_Rot45LR_fiber}
+\end{figure}
+
+The quasi-\TE and quasi-\TM modes are eigenmodes of the \SWG with orthogonal polarizations and can be adiabatically connected to the $ x $- and $ y $-polarized linear free-space light inputs. Therefore, we can define the quasi-\TE and quasi-\TM modes as the $ H $ and $ V $ modes for the \SWG geometry. They have similar anisotropic properties as the fiber modes do.
+
+The eigenmodes of a waveguide, in complete cases, should include both the guided (bounded) and radiative (unbounded or unguided) solutions, based on the corresponding waveguide boundary condition problem governed by the Maxwell equations~\cite{Jackson1975}. Below, we will only sketch out the condition to divide the guided and radiative modes using an analogy to the \sch equation, which will be useful to understand the radiation decompositions in sections follow.
+
+\subsubsection{Guided and radiative modes}
+If we want to fully calculate the eigenmodes of a waveguide, we need to consider both the electric and magnetic fields, the spatial parts of which are governed by the wave equations
+\begin{align}\label{EBz}
+\left(\nabla^2 +k^2 \varepsilon(\br_{\perp})\right) \begin{pmatrix}
+\mathcal{E}_z(\br)\\
+\mathcal{B}_z(\br)
+\end{pmatrix} = 0,
+\end{align}
+where $ \varepsilon=n^2 $ is the permittivity of the medium and $ k $ is the wavenumber of the modes.
+Notice that we are working in the cylindrical coordinate system, and only concentrate on the $ z $-component of the fields since all the other components can be expressed in terms of the $ z $-components of the fields (see detailed derivations in Appendix~\ref{MWE:components}). 
+
+We use an ansatz that 
+\begin{align}
+\mathcal{E}_z (r_\perp, \phi, z) &= \psi(r_\perp,\phi) e^{i\beta z}\\
+\mathcal{B}_z (r_\perp,\phi,z) &= \zeta(r_\perp,\phi) e^{i\beta z}.
+\end{align}
+Substituting the above into Eq.~\ref{EBz}, we obtain
+\begin{align}\label{psizeta}
+\left(\nabla^2_\perp +(k^2 \varepsilon(\br_{\perp})-\beta^2 )\right) \begin{pmatrix}
+\psi(r_\perp,\phi)\\
+\zeta(r_\perp,\phi)
+\end{pmatrix} = 0.
+\end{align}
+Now, the problem of solving a three dimensional wave equation for $ \mathcal{E} (r_\perp, \phi, z) $ 
+and $ \mathcal{B} (r_\perp, \phi, z)$ turns into a problem of solving a two dimensional differential 
+(mode) equation for $ \psi(r_\perp,\phi) $ and $ \zeta(r_\perp,\phi) $. 
+
+There are two special cases for the modes. If $ \psi=0 $ as a constant, which means there is no $ z $-component of the electrical field, then the propagating mode is called a TE mode\index{mode!TE mode}. Similarly, if $ \zeta=0 $ as a constant, which corresponds to zero magnetic $ z $-component, 
+then this mode is called a TM mode\index{mode!TM mode}. However, in many waveguide geometries including the nanofiber case with a cylindrical symmetry, the modes cannot be grouped into TE and TM guided waves. In general, the modes with 
+both electrical and magnetic nonzero $ z $-components are known as EH and HE hybrid 
+modes\index{mode!HE mode}~\cite{Snyder1983Optical}--the second letter in the names indicates the field that has the dominance of the longitudinal component.
+
+We focus on the electrical part for now. The magnetic field can be solved similarly. Eq.~\ref{psizeta} gives
+\begin{align}\label{eigenpsi}
+[\nabla^2_\perp + k^2\varepsilon(r_\perp)] \psi(r_\perp, \phi) = \beta^2\psi(r_\perp,\phi).
+\end{align}
+Compared to the time-independent \sch equation
+\begin{align}
+\left[\frac{\hat{P}^2}{2m}+V(\hat{\mathbf{r}}_\perp) \right] \psi(\br_\perp)&= E\psi(\br_\perp)\\
+\text{or}\quad \left[ \nabla^2_\perp -V(r_\perp) \right] \psi (r_\perp, \phi) &= -E\psi(r_\perp,\phi),
+\end{align}
+we can conclude that the mode equation (Eq.~\ref{eigenpsi}) is basically an eigenvalue equation for the \sch wavefunctions if we make the replacement
+\begin{align}
+V_{ef\!f}=-k^2\varepsilon(\br\!_\perp) &\sim V(\br\!_\perp)\\
+-\beta^2 &\sim E.
+\end{align}
+With these analogies, we can find that the guided modes dictated by the wave equation should correspond to the bounded eigenstates of the trapping potential problem obeying to the \sch equation; likewise, the radiative modes of the wave equation correspond to unbounded states in the scattering problem following the \sch equation. In details, for the time-independent \sch problem, if $ 0<E\leq V $, then the eigenstates are bounded and have discrete solutions with respect to $ E $; if $ E>V $, then the resulted states is unbounded and have continuous solutions of energy. For the waveguide's eigenmodes, similarly, we can also use the relative position of $ V_{ef\!f} $ and $ -\beta^2 $ to classify the bound and radiation modes. 
+
+Let us consider the concrete case of a nanofiber with step-function-like permittivity as a function of $ r_\perp $. The analogy of trapping potentials of the wave equation is illustrated in Fig.~\ref{Figs/scatteredmode}. In the regime $ n_2k<\beta<n_1k $, the eigenmodes have discrete solutions with respect to $ \beta $, which yield $ \beta=\beta_0 $ for a single-mode fiber; in the $ 0<\beta<n_2k $ regime, the eigenmode solutions are continuous with respect to $ \beta $. Similar result applies to the \SWG case. 
+
+%\scalefig{Figs/scatteredmode}{0.8}{Bound and unbound states for the nanofiber eigenvalue 
+%problem. $ \varepsilon(r\!_\perp)=\varepsilon_{f} =n_1^2$ if $ r_\perp < a $; otherwise, $\varepsilon
+%(r\!_\perp) =1 $. The parameter $ a $ is the radium of the nanofiber. } 
+
+\begin{figure}
+\centering\makebox[\textwidth]{
+\begin{tikzpicture}[scale=1,cap=round]
+% Configurable parameters
+\def\k{1.5cm}
+\def\eps{1.5*1.7cm}
+\def\betasq{1.5*1.4cm}
+\def\a{2cm}
+\def\maxr{5cm}
+
+% Styles
+\tikzstyle{axes}=[arrows={-latex}]
+\tikzstyle{auxline}=[densely dashed]
+\tikzstyle{important line}=[very thick]
+
+% Coordinates and points.
+\coordinate (O) at (0,0);	% Origin.
+\coordinate (A) at (\a,0);	% The surface distance to the axis of the fiber.
+\coordinate (B) at (0,-\eps);	% -k^2\epsilon at the center of the fiber.
+\coordinate (C) at (\a,-\eps);	% -k^2\epsilon on the surface of the fiber.
+\coordinate (D) at (0,-\betasq);	% -\beta^2 point at the center of the fiber.
+\coordinate (E) at (\a*1.3,-\betasq);	% -\beta^2 point at the end of the maximum r.
+\coordinate (F) at (0,-\k);	% -k^2 point at the center of fiber.
+\coordinate (G) at (\a,-\k); 	% -k^2 point on the surface of the fiber.
+\coordinate (H) at (\maxr,-\k); 	% -k^2 point at the end of r.
+
+% The graphic
+ % help grid
+% \draw[style=help lines,step=0.5cm] (-2.0,-2.0) grid (2.0,2.0);
+  
+% Draw axes and marks.
+\draw [axes] (-1cm, 0) -- (\maxr,0) node [above] {$r_{\perp}$};
+\draw [axes] (0, -1.2*\eps) -- (0, 1.0cm) node [right] {$V(r_{\perp})=-k^2n^2(r_{\perp})=-\beta^2$};
+\draw (O) node [above left] {$O$};
+\draw[thin] (A) -- (\a,3pt) node[anchor=south] {$a$}; 
+\draw (B) -- (-3pt,-\eps) node[anchor=east] {$-k^2n_1^2$};
+\draw (D) -- (-3pt,-\betasq) node[anchor=east] {$-\beta_0^2$};
+\draw (F) -- (-3pt,-\k) node[anchor=east] {$-k^2n_2^2$};
+
+% Draw potential lines.
+\draw[important line] (B) -- (C);
+\draw[important line] (C) -- (G);
+\draw[important line] (G) -- (H);
+\draw[auxline] (D) -- (E) node[right] {Guided modes};
+\draw[auxline,very thin] (F) -- (G);
+\draw[auxline,very thin] (A) -- (G);
+
+% Other labels and auxlines.
+%\draw[<->] (\a*1.25,0) -- (\a*1.25,-\k) node[midway,right] {Scattered modes};
+\draw (\a*1.2,-\k/2) node[right] {Radiative modes};
+\draw[<-] (\a*1.8,0) -- (\a*1.8,-0.5cm);
+\draw[->] (\a*1.8,-1cm) -- (\a*1.8,-\k);
+\draw[<-] (\a*1.95,-\k) -- (\a*1.95,-\k-0.4cm);
+\draw[->] (\a*1.95,-\k-0.8cm) -- (\a*1.95,-\eps);
+\draw[auxline] (\a*1.85,-\eps) -- (\a*2.08,-\eps);
+\end{tikzpicture}
+}
+\caption[Trapping potential analogy of the bounded and unbounded modes of a nanofiber.]{Bound and unbound states for the fiber eigenvalue problem. $ \varepsilon(r\!_\perp)=\varepsilon_{f} =n_1^2$ if $ r_\perp < a $; otherwise, $\varepsilon(r\!_\perp) =1 $. The parameter $ a $ is the radius of the nanofiber.}
+\label{Figs/scatteredmode}
+\end{figure}
+
+The division of guided and radiative modes based on the value of $ \beta $ can also be roughly understood in the perspective of geometric optics as elucidated in Fig.~\ref{fig:Fibermodes}. We regard $ \beta $ as the $ z $-projected wave number of a wave vector of the light ray on $ \vec{k} $ direction. If the ray is incident in an angle that satisfies the total internal reflection condition (in our case, $ k_0<\beta<n_1k_0 $ with $ n_2=1 $), the corresponding modes are guided; otherwise, the modes are unguided with the light leaking out and decaying along $ z $.
+
+\begin{figure}
+\centering\makebox[\textwidth]{
+\begin{tikzpicture}[scale=1,cap=round]
+% Configurable parameters
+\def\fiberrad{1cm}	% Radius of the nanofiber.
+\def\comprad{0.45cm}	% Compressed radius of the nanofiber in the view angle.
+\def\fiberleftx{0}	% The x-coordiante of the center of the left surface of the fiber.
+\def\fiberlefty{0}	% The y-coordiante of the center of the left surface of the fiber.
+\def\fiberlength{6.6cm} % The length of the fiber.
+
+% Styles
+\tikzstyle{axes}=[arrows={-latex}]
+\tikzstyle{auxline}=[densely dashed]
+\tikzstyle{important line}=[thick]
+\tikzstyle{dot}=[circle,inner sep=1pt,fill,label={#1},name=#1]
+
+% Coordinates and points.
+\coordinate (O) at (0,0);	% Origin.
+\coordinate (LO) at (\fiberleftx,\fiberlefty); % Center of the left-side surface of the nanofiber.
+\coordinate (RO) at (\fiberleftx+\fiberlength,\fiberlefty); % Center of the right-side surface
+\coordinate (A) at ({\fiberleftx},{\fiberlefty+\fiberrad});	% Top-left point of the nanofiber.
+\coordinate (B) at ({\fiberleftx+\fiberlength},{\fiberlefty+\fiberrad});	% Top-right point of the nanofiber.
+\coordinate (C) at ({\fiberleftx+\fiberlength},{\fiberlefty-\fiberrad});	% Bottom-right point of the fiber.
+\coordinate (D) at ({\fiberleftx},{\fiberlefty-\fiberrad});	% Bottom-left point of the nanofiber.
+
+% The graph.
+% help grid
+% \draw[style=help lines,step=0.5cm] (-2.0,-2.0) grid (2.0,2.0);
+
+% Draw the fiber.
+\begin{scope} 
+    % Outer edge.
+    %\fill[left color=purple!50!black,right color=purple!50!black,middle 
+%color=purple!50,shading=axis,opacity=0.25] (A) -- (B) arc (90:270:{\comprad} and {\fiberrad}) -- (D) arc 
+%(270:90:{\comprad} and {\fiberrad});
+    % Right-side surface.
+    %\fill[top color=purple!90!,bottom color=purple!2,middle color=purple!30,shading=axis,opacity=0.25] 
+%(RO) circle [x radius={\comprad}, y radius = {\fiberrad}];
+    % Draw lines of all edges.
+    \draw (A) -- (B);
+    \draw  (RO) circle [x radius = {\comprad}, y radius =  {\fiberrad}];
+    \draw (C) -- (D) arc (270:90:{\comprad} and {\fiberrad}); 
+    \draw[densely dashed] (A) arc (90:-90:{\comprad} and {\fiberrad});
+\end{scope}
+
+% Draw the guide mode wave vector and propagation lines.
+% First part of the ray: up-solid line.
+\draw[red] (O)--(2.0*\fiberrad,\fiberrad);
+%\draw[red,decoration={ markings,  % This schema allows for fine-tuning the arrows.
+%      mark=at position 0.5 with {\arrow{latex'}}, 
+%      mark=at position 0.82 with {\arrow{latex'}}},postaction={decorate}] (O) -- (2.0*\fiberrad,\fiberrad)-- (6.0*\fiberrad,-\fiberrad);
+% The penetration part of ray: dashed line.
+\draw[red,densely dotted] (2.0*\fiberrad,\fiberrad) -- (2.3*\fiberrad,1.1732*\fiberrad) -- (2.6*\fiberrad,\fiberrad);
+% The reflected part: solid downarrow.
+\draw[red,decoration={ markings,  % This schema allows for fine-tuning the arrows.
+      mark=at position 0.2 with {\arrow{latex'}}, 
+      mark=at position 0.6 with {\arrow{latex'}}},postaction={decorate}] (2.6*\fiberrad,\fiberrad)-- (6.6*\fiberrad,-\fiberrad);
+% The ruler part.
+\draw[important line,-latex'] (O) --(27:1) node[below,xshift=8,yshift=5] {$ \vec{k} $};
+\draw[auxline] (27:1) -- ({cos(27)},-1.5)  node [below] {$\beta_0$};
+
+% Draw radiation modes.
+% Radiation ray 1:
+\draw[blue,decoration={ markings,  % This schema allows for fine-tuning the arrows. 
+      mark=at position 0.95 with {\arrow{latex'}}},postaction={decorate}] (O) -- (0.5,\fiberrad) -- (1.5,\fiberrad*1.1);
+\draw[-latex'] (O)--(63.5:1);
+\draw[auxline] (63.5:1) -- ({cos(63.5)},-2);
+% Radiation ray 2:
+\draw[blue,decoration={ markings,  % This schema allows for fine-tuning the arrows. 
+      mark=at position 0.95 with {\arrow{latex'}}},postaction={decorate}] (O) -- (0.4,\fiberrad) -- (1.4,\fiberrad*1.4);
+\draw[-latex'] (O)--(68.5:1);
+\draw[auxline] (68.5:1) -- ({cos(68.5)},-2);
+% Radiation ray 3:
+\draw[blue,decoration={ markings,  % This schema allows for fine-tuning the arrows. 
+      mark=at position 0.95 with {\arrow{latex'}}},postaction={decorate}] (O) -- (0.25,\fiberrad) -- (0.9,\fiberrad*1.9);
+\draw[-latex'] (O)--(76:1);
+\draw[auxline] (76:1) -- ({cos(76)},-2);
+% Radiation ray 3:
+\draw[blue,decoration={ markings,  % This schema allows for fine-tuning the arrows. 
+      mark=at position 0.95 with {\arrow{latex'}}},postaction={decorate}] (O)-- (0,2*\fiberrad);
+\draw[-latex'] (O) -- (0,\fiberrad);
+% Draw dots inbetween.
+\draw[dotted] ([shift=(26:1)] 0.2,1.0*\fiberrad) arc (26:45:1);
+\draw[dotted] ([shift=(60:1)] 0.1,1.0*\fiberrad) arc (60:89:1);
+
+% Labels and denotes.
+\draw (O) node[dot] {};
+\draw (O) node[left] {O};
+\draw[auxline,-latex] (O) -- (\fiberlength*1.0,0) node [above] {$ z $};	% Z axis line.
+\draw[auxline] (0,\fiberrad) -- (0,-2);
+\draw[important line,-latex] (0,-2) node[left] {$ 0 $}--(2.5,-2) node[right] {$ k_z $};% kz axis.
+\draw (0,-2) -- (0,-2.08);
+\draw (0.5,-2) -- (0.5,-2.08) node [anchor=north] {$k_0$};
+\draw ({cos(27)},-2) -- ({cos(27)},-2.08);
+\draw (1.1,-2) -- (1.1,-2.08) node [below right,xshift=-5] {$k_0n_1$};
+\draw (3.35,-0.5) node[red] {Guided modes};	% Guided modes label.
+\draw (2.7,1.7*\fiberrad) node[blue] {Radiative modes};	% Radiative modes label.
+\end{tikzpicture}
+}
+\caption[Fiber modes classified through the $ z $-component of the wave vector, $ \beta $.]{Fiber modes classified through the $ z $-component of the wave vector, $ \beta $. We have assumed $ n_2=1 $ for a vacuum clad. From the diagram, we define $ \beta $ is the $ z $-projection of $ \vec{k} $, that is $ \beta=k\cos\theta $, where $ k $ is the length of the wave vector following the ray-trace of the light propagating in all directions, and $ \theta $ is the angle of the ray of light to the $ z $-axis. We see that when $ \theta $ is small or $ \beta $ is longer than some value, the light can satisfy the total internal reflection condition and hence the corresponding mode solution can be guided through the fiber; if $ \theta $ is large or $ \beta $ is small, then the light cannot satisfy the total internal reflection condition, and hence the corresponding modes are unguided or radiative leaking out of the fiber.}
+\label{fig:Fibermodes}
+\end{figure}
+
+\subsubsection{Solving the eigenmodes for a nanofiber and \SWG}
+
+To calculate the eigenmodes of a dielectric waveguide, one may find analytical solutions if the waveguide has a solvable symmetry, or will have to rely on numerical tools in most general cases by conquering the boundary condition problem with the homogeneous Maxwell equations.  
+The solution of the electric field and the fundamental eigenmodes of a cylindrical fiber have been solved in previous works~\cite{Snyder1983Optical,LeKien2014}. We provide a brief review of the method to solve the fiber problem in Appendix~\ref{chap:fibereigenmodes} with solutions of the \HE eigenmodes and its group velocity. The radiative mode solution is less used in this dissertation and can be found in, for example, Ref.~\cite{LeKien2014}. 
+
+The numerical method we used to solve the eigenmodes for the \SWG and general geometries is called \emph{Boundary Element Method}\index{Boundary Element Method} or BEM for homogeneous Maxwell equations~\cite{Fallahkhair2008}. This method divides the regions close to waveguide boundaries into finite grids to solve the wave equations by matching the boundary conditions on the grids. The wave equations are discretized into a set of linear equations. The eigenmodes are found by solving the eigenvalue problem defined by the boundary condition in the frequency domain. It is fairly efficient when we have a fixed frequency point. Checked the accuracy of the BEM calculation with the nanofiber case since we know the analytical solution, which is great in the regime we care about. Then we use BEM to solve the eigenmodes for the \SWG geometry. We will demonstrate the solved eigenmodes of the \SWG when we need it.
+
+\subsection{Green's function of a dielectric waveguide}
+In this section, we will consider the light response in presence of a photon emitter outside of a dielectric waveguide. 
+
+Formally, the total electric field of the light can be written as 
+\begin{align}
+\boldsymbol{\mathcal{E}}(\br)=\boldsymbol{\mathcal{E}}_0(\br)+\boldsymbol{\mathcal{E}}_s(\br) ,
+\end{align}
+where $ \boldsymbol{\mathcal{E}}_0(\br) $ is the bare waveguide field discussed in the last section, and $ \boldsymbol{\mathcal{E}}_s(\br) $ is the scattered field due to the presence of the external photon emitter or the source term.
+In general, it's difficult to determine the scattered field $ \boldsymbol{\mathcal{E}}_s(\br) $ with a dielectric boundary condition. That is where the Green's function approach can help us solve the problem by treating the external photon emitter as an integral of unit dipole sources (essentially, as $ \delta $ functions) and solving a simpler unit dipole response function that is the Green's function.
+
+Formally, the total time-dependent electrical field can be rewritten as 
 \begin{equation}
 \mathbf{E}(\br,t)=\boldsymbol{\mathcal{E}}(\br)e^{-i\omega t} %+\frac{1}{2} \mathrm{c.c.}
 =\mathcal{E}(\br)\mathbf{u}(\br)e^{-i\omega t}, %+\frac{1}{2}\mathrm{c.c.},
@@ -225,16 +490,16 @@ The total field will satisfy the \emph{Maxwell-Helmholtz equation}\index{Maxwell
 \begin{align}
 \left[ -\nabla\times\nabla\times+\frac{\omega^2}{c^2}n^2(\br) \right] \boldsymbol{\mathcal{E}}(\br) &=0. \label{MaxwellHelmholtz0}
 \end{align}
-Notice that the total index of refraction $ n(\br) $ we used above has already included the scattering effect caused by the atom on the waveguide, which usually has a complicated form. It is not in general possible to solve the differential equation as given above. The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Eq.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
+Notice that the total index of refraction $ n(\br) $ we used above had already included the scattering effect caused by the atom on the waveguide, which usually has a complicated form. It is not in general possible to solve the differential equation as given above. The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Eq.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
 \begin{align}\label{eq:Maxwellwithsource}
 \left[\! -\! \nabla\!\times\!\nabla\!\times + \frac{\omega^2}{c^2} \right]\! \boldsymbol{\mathcal{E}}(\br) &=\! -i4\pi\frac{\omega}{c^2} \mathbf{J}(\br) =\! -4\pi\frac{\omega^2}{c^2} \mathbf{P}(\br)=\! -4\pi \frac{\omega^2}{c^2} \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-where we have defined the current $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega \tensor{\chi}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\chi}(\br)=[\tensor{\varepsilon}_r(\br)-\mathbbm{1}]/4\pi = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ \footnote{We have used Gauss units here. In SI units, the corresponding relationship is $ \tensor{\chi}(\br)=\tensor{\varepsilon}(\br)/\varepsilon_0-\mathbbm{1} = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ and $\tensor{\chi}^{SI}=4\pi\tensor{\chi}^{G}  $. The factor of $ 4\pi $ defines the transformation between the SI and Gauss units. } where $\tensor{ \varepsilon}_r(\br) $ is the relative permittivity\index{permittivity!relative permittivity} or dielectric constant\index{dielectric constant} at $ \br $ and $ \tensor{\alpha} $ is the polarizability\index{polarizability} of the atoms at $ \br' $. Specifically, using dipole approximation, the polarizability $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\alpha} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $ where $ \mathbf{d}(\br') $ is the induced dipole moment at $ \br' $.
+where we have defined the current $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega \tensor{\chi}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\chi}(\br)=[\tensor{\varepsilon}_r(\br)-\mathbbm{1}]/4\pi = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ \footnote{We have used Gauss units here. In SI units, the corresponding relationship is $ \tensor{\chi}(\br)=\tensor{\varepsilon}(\br)/\varepsilon_0-\mathbbm{1} = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ and $\tensor{\chi}^{SI}=4\pi\tensor{\chi}^{G}  $. The factor of $ 4\pi $ defines the transformation between the SI and Gauss units. } where $\tensor{ \varepsilon}_r(\br) $ is the relative permittivity\index{permittivity!relative permittivity} or dielectric constant\index{dielectric constant} at $ \br $ and $ \tensor{\alpha} $ is the polarizability tensor\index{polarizability!polarizability tensor} of the atoms at $ \br' $. Specifically, using dipole approximation, the polarizability $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\alpha} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $ where $ \mathbf{d}(\br') $ is the induced dipole moment at $ \br' $.
 %~\footnote{\textcolor{red}{This electric susceptibility needs to be fixed.} Aside on multiple atoms case: if there are many atoms distributed along the waveguide, we can in general use 
 %$\boldsymbol{\chi}(\br)=\sum_i \delta(\br-\br_{i})\boldsymbol{\alpha}^i$,
 %where $ i $ counts over all atoms.}. 
 
-Noting that the terms on all the right-hand sides of Eq.~\eqref{eq:Maxwellwithsource} are the generator or source for the electromagnetic field. In absence of the generators, the field will propagate in the background medium (free-space) as described by the left-hand side of the equation. In other word, the generators in terms of $ \mathbf{J}(\br) $, $ \mathbf{P}(\br) $ or $ \boldsymbol{\chi}(\br) $ describes the property of the fiber as a medium other than the vacuum. In contrast, if we consider the fiber as the background medium and the atoms outside the fiber as sources of electromagnetic field emitters, we can formally rewrite the chromatic wave equation as 
+Noting that the terms on all the right-hand sides of Eq.~\eqref{eq:Maxwellwithsource} are the generator or source for the electromagnetic field. In absence of the generators, the field will propagate in the background medium (free-space) as described by the left-hand side of the equation. In other word, the generators in terms of $ \mathbf{J}(\br) $, $ \mathbf{P}(\br) $ or $ \boldsymbol{\chi}(\br) $ describes the property of the waveguide as a medium other than the vacuum. In contrast, if we consider the waveguide as the background medium and the atoms outside the waveguide as sources of electromagnetic field emitters, we can formally rewrite the chromatic wave equation as 
 \begin{align}\label{eq:Maxwellwithsource2}
 \left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
@@ -357,12 +622,12 @@ where $ \tensor{\alpha} $ is the atomic polarizability and $ k=\omega/c $. Under
 &=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\alpha}\cdot \mathbf{E}_0(\br').\label{eq:EoutG}
 \end{align}
 
-In the context of nanofiber and atoms system, the dyadic Green's function can be written as
+In the context of nanophotonic waveguides and atomic system, the dyadic Green's function can be written as
 \begin{align}
 \mathbf{G}(\br,\br') = \left\{ 
 \begin{array}{lc}
-\mathbf{G}_0(\br,\br')+\mathbf{G}_R(\br,\br'), & \br \, \text{ is outside of nanofiber}\\
-\mathbf{G}_T(\br,\br'), & \br \, \text{ is inside of nanofiber}
+\mathbf{G}_0(\br,\br')+\mathbf{G}_R(\br,\br'), & \br \, \text{ is outside of the waveguide}\\
+\mathbf{G}_T(\br,\br'), & \br \, \text{ is inside of the waveguide}
 \end{array}\right.,
 \end{align}
 where the subscript $ 0,\,R\,\text{and}\,T $ denote free-space, reflective and transmission contributions, which be can be decomposed by solving corresponding boundary value problems (will discuss in details later).
@@ -444,355 +709,7 @@ reflected electrical field $ \boldsymbol{\mathcal{E}}_{ref}(\br) $ (outside the 
 First, we only consider the light propagating in a nanofiber without any scatterers. We estimate 
 the field propagating along the nanofiber is a cylindrical wave due to the geometrical symmetry of the nanofiber. 
 
-To fully calculate the electromagnetic field, we consider both electrical and magnetic fields, the spacial 
-parts of which are governed by the wave equations
-\begin{align}\label{EBz}
-\left(\nabla^2 +k^2 \varepsilon(\br_{\perp})\right) \begin{pmatrix}
-\mathcal{E}_z(\br)\\
-\mathcal{B}_z(\br)
-\end{pmatrix} = 0.
-\end{align}
-Notice that we are working in the cylindrical coordinate system, and only concentrate on the $ z 
-$-component of the fields, since all the other components can be expressed in terms of the $ z 
-$-components of the fields (see Appendix \ref{MWE:components}. It will be discussed shortly). 
 
-We use an ansatz that 
-\begin{align}
-\mathcal{E}_z (r_\perp, \phi, z) &= \psi(r_\perp,\phi) e^{i\beta z}\\
-\mathcal{B}_z (r_\perp,\phi,z) &= \zeta(r_\perp,\phi) e^{i\beta z}.
-\end{align}
-Substituting the above into Eq.~\ref{EBz}, we obtain
-\begin{align}\label{psizeta}
-\left(\nabla^2_\perp +(k^2 \varepsilon(\br_{\perp})-\beta^2 )\right) \begin{pmatrix}
-\psi(r_\perp,\phi)\\
-\zeta(r_\perp,\phi)
-\end{pmatrix} = 0.
-\end{align}
-Now, the problem of solving a three dimensional wave equation for $ \mathcal{E} (r_\perp, \phi, z) $ 
-and $ \mathcal{B} (r_\perp, \phi, z)$ turns into a problem of solving a two dimensional differential 
-(mode) equation for $ \psi(r_\perp,\phi) $ and $ \zeta(r_\perp,\phi) $. 
-
-There are two special cases for the modes, in general. If $ \psi=0 $ as a constant, which means there is 
-no $ z $-component of the electrical field, then the propagating mode is call a TE mode\index{mode!TE mode}. Similarly, if $ \zeta=0 $ as a constant, which corresponds to zero magnetic $ z $-component, 
-then this mode is called a TM mode\index{mode!TM mode}. However, the modes in a waveguide with 
-cylindrical symmetry cannot be grouped into TE and TM guided waves. In general, the modes with 
-both electrical and magnetic nonzero $ z $-components are known as EH and HE hybrid 
-modes\index{mode!HE mode}~\cite{Snyder1983}.
-
-We focus on the electrical part for now. The magnetic field can be solved similarly. Eq.~\ref{psizeta} 
-gives
-\begin{align}\label{eigenpsi}
-[\nabla^2_\perp + k^2\varepsilon(r_\perp)] \psi(r_\perp, \phi) = \beta^2\psi(r_\perp,\phi).
-\end{align}
-Compared to the time-independent Schrodinger equation
-\begin{align}
-\left[\frac{\hat{P}^2}{2m}+V(\hat{\mathbf{r}}_\perp) \right] \psi(\br_\perp)&= E\psi(\br_\perp)\\
-\text{or}\quad \left[ \nabla^2_\perp -V(r_\perp) \right] \psi (r_\perp, \phi) &= -E\psi(r_\perp,\phi),
-\end{align}
-we can conclude that the mode equation (Eq.~\ref{eigenpsi}) is basically an eigenvalue equation if we 
-make 
-\begin{align}
-V_{ef\!f}=-k^2\varepsilon(\br\!_\perp) &\sim V(\br\!_\perp)\\
--\beta^2 &\sim E.
-\end{align}
-With these analogies, we can apply the method of distinguishing bound and unbound or radiative wave 
-functions we used in the time-independent Schrodinger equation to distinguishing the bound and 
-radiation modes in our nanofiber model. 
-
-In the time-independent Schrodinger problem, if $ 0<E\leq V $, then the wave is bounded; if $ E>V $, 
-then the wave is unbounded. For the fiber mode, similarly, we can also use the relative position of $ 
-V_{ef\!f} $ and $ -\beta^2 $ to classify the bound and radiation modes (see 
-Fig.~\ref{Figs/scatteredmode}).
-
-%\scalefig{Figs/scatteredmode}{0.8}{Bound and unbound states for the nanofiber eigenvalue 
-%problem. $ \varepsilon(r\!_\perp)=\varepsilon_{f} =n_1^2$ if $ r_\perp < a $; otherwise, $\varepsilon
-%(r\!_\perp) =1 $. The parameter $ a $ is the radium of the nanofiber. } 
-
-\begin{figure}
-\centering\makebox[\textwidth]{
-\begin{tikzpicture}[scale=1,cap=round]
-% Configurable parameters
-\def\k{1.5cm}
-\def\eps{1.5*1.7cm}
-\def\betasq{1.5*1.4cm}
-\def\a{2cm}
-\def\maxr{5cm}
-
-% Styles
-\tikzstyle{axes}=[arrows={-latex}]
-\tikzstyle{auxline}=[densely dashed]
-\tikzstyle{important line}=[very thick]
-
-% Coordinates and points.
-\coordinate (O) at (0,0);	% Origin.
-\coordinate (A) at (\a,0);	% The surface distance to the axis of the fiber.
-\coordinate (B) at (0,-\eps);	% -k^2\epsilon at the center of the fiber.
-\coordinate (C) at (\a,-\eps);	% -k^2\epsilon on the surface of the fiber.
-\coordinate (D) at (0,-\betasq);	% -\beta^2 point at the center of the fiber.
-\coordinate (E) at (\a*1.3,-\betasq);	% -\beta^2 point at the end of the maximum r.
-\coordinate (F) at (0,-\k);	% -k^2 point at the center of fiber.
-\coordinate (G) at (\a,-\k); 	% -k^2 point on the surface of the fiber.
-\coordinate (H) at (\maxr,-\k); 	% -k^2 point at the end of r.
-
-% The graphic
- % help grid
-% \draw[style=help lines,step=0.5cm] (-2.0,-2.0) grid (2.0,2.0);
-  
-% Draw axes and marks.
-\draw [axes] (-1cm, 0) -- (\maxr,0) node [above] {$r_{\perp}$};
-\draw [axes] (0, -1.2*\eps) -- (0, 1.0cm) node [right] {$V(r_{\perp})=-k^2n^2(r_{\perp})=-\beta^2$};
-\draw (O) node [above left] {$O$};
-\draw[thin] (A) -- (\a,3pt) node[anchor=south] {$a$}; 
-\draw (B) -- (-3pt,-\eps) node[anchor=east] {$-k^2n_1^2$};
-\draw (D) -- (-3pt,-\betasq) node[anchor=east] {$-\beta_0^2$};
-\draw (F) -- (-3pt,-\k) node[anchor=east] {$-k^2n_2^2$};
-
-% Draw potential lines.
-\draw[important line] (B) -- (C);
-\draw[important line] (C) -- (G);
-\draw[important line] (G) -- (H);
-\draw[auxline] (D) -- (E) node[right] {Guided modes};
-\draw[auxline,very thin] (F) -- (G);
-\draw[auxline,very thin] (A) -- (G);
-
-% Other labels and auxlines.
-%\draw[<->] (\a*1.25,0) -- (\a*1.25,-\k) node[midway,right] {Scattered modes};
-\draw (\a*1.2,-\k/2) node[right] {Radiative modes};
-\draw[<-] (\a*1.8,0) -- (\a*1.8,-0.5cm);
-\draw[->] (\a*1.8,-1cm) -- (\a*1.8,-\k);
-\draw[<-] (\a*1.95,-\k) -- (\a*1.95,-\k-0.4cm);
-\draw[->] (\a*1.95,-\k-0.8cm) -- (\a*1.95,-\eps);
-\draw[auxline] (\a*1.85,-\eps) -- (\a*2.08,-\eps);
-\end{tikzpicture}
-}
-\caption[Trapping potential analog of the bounded and unbounded modes of a waveguide.]{Bound and unbound states for the nanofiber eigenvalue 
-problem. $ \varepsilon(r\!_\perp)=\varepsilon_{f} =n_1^2$ if $ r_\perp < a $; otherwise, $\varepsilon
-(r\!_\perp) =1 $. The parameter $ a $ is the radium of the nanofiber.}
-\label{Figs/scatteredmode}
-\end{figure}
-
-Using the relationship that
-\begin{align}
-\nabla^2 \!_\perp = \frac{1}{r_{\!\perp}}\pp{}{r\!_\perp}\! \left(r\!_\perp \pp{}{r\!_\perp} \right) + 
-\frac{1}{r_\perp^2} \spp{}{\phi},
-\end{align}
-and the symmetry of the fiber,  we can  separate the mode function by
-\begin{align}
-\psi(r\!_\perp,\phi)=\mathcal{E}_{z,\beta m}(r\!_\perp)e^{im\phi},
-\end{align} 
-and hence
-\begin{align}
-\mathcal{E}_z(r\!_\perp,\phi,z) = \mathcal{E}_{z,\beta m}(r\!_\perp)e^{i(m\phi+\beta z)},
-\end{align}
-where $ \mathcal{E}_{z,\beta m}(r\!_\perp) $ satisfies the Bessel's equation
-\begin{align}
-\left[ \spp{}{r\!_\perp}+ \frac{1}{r_{\!\perp}}\pp{}{r\!_\perp}- 
-\frac{m^2}{r^2\!_\perp} + (k^2\varepsilon(r\!_\perp)-\beta^2) \right] 
-\mathcal{E}_{z,\beta m}(r\!\!_\perp)=0
-\end{align}
-with 
-\begin{align}
-\varepsilon(r\!\!_\perp) = 
-\begin{cases}
-1, & r\!_\perp>a\\
-\varepsilon_f, & r\!_\perp\leq a.
-\end{cases}
-\end{align}
-The general solution for $ \mathcal{E}_{z,\beta m}(r\!\!_\perp) $ can be given in three cases 
-corresponding to different 
-boundary conditions
-\begin{align}
-\mathcal{E}_{z,\beta m}(r\!\!_\perp) = \begin{cases}
-AJ_m(qr\!\!_\perp) + B Y_m(qr\!_\perp)&\rightarrow J_m(\theta)\sim \cos\theta,\, Y_m(\theta)\sim 
-\sin\theta.\\
-CI_m(qr\!_\perp) + DK_m(qr\!_\perp) & \rightarrow I_m(\theta) \sim e^\theta,\, K_m(\theta) \sim 
-e^{-\theta}.\\
-EH_m^{(\!1\!)}(qr\!_\perp) \!+\! FH_m^{(\!2\!)}(qr\!_\perp ) & \rightarrow H_m^{(\!1\!)} (\theta) \! \sim \! 
-e^{i\theta},\, 
-H_m^{(\!2\!)}(\theta)\!\sim\! e^{\!-i\theta}.
-\end{cases}
-\end{align}
-The positive parameter $ 1/q $ is the characteristic decay length corresponding to $ 1/h_{11} $ and $ 
-1/q_{11} $ 
-in the $\text{HE}_{11}$ mode expression. Using the symmetric and convergent condition at $ 
-r\!_\perp=0\,\text{and}\, \infty $, as for bound modes, for example, if $k< \beta\leq 
-k\sqrt{\varepsilon_f}$,
-\begin{align}
-\left\{
- \begin{array}{lcll}
-	r\!_\perp \leq a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\! AJ_m(h r\!_\perp), & h \!=\! 
-	\sqrt{k^2\varepsilon_f-\beta^2}\! >\! 0;\\
-	r\!_\perp > a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\!DK_m(q r\!_\perp), & q\!=\! 
-	\sqrt{\beta^2-k^2}>0.
- \end{array}\right.
-\end{align}
-Both $ \beta $ and $ h $ are discrete for bound modes. 
-For scattered modes, $ 0\leq \beta< k $, similarly, 
-\begin{align}
-\left\{
- \begin{array}{lcll}
-	r\!_\perp \leq a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\! AJ_m(h r\!_\perp), & h \!=\! 
-	\sqrt{k^2\varepsilon_f-\beta^2}\! >\! 0;\\
-	r\!_\perp > a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\!EH_m^{(\!1\!)}(p r\!_\perp\!), & p\!\!=\!\! 
-	\sqrt{k^2-\beta^2}>0.
- \end{array}\right.
-\end{align}
-Both $ \beta $ and $ p $ are continuous. 
-%\textcolor{red}{(Double check the general solutions and the consistence with Eq.~\ref{ET0Rexpand}.)}
-%Notice that Ref.\cite{Snyder1983} used $ J_m(hr\!_\perp)\cos m\phi $ and $ 
-%(J_m(pr\!_\perp)+CH_m^{(\!1\!)})\cos m\phi $ as the basis for the general solution of $ e $ and $ o $ 
-%light 
-%of the radiation modes, and summed them up. They are equivalent to the solution here.  
-
-If $ \beta $ is a pure imaginary number, the field will have an exponential decay amplitude on $ z $-direction, and will spread the energy away from the fiber axis. Reference~\cite{Snyder1983} denotes the modes with pure imaginary $ \beta $ as evanescent modes. If $ \beta $ has both real and imaginary parts, the modes are denoted as leaky modes, which are combinations of radiation modes and evanescent modes. Except for the case that the incident light is highly directed at the complementary critical angle $ \theta_c $ of geometric optics, only the radiation modes part can propagate for a long distance along the fiber axis. In our nanofiber system, we only consider the bound and radiation modes. The ranges of some waveguide parameters are given in Table~\ref{tab:fiberparameters}. 
-In the table, we have defined the normalized wave number\cite{Snyder1983}, or 
-$V$-number\index{$V$-number} 
-of a fiber as $V  = 
-k_f a \mathrm{NA}$.  Here $k_f=\frac{2\pi}{\lambda}$, is the free space wave number, $a$ is the radius 
-of the core of the fiber, and $\mathrm{NA}$ is the numerical aperture\index{numerical aperture} of 
-the fiber, $\mathrm{NA} = 
-(n_{core}^2 - n_{cladding}^2)^{1/2} = n_{core}(2\Delta)^{1/2}$, with profile height 
-parameter\index{profile height parameter} 
-$\Delta =\frac{1}{2}(1-n_{cladding}^2/n_{core}^2)\approx (n_{core}-n_{cladding})/n_{core}$.  For 
-different modes labeled with $ j $, we always have $V_j^2=a^2(h_j^2+q_j^2)$ and $ \lambda\beta_j/2\pi $ is a mode invariance.  The TE and TM modes have non-vanishing cut-off 
-frequencies, as $ a\rightarrow 0 $.  The cutoff frequency is found from $V = a\omega (\Delta)^{1/2}/c =2.405$ for silicon fiber.  
-Only the lowest HE mode, $\mathrm{HE}_{11}$, has no cutoff frequency as $ a\rightarrow 0 $.  For $0 < V < 2.405$, which is the case of the nanofiber we are studying, it is the only mode that propagates in the 
-fiber. For fixed $ \varepsilon_f $, in the range that $ 0\leq \beta \leq 
-k\sqrt{\varepsilon_f} $, we can distinguish the radiative and bound mode as follows:
-\begin{align}
-\begin{cases}
-0\leq \beta < k, &\rightarrow \emph{unbounded radiative modes;}\\
-k< \beta \leq k \sqrt{\varepsilon_f}, &\rightarrow \exists a,\, \emph{HE}_{11}\, \emph{is the only 
-bound mode.}
-\end{cases}
-\end{align}
-
-
-\begin{minipage}{0.97\textwidth}
-\centering
-\captionof{table}{Ranges of fiber parameters for different modes. } \label{tab:fiberparameters} 
-\begin{tabular}{|l|c|c|c|}
-\hline  & $\beta$ & $h$ & $p$ \\ 
-\hline Bound modes & $k<\beta_j \leq k\sqrt{\varepsilon_f} $ & $ 0\leq h_j<V/a $ & $ p^r_j=0,\, p^i_j>0 $ \\ 
-\hline Radiation modes & $0\leq \beta<k$ & $V/a < h\leq k\sqrt{\varepsilon_f}$ & $0<p\leq k $\\ 
-\hline Evanescent modes & $ \beta^r=0,\, \beta^i>0 $ & $ k\sqrt{\varepsilon_f} < h $ & $ k<p $ \\ 
-\hline 
-\end{tabular} 
-\par
-\bigskip
-%The caption:
-Superscripts $ r $ and $ i $ denote real and imaginary parts. Subscripts $ j $ denotes the discrete indeces for bound modes. Adapted from Ref.~\cite{Snyder1983} P.P.516 Table 25-1. This can also be understood in geometric optics as shown in Fig.(\ref{fig:Fibermodes}).
-\end{minipage}
-\bigskip
-
-\begin{figure}
-\centering\makebox[\textwidth]{
-\begin{tikzpicture}[scale=1,cap=round]
-% Configurable parameters
-\def\fiberrad{1cm}	% Radius of the nanofiber.
-\def\comprad{0.45cm}	% Compressed radius of the nanofiber in the view angle.
-\def\fiberleftx{0}	% The x-coordiante of the center of the left surface of the fiber.
-\def\fiberlefty{0}	% The y-coordiante of the center of the left surface of the fiber.
-\def\fiberlength{6.6cm} % The length of the fiber.
-
-% Styles
-\tikzstyle{axes}=[arrows={-latex}]
-\tikzstyle{auxline}=[densely dashed]
-\tikzstyle{important line}=[thick]
-\tikzstyle{dot}=[circle,inner sep=1pt,fill,label={#1},name=#1]
-
-% Coordinates and points.
-\coordinate (O) at (0,0);	% Origin.
-\coordinate (LO) at (\fiberleftx,\fiberlefty); % Center of the left-side surface of the nanofiber.
-\coordinate (RO) at (\fiberleftx+\fiberlength,\fiberlefty); % Center of the right-side surface
-\coordinate (A) at ({\fiberleftx},{\fiberlefty+\fiberrad});	% Top-left point of the nanofiber.
-\coordinate (B) at ({\fiberleftx+\fiberlength},{\fiberlefty+\fiberrad});	% Top-right point of the nanofiber.
-\coordinate (C) at ({\fiberleftx+\fiberlength},{\fiberlefty-\fiberrad});	% Bottom-right point of the fiber.
-\coordinate (D) at ({\fiberleftx},{\fiberlefty-\fiberrad});	% Bottom-left point of the nanofiber.
-
-% The graph.
-% help grid
-% \draw[style=help lines,step=0.5cm] (-2.0,-2.0) grid (2.0,2.0);
-
-% Draw the fiber.
-\begin{scope} 
-    % Outer edge.
-    %\fill[left color=purple!50!black,right color=purple!50!black,middle 
-%color=purple!50,shading=axis,opacity=0.25] (A) -- (B) arc (90:270:{\comprad} and {\fiberrad}) -- (D) arc 
-%(270:90:{\comprad} and {\fiberrad});
-    % Right-side surface.
-    %\fill[top color=purple!90!,bottom color=purple!2,middle color=purple!30,shading=axis,opacity=0.25] 
-%(RO) circle [x radius={\comprad}, y radius = {\fiberrad}];
-    % Draw lines of all edges.
-    \draw (A) -- (B);
-    \draw  (RO) circle [x radius = {\comprad}, y radius =  {\fiberrad}];
-    \draw (C) -- (D) arc (270:90:{\comprad} and {\fiberrad}); 
-    \draw[densely dashed] (A) arc (90:-90:{\comprad} and {\fiberrad});
-\end{scope}
-
-% Draw the guide mode wave vector and propagation lines.
-% First part of the ray: up-solid line.
-\draw[red] (O)--(2.0*\fiberrad,\fiberrad);
-%\draw[red,decoration={ markings,  % This schema allows for fine-tuning the arrows.
-%      mark=at position 0.5 with {\arrow{latex'}}, 
-%      mark=at position 0.82 with {\arrow{latex'}}},postaction={decorate}] (O) -- (2.0*\fiberrad,\fiberrad)-- (6.0*\fiberrad,-\fiberrad);
-% The penetration part of ray: dashed line.
-\draw[red,densely dotted] (2.0*\fiberrad,\fiberrad) -- (2.3*\fiberrad,1.1732*\fiberrad) -- (2.6*\fiberrad,\fiberrad);
-% The reflected part: solid downarrow.
-\draw[red,decoration={ markings,  % This schema allows for fine-tuning the arrows.
-      mark=at position 0.2 with {\arrow{latex'}}, 
-      mark=at position 0.6 with {\arrow{latex'}}},postaction={decorate}] (2.6*\fiberrad,\fiberrad)-- (6.6*\fiberrad,-\fiberrad);
-% The ruler part.
-\draw[important line,-latex'] (O) --(27:1) node[below,xshift=8,yshift=5] {$ \vec{k} $};
-\draw[auxline] (27:1) -- ({cos(27)},-1.5)  node [below] {$\beta_0$};
-
-% Draw radiation modes.
-% Radiation ray 1:
-\draw[blue,decoration={ markings,  % This schema allows for fine-tuning the arrows. 
-      mark=at position 0.95 with {\arrow{latex'}}},postaction={decorate}] (O) -- (0.5,\fiberrad) -- (1.5,\fiberrad*1.1);
-\draw[-latex'] (O)--(63.5:1);
-\draw[auxline] (63.5:1) -- ({cos(63.5)},-2);
-% Radiation ray 2:
-\draw[blue,decoration={ markings,  % This schema allows for fine-tuning the arrows. 
-      mark=at position 0.95 with {\arrow{latex'}}},postaction={decorate}] (O) -- (0.4,\fiberrad) -- (1.4,\fiberrad*1.4);
-\draw[-latex'] (O)--(68.5:1);
-\draw[auxline] (68.5:1) -- ({cos(68.5)},-2);
-% Radiation ray 3:
-\draw[blue,decoration={ markings,  % This schema allows for fine-tuning the arrows. 
-      mark=at position 0.95 with {\arrow{latex'}}},postaction={decorate}] (O) -- (0.25,\fiberrad) -- (0.9,\fiberrad*1.9);
-\draw[-latex'] (O)--(76:1);
-\draw[auxline] (76:1) -- ({cos(76)},-2);
-% Radiation ray 3:
-\draw[blue,decoration={ markings,  % This schema allows for fine-tuning the arrows. 
-      mark=at position 0.95 with {\arrow{latex'}}},postaction={decorate}] (O)-- (0,2*\fiberrad);
-\draw[-latex'] (O) -- (0,\fiberrad);
-% Draw dots inbetween.
-\draw[dotted] ([shift=(26:1)] 0.2,1.0*\fiberrad) arc (26:45:1);
-\draw[dotted] ([shift=(60:1)] 0.1,1.0*\fiberrad) arc (60:89:1);
-
-% Labels and denotes.
-\draw (O) node[dot] {};
-\draw (O) node[left] {O};
-\draw[auxline,-latex] (O) -- (\fiberlength*1.0,0) node [above] {$ z $};	% Z axis line.
-\draw[auxline] (0,\fiberrad) -- (0,-2);
-\draw[important line,-latex] (0,-2) node[left] {$ 0 $}--(2.5,-2) node[right] {$ k_z $};% kz axis.
-\draw (0,-2) -- (0,-2.08);
-\draw (0.5,-2) -- (0.5,-2.08) node [anchor=north] {$k_0$};
-\draw ({cos(27)},-2) -- ({cos(27)},-2.08);
-\draw (1.1,-2) -- (1.1,-2.08) node [below right,xshift=-5] {$k_0n_1$};
-\draw (3.35,-0.5) node[red] {Guided modes};	% Guided modes label.
-\draw (2.7,1.7*\fiberrad) node[blue] {Radiative modes};	% Radiative modes label.
-\end{tikzpicture}
-}
-\caption{Fiber modes classified through the $ z $-component of the wave vector.}
-\label{fig:Fibermodes}
-\end{figure}
-
-Due to the symmetry of equations, we also have
-\begin{align}
-\mathcal{B}_z(r\!_\perp,\phi,z) = \mathcal{B}_{z,\beta m}(r\!_\perp)e^{i(m\phi+\beta z)},
-\end{align}
-where $  \mathcal{B}_{z,\beta m}(r\!_\perp) $ satisfies the same Bessel's equation as above. 
 
 Next, we consider the case that an atom--which can be treated as an electric dipole in the regime we are interested in--is placed next to the 
 nanofiber. Eq.~\eqref{Esrt0} can be rewritten as 
@@ -1251,7 +1168,7 @@ For our nanofiber case, only $ m=\pm 1 $ $ \text{HE}_{11} $ modes are permitted 
 \begin{align}
 \mathbf{E}_0(\br,\omega_0)&=E_0 \mathbf{u}^+(r\!_\perp ) e^{i(\beta_0 z+\phi)}, 
 \end{align}
-where $ \mathbf{u}^{+}(r\!_\perp ) $ denotes the normalized bare nanofiber HE11 transverse mode with forward propagation counterclockwise rotation and circularly polarized light input. Similarly, $ \mathbf{u}^{-}(r\!_\perp ) $ is the forward propagating but clockwise rotating quasi-circular HE11 mode. In general, we denote  $ \mathbf{u}^{\mu}(r\!_\perp ) $ as the normalized $\mu=(\omega,f,p)$ mode radial components, with $ f=\pm $ denoting forward or backward propagating direction, $ p=\pm $ denoting counter-clockwise or clockwise rotation of polarization. For short, we denote $\mathbf{u}^+(r\!_\perp )$ as the forward-propagating and counter-clockwise-rotating $m=1$ guided mode. We also denote $ \beta_0 $ as the eigen wavenumber determined by the fiber eigenvalue  equation. Similarly, we denote $ \mathbf{u}^{\nu}(r\!_\perp ) $ as the radiation mode with mode index $ \nu=(\omega,\beta,m,p) $, where $ m=0,\,\pm 1,\,\pm 2,\cdots $ is the mode index, and $p=\pm$ denotes the polarization pattern. The guided and radiation modes satisfy the orthogonality conditions that 
+where $ \mathbf{u}^{+}(r\!_\perp ) $ denotes the normalized bare nanofiber \HE transverse mode with forward propagation counterclockwise rotation and circularly polarized light input. Similarly, $ \mathbf{u}^{-}(r\!_\perp ) $ is the forward propagating but clockwise rotating quasi-circular \HE mode. In general, we denote  $ \mathbf{u}^{\mu}(r\!_\perp ) $ as the normalized $\mu=(\omega,f,p)$ mode radial components, with $ f=\pm $ denoting forward or backward propagating direction, $ p=\pm $ denoting counter-clockwise or clockwise rotation of polarization. For short, we denote $\mathbf{u}^+(r\!_\perp )$ as the forward-propagating and counter-clockwise-rotating $m=1$ guided mode. We also denote $ \beta_0 $ as the eigen wavenumber determined by the fiber eigenvalue  equation. Similarly, we denote $ \mathbf{u}^{\nu}(r\!_\perp ) $ as the radiation mode with mode index $ \nu=(\omega,\beta,m,p) $, where $ m=0,\,\pm 1,\,\pm 2,\cdots $ is the mode index, and $p=\pm$ denotes the polarization pattern. The guided and radiation modes satisfy the orthogonality conditions that 
 \begin{align}
 \int_0^{2\pi}\mathrm{d}\phi \int_0^\infty n_{r}^2|\mathbf{u}^{(\mu)}(r\!_\perp )|^2r\!_\perp \mathrm{d}r\!_\perp &=1,\\
 \int_0^{2\pi}\mathrm{d}\phi \int_0^\infty n_{r}^2\left[\mathbf{u}^{(\nu)}(r\!_\perp )\cdot\mathbf{u}^{(\nu')*}(r\!_\perp )\right]_{\beta=\beta',m=m'}r\!_\perp \mathrm{d}r\!_\perp &=\delta(\omega-\omega')\delta_{pp'}.
@@ -1417,7 +1334,7 @@ For the guided $\mathrm{HE}_{11}$ modes, we have
 \begin{align}
 \mathbf{G}^g(\br,\br') &= -4\pi\sum_{\beta,m,f=\pm 1} \frac{\omega_0^2\mathbf{u}_{\mu}(r\!_\perp)\mathbf{u}^*_{\mu}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')},\label{eq:Gganaly}
 \end{align}
-where $ \omega_\beta $ is the angular frequency of the guided HE11 modes with the amplitude $ z $-component of the wave vector being $ \beta $. \textcolor{red}{The mode index should be $ \mu=(\beta_0,m=\pm 1,f=\pm 1) $. This notation should be unified starting here.} Now, we can use the dispersion expansion of $ \omega_\beta $ around $ \omega_0 $ with a group velocity $ v_g $ that 
+where $ \omega_\beta $ is the angular frequency of the guided \HE modes with the amplitude $ z $-component of the wave vector being $ \beta $. \textcolor{red}{The mode index should be $ \mu=(\beta_0,m=\pm 1,f=\pm 1) $. This notation should be unified starting here.} Now, we can use the dispersion expansion of $ \omega_\beta $ around $ \omega_0 $ with a group velocity $ v_g $ that 
 \begin{align}
 \omega_\beta &=\omega_0 + \dd{\omega_\beta}{\beta}(\beta-f\beta_0) +\cdots = \omega_0 + fv_g(\beta-f\beta_0) +\cdots\\
 \Rightarrow \omega_\beta - \omega_0 &= fv_g(\beta-f\beta_0) +\cdots
@@ -1509,7 +1426,7 @@ where the polarizability has been treated as a scalar. The field at the position
 %&\approx \exp\left[-4\pi k^2 \alpha \mathbf{G}^g(\br',\br')\right]\cdot\mathbf{E}_0(\br').
 \end{align}
 
-As a concrete example, we can consider the case that $ z'=0 $ and $ \phi'=0 $ for the atom, and the input field is the $ m=+1,\,f=+1 $ HE11 forward propagating mode that
+As a concrete example, we can consider the case that $ z'=0 $ and $ \phi'=0 $ for the atom, and the input field is the $ m=+1,\,f=+1 $ \HE forward propagating mode that
 \begin{align}
 \mathbf{E}_0(\br) &= E_0n_{e\!f\!f} \mathbf{u}_{m=1}^{f=1} (\br) = E_0n_{e\!f\!f} \mathbf{u}_1^1 (\mathbf{r}\!_\perp)e^{i\phi+i\beta_0 z}. 
 \end{align}
@@ -1546,7 +1463,7 @@ C_{+-} &=i\pi k_0 n_g\alpha  {\mathbf{u}^{-1}_1}^*(r'_{\!\perp})\cdot \mathbf{u}
 C_{--} &=i\pi k_0 n_g\alpha  {\mathbf{u}^{-1}_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'+i2\phi'}.
 \end{align}
 
-The output $ m=1 $ HE11 mode component in presence of the atom in the forward direction is then given by
+The output $ m=1 $ \HE mode component in presence of the atom in the forward direction is then given by
 \begin{align}
 \mathbf{E}_+(\br) &= (1+C_{11})E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
 &=\left[1 +i\pi k_0 n_g\alpha  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
@@ -1597,7 +1514,7 @@ The phase shift is then
 \bigskip
 \textbf{Field goes into the opposite rotating mode:}
 
-Similarly, the field goes into the forward propagating $ m=-1 $ HE11 mode has the form of 
+Similarly, the field goes into the forward propagating $ m=-1 $ \HE mode has the form of 
 \begin{align}
 \mathbf{E}_{-}(\br) &=  i\pi k_0 n_{e\!f\!f}\alpha  \mathbf{u}^*_{-1}(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i2\phi'}E_0n_{e\!f\!f}\mathbf{u}_{-1}^1(\br).
 \end{align}
@@ -1619,17 +1536,7 @@ If we launch two equal-power yet orthogonal quasi-linear modes, H and V, and let
 \caption{Setup diagram for birefringence measurement.}
 \end{figure}
 
-\begin{figure}
-\centering\makebox[\textwidth]{
-\includegraphics[width=12cm]{../media/Figs/Modes_Rot45HV}}
-\caption[Mode decomposition of an input quasilinear polarized laser beam in the $ |H\rangle $ and $ |V\rangle $ mode basis.]{Mode decomposition of an input quasilinear polarized laser beam. The input beam is polarized along the bisection between $ x $- and $ y $-axes. It is equivalent to have one $ |H\rangle $ mode and one $ |V\rangle $ mode with input polarized along the $ x $-axis and $ y $-axis, respectively.}
-\end{figure}
 
-\begin{figure}
-\centering\makebox[\textwidth]{
-\includegraphics[width=12cm]{../media/Figs/Modes_Rot45LR}}
-\caption[Mode decomposition of an input quasilinear polarized laser beam in the $ |L\rangle $ and $ |R\rangle $ mode basis.]{Mode decomposition of an input quasilinear polarized laser beam in the $ |L\rangle $ and $ |R\rangle $ mode basis. The input beam is polarized along the bisection between $ x $- and $ y $-axes. It is equivalent to have one $ |L\rangle $ mode and one $ |R\rangle $ mode with input circularly polarized light rotating counter-clockwise and clockwise, respectively.}
-\end{figure}
 
 \bigskip
 \textbf{Comparison to the vacuum case:}
@@ -1729,12 +1636,134 @@ N_{min} &= \sqrt{\frac{2A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
 \appendix
 % ########################### Apendix ##########################################
 
-%<*eigenmode>
+%<*eigenmodes>
 
-\chapter{Fundamental eigenmodes of an optical nanofiber}
-To simplify the problem of light scattering in a nanofiber trapped atoms system, we treat the atoms as a dipole oscillator moving in a classical electrical field $ \mathrm{E}_{g}(\br,t) $ guided along the nanofiber, and re-emit a scattered optical field described by $ \mathrm{E}^s(\br,t) $ to interfere with the initial guided optical field. Formally, the total optical field $ \mathrm{E}(\br,t)= \mathrm{E}^g(\br,t)  + \mathrm{E}^s(\br,t) $ implies a change of index of refraction and decoherence\index{decoherence} due to the presence of the atoms. 
+\chapter{Fundamental eigenmodes of an optical nanofiber}\label{chap:fibereigenmodes}
+In this appendix chapter, we will provide some details on solving the eigenmodes of the nanofiber starting from the homogeneous wave equation, Eq.~\ref{EBz}, and will give the formulas for mode normalization based on power and the eigenmode normalization condition. At the end of this chapter, we will also derive the formulas for calculating the group velocity of the \HE mode of the nanofiber.
 
-In the case of a nanofiber with a sub-wavelength radius, the high-order modes of the nanofiber can hardly be supported, which only leaves over the HE11 mode\index{mode!HE11 mode@HE$_{11}$ mode} propagating along the nanofiber. Assuming the incident light is quasi-linearly polarized, the Cartesian components of the bound optical field are given, for $ r_\perp>a $ (outside the fiber), by~\cite{Lacroute2012,LeKien2004}
+First, using the relationship that
+\begin{align}
+\nabla^2 \!_\perp = \frac{1}{r_{\!\perp}}\pp{}{r\!_\perp}\! \left(r\!_\perp \pp{}{r\!_\perp} \right) + 
+\frac{1}{r_\perp^2} \spp{}{\phi},
+\end{align}
+and the symmetry of the fiber,  we can separate the mode function by
+\begin{align}
+\psi(r\!_\perp,\phi)=\mathcal{E}_{z,\beta m}(r\!_\perp)e^{im\phi},
+\end{align} 
+and hence
+\begin{align}
+\mathcal{E}_z(r\!_\perp,\phi,z) = \mathcal{E}_{z,\beta m}(r\!_\perp)e^{i(m\phi+\beta z)},
+\end{align}
+where $ \mathcal{E}_{z,\beta m}(r\!_\perp) $ satisfies the Bessel's equation
+\begin{align}
+\left[ \spp{}{r\!_\perp}+ \frac{1}{r_{\!\perp}}\pp{}{r\!_\perp}- 
+\frac{m^2}{r^2\!_\perp} + (k^2\varepsilon(r\!_\perp)-\beta^2) \right] 
+\mathcal{E}_{z,\beta m}(r\!\!_\perp)=0
+\end{align}
+with 
+\begin{align}
+\varepsilon(r\!\!_\perp) = 
+\begin{cases}
+1, & r\!_\perp>a\\
+\varepsilon_f, & r\!_\perp\leq a.
+\end{cases}
+\end{align}
+The general solution for $ \mathcal{E}_{z,\beta m}(r\!\!_\perp) $ can be given in three cases 
+corresponding to different 
+boundary conditions
+\begin{align}
+\mathcal{E}_{z,\beta m}(r\!\!_\perp) = \begin{cases}
+AJ_m(qr\!\!_\perp) + B Y_m(qr\!_\perp)&\rightarrow J_m(\theta)\sim \cos\theta,\, Y_m(\theta)\sim 
+\sin\theta.\\
+CI_m(qr\!_\perp) + DK_m(qr\!_\perp) & \rightarrow I_m(\theta) \sim e^\theta,\, K_m(\theta) \sim 
+e^{-\theta}.\\
+EH_m^{(\!1\!)}(qr\!_\perp) \!+\! FH_m^{(\!2\!)}(qr\!_\perp ) & \rightarrow H_m^{(\!1\!)} (\theta) \! \sim \! 
+e^{i\theta},\, 
+H_m^{(\!2\!)}(\theta)\!\sim\! e^{\!-i\theta}.
+\end{cases}
+\end{align}
+The positive parameter $ 1/q $ is the characteristic decay length corresponding to $ 1/h_{11} $ and $ 
+1/q_{11} $ 
+in the $\text{HE}_{11}$ mode expression. Using the symmetric and convergent condition at $ 
+r\!_\perp=0\,\text{and}\, \infty $, as for bound modes, for example, if $k< \beta\leq 
+k\sqrt{\varepsilon_f}$,
+\begin{align}
+\left\{
+ \begin{array}{lcll}
+	r\!_\perp \leq a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\! AJ_m(h r\!_\perp), & h \!=\! 
+	\sqrt{k^2\varepsilon_f-\beta^2}\! >\! 0;\\
+	r\!_\perp > a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\!DK_m(q r\!_\perp), & q\!=\! 
+	\sqrt{\beta^2-k^2}>0.
+ \end{array}\right.
+\end{align}
+Both $ \beta $ and $ h $ are discrete for bound modes. 
+For scattered modes, $ 0\leq \beta< k $, similarly, 
+\begin{align}
+\left\{
+ \begin{array}{lcll}
+	r\!_\perp \leq a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\! AJ_m(h r\!_\perp), & h \!=\! 
+	\sqrt{k^2\varepsilon_f-\beta^2}\! >\! 0;\\
+	r\!_\perp > a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\!EH_m^{(\!1\!)}(p r\!_\perp\!), & p\!\!=\!\! 
+	\sqrt{k^2-\beta^2}>0.
+ \end{array}\right.
+\end{align}
+Both $ \beta $ and $ p $ are continuous. 
+%\textcolor{red}{(Double check the general solutions and the consistence with Eq.~\ref{ET0Rexpand}.)}
+%Notice that Ref.\cite{Snyder1983} used $ J_m(hr\!_\perp)\cos m\phi $ and $ 
+%(J_m(pr\!_\perp)+CH_m^{(\!1\!)})\cos m\phi $ as the basis for the general solution of $ e $ and $ o $ 
+%light 
+%of the radiation modes, and summed them up. They are equivalent to the solution here.  
+
+If $ \beta $ is a pure imaginary number, the field will have an exponential decay amplitude on $ z $-direction, and will spread the energy away from the fiber axis. Reference~\cite{Snyder1983} denotes the modes with pure imaginary $ \beta $ as evanescent modes. If $ \beta $ has both real and imaginary parts, the modes are denoted as leaky modes, which are combinations of radiation modes and evanescent modes. Except for the case that the incident light is highly directed at the complementary critical angle $ \theta_c $ of geometric optics, only the radiation modes part can propagate for a long distance along the fiber axis. In our nanofiber system, we only consider the bound and radiation modes. The ranges of some waveguide parameters are given in Table~\ref{tab:fiberparameters}. 
+In the table, we have defined the normalized wave number\cite{Snyder1983Optical}, or 
+$V$-number\index{$V$-number} 
+of a fiber as $V  = 
+k_f a \mathrm{NA}$.  Here $k_f=\frac{2\pi}{\lambda}$, is the free space wave number, $a$ is the radius 
+of the core of the fiber, and $\mathrm{NA}$ is the numerical aperture\index{numerical aperture} of 
+the fiber, $\mathrm{NA} = 
+(n_{core}^2 - n_{cladding}^2)^{1/2} = n_{core}(2\Delta)^{1/2}$, with profile height 
+parameter\index{profile height parameter} 
+$\Delta =\frac{1}{2}(1-n_{cladding}^2/n_{core}^2)\approx (n_{core}-n_{cladding})/n_{core}$.  For 
+different modes labeled with $ j $, we always have $V_j^2=a^2(h_j^2+q_j^2)$ and $ \lambda\beta_j/2\pi $ is a mode invariance.  The TE and TM modes have non-vanishing cut-off 
+frequencies, as $ a\rightarrow 0 $.  The cutoff frequency is found from $V = a\omega (\Delta)^{1/2}/c =2.405$ for silicon fiber.  
+Only the lowest HE mode, $\mathrm{HE}_{11}$, has no cutoff frequency as $ a\rightarrow 0 $.  For $0 < V < 2.405$, which is the case of the nanofiber we are studying, it is the only mode that propagates in the 
+fiber. For fixed $ \varepsilon_f $, in the range that $ 0\leq \beta \leq 
+k\sqrt{\varepsilon_f} $, we can distinguish the radiative and bound mode as follows:
+\begin{align}
+\begin{cases}
+0\leq \beta < k, &\rightarrow \emph{unbounded radiative modes;}\\
+k< \beta \leq k \sqrt{\varepsilon_f}, &\rightarrow \exists a,\, \emph{HE}_{11}\, \emph{is the only 
+bound mode.}
+\end{cases}
+\end{align}
+
+
+\begin{minipage}{0.97\textwidth}
+\centering
+\captionof{table}{Ranges of fiber parameters for different modes. } \label{tab:fiberparameters} 
+\begin{tabular}{|l|c|c|c|}
+\hline  & $\beta$ & $h$ & $p$ \\ 
+\hline Bound modes & $k<\beta_j \leq k\sqrt{\varepsilon_f} $ & $ 0\leq h_j<V/a $ & $ p^r_j=0,\, p^i_j>0 $ \\ 
+\hline Radiation modes & $0\leq \beta<k$ & $V/a < h\leq k\sqrt{\varepsilon_f}$ & $0<p\leq k $\\ 
+\hline Evanescent modes & $ \beta^r=0,\, \beta^i>0 $ & $ k\sqrt{\varepsilon_f} < h $ & $ k<p $ \\ 
+\hline 
+\end{tabular} 
+\par
+\bigskip
+%The caption:
+Superscripts $ r $ and $ i $ denote real and imaginary parts. Subscripts $ j $ denotes the discrete indeces for bound modes. Adapted from Ref.~\cite{Snyder1983} P.P.516 Table 25-1. This can also be understood in geometric optics as shown in Fig.(\ref{fig:Fibermodes}).
+\end{minipage}
+\bigskip
+
+
+
+Due to the symmetry of equations, we also have
+\begin{align}
+\mathcal{B}_z(r\!_\perp,\phi,z) = \mathcal{B}_{z,\beta m}(r\!_\perp)e^{i(m\phi+\beta z)},
+\end{align}
+where $  \mathcal{B}_{z,\beta m}(r\!_\perp) $ satisfies the same Bessel's equation as above.  
+
+In the case of a nanofiber with a sub-wavelength radius, the high-order modes of the nanofiber can hardly be supported, which only leaves over the \HE mode\index{mode!HE11 mode@HE$_{11}$ mode} propagating along the nanofiber. Assuming the incident light is quasi-linearly polarized, the Cartesian components of the bound optical field are given, for $ r_\perp>a $ (outside the fiber), by~\cite{Lacroute2012,LeKien2004}
 \begin{subequations}
 \label{Ertrga}
 \begin{align}
@@ -1792,7 +1821,7 @@ E_\phi^g(r_\perp,\phi,z,t) &= -iA \frac{\beta_{11}}{2h_{11}}[(1-s_{11})J_0(h_{11
 \end{align}
 \end{subequations}
 
-Alternatively, we can use the fundamental mode with rotating polarization to decompose arbitrary polarized mode propagating in the fiber. The solutions for the cylindrical components of the circulating polarized fundamental mode are given~\cite{Lacroute2012,Vetsch2010a}, for $ r_\perp<a $, by
+Alternatively, we can use the fundamental mode with rotating polarization to decompose arbitrary polarized mode propagating in the fiber. The solutions for the cylindrical components of the circulating polarized fundamental mode are given~\cite{Lacroute2012,Vetsch2010Opticala}, for $ r_\perp<a $, by
 \begin{subequations}
 \label{Ertcrla}
 \begin{align}
@@ -1814,7 +1843,7 @@ E^{(\mu)}_\phi(r_\perp,\phi,z,t) &=  -pA \frac{\beta_{11}}{2h_{11}} \frac{J_1(h_
 E^{(\mu)}_z(r_\perp,\phi,z,t) &= fA \frac{J_1(h_{11}a)}{K_1(q_{11}a)} K_1(q_{11}r_\perp) e^{-i(\omega t-f\beta_{11} z -p\phi)}.
 \end{align}
 \end{subequations}
-In Equs.~\ref{Ertcrla} and~\ref{Ertcrga}, we denote the normalized bound fundamental modes as $ \mathbf{E}^{(\mu)} (\br,t)$ by an index $ \mu=(\omega,f,p) $, where $ f=+,- $ denotes forward or backward propagation direction, and $ p=+,- $ denotes the conterclockwise or clockwise of polarization. Similar to the qusi-linear case, we use $ \boldsymbol{\mathcal{E}}^{p=\pm} $ to indicate the spatial components of the field with a given circulation pattern. For a linearly polarized HE11 mode, the cylindrical components are just the superposition of the two circular fields, 
+In Equs.~\ref{Ertcrla} and~\ref{Ertcrga}, we denote the normalized bound fundamental modes as $ \mathbf{E}^{(\mu)} (\br,t)$ by an index $ \mu=(\omega,f,p) $, where $ f=+,- $ denotes forward or backward propagation direction, and $ p=+,- $ denotes the conterclockwise or clockwise of polarization. Similar to the qusi-linear case, we use $ \boldsymbol{\mathcal{E}}^{p=\pm} $ to indicate the spatial components of the field with a given circulation pattern. For a linearly polarized \HE mode, the cylindrical components are just the superposition of the two circular fields, 
 \begin{align}\label{Eilincyc}
 E_i^{lin} = \frac{1}{\sqrt{2}}(E_i^+ + E_i^-)\quad \mathrm{or}\quad \mathcal{E}_i^{lin} = \frac{1}{\sqrt{2}}(\mathcal{E}_i^+ + \mathcal{E}_i^-),\quad i\in(r_\perp,\phi,z).
 \end{align}
@@ -1878,7 +1907,7 @@ For some cases, the total power $ P $ can also be defined as
 P &= \int \mathrm{d}\br\!_\perp \langle S(\br\!_\perp)\rangle =\int \mathrm{d} \br\!_\perp I(\br\!_\perp)=\frac{\varepsilon_0 c n_{e\!f\!f}}{2}\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2,
 \end{align}
 where $ n_{e\!f\!f} $ is the effective index of refraction of the waveguide. 
-By plugging in the field expression from Equs.~\eqref{Ertcrla} and~\eqref{Ertcrga}, we find the effective index of refraction for the HE11 modes of the nanofiber can be given by
+By plugging in the field expression from Equs.~\eqref{Ertcrla} and~\eqref{Ertcrga}, we find the effective index of refraction for the \HE modes of the nanofiber can be given by
 \begin{align}
 n_{e\!f\!f} &=\frac{\int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}{\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
 &= \frac{n_1^2\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + n_2^2\int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}
@@ -1886,6 +1915,48 @@ n_{e\!f\!f} &=\frac{\int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\ma
 &= \frac{n_1^2P_1+n_2^2P_2}{P_1+P_2}.
 \end{align}
 Notice that, the group index of refraction is not the same as the $ n_{e\!f\!f} $ defined above. We will discuss group velocity and group index of refraction of a waveguide later. See also the notes on \emph{Group velocity of the nanofiber}. 
+
+
+In this Appendix we provide, for reference, the fundamental HE$_{11}$ solutions to the homogeneous wave equation, \erf{Eq::WaveEquationSource} with $\tensor{\boldsymbol{\alpha}} = 0$, for a cylindrical nanofiber of radius $a$ and index of refraction given by \erf{Eq::IndexofRefraction}.  At a given frequency, $\omega_0 = c k_0$, the magnitudes of the longitudinal and transverse wave vectors for a guided mode are related by $n^2 k_0^2 = \beta_0^2 + k_\perp^2$.  
+The positive propagation constant, $\beta_0 \equiv \beta(\omega_0)$, is determined from the eigenvalue equation that results from enforcing physical boundary conditions at the fiber surface \cite{Snyder1983Optical},
+	\begin{align}
+		\frac{J_0(ha)}{ha J_1(ha)} = - \frac{n_1^2+n_2^2}{2n_1^2} \frac{K'(qa)}{qa K_1(qa)} + \frac{1}{h^2 a^2} - \bigg[ \bigg(\frac{n_1^2 - n_2^2}{2 n_1^2} \frac{K'(qa)}{qa K_1(qa)} \bigg)^2  + \frac{\beta_0^2}{n^2_1 k^2} \bigg(\frac{1}{q^2a^2} + \frac{1}{h^2a^2} \bigg)^2 \bigg]^{1/2}.
+	\end{align}
+Inside the nanofiber the transverse wavevector is real, $k_\perp = q$, where $q=\sqrt{\beta_0^2- n_2^2k_0^2}$, and outside the nanofiber it is purely imaginary, $k_\perp = i h$, where $h=\sqrt{n_1^2 k_0^2 - \beta_0^2}$.  The vector eigenfunctions are expressed as $\mbf{f}_{\mu}(\br) = (2\pi)^{-1/2}\mbf{u}_{b,p}(\mbf{r}_\perp) e^{i b \beta_0 z}$, where the modes are indexed by frequency $\omega_0$, propagation direction $b = \pm$, and polarization $p$.
+
+A relatively simple form for the guided-mode functions can be expressed in a cylindrical basis $(r_\perp, \phi, z)$ with longitudinal unit vector $\mathbf{e}_z$, oriented along the fiber axis.  
+The transverse unit vectors are related to their fixed Cartesian counterparts via the relations
+\begin{subequations}
+	\begin{align}
+		\mathbf{e}_{r_{\!\perp}}     &= \mathbf{e}_x \cos \phi + \mathbf{e}_y \sin \phi, \\
+		\mathbf{e}_\phi &= - \mathbf{e}_x \sin \phi + \mathbf{e}_y \cos \phi.
+	\end{align}
+\end{subequations}
+The transverse profile for the quasicircular guided modes, $p = \pm$, is
+	\begin{align} \label{Eq::QuasicircularModes}
+		\mbf{u}_{b,\pm}(\mathbf{r}_\perp) = \big[\mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \pm i \mathbf{e}_\phi u_\phi(r_\perp) +  i b \mathbf{e}_z  u_z(r_\perp) \big]e^{ \pm i \phi}, 
+	\end{align}
+and for the quasilinear guided modes, $p = \{H,V\}$, is
+	\begin{subequations} \label{Eq::QuasilinearModes}
+	\begin{align}
+		\mbf{u}_{b,H}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \cos \phi - \mathbf{e}_\phi u_\phi(r_\perp) \sin \phi +  ib \mathbf{e}_z  u_z(r_\perp) \cos \phi \big] \\
+		\mbf{u}_{b,V}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \sin \phi + \mathbf{e}_\phi u_\phi(r_\perp) \cos \phi +  ib \mathbf{e}_z  u_z(r_\perp) \sin \phi \big]. 
+	\end{align}
+	\end{subequations}
+The modes are expressed in terms of real-valued functions that depend only on the radial coordinate $r_\perp$,
+	\begin{subequations} \label{Eq::ProfileFunctions}
+	\begin{align} 
+		u_{r_{\!\perp}}(r_\perp) =& u_0 \big[ (1-s) K_0(q{r_{\!\perp}}) + (1+s)K_2(q{r_{\!\perp}})\big] \\
+		u_\phi(r_\perp) =& u_0\big[ (1-s) K_0(q{r_{\!\perp}}) - (1+s)K_2(q{r_{\!\perp}})\big] \\
+		u_z(r_\perp) =& u_0 \frac{2 q}{\beta_0} \frac{K_1(qa)}{J_1(ha)} J_1(h{r_{\!\perp}}), \label{Eq::zprofile}
+	\end{align}
+	\end{subequations}
+where $u_0$ is set by the normalization condition, $\int d^2 \mathbf{r}_\perp n(r_\perp) | \mathbf{u}_\mu(\br_\perp)|^2=1$, $J_n$ and $K_n$ are the $n^{th}$ Bessel functions of the first and second kind, $f'(x)$ indicates a derivative with respect to the argument $x$, and 
+	\begin{align}
+		s = \frac{1/(q^2 a^2)^{2} + 1/(h^2 a^2)^{2}}{[J'_1(ha)/haJ_1(ha) + K'_1(qa)/qaK_1(qa)]}.
+	\end{align}  
+Of particular interest is the $z$-component, \erf{Eq::zprofile}, which can become appreciable.  Note that the phase convention in Eqs. (\ref{Eq::QuasicircularModes}-\ref{Eq::ProfileFunctions}) has been chosen to emphasize properties of the quasilinear modes and differs from that of \emph{Le Kien et al.} -- for instance in Ref. \cite{LeKien2014}.  
+Further details about the guided-mode fields inside the nanofiber ($r_\perp\leq a$), the radiation (unguided) modes, and the quantized form of both can be found in Refs. \cite{Sondergaard2001,Tong2004,Kien2004,LeKien2005,Vetsch2010Opticala}.
 
 %</eigenmode>
 
