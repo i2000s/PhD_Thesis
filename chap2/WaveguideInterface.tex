@@ -240,9 +240,9 @@ The degeneracy of polarizations of the \HE modes allow one to write the eigenmod
 
 The quasi-\TE and quasi-\TM modes are eigenmodes of the \SWG with orthogonal polarizations and can be adiabatically connected to the $ x $- and $ y $-polarized linear free-space light inputs. Therefore, we can define the quasi-\TE and quasi-\TM modes as the $ H $ and $ V $ modes for the \SWG geometry. They have similar anisotropic properties as the fiber modes do.
 
-The eigenmodes of a waveguide, in complete cases, should include both the guided (bounded) and radiative (unbounded or unguided) solutions, based on the corresponding waveguide boundary condition problem governed by the Maxwell equations~\cite{Jackson1975}. Below, we will only sketch out the condition to divide the guided and radiative modes using an analogy to the \sch equation, which will be useful to understand the radiation decompositions in sections follow.
+The eigenmodes of a waveguide, in complete cases, should include both the guided (bounded) and radiation (unbounded or unguided) solutions, based on the corresponding waveguide boundary condition problem governed by the Maxwell equations~\cite{Jackson1975}. Below, we will only sketch out the condition to divide the guided and radiation modes using an analogy to the \sch equation, which will be useful to understand the radiation decompositions in sections follow.
 
-\subsubsection{Guided and radiative modes}
+\subsubsection{Guided and radiation modes}
 If we want to fully calculate the eigenmodes of a waveguide, we need to consider both the electric and magnetic fields, the spatial parts of which are governed by the wave equations
 \begin{align}\label{EBz}
 \left(\nabla^2 +k^2 \varepsilon(\br_{\perp})\right) \begin{pmatrix}
@@ -250,8 +250,11 @@ If we want to fully calculate the eigenmodes of a waveguide, we need to consider
 \mathcal{B}_z(\br)
 \end{pmatrix} = 0,
 \end{align}
-where $ \varepsilon=n^2 $ is the permittivity of the medium and $ k $ is the wavenumber of the modes.
-Notice that we are working in the cylindrical coordinate system, and only concentrate on the $ z $-component of the fields since all the other components can be expressed in terms of the $ z $-components of the fields (see detailed derivations in Appendix~\ref{MWE:components}). 
+where $ \varepsilon=n^2 $ is the permittivity of the medium and $ k $ is the wavenumber of the modes. The equation above is derived from the \emph{Maxwell-Helmholtz equation}\index{Maxwell-Helmholtz equation}, for example, for electric field part that
+\begin{align}
+\left[ -\nabla\times\nabla\times+\frac{\omega^2}{c^2}n^2(\br) \right] \boldsymbol{\mathcal{E}}(\br) &=0. \label{MaxwellHelmholtz0}
+\end{align}
+Notice that we only concentrate on the $ z $-component of the fields since all the other components can be expressed in terms of the $ z $-components of the fields (see detailed derivations in Appendix~\ref{MWE:components} in the cylindrical coordinate system). 
 
 We use an ansatz that 
 \begin{align}
@@ -288,7 +291,7 @@ we can conclude that the mode equation (Eq.~\ref{eigenpsi}) is basically an eige
 V_{ef\!f}=-k^2\varepsilon(\br\!_\perp) &\sim V(\br\!_\perp)\\
 -\beta^2 &\sim E.
 \end{align}
-With these analogies, we can find that the guided modes dictated by the wave equation should correspond to the bounded eigenstates of the trapping potential problem obeying to the \sch equation; likewise, the radiative modes of the wave equation correspond to unbounded states in the scattering problem following the \sch equation. In details, for the time-independent \sch problem, if $ 0<E\leq V $, then the eigenstates are bounded and have discrete solutions with respect to $ E $; if $ E>V $, then the resulted states is unbounded and have continuous solutions of energy. For the waveguide's eigenmodes, similarly, we can also use the relative position of $ V_{ef\!f} $ and $ -\beta^2 $ to classify the bound and radiation modes. 
+With these analogies, we can find that the guided modes dictated by the wave equation should correspond to the bounded eigenstates of the trapping potential problem obeying to the \sch equation; likewise, the radiation modes of the wave equation correspond to unbounded states in the scattering problem following the \sch equation. In details, for the time-independent \sch problem, if $ 0<E\leq V $, then the eigenstates are bounded and have discrete solutions with respect to $ E $; if $ E>V $, then the resulted states is unbounded and have continuous solutions of energy. For the waveguide's eigenmodes, similarly, we can also use the relative position of $ V_{ef\!f} $ and $ -\beta^2 $ to classify the bound and radiation modes. 
 
 Let us consider the concrete case of a nanofiber with step-function-like permittivity as a function of $ r_\perp $. The analogy of trapping potentials of the wave equation is illustrated in Fig.~\ref{Figs/scatteredmode}. In the regime $ n_2k<\beta<n_1k $, the eigenmodes have discrete solutions with respect to $ \beta $, which yield $ \beta=\beta_0 $ for a single-mode fiber; in the $ 0<\beta<n_2k $ regime, the eigenmode solutions are continuous with respect to $ \beta $. Similar result applies to the \SWG case. 
 
@@ -357,7 +360,7 @@ Let us consider the concrete case of a nanofiber with step-function-like permitt
 \label{Figs/scatteredmode}
 \end{figure}
 
-The division of guided and radiative modes based on the value of $ \beta $ can also be roughly understood in the perspective of geometric optics as elucidated in Fig.~\ref{fig:Fibermodes}. We regard $ \beta $ as the $ z $-projected wave number of a wave vector of the light ray on $ \vec{k} $ direction. If the ray is incident in an angle that satisfies the total internal reflection condition (in our case, $ k_0<\beta<n_1k_0 $ with $ n_2=1 $), the corresponding modes are guided; otherwise, the modes are unguided with the light leaking out and decaying along $ z $.
+The division of guided and radiation modes based on the value of $ \beta $ can also be roughly understood in the perspective of geometric optics as elucidated in Fig.~\ref{fig:Fibermodes}. We regard $ \beta $ as the $ z $-projected wave number of a wave vector of the light ray on $ \vec{k} $ direction. If the ray is incident in an angle that satisfies the total internal reflection condition (in our case, $ k_0<\beta<n_1k_0 $ with $ n_2=1 $), the corresponding modes are guided; otherwise, the modes are unguided with the light leaking out and decaying along $ z $.
 
 \begin{figure}
 \centering\makebox[\textwidth]{
@@ -458,135 +461,411 @@ The division of guided and radiative modes based on the value of $ \beta $ can a
 \draw (2.7,1.7*\fiberrad) node[blue] {Radiative modes};	% Radiative modes label.
 \end{tikzpicture}
 }
-\caption[Fiber modes classified through the $ z $-component of the wave vector, $ \beta $.]{Fiber modes classified through the $ z $-component of the wave vector, $ \beta $. We have assumed $ n_2=1 $ for a vacuum clad. From the diagram, we define $ \beta $ is the $ z $-projection of $ \vec{k} $, that is $ \beta=k\cos\theta $, where $ k $ is the length of the wave vector following the ray-trace of the light propagating in all directions, and $ \theta $ is the angle of the ray of light to the $ z $-axis. We see that when $ \theta $ is small or $ \beta $ is longer than some value, the light can satisfy the total internal reflection condition and hence the corresponding mode solution can be guided through the fiber; if $ \theta $ is large or $ \beta $ is small, then the light cannot satisfy the total internal reflection condition, and hence the corresponding modes are unguided or radiative leaking out of the fiber.}
+\caption[Fiber modes classified through the $ z $-component of the wave vector, $ \beta $.]{Fiber modes classified through the $ z $-component of the wave vector, $ \beta $. We have assumed $ n_2=1 $ for a vacuum clad. From the diagram, we define $ \beta $ is the $ z $-projection of $ \vec{k} $, that is $ \beta=k\cos\theta $, where $ k $ is the length of the wave vector following the ray-trace of the light propagating in all directions, and $ \theta $ is the angle of the ray of light to the $ z $-axis. We see that when $ \theta $ is small or $ \beta $ is longer than some value, the light can satisfy the total internal reflection condition and hence the corresponding mode solution can be guided through the fiber; if $ \theta $ is large or $ \beta $ is small, then the light cannot satisfy the total internal reflection condition, and hence the corresponding modes are unguided or radiation leaking out of the fiber.}
 \label{fig:Fibermodes}
 \end{figure}
+
+If we denote $ \mathbf{u}_\nu(r\!_\perp ) $ as the radiation mode with mode index $ \nu=(\omega,\beta,m,p) $, where $ m=0,\,\pm 1,\,\pm 2,\cdots $ is the mode index, and $p=\pm$ denotes the polarization pattern. The orthogonality conditions of the guided and radiation modes can be summarized below: 
+\begin{align}
+\int\mathrm{d}^2\br_\perp n^2(\br_\perp)|\mathbf{u}_{\mu}(r\!_\perp )|^2 &=1,\\
+\int\mathrm{d}^2\br_\perp n^2(\br_\perp)\left[\mathbf{u}_{\nu}(r\!_\perp )\cdot\mathbf{u}_{\nu'}^*(r\!_\perp )\right]_{\beta=\beta',m=m'} &=\delta(\omega-\omega')\delta_{pp'}.
+\end{align}
+The completeness relationships of the modes can be given by
+\begin{align}
+\sum_{f,p}\int \mathrm{d}\mathbf{k} \,n^2(\br_\perp)\mathbf{u}_{\mu}(r\!_\perp )\mathbf{u}_{\mu}^*(r'\!_\perp ) &= \unittensor\delta^T(r\!_\perp-r'\!_\perp),\\
+\sum_{m,p}\int \mathrm{d}\mathbf{k} \, n^2(\br_\perp)\mathbf{u}_{\nu}(r\!_\perp )\mathbf{u}_{\nu}^*(r'\!_\perp ) &=\unittensor\delta^T(r\!_\perp-r'\!_\perp),
+\end{align}
+where $ \unittensor $ is the unit tensor, and $\delta^T(r\!_\perp-r'\!_\perp)$ is the delta function for transverse fields.
 
 \subsubsection{Solving the eigenmodes for a nanofiber and \SWG}
 
 To calculate the eigenmodes of a dielectric waveguide, one may find analytical solutions if the waveguide has a solvable symmetry, or will have to rely on numerical tools in most general cases by conquering the boundary condition problem with the homogeneous Maxwell equations.  
-The solution of the electric field and the fundamental eigenmodes of a cylindrical fiber have been solved in previous works~\cite{Snyder1983Optical,LeKien2014}. We provide a brief review of the method to solve the fiber problem in Appendix~\ref{chap:fibereigenmodes} with solutions of the \HE eigenmodes and its group velocity. The radiative mode solution is less used in this dissertation and can be found in, for example, Ref.~\cite{LeKien2014}. 
+The solution of the electric field and the fundamental eigenmodes of a cylindrical fiber have been solved in previous works~\cite{Snyder1983Optical,LeKien2014}. We provide a brief review of the method to solve the fiber problem in Appendix~\ref{chap:fibereigenmodes} with solutions of the \HE eigenmodes and its group velocity. The radiation mode solution is less used in this dissertation and can be found in, for example, Ref.~\cite{LeKien2014}. 
 
 The numerical method we used to solve the eigenmodes for the \SWG and general geometries is called \emph{Boundary Element Method}\index{Boundary Element Method} or BEM for homogeneous Maxwell equations~\cite{Fallahkhair2008}. This method divides the regions close to waveguide boundaries into finite grids to solve the wave equations by matching the boundary conditions on the grids. The wave equations are discretized into a set of linear equations. The eigenmodes are found by solving the eigenvalue problem defined by the boundary condition in the frequency domain. It is fairly efficient when we have a fixed frequency point. Checked the accuracy of the BEM calculation with the nanofiber case since we know the analytical solution, which is great in the regime we care about. Then we use BEM to solve the eigenmodes for the \SWG geometry. We will demonstrate the solved eigenmodes of the \SWG when we need it.
 
 \subsection{Green's function of a dielectric waveguide}
-In this section, we will consider the light response in presence of a photon emitter outside of a dielectric waveguide. 
+In this section, we will consider the light response in presence of a photon emitter outside of a dielectric waveguide. We will only need to solve the spatial dependent part as the time-dependent part of a quasi-chromatic field solely adds a phase factor. We also consider the photon emitter can be treated as an optical dipole source.
 
-Formally, the total electric field of the light can be written as 
-\begin{align}
-\boldsymbol{\mathcal{E}}(\br)=\boldsymbol{\mathcal{E}}_0(\br)+\boldsymbol{\mathcal{E}}_s(\br) ,
-\end{align}
-where $ \boldsymbol{\mathcal{E}}_0(\br) $ is the bare waveguide field discussed in the last section, and $ \boldsymbol{\mathcal{E}}_s(\br) $ is the scattered field due to the presence of the external photon emitter or the source term.
-In general, it's difficult to determine the scattered field $ \boldsymbol{\mathcal{E}}_s(\br) $ with a dielectric boundary condition. That is where the Green's function approach can help us solve the problem by treating the external photon emitter as an integral of unit dipole sources (essentially, as $ \delta $ functions) and solving a simpler unit dipole response function that is the Green's function.
-
-Formally, the total time-dependent electrical field can be rewritten as 
-\begin{equation}
-\mathbf{E}(\br,t)=\boldsymbol{\mathcal{E}}(\br)e^{-i\omega t} %+\frac{1}{2} \mathrm{c.c.}
-=\mathcal{E}(\br)\mathbf{u}(\br)e^{-i\omega t}, %+\frac{1}{2}\mathrm{c.c.},
-\label{Ert}
-\end{equation}
-
-The total field will satisfy the \emph{Maxwell-Helmholtz equation}\index{Maxwell-Helmholtz equation} that
-\begin{align}
-\left[ -\nabla\times\nabla\times+\frac{\omega^2}{c^2}n^2(\br) \right] \boldsymbol{\mathcal{E}}(\br) &=0. \label{MaxwellHelmholtz0}
-\end{align}
-Notice that the total index of refraction $ n(\br) $ we used above had already included the scattering effect caused by the atom on the waveguide, which usually has a complicated form. It is not in general possible to solve the differential equation as given above. The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Eq.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
+The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega_0^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Eq.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega_0^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
 \begin{align}\label{eq:Maxwellwithsource}
-\left[\! -\! \nabla\!\times\!\nabla\!\times + \frac{\omega^2}{c^2} \right]\! \boldsymbol{\mathcal{E}}(\br) &=\! -i4\pi\frac{\omega}{c^2} \mathbf{J}(\br) =\! -4\pi\frac{\omega^2}{c^2} \mathbf{P}(\br)=\! -4\pi \frac{\omega^2}{c^2} \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
+\left[\! -\! \nabla\!\times\!\nabla\!\times + \frac{\omega_0^2}{c^2} \right]\! \boldsymbol{\mathcal{E}}(\br) &=\! -i4\pi\frac{\omega_0}{c^2} \mathbf{J}(\br) =\! -4\pi\frac{\omega_0^2}{c^2} \mathbf{P}(\br)=\! -4\pi \frac{\omega_0^2}{c^2} \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-where we have defined the current $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega \tensor{\chi}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\chi}(\br)=[\tensor{\varepsilon}_r(\br)-\mathbbm{1}]/4\pi = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ \footnote{We have used Gauss units here. In SI units, the corresponding relationship is $ \tensor{\chi}(\br)=\tensor{\varepsilon}(\br)/\varepsilon_0-\mathbbm{1} = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ and $\tensor{\chi}^{SI}=4\pi\tensor{\chi}^{G}  $. The factor of $ 4\pi $ defines the transformation between the SI and Gauss units. } where $\tensor{ \varepsilon}_r(\br) $ is the relative permittivity\index{permittivity!relative permittivity} or dielectric constant\index{dielectric constant} at $ \br $ and $ \tensor{\alpha} $ is the polarizability tensor\index{polarizability!polarizability tensor} of the atoms at $ \br' $. Specifically, using dipole approximation, the polarizability $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\alpha} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $ where $ \mathbf{d}(\br') $ is the induced dipole moment at $ \br' $.
+
 %~\footnote{\textcolor{red}{This electric susceptibility needs to be fixed.} Aside on multiple atoms case: if there are many atoms distributed along the waveguide, we can in general use 
 %$\boldsymbol{\chi}(\br)=\sum_i \delta(\br-\br_{i})\boldsymbol{\alpha}^i$,
 %where $ i $ counts over all atoms.}. 
 
 Noting that the terms on all the right-hand sides of Eq.~\eqref{eq:Maxwellwithsource} are the generator or source for the electromagnetic field. In absence of the generators, the field will propagate in the background medium (free-space) as described by the left-hand side of the equation. In other word, the generators in terms of $ \mathbf{J}(\br) $, $ \mathbf{P}(\br) $ or $ \boldsymbol{\chi}(\br) $ describes the property of the waveguide as a medium other than the vacuum. In contrast, if we consider the waveguide as the background medium and the atoms outside the waveguide as sources of electromagnetic field emitters, we can formally rewrite the chromatic wave equation as 
 \begin{align}\label{eq:Maxwellwithsource2}
-\left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
+\left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega_0^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega_0}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega_0^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega_0^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-where the only difference from Eq.~\eqref{eq:Maxwellwithsource} is that we bring in the $ n(\br) $ as the index of refraction of the background medium instead of using $ n(\br)=1 $ for the homogeneous vacuum as the background medium. This has also been derived in the appendix (see Eq.~\eqref{eq:waveeqGaussU}) from the Maxwell equation for general cases. We will use Eq.~\eqref{eq:Maxwellwithsource2} to study the optical properties of the waveguide in presence of atoms outside. 
+where the only difference from the homogeneous wave equation, Eq.~\eqref{MaxwellHelmholtz0}, is that we bring in a dipole source term represented by the equivalent terms on the right-hand side of the equation. For the source terms, we have defined the current $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega_0 \tensor{\chi}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\chi}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ \footnote{We have used Gauss units here. In SI units, the corresponding relationship is $ \tensor{\chi}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ and $\tensor{\chi}^{SI}=4\pi\tensor{\chi}^{G}  $. The factor of $ 4\pi $ defines the transformation between the SI and Gauss units. } where $ \tensor{\alpha} $ is the polarizability tensor\index{polarizability!polarizability tensor} of the atoms at $ \br' $. Specifically, using dipole approximation, the polarizability $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\alpha} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $ where $ \mathbf{d}(\br') $ is the induced dipole moment at $ \br' $. 
 
-The Eq.~\eqref{eq:Maxwellwithsource2} above has a source term 
+Based on Eq.~\eqref{eq:Maxwellwithsource2}, we define a source term 
 \begin{align}
 \tensor{S}(\br)=\tensor{\chi}(\br),% \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-and can be solved by solving the corresponding dyadic Green's functions\index{Green's function!dyadic Green's function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$, then the source term of the corresponding field will be $\tensor{\bf S}(\br)=-4\pi \frac{\omega^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega^2/c^2$ factor compared to our definition in the text. Similarly, the $4\pi\omega^2/c^2$ factor will be carried over to other quantities as well. }
+and Eq.~\eqref{eq:Maxwellwithsource2} then can be solved by solving the corresponding dyadic Green's function equation\index{Green's function!dyadic Green's function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$, then the source term of the corresponding field will be $\tensor{\bf S}(\br)=-4\pi \frac{\omega_0^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega_0^2/c^2$ factor compared to our definition in the text. Similarly, the $4\pi\omega^2/c^2$ factor will be carried over to other quantities as well. }
 \begin{align}
-\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2}{c^2} \right] \GFT(\br,\br') &= -4\pi \frac{\omega^2}{c^2}\delta^{(3)}(\br-\br')\unittensor. \label{eq:dyadicGF}
+\left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br';\omega_0) &= -4\pi \frac{\omega_0^2}{c^2}\delta^{(3)}(\br-\br')\unittensor. \label{eq:dyadicGF}
 \end{align}
 
-Without loosing generality, we consider a simple free-space case that there is no net charge and current in a vacuum medium. The wave equation can be given in Eq.~\eqref{eq:freespacewaveeq} with $ n=1 $, where we have replaced $ -\nabla\times\nabla\times $ with $ \nabla^2 $ from Eq.~\eqref{eq:Maxwellwithsource2}. As a result, all vector components of the field vectors are independent to each other. The corresponding Green's function equation for this problem becomes a scalar equation,
+A special case of the dyadic Green's function is when a dipole source is placed in a homogeneous medium, say vacuum. In this case, the dyadic Green's function essentially becomes a scalar or a diagonal tensor with all three diagonal elements equal to 
 \begin{align}
-(\spp{}{x_i} + k^2) G_i(\br,\br')=-4\pi \frac{\omega^2}{c^2}\delta(\br-\br'), 
+G_0(\br,\br';\omega_0) =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
 \end{align}
-where $ x_i $ are the coordinate components and $ G_i(\br,\br') $ is the scalar Green's function responding to a unit source with only $ x_i $ field component. 
-The only physical solution for the scalar Green's function\index{Green's function} in free space is 
+where we only take the positive frequency solution for our studies. This result reflects the fact that the field responded at $ \br $ is always on the same polarization direction and with an amplitude equal to the dipole radiation from the source position $ \br' $ without any distortions caused by inhomogeneous effects. This solution is a key to solve radiation problems as we will discuss later. The details of solving the free-space Green's function and its significance can be found in Appendix~\cite{chap:freespacegreenfunction}. 
+
+
+\begin{figure}
+\centering\makebox[\textwidth]{
+\includegraphics[width=0.85\textwidth]{../media/Figs/NanofiberTrappedAtoms}}
+\caption{Diagram of nanofiber trapped atoms. }
+\end{figure}
+
+As shown in the earlier sections, in general, the output field in presence of a single atom can be written as
 \begin{align}
-G_0(\br,\br') =k^2\frac{e^{\pm i\mathbf{k}\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
+\mathbf{E}(\br) 
+&=\mathbf{E}_0(\br)+\alpha \GFT(\br,\br')\cdot \mathbf{E}_0(\br')
 \end{align}
-where we only look at the \emph{positive} signed solution for our example. 
+where we only treat the polarizability as a scalar. The only barrier for solving the output E-field is to solve the dyadic Green's function.
 
-Assuming the boundary contributions vanish, we may have
+In general, there are two strategies to solve the dyadic Green's function: one is to solve the dipole emission problem numerically; the other one involves transverse mode decomposition and only needs bare fiber modes. We call the first approach as the \emph{normal} approach, and call the other one as the \emph{approximate} approach. We will describe the two approaches in the successive paragraphs. 
+
+The \emph{normal} approach:
+
+We recall that the equation governs the dyadic Green's function can be written as below:
 \begin{align}
-\boldsymbol{\mathcal{E}}(\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + \int_V \tensor{S}(\br') \! \cdot\! \boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r', \label{Etotal0}
+\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \GFT(\br,\br') &= -4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,
 \end{align}
-where $ \boldsymbol{\mathcal{E}}_0 (\br) $ is the homogeneous Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation!homogeneous Maxwell-Helmholtz equation} in the limit that $ \tensor{S}(\br)\longrightarrow 0 $, $ \mathbf{R}=\br-\mathbf{r}' $. Therefore, the scattering field is
+each column of which can be expressed as
 \begin{align}
-\boldsymbol{\mathcal{E}}_s(\br) &=  \int_V \tensor{S}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br')k^2 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
-&= \int_V \frac{\omega^2}{c^2} \tensor{\chi}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'.
+\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}_i(\br,\br') &= -4\pi k_0^2\mathbf{e}_i\delta(\br-\br'), \label{eq:Gi}
 \end{align}
+where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
+
+Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an amplitude of $ -4\pi k^2 $. That is to say that once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components divided by the factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis:
+\begin{equation}
+\GFT(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
+  \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
+   \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=),ampersand replacement=\&] % Note: the ampersandreplacement line redefines to use \& instead of the usual & sign to separate columns in the matrix. This can avoid potential conflict with external environment where ampersands are also defined for specific purposes. See https://tex.stackexchange.com/questions/15093/single-ampersand-used-with-wrong-catcode-error-using-tikz-matrix-in-beamer
+  {
+  G_{r\!_\perp r\!_\perp} \& G_{r\!_\perp\phi} \& G_{r\!_\perp z}\\
+  G_{\phi r\!_\perp} \& G_{\phi\phi} \& G_{\phi z} \\
+  G_{zr\!_\perp} \& G_{z\phi} \& G_{zz} \\
+  };
+  % Hightlight columns.
+  \begin{pgfonlayer}{myback}
+    \fhighlight[red!30]{m-1-1}{m-3-1}
+    \fhighlight[blue!30]{m-1-2}{m-3-2}
+    \fhighlight[green!30]{m-1-3}{m-3-3}
+  \end{pgfonlayer}
+  % Make links to other equivalent expressions.
+  \begin{pgfonlayer}{myback}
+    \draw (m-3-1.south)+(-0.5,-0.76) node [left] {column vector $\mathbf{G}_i$:};
+    \draw[implies-implies,double equal sign distance] (m-3-1.south)+(0,-0.08) -- +(0,-0.5) node[below]{$ \mathbf{G}_{r\!_\perp} $};
+    \draw[implies-implies,double equal sign distance] (m-3-2.south)+(0,-0.08) -- +(0,-0.5) node[below]{$ \mathbf{G}_{\phi} $};
+    \draw[implies-implies,double equal sign distance] (m-3-3.south)+(0,-0.1) -- +(0,-0.55) node[below]{$ \mathbf{G}_z $};
+    \draw (m-3-1.south)+(-0.5,-1.7) node [left,align=center] {equivalent $ \mathbf{E} $ radiated\\ from a unit dipole:};
+    \draw[<-] (m-3-1.south)+(0,-1.08) -- +(0,-1.5) node[below]{$ \mathbf{d}_{r\!_\perp} $};
+    \draw[<-] (m-3-2.south)+(0,-1.08) -- +(0,-1.5) node[below]{$ \mathbf{d}_{\phi} $};
+    \draw[<-] (m-3-3.south)+(0,-1.1) -- +(0,-1.55) node[below]{$ \mathbf{d}_z $};
+    \draw[<-] (m-3-3.south)+(0.5,-1.32) -- +(1.1,-1.32) node[right]{$\cdot (-4\pi k^2)$};
+  \end{pgfonlayer}
+  \end{tikzpicture}
+\end{equation}
+%\textcolor{red}{Need to make it look nicely, and continue on...}
+The equivalent $ \mathbf{E} $ field has been solved in section~\ref{sec:boundrad} for the radiation problem with one atom.
 
 
+The \emph{eigenmode decomposition} approach:
 
-In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field. By the use of Green's function method, we have converted our differential equation for the scattered field into volume integral equations. They are very important since they form the basis for various formalisms such as the \emph{method of moments}\index{method of moments}, the \emph{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \emph{coupled dipole method}\index{coupled dipole method}. In general, these integral equations can be solved numerically using the methods mentioned above. Alternatively, we may develop a Liouville–Neumann series\index{Liouville–Neumann series} solution to the equation, namely the Born series\index{Born series}.
-
-The Born series is typically derived by assuming that the scattering potential is very
-weak, and may be written as $ \tensor{S}(\br)\rightarrow \delta \tensor{S}(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series of solutions for the total field of the form
+In the case that the source is extremely small, the total dyadic Green's function should be effectively equal to the transverse dyadic Green's function. To illustrate this idea, we can expand the current source of the dipole into transverse and longitudinal parts by
 \begin{align}
-\boldsymbol{\mathcal{E}}(\br) &= \sum_{n=0}^{\infty} \delta^n \mathbf{V}_n(\br).
+\mathbf{J}(\br) &= \mathbf{J}_T(\br) + \mathbf{J}_L(\br),
 \end{align}
-On substituting the expression above into Eq.~\ref{Etotal0}, we find the series
+where the transverse and longitudinal current components, $ \mathbf{J}_T(\br) $ and $\mathbf{J}_L(\br)$, satisfy
 \begin{align}
-\mathbf{V}_0 &= \boldsymbol{\mathcal{E}}_0,\\
-\mathbf{V}_1 &= k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',\\
-\ldots & \ldots\\
-\mathbf{V}_n &= k^2\int_V \tensor{S}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_{n-1} \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',
+\nabla\cdot\mathbf{J}_T (\br) &=0\\
+\nabla\times \mathbf{J}_L (\br) &=0.
 \end{align}
-where the \emph{Born approximation}\index{Born series!Born approximation} only includes up to the first-order term. Under the Born approximation, the solution for the electrical field with one single atom can be given by
+In SI units, the continuity condition reads
 \begin{align}
-\boldsymbol{\mathcal{E}} (\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
-&= \boldsymbol{\mathcal{E}}_0(\br) +\sum_{\br'}\frac{\omega^2}{c^2} \tensor{\alpha}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|}\\
-&=\boldsymbol{\mathcal{E}}_0(\br) + \frac{\omega^2}{c^2} \tensor{\alpha}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|},
+\nabla\cdot\mathbf{J}=-\pp{}{t}\rho.
 \end{align}
-where $ \boldsymbol{\alpha}(\br') $ denotes the polarizability of the atom at $ \br' $. 
-
-Notice that Born series does not necessarily converge. Usually, we need to verify if the perturbation fields are much weaker than the field $ \boldsymbol{\mathcal{E}}_0 $ before using Born series. 
-
-\textcolor{red}{To be continued: Retard Green's function for forward and backward solutions, propagator and transverse dyadic Green's function...}
-
-\subsection{Paraxial expansion of the mode}
-In the case that the light fields propagate along a certain direction $ z $ and spread out only slowly in the transverse direction, we can use the \emph{paraxial approximation}\index{paraxial approximation} to simplify the light propagation problem, especially the analytical integral of the Fourier integrals of the fields. In that case, the $ z $ component of the wavevectors can be expanded in a series as
+Under Coulomb gauge, the transverse and longitudinal currents can then be written as 
 \begin{align}
-k_z=k\sqrt{1-(k^2_x+k^2_y)/k^2}\approx k-\frac{(k^2_x+k^2_y)}{2k}.
+\mathbf{J}_T &= -\frac{1}{\mu_0}(\nabla^2 -\frac{1}{c^2}\spp{}{t})\mathbf{A}\label{eq:Jt_cg}\\
+\mathbf{J}_L &= \varepsilon_0 \pp{}{t}\nabla\phi .\label{eq:Jl_cg}
 \end{align}
-This reflects the physical fact that the wavevectors\index{wavevector} $ \mathrm{k}=(k_x,k_y,k_z) $ in the angular spectrum representation are almost parallel to the $ z $-axis and the transverse wavenumbers $ (k_x,k_y) $ are small compared to $ k $. 
+Notice that, the longitudinal current equation (Eq.~\eqref{eq:Jl_cg}) will become purely local for an ideal dipole source, and can be ignored. The longitudinal components may only become important for the case with a charged source. Below, we only consider the transverse eigenmode decompositions for our analysis of neutral atoms that can be treated as neutral point dipole sources.
 
-Meanwhile, in paraxial approximation\index{paraxial approximation} $ \theta\rightarrow 0 $,
+The dyadic Green's function for a waveguide satisfies (Eq.~\eqref{eq:dyadicGF})
 \begin{align}
-\hat{\mathrm{r}} &= \sin\theta\cos\phi \, \hat{\mathrm{e}}_x + \sin\theta \sin\phi\, \hat{\mathrm{e}}_y + \cos\theta \, \hat{\mathrm{e}}_z\\
-&\approx \hat{\mathrm{e}}_z.
+\left[ -\nabla\times\nabla\times + n^2k_0^2 \right] \GFT(\br,\br') &= -4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,
 \end{align}
-
-The Green's function solution for a point emitter in free space can then be expanded to be
+where $n=n(\br\!_\perp)=\sqrt{\varepsilon(\br\!_\perp)}$ and $k_0=\omega_0/c$. Correspondingly, the bare-fiber modes (eigenmodes), $ \mathbf{u}^{(\mu)}(\br) $, satisfy the Maxwell-Helmholtz equation (Eq.~\eqref{MaxwellHelmholtz0}), that is
 \begin{align}
-\frac{e^{i\mathrm{k}\cdot \mathrm{R}}}{R}\approx \frac{e^{ik_0(z-z')}}{z-z'}\exp\left[ \frac{ik_0}{2(z-z')} \left| \mathrm{r}_\perp - \mathrm{r}_\perp'\right|^2 \right],
+[-\nabla\times\nabla\times + n^2(\br)k^2]  \mathbf{u}^{(\mu)}(\br) &=0,
 \end{align}
-where $ \mathrm{R}=\br-\br' $. 
-A far field from a point light emitter is usually paraxial approximation obedient. 
+where $ k^2=\frac{\omega_{\mathbf{k}}^2}{c^2} $ and $ \mathbf{k} $ is an arbitrary wave vector.
+
+To use the eigenfunction expansion method to calculate the dyadic Green's function, we can define a vector function
+\begin{align}
+{\mathbf{u}}_\epsilon^{(\mu)}(\br) &= n(\br) \mathbf{u}^{(\mu)}(\br),
+\end{align}
+which satisfies
+\begin{align}
+\left[-\frac{1}{n(\br)}\nabla\times\nabla\times \frac{1}{n(\br)} + k^2\right]  {\mathbf{u}}_\epsilon^{(\mu)}(\br) &=0.
+\end{align}
+Introduced by Glauber and Lewenstein~\cite{Glauber1991}, the operator on the left-hand-side of the equation above, $\mathcal{H}_k = -\frac{1}{n(\br)}\nabla\times\nabla\times \frac{1}{n(\br)} + k^2$, is always Hermitian. Similarly, we can define a Hermitian operator $\mathcal{H}_{k_0} = -\frac{1}{n(\br)}\nabla\times\nabla\times \frac{1}{n(\br)} + k_0^2$, and obtain the eigenequation with $\mathcal{H}_{k_0}$ given by
+\begin{align}
+\mathcal{H}_{k_0} \mathbf{u}_\epsilon^{(\mu)} &= \lambda_\mu \mathbf{u}_\epsilon^{(\mu)},
+\end{align}
+which has a set of eigensolutions $ (\mathbf{u}_\epsilon^{(\mu)},\lambda_\mu=k_0^2-k^2) $. There exists a set of adjoint eigensolutions $ (\tilde{\mathbf{u}}_\epsilon^{(\mu)},\lambda_\mu^*) $ to $\mathcal{H}_{k_0}^\dagger \tilde{\mathbf{u}}_\epsilon^{(\mu)} = \lambda_\mu^* \tilde{\mathbf{u}}_\epsilon^{(\mu)}$, such that the biorthogonality relation
+\begin{align}
+\int \mathbf{u}_\epsilon^{(\mu)} (\br)\cdot \left[\tilde{\mathbf{u}}_\epsilon^{(\mu')}(\br) \right]^* \mathrm{d}\br &= \int n^2(\br) \mathbf{u}^{(\mu)} (\br)\cdot {\mathbf{u}^{(\mu')}}^*(\br) \mathrm{d}\br=\delta_{\mu\mu'},\label{eq:orthutrans}
+\end{align}
+and the completeness relation
+\begin{align}
+\sum_\mu \mathbf{u}_\epsilon^{(\mu)} (\br) \left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br') \right]^* &= \sum_\mu n(\br)n(\br') \mathbf{u}^{(\mu)} (\br) {\mathbf{u}^{(\mu)}}^*(\br) =\eye \delta^{(3)}(\br-\br'). 
+\end{align}
+In our nanofiber case, we can define such a set of mode functions, and in fact we choose them to have the following properties for their adjoint functions:
+\begin{align}
+\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br) &= n^*(\br) \tilde{\mathbf{u}}^{(\mu)}(\br)\\
+\tilde{\mathbf{u}}^{(\mu)}(\br) &= {\mathbf{u}^{(\tilde{\mu})}}^*(\br)\\
+{\mathbf{u}^{(\tilde{\mu})}}(\br) &= {\mathbf{u}^{(\mu)}}^*(\br)
+\end{align}
+with $ \tilde{\mu}=(\omega_0,-m,-f) $. For a single-mode nanofiber, we let $ n(\br)=n(\br\!_\perp) $ be real and define $ \mathbf{u}^{(\mu)}(\br)=\mathbf{u}_{mf}(r\!_\perp )e^{if\beta z+im\phi} $ for the guided $\mathrm{HE}_{11}$ modes with a propagation constant $ \beta  $. The completeness relation for the normalized modes will yield a transverse $ \delta $-function, $ \delta^T(\br-\br') $, having the property that
+\begin{align}
+\mathbf{f}^T(\br')&=\int \mathrm{d}\br\,\, \delta^T(\br-\br')\mathbf{f}(\br).
+\end{align} 
+Similar to the integration in the general biorthogonality relationship, if we only integrate over the transverse plane of a mode, we will obtain
+\begin{align}
+\int_0^{2\pi}\!\!\!\!\! \mathrm{d}\phi\!\! \int_0^\infty\!\!\!\! r\!_\perp \mathrm{d}r\!_\perp  n^2(r\!_\perp) \mathbf{u}_{mf}(r\!_\perp )\!\cdot\!\mathbf{u}_{m'f'}^*(r\!_\perp )& e^{i(f\!-\!f')\beta z+i(m\! -\! m')\phi}  =\delta_{mm'}e^{i(f\!-\!f')\beta z} \label{eq:orthutrans2D}.
+\end{align}
+
+
+From those eigensolutions, we can define a dyad, $ \mathbf{G}_\epsilon(\br,\br') $, satisfying
+\begin{align}
+\mathbf{G}_\epsilon(\br,\br') &= n(\br) \mathbf{G}(\br,\br') n(\br'),\\
+\mathcal{H}_{k_0} \mathbf{G}_\epsilon(\br,\br') &= \mathbbm{1}\delta^{(3)}(\br-\br').\label{eq:HGtilde}
+\end{align}
+
+One can expand the dyadic function $ \mathbf{G}_\epsilon(\br,\br') $ in terms of the transverse eigenmodes by
+\begin{align}
+\mathbf{G}_\epsilon(\br,\br')\approx\mathbf{G}_\epsilon^T(\br,\br')= \sum_{\mu} \mathbf{u}_\epsilon^{(\mu)}(\br) \mathbf{A}_\epsilon^{(\mu)}(\br'), \label{eq:transGappr}
+\end{align}
+where the coefficient vector $\mathbf{A}_\epsilon^{(\mu)}(\br')  $ does not depend on $ \br $.
+Substituting Eq.~\eqref{eq:transGappr} into Eq.~\eqref{eq:HGtilde}, we obtain
+\begin{align}
+\sum_{\mathbf{k}} \left[ \mathcal{H}_{k_0}  \mathbf{u}_\epsilon^{(\mu)}(\br)\right] \mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br')\\
+\Leftrightarrow \sum_\mu (k_0^2-k^2) \mathbf{u}_\epsilon^{(\mu)}(\br) \mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br') = -4\pi k_0^2\sum_{\mu} \mathbf{u}_\epsilon^{(\mu)}(\mathbf{r} )\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\mathbf{r}^\prime )\right]^*.
+\end{align}
+Therefore, we can solve the coefficient vector for an arbitrary eigenmode to give
+\begin{align}
+\mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi\frac{\omega_0^2 \left[ \tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br')\right]^*}{\omega_0^2-\omega_{\mathbf{k}}^2}.
+\end{align}
+Hence, 
+\begin{align}
+\mathbf{G}_\epsilon(\br,\br')= -4\pi\sum_{\mu} \frac{\omega_0^2\mathbf{u}_\epsilon^{(\mu)}(\br)\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br')\right]^*}{\omega_0^2-\omega_{\mathbf{k}}^2} = -4\pi n(\br) \left[\sum_{\mu} \frac{\omega_0^2 {\mathbf{u}}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2} \right]n(\br').
+\end{align}
+By the definition of $\mathbf{G}_\epsilon(\br,\br')  $, the dyadic Green's function can be written by 
+\begin{align}
+\mathbf{G}(\br,\br')\approx -4\pi\sum_{\mu} \frac{\omega_0^2\mathbf{u}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2}.
+\end{align}
+For the guided $\mathrm{HE}_{11}$ modes, we have 
+\begin{align}
+\mathbf{G}^g(\br,\br') &= -4\pi\sum_{\beta,m,f=\pm 1} \frac{\omega_0^2\mathbf{u}_{\mu}(r\!_\perp)\mathbf{u}^*_{\mu}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')},\label{eq:Gganaly}
+\end{align}
+where $ \omega_\beta $ is the angular frequency of the guided \HE modes with the amplitude $ z $-component of the wave vector being $ \beta $. \textcolor{red}{The mode index should be $ \mu=(\beta_0,m=\pm 1,f=\pm 1) $. This notation should be unified starting here.} Now, we can use the dispersion expansion of $ \omega_\beta $ around $ \omega_0 $ with a group velocity $ v_g $ that 
+\begin{align}
+\omega_\beta &=\omega_0 + \dd{\omega_\beta}{\beta}(\beta-f\beta_0) +\cdots = \omega_0 + fv_g(\beta-f\beta_0) +\cdots\\
+\Rightarrow \omega_\beta - \omega_0 &= fv_g(\beta-f\beta_0) +\cdots
+\end{align}
+Meanwhile, the sum over the mode index can be written as an integral over $ \beta $:
+\begin{align}
+\sum_{\beta} \Leftrightarrow & \frac{L}{2\pi} \int_{-\infty}^{\infty} \mathrm{d}\beta, \quad \text{if $\beta$ includes the propagation direction},\\
+\quad \mathrm{or}\quad &\frac{L}{2\pi}\sum_{f=\pm 1} \int_0^{\infty} \mathrm{d}\beta,\quad\text{if the propagation direction is separated out}.
+\end{align}
+This  transformation comes from the consideration that, in the continuous limit, the propagating guided wave is periodic within the quantization length period $ L $ and the periodicity condition is that $ \beta_n L=2\pi n $, where $ n=1,\,2,\,\ldots $. Hence, the dyadic Green's function for the guided modes (Eq.~\eqref{eq:Gganaly}) can be written as
+\begin{align}
+\!\!\!\!\!\!\!\!\! \mathbf{G}^g(\br,\br') &= -2L\sum_{m,f=\pm 1}\int_0^\infty \mathrm{d}\beta \frac{\omega_0^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')}\\
+&= 2\omega_0^2 L\!\!\sum_{m,f=\pm 1}\int_0^\infty\!\! \mathrm{d}\omega_\beta \frac{\mathrm{d}\beta}{\mathrm{d}\omega_\beta} \frac{\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{(\omega_0\! +\!\omega_\beta) (\omega_0\!-\!\omega_\beta)} e^{i\!f\!\beta(z\!-\!z')+im(\phi\!-\!\phi')}\label{eq:eigGFintegral}\\
+&\approx 2\omega_0^2L \!\!\! \sum_{m,f=\pm 1}\!\!\!\!\! \pi i\,\!  \frac{f}{fv_g} \mathrm{Res}\!\! \left[\! \frac{\mathbf{u}_{m}\!(r\!_\perp\! ) \mathbf{u}^*_{m}\! (r_{\!\perp}^\prime\! ) e^{i\! f\! \beta(z \!-\! z')+im(\phi\!-\! \phi')} }{(\omega_0+\omega_\beta)(\omega_0-\omega_\beta)} \!\right]\!\!\!\!_{\begin{array}{l} \omega_\beta\! =\!\omega_0 \\ \beta\! =\!\beta_0\end{array} }\\
+&= \pi\frac{iL}{v_g} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')},
+\end{align}
+where $ \beta_0 $ is the propagation constant with a given $ \omega_0 $ for the input/emission field. The integral path and the equivalence to the residue at $ \beta_0 $ is illustrated in part (c) of Fig.(\ref{fig:integralpaths}). We have used the fact that $ \int_{0-if\epsilon}^{\infty-if\epsilon} \mathrm{\omega_\beta}g(\omega_\beta) = P\left[ g(\omega_\beta)\right] +f\pi i \mathrm{Res}\left[g(\omega_\beta) \right] $, and ignored the principal value integral part, $ P\left[ g(\omega_\beta)\right] $. The principal value part yields the level shift of the atom due to the fiber modes, which should be negligible in the dispersive regime we are considering about. \todo[inline]{Note: the figure of integral path needs to be changed to have integrals always from $0$ to $\infty$ for $\omega_\beta$ and choose the shift of the integral path based on the sign of $f(z-z')$.} 
+
+By using the relation that 
+\begin{align}
+k_0 &=\frac{\omega_0}{c}\\
+n_g&=\sqrt{\varepsilon_g}= \frac{c}{v_g}
+\end{align}
+the dyadic Green's function for the guided modes can also be written as
+\begin{align}
+\mathbf{G}^g(\br,\br') &\approx i\pi n_gL\sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')}.
+\end{align}
+We make $ L=1 $ for now, which should be canceled through multiplying with the quantization factor. 
+ 
+
+
+The numerical comparison of the two approaches has been done and confirmed that these two approaches match up really well as long as we treat the integration paths under the same physics scenario.  
+
+\begin{figure}
+\centering\makebox[\textwidth]{
+\includegraphics[width=0.85\textwidth]{../media/Figs/integratepath_GF}}
+\caption[Integral paths for the dyadic Green's function calculations when loss is negligible.]{Integral paths for the dyadic Green's function calculations. Part (a) is the integral path for the dipole's free-space field contribution calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (b) is the integral path for the reflected and transmitted field contributions calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (c) is the integral path for the dyadic Green's function calculation using the eigenmode decomposition method (see Eq.~\eqref{eq:eigGFintegral}). The integral paths on the left-hand-side (in blue) indicate the backward propagating contributions, while the right-hand-side (in red) parts corresponding to the forward propagating contributions. For the eigenmode decomposition method in part (c), if one choose to use $ f=\pm 1 $ to indicate the propagation direction, then only the $ \beta>0 $ portion of integral path will be applied. }
+\label{fig:integralpaths}
+\end{figure}
+
+As shown in an earlier section, the guided and radiation modes contribution to the dyadic Green's function can be identified through the specific choice of integral paths. In Fig.~\ref{fig:integralpaths}, part (a) shows the integral path to calculate the dipole free-space contribution which does not yield guided mode contribution to the total dyadic Green's function. Part (b) of the figure shows the loop and real-valued integral paths of the guided and radiation mode divisions to the reflected and transmitted field components. The $ \mathrm{Re}(\beta)<0 $ and $ \mathrm{Re}(\beta)>0 $ parts correspond to the backward and forward propagating contributions, respectively. Part (c) of the figure indicates the integral path using the eigenmode decomposition method in the case that the sign of $ \mathrm{Re}(\beta) $ indicates the propagation directions. Depending on the propagation directions, we should choose the right integral paths for the corresponding methods adopted, and different methods should yield the same result. 
+
+For the decay rate calculation, both forward and backward propagation contributions should be averaged, or just include one direction.  
 
 
 
 
+\section{Phase shift and polarizability transformation}
+Using the results for the dyadic Green's function of the guided modes, one can write the output electric field due to the guided modes (from Eq.~\eqref{eq:EoutG}) as 
+\begin{align}
+\mathbf{E}(\br) & = \mathbf{E}_0(\br) -4\pi k_0^2 \alpha \mathbf{G}^g(\br,\br')\cdot\mathbf{E}_0(\br'),
+\end{align}
+where the polarizability has been treated as a scalar. The field at the position of the atom is then
+\begin{align}
+\mathbf{E}(\br') &= \left[\eye-4\pi k_0^2 \alpha \mathbf{G}^g(\br',\br')\right]\cdot\mathbf{E}_0(\br').
+%&\approx \exp\left[-4\pi k^2 \alpha \mathbf{G}^g(\br',\br')\right]\cdot\mathbf{E}_0(\br').
+\end{align}
 
+As a concrete example, we can consider the case that $ z'=0 $ and $ \phi'=0 $ for the atom, and the input field is the $ m=+1,\,f=+1 $ \HE forward propagating mode that
+\begin{align}
+\mathbf{E}_0(\br) &= E_0n_{e\!f\!f} \mathbf{u}_{m=1}^{f=1} (\br) = E_0n_{e\!f\!f} \mathbf{u}_1^1 (\mathbf{r}\!_\perp)e^{i\phi+i\beta_0 z}. 
+\end{align}
+The output field in the forward direction at $ z\ge 0 $ \textcolor{red}{can then be expressed by}
+\begin{align}
+\mathbf{E}(\br) &= E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br) + \sum_{m,f=\pm 1} C_{mf} E_0n_{e\!f\!f} \mathbf{u}_m^f(\br),  
+\end{align}
+where the projection coefficients are 
+\begin{align}
+C_{mf} &= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r},z)\cdot \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime,z')\\
+&= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\\
+&= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^{\!\!*}(r\!_\perp)\!\cdot\! \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(r^\prime\!\!_\perp)e^{i\beta_0(z'-fz)+i(\phi'-m\phi)}.
+\end{align}
+Using the transverse mode approximation of the dyadic Green's function, these coefficients become
+\begin{align}
+C_{mf} &= i\pi k_0 n_g\alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot\!\!\!\!\!\! \sum_{f',m'=\pm 1}\!\!\!\! \left[\mathbf{u}_{m'}^{f'}(\mathbf{r}\!_\perp){\mathbf{u}^{f'}_{m'}}^*(\mathbf{r}^\prime\!_\perp) \right]\!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\nonumber\\
+&\quad\quad\quad e^{if'\beta_0(z-z')} e^{i\beta_0(z'-fz)}\\
+&= i\pi k_0 n_g\alpha  {\mathbf{u}^f_m}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i\beta_0 (1-f)z'+i(1-m)\phi'}.
+\end{align}
+Notice that, the phase factor in the exponential part depends on the position of the atom as well as the mode index $ (m,f) $. If $ m,f\neq 1 $, there will be a fast beating term in the projection coefficient, and may be averaged out in some cases. If the atom is positioned at $ \phi'=0 $ and $ z'=0 $ line, and then the phase factor part will vanish. 
+%The projection coefficients can be written as 
+%\begin{align}
+%C_{mf} &\approx C_m\equiv  i\pi k_0 n_g\alpha  \mathbf{u}^*_m(\br'_{\!\perp})\cdot \mathbf{u}_1(\br'_{\!\perp})\\
+%&= i\pi k_0 n_g\alpha  \mathbf{u}^*_m(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i(1-m)\phi'}.
+%\end{align}
+
+Therefore, the emerged forwarding $ m=-1 $ mode has an amplitude 
+\begin{align}
+C_{-+}=i\pi k_0 n_g\alpha  {\mathbf{u}^1_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\phi'}.
+\end{align}
+Similarly, the backwarding $ m=1 $ and $ m=-1 $ modes have amplitudes 
+\begin{align}
+C_{+-} &=i\pi k_0 n_g\alpha  {\mathbf{u}^{-1}_1}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'}\\
+C_{--} &=i\pi k_0 n_g\alpha  {\mathbf{u}^{-1}_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'+i2\phi'}.
+\end{align}
+
+The output $ m=1 $ \HE mode component in presence of the atom in the forward direction is then given by
+\begin{align}
+\mathbf{E}_+(\br) &= (1+C_{11})E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
+&=\left[1 +i\pi k_0 n_g\alpha  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
+&\approx \exp\left[i\pi k_0 n_g\alpha  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
+&= te^{i\delta\phi}E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br), 
+\end{align}
+where the factor change of the mode's amplitude is 
+\begin{align}
+t=\exp\left[\Im[C_{11}]\right]=\exp\left[ -\pi k_0 n_g \Im[\alpha]  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right]
+\end{align}
+and the phase shift is
+\begin{align}
+\delta\phi &= \Re[C_{11}]\\
+&=\pi k_0 n_g\Re[\alpha]  | \mathbf{u}_1^1(r'_{\!\perp})|^2\\
+&= \pi \Re[\alpha] \frac{\omega_0}{v_g}  | \mathbf{u}_1^1(r'_{\!\perp})|^2\\
+&= \pi \Re[\alpha] \frac{\omega_0}{v_gA'_{e\!f\!f}},
+\end{align}
+where the symbols $ \Im[\cdot] $ and $ \Re[\cdot] $ indicate the imaginary and real parts of the variable inside; the effective area at the atom position defined as $ A'_{e\!f\!f}=1/| \mathbf{u}_1^1(r'_{\!\perp})|^2 $. 
+
+We can see that the attenuation of the mode comes from the state decay of the dipole source. If we use the definition of the polarizability and scattering rate of the dipole that 
+\begin{align}
+\alpha &=-\frac{|d_{eg}|^2}{\hbar \Delta}, \,\, (\Delta=\omega_{\mathbf{k}}-\omega_{eg}=\omega-\omega_0)\\
+\Gamma^{1D}_{p,f} &= \gamma^g=2\pi \frac{|d_{eg}|^2}{\hbar A'_{e\!f\!f}}\left(\frac{\omega_0}{v_g} \right)
+\end{align}
+we find that 
+\begin{align}\label{phaseshiftGamma1D}
+\delta\phi &= -\pi \frac{|d_{eg}|^2}{\hbar \Delta} \frac{\omega_0}{v_gA'_{e\!f\!f}}=-\frac{\Gamma^{1\!D}_{p,f}}{2\Delta}.
+\end{align}
+The subscript $ p $ indicates polarization, and $ f $ indicates propagation direction. \textcolor{red}{Check the factor of 2 below.}
+
+%\textcolor{red}{This result has the same form as Ivan's result derived from Heisenberg picture, except that we used $ \omega_0=\omega_{eg} $ to define the scattering rate rather than explicitly using $ \omega_{eg} $ to define the decay rate in Ivan's result. }
+
+Using the relationships that 
+\begin{align}
+\Gamma_{vac} &= \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}\\
+\Rightarrow \frac{\Gamma^{1\!D}_{p,f}}{\Gamma_{vac}} &= \frac{3\pi}{2k_0^2A'_{e\!f\!f}} \frac{c}{v_g} = \frac{1}{4} \frac{c}{v_g} \frac{\sigma_0}{A'_{e\!f\!f}},\\
+\sigma_0 &= \frac{3\lambda^2}{2\pi} \equiv \text{resonant cross section}
+\end{align}
+the 1-dimensional scattering rate can be written as 
+\begin{align}\label{Gamma1DGammavac}
+\Gamma^{1\!D}_{p,f} &= \frac{1}{4} \frac{c}{v_g} \frac{\sigma_0}{A'_{e\!f\!f}}\Gamma_{vac}.
+\end{align}
+The phase shift is then
+\begin{align}
+\delta\phi &= -\frac{\Gamma^{1\!D}_{p,f}}{2\Delta} = -\frac{c}{v_g} \frac{\sigma_0 }{A'_{e\!f\!f}} \frac{\Gamma_{vac}}{8\Delta} = -\frac{c}{v_g} \sigma_0 |\mathbf{u}_1^1 (r'_{\!\perp})|^2 \frac{\Gamma_{vac}}{8\Delta}.
+\end{align}
+
+\bigskip
+\textbf{Field goes into the opposite rotating mode:}
+
+Similarly, the field goes into the forward propagating $ m=-1 $ \HE mode has the form of 
+\begin{align}
+\mathbf{E}_{-}(\br) &=  i\pi k_0 n_{e\!f\!f}\alpha  \mathbf{u}^*_{-1}(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i2\phi'}E_0n_{e\!f\!f}\mathbf{u}_{-1}^1(\br).
+\end{align}
+$ \mathbf{E}_{+}(\br) $ and $\mathbf{E}_{-}(\br)$ defines the transformation of polarization of the light. 
+
+\bigskip
+\textbf{The rotation angle on the \Poincare sphere:}
+
+If we launch two equal-power yet orthogonal quasi-linear modes, H and V, and let the atom sit along the major axis of the H mode, the atom will feel both modes in different strengths. Equivalently, we can also launch a linearly polarized light bisect the angle between the $ x $- and $ y $-axes, and let the atom sit along the $ x $-axis. The rotation angle on the \Poincare sphere can be given by
+\begin{align}
+\varphi &= \delta\phi_H-\delta\phi_V= \pi \frac{\omega_0}{v_g} \Re[\alpha] \left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]\\
+&= \sigma_0\frac{c}{v_g}\frac{\Gamma_{vac}}{8\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].\label{eq:Faradayrotang}
+\end{align}
+
+%\textcolor{red}{Diagrams for the configuration of setups...}
+\begin{figure}
+\centering\makebox[\textwidth]{
+\includegraphics[width=12cm]{../media/Figs/BirefringenceMeasurement}}
+\caption{Setup diagram for birefringence measurement.}
+\end{figure}
+
+
+
+\bigskip
+\textbf{Comparison to the vacuum case:}
+
+Notice that, the phase shift for an atom in vacuum can be given in a similar form by
+\begin{align}
+\delta\phi^{vac} &= 2\pi \frac{\omega_0}{cA} \Re[\alpha] |\mathbf{u}_{00}(\br')|^2 =  2\pi \frac{\omega_0}{c A^{vac'}_{e\!f\!f}} \Re[\alpha]=-\frac{1}{A} \sigma_0 |\mathbf{u}_{00} (r'_{\!\perp})|^2 \frac{\Gamma_{vac}}{4\Delta},
+\end{align}
+where $\mathbf{u}_{00}(\br')  $ is the TEM00 mode of a Gaussian laser field at the atom position, $ A=\frac{\pi W_0^2}{2} $ is the mode area of the Gaussian beam with wist $ W_0 $. Hence, the relative strength of phase shift due to the presence of a nanofiber versus vacuum can be given by
+\begin{align}
+\frac{\delta\phi^{nano}}{\delta\phi^{vac}} &=\frac{A_{e\!f\!f}^{vac'}}{A_{e\!f\!f}^{11}}= \frac{A}{2} \!n_g\! \frac{|\mathbf{u}_1(r_\perp^{nano'})|^2}{|\mathbf{u}_{00}(r_\perp^{vac'})|^2}.
+\end{align}
+In the vacuum case, the strongest mode is given by $ |\mathbf{u}_{00}(r_\perp^{vac'})|=1 $ when the atom is placed at the center of the beam waist. 
+
+
+
+\section{Modification of the spontaneous emission of atoms trapped near a nanophotonic waveguide}
 
 
 \subsection{Dipole oscillation and emission of polarized light}
@@ -673,7 +952,6 @@ Hence the natural linewidth of an atom can be given by
 \end{align}
 where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the classical radius of the atom. After considering quantum effects, there will be a factor $ f=\frac{2m\omega_0}{\hbar e^2}|d_{eg}|^2 $ modification to the decay rates. 
 
-\todo{Double check with Ivan's notes on Photon Scattering of An Atom Near A Nanofiber. Unify notations of tensors, $k=\omega/c $ or $\omega_0/c$ and Green's function with/without the $4\pi k^2$ factor for later parts.}
 \textcolor{red}{To be continued: total dipole momentum and vacuum dipole momentum, more details on quantum model for the polarizability...}
 \begin{align}
 \boldsymbol{\alpha} &= \sum_e \frac{\mathbf{d}_{ge}\mathbf{d}_{eg}}{-\hbar(\Delta+i\gamma_{eg}/2)}
@@ -681,15 +959,527 @@ where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the clas
 The irreducible tensor decomposition can be found in the spin control and measurement long paper\cite{Deutsch2010a} or in Le Kien's dynamical polarizability of atoms paper~\cite{LeKien2013}. 
 
 
+\section{Resolution of birefringence spectroscopy measurement for the nanofiber trapped atom system}\label{sec:birefringenceresolution}
+The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence spectroscopy analysis for our nanofiber case.
+
+To measure the Stocks vector rotation angle on the \Poincare sphere, that is the transformation of the polarization of the light, we launch a probe light along the bisection line between $ x $- and $ y $-axes, and trap the atom on the $ x $-axis, and then measure the output powers of the counterclockwise-rotating ($ \sigma_+ $) and the clockwise-rotating ($ \sigma_- $) components of the output. From Eq.~\eqref{eq:Faradayrotang}, the total differential phase shift between the $ \sigma_+ $ and $ \sigma_- $ components of the probed traveling light interacted with $ N $ atoms can be given by
+\begin{align}
+\varphi_{_N} &= N\sigma_0\frac{c}{v_g}\frac{\Gamma_{vac}}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].
+\end{align}
+\textcolor{red}{(Note: there may be a factor of 2 in the equation above and below. Needs to check.)}
+The transformation of polarization is measured in terms of the total power difference between the $ x $- and $ y $-components of the field. The measured signal power is given by
+\begin{align}
+\Delta P_S &= P_0 \sin(\varphi_{_N}) \approx P_0 \varphi_{_N}. \label{eq:polsignal}
+\end{align}
+
+\textcolor{red}{Diagram of the experimental setup...}
+
+Our resolution of detection is limited by the shot noise characterized by the fluctuations in the power difference with a root mean square amplitude of 
+\begin{align}
+\Delta P_{SN} &= \sqrt{\frac{P_0 \hbar \omega_0 }{2\kappa \tau_{pd}}}. \label{eq:shotnoise}
+\end{align}
+In the extreme case that the signal is equal to the noise, that is to make $ \Delta P_S=\Delta P_{SN} $, we can obtain the minimum number of atoms that we can detect (the resolution) as
+\begin{align}
+N_{min} &= \sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{\Delta}{\sigma_0 n_g\Gamma_{vac}}\frac{1}{\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]}\\
+&=\sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{2\pi\Delta}{3\lambda^2 \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
+&= \sqrt{\frac{\hbar^3 \pi c  }{P_0\kappa \tau_{pd}\lambda}}\frac{\lambda\Delta }{  \left( 2\pi\right)^2 |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
+&= \frac{1}{4\pi}\sqrt{\frac{\hbar^3 c \lambda }{\pi P_0\kappa \tau_{pd}}}\frac{\Delta }{   |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 },
+\end{align}
+with
+\begin{align}
+A_{e\!f\!f}^V &= \frac{1}{n_g| \mathbf{u}_V(r'_{\!\perp})|^2}\\
+\zeta &= \frac{| \mathbf{u}_H(r'_{\!\perp})|^2}{| \mathbf{u}_V(r'_{\!\perp})|^2}.
+\end{align}
+
+\textbf{Estimating $ N_{min} $}:
+
+We consider the critical time scale that 
+\begin{align}
+\tau_{pd} &= \frac{1}{\gamma_s},
+\end{align}
+where $ \gamma_{s} $ is the photon scattering rate. The minimum detectable atom number can be estimated using the relationship between the scattering rate and the scattering cross section $ \sigma(\Delta) $ or the saturation cross section $ \sigma_0 $ under the critical time scale. Now that
+\begin{align}
+\gamma_s &= \sigma(\Delta) \frac{I(\br')}{\hbar \omega_0} \\
+\sigma(\Delta) &=\frac{\sigma_0}{1+\frac{4\Delta^2}{\Gamma^2_{vac}}}\approx \sigma_0 \frac{\Gamma_{vac}^2}{4\Delta^2} \quad \text{(far detuning.)}
+\end{align}
+Hence,
+\begin{align}
+\gamma_s &\approx \sigma_0\frac{\Gamma_{vac}^2}{4\Delta^2} \frac{I(\br')}{\hbar \omega_0}=\frac{\sigma_0}{A_{in}}\frac{P_0}{\hbar\omega_0}\frac{\Gamma_{vac}^2}{4\Delta^2},
+\end{align}
+where the effective incident mode area at the atom position, $A_{in}  $, is defined as
+\begin{align}
+A_{in }&= \frac{P_0}{I(\br')}.
+\end{align}
+
+We also treat the quantum efficiency $ \kappa=1 $. The critical shot noise defined in Eq.~\eqref{eq:shotnoise} then becomes
+\begin{align}
+\Delta P_{SN} &\approx \sqrt{\frac{P_0 \hbar \omega_0 \gamma_s}{2\kappa }} =P_0\sqrt{\frac{ \sigma_0 }{2A_{in}}}\frac{\Gamma_{vac}}{2\Delta}.
+\end{align}
+The signal defined in Eq.~\eqref{eq:polsignal} can be rewritten as
+\begin{align}
+\Delta P_S &= NP_0 \frac{\sigma_0}{A_{e\!f\!f}}\frac{\Gamma_{vac}}{4\Delta},
+\end{align}
+where the effective mode area at the atom position for our configuration is defined by
+\begin{align}
+A_{e\!f\!f} &= \frac{1}{n_g}\frac{1}{| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2}.
+\end{align}
+If we make the shot noise power equal to the minimum detectable signal power, we can obtain the minimum detectable atom number as
+\begin{align}
+N_{min} &= \sqrt{\frac{2A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
+\end{align}
+
+\textcolor{red}{Compare to vacuum case?}
+
+
+%</waveguideinterface>
 
 
 
+\appendix
+% ########################### Apendix ##########################################
+
+%<*eigenmodes>
+
+\chapter{Fundamental eigenmodes of an optical nanofiber}\label{chap:fibereigenmodes}
+In this appendix chapter, we will provide some details on solving the eigenmodes of the nanofiber starting from the homogeneous wave equation, Eq.~\ref{EBz}, and will give the formulas for mode normalization based on power and the eigenmode normalization condition. At the end of this chapter, we will also derive the formulas for calculating the group velocity of the \HE mode of the nanofiber.
+
+First, using the relationship that
+\begin{align}
+\nabla^2 \!_\perp = \frac{1}{r_{\!\perp}}\pp{}{r\!_\perp}\! \left(r\!_\perp \pp{}{r\!_\perp} \right) + 
+\frac{1}{r_\perp^2} \spp{}{\phi},
+\end{align}
+and the symmetry of the fiber,  we can separate the mode function by
+\begin{align}
+\psi(r\!_\perp,\phi)=\mathcal{E}_{z,\beta m}(r\!_\perp)e^{im\phi},
+\end{align} 
+and hence
+\begin{align}
+\mathcal{E}_z(r\!_\perp,\phi,z) = \mathcal{E}_{z,\beta m}(r\!_\perp)e^{i(m\phi+\beta z)},
+\end{align}
+where $ \mathcal{E}_{z,\beta m}(r\!_\perp) $ satisfies the Bessel's equation
+\begin{align}
+\left[ \spp{}{r\!_\perp}+ \frac{1}{r_{\!\perp}}\pp{}{r\!_\perp}- 
+\frac{m^2}{r^2\!_\perp} + (k^2\varepsilon(r\!_\perp)-\beta^2) \right] 
+\mathcal{E}_{z,\beta m}(r\!\!_\perp)=0
+\end{align}
+with 
+\begin{align}
+\varepsilon(r\!\!_\perp) = 
+\begin{cases}
+1, & r\!_\perp>a\\
+\varepsilon_f, & r\!_\perp\leq a.
+\end{cases}
+\end{align}
+The general solution for $ \mathcal{E}_{z,\beta m}(r\!\!_\perp) $ can be given in three cases 
+corresponding to different 
+boundary conditions
+\begin{align}
+\mathcal{E}_{z,\beta m}(r\!\!_\perp) = \begin{cases}
+AJ_m(qr\!\!_\perp) + B Y_m(qr\!_\perp)&\rightarrow J_m(\theta)\sim \cos\theta,\, Y_m(\theta)\sim 
+\sin\theta.\\
+CI_m(qr\!_\perp) + DK_m(qr\!_\perp) & \rightarrow I_m(\theta) \sim e^\theta,\, K_m(\theta) \sim 
+e^{-\theta}.\\
+EH_m^{(\!1\!)}(qr\!_\perp) \!+\! FH_m^{(\!2\!)}(qr\!_\perp ) & \rightarrow H_m^{(\!1\!)} (\theta) \! \sim \! 
+e^{i\theta},\, 
+H_m^{(\!2\!)}(\theta)\!\sim\! e^{\!-i\theta}.
+\end{cases}
+\end{align}
+The positive parameter $ 1/q $ is the characteristic decay length corresponding to $ 1/h_{11} $ and $ 
+1/q_{11} $ 
+in the $\text{HE}_{11}$ mode expression. Using the symmetric and convergent condition at $ 
+r\!_\perp=0\,\text{and}\, \infty $, as for bound modes, for example, if $k< \beta\leq 
+k\sqrt{\varepsilon_f}$,
+\begin{align}
+\left\{
+ \begin{array}{lcll}
+	r\!_\perp \leq a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\! AJ_m(h r\!_\perp), & h \!=\! 
+	\sqrt{k^2\varepsilon_f-\beta^2}\! >\! 0;\\
+	r\!_\perp > a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\!DK_m(q r\!_\perp), & q\!=\! 
+	\sqrt{\beta^2-k^2}>0.
+ \end{array}\right.
+\end{align}
+Both $ \beta $ and $ h $ are discrete for bound modes. 
+For scattered modes, $ 0\leq \beta< k $, similarly, 
+\begin{align}
+\left\{
+ \begin{array}{lcll}
+	r\!_\perp \leq a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\! AJ_m(h r\!_\perp), & h \!=\! 
+	\sqrt{k^2\varepsilon_f-\beta^2}\! >\! 0;\\
+	r\!_\perp > a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\!EH_m^{(\!1\!)}(p r\!_\perp\!), & p\!\!=\!\! 
+	\sqrt{k^2-\beta^2}>0.
+ \end{array}\right.
+\end{align}
+Both $ \beta $ and $ p $ are continuous. 
+%\textcolor{red}{(Double check the general solutions and the consistence with Eq.~\ref{ET0Rexpand}.)}
+%Notice that Ref.\cite{Snyder1983} used $ J_m(hr\!_\perp)\cos m\phi $ and $ 
+%(J_m(pr\!_\perp)+CH_m^{(\!1\!)})\cos m\phi $ as the basis for the general solution of $ e $ and $ o $ 
+%light 
+%of the radiation modes, and summed them up. They are equivalent to the solution here.  
+
+If $ \beta $ is a pure imaginary number, the field will have an exponential decay amplitude on $ z $-direction, and will spread the energy away from the fiber axis. Reference~\cite{Snyder1983} denotes the modes with pure imaginary $ \beta $ as evanescent modes. If $ \beta $ has both real and imaginary parts, the modes are denoted as leaky modes, which are combinations of radiation modes and evanescent modes. Except for the case that the incident light is highly directed at the complementary critical angle $ \theta_c $ of geometric optics, only the radiation modes part can propagate for a long distance along the fiber axis. In our nanofiber system, we only consider the bound and radiation modes. The ranges of some waveguide parameters are given in Table~\ref{tab:fiberparameters}. 
+In the table, we have defined the normalized wave number\cite{Snyder1983Optical}, or 
+$V$-number\index{$V$-number} 
+of a fiber as $V  = 
+k_f a \mathrm{NA}$.  Here $k_f=\frac{2\pi}{\lambda}$, is the free space wave number, $a$ is the radius 
+of the core of the fiber, and $\mathrm{NA}$ is the numerical aperture\index{numerical aperture} of 
+the fiber, $\mathrm{NA} = 
+(n_{core}^2 - n_{cladding}^2)^{1/2} = n_{core}(2\Delta)^{1/2}$, with profile height 
+parameter\index{profile height parameter} 
+$\Delta =\frac{1}{2}(1-n_{cladding}^2/n_{core}^2)\approx (n_{core}-n_{cladding})/n_{core}$.  For 
+different modes labeled with $ j $, we always have $V_j^2=a^2(h_j^2+q_j^2)$ and $ \lambda\beta_j/2\pi $ is a mode invariance.  The TE and TM modes have non-vanishing cut-off 
+frequencies, as $ a\rightarrow 0 $.  The cutoff frequency is found from $V = a\omega (\Delta)^{1/2}/c =2.405$ for silicon fiber.  
+Only the lowest HE mode, $\mathrm{HE}_{11}$, has no cutoff frequency as $ a\rightarrow 0 $.  For $0 < V < 2.405$, which is the case of the nanofiber we are studying, it is the only mode that propagates in the 
+fiber. For fixed $ \varepsilon_f $, in the range that $ 0\leq \beta \leq 
+k\sqrt{\varepsilon_f} $, we can distinguish the radiation and bound mode as follows:
+\begin{align}
+\begin{cases}
+0\leq \beta < k, &\rightarrow \emph{unbounded radiation modes;}\\
+k< \beta \leq k \sqrt{\varepsilon_f}, &\rightarrow \exists a,\, \emph{HE}_{11}\, \emph{is the only 
+bound mode.}
+\end{cases}
+\end{align}
+
+
+\begin{minipage}{0.97\textwidth}
+\centering
+\captionof{table}{Ranges of fiber parameters for different modes. } \label{tab:fiberparameters} 
+\begin{tabular}{|l|c|c|c|}
+\hline  & $\beta$ & $h$ & $p$ \\ 
+\hline Bound modes & $k<\beta_j \leq k\sqrt{\varepsilon_f} $ & $ 0\leq h_j<V/a $ & $ p^r_j=0,\, p^i_j>0 $ \\ 
+\hline Radiation modes & $0\leq \beta<k$ & $V/a < h\leq k\sqrt{\varepsilon_f}$ & $0<p\leq k $\\ 
+\hline Evanescent modes & $ \beta^r=0,\, \beta^i>0 $ & $ k\sqrt{\varepsilon_f} < h $ & $ k<p $ \\ 
+\hline 
+\end{tabular} 
+\par
+\bigskip
+%The caption:
+Superscripts $ r $ and $ i $ denote real and imaginary parts. Subscripts $ j $ denotes the discrete indeces for bound modes. Adapted from Ref.~\cite{Snyder1983} P.P.516 Table 25-1. This can also be understood in geometric optics as shown in Fig.(\ref{fig:Fibermodes}).
+\end{minipage}
+\bigskip
 
 
 
+Due to the symmetry of equations, we also have
+\begin{align}
+\mathcal{B}_z(r\!_\perp,\phi,z) = \mathcal{B}_{z,\beta m}(r\!_\perp)e^{i(m\phi+\beta z)},
+\end{align}
+where $  \mathcal{B}_{z,\beta m}(r\!_\perp) $ satisfies the same Bessel's equation as above.  
+
+In the case of a nanofiber with a sub-wavelength radius, the high-order modes of the nanofiber can hardly be supported, which only leaves over the \HE mode\index{mode!HE11 mode@HE$_{11}$ mode} propagating along the nanofiber. Assuming the incident light is quasi-linearly polarized, the Cartesian components of the bound optical field are given, for $ r_\perp>a $ (outside the fiber), by~\cite{Lacroute2012,LeKien2004}
+\begin{subequations}
+\label{Ertrga}
+\begin{align}
+E_x^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}J_1(h_{11}a)}{2q_{11}K_1(q_{11}a)}[(1-s_{11})K_0(q_{11}r_\perp)\cos (\varphi_0) \nonumber\\
+&\qquad + (1+s_{11})K_2 (q_{11}r_\perp) \cos (2\phi-\varphi_0) ] e^{-i(\omega t-f\beta_{11}z)},\\
+E_y^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}J_1(h_{11}a)}{2q_{11}K_1(q_{11}a)}[(1-s_{11})K_0(q_{11}r_\perp)\sin (\varphi_0) \nonumber\\
+&\qquad + (1+s_{11})K_2 (q_{11}r_\perp) \sin (2\phi-\varphi_0) ] e^{-i(\omega t-f\beta_{11}z)},\\
+E_z^g(r_\perp,\phi,z,t) &= fA \frac{J_1(h_{11}a)}{K_1(q_{11}a)}K_1(q_{11}r_\perp)\cos (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},
+\end{align}
+\end{subequations}
+and, for $ r_\perp<a $ (inside the nanofiber), by
+\begin{subequations}
+\label{Ertrla}
+\begin{align}
+E_x^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}}{2h_{11}}[(1-s_{11})J_0(h_{11}r_\perp)\cos (\varphi_0) \nonumber\\
+&\qquad - (1+s_{11})J_2 (h_{11}r_\perp) \cos (2\phi-\varphi_0) ] e^{-i(\omega t-f\beta_{11}z)},\\
+E_y^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}}{2h_{11}}[(1-s_{11})J_0(h_{11}r_\perp)\sin (\varphi_0) \nonumber\\
+&\qquad - (1+s_{11})J_2 (h_{11}r_\perp) \sin (2\phi-\varphi_0) ] e^{-i(\omega t-f\beta_{11}z)},\\
+E_z^g(r_\perp,\phi,z,t) &= fA J_1(h_{11}r)\cos (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},
+\end{align}
+\end{subequations}
+with
+\begin{subequations}
+\begin{align}
+s_{11} &= \left[\frac{1}{(h_{11}a)^2}+ \frac{1}{(q_{11}a)^2} \right] \left[ \frac{J_1'(h_{11}a)}{h_{11}aJ_1(h_{11}a)} + \frac{K'_1(q_{11}a)}{q_{11}aK_1(q_{11}a)} \right],\\
+h_{11} &= \sqrt{k_0^2 n_1^2-\beta_{11}^2},\\
+q_{11} &= \sqrt{\beta^2_{11}-k_0^2 n_2^2}.
+\end{align}
+\end{subequations}
+Here, $ k_0 $ is the vacuum wavenumber\index{wavevector!vacuum wavenumber} of the incident light; $ f=+,- $ indicates forward or backward propagation direction; $ \phi $ denotes the azimuthal angle in the transverse plane; $ \varphi_0 $ indicates the polarization axis for the incident polarization relative to the $ x  $ axis; $ n_1 $ and $ n_2 $ are the refractive indices\index{refractive index}\index{index of refraction} of inside and outside the nanofiber; $ \beta_{11} $ is the mode propagation constant; $ 1/h_{11} $ is the characteristic decay length for the bound mode inside the fiber; $ 1/q_{11} $ is the characteristic decay length outside the fiber; $ A $ is the real-valued amplitude for the linearly polarized input; $ J_l $ and $ K_l  $ are the $ l $th Bessel function of the first kind\index{Bessel function!Bessel function of the first kind} and the modified Bessel function of the second kind\index{Bessel function!modified Bessel function of the second kind}. As shown in Equs.~\ref{Ertrga} and~\ref{Ertrla}, we can factorize the $ \mathbf{E}^g(r_\perp,\phi,z,t) $ as $ \mathbf{E}^g(r_\perp,\phi,z,t)= \boldsymbol{\mathcal{E}}^g(\br)e^{i\omega t} $. 
+
+Using the coordinate system transformation relationships that
+\begin{align}
+\hat{\br}\!_\perp &= \hat{\mathbf{x}}\cos\phi + \hat{\mathbf{y}}\sin\phi,\\
+\hat{\phi} &= -\hat{\mathbf{x}}\sin\phi + \hat{\mathbf{y}}\cos\phi,
+\end{align}
+one can also express the transverse components of the electric field components in the polar coordinate, for $ r\!_\perp>a $, by
+\begin{subequations}
+\label{Erptlrga}
+\begin{align}
+E_{r\!_\perp}^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}J_1(h_{11}a)}{2q_{11}K_1(q_{11}a)}[(1-s_{11})K_0(q_{11}r_\perp) \nonumber\\
+&\qquad + (1+s_{11})K_2 (q_{11}r_\perp) ]\cos (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},\\
+E_\phi^g(r_\perp,\phi,z,t) &= -iA \frac{\beta_{11}J_1(h_{11}a)}{2q_{11}K_1(q_{11}a)}[(1-s_{11})K_0(q_{11}r_\perp) \nonumber\\
+&\qquad - (1+s_{11})K_2 (q_{11}r_\perp) ]\sin (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},
+\end{align}
+\end{subequations}
+and, for $ r_\perp<a $, by
+\begin{subequations}
+\label{Ephirtlrla}
+\begin{align}
+E_{r\!_\perp}^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}}{2h_{11}}[(1-s_{11})J_0(h_{11}r_\perp) \nonumber\\
+&\qquad - (1+s_{11})J_2 (h_{11}r_\perp)  ]\cos (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},\\
+E_\phi^g(r_\perp,\phi,z,t) &= -iA \frac{\beta_{11}}{2h_{11}}[(1-s_{11})J_0(h_{11}r_\perp) \nonumber\\
+&\qquad + (1+s_{11})J_2 (h_{11}r_\perp)  ]\sin (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)}.
+\end{align}
+\end{subequations}
+
+Alternatively, we can use the fundamental mode with rotating polarization to decompose arbitrary polarized mode propagating in the fiber. The solutions for the cylindrical components of the circulating polarized fundamental mode are given~\cite{Lacroute2012,Vetsch2010Opticala}, for $ r_\perp<a $, by
+\begin{subequations}
+\label{Ertcrla}
+\begin{align}
+E^{(\mu)}_{r_\perp}(r_\perp,\phi,z,t) &=iA\frac{\beta_{11}}{2h_{11}}e^{-i(\omega t-f\beta_{11} z -p\phi)}\nonumber\\
+&\qquad \left[ (1-s_{11})J_0(h_{11}r_\perp)-(1+s_{11})J_2(h_{11}r_\perp) \right]\\
+E^{(\mu)}_\phi(r_\perp,\phi,z,t) &=  -pA \frac{\beta_{11}}{2h_{11}}e^{-i(\omega t-f\beta_{11} z -p\phi)} \nonumber\\
+&\qquad \left[ (1-s_{11})J_0(h_{11}r_\perp) +(1+s_{11})J_2(h_{11}r_\perp) \right] \\
+E^{(\mu)}_z(r_\perp,\phi,z,t) &= fA J_1(h_{11}r_\perp) e^{-i(\omega t-f\beta_{11} z -p\phi)},
+\end{align}
+\end{subequations}
+and, for $ r_\perp>a $, by
+\begin{subequations}
+\label{Ertcrga}
+\begin{align}
+E^{(\mu)}_{r_\perp}(r_\perp,\phi,z,t) &=iA\frac{\beta_{11}}{2h_{11}}\frac{J_1(h_{11}a)}{K_1(q_{11}a)}e^{-i(\omega t-f\beta_{11} z -p\phi)} \nonumber\\ 
+&\qquad \left[ (1-s_{11})K_0(q_{11}r_\perp)+(1+s_{11})K_2(q_{11}r_\perp) \right]\\
+E^{(\mu)}_\phi(r_\perp,\phi,z,t) &=  -pA \frac{\beta_{11}}{2h_{11}} \frac{J_1(h_{11}a)}{K_1(q_{11}a)}e^{-i(\omega t-f\beta_{11} z -p\phi)} \nonumber\\ 
+&\qquad \left[ (1-s_{11})K_0(q_{11}r_\perp) - (1+s_{11})K_2(q_{11}r_\perp) \right] \\
+E^{(\mu)}_z(r_\perp,\phi,z,t) &= fA \frac{J_1(h_{11}a)}{K_1(q_{11}a)} K_1(q_{11}r_\perp) e^{-i(\omega t-f\beta_{11} z -p\phi)}.
+\end{align}
+\end{subequations}
+In Equs.~\ref{Ertcrla} and~\ref{Ertcrga}, we denote the normalized bound fundamental modes as $ \mathbf{E}^{(\mu)} (\br,t)$ by an index $ \mu=(\omega,f,p) $, where $ f=+,- $ denotes forward or backward propagation direction, and $ p=+,- $ denotes the conterclockwise or clockwise of polarization. Similar to the qusi-linear case, we use $ \boldsymbol{\mathcal{E}}^{p=\pm} $ to indicate the spatial components of the field with a given circulation pattern. For a linearly polarized \HE mode, the cylindrical components are just the superposition of the two circular fields, 
+\begin{align}\label{Eilincyc}
+E_i^{lin} = \frac{1}{\sqrt{2}}(E_i^+ + E_i^-)\quad \mathrm{or}\quad \mathcal{E}_i^{lin} = \frac{1}{\sqrt{2}}(\mathcal{E}_i^+ + \mathcal{E}_i^-),\quad i\in(r_\perp,\phi,z).
+\end{align}
+
+\section{Power flow and normalization factor $ A $}
+As discussed in Vetsch's dissertation~\cite{Vetsch2010a}, the real-valued amplitude factor $ A $ can be calculated by normalizing the total power of the light propagating in the fiber via the Poynting vector\index{Poynting vector}
+\begin{align}
+\left<\mathbf{S}\right>=\frac{1}{2} \Re\left[\boldsymbol{\mathcal{E}}^g(\br)\times{\boldsymbol{\mathcal{H}}^g(\br)}^* \right],
+\end{align}
+where $ \boldsymbol{\mathcal{H}}^g(\br) $ is the magnetic field of the guided light. 
+Since the $ z $-component of the Poynting vector\index{Poynting vector} $ \left< S_z\right> $ qualifies the energy flux of the electromagnetic field in the propagation direction, integrating $ \left< S_z \right> $ over the transverse plane leads to the power propagating inside and outside the fiber
+\begin{align}
+P_{in} &= \int_0^{2\pi} \mathrm{d}\phi \int_0^a \left< S_z \right> r_\perp \mathrm{d}r_\perp\\
+P_{out} &= \int_0^{2\pi} \mathrm{d}\phi \int_a^\infty \left< S_z \right> r_\perp \mathrm{d}r_\perp.
+\end{align}
+Using the total transmission power $ P=P_{in}+P_{out} $, the normalization constant $ A $ reads
+\begin{align}\label{eq:A}
+A=\sqrt{\frac{4\mu_0\omega P}{\pi a^2 \beta_{11}}}\left(D_{in} + D_{out} \right)^{-1/2},
+\end{align}
+where
+\begin{align}
+D_{in} &= (1-s_{11})\left[ 1+(1-s_{11})\frac{\beta_{11}^2}{h_{11}^2}\right] \left(J_0^2(h_{11}a) + J_1^2(h_{11}a) \right) \nonumber\\
+&\quad + (1+s_{11})\left[ 1+(1+s_{11})\frac{\beta_{11}^2}{h_{11}^2}\right] \left(J_2^2(h_{11}a)- J_1(h_{11}a)J_3(h_{11}a) \right)\\
+D_{out} &= \frac{J_1^2(h_{11}a)}{K_1^2(q_{11}a)}\left\{ (1-s_{11})\left[ 1-(1-s_{11})\frac{\beta_{11}^2}{q_{11}^2}\right] \left(K_0^2(q_{11}a) - K_1^2(q_{11}a) \right)\right. \nonumber\\
+&\quad \left. + (1\!+\! s_{11})\left[ 1\!-\! (1\!+\! s_{11})\frac{\beta_{11}^2}{q_{11}^2}\right] \left(K_2^2(q_{11}a)\! -\! K_1(q_{11}a)K_3(q_{11}a) \right) \right\}.
+\end{align}
+The ratio of $ D_{in} $ and $ D_{out} $ indicates the intensity distribution division inside and outside of the nanofiber. 
+
+\section{Energy density and normalization factor for traveling field quantization}
+The energy per unit length stored in the waveguide is defined as
+\begin{align}
+W &= \frac{1}{2} \int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2.
+\end{align} 
+In our case, we can reform the integral over the transverse plane into the inside of the nanofiber and outside of the nanofiber parts. That is to say
+\begin{align}
+\int \mathrm{d} \br\!_\perp &= \int_0^{2\pi}\!\!\!\! \mathrm{d} \phi \int_0^a\!\!r\!_\perp \mathrm{d}r\!_\perp + \int_0^{2\pi}\!\!\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp.
+\end{align}
+Hence, the energy stored per unit distance of propagation can be rewritten as 
+\begin{align}
+W &= n_1^2P_1+n_2^2P_2,
+\end{align}
+where the power flow or the intensity distribution factors $ P_1 $ and $ P_2 $ can be found by
+\begin{align}
+\!\!\!\!\! P_1 &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!\mathrm{d}r\!_\perp r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
+&= \frac{\beta^2}{4h^2}\!\left\{(1\!-\! s)^2\!\left[J_0^2(ha)\!+\! J_1^2(ha) \right] \!+\!(1\!+\!s)^2\!\left[J_2^2(ha)\!-\!J_1(ha)J_3(ha) \right]\right\}\nonumber\\
+&\quad +\frac{1}{2}\left[J_1^2(ha)-J_0(ha)J_2(ha) \right] \\
+\!\!\!\!\! P_2 &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_a^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
+&= \frac{\beta^2J_1^2(ha)}{4q^2K_1^2(qa)}\!\left\{\phantom{\frac{1}{1}}\!\!\!\!(1\!-\!s)^2\!\left[K_1^2(qa)\!-\!K_0^2(qa) \right]\right.\nonumber\\
+&\quad\left. \!+(1\!+\!s)^2\!\!\left[K\!_1\!(qa)K\!_3\!(qa)\!-\! K_2^2\!(qa) \right]\!+\!\frac{2q^2}{\beta^2}\!\!\left[K\!_0\!(qa)K\!_2\!(qa)\!-\!K_1^2\!(qa) \right]  \right\}.
+\end{align}
+
+Also, to quantize the traveling field of waveguide modes, we can define the normalization factor to be~\cite{LeKien2005a}
+\begin{align}
+N_g &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp\,  n^2(\br\!_\perp)|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
+&= 2\pi A^2 a^2 (n_1^2P_1 + n_2^2P_2),
+\end{align}
+where the factor $ A $ is defined in Eq.~\eqref{eq:A} related to the input power. The full expression of radiation modes of the nanofiber system can also be found in Ref.~\cite{LeKien2005a}.
+
+For some cases, the total power $ P $ can also be defined as
+\begin{align}
+P &= \int \mathrm{d}\br\!_\perp \langle S(\br\!_\perp)\rangle =\int \mathrm{d} \br\!_\perp I(\br\!_\perp)=\frac{\varepsilon_0 c n_{e\!f\!f}}{2}\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2,
+\end{align}
+where $ n_{e\!f\!f} $ is the effective index of refraction of the waveguide. 
+By plugging in the field expression from Equs.~\eqref{Ertcrla} and~\eqref{Ertcrga}, we find the effective index of refraction for the \HE modes of the nanofiber can be given by
+\begin{align}
+n_{e\!f\!f} &=\frac{\int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}{\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
+&= \frac{n_1^2\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + n_2^2\int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}
+{\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + \int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
+&= \frac{n_1^2P_1+n_2^2P_2}{P_1+P_2}.
+\end{align}
+Notice that, the group index of refraction is not the same as the $ n_{e\!f\!f} $ defined above. We will discuss group velocity and group index of refraction of a waveguide later. See also the notes on \emph{Group velocity of the nanofiber}. 
 
 
-\section{Dipole radiation coupled to the guided and radiative modes of an optical nanofiber}\label{sec:boundrad}
+In this Appendix we provide, for reference, the fundamental HE$_{11}$ solutions to the homogeneous wave equation, \erf{Eq::WaveEquationSource} with $\tensor{\boldsymbol{\alpha}} = 0$, for a cylindrical nanofiber of radius $a$ and index of refraction given by \erf{Eq::IndexofRefraction}.  At a given frequency, $\omega_0 = c k_0$, the magnitudes of the longitudinal and transverse wave vectors for a guided mode are related by $n^2 k_0^2 = \beta_0^2 + k_\perp^2$.  
+The positive propagation constant, $\beta_0 \equiv \beta(\omega_0)$, is determined from the eigenvalue equation that results from enforcing physical boundary conditions at the fiber surface \cite{Snyder1983Optical},
+	\begin{align}
+		\frac{J_0(ha)}{ha J_1(ha)} = - \frac{n_1^2+n_2^2}{2n_1^2} \frac{K'(qa)}{qa K_1(qa)} + \frac{1}{h^2 a^2} - \bigg[ \bigg(\frac{n_1^2 - n_2^2}{2 n_1^2} \frac{K'(qa)}{qa K_1(qa)} \bigg)^2  + \frac{\beta_0^2}{n^2_1 k^2} \bigg(\frac{1}{q^2a^2} + \frac{1}{h^2a^2} \bigg)^2 \bigg]^{1/2}.
+	\end{align}
+Inside the nanofiber the transverse wavevector is real, $k_\perp = q$, where $q=\sqrt{\beta_0^2- n_2^2k_0^2}$, and outside the nanofiber it is purely imaginary, $k_\perp = i h$, where $h=\sqrt{n_1^2 k_0^2 - \beta_0^2}$.  The vector eigenfunctions are expressed as $\mbf{f}_{\mu}(\br) = (2\pi)^{-1/2}\mbf{u}_{b,p}(\mbf{r}_\perp) e^{i b \beta_0 z}$, where the modes are indexed by frequency $\omega_0$, propagation direction $b = \pm$, and polarization $p$.
+
+A relatively simple form for the guided-mode functions can be expressed in a cylindrical basis $(r_\perp, \phi, z)$ with longitudinal unit vector $\mathbf{e}_z$, oriented along the fiber axis.  
+The transverse unit vectors are related to their fixed Cartesian counterparts via the relations
+\begin{subequations}
+	\begin{align}
+		\mathbf{e}_{r_{\!\perp}}     &= \mathbf{e}_x \cos \phi + \mathbf{e}_y \sin \phi, \\
+		\mathbf{e}_\phi &= - \mathbf{e}_x \sin \phi + \mathbf{e}_y \cos \phi.
+	\end{align}
+\end{subequations}
+The transverse profile for the quasicircular guided modes, $p = \pm$, is
+	\begin{align} \label{Eq::QuasicircularModes}
+		\mbf{u}_{b,\pm}(\mathbf{r}_\perp) = \big[\mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \pm i \mathbf{e}_\phi u_\phi(r_\perp) +  i b \mathbf{e}_z  u_z(r_\perp) \big]e^{ \pm i \phi}, 
+	\end{align}
+and for the quasilinear guided modes, $p = \{H,V\}$, is
+	\begin{subequations} \label{Eq::QuasilinearModes}
+	\begin{align}
+		\mbf{u}_{b,H}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \cos \phi - \mathbf{e}_\phi u_\phi(r_\perp) \sin \phi +  ib \mathbf{e}_z  u_z(r_\perp) \cos \phi \big] \\
+		\mbf{u}_{b,V}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \sin \phi + \mathbf{e}_\phi u_\phi(r_\perp) \cos \phi +  ib \mathbf{e}_z  u_z(r_\perp) \sin \phi \big]. 
+	\end{align}
+	\end{subequations}
+The modes are expressed in terms of real-valued functions that depend only on the radial coordinate $r_\perp$,
+	\begin{subequations} \label{Eq::ProfileFunctions}
+	\begin{align} 
+		u_{r_{\!\perp}}(r_\perp) =& u_0 \big[ (1-s) K_0(q{r_{\!\perp}}) + (1+s)K_2(q{r_{\!\perp}})\big] \\
+		u_\phi(r_\perp) =& u_0\big[ (1-s) K_0(q{r_{\!\perp}}) - (1+s)K_2(q{r_{\!\perp}})\big] \\
+		u_z(r_\perp) =& u_0 \frac{2 q}{\beta_0} \frac{K_1(qa)}{J_1(ha)} J_1(h{r_{\!\perp}}), \label{Eq::zprofile}
+	\end{align}
+	\end{subequations}
+where $u_0$ is set by the normalization condition, $\int d^2 \mathbf{r}_\perp n(r_\perp) | \mathbf{u}_\mu(\br_\perp)|^2=1$, $J_n$ and $K_n$ are the $n^{th}$ Bessel functions of the first and second kind, $f'(x)$ indicates a derivative with respect to the argument $x$, and 
+	\begin{align}
+		s = \frac{1/(q^2 a^2)^{2} + 1/(h^2 a^2)^{2}}{[J'_1(ha)/haJ_1(ha) + K'_1(qa)/qaK_1(qa)]}.
+	\end{align}  
+Of particular interest is the $z$-component, \erf{Eq::zprofile}, which can become appreciable.  Note that the phase convention in Eqs. (\ref{Eq::QuasicircularModes}-\ref{Eq::ProfileFunctions}) has been chosen to emphasize properties of the quasilinear modes and differs from that of \emph{Le Kien et al.} -- for instance in Ref. \cite{LeKien2014}.  
+Further details about the guided-mode fields inside the nanofiber ($r_\perp\leq a$), the radiation (unguided) modes, and the quantized form of both can be found in Refs. \cite{Sondergaard2001,Tong2004,Kien2004,LeKien2005,Vetsch2010Opticala}.
+
+
+\section{Calculation of group velocity and group index of refraction ($ v_g $ and $ n_g $)}
+For a guided mode in a waveguide, the phase index of refraction is defined as
+\begin{align}
+n_p &= \frac{\beta}{k}.
+\end{align}
+Correspondingly, the group velocity and group index of refraction for a guided mode in a waveguide can be given by
+\begin{align}
+v_g &= \dd{\omega}{\beta},\\
+n_g &= \frac{c}{v_g}=\dd{\beta}{k}.
+\end{align}
+Therefore, the group velocity and group index of refraction of the $ HE_{11} $ mode can calculated from the eigen function of $ \beta $ (see Appendix A of Ref.~\cite{LeKien2005a}). 
+
+In general, the eigen function of $ \beta $ can be expressed as
+\begin{align}
+f(h,q,k,\beta) &=0
+\end{align}
+with $ h $ and $ q $ are both functions of $ k $ and $ \beta $. 
+We differentiate the equation above with respect to $ \beta $ on both sides, and obtain
+\begin{align}
+\dd{f}{\beta} &= \pp{f}{h} \left(\pp{h}{k}\dd{k}{\beta}+\pp{h}{\beta} \right) + \pp{f}{q}\left(\pp{q}{k}\dd{k}{\beta}+\pp{q}{\beta} \right) +\pp{f}{k}\dd{k}{\beta}+\pp{f}{\beta}=0\\
+\Rightarrow & \left( \pp{f}{h}\pp{h}{k}+\pp{f}{q}\pp{q}{k}+\pp{f}{k} \right)\dd{k}{\beta} = -\left(\pp{f}{h}\pp{h}{\beta}+\pp{f}{q}\pp{q}{\beta}+\pp{f}{\beta} \right)
+\end{align}
+\begin{align}
+\Rightarrow &\quad\quad n_g = \dd{\beta}{k} = -\frac{\pp{f}{h}\pp{h}{k}+\pp{f}{q}\pp{q}{k}+\pp{f}{k}}
+{\pp{f}{h}\pp{h}{\beta}+\pp{f}{q}\pp{q}{\beta}+\pp{f}{\beta}}.
+\end{align}
+
+Physically, the group index of refraction indicates the waveguide dispersion for a given propagating mode. Here, we can ignore the material dispersion due to the small response delay of the silica molecules of the waveguide substrate. Since the waveguide dispersion is merely a property of the waveguide, the presence of the radiating atom does not affect the group index of refraction at all (have checked numerically through solving the eigen function of $ \beta $ in presence of an atom). 
+
+From the perspective of energy flowing, the group velocity can also be given by
+\begin{align}
+v_g&=\frac{P}{W}.
+\end{align}
+The physics interpretation of group and phase velocity of a waveguide mode can be found in the notes on \emph{Group velocity of the nanofiber}. The effective zig-zag ray model is also described in the notes for understanding the mechanism of group and phase index of refractions. For our nanofiber case, the $ D_2 $ transition line of Cs atoms does not have a strong enhancement of group index of refraction for the guided mode, compared to the phase index of refraction. The $ D_1 $ line has a relatively strong enhancement of group index since the wave can penetrate into the clad much deeper compared to the $ D_2 $ line case. 
+
+
+%</eigenmode>
+
+
+%<*paraxialexpansion>
+\chapter{Paraxial expansion of a propagating dipole radiation mode}
+In the case that the light fields propagate along a certain direction $ z $ and spread out only slowly in the transverse direction, we can use the \emph{paraxial approximation}\index{paraxial approximation} to simplify the light propagation problem, especially the analytical integral of the Fourier integrals of the fields. In that case, the $ z $ component of the wavevectors can be expanded in a series as
+\begin{align}
+k_z=k\sqrt{1-(k^2_x+k^2_y)/k^2}\approx k-\frac{(k^2_x+k^2_y)}{2k}.
+\end{align}
+This reflects the physical fact that the wavevectors\index{wavevector} $ \mathrm{k}=(k_x,k_y,k_z) $ in the angular spectrum representation are almost parallel to the $ z $-axis and the transverse wavenumbers $ (k_x,k_y) $ are small compared to $ k $. 
+
+Meanwhile, in paraxial approximation\index{paraxial approximation} $ \theta\rightarrow 0 $,
+\begin{align}
+\hat{\mathrm{r}} &= \sin\theta\cos\phi \, \hat{\mathrm{e}}_x + \sin\theta \sin\phi\, \hat{\mathrm{e}}_y + \cos\theta \, \hat{\mathrm{e}}_z\\
+&\approx \hat{\mathrm{e}}_z.
+\end{align}
+
+The Green's function solution for a point emitter in free space can then be expanded to be
+\begin{align}
+\frac{e^{i\mathrm{k}\cdot \mathrm{R}}}{R}\approx \frac{e^{ik_0(z-z')}}{z-z'}\exp\left[ \frac{ik_0}{2(z-z')} \left| \mathrm{r}_\perp - \mathrm{r}_\perp'\right|^2 \right],
+\end{align}
+where $ \mathrm{R}=\br-\br' $. 
+A far field from a point light emitter is usually paraxial approximation obedient. 
+%</paraxialexpansion>
+
+
+%<*freespacegreenfunction>
+\chapter{Green's function for a vacuum medium and volume integration methods}\label{chap:freespacegreenfunction}
+As one simple example, we consider a free-space case where the photon emitter is emerged in a homogeneous vacuum background. The wave equation can be given by
+\begin{align}\label{eq:freespacewaveeq}
+\left[\nabla^2 +\frac{\omega_0^2}{c^2}\right]\boldsymbol{\mathcal{E}}(\br) =  -4\pi\! \frac{\omega^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br)
+\end{align}
+where we have set $ n=1 $ and replaced $ -\nabla\times\nabla\times $ with $ \nabla^2 $ from Eq.~\eqref{eq:Maxwellwithsource2}. As a result, all vector components of the field vectors are independent to each other. The corresponding Green's function equation for this problem becomes a scalar equation,
+\begin{align}
+(\spp{}{x_i} + k^2) G_i(\br,\br')=-4\pi \frac{\omega^2}{c^2}\delta(\br-\br'), 
+\end{align}
+where $ x_i $ are the coordinate components and $ G_i(\br,\br') $ is the scalar Green's function responding to a unit source with only $ x_i $ field component. 
+The only physical solution for the scalar Green's function\index{Green's function} in free space is 
+\begin{align}
+G_0(\br,\br') =k^2\frac{e^{\pm i\mathbf{k}\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
+\end{align}
+where we only take the \emph{positive} signed solution for our example. 
+Assuming the boundary contributions vanish, we may have
+\begin{align}
+\boldsymbol{\mathcal{E}}(\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + \int_V \tensor{S}(\br') \! \cdot\! \boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r', \label{Etotal0}
+\end{align}
+where $ \boldsymbol{\mathcal{E}}_0 (\br) $ is the homogeneous Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation!homogeneous Maxwell-Helmholtz equation} in the limit that $ \tensor{S}(\br)\longrightarrow 0 $, $ \mathbf{R}=\br-\mathbf{r}' $. Therefore, the scattering field is
+\begin{align}
+\boldsymbol{\mathcal{E}}_s(\br) &=  \int_V \tensor{S}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br')k^2 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
+&= \int_V \frac{\omega^2}{c^2} \tensor{\chi}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'.
+\end{align}
+
+
+
+In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field. By the use of Green's function method, we have converted our differential equation for the scattered field into volume integral equations. They are very important since they form the basis for various formalisms such as the \emph{method of moments}\index{method of moments}, the \emph{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \emph{coupled dipole method}\index{coupled dipole method}~\cite{Novotny2012}. With these methods, the integral equations above can be solved numerically. Alternatively, we may develop a Liouville–Neumann series\index{Liouville–Neumann series} solution to the equation, namely the Born series\index{Born series}.
+
+The Born series is typically derived by assuming that the scattering potential is very
+weak, and may be written as $ \tensor{S}(\br)\rightarrow \delta \tensor{S}(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series of solutions for the total field of the form
+\begin{align}
+\boldsymbol{\mathcal{E}}(\br) &= \sum_{n=0}^{\infty} \delta^n \mathbf{V}_n(\br).
+\end{align}
+On substituting the expression above into Eq.~\ref{Etotal0}, we find the series
+\begin{align}
+\mathbf{V}_0 &= \boldsymbol{\mathcal{E}}_0,\\
+\mathbf{V}_1 &= k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',\\
+\ldots & \ldots\\
+\mathbf{V}_n &= k^2\int_V \tensor{S}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_{n-1} \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',
+\end{align}
+where the \emph{Born approximation}\index{Born series!Born approximation} only includes up to the first-order term. Under the Born approximation, the solution for the electrical field with one single atom can be given by
+\begin{align}
+\boldsymbol{\mathcal{E}} (\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
+&= \boldsymbol{\mathcal{E}}_0(\br) +\sum_{\br'}\frac{\omega^2}{c^2} \tensor{\alpha}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|}\\
+&=\boldsymbol{\mathcal{E}}_0(\br) + \frac{\omega^2}{c^2} \tensor{\alpha}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|},
+\end{align}
+where $ \boldsymbol{\alpha}(\br') $ denotes the polarizability of the atom at $ \br' $. 
+
+Notice that Born series does not necessarily converge. Usually, we need to verify if the perturbation fields are much weaker than the field $ \boldsymbol{\mathcal{E}}_0 $ before using Born series. 
+%</freespacegreenfunction>
+
+
+%<*nanofiberradiationproblem>
+
+\section{Dipole radiation coupled to the guided and radiation modes of an optical nanofiber}\label{sec:boundrad}
 In our study, it is critical to separate the bound mode and the radiation mode. In this section, we will 
 go through a light propagation theory in the scenario of a nanofiber with a trapped atom. 
 
@@ -986,7 +1776,7 @@ T &=hpak\left[ pJ_m(ha)\dd{}{(pa)}H_m^{(1)}(pa)-hn_1^2H_m^{(1)}(pa)\dd{}{(ha)}J_
 \centering
 \subfloat[]{\label{contourplot_lower}\includegraphics[scale=0.75]{../media/Figs/contourplot_lower}}
 \end{minipage}
-\caption[Contour integrations to decompose the guided and radiative modes of a dipole radiation problem in presence of a single mode waveguide.]{Integration paths. For the case that $ z>0 $, we can use the zero-valued contour integral path drawn in subfig.~\ref{contourplot_upper} to calculate the integration along path $ C_1 $. The simplified integration path by ignoring waveguide losses is given on the right-hand-side. It only contains the forward propagating mode contributions with radiation and guided mode components as divided through the real-axis integral and the loop-hole integral. For the $ z<0 $ case, the contour integral analysis is given in subfig.~\ref{contourplot_lower}, which only includes the backward propagating mode contributions.}
+\caption[Contour integrations to decompose the guided and radiation modes of a dipole radiation problem in presence of a single mode waveguide.]{Integration paths. For the case that $ z>0 $, we can use the zero-valued contour integral path drawn in subfig.~\ref{contourplot_upper} to calculate the integration along path $ C_1 $. The simplified integration path by ignoring waveguide losses is given on the right-hand-side. It only contains the forward propagating mode contributions with radiation and guided mode components as divided through the real-axis integral and the loop-hole integral. For the $ z<0 $ case, the contour integral analysis is given in subfig.~\ref{contourplot_lower}, which only includes the backward propagating mode contributions.}
 \label{fig:integralpath}
 \end{figure}
 
@@ -1151,814 +1941,7 @@ In the case that the nanofiber can be treated as a lossless medium, the contour 
 \textcolor{red}{Define transmitting and reflecting rates...}
 
 
-
-
-
-\section{Green's function formalism for the atom-waveguide system}
-So far, we have studied two basic aspects for the waveguide boundary value problem: one is the eigenmode problem, in which we studied the permitted guided waveguide modes propagating along the waveguide in absence of atoms; the other one is the single-dipole radiation problem, in which we studied the propagating modes when there is a dipole radiating electromagnetic wave around a waveguide. Now, we can combine the conclusions of the two cases studied, and to study the full radiation reaction problem of the dipole-waveguide system, in which we assume there is a guided mode incident to the waveguide, and then excites one atom outside of the waveguide which radiates light into the waveguide and interferes with the waveguide modes. 
-
-
-\begin{figure}
-\centering\makebox[\textwidth]{
-\includegraphics[width=0.85\textwidth]{../media/Figs/NanofiberTrappedAtoms}}
-\caption{Diagram of nanofiber trapped atoms. }
-\end{figure}
-
-For our nanofiber case, only $ m=\pm 1 $ $ \text{HE}_{11} $ modes are permitted and guided. We assume the input mode is $ m=+1 $ $ \text{HE}_{11} $ guided mode, which can be written as 
-\begin{align}
-\mathbf{E}_0(\br,\omega_0)&=E_0 \mathbf{u}^+(r\!_\perp ) e^{i(\beta_0 z+\phi)}, 
-\end{align}
-where $ \mathbf{u}^{+}(r\!_\perp ) $ denotes the normalized bare nanofiber \HE transverse mode with forward propagation counterclockwise rotation and circularly polarized light input. Similarly, $ \mathbf{u}^{-}(r\!_\perp ) $ is the forward propagating but clockwise rotating quasi-circular \HE mode. In general, we denote  $ \mathbf{u}^{\mu}(r\!_\perp ) $ as the normalized $\mu=(\omega,f,p)$ mode radial components, with $ f=\pm $ denoting forward or backward propagating direction, $ p=\pm $ denoting counter-clockwise or clockwise rotation of polarization. For short, we denote $\mathbf{u}^+(r\!_\perp )$ as the forward-propagating and counter-clockwise-rotating $m=1$ guided mode. We also denote $ \beta_0 $ as the eigen wavenumber determined by the fiber eigenvalue  equation. Similarly, we denote $ \mathbf{u}^{\nu}(r\!_\perp ) $ as the radiation mode with mode index $ \nu=(\omega,\beta,m,p) $, where $ m=0,\,\pm 1,\,\pm 2,\cdots $ is the mode index, and $p=\pm$ denotes the polarization pattern. The guided and radiation modes satisfy the orthogonality conditions that 
-\begin{align}
-\int_0^{2\pi}\mathrm{d}\phi \int_0^\infty n_{r}^2|\mathbf{u}^{(\mu)}(r\!_\perp )|^2r\!_\perp \mathrm{d}r\!_\perp &=1,\\
-\int_0^{2\pi}\mathrm{d}\phi \int_0^\infty n_{r}^2\left[\mathbf{u}^{(\nu)}(r\!_\perp )\cdot\mathbf{u}^{(\nu')*}(r\!_\perp )\right]_{\beta=\beta',m=m'}r\!_\perp \mathrm{d}r\!_\perp &=\delta(\omega-\omega')\delta_{pp'}.
-\end{align}
-The completeness relationships of the modes can be given by
-\begin{align}
-\sum_{f,p}\int \mathrm{d}\mathbf{k} \,n_r^2\mathbf{u}^{(\mu)}(r\!_\perp )\mathbf{u}^{(\mu)*}(r'\!_\perp ) &= \unittensor\delta^T(r\!_\perp-r'\!_\perp),\\
-\sum_{m,p}\int \mathrm{d}\mathbf{k} \, n_r^2\mathbf{u}^{(\nu)}(r\!_\perp )\mathbf{u}^{(\nu)*}(r'\!_\perp ) &=\unittensor\delta^T(r\!_\perp-r'\!_\perp).
-\end{align}
-
-As shown in the earlier sections, in general, the output field in presence of a single atom can be written as
-\begin{align}
-\mathbf{E}(\br) 
-&=\mathbf{E}_0(\br)+\alpha \GFT(\br,\br')\cdot \mathbf{E}_0(\br')
-\end{align}
-where we only treat the polarizability as a scalar. The only barrier for solving the output E-field is to solve the dyadic Green's function.
-
-In general, there are two strategies to solve the dyadic Green's function: one is to solve the dipole emission problem numerically; the other one involves transverse mode decomposition and only needs bare fiber modes. We call the first approach as the \emph{normal} approach, and call the other one as the \emph{approximate} approach. We will describe the two approaches in the successive paragraphs. 
-
-The \emph{normal} approach:
-
-We recall that the equation governs the dyadic Green's function can be written as below:
-\begin{align}
-\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \GFT(\br,\br') &= -4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,
-\end{align}
-each column of which can be expressed as
-\begin{align}
-\left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}_i(\br,\br') &= -4\pi k_0^2\mathbf{e}_i\delta(\br-\br'), \label{eq:Gi}
-\end{align}
-where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
-
-Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an amplitude of $ -4\pi k^2 $. That is to say that once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components divided by the factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis:
-\begin{equation}
-\GFT(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
-  \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
-   \matrix (m)[matrix of math nodes,left delimiter=(,right delimiter=),ampersand replacement=\&] % Note: the ampersandreplacement line redefines to use \& instead of the usual & sign to separate columns in the matrix. This can avoid potential conflict with external environment where ampersands are also defined for specific purposes. See https://tex.stackexchange.com/questions/15093/single-ampersand-used-with-wrong-catcode-error-using-tikz-matrix-in-beamer
-  {
-  G_{r\!_\perp r\!_\perp} \& G_{r\!_\perp\phi} \& G_{r\!_\perp z}\\
-  G_{\phi r\!_\perp} \& G_{\phi\phi} \& G_{\phi z} \\
-  G_{zr\!_\perp} \& G_{z\phi} \& G_{zz} \\
-  };
-  % Hightlight columns.
-  \begin{pgfonlayer}{myback}
-    \fhighlight[red!30]{m-1-1}{m-3-1}
-    \fhighlight[blue!30]{m-1-2}{m-3-2}
-    \fhighlight[green!30]{m-1-3}{m-3-3}
-  \end{pgfonlayer}
-  % Make links to other equivalent expressions.
-  \begin{pgfonlayer}{myback}
-    \draw (m-3-1.south)+(-0.5,-0.76) node [left] {column vector $\mathbf{G}_i$:};
-    \draw[implies-implies,double equal sign distance] (m-3-1.south)+(0,-0.08) -- +(0,-0.5) node[below]{$ \mathbf{G}_{r\!_\perp} $};
-    \draw[implies-implies,double equal sign distance] (m-3-2.south)+(0,-0.08) -- +(0,-0.5) node[below]{$ \mathbf{G}_{\phi} $};
-    \draw[implies-implies,double equal sign distance] (m-3-3.south)+(0,-0.1) -- +(0,-0.55) node[below]{$ \mathbf{G}_z $};
-    \draw (m-3-1.south)+(-0.5,-1.7) node [left,align=center] {equivalent $ \mathbf{E} $ radiated\\ from a unit dipole:};
-    \draw[<-] (m-3-1.south)+(0,-1.08) -- +(0,-1.5) node[below]{$ \mathbf{d}_{r\!_\perp} $};
-    \draw[<-] (m-3-2.south)+(0,-1.08) -- +(0,-1.5) node[below]{$ \mathbf{d}_{\phi} $};
-    \draw[<-] (m-3-3.south)+(0,-1.1) -- +(0,-1.55) node[below]{$ \mathbf{d}_z $};
-    \draw[<-] (m-3-3.south)+(0.5,-1.32) -- +(1.1,-1.32) node[right]{$\cdot (-4\pi k^2)$};
-  \end{pgfonlayer}
-  \end{tikzpicture}
-\end{equation}
-%\textcolor{red}{Need to make it look nicely, and continue on...}
-The equivalent $ \mathbf{E} $ field has been solved in section~\ref{sec:boundrad} for the radiation problem with one atom.
-
-
-The \emph{eigenmode decomposition} approach:
-
-In the case that the source is extremely small, the total dyadic Green's function should be effectively equal to the transverse dyadic Green's function. To illustrate this idea, we can expand the current source of the dipole into transverse and longitudinal parts by
-\begin{align}
-\mathbf{J}(\br) &= \mathbf{J}_T(\br) + \mathbf{J}_L(\br),
-\end{align}
-where the transverse and longitudinal current components, $ \mathbf{J}_T(\br) $ and $\mathbf{J}_L(\br)$, satisfy
-\begin{align}
-\nabla\cdot\mathbf{J}_T (\br) &=0\\
-\nabla\times \mathbf{J}_L (\br) &=0.
-\end{align}
-In SI units, the continuity condition reads
-\begin{align}
-\nabla\cdot\mathbf{J}=-\pp{}{t}\rho.
-\end{align}
-Under Coulomb gauge, the transverse and longitudinal currents can then be written as 
-\begin{align}
-\mathbf{J}_T &= -\frac{1}{\mu_0}(\nabla^2 -\frac{1}{c^2}\spp{}{t})\mathbf{A}\label{eq:Jt_cg}\\
-\mathbf{J}_L &= \varepsilon_0 \pp{}{t}\nabla\phi .\label{eq:Jl_cg}
-\end{align}
-Notice that, the longitudinal current equation (Eq.~\eqref{eq:Jl_cg}) will become purely local for an ideal dipole source, and can be ignored. The longitudinal components may only become important for the case with a charged source. Below, we only consider the transverse eigenmode decompositions for our analysis of neutral atoms that can be treated as neutral point dipole sources.
-
-The dyadic Green's function for a waveguide satisfies (Eq.~\eqref{eq:dyadicGF})
-\begin{align}
-\left[ -\nabla\times\nabla\times + n^2k_0^2 \right] \GFT(\br,\br') &= -4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,
-\end{align}
-where $n=n(\br\!_\perp)=\sqrt{\varepsilon(\br\!_\perp)}$ and $k_0=\omega_0/c$. Correspondingly, the bare-fiber modes (eigenmodes), $ \mathbf{u}^{(\mu)}(\br) $, satisfy the Maxwell-Helmholtz equation (Eq.~\eqref{MaxwellHelmholtz0}), that is
-\begin{align}
-[-\nabla\times\nabla\times + n^2(\br)k^2]  \mathbf{u}^{(\mu)}(\br) &=0,
-\end{align}
-where $ k^2=\frac{\omega_{\mathbf{k}}^2}{c^2} $ and $ \mathbf{k} $ is an arbitrary wave vector.
-
-To use the eigenfunction expansion method to calculate the dyadic Green's function, we can define a vector function
-\begin{align}
-{\mathbf{u}}_\epsilon^{(\mu)}(\br) &= n(\br) \mathbf{u}^{(\mu)}(\br),
-\end{align}
-which satisfies
-\begin{align}
-\left[-\frac{1}{n(\br)}\nabla\times\nabla\times \frac{1}{n(\br)} + k^2\right]  {\mathbf{u}}_\epsilon^{(\mu)}(\br) &=0.
-\end{align}
-Introduced by Glauber and Lewenstein~\cite{Glauber1991}, the operator on the left-hand-side of the equation above, $\mathcal{H}_k = -\frac{1}{n(\br)}\nabla\times\nabla\times \frac{1}{n(\br)} + k^2$, is always Hermitian. Similarly, we can define a Hermitian operator $\mathcal{H}_{k_0} = -\frac{1}{n(\br)}\nabla\times\nabla\times \frac{1}{n(\br)} + k_0^2$, and obtain the eigenequation with $\mathcal{H}_{k_0}$ given by
-\begin{align}
-\mathcal{H}_{k_0} \mathbf{u}_\epsilon^{(\mu)} &= \lambda_\mu \mathbf{u}_\epsilon^{(\mu)},
-\end{align}
-which has a set of eigensolutions $ (\mathbf{u}_\epsilon^{(\mu)},\lambda_\mu=k_0^2-k^2) $. There exists a set of adjoint eigensolutions $ (\tilde{\mathbf{u}}_\epsilon^{(\mu)},\lambda_\mu^*) $ to $\mathcal{H}_{k_0}^\dagger \tilde{\mathbf{u}}_\epsilon^{(\mu)} = \lambda_\mu^* \tilde{\mathbf{u}}_\epsilon^{(\mu)}$, such that the biorthogonality relation
-\begin{align}
-\int \mathbf{u}_\epsilon^{(\mu)} (\br)\cdot \left[\tilde{\mathbf{u}}_\epsilon^{(\mu')}(\br) \right]^* \mathrm{d}\br &= \int n^2(\br) \mathbf{u}^{(\mu)} (\br)\cdot {\mathbf{u}^{(\mu')}}^*(\br) \mathrm{d}\br=\delta_{\mu\mu'},\label{eq:orthutrans}
-\end{align}
-and the completeness relation
-\begin{align}
-\sum_\mu \mathbf{u}_\epsilon^{(\mu)} (\br) \left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br') \right]^* &= \sum_\mu n(\br)n(\br') \mathbf{u}^{(\mu)} (\br) {\mathbf{u}^{(\mu)}}^*(\br) =\eye \delta^{(3)}(\br-\br'). 
-\end{align}
-In our nanofiber case, we can define such a set of mode functions, and in fact we choose them to have the following properties for their adjoint functions:
-\begin{align}
-\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br) &= n^*(\br) \tilde{\mathbf{u}}^{(\mu)}(\br)\\
-\tilde{\mathbf{u}}^{(\mu)}(\br) &= {\mathbf{u}^{(\tilde{\mu})}}^*(\br)\\
-{\mathbf{u}^{(\tilde{\mu})}}(\br) &= {\mathbf{u}^{(\mu)}}^*(\br)
-\end{align}
-with $ \tilde{\mu}=(\omega_0,-m,-f) $. For a single-mode nanofiber, we let $ n(\br)=n(\br\!_\perp) $ be real and define $ \mathbf{u}^{(\mu)}(\br)=\mathbf{u}_{mf}(r\!_\perp )e^{if\beta z+im\phi} $ for the guided $\mathrm{HE}_{11}$ modes with a propagation constant $ \beta  $. The completeness relation for the normalized modes will yield a transverse $ \delta $-function, $ \delta^T(\br-\br') $, having the property that
-\begin{align}
-\mathbf{f}^T(\br')&=\int \mathrm{d}\br\,\, \delta^T(\br-\br')\mathbf{f}(\br).
-\end{align} 
-Similar to the integration in the general biorthogonality relationship, if we only integrate over the transverse plane of a mode, we will obtain
-\begin{align}
-\int_0^{2\pi}\!\!\!\!\! \mathrm{d}\phi\!\! \int_0^\infty\!\!\!\! r\!_\perp \mathrm{d}r\!_\perp  n^2(r\!_\perp) \mathbf{u}_{mf}(r\!_\perp )\!\cdot\!\mathbf{u}_{m'f'}^*(r\!_\perp )& e^{i(f\!-\!f')\beta z+i(m\! -\! m')\phi}  =\delta_{mm'}e^{i(f\!-\!f')\beta z} \label{eq:orthutrans2D}.
-\end{align}
-
-
-From those eigensolutions, we can define a dyad, $ \mathbf{G}_\epsilon(\br,\br') $, satisfying
-\begin{align}
-\mathbf{G}_\epsilon(\br,\br') &= n(\br) \mathbf{G}(\br,\br') n(\br'),\\
-\mathcal{H}_{k_0} \mathbf{G}_\epsilon(\br,\br') &= \mathbbm{1}\delta^{(3)}(\br-\br').\label{eq:HGtilde}
-\end{align}
-
-One can expand the dyadic function $ \mathbf{G}_\epsilon(\br,\br') $ in terms of the transverse eigenmodes by
-\begin{align}
-\mathbf{G}_\epsilon(\br,\br')\approx\mathbf{G}_\epsilon^T(\br,\br')= \sum_{\mu} \mathbf{u}_\epsilon^{(\mu)}(\br) \mathbf{A}_\epsilon^{(\mu)}(\br'), \label{eq:transGappr}
-\end{align}
-where the coefficient vector $\mathbf{A}_\epsilon^{(\mu)}(\br')  $ does not depend on $ \br $.
-Substituting Eq.~\eqref{eq:transGappr} into Eq.~\eqref{eq:HGtilde}, we obtain
-\begin{align}
-\sum_{\mathbf{k}} \left[ \mathcal{H}_{k_0}  \mathbf{u}_\epsilon^{(\mu)}(\br)\right] \mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br')\\
-\Leftrightarrow \sum_\mu (k_0^2-k^2) \mathbf{u}_\epsilon^{(\mu)}(\br) \mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi k_0^2\mathbbm{1}\delta^{(3)}(\br-\br') = -4\pi k_0^2\sum_{\mu} \mathbf{u}_\epsilon^{(\mu)}(\mathbf{r} )\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\mathbf{r}^\prime )\right]^*.
-\end{align}
-Therefore, we can solve the coefficient vector for an arbitrary eigenmode to give
-\begin{align}
-\mathbf{A}_\epsilon^{(\mu)}(\br') &= -4\pi\frac{\omega_0^2 \left[ \tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br')\right]^*}{\omega_0^2-\omega_{\mathbf{k}}^2}.
-\end{align}
-Hence, 
-\begin{align}
-\mathbf{G}_\epsilon(\br,\br')= -4\pi\sum_{\mu} \frac{\omega_0^2\mathbf{u}_\epsilon^{(\mu)}(\br)\left[\tilde{\mathbf{u}}_\epsilon^{(\mu)}(\br')\right]^*}{\omega_0^2-\omega_{\mathbf{k}}^2} = -4\pi n(\br) \left[\sum_{\mu} \frac{\omega_0^2 {\mathbf{u}}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2} \right]n(\br').
-\end{align}
-By the definition of $\mathbf{G}_\epsilon(\br,\br')  $, the dyadic Green's function can be written by 
-\begin{align}
-\mathbf{G}(\br,\br')\approx -4\pi\sum_{\mu} \frac{\omega_0^2\mathbf{u}^{(\mu)}(\br) {\mathbf{u}^{(\mu)}}^*(\br')}{\omega_0^2-\omega_{\mathbf{k}}^2}.
-\end{align}
-For the guided $\mathrm{HE}_{11}$ modes, we have 
-\begin{align}
-\mathbf{G}^g(\br,\br') &= -4\pi\sum_{\beta,m,f=\pm 1} \frac{\omega_0^2\mathbf{u}_{\mu}(r\!_\perp)\mathbf{u}^*_{\mu}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')},\label{eq:Gganaly}
-\end{align}
-where $ \omega_\beta $ is the angular frequency of the guided \HE modes with the amplitude $ z $-component of the wave vector being $ \beta $. \textcolor{red}{The mode index should be $ \mu=(\beta_0,m=\pm 1,f=\pm 1) $. This notation should be unified starting here.} Now, we can use the dispersion expansion of $ \omega_\beta $ around $ \omega_0 $ with a group velocity $ v_g $ that 
-\begin{align}
-\omega_\beta &=\omega_0 + \dd{\omega_\beta}{\beta}(\beta-f\beta_0) +\cdots = \omega_0 + fv_g(\beta-f\beta_0) +\cdots\\
-\Rightarrow \omega_\beta - \omega_0 &= fv_g(\beta-f\beta_0) +\cdots
-\end{align}
-Meanwhile, the sum over the mode index can be written as an integral over $ \beta $:
-\begin{align}
-\sum_{\beta} \Leftrightarrow & \frac{L}{2\pi} \int_{-\infty}^{\infty} \mathrm{d}\beta, \quad \text{if $\beta$ includes the propagation direction},\\
-\quad \mathrm{or}\quad &\frac{L}{2\pi}\sum_{f=\pm 1} \int_0^{\infty} \mathrm{d}\beta,\quad\text{if the propagation direction is separated out}.
-\end{align}
-This  transformation comes from the consideration that, in the continuous limit, the propagating guided wave is periodic within the quantization length period $ L $ and the periodicity condition is that $ \beta_n L=2\pi n $, where $ n=1,\,2,\,\ldots $. Hence, the dyadic Green's function for the guided modes (Eq.~\eqref{eq:Gganaly}) can be written as
-\begin{align}
-\!\!\!\!\!\!\!\!\! \mathbf{G}^g(\br,\br') &= -2L\sum_{m,f=\pm 1}\int_0^\infty \mathrm{d}\beta \frac{\omega_0^2\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{\omega_0^2-\omega_\beta^2}e^{if\beta(z-z')+im(\phi-\phi')}\\
-&= 2\omega_0^2 L\!\!\sum_{m,f=\pm 1}\int_0^\infty\!\! \mathrm{d}\omega_\beta \frac{\mathrm{d}\beta}{\mathrm{d}\omega_\beta} \frac{\mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)}{(\omega_0\! +\!\omega_\beta) (\omega_0\!-\!\omega_\beta)} e^{i\!f\!\beta(z\!-\!z')+im(\phi\!-\!\phi')}\label{eq:eigGFintegral}\\
-&\approx 2\omega_0^2L \!\!\! \sum_{m,f=\pm 1}\!\!\!\!\! \pi i\,\!  \frac{f}{fv_g} \mathrm{Res}\!\! \left[\! \frac{\mathbf{u}_{m}\!(r\!_\perp\! ) \mathbf{u}^*_{m}\! (r_{\!\perp}^\prime\! ) e^{i\! f\! \beta(z \!-\! z')+im(\phi\!-\! \phi')} }{(\omega_0+\omega_\beta)(\omega_0-\omega_\beta)} \!\right]\!\!\!\!_{\begin{array}{l} \omega_\beta\! =\!\omega_0 \\ \beta\! =\!\beta_0\end{array} }\\
-&= \pi\frac{iL}{v_g} \sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')},
-\end{align}
-where $ \beta_0 $ is the propagation constant with a given $ \omega_0 $ for the input/emission field. The integral path and the equivalence to the residue at $ \beta_0 $ is illustrated in part (c) of Fig.(\ref{fig:integralpaths}). We have used the fact that $ \int_{0-if\epsilon}^{\infty-if\epsilon} \mathrm{\omega_\beta}g(\omega_\beta) = P\left[ g(\omega_\beta)\right] +f\pi i \mathrm{Res}\left[g(\omega_\beta) \right] $, and ignored the principal value integral part, $ P\left[ g(\omega_\beta)\right] $. The principal value part yields the level shift of the atom due to the fiber modes, which should be negligible in the dispersive regime we are considering about. \todo[inline]{Note: the figure of integral path needs to be changed to have integrals always from $0$ to $\infty$ for $\omega_\beta$ and choose the shift of the integral path based on the sign of $f(z-z')$.} 
-
-By using the relation that 
-\begin{align}
-k_0 &=\frac{\omega_0}{c}\\
-n_g&=\sqrt{\varepsilon_g}= \frac{c}{v_g}
-\end{align}
-the dyadic Green's function for the guided modes can also be written as
-\begin{align}
-\mathbf{G}^g(\br,\br') &\approx i\pi n_gL\sum_{m,f=\pm 1} \mathbf{u}_{m}(r\!_\perp)\mathbf{u}^*_{m}(r_{\!\perp}^\prime)e^{if\beta_0(z-z')+im(\phi-\phi')}.
-\end{align}
-We make $ L=1 $ for now, which should be canceled through multiplying with the quantization factor. 
- 
-
-
-The numerical comparison of the two approaches has been done and confirmed that these two approaches match up really well as long as we treat the integration paths under the same physics scenario.  
-
-\begin{figure}
-\centering\makebox[\textwidth]{
-\includegraphics[width=0.85\textwidth]{../media/Figs/integratepath_GF}}
-\caption[Integral paths for the dyadic Green's function calculations when loss is negligible.]{Integral paths for the dyadic Green's function calculations. Part (a) is the integral path for the dipole's free-space field contribution calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (b) is the integral path for the reflected and transmitted field contributions calculation (see, for example, Eq.~\eqref{ET0RC1}). Part (c) is the integral path for the dyadic Green's function calculation using the eigenmode decomposition method (see Eq.~\eqref{eq:eigGFintegral}). The integral paths on the left-hand-side (in blue) indicate the backward propagating contributions, while the right-hand-side (in red) parts corresponding to the forward propagating contributions. For the eigenmode decomposition method in part (c), if one choose to use $ f=\pm 1 $ to indicate the propagation direction, then only the $ \beta>0 $ portion of integral path will be applied. }
-\label{fig:integralpaths}
-\end{figure}
-
-As shown in an earlier section, the guided and radiation modes contribution to the dyadic Green's function can be identified through the specific choice of integral paths. In Fig.~\ref{fig:integralpaths}, part (a) shows the integral path to calculate the dipole free-space contribution which does not yield guided mode contribution to the total dyadic Green's function. Part (b) of the figure shows the loop and real-valued integral paths of the guided and radiation mode divisions to the reflected and transmitted field components. The $ \mathrm{Re}(\beta)<0 $ and $ \mathrm{Re}(\beta)>0 $ parts correspond to the backward and forward propagating contributions, respectively. Part (c) of the figure indicates the integral path using the eigenmode decomposition method in the case that the sign of $ \mathrm{Re}(\beta) $ indicates the propagation directions. Depending on the propagation directions, we should choose the right integral paths for the corresponding methods adopted, and different methods should yield the same result. 
-
-For the decay rate calculation, both forward and backward propagation contributions should be averaged, or just include one direction.  
-
-
-\subsection{Calculation of group velocity and group index of refraction ($ v_g $ and $ n_g $)}
-For a guided mode in a waveguide, the phase index of refraction is defined as
-\begin{align}
-n_p &= \frac{\beta}{k}.
-\end{align}
-Correspondingly, the group velocity and group index of refraction for a guided mode in a waveguide can be given by
-\begin{align}
-v_g &= \dd{\omega}{\beta},\\
-n_g &= \frac{c}{v_g}=\dd{\beta}{k}.
-\end{align}
-Therefore, the group velocity and group index of refraction of the $ HE_{11} $ mode can calculated from the eigen function of $ \beta $ (see Appendix A of Ref.~\cite{LeKien2005a}). 
-
-In general, the eigen function of $ \beta $ can be expressed as
-\begin{align}
-f(h,q,k,\beta) &=0
-\end{align}
-with $ h $ and $ q $ are both functions of $ k $ and $ \beta $. 
-We differentiate the equation above with respect to $ \beta $ on both sides, and obtain
-\begin{align}
-\dd{f}{\beta} &= \pp{f}{h} \left(\pp{h}{k}\dd{k}{\beta}+\pp{h}{\beta} \right) + \pp{f}{q}\left(\pp{q}{k}\dd{k}{\beta}+\pp{q}{\beta} \right) +\pp{f}{k}\dd{k}{\beta}+\pp{f}{\beta}=0\\
-\Rightarrow & \left( \pp{f}{h}\pp{h}{k}+\pp{f}{q}\pp{q}{k}+\pp{f}{k} \right)\dd{k}{\beta} = -\left(\pp{f}{h}\pp{h}{\beta}+\pp{f}{q}\pp{q}{\beta}+\pp{f}{\beta} \right)
-\end{align}
-\begin{align}
-\Rightarrow &\quad\quad n_g = \dd{\beta}{k} = -\frac{\pp{f}{h}\pp{h}{k}+\pp{f}{q}\pp{q}{k}+\pp{f}{k}}
-{\pp{f}{h}\pp{h}{\beta}+\pp{f}{q}\pp{q}{\beta}+\pp{f}{\beta}}.
-\end{align}
-
-Physically, the group index of refraction indicates the waveguide dispersion for a given propagating mode. Here, we can ignore the material dispersion due to the small response delay of the silica molecules of the waveguide substrate. Since the waveguide dispersion is merely a property of the waveguide, the presence of the radiating atom does not affect the group index of refraction at all (have checked numerically through solving the eigen function of $ \beta $ in presence of an atom). 
-
-From the perspective of energy flowing, the group velocity can also be given by
-\begin{align}
-v_g&=\frac{P}{W}.
-\end{align}
-The physics interpretation of group and phase velocity of a waveguide mode can be found in the notes on \emph{Group velocity of the nanofiber}. The effective zig-zag ray model is also described in the notes for understanding the mechanism of group and phase index of refractions. For our nanofiber case, the $ D_2 $ transition line of Cs atoms does not have a strong enhancement of group index of refraction for the guided mode, compared to the phase index of refraction. The $ D_1 $ line has a relatively strong enhancement of group index since the wave can penetrate into the clad much deeper compared to the $ D_2 $ line case. 
-
-\section{Phase shift and polarizability transformation}
-Using the results for the dyadic Green's function of the guided modes, one can write the output electric field due to the guided modes (from Eq.~\eqref{eq:EoutG}) as 
-\begin{align}
-\mathbf{E}(\br) & = \mathbf{E}_0(\br) -4\pi k_0^2 \alpha \mathbf{G}^g(\br,\br')\cdot\mathbf{E}_0(\br'),
-\end{align}
-where the polarizability has been treated as a scalar. The field at the position of the atom is then
-\begin{align}
-\mathbf{E}(\br') &= \left[\eye-4\pi k_0^2 \alpha \mathbf{G}^g(\br',\br')\right]\cdot\mathbf{E}_0(\br').
-%&\approx \exp\left[-4\pi k^2 \alpha \mathbf{G}^g(\br',\br')\right]\cdot\mathbf{E}_0(\br').
-\end{align}
-
-As a concrete example, we can consider the case that $ z'=0 $ and $ \phi'=0 $ for the atom, and the input field is the $ m=+1,\,f=+1 $ \HE forward propagating mode that
-\begin{align}
-\mathbf{E}_0(\br) &= E_0n_{e\!f\!f} \mathbf{u}_{m=1}^{f=1} (\br) = E_0n_{e\!f\!f} \mathbf{u}_1^1 (\mathbf{r}\!_\perp)e^{i\phi+i\beta_0 z}. 
-\end{align}
-The output field in the forward direction at $ z\ge 0 $ \textcolor{red}{can then be expressed by}
-\begin{align}
-\mathbf{E}(\br) &= E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br) + \sum_{m,f=\pm 1} C_{mf} E_0n_{e\!f\!f} \mathbf{u}_m^f(\br),  
-\end{align}
-where the projection coefficients are 
-\begin{align}
-C_{mf} &= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r},z)\cdot \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime,z')\\
-&= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\\
-&= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^{\!\!*}(r\!_\perp)\!\cdot\! \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(r^\prime\!\!_\perp)e^{i\beta_0(z'-fz)+i(\phi'-m\phi)}.
-\end{align}
-Using the transverse mode approximation of the dyadic Green's function, these coefficients become
-\begin{align}
-C_{mf} &= i\pi k_0 n_g\alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot\!\!\!\!\!\! \sum_{f',m'=\pm 1}\!\!\!\! \left[\mathbf{u}_{m'}^{f'}(\mathbf{r}\!_\perp){\mathbf{u}^{f'}_{m'}}^*(\mathbf{r}^\prime\!_\perp) \right]\!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\nonumber\\
-&\quad\quad\quad e^{if'\beta_0(z-z')} e^{i\beta_0(z'-fz)}\\
-&= i\pi k_0 n_g\alpha  {\mathbf{u}^f_m}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i\beta_0 (1-f)z'+i(1-m)\phi'}.
-\end{align}
-Notice that, the phase factor in the exponential part depends on the position of the atom as well as the mode index $ (m,f) $. If $ m,f\neq 1 $, there will be a fast beating term in the projection coefficient, and may be averaged out in some cases. If the atom is positioned at $ \phi'=0 $ and $ z'=0 $ line, and then the phase factor part will vanish. 
-%The projection coefficients can be written as 
-%\begin{align}
-%C_{mf} &\approx C_m\equiv  i\pi k_0 n_g\alpha  \mathbf{u}^*_m(\br'_{\!\perp})\cdot \mathbf{u}_1(\br'_{\!\perp})\\
-%&= i\pi k_0 n_g\alpha  \mathbf{u}^*_m(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i(1-m)\phi'}.
-%\end{align}
-
-Therefore, the emerged forwarding $ m=-1 $ mode has an amplitude 
-\begin{align}
-C_{-+}=i\pi k_0 n_g\alpha  {\mathbf{u}^1_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\phi'}.
-\end{align}
-Similarly, the backwarding $ m=1 $ and $ m=-1 $ modes have amplitudes 
-\begin{align}
-C_{+-} &=i\pi k_0 n_g\alpha  {\mathbf{u}^{-1}_1}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'}\\
-C_{--} &=i\pi k_0 n_g\alpha  {\mathbf{u}^{-1}_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'+i2\phi'}.
-\end{align}
-
-The output $ m=1 $ \HE mode component in presence of the atom in the forward direction is then given by
-\begin{align}
-\mathbf{E}_+(\br) &= (1+C_{11})E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
-&=\left[1 +i\pi k_0 n_g\alpha  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
-&\approx \exp\left[i\pi k_0 n_g\alpha  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
-&= te^{i\delta\phi}E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br), 
-\end{align}
-where the factor change of the mode's amplitude is 
-\begin{align}
-t=\exp\left[\Im[C_{11}]\right]=\exp\left[ -\pi k_0 n_g \Im[\alpha]  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right]
-\end{align}
-and the phase shift is
-\begin{align}
-\delta\phi &= \Re[C_{11}]\\
-&=\pi k_0 n_g\Re[\alpha]  | \mathbf{u}_1^1(r'_{\!\perp})|^2\\
-&= \pi \Re[\alpha] \frac{\omega_0}{v_g}  | \mathbf{u}_1^1(r'_{\!\perp})|^2\\
-&= \pi \Re[\alpha] \frac{\omega_0}{v_gA'_{e\!f\!f}},
-\end{align}
-where the symbols $ \Im[\cdot] $ and $ \Re[\cdot] $ indicate the imaginary and real parts of the variable inside; the effective area at the atom position defined as $ A'_{e\!f\!f}=1/| \mathbf{u}_1^1(r'_{\!\perp})|^2 $. 
-
-We can see that the attenuation of the mode comes from the state decay of the dipole source. If we use the definition of the polarizability and scattering rate of the dipole that 
-\begin{align}
-\alpha &=-\frac{|d_{eg}|^2}{\hbar \Delta}, \,\, (\Delta=\omega_{\mathbf{k}}-\omega_{eg}=\omega-\omega_0)\\
-\Gamma^{1D}_{p,f} &= \gamma^g=2\pi \frac{|d_{eg}|^2}{\hbar A'_{e\!f\!f}}\left(\frac{\omega_0}{v_g} \right)
-\end{align}
-we find that 
-\begin{align}\label{phaseshiftGamma1D}
-\delta\phi &= -\pi \frac{|d_{eg}|^2}{\hbar \Delta} \frac{\omega_0}{v_gA'_{e\!f\!f}}=-\frac{\Gamma^{1\!D}_{p,f}}{2\Delta}.
-\end{align}
-The subscript $ p $ indicates polarization, and $ f $ indicates propagation direction. \textcolor{red}{Check the factor of 2 below.}
-
-%\textcolor{red}{This result has the same form as Ivan's result derived from Heisenberg picture, except that we used $ \omega_0=\omega_{eg} $ to define the scattering rate rather than explicitly using $ \omega_{eg} $ to define the decay rate in Ivan's result. }
-
-Using the relationships that 
-\begin{align}
-\Gamma_{vac} &= \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}\\
-\Rightarrow \frac{\Gamma^{1\!D}_{p,f}}{\Gamma_{vac}} &= \frac{3\pi}{2k_0^2A'_{e\!f\!f}} \frac{c}{v_g} = \frac{1}{4} \frac{c}{v_g} \frac{\sigma_0}{A'_{e\!f\!f}},\\
-\sigma_0 &= \frac{3\lambda^2}{2\pi} \equiv \text{resonant cross section}
-\end{align}
-the 1-dimensional scattering rate can be written as 
-\begin{align}\label{Gamma1DGammavac}
-\Gamma^{1\!D}_{p,f} &= \frac{1}{4} \frac{c}{v_g} \frac{\sigma_0}{A'_{e\!f\!f}}\Gamma_{vac}.
-\end{align}
-The phase shift is then
-\begin{align}
-\delta\phi &= -\frac{\Gamma^{1\!D}_{p,f}}{2\Delta} = -\frac{c}{v_g} \frac{\sigma_0 }{A'_{e\!f\!f}} \frac{\Gamma_{vac}}{8\Delta} = -\frac{c}{v_g} \sigma_0 |\mathbf{u}_1^1 (r'_{\!\perp})|^2 \frac{\Gamma_{vac}}{8\Delta}.
-\end{align}
-
-\bigskip
-\textbf{Field goes into the opposite rotating mode:}
-
-Similarly, the field goes into the forward propagating $ m=-1 $ \HE mode has the form of 
-\begin{align}
-\mathbf{E}_{-}(\br) &=  i\pi k_0 n_{e\!f\!f}\alpha  \mathbf{u}^*_{-1}(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i2\phi'}E_0n_{e\!f\!f}\mathbf{u}_{-1}^1(\br).
-\end{align}
-$ \mathbf{E}_{+}(\br) $ and $\mathbf{E}_{-}(\br)$ defines the transformation of polarization of the light. 
-
-\bigskip
-\textbf{The rotation angle on the \Poincare sphere:}
-
-If we launch two equal-power yet orthogonal quasi-linear modes, H and V, and let the atom sit along the major axis of the H mode, the atom will feel both modes in different strengths. Equivalently, we can also launch a linearly polarized light bisect the angle between the $ x $- and $ y $-axes, and let the atom sit along the $ x $-axis. The rotation angle on the \Poincare sphere can be given by
-\begin{align}
-\varphi &= \delta\phi_H-\delta\phi_V= \pi \frac{\omega_0}{v_g} \Re[\alpha] \left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]\\
-&= \sigma_0\frac{c}{v_g}\frac{\Gamma_{vac}}{8\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].\label{eq:Faradayrotang}
-\end{align}
-
-%\textcolor{red}{Diagrams for the configuration of setups...}
-\begin{figure}
-\centering\makebox[\textwidth]{
-\includegraphics[width=12cm]{../media/Figs/BirefringenceMeasurement}}
-\caption{Setup diagram for birefringence measurement.}
-\end{figure}
-
-
-
-\bigskip
-\textbf{Comparison to the vacuum case:}
-
-Notice that, the phase shift for an atom in vacuum can be given in a similar form by
-\begin{align}
-\delta\phi^{vac} &= 2\pi \frac{\omega_0}{cA} \Re[\alpha] |\mathbf{u}_{00}(\br')|^2 =  2\pi \frac{\omega_0}{c A^{vac'}_{e\!f\!f}} \Re[\alpha]=-\frac{1}{A} \sigma_0 |\mathbf{u}_{00} (r'_{\!\perp})|^2 \frac{\Gamma_{vac}}{4\Delta},
-\end{align}
-where $\mathbf{u}_{00}(\br')  $ is the TEM00 mode of a Gaussian laser field at the atom position, $ A=\frac{\pi W_0^2}{2} $ is the mode area of the Gaussian beam with wist $ W_0 $. Hence, the relative strength of phase shift due to the presence of a nanofiber versus vacuum can be given by
-\begin{align}
-\frac{\delta\phi^{nano}}{\delta\phi^{vac}} &=\frac{A_{e\!f\!f}^{vac'}}{A_{e\!f\!f}^{11}}= \frac{A}{2} \!n_g\! \frac{|\mathbf{u}_1(r_\perp^{nano'})|^2}{|\mathbf{u}_{00}(r_\perp^{vac'})|^2}.
-\end{align}
-In the vacuum case, the strongest mode is given by $ |\mathbf{u}_{00}(r_\perp^{vac'})|=1 $ when the atom is placed at the center of the beam waist. 
-
-
-
-\section{Modification of the spontaneous emission of atoms trapped near a nanophotonic waveguide}
-
-\comment{To be continued...}
-
-\section{Resolution of birefringence spectroscopy measurement for the nanofiber trapped atom system}\label{sec:birefringenceresolution}
-The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence spectroscopy analysis for our nanofiber case.
-
-To measure the Stocks vector rotation angle on the \Poincare sphere, that is the transformation of the polarization of the light, we launch a probe light along the bisection line between $ x $- and $ y $-axes, and trap the atom on the $ x $-axis, and then measure the output powers of the counterclockwise-rotating ($ \sigma_+ $) and the clockwise-rotating ($ \sigma_- $) components of the output. From Eq.~\eqref{eq:Faradayrotang}, the total differential phase shift between the $ \sigma_+ $ and $ \sigma_- $ components of the probed traveling light interacted with $ N $ atoms can be given by
-\begin{align}
-\varphi_{_N} &= N\sigma_0\frac{c}{v_g}\frac{\Gamma_{vac}}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].
-\end{align}
-\textcolor{red}{(Note: there may be a factor of 2 in the equation above and below. Needs to check.)}
-The transformation of polarization is measured in terms of the total power difference between the $ x $- and $ y $-components of the field. The measured signal power is given by
-\begin{align}
-\Delta P_S &= P_0 \sin(\varphi_{_N}) \approx P_0 \varphi_{_N}. \label{eq:polsignal}
-\end{align}
-
-\textcolor{red}{Diagram of the experimental setup...}
-
-Our resolution of detection is limited by the shot noise characterized by the fluctuations in the power difference with a root mean square amplitude of 
-\begin{align}
-\Delta P_{SN} &= \sqrt{\frac{P_0 \hbar \omega_0 }{2\kappa \tau_{pd}}}. \label{eq:shotnoise}
-\end{align}
-In the extreme case that the signal is equal to the noise, that is to make $ \Delta P_S=\Delta P_{SN} $, we can obtain the minimum number of atoms that we can detect (the resolution) as
-\begin{align}
-N_{min} &= \sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{\Delta}{\sigma_0 n_g\Gamma_{vac}}\frac{1}{\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]}\\
-&=\sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{2\pi\Delta}{3\lambda^2 \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
-&= \sqrt{\frac{\hbar^3 \pi c  }{P_0\kappa \tau_{pd}\lambda}}\frac{\lambda\Delta }{  \left( 2\pi\right)^2 |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
-&= \frac{1}{4\pi}\sqrt{\frac{\hbar^3 c \lambda }{\pi P_0\kappa \tau_{pd}}}\frac{\Delta }{   |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 },
-\end{align}
-with
-\begin{align}
-A_{e\!f\!f}^V &= \frac{1}{n_g| \mathbf{u}_V(r'_{\!\perp})|^2}\\
-\zeta &= \frac{| \mathbf{u}_H(r'_{\!\perp})|^2}{| \mathbf{u}_V(r'_{\!\perp})|^2}.
-\end{align}
-
-\textbf{Estimating $ N_{min} $}:
-
-We consider the critical time scale that 
-\begin{align}
-\tau_{pd} &= \frac{1}{\gamma_s},
-\end{align}
-where $ \gamma_{s} $ is the photon scattering rate. The minimum detectable atom number can be estimated using the relationship between the scattering rate and the scattering cross section $ \sigma(\Delta) $ or the saturation cross section $ \sigma_0 $ under the critical time scale. Now that
-\begin{align}
-\gamma_s &= \sigma(\Delta) \frac{I(\br')}{\hbar \omega_0} \\
-\sigma(\Delta) &=\frac{\sigma_0}{1+\frac{4\Delta^2}{\Gamma^2_{vac}}}\approx \sigma_0 \frac{\Gamma_{vac}^2}{4\Delta^2} \quad \text{(far detuning.)}
-\end{align}
-Hence,
-\begin{align}
-\gamma_s &\approx \sigma_0\frac{\Gamma_{vac}^2}{4\Delta^2} \frac{I(\br')}{\hbar \omega_0}=\frac{\sigma_0}{A_{in}}\frac{P_0}{\hbar\omega_0}\frac{\Gamma_{vac}^2}{4\Delta^2},
-\end{align}
-where the effective incident mode area at the atom position, $A_{in}  $, is defined as
-\begin{align}
-A_{in }&= \frac{P_0}{I(\br')}.
-\end{align}
-
-We also treat the quantum efficiency $ \kappa=1 $. The critical shot noise defined in Eq.~\eqref{eq:shotnoise} then becomes
-\begin{align}
-\Delta P_{SN} &\approx \sqrt{\frac{P_0 \hbar \omega_0 \gamma_s}{2\kappa }} =P_0\sqrt{\frac{ \sigma_0 }{2A_{in}}}\frac{\Gamma_{vac}}{2\Delta}.
-\end{align}
-The signal defined in Eq.~\eqref{eq:polsignal} can be rewritten as
-\begin{align}
-\Delta P_S &= NP_0 \frac{\sigma_0}{A_{e\!f\!f}}\frac{\Gamma_{vac}}{4\Delta},
-\end{align}
-where the effective mode area at the atom position for our configuration is defined by
-\begin{align}
-A_{e\!f\!f} &= \frac{1}{n_g}\frac{1}{| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2}.
-\end{align}
-If we make the shot noise power equal to the minimum detectable signal power, we can obtain the minimum detectable atom number as
-\begin{align}
-N_{min} &= \sqrt{\frac{2A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
-\end{align}
-
-\textcolor{red}{Compare to vacuum case?}
-
-
-%</waveguideinterface>
-
-
-
-\appendix
-% ########################### Apendix ##########################################
-
-%<*eigenmodes>
-
-\chapter{Fundamental eigenmodes of an optical nanofiber}\label{chap:fibereigenmodes}
-In this appendix chapter, we will provide some details on solving the eigenmodes of the nanofiber starting from the homogeneous wave equation, Eq.~\ref{EBz}, and will give the formulas for mode normalization based on power and the eigenmode normalization condition. At the end of this chapter, we will also derive the formulas for calculating the group velocity of the \HE mode of the nanofiber.
-
-First, using the relationship that
-\begin{align}
-\nabla^2 \!_\perp = \frac{1}{r_{\!\perp}}\pp{}{r\!_\perp}\! \left(r\!_\perp \pp{}{r\!_\perp} \right) + 
-\frac{1}{r_\perp^2} \spp{}{\phi},
-\end{align}
-and the symmetry of the fiber,  we can separate the mode function by
-\begin{align}
-\psi(r\!_\perp,\phi)=\mathcal{E}_{z,\beta m}(r\!_\perp)e^{im\phi},
-\end{align} 
-and hence
-\begin{align}
-\mathcal{E}_z(r\!_\perp,\phi,z) = \mathcal{E}_{z,\beta m}(r\!_\perp)e^{i(m\phi+\beta z)},
-\end{align}
-where $ \mathcal{E}_{z,\beta m}(r\!_\perp) $ satisfies the Bessel's equation
-\begin{align}
-\left[ \spp{}{r\!_\perp}+ \frac{1}{r_{\!\perp}}\pp{}{r\!_\perp}- 
-\frac{m^2}{r^2\!_\perp} + (k^2\varepsilon(r\!_\perp)-\beta^2) \right] 
-\mathcal{E}_{z,\beta m}(r\!\!_\perp)=0
-\end{align}
-with 
-\begin{align}
-\varepsilon(r\!\!_\perp) = 
-\begin{cases}
-1, & r\!_\perp>a\\
-\varepsilon_f, & r\!_\perp\leq a.
-\end{cases}
-\end{align}
-The general solution for $ \mathcal{E}_{z,\beta m}(r\!\!_\perp) $ can be given in three cases 
-corresponding to different 
-boundary conditions
-\begin{align}
-\mathcal{E}_{z,\beta m}(r\!\!_\perp) = \begin{cases}
-AJ_m(qr\!\!_\perp) + B Y_m(qr\!_\perp)&\rightarrow J_m(\theta)\sim \cos\theta,\, Y_m(\theta)\sim 
-\sin\theta.\\
-CI_m(qr\!_\perp) + DK_m(qr\!_\perp) & \rightarrow I_m(\theta) \sim e^\theta,\, K_m(\theta) \sim 
-e^{-\theta}.\\
-EH_m^{(\!1\!)}(qr\!_\perp) \!+\! FH_m^{(\!2\!)}(qr\!_\perp ) & \rightarrow H_m^{(\!1\!)} (\theta) \! \sim \! 
-e^{i\theta},\, 
-H_m^{(\!2\!)}(\theta)\!\sim\! e^{\!-i\theta}.
-\end{cases}
-\end{align}
-The positive parameter $ 1/q $ is the characteristic decay length corresponding to $ 1/h_{11} $ and $ 
-1/q_{11} $ 
-in the $\text{HE}_{11}$ mode expression. Using the symmetric and convergent condition at $ 
-r\!_\perp=0\,\text{and}\, \infty $, as for bound modes, for example, if $k< \beta\leq 
-k\sqrt{\varepsilon_f}$,
-\begin{align}
-\left\{
- \begin{array}{lcll}
-	r\!_\perp \leq a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\! AJ_m(h r\!_\perp), & h \!=\! 
-	\sqrt{k^2\varepsilon_f-\beta^2}\! >\! 0;\\
-	r\!_\perp > a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\!DK_m(q r\!_\perp), & q\!=\! 
-	\sqrt{\beta^2-k^2}>0.
- \end{array}\right.
-\end{align}
-Both $ \beta $ and $ h $ are discrete for bound modes. 
-For scattered modes, $ 0\leq \beta< k $, similarly, 
-\begin{align}
-\left\{
- \begin{array}{lcll}
-	r\!_\perp \leq a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\! AJ_m(h r\!_\perp), & h \!=\! 
-	\sqrt{k^2\varepsilon_f-\beta^2}\! >\! 0;\\
-	r\!_\perp > a, & \mathcal{E}_{z,\beta m}(r\!_\perp )\!=\!EH_m^{(\!1\!)}(p r\!_\perp\!), & p\!\!=\!\! 
-	\sqrt{k^2-\beta^2}>0.
- \end{array}\right.
-\end{align}
-Both $ \beta $ and $ p $ are continuous. 
-%\textcolor{red}{(Double check the general solutions and the consistence with Eq.~\ref{ET0Rexpand}.)}
-%Notice that Ref.\cite{Snyder1983} used $ J_m(hr\!_\perp)\cos m\phi $ and $ 
-%(J_m(pr\!_\perp)+CH_m^{(\!1\!)})\cos m\phi $ as the basis for the general solution of $ e $ and $ o $ 
-%light 
-%of the radiation modes, and summed them up. They are equivalent to the solution here.  
-
-If $ \beta $ is a pure imaginary number, the field will have an exponential decay amplitude on $ z $-direction, and will spread the energy away from the fiber axis. Reference~\cite{Snyder1983} denotes the modes with pure imaginary $ \beta $ as evanescent modes. If $ \beta $ has both real and imaginary parts, the modes are denoted as leaky modes, which are combinations of radiation modes and evanescent modes. Except for the case that the incident light is highly directed at the complementary critical angle $ \theta_c $ of geometric optics, only the radiation modes part can propagate for a long distance along the fiber axis. In our nanofiber system, we only consider the bound and radiation modes. The ranges of some waveguide parameters are given in Table~\ref{tab:fiberparameters}. 
-In the table, we have defined the normalized wave number\cite{Snyder1983Optical}, or 
-$V$-number\index{$V$-number} 
-of a fiber as $V  = 
-k_f a \mathrm{NA}$.  Here $k_f=\frac{2\pi}{\lambda}$, is the free space wave number, $a$ is the radius 
-of the core of the fiber, and $\mathrm{NA}$ is the numerical aperture\index{numerical aperture} of 
-the fiber, $\mathrm{NA} = 
-(n_{core}^2 - n_{cladding}^2)^{1/2} = n_{core}(2\Delta)^{1/2}$, with profile height 
-parameter\index{profile height parameter} 
-$\Delta =\frac{1}{2}(1-n_{cladding}^2/n_{core}^2)\approx (n_{core}-n_{cladding})/n_{core}$.  For 
-different modes labeled with $ j $, we always have $V_j^2=a^2(h_j^2+q_j^2)$ and $ \lambda\beta_j/2\pi $ is a mode invariance.  The TE and TM modes have non-vanishing cut-off 
-frequencies, as $ a\rightarrow 0 $.  The cutoff frequency is found from $V = a\omega (\Delta)^{1/2}/c =2.405$ for silicon fiber.  
-Only the lowest HE mode, $\mathrm{HE}_{11}$, has no cutoff frequency as $ a\rightarrow 0 $.  For $0 < V < 2.405$, which is the case of the nanofiber we are studying, it is the only mode that propagates in the 
-fiber. For fixed $ \varepsilon_f $, in the range that $ 0\leq \beta \leq 
-k\sqrt{\varepsilon_f} $, we can distinguish the radiative and bound mode as follows:
-\begin{align}
-\begin{cases}
-0\leq \beta < k, &\rightarrow \emph{unbounded radiative modes;}\\
-k< \beta \leq k \sqrt{\varepsilon_f}, &\rightarrow \exists a,\, \emph{HE}_{11}\, \emph{is the only 
-bound mode.}
-\end{cases}
-\end{align}
-
-
-\begin{minipage}{0.97\textwidth}
-\centering
-\captionof{table}{Ranges of fiber parameters for different modes. } \label{tab:fiberparameters} 
-\begin{tabular}{|l|c|c|c|}
-\hline  & $\beta$ & $h$ & $p$ \\ 
-\hline Bound modes & $k<\beta_j \leq k\sqrt{\varepsilon_f} $ & $ 0\leq h_j<V/a $ & $ p^r_j=0,\, p^i_j>0 $ \\ 
-\hline Radiation modes & $0\leq \beta<k$ & $V/a < h\leq k\sqrt{\varepsilon_f}$ & $0<p\leq k $\\ 
-\hline Evanescent modes & $ \beta^r=0,\, \beta^i>0 $ & $ k\sqrt{\varepsilon_f} < h $ & $ k<p $ \\ 
-\hline 
-\end{tabular} 
-\par
-\bigskip
-%The caption:
-Superscripts $ r $ and $ i $ denote real and imaginary parts. Subscripts $ j $ denotes the discrete indeces for bound modes. Adapted from Ref.~\cite{Snyder1983} P.P.516 Table 25-1. This can also be understood in geometric optics as shown in Fig.(\ref{fig:Fibermodes}).
-\end{minipage}
-\bigskip
-
-
-
-Due to the symmetry of equations, we also have
-\begin{align}
-\mathcal{B}_z(r\!_\perp,\phi,z) = \mathcal{B}_{z,\beta m}(r\!_\perp)e^{i(m\phi+\beta z)},
-\end{align}
-where $  \mathcal{B}_{z,\beta m}(r\!_\perp) $ satisfies the same Bessel's equation as above.  
-
-In the case of a nanofiber with a sub-wavelength radius, the high-order modes of the nanofiber can hardly be supported, which only leaves over the \HE mode\index{mode!HE11 mode@HE$_{11}$ mode} propagating along the nanofiber. Assuming the incident light is quasi-linearly polarized, the Cartesian components of the bound optical field are given, for $ r_\perp>a $ (outside the fiber), by~\cite{Lacroute2012,LeKien2004}
-\begin{subequations}
-\label{Ertrga}
-\begin{align}
-E_x^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}J_1(h_{11}a)}{2q_{11}K_1(q_{11}a)}[(1-s_{11})K_0(q_{11}r_\perp)\cos (\varphi_0) \nonumber\\
-&\qquad + (1+s_{11})K_2 (q_{11}r_\perp) \cos (2\phi-\varphi_0) ] e^{-i(\omega t-f\beta_{11}z)},\\
-E_y^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}J_1(h_{11}a)}{2q_{11}K_1(q_{11}a)}[(1-s_{11})K_0(q_{11}r_\perp)\sin (\varphi_0) \nonumber\\
-&\qquad + (1+s_{11})K_2 (q_{11}r_\perp) \sin (2\phi-\varphi_0) ] e^{-i(\omega t-f\beta_{11}z)},\\
-E_z^g(r_\perp,\phi,z,t) &= fA \frac{J_1(h_{11}a)}{K_1(q_{11}a)}K_1(q_{11}r_\perp)\cos (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},
-\end{align}
-\end{subequations}
-and, for $ r_\perp<a $ (inside the nanofiber), by
-\begin{subequations}
-\label{Ertrla}
-\begin{align}
-E_x^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}}{2h_{11}}[(1-s_{11})J_0(h_{11}r_\perp)\cos (\varphi_0) \nonumber\\
-&\qquad - (1+s_{11})J_2 (h_{11}r_\perp) \cos (2\phi-\varphi_0) ] e^{-i(\omega t-f\beta_{11}z)},\\
-E_y^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}}{2h_{11}}[(1-s_{11})J_0(h_{11}r_\perp)\sin (\varphi_0) \nonumber\\
-&\qquad - (1+s_{11})J_2 (h_{11}r_\perp) \sin (2\phi-\varphi_0) ] e^{-i(\omega t-f\beta_{11}z)},\\
-E_z^g(r_\perp,\phi,z,t) &= fA J_1(h_{11}r)\cos (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},
-\end{align}
-\end{subequations}
-with
-\begin{subequations}
-\begin{align}
-s_{11} &= \left[\frac{1}{(h_{11}a)^2}+ \frac{1}{(q_{11}a)^2} \right] \left[ \frac{J_1'(h_{11}a)}{h_{11}aJ_1(h_{11}a)} + \frac{K'_1(q_{11}a)}{q_{11}aK_1(q_{11}a)} \right],\\
-h_{11} &= \sqrt{k_0^2 n_1^2-\beta_{11}^2},\\
-q_{11} &= \sqrt{\beta^2_{11}-k_0^2 n_2^2}.
-\end{align}
-\end{subequations}
-Here, $ k_0 $ is the vacuum wavenumber\index{wavevector!vacuum wavenumber} of the incident light; $ f=+,- $ indicates forward or backward propagation direction; $ \phi $ denotes the azimuthal angle in the transverse plane; $ \varphi_0 $ indicates the polarization axis for the incident polarization relative to the $ x  $ axis; $ n_1 $ and $ n_2 $ are the refractive indices\index{refractive index}\index{index of refraction} of inside and outside the nanofiber; $ \beta_{11} $ is the mode propagation constant; $ 1/h_{11} $ is the characteristic decay length for the bound mode inside the fiber; $ 1/q_{11} $ is the characteristic decay length outside the fiber; $ A $ is the real-valued amplitude for the linearly polarized input; $ J_l $ and $ K_l  $ are the $ l $th Bessel function of the first kind\index{Bessel function!Bessel function of the first kind} and the modified Bessel function of the second kind\index{Bessel function!modified Bessel function of the second kind}. As shown in Equs.~\ref{Ertrga} and~\ref{Ertrla}, we can factorize the $ \mathbf{E}^g(r_\perp,\phi,z,t) $ as $ \mathbf{E}^g(r_\perp,\phi,z,t)= \boldsymbol{\mathcal{E}}^g(\br)e^{i\omega t} $. 
-
-Using the coordinate system transformation relationships that
-\begin{align}
-\hat{\br}\!_\perp &= \hat{\mathbf{x}}\cos\phi + \hat{\mathbf{y}}\sin\phi,\\
-\hat{\phi} &= -\hat{\mathbf{x}}\sin\phi + \hat{\mathbf{y}}\cos\phi,
-\end{align}
-one can also express the transverse components of the electric field components in the polar coordinate, for $ r\!_\perp>a $, by
-\begin{subequations}
-\label{Erptlrga}
-\begin{align}
-E_{r\!_\perp}^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}J_1(h_{11}a)}{2q_{11}K_1(q_{11}a)}[(1-s_{11})K_0(q_{11}r_\perp) \nonumber\\
-&\qquad + (1+s_{11})K_2 (q_{11}r_\perp) ]\cos (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},\\
-E_\phi^g(r_\perp,\phi,z,t) &= -iA \frac{\beta_{11}J_1(h_{11}a)}{2q_{11}K_1(q_{11}a)}[(1-s_{11})K_0(q_{11}r_\perp) \nonumber\\
-&\qquad - (1+s_{11})K_2 (q_{11}r_\perp) ]\sin (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},
-\end{align}
-\end{subequations}
-and, for $ r_\perp<a $, by
-\begin{subequations}
-\label{Ephirtlrla}
-\begin{align}
-E_{r\!_\perp}^g(r_\perp,\phi,z,t) &= iA \frac{\beta_{11}}{2h_{11}}[(1-s_{11})J_0(h_{11}r_\perp) \nonumber\\
-&\qquad - (1+s_{11})J_2 (h_{11}r_\perp)  ]\cos (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)},\\
-E_\phi^g(r_\perp,\phi,z,t) &= -iA \frac{\beta_{11}}{2h_{11}}[(1-s_{11})J_0(h_{11}r_\perp) \nonumber\\
-&\qquad + (1+s_{11})J_2 (h_{11}r_\perp)  ]\sin (\phi-\varphi_0) e^{-i(\omega t-f\beta_{11}z)}.
-\end{align}
-\end{subequations}
-
-Alternatively, we can use the fundamental mode with rotating polarization to decompose arbitrary polarized mode propagating in the fiber. The solutions for the cylindrical components of the circulating polarized fundamental mode are given~\cite{Lacroute2012,Vetsch2010Opticala}, for $ r_\perp<a $, by
-\begin{subequations}
-\label{Ertcrla}
-\begin{align}
-E^{(\mu)}_{r_\perp}(r_\perp,\phi,z,t) &=iA\frac{\beta_{11}}{2h_{11}}e^{-i(\omega t-f\beta_{11} z -p\phi)}\nonumber\\
-&\qquad \left[ (1-s_{11})J_0(h_{11}r_\perp)-(1+s_{11})J_2(h_{11}r_\perp) \right]\\
-E^{(\mu)}_\phi(r_\perp,\phi,z,t) &=  -pA \frac{\beta_{11}}{2h_{11}}e^{-i(\omega t-f\beta_{11} z -p\phi)} \nonumber\\
-&\qquad \left[ (1-s_{11})J_0(h_{11}r_\perp) +(1+s_{11})J_2(h_{11}r_\perp) \right] \\
-E^{(\mu)}_z(r_\perp,\phi,z,t) &= fA J_1(h_{11}r_\perp) e^{-i(\omega t-f\beta_{11} z -p\phi)},
-\end{align}
-\end{subequations}
-and, for $ r_\perp>a $, by
-\begin{subequations}
-\label{Ertcrga}
-\begin{align}
-E^{(\mu)}_{r_\perp}(r_\perp,\phi,z,t) &=iA\frac{\beta_{11}}{2h_{11}}\frac{J_1(h_{11}a)}{K_1(q_{11}a)}e^{-i(\omega t-f\beta_{11} z -p\phi)} \nonumber\\ 
-&\qquad \left[ (1-s_{11})K_0(q_{11}r_\perp)+(1+s_{11})K_2(q_{11}r_\perp) \right]\\
-E^{(\mu)}_\phi(r_\perp,\phi,z,t) &=  -pA \frac{\beta_{11}}{2h_{11}} \frac{J_1(h_{11}a)}{K_1(q_{11}a)}e^{-i(\omega t-f\beta_{11} z -p\phi)} \nonumber\\ 
-&\qquad \left[ (1-s_{11})K_0(q_{11}r_\perp) - (1+s_{11})K_2(q_{11}r_\perp) \right] \\
-E^{(\mu)}_z(r_\perp,\phi,z,t) &= fA \frac{J_1(h_{11}a)}{K_1(q_{11}a)} K_1(q_{11}r_\perp) e^{-i(\omega t-f\beta_{11} z -p\phi)}.
-\end{align}
-\end{subequations}
-In Equs.~\ref{Ertcrla} and~\ref{Ertcrga}, we denote the normalized bound fundamental modes as $ \mathbf{E}^{(\mu)} (\br,t)$ by an index $ \mu=(\omega,f,p) $, where $ f=+,- $ denotes forward or backward propagation direction, and $ p=+,- $ denotes the conterclockwise or clockwise of polarization. Similar to the qusi-linear case, we use $ \boldsymbol{\mathcal{E}}^{p=\pm} $ to indicate the spatial components of the field with a given circulation pattern. For a linearly polarized \HE mode, the cylindrical components are just the superposition of the two circular fields, 
-\begin{align}\label{Eilincyc}
-E_i^{lin} = \frac{1}{\sqrt{2}}(E_i^+ + E_i^-)\quad \mathrm{or}\quad \mathcal{E}_i^{lin} = \frac{1}{\sqrt{2}}(\mathcal{E}_i^+ + \mathcal{E}_i^-),\quad i\in(r_\perp,\phi,z).
-\end{align}
-
-\subsection{Power flow and normalization factor $ A $}
-As discussed in Vetsch's dissertation~\cite{Vetsch2010a}, the real-valued amplitude factor $ A $ can be calculated by normalizing the total power of the light propagating in the fiber via the Poynting vector\index{Poynting vector}
-\begin{align}
-\left<\mathbf{S}\right>=\frac{1}{2} \Re\left[\boldsymbol{\mathcal{E}}^g(\br)\times{\boldsymbol{\mathcal{H}}^g(\br)}^* \right],
-\end{align}
-where $ \boldsymbol{\mathcal{H}}^g(\br) $ is the magnetic field of the guided light. 
-Since the $ z $-component of the Poynting vector\index{Poynting vector} $ \left< S_z\right> $ qualifies the energy flux of the electromagnetic field in the propagation direction, integrating $ \left< S_z \right> $ over the transverse plane leads to the power propagating inside and outside the fiber
-\begin{align}
-P_{in} &= \int_0^{2\pi} \mathrm{d}\phi \int_0^a \left< S_z \right> r_\perp \mathrm{d}r_\perp\\
-P_{out} &= \int_0^{2\pi} \mathrm{d}\phi \int_a^\infty \left< S_z \right> r_\perp \mathrm{d}r_\perp.
-\end{align}
-Using the total transmission power $ P=P_{in}+P_{out} $, the normalization constant $ A $ reads
-\begin{align}\label{eq:A}
-A=\sqrt{\frac{4\mu_0\omega P}{\pi a^2 \beta_{11}}}\left(D_{in} + D_{out} \right)^{-1/2},
-\end{align}
-where
-\begin{align}
-D_{in} &= (1-s_{11})\left[ 1+(1-s_{11})\frac{\beta_{11}^2}{h_{11}^2}\right] \left(J_0^2(h_{11}a) + J_1^2(h_{11}a) \right) \nonumber\\
-&\quad + (1+s_{11})\left[ 1+(1+s_{11})\frac{\beta_{11}^2}{h_{11}^2}\right] \left(J_2^2(h_{11}a)- J_1(h_{11}a)J_3(h_{11}a) \right)\\
-D_{out} &= \frac{J_1^2(h_{11}a)}{K_1^2(q_{11}a)}\left\{ (1-s_{11})\left[ 1-(1-s_{11})\frac{\beta_{11}^2}{q_{11}^2}\right] \left(K_0^2(q_{11}a) - K_1^2(q_{11}a) \right)\right. \nonumber\\
-&\quad \left. + (1\!+\! s_{11})\left[ 1\!-\! (1\!+\! s_{11})\frac{\beta_{11}^2}{q_{11}^2}\right] \left(K_2^2(q_{11}a)\! -\! K_1(q_{11}a)K_3(q_{11}a) \right) \right\}.
-\end{align}
-The ratio of $ D_{in} $ and $ D_{out} $ indicates the intensity distribution division inside and outside of the nanofiber. 
-
-\subsection{Energy density and normalization factor for traveling field quantization}
-The energy per unit length stored in the waveguide is defined as
-\begin{align}
-W &= \frac{1}{2} \int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2.
-\end{align} 
-In our case, we can reform the integral over the transverse plane into the inside of the nanofiber and outside of the nanofiber parts. That is to say
-\begin{align}
-\int \mathrm{d} \br\!_\perp &= \int_0^{2\pi}\!\!\!\! \mathrm{d} \phi \int_0^a\!\!r\!_\perp \mathrm{d}r\!_\perp + \int_0^{2\pi}\!\!\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp.
-\end{align}
-Hence, the energy stored per unit distance of propagation can be rewritten as 
-\begin{align}
-W &= n_1^2P_1+n_2^2P_2,
-\end{align}
-where the power flow or the intensity distribution factors $ P_1 $ and $ P_2 $ can be found by
-\begin{align}
-\!\!\!\!\! P_1 &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!\mathrm{d}r\!_\perp r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
-&= \frac{\beta^2}{4h^2}\!\left\{(1\!-\! s)^2\!\left[J_0^2(ha)\!+\! J_1^2(ha) \right] \!+\!(1\!+\!s)^2\!\left[J_2^2(ha)\!-\!J_1(ha)J_3(ha) \right]\right\}\nonumber\\
-&\quad +\frac{1}{2}\left[J_1^2(ha)-J_0(ha)J_2(ha) \right] \\
-\!\!\!\!\! P_2 &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_a^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
-&= \frac{\beta^2J_1^2(ha)}{4q^2K_1^2(qa)}\!\left\{\phantom{\frac{1}{1}}\!\!\!\!(1\!-\!s)^2\!\left[K_1^2(qa)\!-\!K_0^2(qa) \right]\right.\nonumber\\
-&\quad\left. \!+(1\!+\!s)^2\!\!\left[K\!_1\!(qa)K\!_3\!(qa)\!-\! K_2^2\!(qa) \right]\!+\!\frac{2q^2}{\beta^2}\!\!\left[K\!_0\!(qa)K\!_2\!(qa)\!-\!K_1^2\!(qa) \right]  \right\}.
-\end{align}
-
-Also, to quantize the traveling field of waveguide modes, we can define the normalization factor to be~\cite{LeKien2005a}
-\begin{align}
-N_g &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp\,  n^2(\br\!_\perp)|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2\\
-&= 2\pi A^2 a^2 (n_1^2P_1 + n_2^2P_2),
-\end{align}
-where the factor $ A $ is defined in Eq.~\eqref{eq:A} related to the input power. The full expression of radiative modes of the nanofiber system can also be found in Ref.~\cite{LeKien2005a}.
-
-For some cases, the total power $ P $ can also be defined as
-\begin{align}
-P &= \int \mathrm{d}\br\!_\perp \langle S(\br\!_\perp)\rangle =\int \mathrm{d} \br\!_\perp I(\br\!_\perp)=\frac{\varepsilon_0 c n_{e\!f\!f}}{2}\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2,
-\end{align}
-where $ n_{e\!f\!f} $ is the effective index of refraction of the waveguide. 
-By plugging in the field expression from Equs.~\eqref{Ertcrla} and~\eqref{Ertcrga}, we find the effective index of refraction for the \HE modes of the nanofiber can be given by
-\begin{align}
-n_{e\!f\!f} &=\frac{\int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}{\int |\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
-&= \frac{n_1^2\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + n_2^2\int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}
-{\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + \int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
-&= \frac{n_1^2P_1+n_2^2P_2}{P_1+P_2}.
-\end{align}
-Notice that, the group index of refraction is not the same as the $ n_{e\!f\!f} $ defined above. We will discuss group velocity and group index of refraction of a waveguide later. See also the notes on \emph{Group velocity of the nanofiber}. 
-
-
-In this Appendix we provide, for reference, the fundamental HE$_{11}$ solutions to the homogeneous wave equation, \erf{Eq::WaveEquationSource} with $\tensor{\boldsymbol{\alpha}} = 0$, for a cylindrical nanofiber of radius $a$ and index of refraction given by \erf{Eq::IndexofRefraction}.  At a given frequency, $\omega_0 = c k_0$, the magnitudes of the longitudinal and transverse wave vectors for a guided mode are related by $n^2 k_0^2 = \beta_0^2 + k_\perp^2$.  
-The positive propagation constant, $\beta_0 \equiv \beta(\omega_0)$, is determined from the eigenvalue equation that results from enforcing physical boundary conditions at the fiber surface \cite{Snyder1983Optical},
-	\begin{align}
-		\frac{J_0(ha)}{ha J_1(ha)} = - \frac{n_1^2+n_2^2}{2n_1^2} \frac{K'(qa)}{qa K_1(qa)} + \frac{1}{h^2 a^2} - \bigg[ \bigg(\frac{n_1^2 - n_2^2}{2 n_1^2} \frac{K'(qa)}{qa K_1(qa)} \bigg)^2  + \frac{\beta_0^2}{n^2_1 k^2} \bigg(\frac{1}{q^2a^2} + \frac{1}{h^2a^2} \bigg)^2 \bigg]^{1/2}.
-	\end{align}
-Inside the nanofiber the transverse wavevector is real, $k_\perp = q$, where $q=\sqrt{\beta_0^2- n_2^2k_0^2}$, and outside the nanofiber it is purely imaginary, $k_\perp = i h$, where $h=\sqrt{n_1^2 k_0^2 - \beta_0^2}$.  The vector eigenfunctions are expressed as $\mbf{f}_{\mu}(\br) = (2\pi)^{-1/2}\mbf{u}_{b,p}(\mbf{r}_\perp) e^{i b \beta_0 z}$, where the modes are indexed by frequency $\omega_0$, propagation direction $b = \pm$, and polarization $p$.
-
-A relatively simple form for the guided-mode functions can be expressed in a cylindrical basis $(r_\perp, \phi, z)$ with longitudinal unit vector $\mathbf{e}_z$, oriented along the fiber axis.  
-The transverse unit vectors are related to their fixed Cartesian counterparts via the relations
-\begin{subequations}
-	\begin{align}
-		\mathbf{e}_{r_{\!\perp}}     &= \mathbf{e}_x \cos \phi + \mathbf{e}_y \sin \phi, \\
-		\mathbf{e}_\phi &= - \mathbf{e}_x \sin \phi + \mathbf{e}_y \cos \phi.
-	\end{align}
-\end{subequations}
-The transverse profile for the quasicircular guided modes, $p = \pm$, is
-	\begin{align} \label{Eq::QuasicircularModes}
-		\mbf{u}_{b,\pm}(\mathbf{r}_\perp) = \big[\mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \pm i \mathbf{e}_\phi u_\phi(r_\perp) +  i b \mathbf{e}_z  u_z(r_\perp) \big]e^{ \pm i \phi}, 
-	\end{align}
-and for the quasilinear guided modes, $p = \{H,V\}$, is
-	\begin{subequations} \label{Eq::QuasilinearModes}
-	\begin{align}
-		\mbf{u}_{b,H}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \cos \phi - \mathbf{e}_\phi u_\phi(r_\perp) \sin \phi +  ib \mathbf{e}_z  u_z(r_\perp) \cos \phi \big] \\
-		\mbf{u}_{b,V}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \sin \phi + \mathbf{e}_\phi u_\phi(r_\perp) \cos \phi +  ib \mathbf{e}_z  u_z(r_\perp) \sin \phi \big]. 
-	\end{align}
-	\end{subequations}
-The modes are expressed in terms of real-valued functions that depend only on the radial coordinate $r_\perp$,
-	\begin{subequations} \label{Eq::ProfileFunctions}
-	\begin{align} 
-		u_{r_{\!\perp}}(r_\perp) =& u_0 \big[ (1-s) K_0(q{r_{\!\perp}}) + (1+s)K_2(q{r_{\!\perp}})\big] \\
-		u_\phi(r_\perp) =& u_0\big[ (1-s) K_0(q{r_{\!\perp}}) - (1+s)K_2(q{r_{\!\perp}})\big] \\
-		u_z(r_\perp) =& u_0 \frac{2 q}{\beta_0} \frac{K_1(qa)}{J_1(ha)} J_1(h{r_{\!\perp}}), \label{Eq::zprofile}
-	\end{align}
-	\end{subequations}
-where $u_0$ is set by the normalization condition, $\int d^2 \mathbf{r}_\perp n(r_\perp) | \mathbf{u}_\mu(\br_\perp)|^2=1$, $J_n$ and $K_n$ are the $n^{th}$ Bessel functions of the first and second kind, $f'(x)$ indicates a derivative with respect to the argument $x$, and 
-	\begin{align}
-		s = \frac{1/(q^2 a^2)^{2} + 1/(h^2 a^2)^{2}}{[J'_1(ha)/haJ_1(ha) + K'_1(qa)/qaK_1(qa)]}.
-	\end{align}  
-Of particular interest is the $z$-component, \erf{Eq::zprofile}, which can become appreciable.  Note that the phase convention in Eqs. (\ref{Eq::QuasicircularModes}-\ref{Eq::ProfileFunctions}) has been chosen to emphasize properties of the quasilinear modes and differs from that of \emph{Le Kien et al.} -- for instance in Ref. \cite{LeKien2014}.  
-Further details about the guided-mode fields inside the nanofiber ($r_\perp\leq a$), the radiation (unguided) modes, and the quantized form of both can be found in Refs. \cite{Sondergaard2001,Tong2004,Kien2004,LeKien2005,Vetsch2010Opticala}.
-
-%</eigenmode>
+%</nanofiberradiationproblem>
 
 %###################################################################################
 \bibliographystyle{../styles/abbrv-alpha-letters-links}
