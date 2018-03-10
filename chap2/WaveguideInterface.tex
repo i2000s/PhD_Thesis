@@ -959,76 +959,159 @@ where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the clas
 The irreducible tensor decomposition can be found in the spin control and measurement long paper\cite{Deutsch2010a} or in Le Kien's dynamical polarizability of atoms paper~\cite{LeKien2013}. 
 
 
-\section{Resolution of birefringence spectroscopy measurement for the nanofiber trapped atom system}\label{sec:birefringenceresolution}
-The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence spectroscopy analysis for our nanofiber case.
+%\section{Polarizability of alkali atoms}
+\subsection{Polarizability of alkali atoms}
+Above, the theory we derived has not considered the real atom multilevel structure. Below, we will quantize the field and consider the inner structure of the Cs atoms.
 
-To measure the Stocks vector rotation angle on the \Poincare sphere, that is the transformation of the polarization of the light, we launch a probe light along the bisection line between $ x $- and $ y $-axes, and trap the atom on the $ x $-axis, and then measure the output powers of the counterclockwise-rotating ($ \sigma_+ $) and the clockwise-rotating ($ \sigma_- $) components of the output. From Eq.~\eqref{eq:Faradayrotang}, the total differential phase shift between the $ \sigma_+ $ and $ \sigma_- $ components of the probed traveling light interacted with $ N $ atoms can be given by
-\begin{align}
-\varphi_{_N} &= N\sigma_0\frac{c}{v_g}\frac{\Gamma_{vac}}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].
+In the interaction picture, the dipole operator associated with an atomic level $ g $ can be given by
+\begin{align}\label{eq:dtop}
+\hat{\mathbf{d}}(t) &= \sum_e \left[ \hat{\mathbf{d}}_{eg}e^{i(\omega_{eg}+i\gamma_{eg}/2)t} + \hat{\mathbf{d}}_{ge}e^{-i(\omega_{eg}-i\gamma_{eg}/2)t}\right]
 \end{align}
-\textcolor{red}{(Note: there may be a factor of 2 in the equation above and below. Needs to check.)}
-The transformation of polarization is measured in terms of the total power difference between the $ x $- and $ y $-components of the field. The measured signal power is given by
+where the upward and downward transitions are described by
 \begin{align}
-\Delta P_S &= P_0 \sin(\varphi_{_N}) \approx P_0 \varphi_{_N}. \label{eq:polsignal}
+\hat{\mathbf{d}}_{eg} &= \mathbbmss{P}_e\mathbf{d}_{eg}\mathbbmss{P}_g\\
+&= \ketbra{e} \mathbf{d}\ketbra{g}\\
+&= \bra{e} \mathbf{d}\ket{g} \ket{e}\!\!\bra{g}\\
+&= \mathbf{d}_{eg} \sigma_{eg}\\
+\hat{\mathbf{d}}_{ge} &=\hat{\mathbf{d}}_{eg}^\dagger \\
+&= \bra{g} \mathbf{d}^*\ket{e} \ket{g}\!\!\bra{e}\\
+&= \mathbf{d}_{ge}\sigma_{ge}.
 \end{align}
-
-\textcolor{red}{Diagram of the experimental setup...}
-
-Our resolution of detection is limited by the shot noise characterized by the fluctuations in the power difference with a root mean square amplitude of 
+We denote the dipole vector $ \mathbf{d}=d\mathbf{e}_d=\sum_{q=0,\pm 1} (-1)^qd^{(q)}\mathbf{e}^*_{-q}=\sum_{q=0,\pm 1} d^{(q)}\mathbf{e}^*_{q} $ in terms of the spherical tensor components $ d^1=(d_{r\!_\perp}-id_{\phi})/\sqrt{2} $, $ d^0=d_z $ and $ d^{(-1)} =-(d_{r\!_\perp}+id_{\phi})/\sqrt{2} $, and the spherical vector basis $ \mathbf{e}_1=-((\mathbf{e}_{r\!_\perp}-i\mathbf{e}_{\phi})/\sqrt{2}) $, $ \mathbf{e}_0=\mathbf{e}_z $ and $ \mathbf{e}_{-1}=((\mathbf{e}_{r\!_\perp}+i\mathbf{e}_{\phi})/\sqrt{2}) $. The $ q $ spherical component of the dipole moment for the transition between $ e_{m'} $ and $ g_m $, for example, can be given by
 \begin{align}
-\Delta P_{SN} &= \sqrt{\frac{P_0 \hbar \omega_0 }{2\kappa \tau_{pd}}}. \label{eq:shotnoise}
+d^{(q)}_{e_{m'}g_{m}}&= \sum_m \langle e||d||g\rangle \bra{e,m'}g,m,1,q\rangle .
 \end{align}
-In the extreme case that the signal is equal to the noise, that is to make $ \Delta P_S=\Delta P_{SN} $, we can obtain the minimum number of atoms that we can detect (the resolution) as
+In the frequency domain, we define 
 \begin{align}
-N_{min} &= \sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{\Delta}{\sigma_0 n_g\Gamma_{vac}}\frac{1}{\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]}\\
-&=\sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{2\pi\Delta}{3\lambda^2 \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
-&= \sqrt{\frac{\hbar^3 \pi c  }{P_0\kappa \tau_{pd}\lambda}}\frac{\lambda\Delta }{  \left( 2\pi\right)^2 |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
-&= \frac{1}{4\pi}\sqrt{\frac{\hbar^3 c \lambda }{\pi P_0\kappa \tau_{pd}}}\frac{\Delta }{   |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 },
-\end{align}
-with
-\begin{align}
-A_{e\!f\!f}^V &= \frac{1}{n_g| \mathbf{u}_V(r'_{\!\perp})|^2}\\
-\zeta &= \frac{| \mathbf{u}_H(r'_{\!\perp})|^2}{| \mathbf{u}_V(r'_{\!\perp})|^2}.
+\hat{\mathbf{d}}(\omega) &= \int_0^\infty \hat{\mathbf{d}}(t)e^{-i\omega t}\mathrm{d}t\\
+&= \sum_e \left[ \frac{i\hat{\mathbf{d}}_{eg}}{ \omega -\omega_{eg}-i\gamma_{eg}/2 } + \frac{i\hat{\mathbf{d}}_{ge}}{ - \omega-\omega_{eg}-i\gamma_{eg}/2}\right].
 \end{align}
 
-\textbf{Estimating $ N_{min} $}:
+Now, consider a radiation reaction that an atom is polarized in response to a traveling guided mode electric field operator $ \hat{\mathbf{E}}_0(t)=\frac{1}{2}\left[\hat{\mathbf{E}}^{(+)}_0e^{-i\omega t} +  \hat{\mathbf{E}}^{(-)}_0e^{i\omega t}\right] $, with the guided mode labeled by an index $ \mu = (\omega,f,p)$
+\begin{align}
+\hat{\mathbf{E}}^{(+)}_0 &= \sqrt{\frac{\hbar \omega}{v_g}} \hat{a}_\mu \mathbf{u}_{\mu} (r\!_\perp) e^{if\beta z+ip\phi},
+\end{align} 
+where $ \mathbf{u}_{\mu} (r\!_\perp)=\mathbf{u}_\mu(r\!_\perp,\omega) $  is one of the normalized guided modes of the nanofiber. 
 
-We consider the critical time scale that 
+The induced dipole moment can be given by
 \begin{align}
-\tau_{pd} &= \frac{1}{\gamma_s},
+\hat{\mathbf{d}}(t) 
+%&= \frac{1}{2} \left[\boldsymbol{\alpha}^*(\omega)e^{i\omega t} +\boldsymbol{\alpha}(\omega)e^{-i\omega t} \right] \hat{\mathbf{E}}_0\\
+&= \Re\left[ \boldsymbol{\alpha}(\omega)\hat{\mathbf{E}}_0^{(+)} e^{-i\omega t}\right]
 \end{align}
-where $ \gamma_{s} $ is the photon scattering rate. The minimum detectable atom number can be estimated using the relationship between the scattering rate and the scattering cross section $ \sigma(\Delta) $ or the saturation cross section $ \sigma_0 $ under the critical time scale. Now that
-\begin{align}
-\gamma_s &= \sigma(\Delta) \frac{I(\br')}{\hbar \omega_0} \\
-\sigma(\Delta) &=\frac{\sigma_0}{1+\frac{4\Delta^2}{\Gamma^2_{vac}}}\approx \sigma_0 \frac{\Gamma_{vac}^2}{4\Delta^2} \quad \text{(far detuning.)}
+with the polarizability 
+\begin{align}\label{Eq::PTensorGen}
+\boldsymbol{\alpha}(\omega) &=\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\omega_{eg} -\omega -i\gamma_{eg}/2)} =-\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\Delta_{eg} +i\gamma_{eg}/2)}
+%\left[ \frac{1}{\omega_{eg} -\omega -i\gamma_{eg}/2 } + \frac{1}{\omega_{eg} +\omega +i\gamma_{eg}/2 } \right].
 \end{align}
-Hence,
+where we have ignored the counter-rotating terms for our near-resonance case and defined $ \Delta_{eg}=\omega-\omega_{eg} $. In the case that $ |\Delta_{eg} |\gg \gamma_{eg} $, we can ignore the $ i\gamma_{eg} $ component and simplify the polarizability of the atom as
 \begin{align}
-\gamma_s &\approx \sigma_0\frac{\Gamma_{vac}^2}{4\Delta^2} \frac{I(\br')}{\hbar \omega_0}=\frac{\sigma_0}{A_{in}}\frac{P_0}{\hbar\omega_0}\frac{\Gamma_{vac}^2}{4\Delta^2},
+\boldsymbol{\alpha} &= -\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar\Delta_{eg}} 
+\end{align} 
+
+For a real Cesium atom case, we focus on the transition from $ F=3 $ and $ F=4 $ manifolds of the ground state $ 6S_{1/2} $ to the $ F'=3 $ manifold of the exited state $ 6P_{1/2} $. We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014a}
+\begin{align}
+\hat{\mathbf{d}}_{f'f} &=  \sum_q \sum_{m, m'}  \bra{f' m'} d_{f'\!,f}^q \ket{f m} \op{f' m'}{f m} \mathbf{e}_q^* \\
+& = \bra{ f' }| d | \ket{ f } \sum_q \sum_{m, m'}  \bravket{f m; 1 q}{f' m'} \op{f' m'}{f m} \mathbf{e}_q^*
 \end{align}
-where the effective incident mode area at the atom position, $A_{in}  $, is defined as
+where we used the Wigner-Eckart theorem to pull out the reduced matrix element $\bra{ f' }| d | \ket{ f } $.  It can be further simplified with another application of the Wigner-Eckart theorem,
+	\begin{align}
+		\bra{ f' }| d | \ket{ f } = \bra{ j' }| d | \ket{ j } o^{j' f'}_{j f},
+	\end{align}
+in terms of a reduced matrix element involving the $j \rightarrow j'$ transitions with the total nuclear angular moment quantum number $ i $ and a relative oscillator strength,
+	\begin{align} \label{Eq::OscStrength}
+		o^{j' f'}_{j f} \equiv (-1)^{f'+i + j' + 1} \sqrt{ (2 j'+1) (2f + 1) } 
+			\left\{ 
+				\begin{array}{ccc}
+					f' & i & j' \\
+					j & 1 & f
+				\end{array}
+			\right\} .
+	\end{align}
+that determines the spontaneous decay branching ratios on allowed dipole transitions; $\Gamma_{j' f' \rightarrow j f} / \Gamma_{j'\rightarrow j} = |o^{j' f'}_{j f}|^2$ \cite{Deutsch2010a}.	
+	
+This allows us to factor out characteristic units from the dipole operator and define dimensionless dipole operators,
+	\begin{align}
+		\hat{ \mathbf{D}}_{f' f} & = \frac{ \hat{ \mathbf{d} }_{f' f} }{\bra{ j' }| d | \ket{ j } } \\
+		& = \sum_q \sum_{m, m'} \mathbf{e}_q^* o^{j' f'}_{j f} \bravket{f' m'}{f m; 1 q} \op{f' m'}{f m}. 
+	\end{align}
+Finally, we write the detuning from a particular hyperfine transition as
+	\begin{align}
+		\Delta_{f,f'} = \Delta + \delta_{f'},
+	\end{align}
+where we have factored out the detuning relative to the largest hyperfine excited state under $ j' $ splittings,
+	\begin{align} \label{Eq::DetuningChoice}
+		\Delta \equiv \Delta_{f,f'_{\rm max}} = \omega - ( \omega_{f'_{\rm max}} - \omega_f),
+	\end{align} 
+and $\delta_{f f'} \equiv \Delta_{f,f'} - \Delta$ is the residual detuning for the other hyperfine excited states.  All the units are collected in a characteristic polarizability\index{polarizability!characteristic polarizability},
+	\begin{align} \label{Eq::alpha0}
+		\alpha_0(\Delta) & =  -\frac{|  \bra{ j' }| d | \ket{ j } |^2}{\hbar \Delta } = - \frac{3 \lambda_{j' j}^3}{32 \pi^3} \frac{ \Gamma }{ \Delta }.
+	\end{align}
+\textcolor{red}{Note that this polarizability formula does not hold if we plug in the real numbers of Cs D1-line transition data, for example. I need to check the units later, but I would prefer to use the irreducible dipole moment element representation formula for now as it appears in Steck's data sheet.} The wavelength of the transition $\lambda_{j' j}$ and spontaneous emission rate $\Gamma$ are defined with respect to the fine-structure splitting $j' \rightarrow j$; that is,
+	\begin{align}
+		\Gamma = \frac{1}{\hbar} \frac{4}{3} \frac{\omega_{j j'}^3}{c^3} | \bra{ j' }| d | \ket{ j } |^2.
+	\end{align}
+One could define a slightly different characteristic polarizability using a different detuning in \erf{Eq::DetuningChoice}, such as the fine structure splitting on the $j \rightarrow j'$ transition.
+
+The atomic polarizability tensor in \erf{Eq::PTensorGen} can then be written in terms of the dimensionless dipole operators and the characteristic polarizability,
+\begin{align} \label{Eq::AtomicPolarizabilityF}
+\tensor{\alpha}(f) &=  \alpha_0(\Delta) \sum_{f'} \frac{ \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f}}{ 1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)}\\
+& = \alpha_0(\Delta) \sum_{q,q'}  \sum_{f,f'} \sum_{m_1, m_2, m'}  \frac{\mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}}{1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)},
+\end{align}
+where $ C^{fm;1q}_{f'm'}=  \bravket{f' m'}{f m; 1 q}= \bravket{f m; 1 q}{f' m'}$ is the Clebsch-Gordan coefficient. Also nothing that $m' = m_1 + q'$ and $m' = m_2 + q$ and thus
 \begin{align}
-A_{in }&= \frac{P_0}{I(\br')}.
+	m_2 - m_1 = q-q'.
 \end{align}
 
-We also treat the quantum efficiency $ \kappa=1 $. The critical shot noise defined in Eq.~\eqref{eq:shotnoise} then becomes
+For ${}^{133}$Cs with ground hyperfine manifolds $f = \{3,4\}$, this gives
 \begin{align}
-\Delta P_{SN} &\approx \sqrt{\frac{P_0 \hbar \omega_0 \gamma_s}{2\kappa }} =P_0\sqrt{\frac{ \sigma_0 }{2A_{in}}}\frac{\Gamma_{vac}}{2\Delta}.
+\tensor{\alpha}(3) 
+		& = \alpha_0(\Delta_{3}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{3 f'} \hat{\mathbf{D}}_{f' 3}}{ 1 + \delta_{3, f'} / \Delta_{3} + i \Gamma/(2\Delta_3) } \\
+		&= \alpha_0(\Delta_{3}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j3} |^2 C^{3m_2;1q}_{f'm'} C^{3m_1;1q'}_{f'm'} \op{3 m_2}{3 m_1}}{ 1 + \delta_{3, f'} / \Delta_{3} + i \Gamma/(2\Delta_3) }\\
+\tensor{\alpha}(4) &=\alpha_0(\Delta_{4}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{4 f'} \hat{\mathbf{D}}_{f' 4}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4) }\\
+	 &= \alpha_0(\Delta_{4}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j4} |^2 C^{4m_2;1q}_{f'm'} C^{4m_1;1q'}_{f'm'} \op{4 m_2}{4 m_1}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4)} .
 \end{align}
-The signal defined in Eq.~\eqref{eq:polsignal} can be rewritten as
-\begin{align}
-\Delta P_S &= NP_0 \frac{\sigma_0}{A_{e\!f\!f}}\frac{\Gamma_{vac}}{4\Delta},
-\end{align}
-where the effective mode area at the atom position for our configuration is defined by
-\begin{align}
-A_{e\!f\!f} &= \frac{1}{n_g}\frac{1}{| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2}.
-\end{align}
-If we make the shot noise power equal to the minimum detectable signal power, we can obtain the minimum detectable atom number as
-\begin{align}
-N_{min} &= \sqrt{\frac{2A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
-\end{align}
+We have explicitly labeled the detunings by the ground state hyperfine level $f$ in order to emphasize that the detunings are different on each of the two terms.  Unless the laser detuning is chosen such that $\Delta_3$ and $\Delta_4$ are of the same order, one of the two terms will dominant the dynamics and the other can be ignored.
 
-\textcolor{red}{Compare to vacuum case?}
+
+% Irreducible tensors.
+\subsection{Irreducible tensor representation of atomic polarizability}
+\textcolor{red}{Content around this part is mainly copied from Ben's dissertation with some modifications.}
+The atomic polarizability tensor, being a dyad of two vector operators, can be decomposed into rank-0, rank-1, and rank-2 irreducible tensor components \cite{Stockton2007, Hammerer2006, Geremia2006, Deutsch2010a, LeKien2013}.  The terms in the Hamiltonian can be written in a Cylindrical basis, $ (r\!_\perp,\phi,z) $, which is useful for describing atomic interaction with nanofiber field. The dimensionless Cylindrical $ij$-component of the atomic polarizability tensor\index{polarizability!polarizability tensor} in the ground hyperfine state $f$ is defined,
+\begin{align} \label{Eq::alphaij}
+\hat{\alpha}_{ij}(f) &\equiv \mathbf{e}_i \cdot \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f} \cdot \mathbf{e}_j\\
+&= \sum_{q,q'} \sum_{m_1, m_2, m'} \mathbf{e}_i \cdot\mathbf{e}_q \mathbf{e}^*_{q'}\cdot \mathbf{e}_j | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}.
+\end{align}	
+It can be shown that the block-diagonal terms have a basis-independent form whose Cartesian $ij$-components are \cite{Deutsch2010a},
+	\begin{align} \label{Eq::IrreducibleDecomp}
+		\hat{\alpha}_{ij} (f) = C_{j' f f'}^{(0)} \delta_{ij} \hat{ I } + i C_{j' f f'}^{(1)} \varepsilon_{ijk} \hat{f}_k + C_{j' f f'}^{(2)} \left(\frac{1}{2} \big(\hat{f}_i \hat{f}_j + \hat{f}_j \hat{f}_i \big) - \frac{1}{3} \delta_{ij} \hat{ \mathbf{f} } \cdot \hat{ \mathbf{f} }  \right).  
+	\end{align}
+The $\hat{f}_i$ are dimensionless hyperfine spin operators satisfying
+	\begin{align}
+		[\hat{f}_i, \hat{f}_j] = i \varepsilon_{ijk} \hat{f}_k,
+	\end{align}
+with total angular momentum $f$ for each ground hyperfine manifold.  The tensor coefficients are~\cite{Deutsch2010a}
+		\begin{align}
+			C_{j' f f'}^{(0)} &= (-1)^{3f - f' + 1} \frac{1}{ \sqrt{3} } \frac{2f'+1}{\sqrt{2f+1}}  \left\{ \begin{array}{ccc} f& 1 & f' \\ 1 & f & 0 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
+			C_{j' f f'}^{(1)} &= (-1)^{3f - f' } \sqrt{\frac{3}{ 2} } \frac{2f'+1}{ \sqrt{f(f+1)(2f+1)} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 1 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
+			C_{j' f f'}^{(2)} &= (-1)^{3f - f' } \frac{\sqrt{30} (2f'+1)}{\sqrt{ f(f+1)(2f+1)(2f-1)(2f+3))} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 2 \end{array} \right\} |o^{j' f'}_{j f}|^2 .
+		\end{align}	
+These coefficients depend on the fine-structure quantum numbers $\{j, j'\}$ through the relative oscillator strengths, $o^{j' f'}_{j f}$, given in \erf{Eq::OscStrength}.  Note that the notation in \erf{Eq::alphaij} is different from that for the full polarizability tensor, \erf{Eq::AtomicPolarizabilityF}, (and different from that in Ref. \cite{Deutsch2010a}) in that it contains no units, detunings, or sums over excited states.  Instead its intention is to isolate the irreducible tensor components.   
+
+When the detuning is very large compared to the excited hyperfine splitting the detuning becomes independent of $f'$ (essentially $\delta_{f'}/\Delta \rightarrow 0$).  Then, the sums over the tensor coefficients in Eqs. (\ref{Eq::GenPolarizability}) can be done explicitly to yield,
+	\begin{align}
+		C_{j' f}^{(0)} &\equiv \sum_{f'} C_{j' f f'}^{(0)} =   \frac{2^{j'-1/2}}{3} \label{Eq::ScalarCoefSum} \\ 
+		C_{j' f}^{(1)} &\equiv  \sum_{f'} C_{j' f f'}^{(1)} = (-1)^{j'-1/2} \frac{g_f}{3} \\
+		C_{j' f}^{(2)} &\equiv  \sum_{f'} C_{j' f f'}^{(2)} = 0. \label{Eq::Rank2Sum}
+	\end{align}
+The Land\'{e} g-factor depends on the ground state manifold:  $g_f = 1/f_{\uparrow}$ for $f_{\uparrow} = i + 1/2$ and $g_f = -1/f_{\uparrow}$ for $f_{\downarrow} = i - 1/2$.  In this far-detuned limit, we see that the $C_{j' f f'}^{(2)}$ coefficients sum to zero and the rank-2 terms in \erf{Eq::GenPolarizability} vanish,
+	\begin{equation} \label{Eq::GenPolarizability}
+		\hat{\alpha}_{ij} (f) \rightarrow  C_{j' f}^{(0)} \delta_{ij} \hat{ I } + i C_{j' f }^{(1)} \varepsilon_{ijk} \hat{f}_k  .
+	\end{equation}
+This reflects the fact that in the absence of hyperfine resolution, the nuclear spin is decoupled and the ground state angular momentum is given by the total electronic angular moment, $j=1/2$. 
+
+
+
 
 
 %</waveguideinterface>

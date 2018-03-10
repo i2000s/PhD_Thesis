@@ -1,3 +1,13 @@
+\documentclass[fleqn, final]{../styles/unmphythesis}
+\usepackage{../styles/qxd}
+\renewcommand{\thechapter}{2}
+%\newcommand{\thechapter}{1}
+
+\makeindex
+\begin{document}
+
+%<*birefringenceprotocol>
+
 \chapter{QND measurement and spin squeezing using the birefringence effect}
 \section{Introduction}
 
@@ -442,6 +452,77 @@ In practice, loss and decoherence limit the atom-number resolution~\cite{dawkins
 The experimental implementation reported by Dawkins \emph{et al.}~\cite{dawkins_dispersive_2011} implies a resolution of a few tens of atoms for $ 200\sim 1000 $ trapped atoms.  
 A similar experiment based on a two-color QND measurement in a nanofiber geometry was recently carried out by \emph{B\'{e}guin et al.} \cite{beguin_generation_2014} to squeeze the uncertainty in the number of trapped atoms. They achieved an atom number uncertainty of $\delta N_A = 8$ for $N_A\sim2500$ atoms, well below standard quantum limit, $\delta N_A=\sqrt{N_A}$.
 
+\section{Resolution of birefringence spectroscopy measurement for the nanofiber trapped atom system (old)}\label{sec:birefringenceresolution}
+The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence spectroscopy analysis for our nanofiber case.
+
+To measure the Stocks vector rotation angle on the \Poincare sphere, that is the transformation of the polarization of the light, we launch a probe light along the bisection line between $ x $- and $ y $-axes, and trap the atom on the $ x $-axis, and then measure the output powers of the counterclockwise-rotating ($ \sigma_+ $) and the clockwise-rotating ($ \sigma_- $) components of the output. From Eq.~\eqref{eq:Faradayrotang}, the total differential phase shift between the $ \sigma_+ $ and $ \sigma_- $ components of the probed traveling light interacted with $ N $ atoms can be given by
+\begin{align}
+\varphi_{_N} &= N\sigma_0\frac{c}{v_g}\frac{\Gamma_{vac}}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].
+\end{align}
+\textcolor{red}{(Note: there may be a factor of 2 in the equation above and below. Needs to check.)}
+The transformation of polarization is measured in terms of the total power difference between the $ x $- and $ y $-components of the field. The measured signal power is given by
+\begin{align}
+\Delta P_S &= P_0 \sin(\varphi_{_N}) \approx P_0 \varphi_{_N}. \label{eq:polsignal}
+\end{align}
+
+\textcolor{red}{Diagram of the experimental setup...}
+
+Our resolution of detection is limited by the shot noise characterized by the fluctuations in the power difference with a root mean square amplitude of 
+\begin{align}
+\Delta P_{SN} &= \sqrt{\frac{P_0 \hbar \omega_0 }{2\kappa \tau_{pd}}}. \label{eq:shotnoise}
+\end{align}
+In the extreme case that the signal is equal to the noise, that is to make $ \Delta P_S=\Delta P_{SN} $, we can obtain the minimum number of atoms that we can detect (the resolution) as
+\begin{align}
+N_{min} &= \sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{\Delta}{\sigma_0 n_g\Gamma_{vac}}\frac{1}{\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]}\\
+&=\sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{2\pi\Delta}{3\lambda^2 \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
+&= \sqrt{\frac{\hbar^3 \pi c  }{P_0\kappa \tau_{pd}\lambda}}\frac{\lambda\Delta }{  \left( 2\pi\right)^2 |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
+&= \frac{1}{4\pi}\sqrt{\frac{\hbar^3 c \lambda }{\pi P_0\kappa \tau_{pd}}}\frac{\Delta }{   |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 },
+\end{align}
+with
+\begin{align}
+A_{e\!f\!f}^V &= \frac{1}{n_g| \mathbf{u}_V(r'_{\!\perp})|^2}\\
+\zeta &= \frac{| \mathbf{u}_H(r'_{\!\perp})|^2}{| \mathbf{u}_V(r'_{\!\perp})|^2}.
+\end{align}
+
+\textbf{Estimating $ N_{min} $}:
+
+We consider the critical time scale that 
+\begin{align}
+\tau_{pd} &= \frac{1}{\gamma_s},
+\end{align}
+where $ \gamma_{s} $ is the photon scattering rate. The minimum detectable atom number can be estimated using the relationship between the scattering rate and the scattering cross section $ \sigma(\Delta) $ or the saturation cross section $ \sigma_0 $ under the critical time scale. Now that
+\begin{align}
+\gamma_s &= \sigma(\Delta) \frac{I(\br')}{\hbar \omega_0} \\
+\sigma(\Delta) &=\frac{\sigma_0}{1+\frac{4\Delta^2}{\Gamma^2_{vac}}}\approx \sigma_0 \frac{\Gamma_{vac}^2}{4\Delta^2} \quad \text{(far detuning.)}
+\end{align}
+Hence,
+\begin{align}
+\gamma_s &\approx \sigma_0\frac{\Gamma_{vac}^2}{4\Delta^2} \frac{I(\br')}{\hbar \omega_0}=\frac{\sigma_0}{A_{in}}\frac{P_0}{\hbar\omega_0}\frac{\Gamma_{vac}^2}{4\Delta^2},
+\end{align}
+where the effective incident mode area at the atom position, $A_{in}  $, is defined as
+\begin{align}
+A_{in }&= \frac{P_0}{I(\br')}.
+\end{align}
+
+We also treat the quantum efficiency $ \kappa=1 $. The critical shot noise defined in Eq.~\eqref{eq:shotnoise} then becomes
+\begin{align}
+\Delta P_{SN} &\approx \sqrt{\frac{P_0 \hbar \omega_0 \gamma_s}{2\kappa }} =P_0\sqrt{\frac{ \sigma_0 }{2A_{in}}}\frac{\Gamma_{vac}}{2\Delta}.
+\end{align}
+The signal defined in Eq.~\eqref{eq:polsignal} can be rewritten as
+\begin{align}
+\Delta P_S &= NP_0 \frac{\sigma_0}{A_{e\!f\!f}}\frac{\Gamma_{vac}}{4\Delta},
+\end{align}
+where the effective mode area at the atom position for our configuration is defined by
+\begin{align}
+A_{e\!f\!f} &= \frac{1}{n_g}\frac{1}{| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2}.
+\end{align}
+If we make the shot noise power equal to the minimum detectable signal power, we can obtain the minimum detectable atom number as
+\begin{align}
+N_{min} &= \sqrt{\frac{2A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
+\end{align}
+
+\textcolor{red}{Compare to vacuum case?}
+
 
 	%===================QND spin squeezing=====================%
 	\subsection{Collective spin squeezing via QND measurement}
@@ -735,10 +816,22 @@ Finally, though we have treated here the case of strong coupling due solely to t
 The coupling can be further improved under EIT conditions that substantially slow the group velocity \cite{gouraud_demonstration_2015, sayrin_storage_2015, kumar_autler-townes_2015, le_kien_electromagnetically_2015}.  In addition, quantum control of the internal hyperfine state \cite{smith_quantum_2013-1} can greatly enhance the entangling power of the atom-light interface~\cite{trail_strongly_2010, norris_enhanced_2012}. 
 For large enough coupling, QND measurement should allow production of highly entangled spin states beyond the Gaussian regime \cite{stockton_deterministic_2004, mcconnell_entanglement_2015}.
 
+%</birefringenceprotocol>
+
 ACKNOWLEDGMENTS 
 We gratefully acknowledge Sudhakar Prasad for helpful discussions regarding the dyadic Green's function. 
 We thank the UNM Center for Advanced Research Computing for computational resources used in this work. 
 This work was support by the AFOSR, under grant Y600242, and the NSF, under grants PHY-1212445, 1307520. 
+
 %\bibliography{Nanofiber}
+%\bibliographystyle{amsplain}
+\bibliographystyle{../styles/abbrv-alpha-letters-links}
+%\bibliographystyle{unsrt}
+% \nocite{*}
+\bibliography{../refs/Archive,../chap4/Nanofiber}
+
+\printindex
+
+\end{document}          
 
 

@@ -1,3 +1,13 @@
+\documentclass[fleqn, final]{../styles/unmphythesis}
+\usepackage{../styles/qxd}
+\renewcommand{\thechapter}{2}
+%\newcommand{\thechapter}{1}
+
+\makeindex
+\begin{document}
+
+%<*quantumdynamics>
+
 \chapter{Quantum dynamics of atom-light interaction}
 \section{Introduction}
 In the last chapter, we have treated the light as continuous field that is a classical object. 
@@ -144,156 +154,7 @@ where $\Delta_{eg} = \omega_0 - \omega_{eg}$ is the laser detuning from the atom
 
 
 
-\section{Polarizability of alkali atoms}
-\subsection{Atomic polarizability}
-Above, the theory we derived has not considered the real atom multilevel structure. Below, we will quantize the field and consider the inner structure of the Cs atoms.
 
-In the interaction picture, the dipole operator associated with an atomic level $ g $ can be given by
-\begin{align}\label{eq:dtop}
-\hat{\mathbf{d}}(t) &= \sum_e \left[ \hat{\mathbf{d}}_{eg}e^{i(\omega_{eg}+i\gamma_{eg}/2)t} + \hat{\mathbf{d}}_{ge}e^{-i(\omega_{eg}-i\gamma_{eg}/2)t}\right]
-\end{align}
-where the upward and downward transitions are described by
-\begin{align}
-\hat{\mathbf{d}}_{eg} &= \mathbbmss{P}_e\mathbf{d}_{eg}\mathbbmss{P}_g\\
-&= \ketbra{e} \mathbf{d}\ketbra{g}\\
-&= \bra{e} \mathbf{d}\ket{g} \ket{e}\!\!\bra{g}\\
-&= \mathbf{d}_{eg} \sigma_{eg}\\
-\hat{\mathbf{d}}_{ge} &=\hat{\mathbf{d}}_{eg}^\dagger \\
-&= \bra{g} \mathbf{d}^*\ket{e} \ket{g}\!\!\bra{e}\\
-&= \mathbf{d}_{ge}\sigma_{ge}.
-\end{align}
-We denote the dipole vector $ \mathbf{d}=d\mathbf{e}_d=\sum_{q=0,\pm 1} (-1)^qd^{(q)}\mathbf{e}^*_{-q}=\sum_{q=0,\pm 1} d^{(q)}\mathbf{e}^*_{q} $ in terms of the spherical tensor components $ d^1=(d_{r\!_\perp}-id_{\phi})/\sqrt{2} $, $ d^0=d_z $ and $ d^{(-1)} =-(d_{r\!_\perp}+id_{\phi})/\sqrt{2} $, and the spherical vector basis $ \mathbf{e}_1=-((\mathbf{e}_{r\!_\perp}-i\mathbf{e}_{\phi})/\sqrt{2}) $, $ \mathbf{e}_0=\mathbf{e}_z $ and $ \mathbf{e}_{-1}=((\mathbf{e}_{r\!_\perp}+i\mathbf{e}_{\phi})/\sqrt{2}) $. The $ q $ spherical component of the dipole moment for the transition between $ e_{m'} $ and $ g_m $, for example, can be given by
-\begin{align}
-d^{(q)}_{e_{m'}g_{m}}&= \sum_m \langle e||d||g\rangle \bra{e,m'}g,m,1,q\rangle .
-\end{align}
-In the frequency domain, we define 
-\begin{align}
-\hat{\mathbf{d}}(\omega) &= \int_0^\infty \hat{\mathbf{d}}(t)e^{-i\omega t}\mathrm{d}t\\
-&= \sum_e \left[ \frac{i\hat{\mathbf{d}}_{eg}}{ \omega -\omega_{eg}-i\gamma_{eg}/2 } + \frac{i\hat{\mathbf{d}}_{ge}}{ - \omega-\omega_{eg}-i\gamma_{eg}/2}\right].
-\end{align}
-
-Now, consider a radiation reaction that an atom is polarized in response to a traveling guided mode electric field operator $ \hat{\mathbf{E}}_0(t)=\frac{1}{2}\left[\hat{\mathbf{E}}^{(+)}_0e^{-i\omega t} +  \hat{\mathbf{E}}^{(-)}_0e^{i\omega t}\right] $, with the guided mode labeled by an index $ \mu = (\omega,f,p)$
-\begin{align}
-\hat{\mathbf{E}}^{(+)}_0 &= \sqrt{\frac{\hbar \omega}{v_g}} \hat{a}_\mu \mathbf{u}_{\mu} (r\!_\perp) e^{if\beta z+ip\phi},
-\end{align} 
-where $ \mathbf{u}_{\mu} (r\!_\perp)=\mathbf{u}_\mu(r\!_\perp,\omega) $  is one of the normalized guided modes of the nanofiber. 
-
-The induced dipole moment can be given by
-\begin{align}
-\hat{\mathbf{d}}(t) 
-%&= \frac{1}{2} \left[\boldsymbol{\alpha}^*(\omega)e^{i\omega t} +\boldsymbol{\alpha}(\omega)e^{-i\omega t} \right] \hat{\mathbf{E}}_0\\
-&= \Re\left[ \boldsymbol{\alpha}(\omega)\hat{\mathbf{E}}_0^{(+)} e^{-i\omega t}\right]
-\end{align}
-with the polarizability 
-\begin{align}\label{Eq::PTensorGen}
-\boldsymbol{\alpha}(\omega) &=\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\omega_{eg} -\omega -i\gamma_{eg}/2)} =-\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\Delta_{eg} +i\gamma_{eg}/2)}
-%\left[ \frac{1}{\omega_{eg} -\omega -i\gamma_{eg}/2 } + \frac{1}{\omega_{eg} +\omega +i\gamma_{eg}/2 } \right].
-\end{align}
-where we have ignored the counter-rotating terms for our near-resonance case and defined $ \Delta_{eg}=\omega-\omega_{eg} $. In the case that $ |\Delta_{eg} |\gg \gamma_{eg} $, we can ignore the $ i\gamma_{eg} $ component and simplify the polarizability of the atom as
-\begin{align}
-\boldsymbol{\alpha} &= -\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar\Delta_{eg}} 
-\end{align} 
-
-For a real Cesium atom case, we focus on the transition from $ F=3 $ and $ F=4 $ manifolds of the ground state $ 6S_{1/2} $ to the $ F'=3 $ manifold of the exited state $ 6P_{1/2} $. We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014a}
-\begin{align}
-\hat{\mathbf{d}}_{f'f} &=  \sum_q \sum_{m, m'}  \bra{f' m'} d_{f'\!,f}^q \ket{f m} \op{f' m'}{f m} \mathbf{e}_q^* \\
-& = \bra{ f' }| d | \ket{ f } \sum_q \sum_{m, m'}  \bravket{f m; 1 q}{f' m'} \op{f' m'}{f m} \mathbf{e}_q^*
-\end{align}
-where we used the Wigner-Eckart theorem to pull out the reduced matrix element $\bra{ f' }| d | \ket{ f } $.  It can be further simplified with another application of the Wigner-Eckart theorem,
-	\begin{align}
-		\bra{ f' }| d | \ket{ f } = \bra{ j' }| d | \ket{ j } o^{j' f'}_{j f},
-	\end{align}
-in terms of a reduced matrix element involving the $j \rightarrow j'$ transitions with the total nuclear angular moment quantum number $ i $ and a relative oscillator strength,
-	\begin{align} \label{Eq::OscStrength}
-		o^{j' f'}_{j f} \equiv (-1)^{f'+i + j' + 1} \sqrt{ (2 j'+1) (2f + 1) } 
-			\left\{ 
-				\begin{array}{ccc}
-					f' & i & j' \\
-					j & 1 & f
-				\end{array}
-			\right\} .
-	\end{align}
-that determines the spontaneous decay branching ratios on allowed dipole transitions; $\Gamma_{j' f' \rightarrow j f} / \Gamma_{j'\rightarrow j} = |o^{j' f'}_{j f}|^2$ \cite{Deutsch2010a}.	
-	
-This allows us to factor out characteristic units from the dipole operator and define dimensionless dipole operators,
-	\begin{align}
-		\hat{ \mathbf{D}}_{f' f} & = \frac{ \hat{ \mathbf{d} }_{f' f} }{\bra{ j' }| d | \ket{ j } } \\
-		& = \sum_q \sum_{m, m'} \mathbf{e}_q^* o^{j' f'}_{j f} \bravket{f' m'}{f m; 1 q} \op{f' m'}{f m}. 
-	\end{align}
-Finally, we write the detuning from a particular hyperfine transition as
-	\begin{align}
-		\Delta_{f,f'} = \Delta + \delta_{f'},
-	\end{align}
-where we have factored out the detuning relative to the largest hyperfine excited state under $ j' $ splittings,
-	\begin{align} \label{Eq::DetuningChoice}
-		\Delta \equiv \Delta_{f,f'_{\rm max}} = \omega - ( \omega_{f'_{\rm max}} - \omega_f),
-	\end{align} 
-and $\delta_{f f'} \equiv \Delta_{f,f'} - \Delta$ is the residual detuning for the other hyperfine excited states.  All the units are collected in a characteristic polarizability\index{polarizability!characteristic polarizability},
-	\begin{align} \label{Eq::alpha0}
-		\alpha_0(\Delta) & =  -\frac{|  \bra{ j' }| d | \ket{ j } |^2}{\hbar \Delta } = - \frac{3 \lambda_{j' j}^3}{32 \pi^3} \frac{ \Gamma }{ \Delta }.
-	\end{align}
-\textcolor{red}{Note that this polarizability formula does not hold if we plug in the real numbers of Cs D1-line transition data, for example. I need to check the units later, but I would prefer to use the irreducible dipole moment element representation formula for now as it appears in Steck's data sheet.} The wavelength of the transition $\lambda_{j' j}$ and spontaneous emission rate $\Gamma$ are defined with respect to the fine-structure splitting $j' \rightarrow j$; that is,
-	\begin{align}
-		\Gamma = \frac{1}{\hbar} \frac{4}{3} \frac{\omega_{j j'}^3}{c^3} | \bra{ j' }| d | \ket{ j } |^2.
-	\end{align}
-One could define a slightly different characteristic polarizability using a different detuning in \erf{Eq::DetuningChoice}, such as the fine structure splitting on the $j \rightarrow j'$ transition.
-
-The atomic polarizability tensor in \erf{Eq::PTensorGen} can then be written in terms of the dimensionless dipole operators and the characteristic polarizability,
-\begin{align} \label{Eq::AtomicPolarizabilityF}
-\tensor{\alpha}(f) &=  \alpha_0(\Delta) \sum_{f'} \frac{ \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f}}{ 1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)}\\
-& = \alpha_0(\Delta) \sum_{q,q'}  \sum_{f,f'} \sum_{m_1, m_2, m'}  \frac{\mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}}{1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)},
-\end{align}
-where $ C^{fm;1q}_{f'm'}=  \bravket{f' m'}{f m; 1 q}= \bravket{f m; 1 q}{f' m'}$ is the Clebsch-Gordan coefficient. Also nothing that $m' = m_1 + q'$ and $m' = m_2 + q$ and thus
-\begin{align}
-	m_2 - m_1 = q-q'.
-\end{align}
-
-For ${}^{133}$Cs with ground hyperfine manifolds $f = \{3,4\}$, this gives
-\begin{align}
-\tensor{\alpha}(3) 
-		& = \alpha_0(\Delta_{3}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{3 f'} \hat{\mathbf{D}}_{f' 3}}{ 1 + \delta_{3, f'} / \Delta_{3} + i \Gamma/(2\Delta_3) } \\
-		&= \alpha_0(\Delta_{3}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j3} |^2 C^{3m_2;1q}_{f'm'} C^{3m_1;1q'}_{f'm'} \op{3 m_2}{3 m_1}}{ 1 + \delta_{3, f'} / \Delta_{3} + i \Gamma/(2\Delta_3) }\\
-\tensor{\alpha}(4) &=\alpha_0(\Delta_{4}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{4 f'} \hat{\mathbf{D}}_{f' 4}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4) }\\
-	 &= \alpha_0(\Delta_{4}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j4} |^2 C^{4m_2;1q}_{f'm'} C^{4m_1;1q'}_{f'm'} \op{4 m_2}{4 m_1}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4)} .
-\end{align}
-We have explicitly labeled the detunings by the ground state hyperfine level $f$ in order to emphasize that the detunings are different on each of the two terms.  Unless the laser detuning is chosen such that $\Delta_3$ and $\Delta_4$ are of the same order, one of the two terms will dominant the dynamics and the other can be ignored.
-
-
-% Irreducible tensors.
-\subsection{Irreducible tensor representation of atomic polarizability}
-\textcolor{red}{Content around this part is mainly copied from Ben's dissertation with some modifications.}
-The atomic polarizability tensor, being a dyad of two vector operators, can be decomposed into rank-0, rank-1, and rank-2 irreducible tensor components \cite{Stockton2007, Hammerer2006, Geremia2006, Deutsch2010a, LeKien2013}.  The terms in the Hamiltonian can be written in a Cylindrical basis, $ (r\!_\perp,\phi,z) $, which is useful for describing atomic interaction with nanofiber field. The dimensionless Cylindrical $ij$-component of the atomic polarizability tensor\index{polarizability!polarizability tensor} in the ground hyperfine state $f$ is defined,
-\begin{align} \label{Eq::alphaij}
-\hat{\alpha}_{ij}(f) &\equiv \mathbf{e}_i \cdot \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f} \cdot \mathbf{e}_j\\
-&= \sum_{q,q'} \sum_{m_1, m_2, m'} \mathbf{e}_i \cdot\mathbf{e}_q \mathbf{e}^*_{q'}\cdot \mathbf{e}_j | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}.
-\end{align}	
-It can be shown that the block-diagonal terms have a basis-independent form whose Cartesian $ij$-components are \cite{Deutsch2010a},
-	\begin{align} \label{Eq::IrreducibleDecomp}
-		\hat{\alpha}_{ij} (f) = C_{j' f f'}^{(0)} \delta_{ij} \hat{ I } + i C_{j' f f'}^{(1)} \varepsilon_{ijk} \hat{f}_k + C_{j' f f'}^{(2)} \left(\frac{1}{2} \big(\hat{f}_i \hat{f}_j + \hat{f}_j \hat{f}_i \big) - \frac{1}{3} \delta_{ij} \hat{ \mathbf{f} } \cdot \hat{ \mathbf{f} }  \right).  
-	\end{align}
-The $\hat{f}_i$ are dimensionless hyperfine spin operators satisfying
-	\begin{align}
-		[\hat{f}_i, \hat{f}_j] = i \varepsilon_{ijk} \hat{f}_k,
-	\end{align}
-with total angular momentum $f$ for each ground hyperfine manifold.  The tensor coefficients are~\cite{Deutsch2010a}
-		\begin{align}
-			C_{j' f f'}^{(0)} &= (-1)^{3f - f' + 1} \frac{1}{ \sqrt{3} } \frac{2f'+1}{\sqrt{2f+1}}  \left\{ \begin{array}{ccc} f& 1 & f' \\ 1 & f & 0 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
-			C_{j' f f'}^{(1)} &= (-1)^{3f - f' } \sqrt{\frac{3}{ 2} } \frac{2f'+1}{ \sqrt{f(f+1)(2f+1)} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 1 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
-			C_{j' f f'}^{(2)} &= (-1)^{3f - f' } \frac{\sqrt{30} (2f'+1)}{\sqrt{ f(f+1)(2f+1)(2f-1)(2f+3))} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 2 \end{array} \right\} |o^{j' f'}_{j f}|^2 .
-		\end{align}	
-These coefficients depend on the fine-structure quantum numbers $\{j, j'\}$ through the relative oscillator strengths, $o^{j' f'}_{j f}$, given in \erf{Eq::OscStrength}.  Note that the notation in \erf{Eq::alphaij} is different from that for the full polarizability tensor, \erf{Eq::AtomicPolarizabilityF}, (and different from that in Ref. \cite{Deutsch2010a}) in that it contains no units, detunings, or sums over excited states.  Instead its intention is to isolate the irreducible tensor components.   
-
-When the detuning is very large compared to the excited hyperfine splitting the detuning becomes independent of $f'$ (essentially $\delta_{f'}/\Delta \rightarrow 0$).  Then, the sums over the tensor coefficients in Eqs. (\ref{Eq::GenPolarizability}) can be done explicitly to yield,
-	\begin{align}
-		C_{j' f}^{(0)} &\equiv \sum_{f'} C_{j' f f'}^{(0)} =   \frac{2^{j'-1/2}}{3} \label{Eq::ScalarCoefSum} \\ 
-		C_{j' f}^{(1)} &\equiv  \sum_{f'} C_{j' f f'}^{(1)} = (-1)^{j'-1/2} \frac{g_f}{3} \\
-		C_{j' f}^{(2)} &\equiv  \sum_{f'} C_{j' f f'}^{(2)} = 0. \label{Eq::Rank2Sum}
-	\end{align}
-The Land\'{e} g-factor depends on the ground state manifold:  $g_f = 1/f_{\uparrow}$ for $f_{\uparrow} = i + 1/2$ and $g_f = -1/f_{\uparrow}$ for $f_{\downarrow} = i - 1/2$.  In this far-detuned limit, we see that the $C_{j' f f'}^{(2)}$ coefficients sum to zero and the rank-2 terms in \erf{Eq::GenPolarizability} vanish,
-	\begin{equation} \label{Eq::GenPolarizability}
-		\hat{\alpha}_{ij} (f) \rightarrow  C_{j' f}^{(0)} \delta_{ij} \hat{ I } + i C_{j' f }^{(1)} \varepsilon_{ijk} \hat{f}_k  .
-	\end{equation}
-This reflects the fact that in the absence of hyperfine resolution, the nuclear spin is decoupled and the ground state angular momentum is given by the total electronic angular moment, $j=1/2$. 
 
 
 \section{Polarization spectroscopy and quantum nondemolition measurement for alkali atoms}
@@ -1389,6 +1250,217 @@ Therefore, the $ \Delta P_S = \Delta P_{SN}$ condition gives the resolution of t
 N^{min}_A &= \frac{1}{C_{j'}^{(0)}}\sqrt{\frac{A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
 \end{align}
 
+%</quantumdynamics>
+
+\appendix
+
+%<*basistransfHS>
+
+\chapter{Spin-polarization coupling Hamiltonian and Stokes vectors under coordinate transformation}\label{chap:basistransfHS}
+In this appendix, we will derive the equations of Stokes vector operators and spin-polarization interaction Hamiltonian due to polarization basis transformations.
+A general basis transformation theory will be derived in the context of linear-polarization basis transformations, and will then be applied to the linear $ D/\bar{D} $- and circular $ R/L $-bases cases.
+
+\section{Spin-polarization Hamiltonian and Stokes vector operators in a linear basis}
+In general, we can define an arbitrary linear polarization basis by
+\begin{align}
+\left(\!\begin{array}{c}
+\mathbf{e}_n \\ \mathbf{e}_{\bar{n}}
+\end{array}\!\right) &= 
+\left(\!\!\begin{array}{cc}
+\cos\theta & \sin\theta \\
+- \sin\theta & \cos\theta
+\end{array}\!\!\right)\bullet
+\left(\!\begin{array}{c}
+\mathbf{e}_H \\ \mathbf{e}_V
+\end{array}\!\right)
+=\mathbf{R}(\theta)\bullet \left(\!\begin{array}{c}
+\mathbf{e}_H \\ \mathbf{e}_V
+\end{array}\!\right),
+\end{align}
+or the inversed relationship
+\begin{align}
+\left(\!\begin{array}{c}\mathbf{e}_H \\ \mathbf{e}_V\end{array}\!\right)&= \mathbf{R}^{-1}(\theta)\bullet\left(\!\begin{array}{c}\mathbf{e}_n \\ \mathbf{e}_{\bar{n}}\end{array}\!\right),
+\end{align}
+where $ \theta $ is the angle of the $ \mathbf{e}_n $ basis rotated from the $ H $-direction around $ z $-axis, and $ \mathbf{e}_{\bar{n}} $ is the basis vector $ 90^\circ $ from the $ \mathbf{e}_n $ direction; $ \mathbf{R}(\theta)=\mathbf{R}_z(\theta) $ is the Euler rotation matrix about the $ z $-axis by $ \theta $ in the real-number $ \mathbf{SO}(3) $ rotation group, which has the property that $ \mathbf{R}^{-1}(\theta)=\mathbf{R}^T(\theta)=\mathbf{R}(-\theta) $. 
+More generally, the basis transformation matrix is an unitary matrix determined by two parameters (two degrees of freedom)--$ \theta $ and $ \phi $--corresponding to the rotating angles around one axis and an relative phase between the base components, which is in the $ \mathbf{SU}(2) $ group.
+%We denote the general case with $ \mathbf{R}=\mathbf{R}(\theta,\phi) $, or in the form of two-step rotations around $ i $-axis and then around $ j $-axis by $ \mathbf{R}=\mathbf{R}_j(\theta)\mathbf{R}_i(\phi) $, always satisfying $ \mathbf{R}^{-1}=\mathbf{R}^\dagger $ for either rotations.
+
+Not to be confused, we have also defined an operator space spanned by operator vectors, like $ \left(\!\begin{array}{cc}\mathbf{e}_n,&\mathbf{e}_{\bar{n}}\end{array}\! \right) $, which has vectors, tensors or operators as the elements.
+We have also defined the bullet operator ($ \bullet $) in the operator vector space isomorphically the same as the dot ($ \cdot $) product or matrix product in the conventional vector space while the sign of $ \cdot $ can usually be ignored and we will denote complex conjugates explicitly if needed. 
+$ \mathbf{R}(\theta) $ and its transformations is a tensor defined in the operator vector space as well.
+When a conventional vector or tensor multiplies with an operator vector or tensor, we will use $ \cdot $ between them and the conventional vector or tensor will be formally treated as a scalar to be $ \cdot $ multiplied with the elements of the operator vector or tensor. 
+Two operator vectors in a $ \bullet $ multiplication form a mutual covariant relationship in the operator space.
+ 
+With the coordinate basis rotated passively, both the mode components and the field annihilation operators should be rotated actively by $ -\theta $ to be transformation-equivalent.
+Written in the matrix form in the operator space, 
+\begin{align}
+\left(\!\begin{array}{c}\mathbf{u}_n \\ \mathbf{u}_{\bar{n}}\end{array}\!\right) &= \mathbf{R}^{-1}(\theta)\bullet\left(\!\begin{array}{c}\mathbf{u}_H \\ \mathbf{u}_V\end{array}\!\right)\\
+\hat{\mathbf{a}}_{n,\bar{n}} &=\mathbf{R}^{-1}(\theta)\bullet \hat{\mathbf{a}}_{H,V},
+\end{align}
+where $ \hat{\mathbf{a}}_{n,\bar{n}}=[\hat{a}_n;\hat{a}_{\bar{n}}] $ and $ \hat{\mathbf{a}}_{H,V}=[\hat{a}_H;\hat{a}_V] $ are the annihilation operator vectors using the $ \{n,\bar{n} \} $ and $ \{H,V \} $ bases, respectively.
+In our notation, we use $ [\cdot ;\cdots] $ notation to indicate $ 1\times n $ vectors as general matrices.
+
+Using the definition in the $ \{ H,V\} $-basis of the Stokes operators (Eq.\eqref{eq:SaHVaRL}) and the annihilation operator basis transformation relationships above, one can rewrite the Stokes operators in the $ \{\mathbf{e}_n, \mathbf{e}_{\bar{n}}\} $ basis by
+\begin{subequations}\label{eq:Snnbar}
+\begin{align}
+\hat{S}_0 &= \frac{1}{2}\left[\left(\!\begin{array}{cc}\hat{a}_n^\dagger,& \hat{a}_{\bar{n}}^\dagger\end{array} \!\right)\bullet\mathbf{R}_{[1,:]}^\dagger(\theta)\bullet\mathbf{R}_{[1,:]}(\theta)\bullet
+\left(\!\begin{array}{c}\hat{a}_n\\ \hat{a}_{\bar{n}}\end{array} \!\right)
++ \left(\!\begin{array}{cc}\hat{a}_n^\dagger,& \hat{a}_{\bar{n}}^\dagger\end{array} \!\right)\bullet\mathbf{R}^\dagger_{[2,:]}(\theta)\bullet\mathbf{R}_{[2,:]}(\theta)\bullet
+\left(\!\begin{array}{c}\hat{a}_n\\ \hat{a}_{\bar{n}}\end{array} \!\right) \right]\nn\\
+&= \frac{1}{2}\left\{\left(\!\begin{array}{cc}\hat{a}_n^\dagger,& \hat{a}_{\bar{n}}^\dagger\end{array} \!\right)\bullet
+\left[\left(\!\begin{array}{cc}\cos^2\theta,& \frac{1}{2}\sin 2\theta \\ \frac{1}{2}\sin 2\theta, & \sin^2\theta\end{array} \!\right)
++ \left(\!\begin{array}{cc}\sin^2\theta,& -\frac{1}{2}\sin 2\theta \\ -\frac{1}{2}\sin 2\theta, & \cos^2\theta\end{array} \!\right)\right]\bullet
+\left(\!\begin{array}{c}\hat{a}_n\\ \hat{a}_{\bar{n}}\end{array} \!\right)\right\}\nn\\
+&=\frac{1}{2} \left[\hat{a}_n^\dagger\hat{a}_n+\hat{a}_{\bar{n}}^\dagger\hat{a}_{\bar{n}} \right]\\
+\hat{S}_1 &= \frac{1}{2}\left\{\left(\!\begin{array}{cc}\hat{a}_n^\dagger,& \hat{a}_{\bar{n}}^\dagger\end{array} \!\right)
+\bullet\left[\mathbf{R}_{[1,:]}^\dagger(\theta)\bullet\mathbf{R}_{[1,:]}(\theta) - \mathbf{R}_{[2,:]}^\dagger(\theta)\bullet\mathbf{R}_{[2,:]}(\theta) \right]
+\bullet\left(\!\begin{array}{c}\hat{a}_n\\ \hat{a}_{\bar{n}}\end{array} \!\right) \right\}\nn\\
+&= \frac{1}{2} \left[\cos 2\theta \hat{a}_n^\dagger\hat{a}_n + \sin 2\theta \hat{a}_n^\dagger\hat{a}_{\bar{n}} + \sin 2\theta \hat{a}_{\bar{n}}^\dagger\hat{a}_n -\cos 2\theta \hat{a}_{\bar{n}}^\dagger\hat{a}_{\bar{n}} \right]\\
+\hat{S}_2 &= \frac{1}{2}\left\{\left(\!\begin{array}{cc}\hat{a}_n^\dagger,& \hat{a}_{\bar{n}}^\dagger\end{array} \!\right)
+\bullet\left[\mathbf{R}_{[1,:]}^\dagger(\theta)\bullet\mathbf{R}_{[2,:]}(\theta) + \mathbf{R}_{[2,:]}^\dagger(\theta)\bullet\mathbf{R}_{[1,:]}(\theta) \right]
+\bullet\left(\!\begin{array}{c}\hat{a}_n\\ \hat{a}_{\bar{n}}\end{array} \!\right) \right\}\nn\\
+&= \frac{1}{2} \left[-\sin 2\theta \hat{a}_n^\dagger\hat{a}_n + \cos 2\theta \hat{a}_n^\dagger\hat{a}_{\bar{n}} + \cos 2\theta \hat{a}_{\bar{n}}^\dagger\hat{a}_n +\sin 2\theta \hat{a}_{\bar{n}}^\dagger\hat{a}_{\bar{n}} \right]\\
+\hat{S}_3 &= \frac{1}{2i}\left\{\left(\!\begin{array}{cc}\hat{a}_n^\dagger,& \hat{a}_{\bar{n}}^\dagger\end{array} \!\right)
+\bullet\left[\mathbf{R}_{[1,:]}^\dagger(\theta)\bullet\mathbf{R}_{[2,:]}(\theta) - \mathbf{R}_{[2,:]}^\dagger(\theta)\bullet\mathbf{R}_{[1,:]}(\theta) \right]
+\bullet\left(\!\begin{array}{c}\hat{a}_n\\ \hat{a}_{\bar{n}}\end{array} \!\right) \right\}\nn\\
+&= \frac{1}{2i} \left[\hat{a}_n^\dagger\hat{a}_{\bar{n}} - \hat{a}_{\bar{n}}^\dagger\hat{a}_n  \right].
+\end{align}
+\end{subequations}
+In deriving the equations above, we have denoted $ \mathbf{R}_{[i,:]}(\theta) $ as the $ i $-th row of $ \mathbf{R}(\theta) $ and $ \mathbf{R}_{[i,:]}^\dagger(\theta) $ as the conjugate transpose of the $ i $-th row of $ \mathbf{R}(\theta) $.
+As a shorthand, these relationships of Stokes operators can be expressed as an operator transformation, $ \hat{\mathbf{S}}=\mathbf{M}\bullet\hat{\mathbf{A}}_{n,\bar{n}} $, where $ \hat{\mathbf{S}}=[\hat{S}_0;\hat{S}_1;\hat{S}_2;\hat{S}_3] $ and $ \hat{\mathbf{A}}_{n,\bar{n}}=[\hat{a}_n^\dagger\hat{a}_n;\hat{a}_n^\dagger\hat{a}_{\bar{n}};\hat{a}_{\bar{n}}^\dagger\hat{a}_n;\hat{a}_{\bar{n}}^\dagger\hat{a}_{\bar{n}}] $ are the operator vectors and $ \mathbf{M} $ is the transformation matrix defined by the transformation coefficients in Eqs.\eqref{eq:Snnbar}.
+One can prove that the inversed transformation matrix $ \mathbf{M}^{-1}=2\mathbf{M}^\dagger $, and $ \mathbf{M} $ can be derived in the following form, in general,
+\begin{align}
+\mathbf{M} &=\frac{1}{2}\left(\!\begin{array}{c}
+\mathrm{vec}_r\left[\mathbf{R}_{[1,:]}^\dagger(\theta)\mathbf{R}_{[1,:]}(\theta) + \mathbf{R}_{[2,:]}^\dagger(\theta)\mathbf{R}_{[2,:]}(\theta) \right]\\
+\mathrm{vec}_r\left[\mathbf{R}_{[1,:]}^\dagger(\theta)\mathbf{R}_{[1,:]}(\theta) - \mathbf{R}_{[2,:]}^\dagger(\theta)\mathbf{R}_{[2,:]}(\theta) \right]\\
+\mathrm{vec}_r\left[\mathbf{R}_{[1,:]}^\dagger(\theta)\mathbf{R}_{[2,:]}(\theta) + \mathbf{R}_{[2,:]}^\dagger(\theta)\mathbf{R}_{[1,:]}(\theta) \right]\\
+-i\mathrm{vec}_r\left[\mathbf{R}_{[1,:]}^\dagger(\theta)\mathbf{R}_{[2,:]}(\theta) - \mathbf{R}_{[2,:]}^\dagger(\theta)\mathbf{R}_{[1,:]}(\theta) \right]
+ \end{array} \!\right)\\
+&= \frac{1}{2}\left(\!\begin{array}{cccc} 1,&0,&0,& 1\\
+\cos 2\theta,&\sin 2\theta, & \sin 2\theta, & -\cos 2\theta\\
+-\sin 2\theta, & \cos 2\theta, & \cos 2\theta, & \sin 2\theta\\
+0,&-i,& i,& 0\end{array}\!\right),
+\end{align}
+where $ \mathrm{vec}_r[\cdot] $ means the vectorization of a matrix by concatenating its rows. 
 
 
-\textcolor{red}{Work in progress...} 
+By using the vector space representation, the E-field operator can be written in the $ \{n,\bar{n}\} $ basis by 
+\begin{align}
+\hat{\mathbf{E}}^{(+)}(\br;t) &= \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \left[\mathbf{u}_H(r\!_\perp,\phi) \hat{a}_H(z,t) + \mathbf{u}_V(r\!_\perp,\phi) \hat{a}_V(z,t)\right]  e^{i (\beta_0 z- \omega_0 t)}\\
+&= \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \left(\!\begin{array}{cc}\mathbf{u}_H, & \mathbf{u}_V\end{array}\!\right)
+\bullet \left(\!\begin{array}{c}\hat{a}_H\\ \hat{a}_V\end{array} \!\right)  e^{i (\beta_0 z- \omega_0 t)}\\
+&= \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \left(\!\begin{array}{cc}\mathbf{u}_H, & \mathbf{u}_V\end{array}\!\right)\bullet\mathbf{R}(\theta)
+\bullet \mathbf{R}^{-1}(\theta)\bullet\left(\!\begin{array}{c}\hat{a}_H\\ \hat{a}_V\end{array} \!\right)  e^{i (\beta_0 z- \omega_0 t)}\\
+&= \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \left(\!\begin{array}{cc}\mathbf{u}_n, & \mathbf{u}_{\bar{n}}\end{array}\!\right)
+\bullet \left(\!\begin{array}{c}\hat{a}_n\\ \hat{a}_{\bar{n}}\end{array} \!\right)  e^{i (\beta_0 z- \omega_0 t)}\\
+&= \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \left[\mathbf{u}_n(r\!_\perp,\phi) \hat{a}_n(z,t) + \mathbf{u}_{\bar{n}}(r\!_\perp,\phi) \hat{a}_{\bar{n}}(z,t)\right]  e^{i (\beta_0 z- \omega_0 t)}.\label{eq:Efieldop_nnbar}
+\end{align}
+As expected, the field operator preserves the form in the new basis as defined in Eq.\eqref{eq:Ebp}.
+
+Therefore, the effective atom-light interaction Hamiltonian can be written as
+\begin{align}
+\hat{h}_\eff &= -\hat{\mathbf{E}}^{(-)}(\br')\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot\hat{\mathbf{E}}^{(+)}(\br')\nn\\
+&=-\frac{2 \pi \hbar \omega_0}{ v_g}
+\left(\!\begin{array}{cc}\hat{a}_n^\dagger, & \hat{a}_{\bar{n}}^\dagger\end{array} \!\right)\bullet \left(\!\begin{array}{c}\mathbf{u}_n^*\\ \mathbf{u}_{\bar{n}}^*\end{array}\!\right)
+\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot
+\left(\!\begin{array}{cc}\mathbf{u}_n, & \mathbf{u}_{\bar{n}}\end{array}\!\right)
+\bullet \left(\!\begin{array}{c}\hat{a}_n\\ \hat{a}_{\bar{n}}\end{array} \!\right) \nn\\
+&= \hbar \left(\!\begin{array}{cc}\hat{a}_n^\dagger, & \hat{a}_{\bar{n}}^\dagger\end{array} \!\right)\bullet
+\left(\!\begin{array}{cc} \hat{\chi}_{nn},&\hat{\chi}_{n\bar{n}}\\
+\hat{\chi}_{\bar{n}n},&\hat{\chi}_{\bar{n}\bar{n}}\end{array} \!\right)
+\bullet\left(\!\begin{array}{c}\hat{a}_n\\ \hat{a}_{\bar{n}}\end{array} \!\right) \nn\\
+&= \hbar \hat{\boldsymbol{\chi}}_{n,\bar{n}}^\dagger\bullet \hat{\mathbf{A}}_{n,\bar{n}}= \hbar \hat{\boldsymbol{\chi}}_{n,\bar{n}}^\dagger\bullet 2\mathbf{M}^\dagger\bullet \hat{\mathbf{S}}\\
+&= \hbar\left\{(\hat{\chi}_{nn}+ \hat{\chi}_{\bar{n}\bar{n}})\hat{S}_0 \right.\nn\\
+&\quad+ [\cos 2\theta \hat{\chi}_{nn}+ \sin 2\theta(\hat{\chi}_{n\bar{n}}+\hat{\chi}_{\bar{n}n}) - \cos 2\theta\hat{\chi}_{\bar{n}\bar{n}}]\hat{S}_1 \nn\\
+&\quad+ [-\sin 2\theta \hat{\chi}_{nn}+ \cos 2\theta(\hat{\chi}_{n\bar{n}}+\hat{\chi}_{\bar{n}n}) + \sin 2\theta \hat{\chi}_{\bar{n}\bar{n}}]\hat{S}_2 \nn\\
+&\quad+\left. i \left(\hat{\chi}_{n\bar{n}}-\hat{\chi}_{\bar{n}n}\right)\hat{S}_3 \right\}.\label{eq:heff_nnbarChiS}
+\end{align}
+In deriving the expression above, we have defined $\hat{\boldsymbol{\chi}}_{n,\bar{n}}=[\hat{\chi}_{nn};\hat{\chi}_{n\bar{n}};\hat{\chi}_{\bar{n}n};\hat{\chi}_{\bar{n}\bar{n}}]$ as the coupling operator vector.
+The coupling coefficient elements of $ 2\mathbf{M}^\dagger $, $ 2M_{ij} $, correspond to the coupling coefficients in Eq.\eqref{eq:heff_nnbarChiS} between the spin operators in $ \hat{\boldsymbol{\chi}}_{n,\bar{n}} $ and the polarization operators in $ \hat{\mathbf{S}} $, and each column of $ 2\mathbf{M}^\dagger $ corresponds to the coefficients in the corresponding line of the $ \hat{S}_i $ coupling term in Eq.\eqref{eq:heff_nnbarChiS}.
+
+
+If we set $ \theta=\pi/4 $, we will be in the $ \{\mathbf{e}_D,\mathbf{e}_{\bar{D}} \} $ basis.
+\begin{subequations}
+\begin{align}
+\hat{a}_D &= \frac{1}{\sqrt{2}}(\hat{a}_H-\hat{a}_V)\\
+\hat{a}_{\bar{D}} &= \frac{1}{\sqrt{2}}(\hat{a}_H+\hat{a}_V),
+\end{align}
+\end{subequations}
+or,
+\begin{subequations}
+\begin{align}
+\hat{a}_H &= \frac{1}{\sqrt{2}}(\hat{a}_D+\hat{a}_{\bar{D}})\\
+\hat{a}_V &= \frac{1}{\sqrt{2}}(\hat{a}_{\bar{D}}-\hat{a}_D).
+\end{align}
+\end{subequations}
+The Stokes operators becomes
+\begin{subequations}
+\begin{align}
+\hat{S}_0 &= \frac{1}{2} \left[\hat{a}_D^\dagger\hat{a}_D+\hat{a}_{\bar{D}}^\dagger\hat{a}_{\bar{D}} \right]\\
+\hat{S}_1 &= \frac{1}{2} \left[ \hat{a}_D^\dagger\hat{a}_{\bar{D}} +  \hat{a}_{\bar{D}}^\dagger\hat{a}_D \right]\\
+\hat{S}_2 &= \frac{1}{2} \left[ \hat{a}_{\bar{D}}^\dagger\hat{a}_{\bar{D}}-\hat{a}_D^\dagger\hat{a}_D \right]\\
+\hat{S}_3 &= \frac{1}{2i} \left[\hat{a}_D^\dagger\hat{a}_{\bar{D}}-\hat{a}_{\bar{D}}^\dagger\hat{a}_D \right].
+\end{align}
+\end{subequations}
+The field operator becomes 
+\begin{align}
+\hat{\mathbf{E}}^{(+)}(\br;t) &=\sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \left[\mathbf{u}_D(r\!_\perp,\phi) \hat{a}_D(z,t)+\mathbf{u}_{\bar{D}}(r\!_\perp,\phi) \hat{a}_{\bar{D}}(z,t)  \right]e^{i (\beta_0 z- \omega_0 t)}.
+\end{align}
+The effective Hamiltonian can be simplified from Eq.\eqref{eq:heff_nnbarChiS} to 
+\begin{align}
+\hat{h}_\eff &= \hbar[(\hat{\chi}_{DD}+\hat{\chi}_{\bar{D}\bar{D}})\hat{S}_0 +(\hat{\chi}_{D\bar{D}}+\hat{\chi}_{\bar{D}D} )\hat{S}_1\nn\\
+&\quad + (\hat{\chi}_{\bar{D}\bar{D}}-\hat{\chi}_{DD})\hat{S}_2 +i(\hat{\chi}_{D\bar{D}}-\hat{\chi}_{\bar{D}D} )\hat{S}_3].
+\end{align}
+The Hamiltonian expression above should satisfy the cyclical transformation from the $ H $- and $ V $-basis expression.
+
+\section{Spin-polarization Hamiltonian and Stokes vector operators in a circular basis}
+We define a set of polarization vector transformation relationships by 
+\begin{subequations}
+\begin{align}
+\hat{a}_H &= \frac{1}{\sqrt{2}}(\hat{a}_R+\hat{a}_L )\\
+\hat{a}_V &= \frac{i}{\sqrt{2}}(\hat{a}_R-\hat{a}_L ),
+\end{align}
+\end{subequations}
+or the inverse
+\begin{subequations}
+\begin{align}
+\hat{a}_R &= \frac{1}{\sqrt{2}}(\hat{a}_H-i\hat{a}_V )\\
+\hat{a}_L &= \frac{1}{\sqrt{2}}(\hat{a}_H+i\hat{a}_V ),
+\end{align}
+\end{subequations}
+where $ R $($ L $) indicates the right(left)-circularly polarized mode.
+The Stokes operators can then be defined in both linear ($ H $ and $ V $) and circular ($ L $ and $ R $) polarization bases by
+\begin{subequations}\label{eq:SaHVaRL}
+\begin{align}
+\hat{S}_0 &= \frac{1}{2} \left[\hat{a}_H^\dagger\hat{a}_H+\hat{a}_V^\dagger\hat{a}_V \right] = \frac{1}{2} \left[\hat{a}_R^\dagger\hat{a}_R+\hat{a}_L^\dagger\hat{a}_L \right]\\
+\hat{S}_1 &= \frac{1}{2} \left[\hat{a}_H^\dagger\hat{a}_H-\hat{a}_V^\dagger\hat{a}_V \right] = \frac{1}{2} \left[\hat{a}_R^\dagger\hat{a}_L+\hat{a}_L^\dagger\hat{a}_R \right]\\
+\hat{S}_2 &= \frac{1}{2} \left[\hat{a}_H^\dagger\hat{a}_V+\hat{a}_V^\dagger\hat{a}_H \right] = \frac{i}{2} \left[\hat{a}_L^\dagger\hat{a}_R-\hat{a}_R^\dagger\hat{a}_L \right]\\
+\hat{S}_3 &= \frac{1}{2i} \left[\hat{a}_H^\dagger\hat{a}_V-\hat{a}_V^\dagger\hat{a}_H \right] = \frac{1}{2} \left[\hat{a}_R^\dagger\hat{a}_R-\hat{a}_L^\dagger\hat{a}_L \right].
+\end{align}
+\end{subequations}
+The inversed transformations can be easily derived by inverting the transformation coefficient matrices. 
+
+Based on Eq.\eqref{eq:Ebp}, when the input probe can be decomposed into degenerate orthonormal guided modes in the $H/V $ or $ R/L $ bases, the E-field operator can be written in the quasilinear and quasicircular mode bases by 
+\begin{align}
+\hat{\mathbf{E}}^{(+)}(r\!_\perp,\phi,z;t) &= \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \left[\mathbf{u}_H(r\!_\perp,\phi) \hat{a}_H(z,t) + \mathbf{u}_V(r\!_\perp,\phi) \hat{a}_V(z,t)\right]  e^{i (\beta_0 z- \omega_0 t)}\\
+&= \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \left[\mathbf{u}_R(r\!_\perp,\phi) \hat{a}_R(z,t) + \mathbf{u}_L(r\!_\perp,\phi) \hat{a}_L(z,t)\right]  e^{i (\beta_0 z- \omega_0 t)}.
+\end{align}
+Therefore, the effective atom-light interaction Hamiltonian can be given in those bases by 
+\begin{align}
+\hat{h}_\eff &= -\hat{\mathbf{E}}^{(-)}(\br')\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot\hat{\mathbf{E}}^{(+)}(\br')\nn\\
+&= \hbar\left[(\hat{\chi}_{HH}+\hat{\chi}_{VV})\hat{S}_0 + (\hat{\chi}_{HH}-\hat{\chi}_{VV})\hat{S}_1 + (\hat{\chi}_{HV}+\hat{\chi}_{VH})\hat{S}_2 + i(\hat{\chi}_{HV}-\hat{\chi}_{VH})\hat{S}_3 \right]\\
+&= \hbar\left[(\hat{\chi}_{RR}+\hat{\chi}_{LL})\hat{S}_0 + (\hat{\chi}_{RL}+\hat{\chi}_{LR})\hat{S}_1 + i(\hat{\chi}_{RL}-\hat{\chi}_{LR})\hat{S}_2 + (\hat{\chi}_{RR}-\hat{\chi}_{LL})\hat{S}_3 \right]\\
+&=\hbar\sum_{i=0}^3 \hat{\chi}_{i}\hat{S}_i\\
+&=\hbar\sum_{i,j=0} \chi_{ij}\hat{f}_i\hat{S}_j,
+\end{align}
+with $\hat{\chi}_{pp'} $ defined in Eq.\eqref{eq:chippp}.
+
+%</basistransfHS>
+
+%###################################################################################
+\bibliographystyle{../styles/abbrv-alpha-letters-links}
+\bibliography{../refs/Archive}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\printindex
+\end{document}
