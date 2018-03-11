@@ -138,7 +138,7 @@ by noting
  (\br') \cdot \poltens \cdot \mathbf{u}_{\mu'} (\br') = - i \frac{2 \pi}{\hbar} \sum_{e,g,g'}\!\ 
  \hat{\sigma}_{gg'} \frac{g_{\mu,e,g}^* g_{\mu',e,g'}}{ \Delta_{eg} \error{+} i \Gamma_{e}/2 }, 
 	\end{equation}
-where the guided-mode dyadic Green's function is given in \erf{Eq::GreensGuided} and the atomic polarizability operator is \cite{Buhmann2004, Deutsch2010a,LeKien2013a},
+where the guided mode dyadic Green's function is given in \erf{Eq::GreensGuided} and the atomic polarizability operator is \cite{Buhmann2004, Deutsch2010a,LeKien2013a},
 	\begin{equation} \label{Eq::PolarizabilityOperator}
 		\poltens = - \frac{1}{\hbar} \sum_{e,g,g'}\ket{g}\frac{\bra{g}\hat{\mathbf{d}}\ket{e}\bra{e} 
 \hat{\mathbf{d}}\ket{g'}}{\Delta_{eg}  \error{+} i \Gamma_{e}/2 }\bra{g'}.
@@ -159,7 +159,7 @@ where $\Delta_{eg} = \omega_0 - \omega_{eg}$ is the laser detuning from the atom
 
 \section{Polarization spectroscopy and quantum nondemolition measurement for alkali atoms}
 \subsection{Clock states as the pseudo-spin states for polarimetry}~\footnote{See the NanofiberInterface note and the AFOSRProposal (2010) for related discussions.}
-Now, we use the $ f=3,\,m=0 $ and $ f=4,\,m=0 $ two sublevels of $ 6S_{1/2} $ ground state as the psuedo-spin to represent qubit. That is to say, $ \ket{\uparrow}=\ket{f=4,\,m=m_x=0} $ and $ \ket{\downarrow}=\ket{f=3,\,m=m_x=0} $, where we choose the $ x $-axis as the quantization axis. We also launch two orthogonal probe beams notated as mode $ H $ and mode $ V $, whose polarization axes are parallel or perpendicular to the $ x $-axis where the atom is lying in. We can quantize the propagating guided fields with duration $ \tau $ and photon number $ N_L $ as
+Now, we use the $ f=3,\,m=0 $ and $ f=4,\,m=0 $ two sublevels of $ 6S_{1/2} $ ground state as the psuedo-spin to represent qubit. That is to say, $ \ket{\uparrow}=\ket{f=4,\,m=m_x=0} $ and $ \ket{\downarrow}=\ket{f=3,\,m=m_x=0} $, where we choose the $ x $ axis as the quantization axis. We also launch two orthogonal probe beams notated as mode $ H $ and mode $ V $, whose polarization axes are parallel or perpendicular to the $ x $ axis where the atom is lying in. We can quantize the propagating guided fields with duration $ \tau $ and photon number $ N_L $ as
 \begin{align} \label{Eq::FiberModeFunctions}
 		\hat{\mathbf{E}}^{(+)}(r\!_\perp,\phi,z) = \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g \tau} } \big( \mathbf{u}_H(r\!_\perp,\phi) \hat{a}_H + \mathbf{u}_V(r\!_\perp,\phi) \hat{a}_V \big) e^{i \beta z}.
 \end{align}
@@ -174,7 +174,7 @@ We are interested in developing a dispersive, state-dependent interface between 
 	&\quad\quad\quad\quad\quad + \mathbf{u}^*_V(r^\prime\!\!_\perp, \phi') \!\cdot\! \tensor{\alpha}\! \cdot\! \mathbf{u}_{H}(r^\prime\!\!_\perp, \phi') \hat{a}\dg_V \hat{a}_H \Big), \nonumber 
 \end{align}
 where the atom is positioned at $ (r^\prime\!\!_\perp,\phi',z') $. 
-In the expansion above, the first two terms lead to the \emph{birefringent}\index{birefringence effect} coupling due to the different phase shifts between $ H $ and $ V $ modes. The second two terms lead to the \emph{Faraday}\index{Faraday effect!Faraday coupling} coupling due to a coherent redistribution of photons between $ H $ and $ V $ modes. The polarization dependence of the atom-probe coupling arises from two sources: the tensor nature of $ \tensor{\alpha} $ and the spatial dependence of $ \mathbf{u}_{H}(r\!_\perp, \phi) $ versus $ \mathbf{u}_{V}(r\!_\perp, \phi) $. The amplitude of the $ H $ mode is roughly $ 3 $ times larger than the $ V $ mode on the $ x $-axis. However, in the expression of the Hamiltonian there is always the atomic polarizability multiplied with the modes, which makes it a state-dependent problem. 
+In the expansion above, the first two terms lead to the \emph{birefringent}\index{birefringence effect} coupling due to the different phase shifts between $ H $ and $ V $ modes. The second two terms lead to the \emph{Faraday}\index{Faraday effect!Faraday coupling} coupling due to a coherent redistribution of photons between $ H $ and $ V $ modes. The polarization dependence of the atom-probe coupling arises from two sources: the tensor nature of $ \tensor{\alpha} $ and the spatial dependence of $ \mathbf{u}_{H}(r\!_\perp, \phi) $ versus $ \mathbf{u}_{V}(r\!_\perp, \phi) $. The amplitude of the $ H $ mode is roughly $ 3 $ times larger than the $ V $ mode on the $ x $ axis. However, in the expression of the Hamiltonian there is always the atomic polarizability multiplied with the modes, which makes it a state-dependent problem. 
 
 Note: alternatively, the effective Hamiltonian can also be rewritten using the irreducible tensor components as
 \begin{align}  
@@ -333,8 +333,8 @@ For instance, we may have a $H-V$ mode crossing term like
 	C^{F 0;1q}_{F' q}.
 \end{align}
 since $q+q' = 0$ and for the clock states $m' = q'$. By the nature of the nanofiber modes, if we choose 
-$V$-mode polarization axis or the $y$-axis to be the quantization axis, then with the atoms positioned 
-along the $x$-axis, the crossing term above always cancels. The same conclusion casts to other mode crossing 
+$V$-mode polarization axis or the $y$ axis to be the quantization axis, then with the atoms positioned 
+along the $x$ axis, the crossing term above always cancels. The same conclusion casts to other mode crossing 
 terms. In fact, the conclusion above does not depend on the choice of basis. We can show that by 
 rewriting the equations above as
 \begin{align}
@@ -452,7 +452,7 @@ We define the pseudo-spin operator in the corresponding subspace for one atom is
 \hat{j}_z &= \frac{1}{2} \Big( \op{\uparrow}{\uparrow} - \op{\downarrow}{\downarrow}  \Big), \\
 \hat{j}_0 &= \frac{1}{2} \Big( \op{\uparrow}{\uparrow} + \op{\downarrow}{\downarrow}  \Big).
 \end{align}
-The quantization axis is chosen to be the $ x $-axis. For a collective spin system with $ N_A $ atoms, the pseudo-spin angular momentum operator can be defined as
+The quantization axis is chosen to be the $ x $ axis. For a collective spin system with $ N_A $ atoms, the pseudo-spin angular momentum operator can be defined as
 \begin{align}
 \mathbf{J} &=\sum_i^{N_A}\mathbf{j}^{(i)}=\frac{1}{2}\sum_i^{N_A} \boldsymbol{\sigma}^{(i)}\\
 \mathbf{J}_+ &=\sum_i^{N_A} \boldsymbol{\sigma}^{(i)}_+.
@@ -499,7 +499,7 @@ Similarly, when the atom number is large, one can also map the angular momentum/
 
 
 \subsubsection{Spin coherent states and spin squeezing through weak measurements}
-Spin coherent states are the most classical-like quantum state of a collective spin system, which has maximum projection along some axis $ \hat{\mathbf{n}} $. For example, we consider a $ N $-spin-$ \frac{1}{2} $ system in a spin coherent state (SCS) with all spins in $ \ket{\uparrow} $ along $ x $-axis:
+Spin coherent states are the most classical-like quantum state of a collective spin system, which has maximum projection along some axis $ \hat{\mathbf{n}} $. For example, we consider a $ N $-spin-$ \frac{1}{2} $ system in a spin coherent state (SCS) with all spins in $ \ket{\uparrow} $ along $ x $ axis:
 \begin{subequations}\label{eq:SCSJx}
 \begin{align}
 \ket{J,M_x=J} &=\ket{\uparrow_x}^{\otimes N} = \left(\frac{\ket{\uparrow}+\ket{\downarrow}}{\sqrt{2}}\right)^{\otimes N}\\
@@ -607,7 +607,7 @@ H_{\rm eff} = \hbar \Big\{ & \big( \chi_{H,\uparrow} + \chi_{H,\downarrow} + \ch
 As discussed in Ivan's proposal, the first term is an overall scalar shift and thus does not contribute to the relative dynamics.  The second term is a constant birefringence and can be canceled with a compensating waveplate as long as the atom number remains constant which is usually the case when the trapping time is fairly large compared to the measurement time. Typically, if we choose to have the atoms on the bisection line of the $ x $- and $ y $-axes, we would have the coupling strengthen canceled. It will also remove the forth term in the equation above. The first two terms can be also be canceled when we have the detuning approximately equally biased for the $ f=3 $ and $ f=4 $ ground states. 
 For example, we  can choose $ \Delta_3=-4.6 $ GHz and $ \Delta_4=4.6 $ GHz to the $ 6P_{1/2} $ excited state sublevels to satisfy this condition, where the hyperfine splitting of the excited state can be ignored ($ ~500 $ MHz) compared to the detuning. However, we would like to leave the choice of detuning to control the third and fourth terms as will be discussed consequently. 
 
-The final term describes the QND Faraday interaction we wish to isolate (similar to the Faraday interaction since we choose to use the $ x $-axis as the quantization axis), but this requires dealing with the third term that describes the effect of the scalar light shift on the rotation of the pseudo-spin.  Canceling the third term amounts to enforcing the condition that
+The final term describes the QND Faraday interaction we wish to isolate (similar to the Faraday interaction since we choose to use the $ x $ axis as the quantization axis), but this requires dealing with the third term that describes the effect of the scalar light shift on the rotation of the pseudo-spin.  Canceling the third term amounts to enforcing the condition that
 \begin{align}\label{eq:magiccondition}
 	\chi_{H,\uparrow} - \chi_{H,\downarrow} = \chi_{V,\downarrow} - \chi_{V,\uparrow} ,
 \end{align}
@@ -617,7 +617,7 @@ which can be satisfied if we carefully choose the detuning of the probe light. T
 \end{align}
 where $\chi_{\rm eff} = 2(\chi_{H,\uparrow} - \chi_{H,\downarrow})$.  
 
-Using this, we can prepare the spins in $ D $ state on the Bloch sphere and characterize the collective spin state along the $ z $-axis after the rotation along $ S_1 $ axis due to the photon-atom interaction. To achieve this, we use the $ \hat{S}_3 $ Stokes vector component measurement. As a result of the backaction of the polarization measurement, there is a squeezing to the collective spin state which results in a reduced uncertainty of measurement output. To see this, we assume the photon number is large and apply the Holstein-Primakoff approximation to set $ \hat{S}_1=\sqrt{\frac{\dot{N}_L}{2}}\hat{P}_{\bar{D}} $ and $ \hat{S}_3=\sqrt{\frac{\dot{N}_L}{2}}\hat{X}_{\bar{D}} $. Now the effective Hamiltonian can be written as
+Using this, we can prepare the spins in $ D $ state on the Bloch sphere and characterize the collective spin state along the $ z $ axis after the rotation along $ S_1 $ axis due to the photon-atom interaction. To achieve this, we use the $ \hat{S}_3 $ Stokes vector component measurement. As a result of the backaction of the polarization measurement, there is a squeezing to the collective spin state which results in a reduced uncertainty of measurement output. To see this, we assume the photon number is large and apply the Holstein-Primakoff approximation to set $ \hat{S}_1=\sqrt{\frac{\dot{N}_L}{2}}\hat{P}_{\bar{D}} $ and $ \hat{S}_3=\sqrt{\frac{\dot{N}_L}{2}}\hat{X}_{\bar{D}} $. Now the effective Hamiltonian can be written as
 \begin{align}
 H_{\rm eff} = \hbar \chi_{\rm eff} \sqrt{\frac{\dot{N}_L}{2}}\hat{J}_z \hat{P}_{\bar{D}}. 
 \end{align}
@@ -706,7 +706,7 @@ Because $\alpha_0(F,F')$ is a complex number in general, one can decompose the e
 	\hat{H}_{\rm eff} = \hat{H}_{\rm coh} + \hat{H}_{\rm loss}.
 \end{align}
 
-In our case, we are only interested in the \emph{clock-state} subspace of the atoms, which fixes $ m=0 $ for the ground states and $ m'=q $ for the excited states to have non-zero contributions from the corresponding quantum transitions. We also want to restrict our attention to the magic frequency case, in which the coherent transition rates for the two ground sublevels, $ \ket{\uparrow}=\ket{F=4,m_F=0} $ and $ \ket{\downarrow}=\ket{F=3,m_F=0} $, are equal and do not contribute to the dynamics of the system ($ [\hat{H}_{\rm coh}\hat{\rho}-\hat{\rho}\hat{H}_{\rm coh}]=0 $ using $ y $-axis as the quantization axis). The loss part of the effective Hamiltonian at a magic frequency can be given by
+In our case, we are only interested in the \emph{clock-state} subspace of the atoms, which fixes $ m=0 $ for the ground states and $ m'=q $ for the excited states to have non-zero contributions from the corresponding quantum transitions. We also want to restrict our attention to the magic frequency case, in which the coherent transition rates for the two ground sublevels, $ \ket{\uparrow}=\ket{F=4,m_F=0} $ and $ \ket{\downarrow}=\ket{F=3,m_F=0} $, are equal and do not contribute to the dynamics of the system ($ [\hat{H}_{\rm coh}\hat{\rho}-\hat{\rho}\hat{H}_{\rm coh}]=0 $ using $ y $ axis as the quantization axis). The loss part of the effective Hamiltonian at a magic frequency can be given by
 \begin{align}
 \hat{H}_{\rm loss} &= -i\hbar  \left(  \frac{\gamma_{\uparrow}}{2} \op{\uparrow}{\uparrow} + \frac{\gamma_{\downarrow}}{2} \op{\downarrow}{\downarrow} \right)\\
 &=  -\frac{i\hbar}{2}  \left[ \frac{ \gamma_{\uparrow}}{2} \left(\hat{I}+\hat{\sigma}_z \right) + \frac{ \gamma_{\downarrow}}{2} \left(\hat{I}-\hat{\sigma}_z \right) \right]\\
@@ -1121,7 +1121,7 @@ which appear in the equations of motion of some expectation values of operators.
 \centering
 \subfloat[]{\label{fig:clockdynamics_m44_yq_rp1d5_approx}\includegraphics[scale=0.45]{../media/Figs/clockdynamics_m44_yq_rp1d5_approx}}
 \end{minipage}
-\caption{Evolution of expectation values of collective spin operators as a function of time with $ N_A=1000 $ atoms trapped at $ r'\!_\perp =1.5a $ along the $ H/x $-axis of the nanofiber. Subfigs.~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_exact} and~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_approx} use the magic frequencies close to the $ F=3\leftrightarrow F'=3 $ transition frequency $ \omega_{33'} $. Subfigs.~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_exact} and~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_approx} used the magic frequencies close to $ \omega_{44'} $. The $ \phi $-axis was defined as the quantization axis for these plots. Subfigs.~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_exact} and~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_exact} were calculated using the exact solution of the coupled differential equations of the expectation values of spin operators. In contrast, Subfigs.~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_approx} and~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_approx} use approximations by ignoring the dynamics of $ \expect{\hat{J}_z} $ for all calculations, and treat $ \expect{\hat{N}_A} $ as a constant in solving the differential equation for $ \Delta J_z^2 $. Other parameters used: $ \Omega/2\pi=52 $ MHz (does not matter). }\label{fig:clockdynamics_m_yq_rp1d5}
+\caption{Evolution of expectation values of collective spin operators as a function of time with $ N_A=1000 $ atoms trapped at $ r'\!_\perp =1.5a $ along the $ H/x $ axis of the nanofiber. Subfigs.~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_exact} and~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_approx} use the magic frequencies close to the $ F=3\leftrightarrow F'=3 $ transition frequency $ \omega_{33'} $. Subfigs.~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_exact} and~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_approx} used the magic frequencies close to $ \omega_{44'} $. The $ \phi $ axis was defined as the quantization axis for these plots. Subfigs.~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_exact} and~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_exact} were calculated using the exact solution of the coupled differential equations of the expectation values of spin operators. In contrast, Subfigs.~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_approx} and~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_approx} use approximations by ignoring the dynamics of $ \expect{\hat{J}_z} $ for all calculations, and treat $ \expect{\hat{N}_A} $ as a constant in solving the differential equation for $ \Delta J_z^2 $. Other parameters used: $ \Omega/2\pi=52 $ MHz (does not matter). }\label{fig:clockdynamics_m_yq_rp1d5}
 \end{figure}
 
 \begin{figure}
@@ -1144,7 +1144,7 @@ which appear in the equations of motion of some expectation values of operators.
 \end{minipage}
 %\centering\makebox[\textwidth]{
 %\includegraphics[width=0.65\textwidth]{./Figs/xi_magic44_yq}}
-\caption{Spin squeezing evolution as a function of time with $ N_A=1000 $ atoms trapped at $ r'\!_\perp =1.5a $ along the $ H/x $-axis of the nanofiber. Subfigs.~\protect\subref{fig:xi_magic33_yq} and~\protect\subref{fig:xi_magic33_xq} use the magic frequencies close to the $ F=3\leftrightarrow F'=3 $ transition frequency $ \omega_{33'} $. Subfigs.~\protect\subref{fig:xi_magic44_yq} and~\protect\subref{fig:xi_magic44_xq} used the magic frequencies close to $ \omega_{44'} $. The magic frequencies and spin squeezing parameters are different for different choices of quantization axis. Subfigs.~\protect\subref{fig:xi_magic33_yq} and~\protect\subref{fig:xi_magic44_yq} define $ \phi $-axis as the quantization axis. In contrast, subfigs.~\protect\subref{fig:xi_magic33_xq} and~\protect\subref{fig:xi_magic44_xq} use $ r\!_\perp $-axis as the quantization axis. When $ z $-axis is chosen to be the quantization axis, almost no squeezing effect can be observed at the magic frequencies. As can be seen, when the quantization axis close to the local field direction, the spin squeezing parameter can reach to a higher value. Other parameters used: $ \Omega/2\pi=52 $ MHz (does not matter). }\label{fig:xi_magic}
+\caption{Spin squeezing evolution as a function of time with $ N_A=1000 $ atoms trapped at $ r'\!_\perp =1.5a $ along the $ H/x $ axis of the nanofiber. Subfigs.~\protect\subref{fig:xi_magic33_yq} and~\protect\subref{fig:xi_magic33_xq} use the magic frequencies close to the $ F=3\leftrightarrow F'=3 $ transition frequency $ \omega_{33'} $. Subfigs.~\protect\subref{fig:xi_magic44_yq} and~\protect\subref{fig:xi_magic44_xq} used the magic frequencies close to $ \omega_{44'} $. The magic frequencies and spin squeezing parameters are different for different choices of quantization axis. Subfigs.~\protect\subref{fig:xi_magic33_yq} and~\protect\subref{fig:xi_magic44_yq} define $ \phi $ axis as the quantization axis. In contrast, subfigs.~\protect\subref{fig:xi_magic33_xq} and~\protect\subref{fig:xi_magic44_xq} use $ r\!_\perp $ axis as the quantization axis. When $ z $ axis is chosen to be the quantization axis, almost no squeezing effect can be observed at the magic frequencies. As can be seen, when the quantization axis close to the local field direction, the spin squeezing parameter can reach to a higher value. Other parameters used: $ \Omega/2\pi=52 $ MHz (does not matter). }\label{fig:xi_magic}
 \end{figure}
 
 
@@ -1281,9 +1281,9 @@ or the inversed relationship
 \begin{align}
 \left(\!\begin{array}{c}\mathbf{e}_H \\ \mathbf{e}_V\end{array}\!\right)&= \mathbf{R}^{-1}(\theta)\bullet\left(\!\begin{array}{c}\mathbf{e}_n \\ \mathbf{e}_{\bar{n}}\end{array}\!\right),
 \end{align}
-where $ \theta $ is the angle of the $ \mathbf{e}_n $ basis rotated from the $ H $-direction around $ z $-axis, and $ \mathbf{e}_{\bar{n}} $ is the basis vector $ 90^\circ $ from the $ \mathbf{e}_n $ direction; $ \mathbf{R}(\theta)=\mathbf{R}_z(\theta) $ is the Euler rotation matrix about the $ z $-axis by $ \theta $ in the real-number $ \mathbf{SO}(3) $ rotation group, which has the property that $ \mathbf{R}^{-1}(\theta)=\mathbf{R}^T(\theta)=\mathbf{R}(-\theta) $. 
+where $ \theta $ is the angle of the $ \mathbf{e}_n $ basis rotated from the $ H $ direction around $ z $ axis, and $ \mathbf{e}_{\bar{n}} $ is the basis vector $ 90^\circ $ from the $ \mathbf{e}_n $ direction; $ \mathbf{R}(\theta)=\mathbf{R}_z(\theta) $ is the Euler rotation matrix about the $ z $ axis by $ \theta $ in the real-number $ \mathbf{SO}(3) $ rotation group, which has the property that $ \mathbf{R}^{-1}(\theta)=\mathbf{R}^T(\theta)=\mathbf{R}(-\theta) $. 
 More generally, the basis transformation matrix is an unitary matrix determined by two parameters (two degrees of freedom)--$ \theta $ and $ \phi $--corresponding to the rotating angles around one axis and an relative phase between the base components, which is in the $ \mathbf{SU}(2) $ group.
-%We denote the general case with $ \mathbf{R}=\mathbf{R}(\theta,\phi) $, or in the form of two-step rotations around $ i $-axis and then around $ j $-axis by $ \mathbf{R}=\mathbf{R}_j(\theta)\mathbf{R}_i(\phi) $, always satisfying $ \mathbf{R}^{-1}=\mathbf{R}^\dagger $ for either rotations.
+%We denote the general case with $ \mathbf{R}=\mathbf{R}(\theta,\phi) $, or in the form of two-step rotations around $ i $ axis and then around $ j $ axis by $ \mathbf{R}=\mathbf{R}_j(\theta)\mathbf{R}_i(\phi) $, always satisfying $ \mathbf{R}^{-1}=\mathbf{R}^\dagger $ for either rotations.
 
 Not to be confused, we have also defined an operator space spanned by operator vectors, like $ \left(\!\begin{array}{cc}\mathbf{e}_n,&\mathbf{e}_{\bar{n}}\end{array}\! \right) $, which has vectors, tensors or operators as the elements.
 We have also defined the bullet operator ($ \bullet $) in the operator vector space isomorphically the same as the dot ($ \cdot $) product or matrix product in the conventional vector space while the sign of $ \cdot $ can usually be ignored and we will denote complex conjugates explicitly if needed. 
