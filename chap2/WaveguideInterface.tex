@@ -17,10 +17,18 @@ s=\frac{\Omega^2/4}{\Delta^2+\Gamma^2/4}\ll 1,
 \end{align}
 where $ \Omega $ is the Rabi frequency, $ \Gamma $ is the spontaneous emission rate of the atom, and $ \Delta=\omega-\omega_{eg} $ is the probe detuning from the atomic resonance frequency $ \omega_{eg} $ as a two-level system with the probe's frequency set to be $ \omega $. 
 
-In this chapter, I will first outline the basic concept of the polarization state of light and introduce the experimental setup in characterizing the dispersive light shift interaction, which is called \emph{polarization spectroscopy}\index{polarization spectroscopy}.
-The theme of this dissertation is set based on the atom-light interactions which includes two aspects: one is how the light respond to the presence of the atoms, and the other is how the atoms' properties are modified by the light. For the light response aspect, I will derive a general theory in the language of Green's function to formulate the atom-light interaction mainly from the semi-classical perspective where the light is treated as a continuous wave while the atom has discrete level structures. 
-For the atoms' response, I will extend the definition of polarizability of atoms from a classical oscillator picture to the multiple-level quantum representation, and then introduce the Purcell effect and derive the modified spontaneous decay rates of atoms in presence of a waveguide using the Green's function language. 
-At the end of this chapter, I will conclude with some geometric explanations on the unique features and advantages of using a nanophotonic waveguide interface to implement atom-light coupling over the free-space interface commonly employed in previous experiments.
+\begin{figure}
+\centering\makebox[\textwidth]{
+\includegraphics[width=0.85\textwidth]{../media/Figs/NanofiberTrappedAtoms}}
+\caption[Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide.]{Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide. In the dispersive regime and when the atoms are placed a few hundred nm away from each other, the effect of the unguided radiation from the atoms can be ignored, and the photon scatterings among atoms are also negligible. For a quantum-measurement--targeted research, we mainly care about how the atomic emissions got modified by the waveguide interface and coupled to the guided modes to be detected at the measurement apparatus. Color contour on the left-hand part is an illustration of one guided mode intensity distribution of an optical nanofiber, which leaks into the free space to interact with atoms and propagates through the fiber. }\label{fig:trappedatomradiation}
+\end{figure}
+
+In this chapter, we will first outline the basic concept of the polarization state of light and introduce the experimental setup in characterizing the dispersive light shift interaction, which is called \emph{polarization spectroscopy}\index{polarization spectroscopy}.
+The theme of this dissertation is set based on the atom-light interactions which includes two aspects: one is how the light respond to the presence of the atoms, and the other is how the atoms' properties are modified by the light. For the light response aspect, we will derive a general theory in the language of Green's function to formulate the atom-light interaction mainly from the semi-classical perspective where the light is treated as a continuous wave while the atom has discrete level structures. 
+In simulations, we will show the radiation modes of the waveguides do not propagate too far from atoms and can be ignored for the light response detected at the measurement apparatus (see Fig.~\ref{fig:trappedatomradiation}).
+For the atoms' response, we will extend the definition of polarizability of atoms from a classical oscillator picture to the multiple-level quantum representation, and then introduce the Purcell effect and derive the modified spontaneous decay rates of atoms in presence of a waveguide using the Green's function language. 
+We will show the modifications of spontaneous emissions when atoms are placed at certain distance can be ignored.
+At the end of this chapter, we will conclude with some geometric explanations on the unique features and advantages of using a nanophotonic waveguide interface to implement atom-light coupling over the free-space interface commonly employed in previous experiments.
 
 \section{Polarization spectroscopy and dispersive light shift measures}
 \subsection{Polarization states of light}
@@ -515,18 +523,17 @@ and Eq.~\eqref{eq:Maxwellwithsource2} then can be solved by solving the correspo
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br';\omega_0) &= -4\pi \frac{\omega_0^2}{c^2}\delta^{(3)}(\br-\br')\unittensor. \label{eq:dyadicGF}
 \end{align}
 
-A special case of the dyadic Green's function is when a dipole source is placed in a homogeneous medium, say vacuum. In this case, the dyadic Green's function essentially becomes a scalar or a diagonal tensor with all three diagonal elements equal to 
+A special case of the dyadic Green's function is when a dipole source is placed in a homogeneous medium, say the vacuum. In this case, one can solve the dyadic Green's function by solving a scalar Green's function, which gives 
 \begin{align}
 G_0(\br,\br';\omega_0) =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
 \end{align}
-where we only take the positive frequency solution for our studies. This result reflects the fact that the field responded at $ \br $ is always on the same polarization direction and with an amplitude equal to the dipole radiation from the source position $ \br' $ without any distortions caused by inhomogeneous effects. This solution is a key to solve radiation problems as we will discuss later. The details of solving the free-space Green's function and its significance can be found in Appendix~\cite{chap:freespacegreenfunction}. 
+where we only take the positive frequency solution for our studies. This result reflects the fact that the field responded at $ \br $ is a free spherical wave coming out from a point dipole source as we can recognize from basic electromagnetic knowledge. This solution is a key to solve radiation problems and normalize modified decay rates of atoms in presence of a waveguide as we will discuss later. When $ \br\rightarrow \br' $ or the field responded at the dipole position, the real part of the Green's function divergent yet the imaginary part of $ G_0(\br,\br') $ takes the form
+\begin{align}
+G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
+\end{align}
+The details of solving the free-space Green's function and its significance can be found in Appendix~\cite{chap:freespacegreenfunction}. 
 
 
-\begin{figure}
-\centering\makebox[\textwidth]{
-\includegraphics[width=0.85\textwidth]{../media/Figs/NanofiberTrappedAtoms}}
-\caption{Diagram of nanofiber trapped atoms. }
-\end{figure}
 
 As shown in the earlier sections, in general, the output field in presence of a single atom can be written as
 \begin{align}
@@ -1562,33 +1569,89 @@ A far field from a point light emitter is usually paraxial approximation obedien
 
 %<*freespacegreenfunction>
 \chapter{Green's function for a vacuum medium and volume integration methods}\label{chap:freespacegreenfunction}
-As one simple example, we consider a free-space case where the photon emitter is emerged in a homogeneous vacuum background. The wave equation can be given by
+As one simple example, we consider a free-space case where the photon emitter is emerged in a vacuum background. We a vector potential $ \mathbf{A}(\br) $ and a scalar potential $ \phi(\br) $ by
+\begin{align}
+\mathcal{E}(\br) &= ik_0\mathbf{A}-\nabla\phi(\br) \label{eq:EAphi}\\
+\mathcal{B}(\br) &= \nabla\times\mathcal{A}(\br)
+\end{align}
+also satisfying the Lorentz Gauge transformation relation that
+\begin{align}
+\nabla \cdot \mathbf{A}(\br) &= ik_0\phi(\br).\label{eq:LorentzGauge}
+\end{align} 
+Using the Maxwell equations, Eqs.~\ref{eq:maxwelldiv} and~\ref{eq:maxwellgrad}, one can easily prove the following wave equations for the two potentials:
+\begin{align}
+\left[ \nabla^2+k_0^2 \right]\mathbf{A}(\br) &= -\frac{4\pi}{c} \mathcal{J},\\
+\left[ \nabla^2+k_0^2 \right]\phi(\br) &= -4\pi\rho.
+\end{align}
+We have used the relation that $ \nabla\times\nabla\times =-\nabla^2+\nabla\nabla\cdot $. 
+These wave equations are all in the following form,
+\begin{align}
+\left[\nabla^2+k_0^2 \right]f(\br) &= -g(\br).
+\end{align}
+Therefore, one can define a Green's function by
+\begin{align}
+\left[\nabla^2+k_0^2 \right]G_0(\br,\br') &= -4\pi k^2_0\delta(\br-\br').
+\end{align}
+This can be solved easily by transforming the equation above into the k-space by the Fourier transformation so that 
+\begin{align}
+\left[ -k^2+k_0^2\right] G_0(\mathbf{k},\mathbf{k}') &= -4\pi k_0^2 e^{-i\mathbf{k}\cdot(\br-\br')},\label{eq:Gkk'equation}
+\end{align}
+which leads to 
+\begin{align}
+G_0(\mathbf{k},\mathbf{k}') =\frac{4\pi k_0^2 e^{-i\mathbf{k}\cdot(\br-\br')}}{k^2-k_0^2}.
+\end{align}
+When we transfer the $ k $-space solution to the real 3D $ \br $ space, we obtain the valid scalar Green's function solutions of a point source:
+\begin{align}
+G_0(\br,\br') =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
+\end{align}
+where the $ \pm $ signs correspond to the outgoing and incoming propagating waves from the point source, which is a spherical wave. The different signs are obtained by choosing different contour integrals when we do the inverted Fourier transform. We can just use the positive frequency or the outgoing solution for our radiation problem due to causality. With this scalar Green's function, we can find the vector potential by
+\begin{align}
+\mathbf{A} (\br) &= \frac{c}{\omega_0^2} \int_V \mathcal{J}(\br')G_0(\br,\br')dV'.\label{eq:freespaceAG0int}
+\end{align}
+A similar equation holds for the scalar potential $ \phi(\br) $. 
+
+In the meantime, if we plug in the Lorentz Gauge transformation relation, Eq.~\ref{eq:LorentzGauge}, into Eq.~\ref{eq:EAphi}, we can find that 
+\begin{align}
+\mathcal{E}(\br) &= ik_0\left[1+ \frac{1}{k_0^2}\nabla\nabla\cdot \right]\mathbf{A}(\br).\label{eq:freespaceEA}
+\end{align}
+
+Compared to the wave equation based on Eq.~\ref{eq:Maxwellwithsource2} that
 \begin{align}\label{eq:freespacewaveeq}
-\left[\nabla^2 +\frac{\omega_0^2}{c^2}\right]\boldsymbol{\mathcal{E}}(\br) =  -4\pi\! \frac{\omega^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br)
+-\left[\nabla\times\nabla\times +\frac{\omega_0^2}{c^2}\right]\boldsymbol{\mathcal{E}}(\br) =  -4\pi\! \frac{\omega_0^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br)=-i4\pi\frac{\omega_0}{c^2}\mathcal{J},
 \end{align}
-where we have set $ n=1 $ and replaced $ -\nabla\times\nabla\times $ with $ \nabla^2 $ from Eq.~\eqref{eq:Maxwellwithsource2}. As a result, all vector components of the field vectors are independent to each other. The corresponding Green's function equation for this problem becomes a scalar equation,
+where we have set $ n=1 $ for the vacuum medium from Eq.~\eqref{eq:Maxwellwithsource2}, we can define a dyadic Green's function $ \tensor{\mathbf{G}}(\br,\br') $ by 
 \begin{align}
-(\spp{}{x_i} + k^2) G_i(\br,\br')=-4\pi \frac{\omega^2}{c^2}\delta(\br-\br'), 
+\left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br') &=-4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,\label{eq:freespaceGFTJ}
 \end{align}
-where $ x_i $ are the coordinate components and $ G_i(\br,\br') $ is the scalar Green's function responding to a unit source with only $ x_i $ field component. 
-The only physical solution for the scalar Green's function\index{Green's function} in free space is 
+so that 
 \begin{align}
-G_0(\br,\br') =k^2\frac{e^{\pm i\mathbf{k}\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
+\mathcal{E}(\br)&= \frac{i}{\omega_0}\int_V \GFT(\br,\br')\mathcal{J}(\br')dV'.\label{eq:freespaceEGint}
 \end{align}
-where we only take the \emph{positive} signed solution for our example. 
-Assuming the boundary contributions vanish, we may have
+This is the scattered or radiated field from the point source current. 
+
+The first column vector of $ \GFT(\br,\br') $, or $ \mathbf{G}_x $, defined in Eq.~\ref{eq:freespaceGFTJ} is formally the electric field due to a point source current $ \mathcal{J}=\frac{\omega_0}{i}\delta^{(3)}(\br-\br')\mathbf{e}_x $. Based on Eq.~\ref{eq:freespaceAG0int}, the vector potential from this source current is 
 \begin{align}
-\boldsymbol{\mathcal{E}}(\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + \int_V \tensor{S}(\br') \! \cdot\! \boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r', \label{Etotal0}
+\mathbf{A}(\br) &= \frac{1}{ik_0}G_0(\br,\br')\mathbf{e}_x.
 \end{align}
-where $ \boldsymbol{\mathcal{E}}_0 (\br) $ is the homogeneous Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation!homogeneous Maxwell-Helmholtz equation} in the limit that $ \tensor{S}(\br)\longrightarrow 0 $, $ \mathbf{R}=\br-\mathbf{r}' $. Therefore, the scattering field is
+Substituting this into Eq.~\ref{eq:freespaceEA} and using Eq.~\ref{eq:freespaceEGint}, we find 
 \begin{align}
-\boldsymbol{\mathcal{E}}_s(\br) &=  \int_V \tensor{S}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br')k^2 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
-&= \int_V \frac{\omega^2}{c^2} \tensor{\chi}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}(\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'.
+\mathbf{G}_x (\br,\br') &= \left[1+ \frac{1}{k_0^2}\nabla\nabla\cdot \right]G_0(\br,\br')\mathbf{e}_x.
 \end{align}
+One can derive similar equations for $ \mathbf{G}_y $ and $ \mathbf{G}_z $. Using the definition that $ \nabla\cdot\left[G_0\unittensor \right]=\nabla G_0 $, one can rewrite the vector equations of the Green's function above into the full tensor form by
+\begin{align}
+\GFT(\br,\br') &=  \left[\unittensor + \frac{1}{k_0^2}\nabla\nabla \right]G_0(\br,\br').
+\end{align}
+This is the Green's function of a free dipole in a homogeneous background expressed in terms of the scalar Green's function $ G_0(\br,\br') $. Then the field can be expanded as a volume integral by
+\begin{align}
+\mathcal{E}(\br) &= \mathcal{E}_0(\br) + \frac{i}{\omega_0}\int_V\GFT(\br,\br')\mathcal{J}(\br')dV',
+\end{align}
+where $ \mathcal{E}_0(\br) $ is an input field if any. 
 
 
 
-In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field. By the use of Green's function method, we have converted our differential equation for the scattered field into volume integral equations. They are very important since they form the basis for various formalisms such as the \emph{method of moments}\index{method of moments}, the \emph{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \emph{coupled dipole method}\index{coupled dipole method}~\cite{Novotny2012}. With these methods, the integral equations above can be solved numerically. Alternatively, we may develop a Liouville–Neumann series\index{Liouville–Neumann series} solution to the equation, namely the Born series\index{Born series}.
+In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field. By the use of Green's function method, we have converted our differential equation for the scattered field into volume integral equations. They are very important since they form the basis for various formalisms such as the \emph{method of moments}\index{method of moments}, the \emph{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \emph{coupled dipole method}\index{coupled dipole method}~\cite{Novotny2012}. With these methods, the integral equations above can be solved numerically. In Appendix~\ref{sec:boundrad}, we will use the integration equations of the free space Green's function to solve the dyadic Green's function with a cylindrical waveguide boundary condition, in which the key is to find the decomposition expression for the Green's function of free dipole to match up with the boundary condition geometry. 
+
+In other cases, we may develop a Liouville–Neumann series\index{Liouville–Neumann series} solution to the equation, namely the Born series\index{Born series} to solve problems of multiple scatterings.
 
 The Born series is typically derived by assuming that the scattering potential is very
 weak, and may be written as $ \tensor{S}(\br)\rightarrow \delta \tensor{S}(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series of solutions for the total field of the form
@@ -1602,21 +1665,29 @@ On substituting the expression above into Eq.~\ref{Etotal0}, we find the series
 \ldots & \ldots\\
 \mathbf{V}_n &= k^2\int_V \tensor{S}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_{n-1} \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',
 \end{align}
-where the \emph{Born approximation}\index{Born series!Born approximation} only includes up to the first-order term. Under the Born approximation, the solution for the electrical field with one single atom can be given by
+where $ R=|\br-\br'| $ with $ \mathbf{R}=(\br-\br') $, and the \emph{Born approximation}\index{Born series!Born approximation} only includes up to the first-order term. Under the Born approximation, the solution for the electrical field with one single atom can be given by
 \begin{align}
 \boldsymbol{\mathcal{E}} (\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
 &= \boldsymbol{\mathcal{E}}_0(\br) +\sum_{\br'}\frac{\omega^2}{c^2} \tensor{\alpha}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|}\\
 &=\boldsymbol{\mathcal{E}}_0(\br) + \frac{\omega^2}{c^2} \tensor{\alpha}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|},
 \end{align}
-where $ \boldsymbol{\alpha}(\br') $ denotes the polarizability of the atom at $ \br' $. 
+where $ \boldsymbol{\alpha}(\br') $ denotes the polarizability of the atom at $ \br' $. Note that Born series does not necessarily converge. Usually, we need to verify if the perturbation fields are much weaker than the field $ \boldsymbol{\mathcal{E}}_0 $ before using Born series. 
 
-Notice that Born series does not necessarily converge. Usually, we need to verify if the perturbation fields are much weaker than the field $ \boldsymbol{\mathcal{E}}_0 $ before using Born series. 
+When $ \br\rightarrow \br' $ or we measure the self-induced field at the atom position $ \br' $, the real part of the Green's function divergent. However, the imaginary part can be calculated. At that position, the tensor Green's function reduced to the scalar Green's function, and the imaginary part of it can be calculated by first extract the imaginary part of the Green's function in the Fourier domain or the $ k $-space following Eq.~\ref{eq:Gkk'equation}, and then transform it back to the real 3D space by using the corresponding contour integral part (assuming outgoing radiation part). One can show that at the atom position, the imaginary part reads
+\begin{align}
+G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
+\end{align}
+
+Note that, using different conventions of Green's function or units might result in a different expression. For example, without the factor of $ k_0^2 $ when we defining the Green's function equation, $ G_0= \frac{2}{3}k_0 $ (the usual Gauss units); or in the SI units, one might get $ G_0=\frac{\varepsilon_0 k_0^3}{6\pi} $~\cite{Novotny2012}. One can prove that, if the dipole is radiating in a homogeneous medium with index of refraction $ n $, then $ G_0 $ will need to replace $ k_0 $ with $ nk_0 $ from the expressions above. Other equations can be adapted from our derivations above straightforwardly.
+
+We use the expression of $ G_0 $ to normalize the waveguide modified spontaneous decay rates of atoms with respect to their natural linewidth in related chapters.
+
 %</freespacegreenfunction>
 
 
 %<*nanofiberradiationproblem>
 
-\section{Dipole radiation coupled to the guided and radiation modes of an optical nanofiber}\label{sec:boundrad}
+\chapter{Dipole radiation coupled to the guided and radiation modes of an optical nanofiber}\label{sec:boundrad}
 In our study, it is critical to separate the bound mode and the radiation mode. In this section, we will 
 go through a light propagation theory in the scenario of a nanofiber with a trapped atom. 
 
