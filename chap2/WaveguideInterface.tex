@@ -276,8 +276,8 @@ Substituting the above into Eq.~\ref{EBz}, we obtain
 \zeta(r_\perp,\phi)
 \end{pmatrix} = 0.
 \end{align}
-Now, the problem of solving a three dimensional wave equation for $ \mathcal{E} (r_\perp, \phi, z) $ 
-and $ \mathcal{B} (r_\perp, \phi, z)$ turns into a problem of solving a two dimensional differential 
+Now, the problem of solving a three dimensional wave equation for $ \boldsymbol{\mathcal{E}} (r_\perp, \phi, z) $ 
+and $ \boldsymbol{\mathcal{B}} (r_\perp, \phi, z)$ turns into a problem of solving a two-dimension differential 
 (mode) equation for $ \psi(r_\perp,\phi) $ and $ \zeta(r_\perp,\phi) $. 
 
 There are two special cases for the modes. If $ \psi=0 $ as a constant, which means there is no $ z $-component of the electrical field, then the propagating mode is called a TE mode\index{mode!TE mode}. Similarly, if $ \zeta=0 $ as a constant, which corresponds to zero magnetic $ z $-component, 
@@ -1389,7 +1389,7 @@ E^{(\mu)}_\phi(r_\perp,\phi,z,t) &=  -pA \frac{\beta_{11}}{2h_{11}} \frac{J_1(h_
 E^{(\mu)}_z(r_\perp,\phi,z,t) &= fA \frac{J_1(h_{11}a)}{K_1(q_{11}a)} K_1(q_{11}r_\perp) e^{-i(\omega t-f\beta_{11} z -p\phi)}.
 \end{align}
 \end{subequations}
-In Equs.~\ref{Ertcrla} and~\ref{Ertcrga}, we denote the normalized bound fundamental modes as $ \mathbf{E}^{(\mu)} (\br,t)$ by an index $ \mu=(\omega,f,p) $, where $ f=+,- $ denotes forward or backward propagation direction, and $ p=+,- $ denotes the conterclockwise or clockwise of polarization. Similar to the qusi-linear case, we use $ \boldsymbol{\mathcal{E}}^{p=\pm} $ to indicate the spatial components of the field with a given circulation pattern. For a linearly polarized \HE mode, the cylindrical components are just the superposition of the two circular fields, 
+In Eqs.~\ref{Ertcrla} and~\ref{Ertcrga}, we denote the normalized bound fundamental modes as $ \mathbf{E}^{(\mu)} (\br,t)$ by an index $ \mu=(\omega,f,p) $, where $ f=+,- $ denotes forward or backward propagation direction, and $ p=+,- $ denotes the conterclockwise or clockwise of polarization. Similar to the qusi-linear case, we use $ \boldsymbol{\mathcal{E}}^{p=\pm} $ to indicate the spatial components of the field with a given circulation pattern. For a linearly polarized \HE mode, the cylindrical components are just the superposition of the two circular fields, 
 \begin{align}\label{Eilincyc}
 E_i^{lin} = \frac{1}{\sqrt{2}}(E_i^+ + E_i^-)\quad \mathrm{or}\quad \mathcal{E}_i^{lin} = \frac{1}{\sqrt{2}}(\mathcal{E}_i^+ + \mathcal{E}_i^-),\quad i\in(r_\perp,\phi,z).
 \end{align}
@@ -1568,11 +1568,11 @@ A far field from a point light emitter is usually paraxial approximation obedien
 
 
 %<*freespacegreenfunction>
-\chapter{Green's function for a vacuum medium and volume integration methods}\label{chap:freespacegreenfunction}
+\chapter[Green's function method for a homogeneous medium and beyond]{Green's function method for a homogeneous medium and calculation methods based on volume integrations}\label{chap:freespacegreenfunction}
 As one simple example, we consider a free-space case where the photon emitter is emerged in a vacuum background. We a vector potential $ \mathbf{A}(\br) $ and a scalar potential $ \phi(\br) $ by
 \begin{align}
-\mathcal{E}(\br) &= ik_0\mathbf{A}-\nabla\phi(\br) \label{eq:EAphi}\\
-\mathcal{B}(\br) &= \nabla\times\mathcal{A}(\br)
+\boldsymbol{\mathcal{E}}(\br) &= ik_0\mathbf{A}-\nabla\phi(\br) \label{eq:EAphi}\\
+\boldsymbol{\mathcal{B}}(\br) &= \nabla\times\mathcal{A}(\br)
 \end{align}
 also satisfying the Lorentz Gauge transformation relation that
 \begin{align}
@@ -1606,13 +1606,13 @@ G_0(\br,\br') =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br
 \end{align}
 where the $ \pm $ signs correspond to the outgoing and incoming propagating waves from the point source, which is a spherical wave. The different signs are obtained by choosing different contour integrals when we do the inverted Fourier transform. We can just use the positive frequency or the outgoing solution for our radiation problem due to causality. With this scalar Green's function, we can find the vector potential by
 \begin{align}
-\mathbf{A} (\br) &= \frac{c}{\omega_0^2} \int_V \mathcal{J}(\br')G_0(\br,\br')dV'.\label{eq:freespaceAG0int}
+\mathbf{A} (\br) &= \frac{c}{\omega_0^2} \int_V \mathcal{J}(\br')G_0(\br,\br')\mathrm{d}^3 r'.\label{eq:freespaceAG0int}
 \end{align}
 A similar equation holds for the scalar potential $ \phi(\br) $. 
 
 In the meantime, if we plug in the Lorentz Gauge transformation relation, Eq.~\ref{eq:LorentzGauge}, into Eq.~\ref{eq:EAphi}, we can find that 
 \begin{align}
-\mathcal{E}(\br) &= ik_0\left[1+ \frac{1}{k_0^2}\nabla\nabla\cdot \right]\mathbf{A}(\br).\label{eq:freespaceEA}
+\boldsymbol{\mathcal{E}}(\br) &= ik_0\left[1+ \frac{1}{k_0^2}\nabla\nabla\cdot \right]\mathbf{A}(\br).\label{eq:freespaceEA}
 \end{align}
 
 Compared to the wave equation based on Eq.~\ref{eq:Maxwellwithsource2} that
@@ -1625,7 +1625,7 @@ where we have set $ n=1 $ for the vacuum medium from Eq.~\eqref{eq:Maxwellwithso
 \end{align}
 so that 
 \begin{align}
-\mathcal{E}(\br)&= \frac{i}{\omega_0}\int_V \GFT(\br,\br')\mathcal{J}(\br')dV'.\label{eq:freespaceEGint}
+\boldsymbol{\mathcal{E}}(\br)&= \frac{i}{\omega_0}\int_V \GFT(\br,\br')\mathcal{J}(\br')\mathrm{d}^3 r'.\label{eq:freespaceEGint}
 \end{align}
 This is the scattered or radiated field from the point source current. 
 
@@ -1643,37 +1643,38 @@ One can derive similar equations for $ \mathbf{G}_y $ and $ \mathbf{G}_z $. Usin
 \end{align}
 This is the Green's function of a free dipole in a homogeneous background expressed in terms of the scalar Green's function $ G_0(\br,\br') $. Then the field can be expanded as a volume integral by
 \begin{align}
-\mathcal{E}(\br) &= \mathcal{E}_0(\br) + \frac{i}{\omega_0}\int_V\GFT(\br,\br')\mathcal{J}(\br')dV',
+\boldsymbol{\mathcal{E}}(\br) &= \boldsymbol{\mathcal{E}}_0(\br) + \frac{i}{\omega_0}\int_V\GFT(\br,\br')\mathcal{J}(\br')\mathrm{d}^3 r'\\
+&=\boldsymbol{\mathcal{E}}_0(\br) + \int_V\GFT(\br,\br')\tensor{\chi}(\br')\cdot\boldsymbol{\mathcal{E}}(\br')\mathrm{d}^3 r',\label{eq:EGFTinteq}
 \end{align}
-where $ \mathcal{E}_0(\br) $ is an input field if any. 
+where $ \boldsymbol{\mathcal{E}}_0(\br) $ is an input field (if any) propagating in the free background medium. Eq.~\ref{eq:EGFTinteq} is the integration equation with a dipole point source to solve the electric field $ \boldsymbol{\mathcal{E}} $. Corresponding to the free-propagating field $ \boldsymbol{\mathcal{E}}_0 $, we define the scattering term due to the presence of the source by
+\begin{align}
+\boldsymbol{\mathcal{E}}_s(\br) &= \int_V \GFT(\br,\br') \tensor{\chi}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}(\br') \mathrm{d}^3 r'. \label{eq:Escattint}
+\end{align}
 
-
-
-In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field. By the use of Green's function method, we have converted our differential equation for the scattered field into volume integral equations. They are very important since they form the basis for various formalisms such as the \emph{method of moments}\index{method of moments}, the \emph{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \emph{coupled dipole method}\index{coupled dipole method}~\cite{Novotny2012}. With these methods, the integral equations above can be solved numerically. In Appendix~\ref{sec:boundrad}, we will use the integration equations of the free space Green's function to solve the dyadic Green's function with a cylindrical waveguide boundary condition, in which the key is to find the decomposition expression for the Green's function of free dipole to match up with the boundary condition geometry. 
+In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field and medium geometries. By the use of Green's function method, we have converted our differential equation for the scattered field into volume integral equations. One can use the formalism above defined by the integration equation, Eq.~\ref{eq:EGFTinteq}, to solve a general scattering problem with arbitrary boundary condition and source distributions by placing the sources into well-characterized volumes of media. The formalism derived above are very important since they form the basis for various formalisms such as the \emph{method of moments}\index{method of moments}, the \emph{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \emph{coupled dipole method}\index{coupled dipole method}~\cite{Novotny2012,Wubs2004}. In Appendix~\ref{sec:boundrad}, instead of solving the integration equations directly, we will use the solution of $ G_0(\br,\br') $ as a dipole's Green function in free space and their links to $ \mathbf{A}(\br) $ and $ \phi(\br) $ potentials to solve the electric and magnetic field components, given a boundary condition of a cylindrical waveguide geometry, in which the key is to find the decomposition expression for the Green's function of free dipole to match up with the boundary geometry. 
 
 In other cases, we may develop a Liouville–Neumann series\index{Liouville–Neumann series} solution to the equation, namely the Born series\index{Born series} to solve problems of multiple scatterings.
 
 The Born series is typically derived by assuming that the scattering potential is very
-weak, and may be written as $ \tensor{S}(\br)\rightarrow \delta \tensor{S}(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series of solutions for the total field of the form
+weak, and may be written as $ \tensor{\chi}(\br)\rightarrow \delta \tensor{\chi}(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series of solutions for the total field of the form
 \begin{align}
 \boldsymbol{\mathcal{E}}(\br) &= \sum_{n=0}^{\infty} \delta^n \mathbf{V}_n(\br).
 \end{align}
-On substituting the expression above into Eq.~\ref{Etotal0}, we find the series
+On substituting the expression above into Eq.~\ref{eq:EGFTinteq}, we find the series
 \begin{align}
 \mathbf{V}_0 &= \boldsymbol{\mathcal{E}}_0,\\
-\mathbf{V}_1 &= k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',\\
+\mathbf{V}_1 &= \int_V \GFT(\br,\br')\tensor{\chi}(\br')\cdot\boldsymbol{\mathcal{E}}_0(\br') \mathrm{d}^3 r',\\
 \ldots & \ldots\\
-\mathbf{V}_n &= k^2\int_V \tensor{S}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_{n-1} \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r',
+\mathbf{V}_n &= \int_V \GFT(\br,\br')\tensor{\chi}(\br')\cdot\boldsymbol{\mathcal{E}}_{n-1}(\br') \mathrm{d}^3 r',
 \end{align}
 where $ R=|\br-\br'| $ with $ \mathbf{R}=(\br-\br') $, and the \emph{Born approximation}\index{Born series!Born approximation} only includes up to the first-order term. Under the Born approximation, the solution for the electrical field with one single atom can be given by
 \begin{align}
-\boldsymbol{\mathcal{E}} (\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + k^2\int_V \tensor{S}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br') \frac{e^{i\mathbf{k}\cdot \mathbf{R}}}{R} \mathrm{d}^3 r'\\
-&= \boldsymbol{\mathcal{E}}_0(\br) +\sum_{\br'}\frac{\omega^2}{c^2} \tensor{\alpha}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|}\\
-&=\boldsymbol{\mathcal{E}}_0(\br) + \frac{\omega^2}{c^2} \tensor{\alpha}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}_0 (\br')\frac{e^{i\mathbf{k}\cdot (\br-\br')}}{|\br-\br'|},
+\boldsymbol{\mathcal{E}} (\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + \int_V \GFT(\br,\br')\tensor{\chi}(\br')\cdot\boldsymbol{\mathcal{E}}_0(\br') \mathrm{d}^3 r'\\
+&= \boldsymbol{\mathcal{E}}_0(\br) +\sum_{\br'}\GFT(\br,\br') \tensor{\alpha}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_0 (\br'),
 \end{align}
-where $ \boldsymbol{\alpha}(\br') $ denotes the polarizability of the atom at $ \br' $. Note that Born series does not necessarily converge. Usually, we need to verify if the perturbation fields are much weaker than the field $ \boldsymbol{\mathcal{E}}_0 $ before using Born series. 
+where $ \boldsymbol{\alpha}(\br') $ denote the polarizability of atoms or dipoles at $ \br' $. We provide the generic field solution under the Born approximation in both volume integration form for continuous medium, and the discrete summation form for the case with finite number of sources. Note that Born series does not necessarily converge. Usually, we need to verify if the perturbation fields are much weaker than the field $ \boldsymbol{\mathcal{E}}_0 $ before using Born series. Depending on the problems, $ \GFT(\br,\br') $ in equations above can be in any concrete form, which can usually be solved by merely using the boundary condition of the problem without the sources.
 
-When $ \br\rightarrow \br' $ or we measure the self-induced field at the atom position $ \br' $, the real part of the Green's function divergent. However, the imaginary part can be calculated. At that position, the tensor Green's function reduced to the scalar Green's function, and the imaginary part of it can be calculated by first extract the imaginary part of the Green's function in the Fourier domain or the $ k $-space following Eq.~\ref{eq:Gkk'equation}, and then transform it back to the real 3D space by using the corresponding contour integral part (assuming outgoing radiation part). One can show that at the atom position, the imaginary part reads
+Back to the scattering problem with a homogeneous medium background, when $ \br\rightarrow \br' $ or when we measure the self-induced field at the point source's position $ \br' $, the real part of the Green's function divergent. However, the imaginary part can be calculated. At that position, the tensor Green's function reduced to the scalar Green's function, and the imaginary part of it can be calculated by first extract the imaginary part of the Green's function in the Fourier domain or the $ k $-space following Eq.~\ref{eq:Gkk'equation}, and then transform it back to the real 3D space by using the corresponding contour integral part (assuming outgoing radiation part). One can show that at the atom position, the imaginary part reads
 \begin{align}
 G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
 \end{align}
