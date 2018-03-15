@@ -14,6 +14,7 @@
 *.lof
 *.pdf
 
+# Figures not to ignore.
 !chap4/Fig1.pdf
 !chap4/Fig2.pdf
 !chap4/Fig3.pdf
@@ -23,7 +24,7 @@
 !/media/Figs/anisotropicmodes.pdf
 !/media/Figs/dipoleorientation.pdf
 !/media/Figs/emissionsurfacefiber.pdf
-!/media/nanofiberswg_Hmode6.pdf
-!/media/FaradaySchematics.pdf
-!/media/FaradaySqueezingLevelStructure.pdf
-!/media/FaradayProtocol-figure*.pdf
+!/media/Figs/nanofiberswg_Hmode6.pdf
+!/media/Figs/FaradaySchematics.pdf
+!/media/Figs/FaradaySqueezingLevelStructure.pdf
+!/media/Figs/FaradayProtocol-figure*_1.pdf

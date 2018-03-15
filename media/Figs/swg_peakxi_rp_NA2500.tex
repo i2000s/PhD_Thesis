@@ -1,0 +1,35 @@
+% This file was created by matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=5.546cm,
+height=5cm,
+at={(0cm,0cm)},
+scale only axis,
+xmin=0.5000,
+xmax=2.0000,
+xtick={0.5000,1.0000,1.5000,2.0000},
+xlabel style={font=\color{white!15!black}},
+xlabel={$r_\perp/w$},
+ymin=0.0000,
+ymax=18.0000,
+ylabel style={font=\color{white!15!black}},
+ylabel={$\xi^{-2}_{peak}$ (dB)},
+axis background/.style={fill=white},
+xmajorgrids,
+ymajorgrids
+]
+\addplot [color=red, line width=1.5pt, forget plot]
+  table[row sep=crcr]{%
+0.6000	17.6467\\
+0.8000	15.3202\\
+1.0000	12.9296\\
+1.2000	10.5191\\
+1.4000	7.8013\\
+1.6000	5.4147\\
+1.8000	3.1564\\
+2.0000	1.2606\\
+};
+\end{axis}
+\end{tikzpicture}%

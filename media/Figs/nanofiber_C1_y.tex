@@ -1,0 +1,37 @@
+% This file was created by matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=5.647cm,
+height=5cm,
+at={(0cm,0cm)},
+scale only axis,
+xmin=1.0000,
+xmax=2.5000,
+xtick={1.0000,1.5000,1.8000,2.0000,2.5000},
+xlabel style={font=\color{white!15!black}},
+xlabel={$r_\perp/a$},
+ymin=-3.0000,
+ymax=-1.8000,
+ylabel style={font=\color{white!15!black}},
+ylabel={$\log_{10}(C_1)$},
+axis background/.style={fill=white},
+xmajorgrids,
+ymajorgrids
+]
+\addplot [color=red, line width=1.5pt, forget plot]
+  table[row sep=crcr]{%
+1.0251	-1.8409\\
+1.0653	-1.8658\\
+1.1055	-1.8917\\
+1.1859	-1.9459\\
+1.2663	-2.0022\\
+1.3869	-2.0891\\
+1.5477	-2.2073\\
+2.1106	-2.6230\\
+2.3116	-2.7696\\
+2.5126	-2.9148\\
+};
+\end{axis}
+\end{tikzpicture}%

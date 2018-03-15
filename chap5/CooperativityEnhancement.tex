@@ -246,12 +246,11 @@ The theoretical framework describing the propagation of light guided in a nanofi
 
 For waveguides that are symmetric under a $\pi/2$ rotation around the $z$ (propagation) axis, there are two degenerate polarizations for each guided mode and for each propagation direction.  Assuming a nanophotonic waveguide that supports only the lowest order guided mode, and restricting our attention to modes propagating in the positive $z$-direction, we denote $\mbf{u}_H(\mbf{r}_\perp)$ and  $\mbf{u}_V(\mbf{r}_\perp)$ as the horizontally and vertically polarized modes that adiabatically connect to $x$ and $y$ linearly polarized modes, respectively, as the cross section of the waveguide becomes large compared to the optical wavelength.  Note that in typical nanophotonic geometries these guided modes also have a nonnegligible $z$ component.  For a cylindrically symmetric nanofiber, these are the well-studied HE$_{11}$ modes; for a \SWG, these are the quasi-TE$_{01}$ and quasi-TM$_{01}$ modes, shown in Fig.~\ref{fig:nanofiberSWG_E_ints}. One can solve for the guided modes of a cylindrical fiber analytically~\cite{Kien2004,Vetsch2010Opticala,Qi2016}. We use a vector finite difference method to numerically solve for the guided eigenmodes of the square waveguide~\cite{Fallahkhair2008} with core material of $ \rm{Si}_3\rm{N}_4 $ whose index of refraction is $ n=2 $~\cite{Lee2013}. 
 
-\begin{figure}[tb]
+\begin{figure}[tbp]
 \centering
   \includegraphics[width=.69\textwidth]{../media/Figs/nanofiberswg_Hmode6}
   \caption{Fundamental guided modes of the nanophotonic waveguides. (a) Electric field components of the $H$-polarized HE$_{11}$ mode of a circular nanofiber. From left to right: $ \mathrm{Re}[u_x(\br\!_\perp)] $, $ \mathrm{Re}[u_y(\br\!_\perp)] $, and $ \mathrm{Im}[u_z(\br\!_\perp)] $ in the $ xy $ plane. (b) Same as (a) but for  the $H$-polarized quasi-TE$_{01}$ mode of a square waveguide. Black lines outline the waveguide boundary. The color scale is normalized to the maximum value of all field components for each waveguide mode. All other mode components not shown for both waveguide geometries vanish everywhere. (c) The normalized intensity distribution on the transverse plane for both geometries. Blue arrows indicate the local electric field's direction and amplitude (relative length) at positions along the vertical waveguide axis, which only have an $ x $-component of the mode. Stars indicate typical positions of trapped atoms, $r_\perp'/a=1.8  $ for the nanofiber~\cite{Vetsch2010Optical} and a similar scale for the \SWG,  $ r_\perp'/w=1.0 $, where $ a $ and $ w $ are the radius and width of the waveguides respectively). Dotted light gray lines show the corresponding $ V $-mode contour which is the $ H $ mode rotated by $ 90^\circ $ around the waveguide propagation axis. The atom's azimuthal position is chosen to be at a position with the $V$ mode being strongest. }\label{fig:nanofiberSWG_E_ints}
 \end{figure}
-\FloatBarrier
 
 The quasimonochromatic positive frequency component of the quantized field associated with these guided modes $(g)$ at frequency $\omega_0$ takes the form
 \begin{align}\label{eq:Ebp}
@@ -266,7 +265,7 @@ where $\hat{\tensor{\boldsymbol{\alpha}}}{}^{(n)}$ is the atomic polarizability 
 		\tensor{\mathbf{G}}^{(+)}_g(\br,\br'_n; \omega_0) =  2\pi i \frac{\omega_0}{v_g } \sum_{p} \mathbf{u}_{p} (\br_\perp)\mathbf{u}^*_{p} 
 (\br_{\perp}^\prime) e^{i \beta_0(z-z'_n)}  \label{Eq::GreensGuided}
 \end{equation}
-is the dyadic Green's function for a dipole to radiate into the forward-propagating guided mode.  In principle, the Green's function for an $N_A$-atom chain decomposes into collective sub- and superradiant normal modes~\cite{Asenjo-Garcia2017Atom,Asenjo-Garcia2017Exponential}, but in the far-detuning limit, these are all equally excited.  The result is equivalent to the symmetric mode of independently radiating dipoles.  The input-output relation for the mode operators then reads~\cite{Qi2016}
+is the dyadic Green's function for a dipole to radiate into the forward-propagating guided mode.  In principle, the Green's function for an $N_A$-atom chain decomposes into collective sub- and superradiant normal modes~\cite{Asenjo-Garcia2017Atom,Asenjo-Garcia2017Exponential}, but in the far-detuning limit, these are all equally excited.  The result is equivalent to the symmetric mode of independently radiating dipoles.  \FloatBarrier The input-output relation for the mode operators then reads~\cite{Qi2016}
 \begin{equation}
 \hat{a}^{out}_p(t) = \hat{a}^{in}_p(t)  +i \sum_{p'} \hat{\phi}_{p,p'} \hat{a}^{in}_{p'}(t) ,
 \end{equation}
@@ -338,25 +337,25 @@ We contrast this with squeezing arising from a birefringence interaction, as we 
 
 \begin{figure}[htb]
 \centering
- \begin{minipage}[h]{0.2\linewidth}
+ \begin{minipage}[h]{0.25\linewidth}
  %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
   \subfloat[h][$1/\AF$]{
-    %\input{fig/nanofiber_invA_Far_xy.tex}
-    \includegraphics{../media/Figs/FaradayProtocol-figure0_1}
+    %\input{../media/Figs/nanofiber_invA_Far_xy.tex}
+    \includegraphics[width=0.9\linewidth]{../media/Figs/FaradayProtocol-figure0_1}
     \label{fig:nanofiber_invAFarxy}
     }
     \hfill
   \subfloat[h][$ 1/\Ain $]{
       \label{fig:nanofiber_invAin_xy}
-      \includegraphics{../media/Figs/FaradayProtocol-figure1_1}
-      %\input{fig/nanofiber_invA_in_xy.tex}
+      \includegraphics[width=0.9\linewidth]{../media/Figs/FaradayProtocol-figure1_1}
+      %\input{../media/Figs/nanofiber_invA_in_xy.tex}
       }
    \end{minipage}\hfill
    \begin{minipage}[h]{0.75\linewidth}
    \subfloat[h][$ C_1 $]{
       \label{fig:nanofiber_C1_xy}
-      \includegraphics{../media/Figs/FaradayProtocol-figure2_1}
-      %\input{fig/nanofiber_C1_xy.tex}
+      \includegraphics[width=0.9\linewidth]{../media/Figs/FaradayProtocol-figure2_1}
+      %\input{../media/Figs/nanofiber_C1_xy.tex}
       }
    \end{minipage}
    %\end{tabular}
@@ -365,33 +364,34 @@ We contrast this with squeezing arising from a birefringence interaction, as we 
 
 \begin{figure}[htb]
 \centering
- \begin{minipage}[h]{0.2\linewidth}
+ \begin{minipage}[h]{0.25\linewidth}
  %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
   \subfloat[h][$1/\AF$]{
-    %\input{fig/square waveguide_invA_Far_xy.tex}
-    \includegraphics{../media/Figs/FaradayProtocol-figure3_1}
+    %\input{fig/swg_invA_Far_xy.tex}
+    \includegraphics[width=0.9\linewidth]{../media/Figs/FaradayProtocol-figure3_1}
     \label{fig:square waveguide_invAFarxy}
     }
     \hfill
   \subfloat[h][$ 1/\Ain $]{
       \label{fig:square waveguide_invAin_xy}
-      \includegraphics{../media/Figs/FaradayProtocol-figure4_1}
-      %\input{fig/square waveguide_invA_in_xy.tex}
+      \includegraphics[width=0.9\linewidth]{../media/Figs/FaradayProtocol-figure4_1}
+      %\input{fig/swg_invA_in_xy.tex}
       }
    \end{minipage}\hfill
    \begin{minipage}[h]{0.75\linewidth}
    \subfloat[h][$ C_1 $]{
       \label{fig:square waveguide_C1_xy}
-      \includegraphics{../media/Figs/FaradayProtocol-figure5_1}
-      %\input{fig/square waveguide_C1_xy.tex}
+      \includegraphics[width=0.9\linewidth]{../media/Figs/FaradayProtocol-figure5_1}
+      %\input{fig/swg_C1_xy.tex}
       }
    \end{minipage}
    %\end{tabular}
 \caption{Similar to Fig.~\ref{fig:nanofiber_Aeffgeometry}, but for the square waveguide. In Subfig.~\protect\subref*{fig:square waveguide_invAFarxy}, the contour lines outside of the waveguide are essentially concentric circles. There are distortions near the four corners of the square waveguide shown in the plot, mainly caused by numerical divergences. In Subfig.~\protect\subref*{fig:square waveguide_C1_xy}, the isovalue lines of $ C_1 $ increase by $ 0.005109 $ at each gradient step from the outside inwards. The $ x$ and $y $ coordinates are scaled in units of $ w $ for all three plots.}\label{fig:square waveguide_Aeffgeometry}
 \end{figure}
-\FloatBarrier
+
 
 Figures~\ref{fig:nanofiber_Aeffgeometry} and~\ref{fig:square waveguide_Aeffgeometry} show plots of $1/\AF$, $1/\Ai$, and $C_1$ as a function of  the position of the atom in the transverse plane, $\mbf{r}'_\perp$, for the two nanophotonic geometries.  We see that $\AF$ is essentially cylindrically symmetric sufficiently far from the surface for both the nanofiber and the square waveguide geometries and thus the measurement strength is basically independent of the azimuthal position of the atoms.  In contrast, $\Ai$ is azimuthally anisotropic.  For input $x$ polarization, $1/\Ai$ is the smallest along the $y$ axis at a given radial distance, which corresponds to the lowest intensity of the input $H$ mode, and thus lowest optical pumping rate $\gamma_{op}$.  This angle corresponds to the position at which $\vert \mbf{u}_V (\mbf{r}'_\perp) \vert$ is largest and thus yields the largest enhancement of $C_1$.  Thus, counterintuitively, we enhance the cooperativity by placing the atom at the angle of minimum input intensity.   This enhancement is even greater for the square waveguide, which has more anisotropic guided modes compared to the cylindrical nanofiber.  For typical geometries, given a nanofiber with radius $a = 225$ nm and atoms trapped on the $y-$axis, a distance $200$ nm ($0.8a$) from the surface, the single-atom cooperativity is $C_1 =0.00728$ at the optimal trapping angle; for the square waveguide of width $w =300$ nm, with atoms trapped $150$ nm from the surface, $C_1 =0.0102$ at optimum.  Thus, with order $1000$ trapped atoms the $N_A$-atom cooperativity is of the order of $ 10 $, sufficient to generate substantial spin squeezing.
+\FloatBarrier
 
 \section{Spin-squeezing dynamics}
 
@@ -444,7 +444,7 @@ where we have defined the atomic population and coherence operators $\hat{\sigma
 
 \begin{figure}[htb]
 \centering
-  \includegraphics[width=.75\textwidth]{../media/Figs/FaradaySqueezingLevelStructure}
+  \includegraphics[width=.55\textwidth]{../media/Figs/FaradaySqueezingLevelStructure}
   \caption{Schematic energy level diagram for cesium atoms probed on the D2 line, $6S_{1/2} \rightarrow 6P_{3/2}$.  Relevant dynamics are restricted to a truncated qutrit subspace of ground levels.  Atoms are prepared in the fiducial state $\ket{\uparrow}$, and driven by $x$-polarized ($\pi$) light.  The Faraday rotation corresponds to coherent scattering of $\pi \rightarrow \sigma$ in this basis, and measurement backaction leads to entanglement between pairs of atoms in $\ket{\uparrow}=\ket{f=4,m_x=4}$ and the coupled state $\ket{\downarrow}=\ket{f=4,m_x=3}$.  Optical pumping can cause spin flips $\ket{\uparrow} \rightarrow \ket{\downarrow}$ and $ \ket{\downarrow} \rightarrow  \ket{T}=\ket{f=4,m_x=2}$.  The latter process is included to account for transfer of coherences.  The detuning $\Delta$ is taken to be large compared to the excited-state hyperfine splitting.}
   \label{fig:spinsqueezinglevelstructure}
 \end{figure}
@@ -481,32 +481,36 @@ In addition, in Figs.~\ref{fig:nanofiber_peakxi_NA_rp1d8a} and~\ref{fig:square w
 
 \begin{figure}[htb]
 \centering
- \begin{minipage}[h]{0.95\linewidth}
+ \begin{minipage}[h]{0.99\linewidth}
  %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
   \subfloat[h][]{
-    %\input{fig/nanofiber_xi_t_rp1d8a_NA2500.tex}
-    \includegraphics{../media/Figs/FaradayProtocol-figure6}
+    %\input{../media/Figs/nanofiber_xi_t_rp1d8a_NA2500.tex}
+    \includegraphics[width=0.47\linewidth]{../media/Figs/nanofiber_xi_t_rp1d8a_NA2500.tex} % To put tikzpicture in the includegraphics environment, I have to use package tikzscale. See https://tex.stackexchange.com/questions/36297/pgfplots-how-can-i-scale-to-text-width
+    %\includegraphics{../media/Figs/FaradayProtocol-figure6}
     \label{fig:nanofiber_xi_t_rp1d8a_NA2500}
     }
     \hfill
   \subfloat[h][]{
       \label{fig:nanofiber_peakxi_NA_rp1d8a}
-      \includegraphics{../media/Figs/FaradayProtocol-figure7}
-      %\input{fig/nanofiber_peakxi_NA_rp1d8a.tex}
+      %\includegraphics{../media/Figs/FaradayProtocol-figure7}
+      %\input{../media/Figs/nanofiber_peakxi_NA_rp1d8a.tex}
+      \includegraphics[width=0.46\linewidth]{../media/Figs/nanofiber_peakxi_NA_rp1d8a.tex}
       }
    \end{minipage}\vfill
-   \begin{minipage}[h]{0.95\linewidth}
+   \begin{minipage}[h]{0.99\linewidth}
     %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
      \subfloat[h][]{
-       %\input{fig/square waveguide_xi_t_rp1d_NA2500.tex}
-       \includegraphics{../media/Figs/FaradayProtocol-figure8}
+       %\input{../media/Figs/swg_xi_t_rp1d_NA2500.tex}
+       \includegraphics[width=0.47\linewidth]{../media/Figs/swg_xi_t_rp1d_NA2500.tex}
+       %\includegraphics{../media/Figs/FaradayProtocol-figure8}
        \label{fig:square waveguide_xi_t_rp1d_NA2500}
        }
        \hfill
      \subfloat[h][]{
          \label{fig:square waveguide_peakxi_NA_rp1d}
-         \includegraphics{../media/Figs/FaradayProtocol-figure9}
-         %\input{fig/square waveguide_peakxi_NA_rp1d.tex}
+         %\includegraphics{../media/Figs/FaradayProtocol-figure9}
+         %\input{../media/Figs/swg_peakxi_NA_rp1d.tex}
+         \includegraphics[width=0.46\linewidth]{../media/Figs/swg_peakxi_NA_rp1d.tex}
          }
    \end{minipage}
    %\end{tabular}
@@ -519,32 +523,32 @@ In the absence of any other noise, the cooperativity of atom-light coupling incr
 
 \begin{figure}[htb]
 \centering
- \begin{minipage}[h]{0.95\linewidth}
+ \begin{minipage}[h]{\linewidth}
  %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
   \subfloat[h][]{
-    %\input{fig/nanofiber_peakxi_rp_NA2500.tex}
-    \includegraphics{../media/Figs/FaradayProtocol-figure10}
+    \includegraphics[width=0.46\linewidth]{../media/Figs/nanofiber_peakxi_rp_NA2500.tex}
+    %\includegraphics{../media/Figs/FaradayProtocol-figure10}
     \label{fig:nanofiber_peakxi_rp_NA2500}
     }
     \hfill
   \subfloat[h][]{
       \label{fig:nanofiber_C1_y}
-      \includegraphics{../media/Figs/FaradayProtocol-figure11}
-      %\input{fig/nanofiber_C1_y.tex}
+      %\includegraphics{../media/Figs/FaradayProtocol-figure11}
+      \includegraphics[width=0.49\linewidth]{../media/Figs/nanofiber_C1_y.tex}
       }
    \end{minipage}\vfill
    \begin{minipage}[h]{0.95\linewidth}
     %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
      \subfloat[h][]{
-       %\input{fig/square waveguide_peakxi_rp_NA2500.tex}
-       \includegraphics{../media/Figs/FaradayProtocol-figure12}
+       \includegraphics[width=0.47\linewidth]{../media/Figs/swg_peakxi_rp_NA2500.tex}
+       %\includegraphics{../media/Figs/FaradayProtocol-figure12}
        \label{fig:square waveguide_peakxi_rp_NA2500}
        }
        \hfill
      \subfloat[h][]{
          \label{fig:square waveguide_C1_y}
-         \includegraphics{../media/Figs/FaradayProtocol-figure13}
-         %\input{fig/square waveguide_C1_y.tex}
+         %\includegraphics{../media/Figs/FaradayProtocol-figure13}
+         \includegraphics[width=0.475\linewidth]{../media/Figs/swg_C1_y.tex}
          }
    \end{minipage}
    %\end{tabular}
@@ -567,6 +571,7 @@ Finally, we have studied here the dispersive regime of a QND measurement, where 
 %The theoretical difficulty of studying these many-body effects lays down to the exponentially expanded Hilbert quantum space which cannot be stored efficiently on a classical computer. With decoherence, the computational framework developed here based on the $n$-body moments can help shed a light on the dominant quantum correlations and many-body interactions.
 
 %</Faradayprotocol>
+
 \section{Acknowledgments}
 We thank Perry Rice for extensive discussions on sub- and superradiance and their effects on collective spin squeezing in the dispersive coupling regime and Ezad Shojaee for helpful discussions on the effects of decoherence on spin squeezing. We also thank Poul Jessen for insightful discussions regarding the enhancement of cooperativity. We acknowledge the UNM Center for Advanced Research Computing for computational resources used in this study. This work was supported by the NSF, under Grant No. PHY-1606989, and the Laboratory
 Directed Research and Development program at Sandia National Laboratories.
@@ -600,7 +605,7 @@ With all the components of the stochastic master equation defined in Eqs.~\eqref
 %The last step is to project the expression onto the $ \expect{\hat{\sigma}_{dc}} $ qutrit basis ($ d,c\in \{\uparrow,\downarrow,T\} $) with coefficients defined in the trace form in the equation above. 
 The equations of two-body moments of the optical pumping can be derived similarly. Continuing from Eq.~\eqref{eq:dsigmabadc_op}, we have 
 \begin{align}
-\left.d\expect{\!\Delta \sigma_{ba}^{(\!1\!)}\Delta\sigma_{dc}^{(\!2\!)} }_s\right|_{op} &\!\!= \expect{\Delta\mathcal{D}^\dagger[ \sigma_{ba}^{(1)}]\Delta\sigma_{dc}^{(2)} }_sdt + \expect{\Delta \sigma_{ba}^{(1)} \Delta\mathcal{D}^\dagger[\sigma_{dc}^{(2)}] }_sdt\nn \\
+&\quad\left.d\expect{\!\Delta \sigma_{ba}^{(\!1\!)}\Delta\sigma_{dc}^{(\!2\!)} }_s\right|_{op} \!= \expect{\Delta\mathcal{D}^\dagger[ \sigma_{ba}^{(1)}]\Delta\sigma_{dc}^{(2)} }_sdt + \expect{\Delta \sigma_{ba}^{(1)} \Delta\mathcal{D}^\dagger[\sigma_{dc}^{(2)}] }_sdt\nn \\
 &\!\!=\!\sum_{m,n}\! \tr\!\left(\mathcal{D}^\dagger[\hat{\sigma}_{ba} ]\hat{\sigma}_{mn} \right)\!\expect{\!\Delta\sigma_{mn}^{(\!1\!)}\Delta\sigma_{dc}^{(\!2\!)} }_s \!\!+\!\! \sum_{m,n}\!\tr\!\left(\mathcal{D}^\dagger[\hat{\sigma}_{dc}]\hat{\sigma}_{mn} \right)\!\expect{\!\Delta\hat{\sigma}_{ba}^{(\!1\!)}\Delta\sigma_{mn}^{(\!2\!)} }_s .\label{eq:dsigmabadc_op_expand}
 \end{align} 
 %Similarly, Eqs.~\eqref{eq:dsigmaba_QND} and~\eqref{eq:dsigmabadc_QND} can be expanded easily by using $ \Delta F_z=\Delta \sum_i^{N_A} f_z^{(n)}=\sum_i^{N_A} \sqrt{\frac{f}{2}}(\Delta\sigma_{\uparrow\downarrow}^{(n)}+\Delta\sigma_{\downarrow\uparrow}^{(n)}) + \sqrt{\frac{2f-1}{2}}(\Delta \sigma_{\downarrow T}^{(n)}+\Delta\sigma_{T\downarrow}^{(n)}) $, where the subscription $ (n) $ can only be either $ (1) $ or $ (2) $ with $ 1 $ or $ N_A-1 $ copies depending on whether the $ \hat{\sigma}_{ba} $ operator is applied on the same atom as the other joint cumulants in the two-body moment variables.
@@ -609,10 +614,10 @@ If we keep only the coherence operators of the nearest coupling states, Eqs.~\eq
 
 We apply similar techniques to derive the equations of motion due to QND measurement, Eqs.~\eqref{eq:dsigmaba_QND} and~\eqref{eq:dsigmabadc_QND}, to yield
 \begin{align}\label{eq:dsigmaba_QND_expand}
-\left.d\expect{\hat{\sigma}_{ba}}\right|_{QND} &=\frac{\kappa}{4}\sum_{c,d}\tr\left(\mathcal{L}^\dagger\left[\hat{\sigma}_{ba} \right]\hat{\sigma}_{dc}\right) \expect{\hat{\sigma}_{dc}}dt + \sqrt{\frac{\kappa}{4}}\sum_{c,d}\tr\left(\mathcal{H}^\dagger\left[\hat{\sigma}_{ba} \right]\hat{\sigma}_{dc}\right) \expect{\hat{\sigma}_{dc}}dW .
+&\quad \left.d\expect{\hat{\sigma}_{ba}}\right|_{QND}\nonumber\\ &=\frac{\kappa}{4}\sum_{c,d}\tr\left(\mathcal{L}^\dagger\left[\hat{\sigma}_{ba} \right]\hat{\sigma}_{dc}\right) \expect{\hat{\sigma}_{dc}}dt + \sqrt{\frac{\kappa}{4}}\sum_{c,d}\tr\left(\mathcal{H}^\dagger\left[\hat{\sigma}_{ba} \right]\hat{\sigma}_{dc}\right) \expect{\hat{\sigma}_{dc}}dW .
 \end{align}
 \begin{align}
-\left.d\expect{\!\Delta \sigma_{ba}^{(\!1\!)}\! \Delta \sigma_{dc}^{(\!2\!)}}_s \right|_{QND} 
+&\quad\left.d\expect{\!\Delta \sigma_{ba}^{(\!1\!)}\! \Delta \sigma_{dc}^{(\!2\!)}}_s \right|_{QND} \nonumber\\
 &\!\!= -\kappa\left\{\frac{1}{2}\left[ \sqrt{\frac{f}{2}}\left(\delta_{a\uparrow}\expect{\hat{\sigma}_{b\downarrow}}+ \delta_{b\downarrow}\expect{\hat{\sigma}_{\uparrow a}}+\delta_{a\downarrow}\expect{\hat{\sigma}_{b\uparrow}} +\delta_{b\uparrow}\expect{\hat{\sigma}_{\downarrow a} } \right)\right.\right.\nn\\
 &\quad\quad\quad\quad\left. +\sqrt{\frac{2f-1}{2}}\left(\delta_{a\downarrow}\expect{\hat{\sigma}_{bT}} + \delta_{bT}\expect{\hat{\sigma}_{\downarrow a} }+\delta_{aT}\expect{\hat{\sigma}_{b\downarrow} } +\delta_{b\downarrow}\expect{\hat{\sigma}_{Ta} } \right)\right] \nn\\
 &\quad\quad\quad -\sqrt{\frac{f}{2}}\expect{\hat{\sigma}_{ba} }\left(\expect{\hat{\sigma}_{\uparrow\downarrow} }+\expect{\hat{\sigma}_{\downarrow\uparrow} } \right) -\sqrt{\frac{2f-1}{2}} \expect{\hat{\sigma}_{ba}}\left(\expect{\hat{\sigma}_{\downarrow T}}+\expect{\hat{\sigma}_{T\downarrow}} \right)\nn\\ &\quad\quad\quad+(N_A-1)\left[\sqrt{\frac{f}{2}}\left(\expect{\Delta \sigma^{(1)}_{ba}  \Delta\sigma_{\uparrow\downarrow}^{(2)}}_s \!+\!\expect{\Delta\sigma_{ba}^{(1)}\Delta\sigma_{\downarrow\uparrow}^{(2)}}_s\right)\right.\nn\\
