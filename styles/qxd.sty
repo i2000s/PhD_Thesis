@@ -32,7 +32,8 @@
 }% \CatchFBT@Final
 \makeatother
 
-
+\newcommand\hmmax{0} % This and the following line is to solve the error on "Too many math alphabets in math normal". See https://tex.stackexchange.com/questions/3676/too-many-math-alphabets-error
+\newcommand\bmmax{0}
 \usepackage{bm}
 \usepackage{bbm}
 \usepackage{listings}
@@ -112,6 +113,19 @@
 \usepackage{subfig}
 % to fix a figure's position using [H] option of thec figure.
 \usepackage{float}
+
+% This part of code fix the placement of figures to corresponding subsections level. See https://tex.stackexchange.com/questions/118662/use-placeins-for-subsections
+\usepackage{placeins}
+\makeatletter
+\AtBeginDocument{%
+  \expandafter\renewcommand\expandafter\subsection\expandafter
+    {\expandafter\@fb@secFB\subsection}%
+  \newcommand\@fb@secFB{\FloatBarrier
+    \gdef\@fb@afterHHook{\@fb@topbarrier \gdef\@fb@afterHHook{}}}%
+  \g@addto@macro\@afterheading{\@fb@afterHHook}%
+  \gdef\@fb@afterHHook{}%
+}
+\makeatother
 
 
 % self-defined short-cuts and commands
@@ -768,3 +782,5 @@
     \caption{#3}
     \label{#1}
   \end{figure}}
+  
+%\DeclareMathVersion{normal2}
