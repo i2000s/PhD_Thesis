@@ -204,7 +204,7 @@ where the vector $ \boldsymbol{\chi}=(\chi_0,\chi_1,\chi_2,\chi_3) $ are the rot
 In the next section, we will step into the properties of the bare waveguide modes and the dispersive response of the waveguide modes due to the presence of the atoms from the perspective of Green's function approach.
 
 \section{Dispersive light response in the perspective of Green's function approach}
-\subsection{Eigenmodes of a dielectric waveguide}
+\subsection{Eigenmodes of a dielectric waveguide}\label{sec:eigenmodesofwaveguides}
 We assume that the waveguide we are going to study is infinitely long and has a uniform profile of refractive index through the fiber axis. For a nanophotonic waveguide that can trap atoms using its evanescent field, its dimension of the cross-section is smaller than the wavelength $ \lambda $ of the trapping field (typically, a quasi-monochromatic laser beam operating around $ \lambda=894 $nm or $852  $nm which are the D1 and D2 lines of the cesium atoms considered in the numerical simulations later in this dissertation). 
 We assume the waveguide is a linear medium with no absorption to the traveling wave. The refractive bulk index\index{refractive index} of the waveguide can be given by
 \begin{align}
@@ -494,59 +494,50 @@ The numerical method we used to solve the eigenmodes for the \SWG and general ge
 
 \qxd{Need mode plots for the nanofiber and the \SWG. Codes: \url{rectwg_TETMlow_fullvector.m} and \url{fibermodestudy.m}.}
 
-Here are some side notes, which may help clarify the reasons why we only consider a \SWG with a width of $ 300 $ nm besides the long-studied nanofiber case. In fact, on the course of this study, we have considered ridge and other types of waveguides. Eventually, we decided to study a simple shape of waveguides--a \SWG--as a proof of principles. There has also been a long discussion on purposefully designing a rectangular waveguide and imperfections on fabricating a \SWG, in which a \SWG essentially becomes a rectangular one. Based on some back-of-envelope calculations and simple simulations, we find a useful rectangular waveguide might have to be too long to fabricate and, if we choose a width of $ 300--320 $ nm, the imperfections in fabricating a \SWG processes would not generate noticeable influence on the physical effects we care about. As these reasonings involve the knowledge we are going to introduce later, we provide the details in Appendix~\ref{chap:choozingSWGs} in case readers are curious about them.
+Here are some side notes, which may help clarify the reasons why we only consider a \SWG with a width of $ 300 $ nm besides the long-studied nanofiber case. In fact, on the course of this study, we have considered ridge and other types of waveguides. Eventually, we decided to study a simple shape of waveguides--a \SWG--as a proof of principles. There has also been a long discussion on purposefully designing a rectangular waveguide and imperfections on fabricating a \SWG, in which a \SWG essentially becomes a rectangular one. Based on some back-of-envelope calculations and simple simulations, we find a useful rectangular waveguide might have to be too long to fabricate and, if we choose a width of $ 300$--$320 $ nm, the imperfections in fabricating a \SWG processes would not generate noticeable influence on the physical effects we care about. As these reasonings involve the knowledge we are going to introduce later, we provide the details in Appendix~\ref{chap:choozingSWGs} in case readers are curious about them.
 
-\subsection{Green's function of a dielectric waveguide}
-In this section, we will consider the light response in presence of a photon emitter outside of a dielectric waveguide. We will only need to solve the spatial dependent part as the time-dependent part of a quasi-chromatic field solely adds a phase factor. We also consider the photon emitter can be treated as an optical dipole source.
+\subsection{Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide}
+Starting from this section, we consider the light response in presence of a photon emitter outside of a dielectric waveguide. The dyadic Green's function, $ \GFT(\br,\br')=\GFT(\br,\br';\omega_0) $ is naturally a response function of the field measured at $ \br $ responding to a point radiating source at $ \br' $ in frequency $ \omega_0 $. Once the dyadic Green's function is solved, a field response due to some point sources can then be calculated. In this section, we consider a scenario that a bunch of atoms are trapped near to a nanophotonic waveguide, and formulate the general theory of field response using the Green's function method. For simplicity, we regard atoms as optical dipoles, which interact with light in terms of optical dipole radiation. The dipoles oscillate in space and time to form a current, $ \mathbf{J} $, which collectively generates an effective susceptibility for the atomic ensemble as a ``medium" and modulates the phase and amplitude of the light passing through the waveguide. 
 
-The solution to the Maxwell-Helmholtz equation\index{Maxwell-Helmholtz equation} with $ n(\br)=1 $, however, are much more tractable, so we subtract $ \frac{\omega_0^2}{c^2} \boldsymbol{\mathcal{E}}(\br)$ to each side of Eq.~\ref{MaxwellHelmholtz0} and add $ \frac{\omega_0^2}{c^2}n(\br) \boldsymbol{\mathcal{E}}(\br) $ to give (in Gauss unit)
-\begin{align}\label{eq:Maxwellwithsource}
-\left[\! -\! \nabla\!\times\!\nabla\!\times + \frac{\omega_0^2}{c^2} \right]\! \boldsymbol{\mathcal{E}}(\br) &=\! -i4\pi\frac{\omega_0}{c^2} \mathbf{J}(\br) =\! -4\pi\frac{\omega_0^2}{c^2} \mathbf{P}(\br)=\! -4\pi \frac{\omega_0^2}{c^2} \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
-\end{align}
-
-%~\footnote{\textcolor{red}{This electric susceptibility needs to be fixed.} Aside on multiple atoms case: if there are many atoms distributed along the waveguide, we can in general use 
-%$\boldsymbol{\chi}(\br)=\sum_i \delta(\br-\br_{i})\boldsymbol{\alpha}^i$,
-%where $ i $ counts over all atoms.}. 
-
-Noting that the terms on all the right-hand sides of Eq.~\eqref{eq:Maxwellwithsource} are the generator or source for the electromagnetic field. In absence of the generators, the field will propagate in the background medium (free-space) as described by the left-hand side of the equation. In other word, the generators in terms of $ \mathbf{J}(\br) $, $ \mathbf{P}(\br) $ or $ \boldsymbol{\chi}(\br) $ describes the property of the waveguide as a medium other than the vacuum. In contrast, if we consider the waveguide as the background medium and the atoms outside the waveguide as sources of electromagnetic field emitters, we can formally rewrite the chromatic wave equation as 
+Given the index of refraction distribution function $ n(\br) $ with the waveguide as the background medium, a chromatic electric field modulated by the presence of atoms can be described by the wave equation below~\cite{Jackson1975}: 
 \begin{align}\label{eq:Maxwellwithsource2}
-\left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega_0^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega_0}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega_0^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega_0^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
+\left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega_0^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega_0}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega_0^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega_0^2}{c^2}\! \tensor{\boldsymbol{\chi}}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-where the only difference from the homogeneous wave equation, Eq.~\eqref{MaxwellHelmholtz0}, is that we bring in a dipole source term represented by the equivalent terms on the right-hand side of the equation. For the source terms, we have defined the current $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega_0 \tensor{\chi}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\chi}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ \footnote{We have used Gauss units here. In SI units, the corresponding relationship is $ \tensor{\chi}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\alpha} \, (\br')$ and $\tensor{\chi}^{SI}=4\pi\tensor{\chi}^{G}  $. The factor of $ 4\pi $ defines the transformation between the SI and Gauss units. } where $ \tensor{\alpha} $ is the polarizability tensor\index{polarizability!polarizability tensor} of the atoms at $ \br' $. Specifically, using dipole approximation, the polarizability $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\alpha} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $ where $ \mathbf{d}(\br') $ is the induced dipole moment at $ \br' $. 
+where the only difference from the homogeneous wave equation, Eq.~\eqref{MaxwellHelmholtz0}, is that we have brought in dipole source terms represented by the equivalent expressions on the right-hand side of the equation. For the source terms, we have defined the source of current\index{current source} $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega_0 \tensor{\boldsymbol{\chi}}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\boldsymbol{\chi}}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\boldsymbol{\alpha}} \, (\br')$ \footnote{We have used Gaussian-cgs units here. In SI units, the corresponding relationship is $ \tensor{\boldsymbol{\chi}}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\boldsymbol{\alpha}} \, (\br')$ and $\tensor{\boldsymbol{\chi}}{}^{SI}=4\pi\tensor{\boldsymbol{\chi}}{}^{G}  $. Here, $ 4\pi $ is a typical multiplier factor between the SI and the Gaussian-cgs unit systems. }, where $ \tensor{\boldsymbol{\alpha}} $ is the polarizability tensor\index{polarizability!polarizability tensor} of the atoms located at $ \br' $. Specifically, using the dipole approximation, the polarizability due to the presence of atoms, $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\boldsymbol{\alpha}} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $, where $ \mathbf{d}(\br') $ is the induced dipole moment of an atom at $ \br' $. 
 
 Based on Eq.~\eqref{eq:Maxwellwithsource2}, we define a source term 
 \begin{align}
-\tensor{S}(\br)=\tensor{\chi}(\br),% \boldsymbol{\mathcal{E}}(\br),
+\tensor{S}(\br)=\tensor{\boldsymbol{\chi}}(\br),% \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-and Eq.~\eqref{eq:Maxwellwithsource2} then can be solved by solving the corresponding dyadic Green's function equation\index{Green's function!dyadic Green's function} in the frequency domain\footnote{If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$, then the source term of the corresponding field will be $\tensor{\bf S}(\br)=-4\pi \frac{\omega_0^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega_0^2/c^2$ factor compared to our definition in the text. Similarly, the $4\pi\omega^2/c^2$ factor will be carried over to other quantities as well. }
+so that Eq.~\eqref{eq:Maxwellwithsource2} can be solved by finding the corresponding dyadic Green's function equation\index{Green's function!dyadic Green's function} in the frequency domain\footnote{Although the definition of the source term is arbitrary, to make the relation between $ \mathbf{E}(\br) $ and the dyadic Green's function $ \GFT(\br,\br') $ consistent with our later expressions, we have chosen the source term carefully. If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$ and the source term $\tensor{\bf S}(\br)=-4\pi \frac{\omega_0^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega_0^2/c^2$ factor compared to our definition in the text, the $4\pi\omega_0^2/c^2$ factor will be carried over to the relation between $ \mathbf{E}(\br) $ and $ \GFT(\br,\br') $ and other quantities as well. }
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br';\omega_0) &= -4\pi \frac{\omega_0^2}{c^2}\delta^{(3)}(\br-\br')\unittensor. \label{eq:dyadicGF}
 \end{align}
 
-A special case of the dyadic Green's function is when a dipole source is placed in a homogeneous medium, say the vacuum. In this case, one can solve the dyadic Green's function by solving a scalar Green's function, which gives 
+A special case of the dyadic Green's function is when a dipole source is placed in a homogeneous medium, say, the vacuum. In this case, one can solve the dyadic Green's function by solving a scalar Green's function, which gives 
 \begin{align}
-G_0(\br,\br';\omega_0) =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
+G_0(\br,\br';\omega_0) =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},\label{eq:G0rrp}
 \end{align}
 where we only take the positive frequency solution for our studies. This result reflects the fact that the field responded at $ \br $ is a free spherical wave coming out from a point dipole source as we can recognize from basic electromagnetic knowledge. This solution is a key to solve radiation problems and normalize modified decay rates of atoms in presence of a waveguide as we will discuss later. When $ \br\rightarrow \br' $ or the field responded at the dipole position, the real part of the Green's function divergent yet the imaginary part of $ G_0(\br,\br') $ takes the form
 \begin{align}
 G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
 \end{align}
-The details of solving the free-space Green's function and its significance can be found in Appendix~\cite{chap:freespacegreenfunction}. 
+The details of solving the free-space Green's function and the techniques we are going to using without explaining, including Born approximation~\cite{Gubernatis1977Born} and other general methods of solving a radiation problem can be found in Appendix~\ref{chap:freespacegreenfunction}. 
 
 
 
-As shown in the earlier sections, in general, the output field in presence of a single atom can be written as
+Following the Born approximation to the first order, which has been used in Appendix~\ref{chap:freespacegreenfunction}---but here, in general, the output field in the form of a Lippmann-Schwinger equation\index{Lippmann-Schwinger eqation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $ can be approximated by
 \begin{align}
-\mathbf{E}(\br) 
-&=\mathbf{E}_0(\br)+\alpha \GFT(\br,\br')\cdot \mathbf{E}_0(\br')
+\mathbf{E}(\br) &=\mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}(\br'_n)\\
+&\approx \mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}_0(\br'_n)\label{eq:EGFTnatoms}
 \end{align}
-where we only treat the polarizability as a scalar. The only barrier for solving the output E-field is to solve the dyadic Green's function.
+where $ \tensor{\boldsymbol{\alpha}}^{(n)} $ is the polarizability of the atom positioned at $ \br'_n $. The right-hand-side of Eq.~\eqref{eq:EGFTnatoms} implies that the total field after interaction includes two origins of fields: one is the original propagating field through the waveguide (the first summation part), and the other is the scattered field due to the presence of the atoms (the second summation part). Because of the Born approximation, the scattering effect terms in the equation above only contains the first-order scattering directly due to the background propagating field incident to the atoms, and the photon scattering among atoms and high-order scattering involving self-polarizations have been ignored. This approximation is valid in the dispersive regime, which can be verified based on Ref.~\cite{Asenjo-Garcia2017Atom} including the atom-atom interactions and other scattering effects using the Green's function approach~\footnote{See, for example, Eq.~(10) in Ref.~\cite{Asenjo-Garcia2017Atom} describing the field transformation relationships will be recovered to our results presented in Eq.~\eqref{eq:EGFTnatoms} if the detuning $ \Delta_A $ is much larger than the frequency shift $ J_{\xi,\mathrm{1D}} $ and the modified decay rates $ \Gamma_{\xi,\mathrm{1D} }$ of atoms, which is a condition for dispersive interactions.}. Now, the only barrier for fully solving the output electric field is to solve the dyadic Green's function.
 
-In general, there are two strategies to solve the dyadic Green's function: one is to solve the dipole emission problem numerically; the other one involves transverse mode decomposition and only needs bare fiber modes. We call the first approach as the \emph{normal} approach, and call the other one as the \emph{approximate} approach. We will describe the two approaches in the successive paragraphs. 
+In general, there are two strategies to solve the dyadic Green's function: one is to solve the dipole radiation problem numerically and/or analytically; the other one involves eigenmode decomposition and only needs bare waveguide modes. We call the first approach as the \emph{normalization} approach, and call the other one as the \emph{eigenmode-decomposition} approach. We will describe the two approaches in the successive subsections. 
 
-The \emph{normal} approach:
+\subsubsection{I. The \emph{normalization} approach}
 
-We recall that the equation governs the dyadic Green's function can be written as below:
+We recall the equation governing the dyadic Green's function,
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \GFT(\br,\br') &= -4\pi k_0^2\delta^{(3)}(\br-\br')\unittensor,
 \end{align}
@@ -554,9 +545,9 @@ each column of which can be expressed as
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}_i(\br,\br') &= -4\pi k_0^2\mathbf{e}_i\delta(\br-\br'), \label{eq:Gi}
 \end{align}
-where the subscription $ i=r\!_\perp,\phi,z $ denotes the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i^{th} $ column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
+where the subscriptions $ i=r\!_\perp,\phi,z $ written in the cylindrical coordinate system or $ i=x,y,z $ in the Cartesian coordinate system denote the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i$th column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we have used $\omega_0$ to indicate the angular frequency of the radiation from the source (the difference in the full quantum description will be discussed in Section~\ref{Sec::GreensFunction}).  
 
-Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an amplitude of $ -4\pi k^2 $. That is to say that once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components divided by the factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis:
+Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an oscillation amplitude of $ -4\pi k^2 $. That is to say, once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components normalized by the amplitude factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis directions:
 \begin{equation}
 \GFT(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
   \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
@@ -586,11 +577,23 @@ Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that
   \end{pgfonlayer}
   \end{tikzpicture}
 \end{equation}
-%\textcolor{red}{Need to make it look nicely, and continue on...}
-The equivalent $ \mathbf{E} $ field has been solved in section~\ref{sec:boundrad} for the radiation problem with one atom.
+Note that all calculations are performed with a fixed frequency $ \omega_0 $.
 
+Therefore, the key to calculate the dyadic Green's function in this approach is to solve the field emitted by a normalized dipole in presence of the waveguide in the frequency domain. In fact, there are many ways to calculate the fields with a dipole source in a medium. 
 
-The \emph{eigenmode decomposition} approach:
+The field can be analytically solved only if there is some special geometry of the waveguide. A nanofiber geometry is one example that one can solve the radiation problem analytically.  
+in Appendix~\ref{sec:boundrad}, we provide some details to solve the $ \mathbf{E}(\br) $ field with three orthogonal unit dipoles by decomposing the dipole radiation function described by Eq.~\eqref{eq:G0rrp} into the cylindrical coordinate system and solving the guided mode and the radiation mode contributions via corresponding residual of poles and contour integrals of branch cuts. In the end, numerical integrations have to performed on the real axis to calculate the radiation mode contributions to the dyadic Green's function.
+
+However, in most geometries of waveguides, an analytical solution is not always available, and numerical methods including finite-difference time-domain (FDTD) method\index{FDTD method}~\cite{Taflove2005}, boundary-element method (BEM)\index{BEM} for radiation problems~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}, finite-element method (FEM)\index{FEM} and so on. The FDTD method solves the Maxwell equations by dividing the real space under consideration completely into regular Yee-cell grids and transforming the differential equations into a linear equation system on those grid points in the time domain. I have used this method to study quantum dynamics and photon emission spectrum of a many-body system involving nanophotonic cavities for my master's thesis~\cite{Qi2012}. From my past experience, the FDTD method requires a large computer memory or a long simulation time to perform first-principle time evolution of the field propagation matching the boundary conditions, and then Fourier transfers the results into the frequency domain for the dyadic Green's function we want. Since we only need to calculate the dyadic Green's function at a particular frequency point, this method is overkilling. Also, it cannot easily separate the guided mode and the radiation mode contributions to help us develop some insights and simplify the simulation with some reasonable approximations. 
+On the other hand, the BEM we use calculates the Maxwell equations in the frequency domain and evolve the equations as a linear system in the $ \beta $ (projected wave vector) space, which makes it possible to separate the guided and the radiation mode contributions based on the range of $ \beta $ (see Section~\ref{sec:eigenmodesofwaveguides}). It expresses electromagnetic field in terms of charges and currents distributed on the surfaces and interfaces of the structure under consideration. The boundary conditions for the electromagnetic field yield a set of linear integral equations, with unknown charges and currents, which are eventually solved self-consistently in the presence of the external incident field from the dipole source by discretizing the integrals with a finite set of boundary points (elements). The only assumption in this method is that the different media involved in the structures under study are described by frequency-dependent local dielectric functions, which is valid for our problem and we can use constant index of refractions for our study. Therefore, the complexity of BEM only scales quadratically with respect to the points on the boundary elements, not on the full simulation space as the FDTD method does, which makes BEM computational efficient to solve our problem. FEM has a computational complexity between FDTD method and BEM, by using a flexible mesh griding trick to simplify the calculations yet not as much as BEM does. 
+
+For our simulations, we decide to use a BEM program to simulate the electromagnetic field due to a unit dipole for the nanofiber geometry first to check the accuracy against our analytical solution, and then applied this method to the \SWG case. Since the field components on the $ z $ direction only yield a phase difference compared to the $ z=0 $ plane, we can fully solve our radiation problem on a 2D plane. With boundary points set for every $ 5 $--$ 6 $ nm away from each other on the boundary, we can achieve a negligible error deviation from our known solution (below $ 1\% $). We use $ \Delta \beta = 0.01k_0 $ interval to sample the $ \beta $-space calculations. One issue of this approach is that we have to make the medium of the waveguide ``imperfect" to avoid a divergent problem when we calculate the field response at the guided mode condition point $ \beta=\beta_0 $, by making $ n_1(\br_\perp\in \text{waveguide region})=n_1+i\delta n_1 $, where $ n_1 $ is the real waveguide bulk index of refraction constant and $ \delta n_1 $ is a small number (we find $ \delta n_1\sim 0.001 $ or $ 0.01 $ is good enough) to generate an artificial photon absorption. Without this treatment, since the field at $ \beta=\beta_0 $ is a delta function, the result will diverge. To calculate the field responded at the dipole position, which will be used for the modified decay rate calculation, we only calculate the induced electric field for a similar reason of the divergence of the real part of the Green's function. 
+
+We provide more details in Appendix(??)\qxd{to add the Jupyter notebook to appendix}. The precision calibration is carried out in the appendix by comparing the modified spontaneous decay rates using different approaches, which we will introduce the theory in later sections.
+
+ 
+
+\subsubsection{II. The \emph{eigenmode-decomposition} approach}
 
 In the case that the source is extremely small, the total dyadic Green's function should be effectively equal to the transverse dyadic Green's function. To illustrate this idea, we can expand the current source of the dipole into transverse and longitudinal parts by
 \begin{align}
@@ -853,7 +856,7 @@ If we launch two equal-power yet orthogonal quasi-linear modes, H and V, and let
 \end{align}
 
 %\textcolor{red}{Diagrams for the configuration of setups...}
-\begin{figure}
+\begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=12cm]{../media/Figs/BirefringenceMeasurement}}
 \caption{Setup diagram for birefringence measurement.}
@@ -904,12 +907,12 @@ where Gaussian units have been applied. This equation describes how a dipole emi
 In a classical picture, if there is a field $ \mathbf{E}_0 $ propagates cross the dipole source, the dipole will respond and generate a scattered field which overlaps with the incident field to yield a total field described by
 \begin{align}
 \mathbf{E}(\br) &= \mathbf{E}_0(\br)+\mathbf{G}(\br,\br')\cdot \mathbf{d}(\br')\\
-&=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\alpha}\cdot \mathbf{E}(\br'),
+&=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\boldsymbol{\alpha}}\cdot \mathbf{E}(\br'),
 \end{align}
-where $ \tensor{\alpha} $ is the atomic polarizability and $ k=\omega/c $. Under the Born approximation, the total field can be given by
+where $ \tensor{\boldsymbol{\alpha}} $ is the atomic polarizability and $ k=\omega/c $. Under the Born approximation, the total field can be given by
 \begin{align}
 \mathbf{E}(\br) 
-&=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\alpha}\cdot \mathbf{E}_0(\br').\label{eq:EoutG}
+&=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\boldsymbol{\alpha}}\cdot \mathbf{E}_0(\br').\label{eq:EoutG}
 \end{align}
 
 In the context of nanophotonic waveguides and atomic system, the dyadic Green's function can be written as
@@ -1066,7 +1069,7 @@ One could define a slightly different characteristic polarizability using a diff
 
 The atomic polarizability tensor in \erf{Eq::PTensorGen} can then be written in terms of the dimensionless dipole operators and the characteristic polarizability,
 \begin{align} \label{Eq::AtomicPolarizabilityF}
-\tensor{\alpha}(f) &=  \alpha_0(\Delta) \sum_{f'} \frac{ \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f}}{ 1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)}\\
+\tensor{\boldsymbol{\alpha}}(f) &=  \alpha_0(\Delta) \sum_{f'} \frac{ \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f}}{ 1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)}\\
 & = \alpha_0(\Delta) \sum_{q,q'}  \sum_{f,f'} \sum_{m_1, m_2, m'}  \frac{\mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}}{1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)},
 \end{align}
 where $ C^{fm;1q}_{f'm'}=  \bravket{f' m'}{f m; 1 q}= \bravket{f m; 1 q}{f' m'}$ is the Clebsch-Gordan coefficient. Also nothing that $m' = m_1 + q'$ and $m' = m_2 + q$ and thus
@@ -1076,10 +1079,10 @@ where $ C^{fm;1q}_{f'm'}=  \bravket{f' m'}{f m; 1 q}= \bravket{f m; 1 q}{f' m'}$
 
 For ${}^{133}$Cs with ground hyperfine manifolds $f = \{3,4\}$, this gives
 \begin{align}
-\tensor{\alpha}(3) 
+\tensor{\boldsymbol{\alpha}}(3) 
 		& = \alpha_0(\Delta_{3}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{3 f'} \hat{\mathbf{D}}_{f' 3}}{ 1 + \delta_{3, f'} / \Delta_{3} + i \Gamma/(2\Delta_3) } \\
 		&= \alpha_0(\Delta_{3}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j3} |^2 C^{3m_2;1q}_{f'm'} C^{3m_1;1q'}_{f'm'} \op{3 m_2}{3 m_1}}{ 1 + \delta_{3, f'} / \Delta_{3} + i \Gamma/(2\Delta_3) }\\
-\tensor{\alpha}(4) &=\alpha_0(\Delta_{4}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{4 f'} \hat{\mathbf{D}}_{f' 4}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4) }\\
+\tensor{\boldsymbol{\alpha}}(4) &=\alpha_0(\Delta_{4}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{4 f'} \hat{\mathbf{D}}_{f' 4}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4) }\\
 	 &= \alpha_0(\Delta_{4}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j4} |^2 C^{4m_2;1q}_{f'm'} C^{4m_1;1q'}_{f'm'} \op{4 m_2}{4 m_1}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4)} .
 \end{align}
 We have explicitly labeled the detunings by the ground state hyperfine level $f$ in order to emphasize that the detunings are different on each of the two terms.  Unless the laser detuning is chosen such that $\Delta_3$ and $\Delta_4$ are of the same order, one of the two terms will dominant the dynamics and the other can be ignored.
@@ -1125,7 +1128,7 @@ This reflects the fact that in the absence of hyperfine resolution, the nuclear 
 \subsection{Modification of decay rates of atomic transitions}
 \qxd{To be moved from the FaradayProtocol notes.}
 
-\begin{figure}[htb]
+\begin{figure}[!htb]
   \centering
   \begin{minipage}[h]{\linewidth}
   %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
@@ -1175,13 +1178,13 @@ where $ d'_i=\sqrt{\hat{\mathbf{v}}_i\cdot \boldsymbol{\rho}\cdot \hat{\mathbf{v
 
 $$\mathbin{\color{red}{\Gamma_1}}=\Gamma_{max}\mathbin{\color{red}{\ge \Gamma (\theta,\phi) \ge}} \Gamma_{min}=\mathbin{\color{red}{\Gamma_3}}$$
 
-\begin{figure}
+\begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.8\textwidth]{../media/Figs/dipoleorientation}}
 \caption{Modified dipole decay rates due to image dipoles mirrored on flat (a) and cylindrical (b) surfaces.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.8\textwidth]{../media/Figs/emissionsurfacefiber}}
 \caption{Dipole emission surface in presence of a nanofiber when $ r\!_\perp=a $ (left) and $ r\!_\perp=2a $ (right).}
@@ -1189,7 +1192,7 @@ $$\mathbin{\color{red}{\Gamma_1}}=\Gamma_{max}\mathbin{\color{red}{\ge \Gamma (\
 
 \subsection{Enhanced anisotropy of $ H $ and $ V $ modes with different geometries of waveguides}
 
-\begin{figure}
+\begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.8\textwidth]{../media/Figs/anisotropicmodes}}
 \caption{Anisotropic guided modes of a nanofiber (left) and a \SWG (right).}
@@ -1637,7 +1640,7 @@ In the meantime, if we plug in the Lorentz Gauge transformation relation, Eq.~\r
 
 Compared to the wave equation based on Eq.~\ref{eq:Maxwellwithsource2} that
 \begin{align}\label{eq:freespacewaveeq}
--\left[\nabla\times\nabla\times +\frac{\omega_0^2}{c^2}\right]\boldsymbol{\mathcal{E}}(\br) =  -4\pi\! \frac{\omega_0^2}{c^2}\! \tensor{\chi}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br)=-i4\pi\frac{\omega_0}{c^2}\mathcal{J},
+-\left[\nabla\times\nabla\times +\frac{\omega_0^2}{c^2}\right]\boldsymbol{\mathcal{E}}(\br) =  -4\pi\! \frac{\omega_0^2}{c^2}\! \tensor{\boldsymbol{\chi}}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br)=-i4\pi\frac{\omega_0}{c^2}\mathcal{J},
 \end{align}
 where we have set $ n=1 $ for the vacuum medium from Eq.~\eqref{eq:Maxwellwithsource2}, we can define a dyadic Green's function $ \tensor{\mathbf{G}}(\br,\br') $ by 
 \begin{align}
@@ -1664,11 +1667,11 @@ One can derive similar equations for $ \mathbf{G}_y $ and $ \mathbf{G}_z $. Usin
 This is the Green's function of a free dipole in a homogeneous background expressed in terms of the scalar Green's function $ G_0(\br,\br') $. Then the field can be expanded as a volume integral by
 \begin{align}
 \boldsymbol{\mathcal{E}}(\br) &= \boldsymbol{\mathcal{E}}_0(\br) + \frac{i}{\omega_0}\int_V\GFT(\br,\br')\mathcal{J}(\br')\mathrm{d}^3 r'\\
-&=\boldsymbol{\mathcal{E}}_0(\br) + \int_V\GFT(\br,\br')\tensor{\chi}(\br')\cdot\boldsymbol{\mathcal{E}}(\br')\mathrm{d}^3 r',\label{eq:EGFTinteq}
+&=\boldsymbol{\mathcal{E}}_0(\br) + \int_V\GFT(\br,\br')\tensor{\boldsymbol{\chi}}(\br')\cdot\boldsymbol{\mathcal{E}}(\br')\mathrm{d}^3 r',\label{eq:EGFTinteq}
 \end{align}
 where $ \boldsymbol{\mathcal{E}}_0(\br) $ is an input field (if any) propagating in the free background medium. Eq.~\ref{eq:EGFTinteq} is the integration equation with a dipole point source to solve the electric field $ \boldsymbol{\mathcal{E}} $. Corresponding to the free-propagating field $ \boldsymbol{\mathcal{E}}_0 $, we define the scattering term due to the presence of the source by
 \begin{align}
-\boldsymbol{\mathcal{E}}_s(\br) &= \int_V \GFT(\br,\br') \tensor{\chi}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}(\br') \mathrm{d}^3 r'. \label{eq:Escattint}
+\boldsymbol{\mathcal{E}}_s(\br) &= \int_V \GFT(\br,\br') \tensor{\boldsymbol{\chi}}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}(\br') \mathrm{d}^3 r'. \label{eq:Escattint}
 \end{align}
 
 In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field and medium geometries. By the use of Green's function method, we have converted our differential equation for the scattered field into volume integral equations. One can use the formalism above defined by the integration equation, Eq.~\ref{eq:EGFTinteq}, to solve a general scattering problem with arbitrary boundary condition and source distributions by placing the sources into well-characterized volumes of media. The formalism derived above are very important since they form the basis for various formalisms such as the \emph{method of moments}\index{method of moments}, the \emph{Lippmann-Schwinger equation}\index{Lippmann-Schwinger equation}, and the \emph{coupled dipole method}\index{coupled dipole method}~\cite{Novotny2012,Wubs2004}. In Appendix~\ref{sec:boundrad}, instead of solving the integration equations directly, we will use the solution of $ G_0(\br,\br') $ as a dipole's Green function in free space and their links to $ \mathbf{A}(\br) $ and $ \phi(\br) $ potentials to solve the electric and magnetic field components, given a boundary condition of a cylindrical waveguide geometry, in which the key is to find the decomposition expression for the Green's function of free dipole to match up with the boundary geometry. 
@@ -1676,21 +1679,21 @@ In general, scattering problems cannot be solved analytically, due to the presen
 In other cases, we may develop a Liouville–Neumann series\index{Liouville–Neumann series} solution to the equation, namely the Born series\index{Born series} to solve problems of multiple scatterings.
 
 The Born series is typically derived by assuming that the scattering potential is very
-weak, and may be written as $ \tensor{\chi}(\br)\rightarrow \delta \tensor{\chi}(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series of solutions for the total field of the form
+weak, and may be written as $ \tensor{\boldsymbol{\chi}}(\br)\rightarrow \delta \tensor{\boldsymbol{\chi}}(\br) $, where $ \delta $ is a dimensionless parameter, which ultimately will be set to be $ 1 $ to obtain the solution of the electrical field. We then seek a series of solutions for the total field of the form
 \begin{align}
 \boldsymbol{\mathcal{E}}(\br) &= \sum_{n=0}^{\infty} \delta^n \mathbf{V}_n(\br).
 \end{align}
 On substituting the expression above into Eq.~\ref{eq:EGFTinteq}, we find the series
 \begin{align}
 \mathbf{V}_0 &= \boldsymbol{\mathcal{E}}_0,\\
-\mathbf{V}_1 &= \int_V \GFT(\br,\br')\tensor{\chi}(\br')\cdot\boldsymbol{\mathcal{E}}_0(\br') \mathrm{d}^3 r',\\
+\mathbf{V}_1 &= \int_V \GFT(\br,\br')\tensor{\boldsymbol{\chi}}(\br')\cdot\boldsymbol{\mathcal{E}}_0(\br') \mathrm{d}^3 r',\\
 \ldots & \ldots\\
-\mathbf{V}_n &= \int_V \GFT(\br,\br')\tensor{\chi}(\br')\cdot\boldsymbol{\mathcal{E}}_{n-1}(\br') \mathrm{d}^3 r',
+\mathbf{V}_n &= \int_V \GFT(\br,\br')\tensor{\boldsymbol{\chi}}(\br')\cdot\boldsymbol{\mathcal{E}}_{n-1}(\br') \mathrm{d}^3 r',
 \end{align}
 where $ R=|\br-\br'| $ with $ \mathbf{R}=(\br-\br') $, and the \emph{Born approximation}\index{Born series!Born approximation} only includes up to the first-order term. Under the Born approximation, the solution for the electrical field with one single atom can be given by
 \begin{align}
-\boldsymbol{\mathcal{E}} (\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + \int_V \GFT(\br,\br')\tensor{\chi}(\br')\cdot\boldsymbol{\mathcal{E}}_0(\br') \mathrm{d}^3 r'\\
-&= \boldsymbol{\mathcal{E}}_0(\br) +\sum_{\br'}\GFT(\br,\br') \tensor{\alpha}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_0 (\br'),
+\boldsymbol{\mathcal{E}} (\br) &= \boldsymbol{\mathcal{E}}_0 (\br) + \int_V \GFT(\br,\br')\tensor{\boldsymbol{\chi}}(\br')\cdot\boldsymbol{\mathcal{E}}_0(\br') \mathrm{d}^3 r'\\
+&= \boldsymbol{\mathcal{E}}_0(\br) +\sum_{\br'}\GFT(\br,\br') \tensor{\boldsymbol{\alpha}}(\br') \! \cdot\!\boldsymbol{\mathcal{E}}_0 (\br'),
 \end{align}
 where $ \boldsymbol{\alpha}(\br') $ denote the polarizability of atoms or dipoles at $ \br' $. We provide the generic field solution under the Born approximation in both volume integration form for continuous medium, and the discrete summation form for the case with finite number of sources. Note that Born series does not necessarily converge. Usually, we need to verify if the perturbation fields are much weaker than the field $ \boldsymbol{\mathcal{E}}_0 $ before using Born series. Depending on the problems, $ \GFT(\br,\br') $ in equations above can be in any concrete form, which can usually be solved by merely using the boundary condition of the problem without the sources.
 
@@ -1708,7 +1711,7 @@ We use the expression of $ G_0 $ to normalize the waveguide modified spontaneous
 
 %<*nanofiberradiationproblem>
 
-\chapter{Dipole radiation coupled to the guided and radiation modes of an optical nanofiber}\label{sec:boundrad}
+\chapter[Dipole radiations coupled to an optical nanofiber]{Dipole radiation coupled to the guided and radiation modes of an optical nanofiber}\label{sec:boundrad}
 In our study, it is critical to separate the bound mode and the radiation mode. In this section, we will 
 go through a light propagation theory in the scenario of a nanofiber with a trapped atom. 
 
@@ -1995,7 +1998,7 @@ S &=hpak\left[ pJ_m(ha)\dd{}{(pa)}H_m^{(1)}(pa)-hH_m^{(1)}(pa)\dd{}{(ha)}J_m(ha)
 T &=hpak\left[ pJ_m(ha)\dd{}{(pa)}H_m^{(1)}(pa)-hn_1^2H_m^{(1)}(pa)\dd{}{(ha)}J_m(ha) \right].
 \end{align}
 
-\begin{figure}
+\begin{figure}[!tbp]
 \begin{minipage}{.91\linewidth}
 \centering
 \subfloat[]{\label{contourplot_upper}\includegraphics[scale=0.75]{../media/Figs/contourplot_upper}}
@@ -2190,33 +2193,33 @@ We want to avoid this walkoff effect, unless the phase shift between the two mod
 I made four plots when I and Dr. Jongmin Lee were working on determining the
 preferable dimension of the waveguides. See Fig.~\ref{fig:ng_rect_dwg}.
 
-\begin{figure}
+\begin{figure}[!tbp]
 \centering
-\begin{minipage}[h]{0.95\linewidth}
+\begin{minipage}[h]{\linewidth}
  %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
   \subfloat[h][]{
     %\input{fig/nanofiber_peakxi_rp_NA2500.tex}
-    \includegraphics{../media/Figs/ng_D1_dwg}
+    \includegraphics[width=0.48\linewidth]{../media/Figs/ng_D1_dwg}
     \label{fig:ng_D1_dwg}
     }
     \hfill
   \subfloat[h][]{
       \label{fig:ng_D2_dwg}
-      \includegraphics{../media/Figs/ng_D2_dwg}
+      \includegraphics[width=0.48\linewidth]{../media/Figs/ng_D2_dwg}
       %\input{fig/nanofiber_C1_y.tex}
       }
    \end{minipage}\vfill
-   \begin{minipage}[h]{0.95\linewidth}
+   \begin{minipage}[h]{\linewidth}
     %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
      \subfloat[h][]{
        %\input{fig/square waveguide_peakxi_rp_NA2500.tex}
-       \includegraphics{../media/Figs/ng_D1_rectwg_dwg}
+       \includegraphics[width=0.48\linewidth]{../media/Figs/ng_D1_rectwg_dwg}
        \label{fig:ng_D1_rectwg_dwg}
        }
        \hfill
      \subfloat[h][]{
          \label{fig:ng_D2_rectwg_dwg}
-         \includegraphics{../media/Figs/ng_D2_rectwg_dwg}
+         \includegraphics[width=0.48\linewidth]{../media/Figs/ng_D2_rectwg_dwg}
          %\input{fig/square waveguide_C1_y.tex}
          }
    \end{minipage}
@@ -2236,7 +2239,7 @@ of refraction ($beta/k$) and the group index of fraction ($n_g$) for the
 non-degenerate fundamental quasi-\TE and quasi-\TM modes. Of course, our formulas of
 effective mode areas for spin squeezing should be modified for the
 non-degenerate mode case. I didn't do the detailed calculation, but I'd
-think the modification is the following: the $n_g$ in the formula of the effective interaction mode area for our Faraday spin squeezing protocol~\cite{Qi2017Enhanced}, $A_{\rm Far}$, should be replaced with the geometric average of $n_g^{TE}$ and $n_g^{TM}$, that is $\sqrt{n_g^{V} * n_g^{H}}$ when $V$ and $H$ modes are the quasi-\TE and quasi-\TM modes; the equation for the  input mode area, $A_0$, maintains its original form. In the end,
+think the modification is the following: the $n_g$ in the formula of the effective interaction mode area for our Faraday spin squeezing protocol~\cite{Qi2017Enhanced}, $A_{\rm Far}$, should be replaced with the geometric average of $n_g^{TE}$ and $n_g^{TM}$, that is $\sqrt{n_g^{V} \times n_g^{H}}$ when $V$ and $H$ modes are the quasi-\TE and quasi-\TM modes; the equation for the  input mode area, $A_0$, maintains its original form. In the end,
 the cooperavity formula should be modified by a factor of the square
 root of the ratio between $n_g^V$ and $n_g^H$, where the input probe is
 polarized along the $H$ direction and atoms are trapped on the $V$ axis.
