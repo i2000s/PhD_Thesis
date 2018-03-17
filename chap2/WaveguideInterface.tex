@@ -527,10 +527,12 @@ The details of solving the free-space Green's function and the techniques we are
 
 
 Following the Born approximation to the first order, which has been used in Appendix~\ref{chap:freespacegreenfunction}---but here, in general, the output field in the form of a Lippmann-Schwinger equation\index{Lippmann-Schwinger eqation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $ can be approximated by
+\begin{subequations}
 \begin{align}
 \mathbf{E}(\br) &=\mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}(\br'_n)\\
 &\approx \mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}_0(\br'_n)\label{eq:EGFTnatoms}
 \end{align}
+\end{subequations}
 where $ \tensor{\boldsymbol{\alpha}}^{(n)} $ is the polarizability of the atom positioned at $ \br'_n $. The right-hand-side of Eq.~\eqref{eq:EGFTnatoms} implies that the total field after interaction includes two origins of fields: one is the original propagating field through the waveguide (the first summation part), and the other is the scattered field due to the presence of the atoms (the second summation part). Because of the Born approximation, the scattering effect terms in the equation above only contains the first-order scattering directly due to the background propagating field incident to the atoms, and the photon scattering among atoms and high-order scattering involving self-polarizations have been ignored. This approximation is valid in the dispersive regime, which can be verified based on Ref.~\cite{Asenjo-Garcia2017Atom} including the atom-atom interactions and other scattering effects using the Green's function approach~\footnote{See, for example, Eq.~(10) in Ref.~\cite{Asenjo-Garcia2017Atom} describing the field transformation relationships will be recovered to our results presented in Eq.~\eqref{eq:EGFTnatoms} if the detuning $ \Delta_A $ is much larger than the frequency shift $ J_{\xi,\mathrm{1D}} $ and the modified decay rates $ \Gamma_{\xi,\mathrm{1D} }$ of atoms, which is a condition for dispersive interactions.}. Now, the only barrier for fully solving the output electric field is to solve the dyadic Green's function.
 
 In general, there are two strategies to solve the dyadic Green's function: one is to solve the dipole radiation problem numerically and/or analytically; the other one involves eigenmode decomposition and only needs bare waveguide modes. We call the first approach as the \emph{normalization} approach, and call the other one as the \emph{eigenmode-decomposition} approach. We will describe the two approaches in the successive subsections. 
@@ -547,7 +549,7 @@ each column of which can be expressed as
 \end{align}
 where the subscriptions $ i=r\!_\perp,\phi,z $ written in the cylindrical coordinate system or $ i=x,y,z $ in the Cartesian coordinate system denote the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i$th column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we have used $\omega_0$ to indicate the angular frequency of the radiation from the source (the difference in the full quantum description will be discussed in Section~\ref{Sec::GreensFunction}).  
 
-Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $ with an oscillation amplitude of $ -4\pi k^2 $. That is to say, once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components normalized by the amplitude factor of $ -4\pi k^2 $. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis directions:
+Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a unit dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $  (\qxd{the Gaussian-cgs convention factor $ -4\pi k^2 $ in some old plots following the code in \url{Example_DGF.m} and others is no longer needed based on the new standard. Although the plots might have been normalized to the vacuum values, double check and correct the unnormalized Green's function plots by multiplying $ -4\pi k_0^2$ before publishing. } ). That is to say, once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis directions:
 \begin{equation}
 \GFT(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
   \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
@@ -573,12 +575,15 @@ Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that
     \draw[<-] (m-3-1.south)+(0,-1.08) -- +(0,-1.5) node[below]{$ \mathbf{d}_{r\!_\perp} $};
     \draw[<-] (m-3-2.south)+(0,-1.08) -- +(0,-1.5) node[below]{$ \mathbf{d}_{\phi} $};
     \draw[<-] (m-3-3.south)+(0,-1.1) -- +(0,-1.55) node[below]{$ \mathbf{d}_z $};
-    \draw[<-] (m-3-3.south)+(0.5,-1.32) -- +(1.1,-1.32) node[right]{$\cdot (-4\pi k^2)$};
+    %\draw[<-] (m-3-3.south)+(0.5,-1.32) -- +(1.1,-1.32) node[right]{$\cdot (-4\pi k^2)$}; % The old normalization factor.
   \end{pgfonlayer}
   \end{tikzpicture}
 \end{equation}
-Note that all calculations are performed with a fixed frequency $ \omega_0 $.
-
+Note that all calculations are performed with a fixed frequency $ \omega_0 $. Alternatively, we calculate the $ ij $th element of the dyadic Green's function by
+\begin{align}
+G_{ij}(\br,\br';\omega_0) =\frac{E_i(\br)}{d^{(j)}(\br')},
+\end{align}
+where $ d^{(j)}(\br') $ is the dipole moment of a dipole at $ \br' $ with an orientation along the $ \mathbf{e}_j $ direction, and $ E_i(\br) $ is the $ i $th component of the calculated electric field responded at $ \br $.
 Therefore, the key to calculate the dyadic Green's function in this approach is to solve the field emitted by a normalized dipole in presence of the waveguide in the frequency domain. In fact, there are many ways to calculate the fields with a dipole source in a medium. 
 
 The field can be analytically solved only if there is some special geometry of the waveguide. A nanofiber geometry is one example that one can solve the radiation problem analytically.  
