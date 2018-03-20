@@ -13,6 +13,8 @@
 *.loc
 *.lof
 *.pdf
+*.bak
+*.sav
 
 # Figures not to ignore.
 !chap4/Fig1.pdf
