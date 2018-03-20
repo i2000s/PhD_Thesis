@@ -1262,9 +1262,9 @@ N^{min}_A &= \frac{1}{C_{j'}^{(0)}}\sqrt{\frac{A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
 In this appendix, we will derive the equations of Stokes vector operators and spin-polarization interaction Hamiltonian due to polarization basis transformations.
 A general basis transformation theory will be derived in the context of linear-polarization basis transformations, and will then be applied to the linear $ D/\bar{D} $- and circular $ R/L $-bases cases.
 
-\section{Spin-polarization Hamiltonian and Stokes vector operators in a linear basis}
+\section{Spin-polarization Hamiltonian and Stokes vector operators in a linear basis}\label{sec:spinpolarizationinlinearbasis}
 In general, we can define an arbitrary linear polarization basis by
-\begin{align}
+\begin{align}\label{eq:nnbarRHV}
 \left(\!\begin{array}{c}
 \mathbf{e}_n \\ \mathbf{e}_{\bar{n}}
 \end{array}\!\right) &= 
@@ -1418,6 +1418,7 @@ The effective Hamiltonian can be simplified from Eq.\eqref{eq:heff_nnbarChiS} to
 \end{align}
 The Hamiltonian expression above should satisfy the cyclical transformation from the $ H $- and $ V $-basis expression.
 
+
 \section{Spin-polarization Hamiltonian and Stokes vector operators in the circular basis}
 We define a set of polarization vector transformation relationships by 
 \begin{subequations}
@@ -1460,6 +1461,47 @@ Therefore, the effective atom-light interaction Hamiltonian can be given in thos
 \end{align}
 with $\hat{\chi}_{pp'} $ defined in Eq.\eqref{eq:chippp}.
 \qxd{Double check the cited equation after the main text is done. Maybe I can define $ \hat{\chi}_{pp'}$ in this appendix.}
+
+\section{Extension to arbitrary elliptical polarization basis}
+Using the isomorphic properties of \Poincare sphere and Block sphere, one can show that the linear polarization basis rotation transformation defined in the $ \{\ket{H},\ket{V} \} $ basis (see Eq.~\eqref{eq:nnbarRHV}) can be mapped to a the Pauli rotation around the $ z $ axis in the $ x $ basis on the Bloch sphere. To further extend the rotation transformation from the $ \{\ket{H},\ket{V} \} $ basis to arbitrary orthogonal elliptical polarization basis, one may need to make the following steps in order to use the known transformation relationships in the Block sphere:
+
+1. Define the transformation Pauli matrices in the $ x $ basis, that is to define 
+\begin{align}
+\hat{\sigma}_x = \left(\!\!\begin{array}{cc}
+1 & 0 \\
+0 & -1
+\end{array}\!\!\right), \quad
+\hat{\sigma}_y = \left(\!\!\begin{array}{cc}
+0 & 1 \\
+1 & 0
+\end{array}\!\!\right), \quad
+\hat{\sigma}_z = \left(\!\!\begin{array}{cc}
+0 & -i \\
+i & 0
+\end{array}\!\!\right).
+\end{align}
+
+2. Map the south pole of the Bloch sphere to the $ \ket{R} $ state and the north pole to the $ \ket{L'} $ state, where the left circular polarization state $ \ket{L}=-i\ket{L'} $. As a result, the elliptical polarization state in optics will have a phase difference as we map them to the new Bloch sphere.
+
+On the new ``Bloch sphere", an arbitrary orthogonal polarization basis $ \{ \ket{p},\ket{\bar{p}} \} $ can be transformed from the $ \{\ket{H},\ket{V} \} $ basis by an rotation $ \Theta $ around the unit $ \mathbf{n} $ vector with a coordinate corresponding to a point on the ``Bloch sphere". That is 
+\begin{align}
+\left(\!\!\begin{array}{c}
+\ket{p} \\
+\ket{\bar{p}} 
+\end{array}\!\!\right) = \left[\cos(\Theta/2) \identity + i\sin(\Theta/2)(\mathbf{n}^T\bullet \left(\!\!\begin{array}{c}
+\hat{\sigma}_x \\
+\hat{\sigma}_y\\
+\hat{\sigma}_z
+\end{array}\!\!\right) )\right] \left(\!\!\begin{array}{c}
+\ket{H} \\
+\ket{V}
+\end{array}\!\!\right),
+\end{align}
+where $ \mathbf{n}^T=[x,y,z] $ is the Cartesian coordinate of the rotation axis. Transformation matrix in the square brackets is the new transition matrix $ \mathbf{R} $ as we have used in this appendix earlier. When $ \{\ket{p},\ket{\bar{p}} \} $ are linear states, $ \Theta/2 =\theta $ as we have defined in Eq.~\eqref{eq:nnbarRHV}.
+
+Similarly, one can define the polarization state transformation relationship in the $ \{\ket{R},\ket{L'} \} $ basis using Pauli matrices in the $ z $ basis. 
+
+With the transformation relation defined, we can define the Stokes operators, field operator and atom-light interaction Hamiltonian in an arbitrary elliptical polarization basis as we did in Sec.~\ref{sec:spinpolarizationinlinearbasis} for linear polarization transformations. This technique may be useful, for example, to find the optimal choice of polarization basis to generate the best spin squeezing result. As this dissertation work doesn't focus on a full optimization problem, we will skip the results for now.
 
 %</basistransfHS>
 
