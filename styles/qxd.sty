@@ -794,4 +794,14 @@
     \label{#1}
   \end{figure}}
   
+% Similar to \scalefig, the following allows a shortened caption and a width not fixing the unit. The figure will be aligned with the float-friendly [!tbp] option.
+\newcommand{\includefig}[5]{
+  \begin{figure}[#5]
+    % Requires \usepackage{graphicx}
+    \centering
+    \includegraphics[width=#2]{#1}
+    \caption[#4]{#3}
+    \label{#1}
+  \end{figure}}
+  
 %\DeclareMathVersion{normal2}

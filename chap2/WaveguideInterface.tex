@@ -524,7 +524,7 @@ A special case of the dyadic Green's function is when a dipole source is placed 
 G_0(\br,\br';\omega_0) =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},\label{eq:G0rrp}
 \end{align}
 where we only take the positive frequency solution for our studies. This result reflects the fact that the field responded at $ \br $ is a free spherical wave coming out from a point dipole source as we can recognize from basic electromagnetic knowledge. This solution is a key to solve radiation problems and normalize modified decay rates of atoms in presence of a waveguide as we will discuss later. When $ \br\rightarrow \br' $ or the field responded at the dipole position, the real part of the Green's function divergent yet the imaginary part of $ G_0(\br,\br') $ takes the form
-\begin{align}
+\begin{align}\label{eq:G0}
 G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
 \end{align}
 The details of solving the free-space Green's function and the techniques we are going to using without explaining, including Born approximation~\cite{Gubernatis1977Born} and other general methods of solving a radiation problem can be found in Appendix~\ref{chap:freespacegreenfunction}. 
@@ -711,21 +711,47 @@ The eigenmode decomposition approach of solving dyadic Green's function works re
 
 The numerical comparison of the two approaches has been done and confirmed that these two approaches match up really well. Combining these two methods also makes the decomposition of the dyadic Green's function flexible and accurate. For instance, some numerical techniques of calculating radiation problems (like BEM) diverge at the poles due to guided modes for a lossless medium, and one has to artificially add some loss to the medium to transfer the guided-mode--induced Green's function calculation to be an integral around the poles. Given the limited width and finite data points sampled around the poles, the radiation problem solver cannot simultaneously guarantee the precision and efficiency for the guided mode contribution. In this case, using the eigenmode decomposition approach to calculate the guided mode part of the dyadic Green's function while using the radiation problem solver to calculate the unguided mode contribution to the dyadic Green's function might be a good solution in practice. For some other numerical solvers for the radiation problem, like the FDTD method, they can only calculate the total dyadic Green's function. To extra the unguided mode contribution, one can subtract the total dyadic Green's function by the guided mode contribution computed using the eigenmode decomposition approach if the guided modes are known. 
 
-In sum, given the two approaches, we can compute the dyadic Green's function for arbitrary nanophotonic waveguides and decompose the total Green's function into its guided and unguided mode components. The strategies of performing this computing and decomposition only depends on the availability of software and computer resources. In the next section, we will assume the dyadic Green's function is known and study the dispersive response theory of the light in a semi-classical scenario.
+
+\includefig{../media/Figs/GFTz0x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ \mathbf{G}_{ij}(\br,\br') $ in the $ z=0 $ plane. The calculation follows Appendix~\ref{sec:boundrad}. A dipole source (marked as $ \times $) is placed at $\br'=(r^\prime_\perp=2a,\phi'=0,z'=0) $ position or $ r'_\perp=2a $ from the fiber axis, where $a=225 $ nm is the radius of the nanofiber. The position of the observer is chosen to be in the $ z=0\lambda $ plane. Wavelength is set to be $ \lambda=852 $ nm, which is the D2 line of cesium atoms. All values are normalized to the vacuum Green's function, $ G_0$, by Eq.~\eqref{eq:G0}. The value labeled for each subplot is the max value of the corresponding Green's function tensor element among all data points in the transverse plane excluding the dipole position.}
+{$\mathrm{abs}{\left[ \GFT(\br,\br')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=0\lambda$.}{!tbp}
+
+\includefig{../media/Figs/GFTz1x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ \mathbf{G}_{ij}(\br,\br') $ in the $ z=\lambda $ plane. Same as Fig.~\ref{../media/Figs/GFTz0x2a} but observed in the $ z=\lambda $ plane.}
+{$\mathrm{abs}{\left[ \GFT(\br,\br')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=\lambda$.}{!htbp}
+
+\includefig{../media/Figs/GFTz2x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ \mathbf{G}_{ij}(\br,\br') $ in the $ z=2\lambda $ plane. Same as Fig.~\ref{../media/Figs/GFTz0x2a} but observed in the $ z=2\lambda $ plane.}
+{$\mathrm{abs}{\left[ \GFT(\br,\br')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=2\lambda$.}{!tbp}
+
+\includefig{../media/Figs/GFTz5x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ \mathbf{G}_{ij}(\br,\br') $ in the $ z=5\lambda $ plane. Same as Fig.~\ref{../media/Figs/GFTz0x2a} but observed in the $ z=5\lambda $ plane.}
+{$\mathrm{abs}{\left[ \GFT(\br,\br')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=5\lambda$.}{!tbp}
+
+\includefig{../media/Figs/GFTz10x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ \mathbf{G}_{ij}(\br,\br') $ in the $ z=10\lambda $ plane. Same as Fig.~\ref{../media/Figs/GFTz0x2a} but observed in the $ z=10\lambda $ plane.}
+{$\mathrm{abs}{\left[ \GFT(\br,\br')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=10\lambda$.}{!tbp}
+
+\includefig{../media/Figs/GFTz100x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ \mathbf{G}_{ij}(\br,\br') $ in the $ z=100\lambda $ plane. Same as Fig.~\ref{../media/Figs/GFTz0x2a} but observed in the $ z=100\lambda $ plane. At such a far distance, the patterns are very close to the guided mode contribution components to be plotted in the next figure.}
+{$\mathrm{abs}{\left[ \GFT(\br,\br')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=100\lambda$.}{!tbp}
+
+\includefig{../media/Figs/GFTgz0x2a}{0.95\linewidth}{The absolute value of the \emph{guided-mode--induced} dyadic Green's function's elements $ \mathbf{G}^g_{ij}(\br,\br') $ observed in the transverse plane. Settings are the same as Fig.~\ref{../media/Figs/GFTz0x2a} but for the guided mode contribution part only. Absolute values of the elements are the same for all $ z $ slices.}
+{$\mathrm{abs}{\left[ \GFT^g(\br,\br')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $.}{!tbp}
+
+Now, we apply the radiation problem solver to calculate the elements of the dyadic Green's function of an atom trapped near a nanofiber at $ r'\!_\perp=2a $ from the fiber axis, and see if the radiation mode contributions vanish after a long propagation distance. The contour plots of the absolute values of the Green's function tensor elements are shown in Figs.~\ref{../media/Figs/GFTz0x2a} through~\ref{../media/Figs/GFTz100x2a} for slices at $ z=0,1,2,5,10, $ and $ 100\lambda $ with a dipole source fixed at $ r'\!_\perp=2a $ position on the $ x $-axis. The maximum values of each tensor element are also notated in the plots normalized to the imaginary part of the scalar Green's function in vacuum ($ G_0 $ defined in Eq.~\eqref{eq:G0}, which indicates how the radiation mode contributions dissipate along the propagation direction. Note that, since the Green's function diverges at the source position, the maximum values shown in the plots have excluded the source position. We see the maximum value oscillates a little bit in the near distance and then decay with the remaining amplitude inversely proportional to the propagation distance. To demonstrate the pattern left in a distant $ z $ slice is mainly the guided mode contribution, we plot the guided mode contribution in Fig.~\ref{../media/Figs/GFTgz0x2a}, which has a constant amplitude over $ z $ slices. At $ z=10\lambda $ distance (Fig.~\ref{../media/Figs/GFTz10x2a}), the total Green's function tensor has already been very close to the bare guided-mode Green's function tensor. At $ z=100\lambda $ (Fig.~\ref{../media/Figs/GFTz100x2a}), the radiation modes have essentially completely dissipate to free space. Considering the photon detectors to measure the transported signal are usually at least centimeters away from the nanofiber region, we can safely ignore the influence of the unguided field to the measurement results. 
+
+In sum, given the two approaches, we can compute the dyadic Green's function for arbitrary nanophotonic waveguides and decompose the total Green's function into its guided and unguided mode components. The strategies of performing this computing and decomposition only depends on the availability of software and computer resources, and one can combine the two approaches for fast and accurate calculations. We also show that the radiation modes doesn't propagate long enough to affect the measurement signal. In the next section, we will assume the dyadic Green's function is known and study the dispersive response theory of the guided light in a semi-classical scenario.
 
 
 \section{Phase shift and polarizability transformation}
-Using the results for the dyadic Green's function of the guided modes, one can write the output electric field due to the guided modes (from Eq.~\eqref{eq:EGFTnatoms}) as 
+Now, we can formulate the theory of light response due to the presence of a waveguide next to atoms. We assume the atoms interact with the light equally for all polarization state of the light, that is to treat the atomic polarizability as a scalar in this section, and study the influence of a nanophotonic waveguide by comparing the light response to the free-space case. A generalized light response theory will be drawn in Chapter~\ref{chap:birefringence}. 
+
+We start with the electric field defined in Eq.~\eqref{eq:EGFTnatoms}, and rewrite the output field by only considering the guided-mode dyadic Green's function responding from one atom source placed at $ \br' $. The output field
 \begin{align}
-\mathbf{E}(\br) & = \mathbf{E}_0(\br) -4\pi k_0^2 \alpha \mathbf{G}^g(\br,\br')\cdot\mathbf{E}_0(\br'),
+\mathbf{E}(\br) & = \mathbf{E}_0(\br) +\alpha \mathbf{G}^g(\br,\br')\cdot\mathbf{E}_0(\br'),
 \end{align}
-where the polarizability has been treated as a scalar. The field at the position of the atom is then
+where $ \mathbf{E}_0(\br) $ is the input field propagating in a bare waveguide. We have also set the polarizability of the atom as a scalar, $ \alpha $. The field at the position of the atom is then
 \begin{align}
-\mathbf{E}(\br') &= \left[\eye-4\pi k_0^2 \alpha \mathbf{G}^g(\br',\br')\right]\cdot\mathbf{E}_0(\br').
+\mathbf{E}(\br') &= \left[\eye+ \alpha \mathbf{G}^g(\br',\br')\right]\cdot\mathbf{E}_0(\br').
 %&\approx \exp\left[-4\pi k^2 \alpha \mathbf{G}^g(\br',\br')\right]\cdot\mathbf{E}_0(\br').
 \end{align}
 
-As a concrete example, we can consider the case that $ z'=0 $ and $ \phi'=0 $ for the atom, and the input field is the $ m=+1,\,f=+1 $ \HE forward propagating mode that
+As a concrete example, we can consider the case that the atom is placed at $ z'=0 $ and $ \phi'=0 $ (along the $ H $ axis), and the input field is the right circularly polarized $ m=+1,\,b=+1 $ \HE forward propagating mode that
 \begin{align}
 \mathbf{E}_0(\br) &= E_0n_{e\!f\!f} \mathbf{u}_{m=1}^{f=1} (\br) = E_0n_{e\!f\!f} \mathbf{u}_1^1 (\mathbf{r}\!_\perp)e^{i\phi+i\beta_0 z}. 
 \end{align}
@@ -735,15 +761,15 @@ The output field in the forward direction at $ z\ge 0 $ \textcolor{red}{can then
 \end{align}
 where the projection coefficients are 
 \begin{align}
-C_{mf} &= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r},z)\cdot \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime,z')\\
-&= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\\
-&= -4\pi k_0^2 \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^{\!\!*}(r\!_\perp)\!\cdot\! \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(r^\prime\!\!_\perp)e^{i\beta_0(z'-fz)+i(\phi'-m\phi)}.
+C_{mf} &=  \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r},z)\cdot \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime,z')\\
+&=  \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\\
+&=  \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^{\!\!*}(r\!_\perp)\!\cdot\! \mathbf{G}^g(\br,\br') \!\cdot\! \mathbf{u}_1^1(r^\prime\!\!_\perp)e^{i\beta_0(z'-fz)+i(\phi'-m\phi)}.
 \end{align}
 Using the transverse mode approximation of the dyadic Green's function, these coefficients become
 \begin{align}
-C_{mf} &= i\pi k_0 n_g\alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot\!\!\!\!\!\! \sum_{f',m'=\pm 1}\!\!\!\! \left[\mathbf{u}_{m'}^{f'}(\mathbf{r}\!_\perp){\mathbf{u}^{f'}_{m'}}^*(\mathbf{r}^\prime\!_\perp) \right]\!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\nonumber\\
+C_{mf} &= -i \frac{n_g\alpha}{4k_0} \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}^f_m}^*(\mathbf{r}\!_\perp)\cdot\!\!\!\!\!\! \sum_{f',m'=\pm 1}\!\!\!\! \left[\mathbf{u}_{m'}^{f'}(\mathbf{r}\!_\perp){\mathbf{u}^{f'}_{m'}}^*(\mathbf{r}^\prime\!_\perp) \right]\!\cdot\! \mathbf{u}_1^1(\mathbf{r}^\prime\!_\perp)\nonumber\\
 &\quad\quad\quad e^{if'\beta_0(z-z')} e^{i\beta_0(z'-fz)}\\
-&= i\pi k_0 n_g\alpha  {\mathbf{u}^f_m}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i\beta_0 (1-f)z'+i(1-m)\phi'}.
+&= -i\frac{n_g\alpha}{4k_0}  {\mathbf{u}^f_m}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i\beta_0 (1-f)z'+i(1-m)\phi'}.
 \end{align}
 Notice that, the phase factor in the exponential part depends on the position of the atom as well as the mode index $ (m,f) $. If $ m,f\neq 1 $, there will be a fast beating term in the projection coefficient, and may be averaged out in some cases. If the atom is positioned at $ \phi'=0 $ and $ z'=0 $ line, and then the phase factor part will vanish. 
 %The projection coefficients can be written as 
@@ -754,31 +780,31 @@ Notice that, the phase factor in the exponential part depends on the position of
 
 Therefore, the emerged forwarding $ m=-1 $ mode has an amplitude 
 \begin{align}
-C_{-+}=i\pi k_0 n_g\alpha  {\mathbf{u}^1_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\phi'}.
+C_{-+}=-i \frac{n_g\alpha}{4k_0}  {\mathbf{u}^1_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\phi'}.
 \end{align}
 Similarly, the backwarding $ m=1 $ and $ m=-1 $ modes have amplitudes 
 \begin{align}
-C_{+-} &=i\pi k_0 n_g\alpha  {\mathbf{u}^{-1}_1}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'}\\
-C_{--} &=i\pi k_0 n_g\alpha  {\mathbf{u}^{-1}_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'+i2\phi'}.
+C_{+-} &=-i\frac{n_g\alpha}{4k_0}  {\mathbf{u}^{-1}_1}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'}\\
+C_{--} &=-i\frac{n_g\alpha}{4k_0} {\mathbf{u}^{-1}_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'+i2\phi'}.
 \end{align}
 
 The output $ m=1 $ \HE mode component in presence of the atom in the forward direction is then given by
 \begin{align}
 \mathbf{E}_+(\br) &= (1+C_{11})E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
-&=\left[1 +i\pi k_0 n_g\alpha  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
-&\approx \exp\left[i\pi k_0 n_g\alpha  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
+&=\left[1 -i\frac{n_g\alpha}{4k_0}  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
+&\approx \exp\left[-i\frac{n_g\alpha}{4k_0}  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br)\\
 &= te^{i\delta\phi}E_0n_{e\!f\!f}\mathbf{u}_{1}^{1} (\br), 
 \end{align}
 where the factor change of the mode's amplitude is 
 \begin{align}
-t=\exp\left[\Im[C_{11}]\right]=\exp\left[ -\pi k_0 n_g \Im[\alpha]  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right]
+t=\exp\left[\Im[C_{11}]\right]=\exp\left[ \frac{n_g}{4k_0} \Im[\alpha]  | \mathbf{u}_1^1(r'_{\!\perp})|^2 \right]
 \end{align}
 and the phase shift is
 \begin{align}
 \delta\phi &= \Re[C_{11}]\\
-&=\pi k_0 n_g\Re[\alpha]  | \mathbf{u}_1^1(r'_{\!\perp})|^2\\
-&= \pi \Re[\alpha] \frac{\omega_0}{v_g}  | \mathbf{u}_1^1(r'_{\!\perp})|^2\\
-&= \pi \Re[\alpha] \frac{\omega_0}{v_gA'_{e\!f\!f}},
+&=-\frac{n_g}{4k_0}\Re[\alpha]  | \mathbf{u}_1^1(r'_{\!\perp})|^2\\
+&= - \Re[\alpha] \frac{c}{4v_g}  | \mathbf{u}_1^1(r'_{\!\perp})|^2\\
+&= - \Re[\alpha] \frac{c}{4v_gA'_{e\!f\!f}},
 \end{align}
 where the symbols $ \Im[\cdot] $ and $ \Re[\cdot] $ indicate the imaginary and real parts of the variable inside; the effective area at the atom position defined as $ A'_{e\!f\!f}=1/| \mathbf{u}_1^1(r'_{\!\perp})|^2 $. 
 
@@ -996,7 +1022,7 @@ where we have ignored the counter-rotating terms for our near-resonance case and
 \boldsymbol{\alpha} &= -\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar\Delta_{eg}} 
 \end{align} 
 
-For a real Cesium atom case, we focus on the transition from $ F=3 $ and $ F=4 $ manifolds of the ground state $ 6S_{1/2} $ to the $ F'=3 $ manifold of the exited state $ 6P_{1/2} $. We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014a}
+For a real Cesium atom case, we focus on the transition from $ F=3 $ and $ F=4 $ manifolds of the ground state $ 6S_{1/2} $ to the $ F'=3 $ manifold of the exited state $ 6P_{1/2} $. We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014}
 \begin{align}
 \hat{\mathbf{d}}_{f'f} &=  \sum_q \sum_{m, m'}  \bra{f' m'} d_{f'\!,f}^q \ket{f m} \op{f' m'}{f m} \mathbf{e}_q^* \\
 & = \bra{ f' }| d | \ket{ f } \sum_q \sum_{m, m'}  \bravket{f m; 1 q}{f' m'} \op{f' m'}{f m} \mathbf{e}_q^*
@@ -1256,7 +1282,7 @@ Both $ \beta $ and $ p $ are continuous.
 %light 
 %of the radiation modes, and summed them up. They are equivalent to the solution here.  
 
-If $ \beta $ is a pure imaginary number, the field will have an exponential decay amplitude on the $ z $ direction, and will spread the energy away from the fiber axis. Reference~\cite{Snyder1983} denotes the modes with pure imaginary $ \beta $ as evanescent modes. If $ \beta $ has both real and imaginary parts, the modes are denoted as leaky modes, which are combinations of radiation modes and evanescent modes. Except for the case that the incident light is highly directed at the complementary critical angle $ \theta_c $ of geometric optics, only the radiation modes part can propagate for a long distance along the fiber axis. In our nanofiber system, we only consider the bound and radiation modes. The ranges of some waveguide parameters are given in Table~\ref{tab:fiberparameters}. 
+If $ \beta $ is a pure imaginary number, the field will have an exponential decay amplitude on the $ z $ direction, and will spread the energy away from the fiber axis. Reference~\cite{Snyder1983Optical} denotes the modes with pure imaginary $ \beta $ as evanescent modes. If $ \beta $ has both real and imaginary parts, the modes are denoted as leaky modes, which are combinations of radiation modes and evanescent modes. Except for the case that the incident light is highly directed at the complementary critical angle $ \theta_c $ of geometric optics, only the radiation modes part can propagate for a long distance along the fiber axis. In our nanofiber system, we only consider the bound and radiation modes. The ranges of some waveguide parameters are given in Table~\ref{tab:fiberparameters}. 
 In the table, we have defined the normalized wave number\cite{Snyder1983Optical}, or 
 $V$-number\index{$V$-number} 
 of a fiber as $V  = 
@@ -1293,7 +1319,7 @@ bound mode.}
 \par
 \bigskip
 %The caption:
-Superscripts $ r $ and $ i $ denote real and imaginary parts. Subscripts $ j $ denotes the discrete indeces for bound modes. Adapted from Ref.~\cite{Snyder1983} P.P.516 Table 25-1. This can also be understood in geometric optics as shown in Fig.(\ref{fig:Fibermodes}).
+Superscripts $ r $ and $ i $ denote real and imaginary parts. Subscripts $ j $ denotes the discrete indeces for bound modes. Adapted from Ref.~\cite{Snyder1983Optical} P.P.516 Table 25-1. This can also be understood in geometric optics as shown in Fig.(\ref{fig:Fibermodes}).
 \end{minipage}
 \bigskip
 
@@ -1391,7 +1417,7 @@ E_i^{lin} = \frac{1}{\sqrt{2}}(E_i^+ + E_i^-)\quad \mathrm{or}\quad \mathcal{E}_
 \end{align}
 
 \section{Power flow and normalization factor $ A $}
-As discussed in Vetsch's dissertation~\cite{Vetsch2010a}, the real-valued amplitude factor $ A $ can be calculated by normalizing the total power of the light propagating in the fiber via the Poynting vector\index{Poynting vector}
+As discussed in Vetsch's dissertation~\cite{Vetsch2010Opticala}, the real-valued amplitude factor $ A $ can be calculated by normalizing the total power of the light propagating in the fiber via the Poynting vector\index{Poynting vector}
 \begin{align}
 \left<\mathbf{S}\right>=\frac{1}{2} \Re\left[\boldsymbol{\mathcal{E}}^g(\br)\times{\boldsymbol{\mathcal{H}}^g(\br)}^* \right],
 \end{align}
