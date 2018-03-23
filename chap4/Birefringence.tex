@@ -407,11 +407,11 @@ This birefringent interaction induces a rotation of the Stokes vector  around th
 	\begin{equation} \label{Eq::RotationAngle}
 		\chiN = \frac{\sigma_0}{\Abir}  \sum_{f,f'}  C_{ff'}^{(0)} \frac{\Gamma}{2 \Delta_{ff'}},
 	\end{equation}
-characterized by an effective area, $\Abir^{-1} \equiv (n_g/2) \big[ |\mathbf{u}_{H}(\br'_\perp)|^2 - |\mathbf{u}_{V}(\br'_\perp)| ^2 \big]$.   
+characterized by an effective area, $\Abir^{-1} \equiv (n_g/2) \big[ |\mathbf{u}_{H}(\br'_\perp)|^2 - |\mathbf{u}_{V}(\br'_\perp)| ^2 \big]$. In this case, the polarizability of the atom can be treated as a scalar, since the atoms do not have a preferred state of photons to emit. Therefore, Eq.~\ref{eq:birefringencerotang} characterizes the rotation angle of the polarization state of the light, $ \varphi $, on the \Poincare sphere due to the interaction with one atom. With $ N_A $ atoms, the total rotation angle of the light on the \Poincare sphere is proportional to $ \varphi_N=N_A\varphi $, scaled by the power of the input light. 
 
 Dawkins {\em et al.} \cite{dawkins_dispersive_2011} used this interaction to make a dispersive measurement of $N_A$ via birefringence polarimetry in the usual way: launching linearly polarized light at 45$^\circ$ to the quasi-$H$ axis, $\mbf{u}_\inp = (\mbf{u}_H + \mbf{u}_V )/\sqrt{2}$, and measuring the differential power between the guided right-and left-circularly polarized photons. 
 Thus, the integrated measurement is described by the operator $\hat{\mathcal{M}} \equiv \int_0^T dt' \hat{S}^{\rm out}_3(t').$  The shot-noise variance of the polarimeter, $\shotnoise =  \chiN^2 \dot{N}_L T$ for integration time $T$,  determines the fundamental resolution of the polarimeter.  
-The smallest detectable atom number using this dispersive measurement is thus, $\delta N_A \sim ( \chiN^2 \dot{N}_L T)^{-1/2}$ \cite{smith_faraday_2003}.  
+The smallest detectable atom number using this dispersive measurement is thus, $\delta N_A \sim ( \chiN^2 \dot{N}_L T)^{-1/2}$ \cite{smith_faraday_2003}. We provide the detailed analysis in Appendix~\ref{sec:birefringenceresolution}. 
 In an ideal setting, $\delta N_A$ can always be reduced by increasing the integration time, but in practice this time is limited by atom loss. As a coarse approximation we take this time to be $T=\gamma_s^{-1}$, where $\gamma_s$ is the photon scattering rate in free space, and assume perfect quantum efficiency of the detectors.  
 For detuning $\Delta$ large compared to the excited hyperfine splitting on the D1- or D2-line ($j' = 1/2$ or $3/2$), the unit-oscillator scattering rate is 
 $\gamma_s =\frac{\sigma_0}{A_{\rm in}}\left(\frac{\Gamma}{2 \Delta}\right)^2 \dot{N}_L $, 
@@ -421,82 +421,24 @@ In this limit, the rotation angle $\chiN = C^{(0)}_{j'} (\sigma_0/\Abir)(\Gamma/
 		\delta N_A  &\sim \frac{1}{C^{(0)}_{j'}}\sqrt {\frac{\Abir^2}{A_{\rm in} \sigma_0}},
 	\end{align}
 where $ C^{(0)}_{j'}=\sum_{f,f'}C^{(0)}_{ff'}$ are the far-detuned, rank-$0$ coefficients on a $j \rightarrow j'$ transition \cite{deutsch_quantum_2010}.  
-Using the parameters reported by Dawkins \emph{et al.}~\cite{dawkins_dispersive_2011}, we find the shot-noise limited minimum detectable atom-number $\delta N_A \sim 10$ for atoms trapped at $ 1.8a\sim 2.0a $ from the fiber axis with a D2-line probe light. 
+Using the parameters reported by Dawkins \emph{et al.}~\cite{dawkins_dispersive_2011}, we find the shot-noise limited minimum detectable atom-number $\delta N_A \sim 10$ for atoms trapped at $ 1.8a\sim 2.0a $ from the fiber axis with a D2-line probe light. We plot the estimation result in Fig.~\ref{fig:AminNA_D12_n1d4469_a225nm_rp}.
+
+\begin{figure}
+\begin{minipage}{.48\linewidth}
+\centering
+\subfloat[]{\label{fig:deltaNA_D12_n1d4469_a225nm_rp}\includegraphics[scale=0.45]{../media/Figs/deltaNA_D12_r1to2d5a}}
+\end{minipage}
+\begin{minipage}{.48\linewidth}
+\centering
+\subfloat[]{\label{fig:A_D12_n1d4469_a225nm_rp}\includegraphics[scale=0.45]{../media/Figs/ANAin_D12_r1to2d5a}}
+\end{minipage}
+\caption[Minimum detectable atom number and mode areas as functions of the atom radial position, $ r\!_\perp/a $, when the D1- and D2-line probe lasers are used.]{Minimum detectable atom number (a) and mode areas (b) as functions of the atom radial position, $ r\!_\perp/a $, when the D1- and D2-line probe lasers are used. The group indices of refraction are $ n_g=1.4737 $ and $ n_g=1.4974 $ for the D1 ($ \lambda=894 $ nm) and D2 ($ \lambda=952 $ nm) lines, respectively. }\label{fig:AminNA_D12_n1d4469_a225nm_rp}
+\end{figure}
 
 In practice, loss and decoherence limit the atom-number resolution~\cite{dawkins_dispersive_2011, zhang_collective_2012}. 
 The experimental implementation reported by Dawkins \emph{et al.}~\cite{dawkins_dispersive_2011} implies a resolution of a few tens of atoms for $ 200\sim 1000 $ trapped atoms.  
 A similar experiment based on a two-color QND measurement in a nanofiber geometry was recently carried out by \emph{B\'{e}guin et al.} \cite{beguin_generation_2014} to squeeze the uncertainty in the number of trapped atoms. They achieved an atom number uncertainty of $\delta N_A = 8$ for $N_A\sim2500$ atoms, well below standard quantum limit, $\delta N_A=\sqrt{N_A}$.
 
-\subsection{Resolution of birefringence spectroscopy measurement for the nanofiber trapped atom system (old)}\label{sec:birefringenceresolution}
-The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence spectroscopy analysis for our nanofiber case.
-
-To measure the Stocks vector rotation angle on the \Poincare sphere, that is the transformation of the polarization of the light, we launch a probe light along the bisection line between $ x $ and $ y $ axes, and trap the atom on the $ x $ axis, and then measure the output powers of the counterclockwise-rotating ($ \sigma_+ $) and the clockwise-rotating ($ \sigma_- $) components of the output. From Eq.~\eqref{eq:Faradayrotang}, the total differential phase shift between the $ \sigma_+ $ and $ \sigma_- $ components of the probed traveling light interacted with $ N $ atoms can be given by
-\begin{align}
-\varphi_{_N} &= N\sigma_0\frac{c}{v_g}\frac{\Gamma_{vac}}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].
-\end{align}
-\textcolor{red}{(Note: there may be a factor of 2 in the equation above and below. Needs to check.)}
-The transformation of polarization is measured in terms of the total power difference between the $ x $- and $ y $-components of the field. The measured signal power is given by
-\begin{align}
-\Delta P_S &= P_0 \sin(\varphi_{_N}) \approx P_0 \varphi_{_N}. \label{eq:polsignal}
-\end{align}
-
-\textcolor{red}{Diagram of the experimental setup...}
-
-Our resolution of detection is limited by the shot noise characterized by the fluctuations in the power difference with a root mean square amplitude of 
-\begin{align}
-\Delta P_{SN} &= \sqrt{\frac{P_0 \hbar \omega_0 }{2\kappa \tau_{pd}}}. \label{eq:shotnoise}
-\end{align}
-In the extreme case that the signal is equal to the noise, that is to make $ \Delta P_S=\Delta P_{SN} $, we can obtain the minimum number of atoms that we can detect (the resolution) as
-\begin{align}
-N_{min} &= \sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{\Delta}{\sigma_0 n_g\Gamma_{vac}}\frac{1}{\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]}\\
-&=\sqrt{\frac{8  \hbar \omega_0  }{P_0\kappa \tau_{pd}}}\frac{2\pi\Delta}{3\lambda^2 \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
-&= \sqrt{\frac{\hbar^3 \pi c  }{P_0\kappa \tau_{pd}\lambda}}\frac{\lambda\Delta }{  \left( 2\pi\right)^2 |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
-&= \frac{1}{4\pi}\sqrt{\frac{\hbar^3 c \lambda }{\pi P_0\kappa \tau_{pd}}}\frac{\Delta }{   |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 },
-\end{align}
-with
-\begin{align}
-A_{e\!f\!f}^V &= \frac{1}{n_g| \mathbf{u}_V(r'_{\!\perp})|^2}\\
-\zeta &= \frac{| \mathbf{u}_H(r'_{\!\perp})|^2}{| \mathbf{u}_V(r'_{\!\perp})|^2}.
-\end{align}
-
-\textbf{Estimating $ N_{min} $}:
-
-We consider the critical time scale that 
-\begin{align}
-\tau_{pd} &= \frac{1}{\gamma_s},
-\end{align}
-where $ \gamma_{s} $ is the photon scattering rate. The minimum detectable atom number can be estimated using the relationship between the scattering rate and the scattering cross section $ \sigma(\Delta) $ or the saturation cross section $ \sigma_0 $ under the critical time scale. Now that
-\begin{align}
-\gamma_s &= \sigma(\Delta) \frac{I(\br')}{\hbar \omega_0} \\
-\sigma(\Delta) &=\frac{\sigma_0}{1+\frac{4\Delta^2}{\Gamma^2_{vac}}}\approx \sigma_0 \frac{\Gamma_{vac}^2}{4\Delta^2} \quad \text{(far detuning.)}
-\end{align}
-Hence,
-\begin{align}
-\gamma_s &\approx \sigma_0\frac{\Gamma_{vac}^2}{4\Delta^2} \frac{I(\br')}{\hbar \omega_0}=\frac{\sigma_0}{A_{in}}\frac{P_0}{\hbar\omega_0}\frac{\Gamma_{vac}^2}{4\Delta^2},
-\end{align}
-where the effective incident mode area at the atom position, $A_{in}  $, is defined as
-\begin{align}
-A_{in }&= \frac{P_0}{I(\br')}.
-\end{align}
-
-We also treat the quantum efficiency $ \kappa=1 $. The critical shot noise defined in Eq.~\eqref{eq:shotnoise} then becomes
-\begin{align}
-\Delta P_{SN} &\approx \sqrt{\frac{P_0 \hbar \omega_0 \gamma_s}{2\kappa }} =P_0\sqrt{\frac{ \sigma_0 }{2A_{in}}}\frac{\Gamma_{vac}}{2\Delta}.
-\end{align}
-The signal defined in Eq.~\eqref{eq:polsignal} can be rewritten as
-\begin{align}
-\Delta P_S &= NP_0 \frac{\sigma_0}{A_{e\!f\!f}}\frac{\Gamma_{vac}}{4\Delta},
-\end{align}
-where the effective mode area at the atom position for our configuration is defined by
-\begin{align}
-A_{e\!f\!f} &= \frac{1}{n_g}\frac{1}{| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2}.
-\end{align}
-If we make the shot noise power equal to the minimum detectable signal power, we can obtain the minimum detectable atom number as
-\begin{align}
-N_{min} &= \sqrt{\frac{2A_{e\!f\!f}^2}{A_{in}\sigma_0}}.
-\end{align}
-
-\textcolor{red}{Compare to vacuum case?}
 
 
 	%===================QND spin squeezing=====================%
@@ -810,6 +752,84 @@ This work was support by the AFOSR, under grant Y600242, and the NSF, under gran
 %=========== APPENDIX ===========%
 %\chapter[Deriving birefringence QND measurement dynamics]{Some detailed derivation of the birefringence QND measurement dynamics}
 
+%<*atomnumberdetection>
+\chapter[Minimum detectable atom number in a measurement protocol]{Minimum detectable atom number using the birefringence effect of a nanofiber}\label{sec:birefringenceresolution}
+The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence spectroscopy analysis for our nanofiber case.
+
+\section[Shot-noise limit and minimum detectable atom number]{Shot-noise limit and minimum detectable \\ atom number}
+To measure the Stocks vector rotation angle on the \Poincare sphere, that is the transformation of the polarization of the light, we launch a probe light along the bisection line between $ x $ and $ y $ axes, and trap the atom on the $ x $ axis, and then measure the output powers of the counterclockwise-rotating ($ \sigma_+ $) and the clockwise-rotating ($ \sigma_- $) components of the output. From Eq.~\eqref{eq:birefringencerotang} and considering the quantum transition factor factor in the Hamiltonian, Eq.~\eqref{Eq::RotationAngle}, the total differential phase shift between the $ \sigma_+ $ and $ \sigma_- $ components of the probed traveling light interacted with $ N_A $ atoms can be given by
+\begin{align}
+\varphi_{_N} &= N_A C_{j'}^{(0)}\sigma_0\frac{c}{v_g}\frac{\Gamma_0}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right],
+\end{align}
+where $ C_{j'}^{(0)}=C_{j'f}^{(0)}=\sum_{f,f'}C_{f,f'}^{(0)}=\frac{2^{j'-1/2}}{3} $ are the far-detuning rank-$ 0 $ coefficient on a $ j\rightarrow j' $ transition, which is $ \frac{1}{3} $ for the D1 line transition and $ 2/3 $ for the D2 line transition for the alkali atoms we study~\cite{Deutsch2010a}. 
+The transformation of polarization is measured in terms of the total power difference between the $ x $- and $ y $-components of the field. The measured signal power is given by
+\begin{align}
+\Delta P_S &= P_0 \sin(\varphi_{_N}) \approx P_0 \varphi_{_N}, \label{eq:polsignal}
+\end{align}
+where $ P_0 $ is the power of the signal, and we have assumed the rotation angle is very small for our study case. 
+
+Our resolution of detection is limited by the shot noise characterized by the fluctuations in the power difference with a root mean square amplitude of 
+\begin{align}
+\Delta P_{SN} &= \sqrt{\frac{P_0 \hbar \omega_0 }{2\eta \tau_{pd}}}, \label{eq:shotnoise}
+\end{align}
+where $ \eta $ is the quantum efficiency of the detector, and $ \tau_{pd} $ is the response time of the photon detector.
+In the extreme case that the signal is equal to the shot noise, that is to make $ \Delta P_S=\Delta P_{SN} $, we can obtain the minimum number of atoms that we can detect (the resolution) as
+\begin{align}
+N_{min} &= \frac{1}{C_{j'}^{(0)}}\sqrt{\frac{8  \hbar \omega_0  }{P_0\eta \tau_{pd}}}\frac{\Delta}{\sigma_0 n_g\Gamma_0}\frac{1}{\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]}\\
+&=\frac{1}{C_{j'}^{(0)}} \sqrt{\frac{8  \hbar \omega_0  }{P_0\eta \tau_{pd}}}\frac{2\pi\Delta}{3\lambda^2 \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
+&= \frac{1}{C_{j'}^{(0)}}\sqrt{\frac{\hbar^3 \pi c  }{P_0\eta \tau_{pd}\lambda}}\frac{\lambda\Delta }{  \left( 2\pi\right)^2 |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 }\\
+&= \frac{1}{4\pi C_{j'}^{(0)}}\sqrt{\frac{\hbar^3 c \lambda }{\pi P_0\eta \tau_{pd}}}\frac{\Delta }{   |d_{eg}|^2}\frac{A_{e\!f\!f}^V}{\zeta -1 },\label{eq:Nmin_birefringence}
+\end{align}
+with
+\begin{align}
+A_{e\!f\!f}^V &= \frac{1}{n_g| \mathbf{u}_V(r'_{\!\perp})|^2}\\
+\zeta &= \frac{| \mathbf{u}_H(r'_{\!\perp})|^2}{| \mathbf{u}_V(r'_{\!\perp})|^2}.
+\end{align}
+Eq.~\eqref{eq:Nmin_birefringence} is the formula to find the minimum detectable atom number in the shot-noise limit if all practical parameters are known for the experiment. Below, we estimate $ N_{min} $ when the detector is ideal for the measurement protocol.
+
+\section{Estimate the minimum detectable atom number in an ideal case}
+We consider the critical time scale that 
+\begin{align}
+\tau_{pd} &= \frac{1}{\gamma_s},
+\end{align}
+where $ \gamma_{s} $ is the photon scattering rate (see Appendix~\ref{chap:summaryofatomicphysicsformulas}). The minimum detectable atom number can be estimated using the relationship between the scattering rate and the scattering cross section $ \sigma(\Delta) $ or the saturation cross section $ \sigma_0 $ under the critical time scale. Now that
+\begin{align}
+\gamma_s &= \sigma(\Delta) \frac{I(\br')}{\hbar \omega_0} \\
+\sigma(\Delta) &=\frac{\sigma_0}{1+\frac{4\Delta^2}{\Gamma^2_0}}\approx \sigma_0 \frac{\Gamma_0^2}{4\Delta^2} \quad \text{(far detuning)}
+\end{align}
+where $ I(\br') $ is the light intensity at the atom position.
+Hence,
+\begin{align}
+\gamma_s &\approx \sigma_0\frac{\Gamma_0^2}{4\Delta^2} \frac{I(\br')}{\hbar \omega_0}=\frac{\sigma_0}{A_{in}}\frac{P_0}{\hbar\omega_0}\frac{\Gamma_0^2}{4\Delta^2},
+\end{align}
+where the effective incident mode area at the atom position, $A_{in}  $, is defined as
+\begin{align}
+A_{in }&= \frac{P_0}{I(\br')}.
+\end{align}
+
+We also set the quantum efficiency $ \eta=1 $. The critical shot noise defined in Eq.~\eqref{eq:shotnoise} then becomes
+\begin{align}
+\Delta P_{SN} &\approx \sqrt{\frac{P_0 \hbar \omega_0 \gamma_s}{2\eta }} =P_0\sqrt{\frac{ \sigma_0 }{2A_{in}}}\frac{\Gamma_0}{2\Delta}.
+\end{align}
+The signal defined in Eq.~\eqref{eq:polsignal} can be rewritten as
+\begin{align}
+\Delta P_S &= {N_A P_0}{C_{j'}^{(0)}} \frac{\sigma_0}{\Abir}\frac{\Gamma_0}{4\Delta},
+\end{align}
+where the effective mode area at the atom position for our configuration is defined by
+\begin{align}
+\Abir &= \frac{1}{n_g}\frac{1}{| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2}.
+\end{align}
+If we make the shot noise power equal to the minimum detectable signal power, we can obtain the minimum detectable atom number as
+\begin{align}
+N_{min} &= \frac{1}{C_{j'}^{(0)}}\sqrt{\frac{2\Abir^2}{A_{in}\sigma_0}}.
+\end{align}
+As an estimate of the scale, we can ignore the constant factor of $ \sqrt{2} $ and claim the minimum detectable atom number is on the order of 
+\begin{align}
+\delta N_A \sim \frac{1}{C_{j'}^{(0)}}\sqrt{\frac{\Abir^2}{A_{in}\sigma_0}}=\frac{1}{C_{j'}^{(0)}}\sqrt{\frac{\mathrm{OD}}{N_A}},
+\end{align}
+where $ \mathrm{OD}/N_A=\frac{\Abir^2}{A_{in}\sigma_0} $ is the optical depth per atom for this birefringence measurement configuration using mixed states of atoms. 
+
+%</atomnumberdetection>
 
 %=========== APPENDIX: Nanofiber mode functions ===========%
 \chapter{Guided-mode functions for the optical nanofiber} \label{chap:fibereigenmodes}
