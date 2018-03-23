@@ -740,7 +740,7 @@ In sum, given the two approaches, we can compute the dyadic Green's function for
 
 
 \section{Phase shift and polarizability transformation}
-Now, we can formulate the theory of light response due to the presence of a waveguide next to atoms. We assume the atoms interact with the light equally for all polarization state of the light, that is to treat the atomic polarizability as a scalar in this section, and study the influence of a nanophotonic waveguide by comparing the light response to the free-space case. A generalized light response theory will be drawn in Chapter~\ref{chap:birefringence}. 
+Now, we can formulate the theory of light response due to the presence of a waveguide next to atoms. We assume the atoms interact with the light equally for all polarization state of the light, that is to treat the atomic polarizability as a scalar in this section, and study the influence of a nanophotonic waveguide, as an example, by comparing the light response to the free-space case. A generalized light response theory including a tensor polarizability will be drawn in Chapter~\ref{chap:birefringence}. 
 
 We start with the electric field defined in Eq.~\eqref{eq:EGFTnatoms}, and rewrite the output field by only considering the guided-mode dyadic Green's function responding from one atom source placed at $ \br' $. The output field
 \begin{align}
@@ -748,7 +748,7 @@ We start with the electric field defined in Eq.~\eqref{eq:EGFTnatoms}, and rewri
 \end{align}
 where $ \mathbf{E}_0(\br) $ is the input field propagating in a bare waveguide. We have also set the polarizability of the atom as a scalar, $ \alpha $. 
 
-As a concrete example, we can consider the case that the atom is placed at $ z'=0 $ and $ \phi'=0 $ (along the $ H $ axis), and the input field is the right circularly polarized $ p=+,\,b=+ $ \HE forward propagating mode that
+As a concrete example, we can consider the case that the atom is placed at $ z'=0 $ and $ \phi'=0 $ (along the $ H $ axis), and the input field is the right circularly polarized $ p=+,\,b=+ $ \HE forward propagating mode of a nanofiber that
 \begin{align}
 \mathbf{E}_0(\br) &= E_0n_{e\!f\!f} \mathbf{u}_{p=+,b=+} (\br) = E_0n_{e\!f\!f} \mathbf{u}_{++} (r\!_\perp)e^{i\phi+i\beta_0 z}. 
 \end{align}
@@ -799,89 +799,105 @@ The output $ p=+ $ \HE mode component in presence of the atom in the forward dir
 \end{align}
 where the amplitude change of the mode's amplitude is 
 \begin{align}
-t=\exp\left[-\im[C_{11}]\right]=\exp\left[ -2\pi n_g k_0 \Im[\alpha]  | \mathbf{u}_{++}(r'_{\!\perp})|^2 \right]
+t=\exp\left[-\im[C_{++}]\right]=\exp\left[ -2\pi n_g k_0 \Im[\alpha]  | \mathbf{u}_{++}(r'_{\!\perp})|^2 \right]
 \end{align}
 and the phase shift is
 \begin{align}
-\delta\phi &= \re[C_{11}]\\
+\delta\phi &= \re[C_{++}]\\
 &=2\pi n_gk_0\re[\alpha]  | \mathbf{u}_{++}(r'_{\!\perp})|^2\\
 &= \re[\alpha] 2\pi k_0 \{ n_g  | \mathbf{u}_{++}(r'_{\!\perp})|^2\}\\
-&= \re[\alpha] \frac{2\pi k_0}{A_{e\!f\!f}^{\rm nanofiber}},
+&= \re[\alpha] \frac{2\pi k_0}{A_{e\!f\!f}^{\rm nanofiber}},\label{eq:deltaphi_alphaA}
 \end{align}
 where the symbols $ \im[\cdot] $ and $ \re[\cdot] $ indicate the imaginary and real parts of the variable inside; we have also defined an effective mode area at the atom position by $ A_{e\!f\!f}^{\rm nanofiber}=1/\left[ n_g| \mathbf{u}_{++}(r'_{\!\perp})|^2\right] $. 
 
-We can see that the attenuation of the mode comes from the state decay of the dipole source. If we use the definition of the polarizability and scattering rate of the dipole that 
-\begin{align}
-\alpha &=-\frac{|d_{eg}|^2}{\hbar \Delta}, \,\, (\Delta=\omega_{\mathbf{k}}-\omega_{eg}=\omega-\omega_0)\\
-\Gamma^{1D}_{p,f} &= \gamma^g=2\pi \frac{|d_{eg}|^2}{\hbar A'_{e\!f\!f}}\left(\frac{\omega_0}{v_g} \right)
-\end{align}
-we find that 
-\begin{align}\label{phaseshiftGamma1D}
-\delta\phi &= -\pi \frac{|d_{eg}|^2}{\hbar \Delta} \frac{\omega_0}{v_gA'_{e\!f\!f}}=-\frac{\Gamma^{1\!D}_{p,f}}{2\Delta}.
-\end{align}
-The subscript $ p $ indicates polarization, and $ f $ indicates propagation direction. \textcolor{red}{Check the factor of 2 below.}
+Similar expressions of the output field $ \mathbf{E}_{-}(\br) $, phase shift and amplitude attenuation for the field coupling into the forward propagating $ p=- $ \HE mode can be derived.  
+%\begin{align}
+%\mathbf{E}_{-}(\br) &=  i2\pi k_0 n_g\alpha  \mathbf{u}^*_{-1}(r'_{\!\perp})\cdot \mathbf{u}_{-+}(r'_{\!\perp})e^{i2\phi'}E_0n_{e\!f\!f}\mathbf{u}_{-+}(\br).
+%\end{align}
+$ \mathbf{E}_{+}(\br) $ and $\mathbf{E}_{-}(\br)$ defines the transformation of polarization of the forward-propagating guided light. 
 
-%\textcolor{red}{This result has the same form as Ivan's result derived from Heisenberg picture, except that we used $ \omega_0=\omega_{eg} $ to define the scattering rate rather than explicitly using $ \omega_{eg} $ to define the decay rate in Ivan's result. }
-
-Using the relationships that 
-\begin{align}
-\Gamma_{vac} &= \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}\\
-\Rightarrow \frac{\Gamma^{1\!D}_{p,f}}{\Gamma_{vac}} &= \frac{3\pi}{2k_0^2A'_{e\!f\!f}} \frac{c}{v_g} = \frac{1}{4} \frac{c}{v_g} \frac{\sigma_0}{A'_{e\!f\!f}},\\
-\sigma_0 &= \frac{3\lambda^2}{2\pi} \equiv \text{resonant cross section}
-\end{align}
-the 1-dimensional scattering rate can be written as 
-\begin{align}\label{Gamma1DGammavac}
-\Gamma^{1\!D}_{p,f} &= \frac{1}{4} \frac{c}{v_g} \frac{\sigma_0}{A'_{e\!f\!f}}\Gamma_{vac}.
-\end{align}
-The phase shift is then
-\begin{align}
-\delta\phi &= -\frac{\Gamma^{1\!D}_{p,f}}{2\Delta} = -\frac{c}{v_g} \frac{\sigma_0 }{A'_{e\!f\!f}} \frac{\Gamma_{vac}}{8\Delta} = -\frac{c}{v_g} \sigma_0 |\mathbf{u}_1^1 (r'_{\!\perp})|^2 \frac{\Gamma_{vac}}{8\Delta}.
-\end{align}
-
-\bigskip
-\textbf{Field goes into the opposite rotating mode:}
-
-Similarly, the field goes into the forward propagating $ p=- $ \HE mode has the form of 
-\begin{align}
-\mathbf{E}_{-}(\br) &=  i2\pi k_0 n_g\alpha  \mathbf{u}^*_{-1}(r'_{\!\perp})\cdot \mathbf{u}_1(r'_{\!\perp})e^{i2\phi'}E_0n_{e\!f\!f}\mathbf{u}_{-1}^1(\br).
-\end{align}
-$ \mathbf{E}_{+}(\br) $ and $\mathbf{E}_{-}(\br)$ defines the transformation of polarization of the light. 
-
-\bigskip
-\textbf{The rotation angle on the \Poincare sphere:}
-
-If we launch two equal-power yet orthogonal quasi-linear modes, $H$ and $V$, and let the atom sit along the major axis of the H mode or the $ x $ axis, the atom will feel both $ H $ and $ V $ modes in different strengths. Equivalently, we can also launch a linearly polarized light bisect the angle between the $ x $ and $ y $ axes, and let the atom sit along the $ x $ axis. The rotation angle of the output light on the \Poincare sphere due to a scalar interaction with the atom can be given by
-\begin{align}
-\varphi &= \delta\phi_H-\delta\phi_V= 2\pi \frac{\omega_0}{v_g} \re[\alpha] \left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]\\
-&= \sigma_0\frac{c}{v_g}\frac{\Gamma_{vac}}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].\label{eq:Faradayrotang}
-\end{align}
-
-%\textcolor{red}{Diagrams for the configuration of setups...}
-\begin{figure}[!tbp]
-\centering\makebox[\textwidth]{
-\includegraphics[width=12cm]{../media/Figs/BirefringenceMeasurement}}
-\caption{Setup diagram for birefringence measurement.}
-\end{figure}
+Although we have taken the example of circularly polarized light as the input, the results above can be generalized to linearly polarized input as well. We only need to change the polarization labels to the corresponding linear polarization states for this generalization. Below, we will first estimate the enhancement of phase shifts of one guied mode, and then take a look at the linear-polarization-input case and calculate the polarization transformation relations.  
 
 
 
 \bigskip
 \textbf{Comparison to the vacuum case:}
 
-Notice that, the phase shift for an atom in vacuum can be given in a similar form by
+To further compare our results with the free-space atom-light interaction case, we would like to rewrite our equations above following the commonly used quantities and conventions~\cite{Baragiola2014Open}. Following these analog of conventions (see summary in Appendix~\ref{chap:summaryofatomicphysicsformulas}), we define the polarizability and the atomic decay rates due to the coupling to the guided modes of a nanofiber, $ \Gamma^{1D}_{\rm nanofiber} $, in the dispersive regime as below 
 \begin{align}
-\delta\phi^{vac} &= 2\pi \frac{\omega_0}{cA} \re[\alpha] |\mathbf{u}_{00}(\br')|^2 =  2\pi \frac{\omega_0}{c A^{vac'}_{e\!f\!f}} \re[\alpha]=-\frac{1}{A} \sigma_0 |\mathbf{u}_{00} (r'_{\!\perp})|^2 \frac{\Gamma_{vac}}{4\Delta},
+\alpha &=-\frac{|d_{eg}|^2}{\hbar \Delta}, \,\, (\Delta=\omega-\omega_{eg}=\omega-\omega_0)\\
+\Gamma^{1D}_{\rm nanofiber} &= \Gamma_g=2\pi \frac{|d_{eg}|^2}{\hbar A_{e\!f\!f}^{\rm nanofiber}}\left(\frac{\omega_0}{c} \right),
 \end{align}
-where $\mathbf{u}_{00}(\br')  $ is the TEM$_{00}$ mode of a Gaussian laser field at the atom position, $ A=\frac{\pi W_0^2}{2} $ is the mode area of the Gaussian beam with wist $ W_0 $. Hence, the relative strength of phase shift due to the presence of a nanofiber versus vacuum can be given by
+where $ d_{eg} $ is the dipole momentum of the atom, and we have ignored the imaginary part of the atomic polarizability in the dispersive regime~\cite{Deutsch2010a}.
+We recall the natural linewidth of the atom is (see Eq.~\eqref{eq:naturallinewidth})
 \begin{align}
-\frac{\delta\phi^{nano}}{\delta\phi^{\rm vac}} &=\frac{A_{e\!f\!f}^{\rm vac}}{A_{e\!f\!f}^{\rm nanofiber}}=  \!n_g\! \frac{A|\mathbf{u}_1(r_\perp^{\rm nanofiber})|^2}{|\mathbf{u}_{00}(r_\perp^{\rm vac})|^2}=An_g |\mathbf{u}_\mu(r_\perp^{\rm nanofiber})|^2.
+\Gamma_0 &= \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}
 \end{align}
-In the last step, we have used the fact that the mode of the Gaussian beam reaches the largest value of $ |\mathbf{u}_{00}(r_\perp^{vac'})|=1 $ when the atom is placed at the center of the beam waist. 
+and the resonant cross section of the atom 
+\begin{align}
+\sigma_0 &= \frac{3\lambda^2}{2\pi}=\frac{6\pi}{k_0^2}=\frac{6\pi c^2}{\omega_0^2},
+\end{align}
+we can then rewrite the modified decay rate due to the coupling to the guided nanofiber modes by
+\begin{align}
+\Gamma^{1D}_{\rm nanofiber} &= \frac{1}{4} \frac{\sigma_0}{A_{e\!f\!f}^{\rm nanofiber}} \Gamma_0.
+\end{align}
 
+Plugging the equations above into Eq.~\eqref{eq:deltaphi_alphaA}, we find that 
+\begin{align}\label{phaseshiftGamma1D_nanofiber}
+\delta\phi^{\rm nanofiber} &= -2\pi \frac{|d_{eg}|^2}{\hbar \Delta} \frac{\omega_0}{cA_{e\!f\!f}^{\rm nanofiber}}=-\frac{\Gamma^{1\!D}_{\rm nanofiber}}{\Delta}.
+\end{align}
+
+Now, we consider a trapped atom probed by a Gaussian beam of the TEM$_{00}$ mode (see Appendix~\ref{chap:paraxialapproximation}). We assume the beam is focused with a typical waist radius $ w_0=10 \,\mu$m so that the atom-light coupling is very strong. Based on the well known results (see Eqs.~\eqref{Gamma1DGammavac_appendix} and~\eqref{phaseshiftGamma1D}), we have similar equations for the modified decay rate of the atom and the phase shift for the Gaussian beam case:
+\begin{align}
+\Gamma^{1D}_{\rm GaussianBeam} &= \frac{1}{4} \frac{\sigma_0}{A_{e\!f\!f}^{\rm GaussianBeam}}\Gamma_0,\\
+\delta\phi &= -\frac{\Gamma^{1\!D}_{\rm GaussianBeam}}{\Delta},
+\end{align}
+where the effective mode area at the atom position for the Gaussian beam, $ A_{e\!f\!f}^{\rm GaussianBeam} $, is given by
+\begin{align}
+A_{e\!f\!f}^{\rm GaussianBeam} = \frac{A}{|\mathbf{u}_{00}(r'_\perp)|^2}
+\end{align}
+with $ A=\frac{\pi w_0^2}{2} $ being the mode area of the Gaussian beam. 
+
+
+Hence, the relative atom-light coupling strength enhancement indicated by the mode phase shift due to the presence of a nanofiber versus the Gaussian laser beam can be given by
+\begin{align}
+\frac{\delta\phi^{\rm nanofiber}}{\delta\phi^{\rm GaussianBeam}} &=\frac{\Gamma^{1D}_{\rm nanofiber}}{\Gamma^{1D}_{\rm GaussianBeam}}=\frac{A_{e\!f\!f}^{\rm GaussianBeam}}{A_{e\!f\!f}^{\rm nanofiber}}\\
+&=  \!n_g\! \frac{A|\mathbf{u}_\mu(r_\perp^{\rm nanofiber})|^2}{|\mathbf{u}_{00}(r_\perp^{\rm GaussianBeam})|^2}=An_g |\mathbf{u}_\mu(r_\perp^{\rm nanofiber})|^2,
+\end{align}
+where $ \mathbf{u}_\mu (r_\perp^{\rm nanofiber}) $ is the input mode for the nanofiber case at the atom position $ r_\perp^{\rm nanofiber} $, and $ r_\perp^{\rm GaussianBeam} $ is the atom position for the Gaussian beam case.
+In the last step, we have used the fact that the mode of the Gaussian beam reaches the largest value of $ |\mathbf{u}_{00}(r_\perp^{\rm GaussianBeam})|=1 $ when the atom is placed at the center of the beam waist, which has the strongest electric field. 
+
+\begin{figure}[!tbp]
+\centering\makebox[\textwidth]{
+\includegraphics[width=0.95\linewidth]{../media/Figs/RelEnhancement}}
+\caption[Relative atom-light coupling enhancement by using an optical nanofiber compared to a typical Gaussian beam trap.]{Relative enhancement of the atom-light coupling due to the use of a nanofiber compared to a typical Gaussian beam trap system. For the Gaussian beam system, an atom is placed at the center of the beam waist and the beam waist radius is $ 10\,\mu $m. Plotted are the relative phase shift or the modified decay rate as a function of the trapping radial position of the atom in the nanofiber system, where the atom is trapped along the $ H $ direction or the $ x $ axis. The $ H $ mode (red, top), $ V $ mode (blue, bottom) and the circular modes (green, middle) are plotted in the main figure. Inset indicates the coordinate of the atom position relative to the fiber (circle). The probe wavelength is $ \lambda=895 $ nm for the comparison.}\label{fig:relenhancement}
+\end{figure}
+
+Figure~\ref{fig:relenhancement} plots the relative enhancement of the atom-light coupling due to the use of an optical nanofiber ($ a=225 $ nm) as a function of the atom's radial distance to the fiber axis. Different polarization states of the input light is studied in the figure while the atom is trapped along the $ x $ or $ H $ axis. The enhancement value is normalized to the case that the atom is probed at the center point of a Gaussian beam's waist with a typical waist radius $ w_0=10\,\mu $m. As shown, the nanofiber enhances the atom-light coupling by $ 30 $---$ 100 $ folds if the atom is trapped at $ r'_\perp=2a $ position, depending on the polarization state of the input light. If the atom is moved closer to the fiber surface, the enhancement can be further increased up to a few hundred folds. Note that both $ R $ and $ L $ circular modes of the nanofiber generate the same atom-light coupling strength in this rough model.
+
+Similar result can be drawn to the \SWG case, of course. 
+
+
+\bigskip
+\textbf{The rotation angle on the \Poincare sphere:}
+%\textcolor{red}{Diagrams for the configuration of setups...}
+\begin{figure}[!tbp]
+\centering\makebox[\textwidth]{
+\includegraphics[width=12cm]{../media/Figs/BirefringenceMeasurement}}
+\caption[Diagram of polarization rotation measurement with an optical nanofiber.]{Diagram of polarization rotation measurement with an optical nanofiber (brown). The input light is initially polarized along the diagonal direction on the $ xy $ plane. The output polarization state is measured with photon flux differential counting between the $ H $ and $ V $ linear polarization states. The rotated angle on the \Poincare sphere indicates a birefringence rotation of the guided light.}\label{fig:birefringencenanofibersetup}
+\end{figure}
+
+If we launch two equal-power yet orthogonal quasi-linear modes, $H$ and $V$, and let the atoms sit along the major axis of the H mode or the $ x $ axis, the atoms will feel both $ H $ and $ V $ modes in different strengths. Equivalently, we can also launch a linearly polarized light bisect the angle between the $ x $ and $ y $ axes, and let the atoms sit along the $ x $ axis (see Fig.~\ref{fig:birefringencenanofibersetup}). Since the local intensities of the $ H $ and $ V $ modes at the atom positions are different, there will be a differential phase shift between the output $ H $- and $ V $-polarized light components ($ \mathbf{E}_{H}(\br) $ and $ \mathbf{E}_{V}(\br) $), which generates a birefringence rotation on the \Poincare sphere. The rotation angle of the output light on the \Poincare sphere due to a scalar interaction with one atom can be given by
+\begin{align}
+\varphi &= \delta\phi_H-\delta\phi_V= 2\pi \frac{\omega_0}{v_g} \re[\alpha] \left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]\\
+&= -\sigma_0\frac{c}{v_g}\frac{\Gamma_0}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].\label{eq:Faradayrotang}
+\end{align}
+
+From Fig.~\ref{fig:relenhancement}, using the nanofiber, we find there is a $ 3 $---$ 4 $ folds of enhancement difference between the $ H $ and $ V $ modes. This is a otherwise unavailable resource for birefringence rotation with a scalar polarizability of atoms in free-space. 
 
 
 \section{Modification of the spontaneous emission of atoms trapped near a nanophotonic waveguide}
-
+In the last section, we have estimated the atom-light coupling enhancement due to the presence of an optical nanofiber, and in general a nanophotonic waveguide. Despite the estimation is good enough for our purpose, the model we used may be too rough for us to study other quantum effects to be discussed later, given that the polarizability of the atom was assumed to be a scalar and the modification of the atomic decay rate doesn't consider the detailed atom's internal structure. In this section, we provide a detailed theory on the polarizability of atoms and the modification of atomic decay rates due to external field. We will process the theory from classical to quantum description.
 
 \subsection{Dipole oscillation and emission of polarized light}
 Here we present some results of electrical dipole radiations.
@@ -1569,12 +1585,12 @@ The physics interpretation of group and phase velocity of a waveguide mode can b
 
 
 %<*paraxialexpansion>
-\chapter{Paraxial expansion of a propagating dipole radiation mode}
+\chapter[The paraxial approximation]{Paraxial approximation in solving eigenmode and dipole radiation problems}\label{chap:paraxialapproximation}
 In the case that the light fields propagate along a certain direction $ z $ and spread out only slowly in the transverse direction, we can use the \emph{paraxial approximation}\index{paraxial approximation} to simplify the light propagation problem, especially the analytical integral of the Fourier integrals of the fields. In that case, the $ z $ component of the wavevectors can be expanded in a series as
 \begin{align}
-k_z=k\sqrt{1-(k^2_x+k^2_y)/k^2}\approx k-\frac{(k^2_x+k^2_y)}{2k}.
+k_z=k_0\sqrt{1-(k^2_x+k^2_y)/k_0^2}\approx k_0-\frac{(k^2_x+k^2_y)}{2k_0}.
 \end{align}
-This reflects the physical fact that the wavevectors\index{wavevector} $ \mathrm{k}=(k_x,k_y,k_z) $ in the angular spectrum representation are almost parallel to the $ z $ axis and the transverse wavenumbers $ (k_x,k_y) $ are small compared to $ k $. 
+This reflects the physical fact that the wavevectors\index{wavevector} $ \mathrm{k}=(k_x,k_y,k_z) $ in the angular spectrum representation are almost parallel to the $ z $ axis and the transverse wavenumbers $ (k_x,k_y) $ are small compared to $ k_0 $. 
 
 Meanwhile, in paraxial approximation\index{paraxial approximation} $ \theta\rightarrow 0 $,
 \begin{align}
@@ -1582,12 +1598,46 @@ Meanwhile, in paraxial approximation\index{paraxial approximation} $ \theta\righ
 &\approx \hat{\mathrm{e}}_z.
 \end{align}
 
+\section{Paraxial approximation for Maxwell equations and Gaussian laser beams}
+In the paraxial approximation, the field propagating in the $ z $ direction can be treated as dominated by a plane wave, and hence one can assume a free propagating optical field has a form of 
+\begin{align}
+\mathbf{A}(\br) =A_0 \mathbf{u}(\br)e^{ik_0z},
+\end{align}
+where $ A_0 $ is a scaling factor, and $ \mathbf{u}(\br) $ is the complex amplitude or mode of the field. $ \mathbf{u}(\br) $ can be approximately solves the wave (Helmholtz) equation\index{Helmholtz equation} under the paraxial approximation
+\begin{align}
+\left[\nabla_\perp^2 +i2k_0\pp{}{z}\right] \mathbf{u}(\br) =0,
+\end{align}
+where $ \nabla_\perp^2\equiv \frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2} $ is the transverse part of the Laplacian. 
+The assumption that the paraxial approximation\index{paraxial approximation} is valid if $ \mathbf{u}(\br) $ is a slowly-varying function of $ z $, that is
+\begin{align}
+\left|\frac{\partial^2 \mathbf{u}}{\partial z^2}\right| \ll \left| k_0\frac{\partial\mathbf{u}}{\partial z}\right|.
+\end{align}
+Therefore, one can ignore the second derivatives of $ z $ if $  k_0\frac{\partial\mathbf{u}}{\partial z} $ terms appear in the wave equation of the field. Using the relations above, the wave equation for such a field can be given by
+\begin{align}
+\left[\nabla_\perp^2+i2k_0\pp{}{z}+2k_0^2\right] \mathbf{A}(\br)=0.
+\end{align}
+
+One of the solutions of the wave equation above defines the Gaussian beam of lasers. The fundamental mode of a Gaussian beam is the TEM$_{00}$ mode, which defines the electric field in the following form if the light is assumed to be polarized along the $ x $ axis~\cite{Born1999Principles},
+\begin{align}
+\mathbf{E}(\br) &\equiv E_0\mathbf{u}_{00}(\br)e^{ik_0z}\\
+&= E_0 \mathbf{e}_x \frac{w_0}{w(z)}\exp\left[-\frac{r_\perp^2}{w(z)^2} \right] \exp\left[-i\left( k_0z+k_0\frac{r_\perp^2}{2R(z)} -\psi(z)
+\right) \right],
+\end{align}
+where $ z $ is the distance to the beam's focus in the propagation direction, $ w(z) $ is the radius at which the field amplitudes fall to $1/e$ of their axial values at the plane $z$ along the beam, $ w_0 $ is the beam's waist radius, $ R(z) $  is the radius of curvature of the beam's wavefronts at $z$, and $ \psi(z) $  is the Gouy phase at $z$, an extra phase term beyond that attributable to the phase velocity of light. We usual have 
+\begin{align}
+w(z) &=w_0\sqrt{1+\left(\frac{z}{z_R} \right)^2},\\
+R(z) &= z\left[1+\left(\frac{z_R}{z}\right)^2 \right],\\
+\psi(z) &= \arctan\left( \frac{z}{z_R}\right),
+\end{align}
+where $ z_R=\pi w_0^2/\lambda $ is the Rayleigh range. At the center of the beam waist (focus), the field amplitude reaches the strongest value, which is $ \sqrt{2}E_0/\sqrt{\pi w_0^2} $. We usually define $ A=\frac{\pi w_0^2}{2} $ as the mode area of the mode.
+
+\section{Paraxial expansion of a propagating dipole radiation mode}
 The Green's function solution for a point emitter in free space can then be expanded to be
 \begin{align}
-\frac{e^{i\mathrm{k}\cdot \mathrm{R}}}{R}\approx \frac{e^{ik_0(z-z')}}{z-z'}\exp\left[ \frac{ik_0}{2(z-z')} \left| \mathrm{r}_\perp - \mathrm{r}_\perp'\right|^2 \right],
+\frac{e^{i\mathrm{k}_0\cdot \mathrm{R}}}{R}\approx \frac{e^{ik_0(z-z')}}{z-z'}\exp\left[ \frac{ik_0}{2(z-z')} \left| \mathrm{r}_\perp - \mathrm{r}_\perp'\right|^2 \right],
 \end{align}
 where $ \mathrm{R}=\br-\br' $. 
-A far field from a point light emitter is usually paraxial approximation obedient. 
+A far field from a point light emitter is usually paraxial approximation\index{paraxial approximation} obedient. 
 %</paraxialexpansion>
 
 

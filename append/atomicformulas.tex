@@ -1,4 +1,59 @@
-\chapter{Some useful formulas of atomic physics}
+\documentclass[fleqn, final]{../styles/unmphythesis}
+\usepackage{../styles/qxd}
+\renewcommand{\thechapter}{2}
+%\newcommand{\thechapter}{1}
+
+\makeindex
+\begin{document}
+
+%<*atomicphysicsformulas>
+
+\chapter{Some useful formulas of atomic physics}\label{chap:summaryofatomicphysicsformulas}
+We summarize some useful formulas for atoms presented in vacuum (including inside an optical cavity) in this appendix for us to generalize without proving some concepts for the nanophotonic waveguide case. We collect the formulas in various sources, which include but not limited to Refs.~\cite{Deutsch2010a,Kimble1998,Baragiola2014Open,Norris2014,Steck2007Quantum}.
+
+\section{Spontaneous atomic decays}
+Scalar polarizability of an atom:
+\begin{align}
+\alpha &=-\frac{|d_{eg}|^2}{\hbar (\Delta+i\Gamma/2)}, \,\, (\Delta=\omega-\omega_{eg}\equiv \omega-\omega_0),
+\end{align}
+where $ d_{eg} $ denotes the atomic momentum due to the dipole oscillations between $ \ket{g} $ and $ \ket{e} $ states, and $ \Gamma $ is the decay rate of the atom. In the dispersive interaction regime, one can usually ignore the imaginary part of the atomic polarizability as $ \Delta\gg \Gamma $~\cite{Deutsch2010a}, and hence
+\begin{align}
+\alpha \approx -\frac{|d_{eg}|^2}{\hbar\Delta}.
+\end{align}
+
+Decay rates (natural linewidth) of an atom in vacuum:
+\begin{align}\label{eq:naturallinewidth}
+\Gamma_{vac}=\Gamma_0 &= \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}
+\end{align}
+
+When the atom is placed in a Gaussian laser field, the decay rate of the atom could be modified as
+\begin{align}
+\Gamma^{1D} &= \Gamma_g=2\pi \frac{|d_{eg}|^2}{\hbar A_{e\!f\!f}}\left(\frac{\omega_0}{c} \right),
+\end{align}
+where the scripts $ 1D $ and $ g $ indicate the effect is caused by the coupling to a quasi-1D propagating light field (guided), and $ A_{e\!f\!f} $ is the effective mode area of the beam. For commonly used atomic traps in free space, the TEM$_{00} $ mode is employed to probe atoms, which has an effective mode area given by
+\begin{align}
+A_{e\!f\!f} &= \frac{A}{|\mathbf{u}_{00}(\br')|^2}=\frac{A}{|\mathbf{u}_{00}(r'_\perp)|^2},
+\end{align}
+where $ \mathbf{u}_{00}(\br) $ is the TEM$_{00}$ mode of the Gaussian beam (see Appendix~\ref{chap:paraxialapproximation}), and $ A=\pi w_0^2/2 $ is the mode area at the $ z=0 $ plane with $ w_0 $ the waist radius of the mode. 
+
+We define the resonant cross section of an atom to be
+\begin{align}
+\sigma_0 &= \frac{3\lambda^2}{2\pi}=\frac{6\pi}{k_0^2}=\frac{6\pi c^2}{\omega_0^2},
+\end{align}
+and then the decay rate due to the coupling to the laser beam can be rewritten as
+\begin{align}\label{Gamma1DGammavac_appendix}
+\Gamma^{1\!D} &= \frac{1}{4} \frac{\sigma_0}{A_{e\!f\!f}}\Gamma_0.
+\end{align}
+On the other hand, due to the dispersive interaction from the atom, the optical mode of the input TEM$_{00}$ Gaussian laser beam will also yield a phase shift, $ \delta \phi $, given by
+\begin{align}
+\delta\phi &=2\pi \frac{\omega_0}{c A_{e\!f\!f}} \re[\alpha] = 2\pi \frac{\omega_0}{cA} \re[\alpha] |\mathbf{u}_{00}(\br')|^2 =-\frac{1}{A} \sigma_0 |\mathbf{u}_{00} (r'_{\!\perp})|^2 \frac{\Gamma_{vac}}{4\Delta},
+\end{align}
+We can also write 
+\begin{align}\label{phaseshiftGamma1D}
+\delta\phi &= -2\pi \frac{|d_{eg}|^2}{\hbar \Delta} \frac{\omega_0}{cA_{e\!f\!f}}=-\frac{\Gamma^{1\!D}}{\Delta}.
+\end{align}
+
+
 
 \section{Relationship between measurement strength and scattering rates}
 To avoid using reduced dipole moment elements and other quantities in a wrong unit, we can normalize some quantities in terms of characteristic scattering rates and field intensities.
@@ -109,3 +164,14 @@ C &= \frac{\sigma_0}{\pi W_0^2} F = \frac{\sigma_0}{A} F = \frac{\mathrm{OD}}{\m
 This result agrees with literature~\cite{Hunger2010}. 
 
 To increase the coupling strength between atoms and photons with a nanofiber, the atom number plays the role of cavity finesse in the context of optical cavity and relaxes the requirement of optical mode confinement in the dispersive regime. 
+
+%</atomicphysicsformulas>
+
+\bibliographystyle{../styles/abbrv-alpha-letters-links}
+%\bibliographystyle{unsrt}
+% \nocite{*}
+\bibliography{../refs/Archive}
+
+\printindex
+
+\end{document}          
