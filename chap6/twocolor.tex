@@ -17,7 +17,8 @@ Following Chapter~\ref{chap:quantumdynamicsrepresentation}, the light-atom inter
 + \mathbf{u}_H^*\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot \mathbf{u}_V\hat{a}_H^\dagger\hat{a}_V\nn\\
 &\quad\quad + \mathbf{u}_V^*\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot \mathbf{u}_H\hat{a}_V^\dagger\hat{a}_H 
 \left. + \mathbf{u}_V^*\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot \mathbf{u}_V\hat{a}_V^\dagger\hat{a}_V\right]\\
-&= \hbar\left[(\hat{\chi}_{HH}+\hat{\chi}_{VV})\hat{S}_0 + (\hat{\chi}_{HH}-\hat{\chi}_{VV})\hat{S}_1 + (\hat{\chi}_{HV}+\hat{\chi}_{VH})\hat{S}_2 + i(\hat{\chi}_{HV}-\hat{\chi}_{VH})\hat{S}_3 \right]\\
+&= \hbar\left[(\hat{\chi}_{HH}+\hat{\chi}_{VV})\hat{S}_0 + (\hat{\chi}_{HH}-\hat{\chi}_{VV})\hat{S}_1 \right.\nn\\
+&\quad \quad\left. + (\hat{\chi}_{HV}+\hat{\chi}_{VH})\hat{S}_2 + i(\hat{\chi}_{HV}-\hat{\chi}_{VH})\hat{S}_3 \right]\\
 %\hbar \left[\left(\chi_{RR\uparrow} + \chi_{RR\downarrow} +\chi_{LL\uparrow}+\chi_{LL\downarrow} \right)\hat{F}_0\hat{S}_0 \right.\nonumber\\
 %&\quad+\left(\chi_{RR\uparrow} + \chi_{RR\downarrow} -\chi_{LL\uparrow}-\chi_{LL\downarrow} \right)\hat{F}_0\hat{S}_3\nonumber\\
 %&\quad+\left(\chi_{RR\uparrow} + \chi_{LL\uparrow} -\chi_{RR\downarrow}-\chi_{LL\downarrow} \right)\hat{F}_3\hat{S}_0\nonumber\\
@@ -71,9 +72,10 @@ As illustrated in Enrique Montano's PhD dissertation work, the tensor light shif
 
 From Eq.~\eqref{eq:Heff_Faraday_C02}, the state-dependent tensor light shift (the term proportional to $ \hat{f}_x^2 $) is proportional to 
 \begin{align}
-\delta E_T &= \sum_{f'} \frac{\Gamma_{f'}^x\Omega^2}{\Delta_{ff'}^2+(\Gamma_{f'}^x)^2/4}C_{ff'}^{(2)}\\
-&\approx \sum_{f'}\frac{\Gamma_{f'}^x\Omega^2}{\Delta_{ff'}^2}C_{ff'}^{(2)} = \sum_{f'}\frac{\sigma_0}{\Ain}\left(\frac{\Gamma_{f'}^x}{\Delta_{ff'}} \right)^2 \dot{N}_L C_{ff'}^{(2)}
+\delta E_T &= \sum_{j',f'} \frac{\Gamma_{j'f'}^x\Omega^2}{\Delta_{fj'f'}^2+(\Gamma_{j'f'}^x)^2/4}C_{j'ff'}^{(2)}\\
+&\approx \sum_{j'f'}\frac{\Gamma_{j'f'}^x\Omega^2}{\Delta_{fj'f'}^2}C_{j'ff'}^{(2)} = \sum_{j'f'}\frac{\sigma_0}{\Ain}\left(\frac{\Gamma_{j'f'}^x}{\Delta_{fj'f'}} \right)^2 \dot{N}_L C_{j'ff'}^{(2)}
 \end{align}
+To cancel the tensor light shift, we want to find the two frequencies of the probes so that $ \delta E_T=0 $.
 
 \qxd{To be continue...}
 
@@ -100,8 +102,8 @@ The second term governs decoherence arising from optical pumping, which acts {\e
 \mathcal{D}^{(n)}\left[ \hat{\rho}\right] = -\frac{i}{\hbar}\left(\hat{H}^{(n)}_{\rm eff}\hat{\rho} - \hat{\rho} \hat{H}^{(n)\dag}_{\rm eff}\right) + \gamma_{op} \sum_q \hat{W}^{(n)}_q \hat{\rho}\hat{W}^{(n)\dag}_q.
 \label{op_superator}
 \end{equation}
-Here $\hat{H}^{(n)}_{\rm eff}$ is the effective nonHermitian Hamiltonian describing the local light shift and absorption by the $i^{th}$ atom and $\hat{W}^{(n)}_q$ is the jump operator corresponding to optical pumping through spontaneous emission of a photon of polarization $q$~\cite{Deutsch2010a} (see Appendix~\ref{sec::opticalpumpingwithmodifiedrates} \qxd{Need to update this with modified decay rates.}).   
-The rate of decoherence is characterized by optical pumping rate, $\gamma_{op}$.  Note, the optical pumping superoperator, Eq.\eqref{op_superator},  is not trace preserving when restricted to a given ground-state hyperfine manifold $f$.  In this case, optical pumping of atoms to the other hyperfine manifold in the ground-electronic state is treated as loss.  If the atoms are placed at the optimal position, the local field is linearly polarized.  In that case the vector light shift vanishes, and for detunings large compared to the excited-state hyperfine splitting, the rank-2 tensor light shift is negligible over the time scales of interest.  In that case the light shift is dominated by the scalar component, which has no effect on the spin dynamics.  In that case $\hat{H}_{\rm eff} = -i\hbar \gamma_{op}/2 1$.
+Here $\hat{H}^{(n)}_{\rm eff}$ is the effective nonHermitian Hamiltonian describing the local light shift and absorption by the $i^{th}$ atom and $\hat{W}^{(n)}_q$ is the jump operator corresponding to optical pumping through spontaneous emission of a photon of polarization $q$~\cite{Deutsch2010a} (see Appendix~\ref{chap:opticalpumpingwithmodifiedrates} \qxd{Need to double check if all modified decay rates are correctly included.}).   
+The rate of decoherence is characterized by the total optical pumping rate, $\gamma_{op}=\gamma_{op,1}+\gamma_{op,2}$, of the two probes.  Note, the optical pumping superoperator, Eq.\eqref{op_superator},  is not trace preserving when restricted to a given ground-state hyperfine manifold $f$.  In this case, optical pumping of atoms to the other hyperfine manifold in the ground-electronic state is treated as loss.  If the atoms are placed at the optimal position, the local field is linearly polarized.  In that case the vector light shift vanishes, and for detunings large compared to the excited-state hyperfine splitting, the rank-2 tensor light shift is negligible over the time scales of interest.  In that case the light shift is dominated by the scalar component, which has no effect on the spin dynamics.  In that case $\hat{H}_{\rm eff} = -i\hbar \gamma_{op}/2 1$.
 
 
 %</twocolorprotocol>
@@ -109,8 +111,9 @@ The rate of decoherence is characterized by optical pumping rate, $\gamma_{op}$.
 \appendix
 
 %<*opticalpumpingwithmodifiedrates>
-\chapter{Optical pumping considering the modified emission rates}
- 
+\chapter{Optical pumping considering the modified emission rates}\label{chap:opticalpumpingwithmodifiedrates}
+In this part, we derive the motion of equations for the optical pumping dynamics with one-color probe. To make our notation simple, we implicit include the excited state fine structure quantum number $ j' $ for the one-color probe case. Once the quantum transition rates of individual colors of the probes have been calculated, the total dynamics due to the two-color probes should be determined by the sums of the transition rates associated with the two probes.
+
 The collective spin dynamics in the QND measurement and spin squeezing process is described by the stochastic master equation defined in Eq.~\eqref{eq:totaldrhodt}. The optical pumping dynamics of the $ j $-th atom are governed by 
 \begin{align}
 \left.\dt{\hat{\rho}^{(j)}}\right|_{op} &= \mathcal{D}[\hat{\rho}^{(j)}]=-\frac{i}{\hbar}\left\{\hat{H}_{\rm eff}^{(j)},\hat{\rho}^{(j)} \right\}_+ + \gamma_s\sum_{q}\hat{W}_q(\br'_j)\hat{\rho}^{(j)}\hat{W}_q^\dagger(\br'_j) %\\
@@ -123,7 +126,7 @@ The total rate of photon scattering by an atom from the $\ket{a}\equiv \ket{f,f_
 	\begin{equation}\label{Eq::gammaf}
 		\gamma_{ba}=- \frac{2}{\hbar} {\rm Im} \big[ \bra{f,b} \hat{h}_{\rm eff}\ket{f,a} \big] ,
 	\end{equation}
-The effective nonHermitian light-shift Hamiltonian for one atom (labeled with superscript $ (i) $) is given by
+The effective nonHermitian light-shift Hamiltonian for one atom (labeled with superscript $ (j) $ for the $ j $th atom) is given by
 \begin{align}
 \hat{H}_{\rm eff}^{(i)} \equiv \hat{h}_{\rm eff}&= - \hat{\mathbf{E}}^{(-)}_{\rm in}(\mathbf{r}' ; t ) \cdot \poltens \cdot \hat{\mathbf{E}}^{(+)}_{\rm in}(\mathbf{r}' ;t ),
 \end{align}
@@ -152,7 +155,8 @@ and hence $ \frac{\sqrt{\Gamma_{f'}^x}\Omega/2}{\Delta_{ff'}\pm i\Gamma_{f'}^x/2
 We define the Lindblad jump operators of optical pumping among ground states by~\cite{Deutsch2010a}
 	\begin{align}\label{Eq::Wq_Faraday}
 		\hat{W}_q &= \frac{1}{\sqrt{\gamma_s}}\sum_{f'}\frac{\sqrt{\Gamma_{f'}^q}\Omega/2}{\Delta_{f'f}^q+i\Gamma_{f'}^q/2}\mathbf{e}_q^*\cdot(\hat{\mathbf{D}}_{ff'}  \hat{\mathbf{D}}^\dagger_{f'f} )\cdot\mathbf{e}_{\rm in} \\
-		&= \frac{1}{\sqrt{\gamma_s}}\!\sum_{f'k}\! \frac{\sqrt{\Gamma_{f'}^q}\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}^q/2} \left[\delta_{qx}C_{ff'}^{(0)}\hat{\mathbbm{1}} \!+\! iC_{ff'}^{(1)}\epsilon_{qxk}\hat{f}_k \!+\! C_{ff'}^{(2)}\left(\frac{\hat{f}_q\!\hat{f}_{x}\!+\!\hat{f}_{x}\!\hat{f}_q }{2} \!-\! \frac{\delta_{qx}}{3}\hat{\mathbf{f}}^2 \right) \right].
+		&= \frac{1}{\sqrt{\gamma_s}}\!\sum_{f'k}\! \frac{\sqrt{\Gamma_{f'}^q}\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}^q/2} \left[\delta_{qx}C_{ff'}^{(0)}\hat{\mathbbm{1}} + iC_{ff'}^{(1)}\epsilon_{qxk}\hat{f}_k  \phantom{\dfrac{\hat{f}}{f}}\right. \nn\\
+		&\qquad\qquad\qquad\qquad\qquad\qquad \left. + C_{ff'}^{(2)} \left(\frac{\hat{f}_q\!\hat{f}_{x}\!+\!\hat{f}_{x}\!\hat{f}_q }{2} \!-\! \frac{\delta_{qx}}{3}\hat{\mathbf{f}}^2 \right) \right].
 %		&=\sum_{f',m',q',a,b} w_{baq }^{f'm'q'}\ket{b}\bra{a}.
 	\end{align}
 Each jump operator $\hat{W}_q$ is associated with absorption of the probe photon polarized along $ \mathbf{e}_{\rm in} $ followed by spontaneous emission of a photon with polarization $ \mathbf{e}_q $, where $q= \{0,\pm 1\}$ labels spherical basis elements for $\pi$ and $ \sigma_\pm$ transitions. 
@@ -181,8 +185,8 @@ The optical pumping dynamics of the $ j $-th atom are governed by
 \begin{align}
 \left.\dt{\hat{\rho}^{(j)}}\right|_{op} &= \gamma_s\mathcal{D}[\hat{\rho}^{(j)}]=-\frac{i\gamma_s}{\hbar}\left\{\hat{h}^{\rm eff}_{\rm eff},\hat{\rho}^{(j)} \right\}_+ + \gamma_s\sum_{q}\hat{W}_q(\br'_j)\hat{\rho}^{(j)}\hat{W}_q^\dagger(\br'_j)\\
 \\
-&=-\gamma_s\frac{1}{2}\sum_{a,b}\gamma_{ba}\ket{b}\bra{a}+
-\!\!\!\!\!\!\sum_{q,q',q'',a,b,c,d,f',f'',m',m''}\!\!\!\!\!\! \gamma_sw_{dcq}^{f''m''q''}\left(w_{abq}^{f'm'q'}\right)^*\ket{d}\bra{c}\hat{\rho}^{(i)}\ket{b}\bra{a}
+&=-\gamma_s\frac{1}{2}\sum_{a,b}\gamma_{ba}\ket{b}\bra{a} \nn\\
+&\quad\quad + \!\!\!\!\!\!\sum_{q,q',q'',a,b,c,d,f',f'',m',m''}\!\!\!\!\!\! \gamma_sw_{dcq}^{f''m''q''}\left(w_{abq}^{f'm'q'}\right)^*\ket{d}\bra{c}\hat{\rho}^{(i)}\ket{b}\bra{a}
 \end{align}
 Eqs.~\eqref{Eq::gammaf} and~\eqref{Eq::Wq_Faraday} yield,
 \begin{subequations}
@@ -270,9 +274,10 @@ After some algebra, one can obtain the optical pumping master equation in the ro
 &\quad\quad + \frac{1}{2}C_{ff'}^{(1)}C_{ff''}^{(1)}(\hat{f}_x\hat{\rho}\hat{f}_x+\hat{f}_y\hat{\rho}\hat{f}_y+2\hat{f}_z\hat{\rho}\hat{f}_z )\nn\\
 &\quad\quad -\frac{1}{4}C_{ff'}^{(1)}C_{ff''}^{(2)}(\fx\rhoo\fx-\fy\rhoo\fy-2i\fx\rhoo\fz\fy+2i\fy\rhoo\fx\fz )\nn\\
 &\quad\quad +\frac{1}{4}C_{ff''}^{(1)}C_{ff'}^{(2)}(\fx\rhoo\fx-\fy\rhoo\fy-2i\fz\fy\rhoo\fx+2i\fx\fz\rhoo\fy ) \nn\\
-&\quad +C_{ff'}^{(2)}C_{ff''}^{(2)}\left[\frac{1}{4}f^2(f+1)^2\rhoo-\frac{f(f+1)}{6}(\fo^2-\fz^2)\rhoo-\frac{f(f+1)}{6}\rhoo(\fo^2-\fz^2) \right.\nn\\
+&\quad +C_{ff'}^{(2)}C_{ff''}^{(2)}\left[\frac{1}{4}f^2(f \!+\! 1)^2\rhoo \!-\! \frac{f(f \!+\! 1)}{6}(\fo^2 \!-\! \fz^2)\rhoo \!-\! \frac{f(f \!+\! 1)}{6}\rhoo(\fo^2 \!-\! \fz^2) \right.\nn\\
 &\quad\quad\quad+\frac{1}{2}\fx^2\rhoo\fx^2+\frac{1}{2}\fy^2\rhoo\fy^2+\frac{1}{4}(i\fz+2\fy\fx)\rhoo(i\fz+2\fy\fx)\nn\\
-&\left.\left.\quad\quad\quad +\frac{1}{8}(i\fy+2\fx\fz)\rhoo(i\fy+2\fx\fz)+\frac{1}{8}(i\fx+2\fz\fy)\rhoo(i\fx+2\fz\fy) \right]\right\}.
+&\quad\quad\quad +\frac{1}{8}(i\fy+2\fx\fz)\rhoo(i\fy+2\fx\fz)\nn\\
+&\quad \quad\quad \left.\left. +\frac{1}{8}(i\fx+2\fz\fy)\rhoo(i\fx+2\fz\fy) \right]\right\}.
 \end{align}
 As a sanity check, we consider a far-detuning regime where the detuning on hyperfine sublevels is indistinguishable so that we can denote $ f''=f' $ and ignore all tensor polarizability terms where $ C_{ff'}^{(2)} $ presents, and the optical pumping part of the master equation above becomes
 \begin{align}
