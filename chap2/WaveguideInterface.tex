@@ -253,7 +253,7 @@ The degeneracy of polarizations of the \HE modes allow one to write the eigenmod
 
 The quasi-\TE and quasi-\TM modes are eigenmodes of the \SWG with orthogonal polarizations and can be adiabatically connected to the $ x $- and $ y $-polarized linear free-space light inputs. Therefore, we can define the quasi-\TE and quasi-\TM modes as the $ H $ and $ V $ modes for the \SWG geometry. They have similar anisotropic properties as the fiber modes do.
 
-The eigenmodes of a waveguide, in complete cases, should include both the guided (bounded) and radiation (unbounded or unguided) solutions, based on the corresponding waveguide boundary condition problem governed by the Maxwell equations~\cite{Jackson1975}. Below, we will only sketch out the condition to divide the guided and radiation modes using an analogy to the \sch equation, which will be useful to understand the radiation decompositions in sections follow.
+The eigenmodes of a waveguide, in complete cases, should include both the guided (bound) and radiation (unbound or unguided) solutions, based on the corresponding waveguide boundary condition problem governed by the Maxwell equations~\cite{Jackson1975}. Below, we will only sketch out the condition to divide the guided and radiation modes using an analogy to the \sch equation, which will be useful to understand the radiation decompositions in sections follow.
 
 \subsubsection{Guided and radiation modes}
 If we want to fully calculate the eigenmodes of a waveguide, we need to consider both the electric and magnetic fields, the spatial parts of which are governed by the wave equations
@@ -304,7 +304,7 @@ we can conclude that the mode equation (Eq.~\ref{eigenpsi}) is basically an eige
 V_{ef\!f}=-k^2\varepsilon(\br\!_\perp) &\sim V(\br\!_\perp)\\
 -\beta^2 &\sim E.
 \end{align}
-With these analogies, we can find that the guided modes dictated by the wave equation should correspond to the bounded eigenstates of the trapping potential problem obeying to the \sch equation; likewise, the radiation modes of the wave equation correspond to unbounded states in the scattering problem following the \sch equation. In details, for the time-independent \sch problem, if $ 0<E\leq V $, then the eigenstates are bounded and have discrete solutions with respect to $ E $; if $ E>V $, then the resulted states is unbounded and have continuous solutions of energy. For the waveguide's eigenmodes, similarly, we can also use the relative position of $ V_{ef\!f} $ and $ -\beta^2 $ to classify the bound and radiation modes. 
+With these analogies, we can find that the guided modes dictated by the wave equation should correspond to the bound eigenstates of the trapping potential problem obeying to the \sch equation; likewise, the radiation modes of the wave equation correspond to unbound states in the scattering problem following the \sch equation. In details, for the time-independent \sch problem, if $ 0<E\leq V $, then the eigenstates are bounded and have discrete solutions with respect to $ E $; if $ E>V $, then the resulted states is unbound and have continuous solutions of energy. For the waveguide's eigenmodes, similarly, we can also use the relative position of $ V_{ef\!f} $ and $ -\beta^2 $ to classify the bound and radiation modes. 
 
 Let us consider the concrete case of a nanofiber with step-function-like permittivity as a function of $ r_\perp $. The analogy of trapping potentials of the wave equation is illustrated in Fig.~\ref{Figs/scatteredmode}. In the regime $ n_2k<\beta<n_1k $, the eigenmodes have discrete solutions with respect to $ \beta $, which yield $ \beta=\beta_0 $ for a single-mode fiber; in the $ 0<\beta<n_2k $ regime, the eigenmode solutions are continuous with respect to $ \beta $. Similar result applies to the \SWG case. 
 
@@ -369,7 +369,7 @@ Let us consider the concrete case of a nanofiber with step-function-like permitt
 \draw[auxline] (\a*1.85,-\eps) -- (\a*2.08,-\eps);
 \end{tikzpicture}
 }
-\caption[Trapping potential analogy of the bounded and unbounded modes of a nanofiber.]{Bound and unbound states for the fiber eigenvalue problem. $ \varepsilon(r\!_\perp)=\varepsilon_{f} =n_1^2$ if $ r_\perp < a $; otherwise, $\varepsilon(r\!_\perp) =1 $. The parameter $ a $ is the radius of the nanofiber.}
+\caption[Trapping potential analogy of the bound and unbound modes of a nanofiber.]{Bound and unbound states for the fiber eigenvalue problem. $ \varepsilon(r\!_\perp)=\varepsilon_{f} =n_1^2$ if $ r_\perp < a $; otherwise, $\varepsilon(r\!_\perp) =1 $. The parameter $ a $ is the radius of the nanofiber.}
 \label{Figs/scatteredmode}
 \end{figure}
 
@@ -501,7 +501,7 @@ The numerical method we used to solve the eigenmodes for the \SWG and general ge
 
 Here are some side notes, which may help clarify the reasons why we only consider a \SWG with a width of $ 300 $ nm besides the long-studied nanofiber case. In fact, on the course of this study, we have considered ridge and other types of waveguides. Eventually, we decided to study a simple shape of waveguides--a \SWG--as a proof of principles. There has also been a long discussion on purposefully designing a rectangular waveguide and imperfections on fabricating a \SWG, in which a \SWG essentially becomes a rectangular one. Based on some back-of-envelope calculations and simple simulations, we find a useful rectangular waveguide might have to be too long to fabricate and, if we choose a width of $ 300$--$320 $ nm, the imperfections in fabricating a \SWG processes would not generate noticeable influence on the physical effects we care about. As these reasonings involve the knowledge we are going to introduce later, we provide the details in Appendix~\ref{chap:choozingSWGs} in case readers are curious about them.
 
-\subsection{Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide}
+\subsection{Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide}\label{sec:calculatingGreenstensor}
 Starting from this section, we consider the light response in presence of a photon emitter outside of a dielectric waveguide. The dyadic Green's function, $ \GFT(\br,\br')=\GFT(\br,\br';\omega_0) $ is naturally a response function of the field measured at $ \br $ responding to a point radiating source at $ \br' $ in frequency $ \omega_0 $. Once the dyadic Green's function is solved, a field response due to some point sources can then be calculated. In this section, we consider a scenario that a bunch of atoms are trapped near to a nanophotonic waveguide, and formulate the general theory of field response using the Green's function method. For simplicity, we regard atoms as optical dipoles, which interact with light in terms of optical dipole radiation. The dipoles oscillate in space and time to form a current, $ \mathbf{J} $, which collectively generates an effective susceptibility for the atomic ensemble as a ``medium" and modulates the phase and amplitude of the light passing through the waveguide. 
 
 Given the index of refraction distribution function $ n(\br) $ with the waveguide as the background medium, a chromatic electric field modulated by the presence of atoms can be described by the wave equation below~\cite{Jackson1975}: 
@@ -586,9 +586,9 @@ Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that
 \end{equation}
 Note that all calculations are performed with a fixed frequency $ \omega_0 $. Alternatively, we calculate the $ ij $th element of the dyadic Green's function by
 \begin{align}\label{eq:GFTijEd}
-G_{ij}(\br,\br';\omega_0) =\frac{E_i(\br)}{d^{(j)}(\br')},
+G_{ij}(\br,\br';\omega_0) =\frac{E^i_j(\br)}{d^{(j)}(\br')},
 \end{align}
-where $ d^{(j)}(\br') $ is the dipole moment of a dipole at $ \br' $ with an orientation along the $ \mathbf{e}_j $ direction, and $ E_i(\br) $ is the $ i $th component of the calculated electric field responded at $ \br $.
+where $ d^{(j)}(\br') $ is the dipole moment of a dipole at $ \br' $ with an orientation along the $ \mathbf{e}_j $ direction, and $ E^i_j(\br) $ is the $ i $th component of the calculated electric field responded at $ \br $ in presence of the dipole source.
 Therefore, the key to calculate the dyadic Green's function in this approach is to solve the field emitted by a normalized dipole in presence of the waveguide in the frequency domain. In fact, there are many ways to calculate the fields with a dipole source in a medium. 
 
 The field can be analytically solved only if there is some special geometry of the waveguide. A nanofiber geometry is one example that one can solve the radiation problem analytically.  
@@ -608,6 +608,16 @@ However, in most geometries of waveguides, an analytical solution is not always 
 On the other hand, the BEM we use calculates the Maxwell equations in the frequency domain and evolve the equations as a linear system in the $ \beta $ (projected wave vector) space, which makes it possible to separate the guided and the radiation mode contributions based on the range of $ \beta $ (see Section~\ref{sec:eigenmodesofwaveguides}). It expresses electromagnetic field in terms of charges and currents distributed on the surfaces and interfaces of the structure under consideration. The boundary conditions for the electromagnetic field yield a set of linear integral equations, with unknown charges and currents, which are eventually solved self-consistently in the presence of the external incident field from the dipole source by discretizing the integrals with a finite set of boundary points (elements). The only assumption in this method is that the different media involved in the structures under study are described by frequency-dependent local dielectric functions, which is valid for our problem and we can use constant index of refractions for our study. Therefore, the complexity of BEM only scales quadratically with respect to the points on the boundary elements, not on the full simulation space as the FDTD method does, which makes BEM computational efficient to solve our problem. FEM has a computational complexity between FDTD method and BEM, by using a flexible mesh griding trick to simplify the calculations yet not as much as BEM does. 
 
 For our simulations, we decide to use a BEM program to simulate the electromagnetic field due to a unit dipole for the nanofiber geometry first to check the accuracy against our analytical solution, and then applied this method to the \SWG case. Since the field components on the $ z $ direction only yield a phase difference compared to the $ z=0 $ plane, we can fully solve our radiation problem on a 2D plane. With boundary points set for every $ 5 $--$ 6 $ nm away from each other on the boundary, we can achieve a negligible error deviation from our known solution (below $ 1\% $). We use $ \Delta \beta = 0.01k_0 $ interval to sample the $ \beta $-space calculations. One issue of this approach is that we have to make the medium of the waveguide ``imperfect" to avoid a divergent problem when we calculate the field response at the guided mode condition point $ \beta=\beta_0 $, by making $ n_1(\br_\perp\in \text{waveguide region})=n_1+i\delta n_1 $, where $ n_1 $ is the real waveguide bulk index of refraction constant and $ \delta n_1 $ is a small number (we find $ \delta n_1\sim 0.001 $ or $ 0.01 $ is good enough) to generate an artificial photon absorption. Without this treatment, since the field at $ \beta=\beta_0 $ is a delta function, the result will diverge. To calculate the field responded at the dipole position, which will be used for the modified decay rate calculation, we only calculate the induced electric field for a similar reason of the divergence of the real part of the Green's function. 
+In BEM, the Green's function tensor responded at the dipole position at $ \omega_0 $ due to the radiation modes can be decomposed into the free-dipole or homogeneous radiation contribution and the induced-dipole radiation contribution, that is 
+\begin{align} \GFT_{rad}(\br',\br';\omega_0)=\GFT_0(\br',\br';\omega_0)+\GFT_{ind,rad}(\br',\br';\omega_0),
+\end{align}
+where $ \GFT_{ind,rad}(\br',\br';\omega_0) $ plays the rule of the reflected field contribution, $ \GFT_R(\br',\br';\omega_0) $, in Eq.~\eqref{eq:GFTdecomp0RT}. 
+With a unit dipole orientated along $j$ direction placed at $ \br' $, the induced-dipole radiation Green's tensor elements can be calculated by~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}
+\begin{align}\label{eq:BEMGindij}
+G_{ind,rad}^{ij}(\mathbf{r}',\mathbf{r}')=\frac{2k_0^2}{3\pi^2}\int_{-n_2k_0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')=\frac{4k_0^2}{3\pi^2}\int_{0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')
+\end{align}
+where $ E_j^i(\mathbf{r}') $ is the $i$-th electric field component measured at the dipole position.
+
 
 We provide more details in Appendix(??)\qxd{to add the Jupyter notebook to appendix}. The precision calibration is carried out in the appendix by comparing the modified spontaneous decay rates using different approaches, which we will introduce the theory in later sections.
 
@@ -699,9 +709,9 @@ Radiative properties of a scatterer (the decay rate and energy level shift) are 
 \omega(\beta)}=\mathcal{P}\left[\frac{1}{\omega \mp \omega(\beta)} \right] + i \pi \delta (\omega_0 \mp 
 \omega(\beta)).
 \end{equation}
-Only the positive-frequency component contributes to the $\delta$-function, and it follows that the imaginary part of the Green's function at $\br = \br'$ that determines the resonant Purcell enhancement of spontaneous emission into the guided modes is \cite{Dung2000, Fussell2005Decay, Chen2010Finite}
+Only the positive-frequency component contributes to the $\delta$-function, and it follows that the Green's function tensor at $\br = \br'$ is imaginary, which determines the resonant Purcell enhancement of spontaneous emission into the guided modes~\cite{Dung2000, Fussell2005Decay, Chen2010Finite} and can be given by
 	\begin{equation}\label{Eq::ImGreenLocal_general}
-		{\rm Im} \big[\tensor{\mathbf{G}}^{(+)}_g(\br',\br'; \omega_0=\omega_{eg}) \big] = \pi \frac{\omega_{eg}}{v_g } \sum_{b, p} 
+		\tensor{\mathbf{G}}^{(+)}_g(\br',\br'; \omega_0=\omega_{eg}) = i\pi \frac{\omega_{eg}}{v_g } \sum_{b, p} 
 		\mathbf{u}_\mu (\br_{\!\perp}^\prime)\mathbf{u}^*_\mu (\br_{\!\perp}^\prime),
 	\end{equation}
 where $\omega_{eg}$ is resonance frequency of the atomic scatterer.  The energy level shift of the scatterer due to its proximity to the dielectric is found from the real part of the Green's function at $\br = \br'$. 
@@ -1117,69 +1127,86 @@ This reflects the fact that in the absence of hyperfine resolution, the nuclear 
 \subsection{Modification of decay rates of atomic transitions}\label{sec:modifieddecayrates}
 
 We specify the dipole source as an atom with arbitrary excited state level $ e $ and ground level $ g $ in the hyperfine structure manifold. 
-The atomic decay rate of the excited level $ e $ will be modified due to the presence of the nanophotonic structure and can be given by
+The atomic decay rate\index{decay rate} or spontaneous emission rate\index{spontaneous emission rate} of the excited level $ e $ will be modified due to the presence of the nanophotonic structure and can be given by
 \begin{align}
 \Gamma_e &= \frac{2}{\hbar}\sum_g \bra{g}\hat{\mathbf{d}}\ket{e} \cdot \mathrm{Im}\left[\tensor{\mathbf{G}}(\br',\br';\omega_{eg}) \right]\cdot \bra{e}\hat{\mathbf{d}}\ket{g}\label{eq:Gamma_e}
 \end{align}
-with the total Green's function tensor as a combination of the contributions from the guided modes and radiative modes, $ \tensor{\mathbf{G}}(\br',\br';\omega_{eg})=\tensor{\mathbf{G}}_{gyd}(\br',\br';\omega_{eg})+\tensor{\mathbf{G}}_{rad}(\br',\br';\omega_{eg}) $.
+with the total Green's function tensor as a combination of the contributions from the guided modes and radiation modes, $ \tensor{\mathbf{G}}(\br',\br';\omega_{eg})=\tensor{\mathbf{G}}_{gyd}(\br',\br';\omega_{eg})+\tensor{\mathbf{G}}_{rad}(\br',\br';\omega_{eg}) $.
 For simplicity, we will hide the frequency-dependence part from the Green's function tensors below.
-Correspondingly, $ \Gamma_e=\Gamma_{e,gyd}+\Gamma_{e,rad} $ can also be decomposed into the guided mode and radiative mode contribution parts. 
-In the free space, the local Green's function tensor has a divergent real part and the imaginary part in the CGS units can be given by 
-$\mathrm{Im}\left[\tensor{\mathbf{G}}_0\right]=G_0\tensor{\mathbbm{1}}$ with $G_0(\mathbf{r}',\mathbf{r}';\omega_{eg})=\frac{2}{3}k_0^3$.
-In presence of a waveguide, the Green's function tensor due to the radiative modes can be decomposed into the free-space or homogeneous radiation contribution and the waveguide-induced radiation contribution, that is $ \mathrm{Im}\left[\tensor{\mathbf{G}}_{rad}(\br',\br')\right]=\tensor{\mathbf{G}}_0(\br',\br')+\tensor{\mathbf{G}}_{ind,rad}(\br',\br';\omega_{eg}) $.
-The waveguide-induced Green's function tensor elements due to the radiative modes can be calculated by
-$$G_{ind,rad}^{ij}(\mathbf{r}',\mathbf{r}')=\frac{2k_0^2}{3\pi^2}\int_{-k_0}^{k_0} d\beta E_j^i(\mathbf{r}')=\frac{4k_0^2}{3\pi^2}\int_{0}^{k_0} d\beta E_j^i(\mathbf{r}')$$
-once $ E_j^i(\mathbf{r}') $--the $i$-th electric field component measured at the dipole position by putting a unit dipole orientated along $j$ direction--can be obtain using numerical methods like boundary element method (BEM) or analytically.
+Correspondingly, $ \Gamma_e=\Gamma_{e,gyd}+\Gamma_{e,rad} $ can also be decomposed into the guided mode and radiation mode contribution parts. 
+Depending on the method to use for the Green's tensor calculation, the radiation mode contribution part can be decomposed in various ways, which usually include the free-dipole radiation contribution (see Sec.~\ref{sec:calculatingGreenstensor}).
+What we are interested in is the relative ratio between the modified decay rates for given $e\rightarrow g$ transitions for all $ g $'s and the natural linewidth, $ \Gamma_0 $, of an atom, that is $ \Gamma_e^q/\Gamma_0 $. 
+Moreover, the local Green's tensor due to a free dipole's radiation has a divergent real part and the imaginary part has been given in Appendix~\ref{chap:freespacegreenfunction}. 
+Therefore, we only need to solve for the transmissive Green's tensor (if using the analytical solution given in Appendix~\ref{chap:fibereigenmodes}) or the induced-dipole radiation Green's tensor (if the BEM method is used defined by Eq.~\eqref{eq:BEMGindij}) and the guided mode Green's tensor (usually can be calculated using the eigenmode decomposition method by Eq.~\eqref{Eq::ImGreenLocal_general}).
 
     
-What we are interested in is the relative ratio between the modified decay rates for a given $e\rightarrow g$ decay transition for all $ g $ and the natural linewidth, $ \Gamma_0 $, of the atoms, that is $ \Gamma_e^q/\Gamma_0 $. 
-We can define an equivalent classical dipole, $ \mathbf{d}=\bra{g}\hat{\mathbf{d}}\ket{e} $, corresponding the $ e\rightarrow g $ decay transition which is along the $ \mathbf{e}_q $ ($q=\{\pm,0\}$) unit vector direction in the spherical irreducible harmonic basis, where
+We can define an equivalent classical dipole, $ \mathbf{d}=\bra{g}\hat{\mathbf{d}}\ket{e} $, corresponding to the $ e\rightarrow g $ decay transition which is along the $ \mathbf{e}_q $ ($q=\{\pm,0\}$) unit vector direction in the spherical irreducible harmonic basis, where
 \begin{align}
     \mathbf{e}_\pm &=\mp \frac{\mathbf{e}_{\tilde{x}}\pm i\mathbf{e}_{\tilde{y}}}{\sqrt{2}}\\
     \mathbf{e}_0 &=\mathbf{e}_{\tilde{z}}
 \end{align}
 correspond to the $\sigma_\pm$ and $\pi$ transitions, respectively.
-We have defined $ (\tilde{x},\tilde{y},\tilde{z}) $ as the quantization basis.
-In our simulation of the square waveguide case, we have used $\varepsilon=4$ (without loss) to calculate the radiative mode induced Green's function tensor elements.
-Therefore, the radiative mode caused decay rates can be calculated by
+We have defined $ (\tilde{x},\tilde{y},\tilde{z}) $ as the quantization basis, which is fixed by using a magnetic field in experiments and can be arbitrary.
+In our simulation of the square waveguide case, we have used $\varepsilon=4$ (without loss) to calculate the induced radiation mode Green's function tensor elements.
+In that case, the radiation-mode-caused decay rates can be calculated by
 \begin{align}
 \frac{\Gamma_{e,rad}^{q}}{\Gamma_0} &= 1+ \frac{\mathrm{Im}\left[\mathbf{e}_q\cdot \tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}')\cdot \mathbf{e}_q^*\right]}{ \mathrm{Im}\left[\mathbf{e}_q\cdot \tensor{\mathbf{G}}_0(\mathbf{r}',\mathbf{r}')\cdot \mathbf{e}_q^*\right]}
 =1+ \frac{\mathbf{e}_q\cdot \mathrm{Im}\left[\tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{G_0(\mathbf{r}',\mathbf{r}')}.\label{eq:Gammaeq_rad}
 \end{align}
+Replacing $ \tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}') $ with $ \tensor{\mathbf{G}}_R(\mathbf{r}',\mathbf{r}') $ using the radiation field solutions provided in Appendix~\ref{sec:boundrad} gives another way to calculate the radiation-mode Green's tensor for the nanofiber case when the reflected field solutions are known.
+
 Similarly, the guided mode contribution to the decay rates can be given by
 \begin{align}
 \frac{\Gamma_{e,gyd}^{q}}{\Gamma_0} &= \frac{\mathrm{Im}\left[\mathbf{e}_q\cdot \tensor{\mathbf{G}}_{gyd}(\mathbf{r}',\mathbf{r}')\cdot \mathbf{e}_q^*\right]}{ \mathrm{Im}\left[\mathbf{e}_q\cdot \tensor{\mathbf{G}}_0(\mathbf{r}',\mathbf{r}')\cdot \mathbf{e}_q^*\right]}
 = \frac{\mathbf{e}_q\cdot \mathrm{Im}\left[ \tensor{\mathbf{G}}_{gyd}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{ G_0(\mathbf{r}',\mathbf{r}')}.\label{eq:Gammaeq_guide}
 \end{align}
-As has been derived in Ref~\cite{Qi2016},
-\begin{align}
-\mathrm{Im}[\tensor{\mathbf{G}}_{gyd}(\br',\br')] &= \pi \frac{\omega_{eg}}{v_g } \sum_{b, p} 
-		\mathbf{u}_{b, p} (\br_{\!\perp}^\prime)\mathbf{u}^*_{b , p} (\br_{\!\perp}^\prime),
-\end{align}
-where $\mathbf{u}_{b, p} (\br_{\!\perp}^\prime)$ is the guided mode with propagation direction $ b=\pm 1 $ and polarization degeneracy index $ p $ at the dipole position in the transverse plane of the waveguide crossing section perpendicular to the waveguide axis.
-$v_g$ is the group velocity of the degenerate guided modes.
-For the nanofiber case, $ p=\pm 1 $ correspond to the right- and left-circularly polarized fundamental $\mathrm{HE}_{11}$ modes; 
-for the \SWG case, $ p=\mathrm{H}/\mathrm{V} $ corresponding to the H- and V-modes chosen for the spin squeezing protocol.
+We find the easiest way to calculate the guided-mode Green's tensor is to use the eigenmode decomposition method provided in Eq.~\eqref{Eq::ImGreenLocal_general},
+as long as the guided eigenmodes $\mathbf{u}_{b, p} (\br_{\!\perp}^\prime)$ with propagation direction $ b=\pm 1 $ and corresponding polarization degeneracy indices $ p $ can be solved analytically or numerically.
+The group velocity $v_g$ or the group index of refraction $ n_g $ of the degenerate guided modes can usually be solved as a by-product of solving the eigenmode of the waveguide.
+For the nanofiber case, $ p=\pm 1 $ correspond to the right- and left-circularly polarized fundamental $\mathrm{HE}_{11}$ modes; the eigenmode in the $ \{H,V\} $ basis is also available for the nanofiber geometry (see Appendix~\ref{chap:fibereigenmodes}).
+For the \SWG case, $ p=\mathrm{H}/\mathrm{V} $ correspond to the quasi-\TE and quasi-\TM modes.
 
-\begin{figure}[!htb]
+By choosing the waveguide axis as the quantization axis and the direction connecting the center of the waveguide and the atom's azimuthal position--which is perpendicular to the waveguide surface--as the $ \tilde{x} $ axis, we calculated the modified spontaneous emission rates of various dipole orientations for both the nanofiber and the \SWG, and decompose the rates into the guided and unguided mode contributions (see Fig.~\ref{fig:decayrates}). 
+Based on our simulations, we find that if $ r^\prime\!_\perp\ge 1.8a $ for the nanofiber or $ r^\prime\!_\perp\ge 1.2w $ for the \SWG, the total decay rates are barely modified from the natural linewidth, despite of various dipole orientations.
+That is we can safely ignore the modification of the decay rates due to the presence of the two types of waveguides when the atoms are trapped in a far distance from the waveguide surface. I have to point out that, how far is far enough to valid our statement above also depends on the choice of quantization axis. 
+For the \SWG case, the azimuthal angle of the trapping position will also affect the estimation of decay rate modification, but we will only consider the particular azimuthal trapping angle discussed above, which could be the easiest to implement in experiments.
+Based on our simulations with other choices of quantization axis, $ r\!_\perp>1.8a $ for the nanofiber or $ r\!_\perp>1.3w $ seem to be a good range when the waveguide modification effects are negligible. We will work in these ranges for most of this dissertation work to explore the quantum measurement dynamics.
+
+% MakePlot script and data files available in the FaradayProtocol repo.
+\begin{figure}[!tbp]
   \centering
   \begin{minipage}[h]{\linewidth}
   %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
   \hspace{-30pt}
-   \subfloat[h][$ \Gamma_{\rm nanofiber}/\Gamma_0 $]{
-     \includegraphics[width=0.5\textwidth]{../media/Figs/nanofiber_decayrates.tex}
+   \subfloat[h][]{
+     \includegraphics[width=0.5\textwidth]{../media/Figs/nanofiber_decayrates_D1.tex}
      %\includegraphics[width=0.5\textwidth]{../media/Figs/FaradayProtocol-Figure14}
-     \label{fig:nanofiber_decayrates}
+     \label{fig:nanofiber_decayrates_D1}
      }
     \hfill
-   \subfloat[h][$\Gamma_{\rm SWG}/\Gamma_0$]{
-     \includegraphics[width=0.51\textwidth]{../media/Figs/swg_decayrates.tex}
+   \subfloat[h][]{
+     \includegraphics[width=0.51\textwidth]{../media/Figs/swg_decayrates_D1.tex}
      %\includegraphics[width=0.51\textwidth]{../media/Figs/FaradayProtocol-Figure15}
-     \label{fig:swg_decayrates}
+     \label{fig:swg_decayrates_D1}
      }
-    \end{minipage}
+  \end{minipage}
+  \begin{minipage}[h]{\linewidth}
+    %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
+    \hspace{-30pt}
+     \subfloat[h][]{
+       \includegraphics[width=0.5\textwidth]{../media/Figs/nanofiber_decayrates_D2.tex}
+       %\includegraphics[width=0.5\textwidth]{../media/Figs/FaradayProtocol-Figure14}
+       \label{fig:nanofiber_decayrates_D2}
+       }
+      \hfill
+     \subfloat[h][]{
+       \includegraphics[width=0.51\textwidth]{../media/Figs/swg_decayrates_D2.tex}
+       %\includegraphics[width=0.51\textwidth]{../media/Figs/FaradayProtocol-Figure15}
+       \label{fig:swg_decayrates_D2}
+       }
+  \end{minipage}
     %\end{tabular}
-\caption{Polarization-dependent decay rates for the nanofiber \protect\subref*{fig:nanofiber_decayrates} and SWG \protect\subref*{fig:swg_decayrates} as functions of the radial distance to the waveguides' symmetric centers. Line types differ the contributions from the guided and radiative modes and the combined total value; colors distinguish the polarizations of $ \sigma_\pm $, $ \pi $ and the averaged case. }\label{fig:decayrates}
+\caption[(color online) Polarizability-dependent decay rates for the nanofiber and SWG as functions of the atoms' radial position relative to the waveguides' symmetric centers.]{(color online) Polarizability-dependent decay rates for the nanofiber (a,c) and SWG (b,d) as functions of the radial distance of the trapped atoms to the waveguides' symmetric centers. (a,b) use D1 line ($ \lambda=894 $ nm), and (c,d) use D1 line ($ \lambda=852 $ nm). Line types distinguish the contributions from the guided and radiation modes and the combined total value; colors distinguish the polarizabilities or equivalent dipole orientations of $ \sigma_\pm $, $ \pi $ transitions and the averaged case. }\label{fig:decayrates}
 \end{figure}
 
 To calculate the modified decay rates of a multilevel atom in presence of the nanophotonic waveguides, one need to represent the dipole operators considering the particular level structure of the atom. 
@@ -1385,7 +1412,7 @@ fiber. For fixed $ \varepsilon_f $, in the range that $ 0\leq \beta \leq
 k\sqrt{\varepsilon_f} $, we can distinguish the radiation and bound mode as follows:
 \begin{align}
 \begin{cases}
-0\leq \beta < k, &\rightarrow \emph{unbounded radiation modes;}\\
+0\leq \beta < k, &\rightarrow \emph{unbound/radiation modes;}\\
 k< \beta \leq k \sqrt{\varepsilon_f}, &\rightarrow \exists a,\, \emph{HE}_{11}\, \emph{is the only 
 bound mode.}
 \end{cases}

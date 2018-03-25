@@ -12,7 +12,7 @@ scale only axis,
 xmin=0.5000,
 xmax=2.0000,
 xlabel style={font=\color{white!15!black}},
-xlabel={$r\!_\perp/d$},
+xlabel={$r\!_\perp/w$},
 ymin=0.0000,
 ymax=2.5000,
 ylabel style={font=\color{white!15!black}},
@@ -309,7 +309,7 @@ axis background/.style={fill=white}
 \node[right, align=left]
 at (axis cs:0.94,2.2) {total};
 \node[right, align=left]
-at (axis cs:0.835,2.052) {radiative};
+at (axis cs:0.815,2.052) {unguided};
 \node[right, align=left]
 at (axis cs:0.91,1.904) {guided};
 \node[right, align=left]
@@ -320,11 +320,11 @@ at (axis cs:1.5,2.3) {$\sigma_\pm$};
 at (axis cs:1.767,2.3) {$\pi$};
 \addplot [color=black, line width=1.0pt, forget plot]
   table[row sep=crcr]{%
-0.8650	2.4000\\
-0.8650	1.7790\\
+0.8450	2.4000\\
+0.8450	1.7790\\
 1.9500	1.7790\\
 1.9500	2.4000\\
-0.8650	2.4000\\
+0.8450	2.4000\\
 };
 \end{axis}
 \end{tikzpicture}%

@@ -5,7 +5,7 @@
 \begin{tikzpicture}
 
 \begin{axis}[%
-width=2.703in,
+width=2.664in,
 height=2.5in,
 at={(0in,0in)},
 scale only axis,
@@ -14,7 +14,7 @@ xmax=2.5000,
 xlabel style={font=\color{white!15!black}},
 xlabel={$r\!_\perp/a$},
 ymin=0.0000,
-ymax=2.0000,
+ymax=1.6000,
 ylabel style={font=\color{white!15!black}},
 ylabel={$\Gamma_{nanofiber}^i/\Gamma_0$},
 axis background/.style={fill=white}
@@ -406,7 +406,7 @@ axis background/.style={fill=white}
 \node[right, align=left]
 at (axis cs:1.44,0.65) {total};
 \node[right, align=left]
-at (axis cs:1.325,0.555) {radiative};
+at (axis cs:1.305,0.555) {unguided};
 \node[right, align=left]
 at (axis cs:1.4,0.46) {guided};
 \node[right, align=left]
@@ -417,11 +417,11 @@ at (axis cs:2,0.75) {$\sigma_\pm$};
 at (axis cs:2.267,0.75) {$\pi$};
 \addplot [color=black, line width=1.0pt, forget plot]
   table[row sep=crcr]{%
-1.3450	0.8500\\
-1.3450	0.4100\\
+1.3250	0.8500\\
+1.3250	0.4100\\
 2.4500	0.4100\\
 2.4500	0.8500\\
-1.3450	0.8500\\
+1.3250	0.8500\\
 };
 \end{axis}
 \end{tikzpicture}%
