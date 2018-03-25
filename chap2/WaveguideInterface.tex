@@ -597,8 +597,8 @@ Using this method, we are able to decompose the unguided mode contribution to th
 \begin{align}\label{eq:GFTdecomp0RT}
 \GFT(\br,\br') = \left\{ 
 \begin{array}{lc}
-\GFT_0(\br,\br')+\GFT_R(\br,\br'), & \text{unguided-mode contributions }\\
-\GFT_T(\br,\br'), & \text{guided-mode contributions}
+\GFT_0(\br,\br')+\GFT_R(\br,\br'), & \br\text{ outside of the waveguide}\\
+\GFT_T(\br,\br'), & \br\text{ inside the waveguide}
 \end{array}\right..
 \end{align}
 
@@ -837,7 +837,7 @@ To further compare our results with the free-space atom-light interaction case, 
 \alpha &=-\frac{|d_{eg}|^2}{\hbar \Delta}, \,\, (\Delta=\omega-\omega_{eg}=\omega-\omega_0)\\
 \Gamma^{1D}_{\rm nanofiber} &= \Gamma_g=2\pi \frac{|d_{eg}|^2}{\hbar A_{e\!f\!f}^{\rm nanofiber}}\left(\frac{\omega_0}{c} \right),
 \end{align}
-where $ d_{eg} $ is the dipole momentum of the atom, and we have ignored the imaginary part of the atomic polarizability in the dispersive regime~\cite{Deutsch2010a}.
+where $ d_{eg} $ is the dipole moment of the atom, and we have ignored the imaginary part of the atomic polarizability in the dispersive regime~\cite{Deutsch2010a}.
 We recall the natural linewidth of the atom is (see Eq.~\eqref{eq:naturallinewidth})
 \begin{align}
 \Gamma_0 &= \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}
@@ -909,91 +909,62 @@ From Fig.~\ref{fig:relenhancement}, using the nanofiber, we find there is a $ 3 
 In the last section, we have estimated the atom-light coupling enhancement due to the presence of an optical nanofiber, and in general a nanophotonic waveguide. Despite the estimation is good enough for our purpose, the model we used may be too rough for us to study other quantum effects to be discussed later, given that the polarizability of the atom was assumed to be a scalar and the modification of the atomic decay rate doesn't consider the detailed atom's internal structure. In this section, we provide a detailed theory on the polarizability of atoms and the modification of atomic decay rates due to external field. We will process the theory from classical to quantum description.
 
 \subsection{Dipole oscillation and emission of polarized light}
-Here we present some results of electrical dipole radiations.
-
-In the Green's function language, we can obtain the electrical field emitted by an electric dipole source by
-\begin{align}\label{EGd}
-\mathbf{E}(\br) &=  \int\mathbf{G}(\br,\br')\cdot \mathbf{d}(\br') \mathrm{d}\br', 
-\end{align}
-where $ \mathbf{G}(\br,\br') $ is the dyadic Green's functions for a dipole located at $ \br' $ with a dipole moment of $ \mathbf{d}(\br') $. $\mathbf{G}(\br,\br')$ can be determined from the scalar Green's function $G_0(\br,\br')$ by 
+In this subsection, we present a simple model to show how the polarizability of alkali atoms are modified by an external field. Again, we assume the intrinsic polarizability of an atom is a scalar $ \alpha $, and a light shines at the atom through an arbitrary interface of media, which can be fully characterized by the dyadic Green's function $ \GFT(\br,\br') $. Under the Born approximation, the resulted electric field at the atom position can be given by
 \begin{align}
-\mathbf{G}(\br,\br') = \left[\mathbbm{1} + \frac{1}{k^2}\nabla\nabla \right]G_0(\br,\br')
+\mathbf{E}(\br') 
+&=\mathbf{E}_0(\br')+ \alpha\mathbf{G}(\br',\br') \cdot \mathbf{E}_0(\br').\label{eq:EoutG}
 \end{align}
-with the scalar Green's function we got in the last section given by
-\begin{align}\label{scalarG}
-G_0(\br,\br') = k^2\frac{e^{ik|\br-\br'|}}{|\br-\br'|}. 
-\end{align}
-
-For a discrete dipole source with $ \mathbf{d}(\br)= \mathbf{d}\delta(\br-\br') = \mathbf{d}(\br')  $, the electrical field at an arbitrary position $\br$ can be given by
-\begin{align}
- \mathbf{E}(\br) &= \mathbf{G}(\br,\br')\cdot \mathbf{d}(\br'), 
-\end{align}
-where Gaussian units have been applied. This equation describes how a dipole emits electromagnetic wave and how the electromagnetic field distributes in space due to the oscillation of the electrical dipole source. 
-
-In a classical picture, if there is a field $ \mathbf{E}_0 $ propagates cross the dipole source, the dipole will respond and generate a scattered field which overlaps with the incident field to yield a total field described by
-\begin{align}
-\mathbf{E}(\br) &= \mathbf{E}_0(\br)+\mathbf{G}(\br,\br')\cdot \mathbf{d}(\br')\\
-&=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\boldsymbol{\alpha}}\cdot \mathbf{E}(\br'),
-\end{align}
-where $ \tensor{\boldsymbol{\alpha}} $ is the atomic polarizability and $ k=\omega/c $. Under the Born approximation, the total field can be given by
-\begin{align}
-\mathbf{E}(\br) 
-&=\mathbf{E}_0(\br)+ \mathbf{G}(\br,\br')\cdot \tensor{\boldsymbol{\alpha}}\cdot \mathbf{E}_0(\br').\label{eq:EoutG}
-\end{align}
-
-In the context of nanophotonic waveguides and atomic system, the dyadic Green's function can be decomposed into the free-dipole, reflective and transmissive mode contributions as defined in Eq.~\eqref{eq:GFTdecomp0RT} denoted by the subscripts, $ 0 $, $ R $ and $ T $, respectively. 
- 
-The atomic polarizability can be calculated through emission response models. For now, we only look at a very simple scalar response case where the polarizability tensor becomes a scalar quantity. A self-consistent equation for an atom at $ \br' $ excited by an incident electrical field can be given by 
+Note that, in the context of nanophotonic waveguides, the dyadic Green's function can be decomposed into the free-dipole, reflective and transmissive mode contributions as defined in Eq.~\eqref{eq:GFTdecomp0RT} denoted by the subscripts, $ 0 $, $ R $ and $ T $, respectively. By treating the atom as a classical oscillator of a single electron around the nucleus, a self-consistent equation for an atom at $ \br' $ excited by an incident optical field may be given by 
 \begin{align}
 (-\omega^2+\omega_0^2)\br' &= -\frac{e}{m}\mathbf{E}(\br')\\
-&=-\frac{e}{m}\left[\mathbf{E}_0(\br')+ {\alpha}\mathbf{G}(\br',\br')\cdot  \mathbf{E}(\br') \right],
+&=-\frac{e}{m}\left[\mathbf{E}_0(\br')+ {\alpha}\GFT(\br',\br')\cdot  \mathbf{E}_0(\br') \right],\label{eq:rEG}
 \end{align}
-where $\omega_0$ is the atomic resonance. Using the definitions that 
+where $\omega_0$ is the atomic resonance. The dipole moment, $ \mathbf{d}=d\mathbf{e}_d $, can be defined by 
 \begin{align}
-\mathbf{d}(\br') &=-e\br'=\alpha \mathbf{E}(\br')\approx \alpha \mathbf{E}_0(\br'),\\
-\Delta &=\omega-\omega_0,
+\mathbf{d}(\br') &=-e\br'=\alpha \mathbf{E}(\br')\label{eq:dralphaE}\\
+&\approx \alpha \mathbf{E}_0(\br'),
 \end{align}
-and only consider the near-resonance case, we can obtain
+where $ \alpha' $ is the modified polarizability after the interaction, $ e $ is the charge of the electron and $ m $ is the effective mass of the oscillator. 
+Assuming the dipole is oscillating along the $ \mathbf{e}_d $ direction and plugging Eq.~\eqref{eq:rEG} into Eq.~\eqref{eq:dralphaE}, we can obtain
 \begin{align}
-\left[-\Delta\mathbbm{1} -\frac{e^2}{2m\omega_0}\mathbf{G}(\br',\br') \right] &\cdot \mathbf{d}(\br') = \frac{e^2}{2m\omega_0}\mathbf{E}_0(\br')\\
-\Rightarrow\qquad d &=\frac{\frac{e^2}{2m\omega_0}}{-\Delta-\frac{ e^2}{2m\omega_0}\hat{d}\cdot\mathbf{G}(\br',\br')\cdot \hat{d}}E_0(\br')\\
+\mathbf{d}(\br') &=\frac{e^2}{m(\omega_0^2-\omega^2)}\left\{\mathbf{E}_0(\br')+ \GFT(\br',\br')\cdot  \left[{\alpha}\mathbf{E}(\br')\right] \right\}.
+\end{align}
+In the near resonant regime, $ \omega_0^2-\omega^2\approx -2\omega_0\Delta $, with and the detuning, $ \Delta =\omega-\omega_0$, and hence
+\begin{align}
+\left[-\Delta\unittensor -\frac{e^2}{2m\omega_0}\GFT(\br',\br') \right] &\cdot \mathbf{d}(\br') = \frac{e^2}{2m\omega_0}\mathbf{E}_0(\br').
+\end{align}
+Therefore, we obtain the dipole moment
+\begin{align}
+d &=\frac{\frac{e^2}{2m\omega_0}}{-\Delta-\frac{ e^2}{2m\omega_0}\mathbf{e}_d\cdot\GFT(\br',\br')\cdot \mathbf{e}_d}E_0(\br')\\
 &=\frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma}E_0(\br'),
 \end{align}
-where we have defined the Lamb shift $ \delta \Delta= \frac{e^2}{2m\omega_0}\re\left[\hat{d}^\dagger\cdot\mathbf{G}(\br',\br')\cdot \hat{d} \right]$ with the dipole direction $ \hat{d} $ and the radiation reaction decay rate 
+where we have defined the Lamb shift $ \delta \Delta= \frac{e^2}{2m\omega_0}\re\left[\mathbf{e}_d\cdot\GFT(\br',\br')\cdot \mathbf{e}_d \right]$ with the radiation reaction decay rate 
 \begin{align}
-\Gamma &= \frac{e^2}{m\omega_0}\im\left[\hat{d}^\dagger\cdot\mathbf{G}(\br',\br')\cdot \hat{d}\right]\\
+\Gamma &= \frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT(\br',\br')\cdot \mathbf{e}_d\right]\\
 &= \Gamma_0 + \delta \Gamma,
 \end{align}
-with the natural linewidth $ \Gamma_0=\frac{e^2}{m\omega_0}\im\left[\hat{d}^\dagger\cdot\mathbf{G}_0(\br',\br')\cdot \hat{d}\right] $ and the shift in decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\im\left[\hat{d}^\dagger\cdot\mathbf{G}_R(\br',\br')\cdot \hat{d}\right] $. The scripts $ \Re $ and $ \Im $ correspond to extracting real and imaginary parts operations. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the dipole oscillating direction. Therefore, the scalar atomic polarizability can be given by
+the natural linewidth $ \Gamma_0 =\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_0(\br',\br')\cdot \mathbf{e}_d\right] $, and the shift in decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_R(\br',\br')\cdot \mathbf{e}_d\right] $. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the dipole oscillating direction. Therefore, the scalar atomic polarizability can be given by
 \begin{align}
 \alpha &= \frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma},
 \end{align}
-which includes the modification from the incident field. 
+which includes the modification of the atom's resonance and decay rate due to the incident field. 
 
-By solving the free-space dipole radiation problem, the imaginary part of the free-space Green's function can be given by
+By solving the free-space dipole radiation problem (see Appendix~\ref{chap:freespacegreenfunction}), the imaginary part of the free-space Green's function can be given by
 \begin{align}
-\mathrm{Im}\left[ \mathbf{G}^{(0)} (\br^\prime\!_\perp, \br^\prime\!_\perp) \right] &= \mathrm{Im} 
-\left[ \mathbf{G}^{rad}_{(0)}(\br'\!_\perp,\br'\!_\perp)\right]  = \frac{ 
-2k^3}{3}\eye = \frac{2}{3}\left(\frac{ 
-\omega}{c}\right)^3\eye
+\mathrm{Im}\left[ \GFT_0 (\br^\prime\!_\perp, \br^\prime\!_\perp) \right] &=  \frac{
+2k^3}{3}\unittensor = \frac{2}{3}\left(\frac{\omega_0}{c}\right)^3\unittensor
 %\Im\left[\mathbf{G}_0(\br',\br') \right] =\frac{k^3}{6\pi} \mathbbm{1} \approx \frac{1}{6\pi}k^3_0\mathbbm{1}.
 \end{align}
 Hence the natural linewidth of an atom can be given by
 \begin{align}
 \Gamma_0 = \frac{2}{3}\frac{e^2\omega_0^2}{mc^3}=\frac{2}{3}k_0r_{class},
 \end{align}
-where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the classical radius of the atom. After considering quantum effects, there will be a factor $ f=\frac{2m\omega_0}{\hbar e^2}|d_{eg}|^2 $ modification to the decay rates. 
-
-\textcolor{red}{To be continued: total dipole momentum and vacuum dipole momentum, more details on quantum model for the polarizability...}
-\begin{align}
-\boldsymbol{\alpha} &= \sum_e \frac{\mathbf{d}_{ge}\mathbf{d}_{eg}}{-\hbar(\Delta+i\gamma_{eg}/2)}
-\end{align}
-The irreducible tensor decomposition can be found in the spin control and measurement long paper\cite{Deutsch2010a} or in Le Kien's dynamical polarizability of atoms paper~\cite{LeKien2013}. 
+where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the classical radius of the atom. Note that, after considering quantum effects, there may be a factor of $ f_0=\frac{2m\omega_0}{\hbar e^2}|d_{eg}|^2 $ modification to the decay rates. 
 
 
 %\section{Polarizability of alkali atoms}
 \subsection{Polarizability of alkali atoms}
-Above, the theory we derived has not considered the real atom multilevel structure. Below, we will quantize the field and consider the inner structure of the Cs atoms.
+Now, we consider the inner quantum structure of the alkali atoms.
 
 In the interaction picture, the dipole operator associated with an atomic level $ g $ can be given by
 \begin{align}\label{eq:dtop}
@@ -1002,51 +973,49 @@ In the interaction picture, the dipole operator associated with an atomic level 
 where the upward and downward transitions are described by
 \begin{align}
 \hat{\mathbf{d}}_{eg} &= \mathbbmss{P}_e\mathbf{d}_{eg}\mathbbmss{P}_g\\
-&= \ketbra{e} \mathbf{d}\ketbra{g}\\
-&= \bra{e} \mathbf{d}\ket{g} \ket{e}\!\!\bra{g}\\
-&= \mathbf{d}_{eg} \sigma_{eg}\\
+&= \ketbra{e} \mathbf{d}\ketbra{g} = \bra{e} \mathbf{d}\ket{g} \ket{e}\!\!\bra{g}\\
+&= \mathbf{d}_{eg} \hat{\sigma}_{eg}\\
 \hat{\mathbf{d}}_{ge} &=\hat{\mathbf{d}}_{eg}^\dagger \\
-&= \bra{g} \mathbf{d}^*\ket{e} \ket{g}\!\!\bra{e}\\
-&= \mathbf{d}_{ge}\sigma_{ge}.
+&= \bra{g} \mathbf{d}^*\ket{e} \ket{g}\!\!\bra{e} = \mathbf{d}_{ge}\hat{\sigma}_{ge}.
 \end{align}
-We denote the dipole vector $ \mathbf{d}=d\mathbf{e}_d=\sum_{q=0,\pm 1} (-1)^qd^{(q)}\mathbf{e}^*_{-q}=\sum_{q=0,\pm 1} d^{(q)}\mathbf{e}^*_{q} $ in terms of the spherical tensor components $ d^1=(d_{r\!_\perp}-id_{\phi})/\sqrt{2} $, $ d^0=d_z $ and $ d^{(-1)} =-(d_{r\!_\perp}+id_{\phi})/\sqrt{2} $, and the spherical vector basis $ \mathbf{e}_1=-((\mathbf{e}_{r\!_\perp}-i\mathbf{e}_{\phi})/\sqrt{2}) $, $ \mathbf{e}_0=\mathbf{e}_z $ and $ \mathbf{e}_{-1}=((\mathbf{e}_{r\!_\perp}+i\mathbf{e}_{\phi})/\sqrt{2}) $. The $ q $ spherical component of the dipole moment for the transition between $ e_{m'} $ and $ g_m $, for example, can be given by
+We denote the dipole vector $ \mathbf{d}=d\mathbf{e}_d=\sum_{q=0,\pm 1} (-1)^qd^{(q)}\mathbf{e}^*_{-q}=\sum_{q=0,\pm 1} d^{(q)}\mathbf{e}^*_{q} $ in terms of the spherical tensor components $ d^1=(d_{r\!_\perp}-id_{\phi})/\sqrt{2} $, $ d^0=d_z $ and $ d^{(-1)} =-(d_{r\!_\perp}+id_{\phi})/\sqrt{2} $, and the spherical vectors in the $ z $ basis, $ \mathbf{e}_1=-\left[(\mathbf{e}_{r\!_\perp}-i\mathbf{e}_{\phi})/\sqrt{2}\right]$, $ \mathbf{e}_0=\mathbf{e}_z $ and $ \mathbf{e}_{-1}=\left[(\mathbf{e}_{r\!_\perp}+i\mathbf{e}_{\phi})/\sqrt{2}\right] $. The $ q $ spherical component of the dipole moment for the transition between $ e_{m'} $ and $ g_m $, for example, can be given by
 \begin{align}
 d^{(q)}_{e_{m'}g_{m}}&= \sum_m \langle e||d||g\rangle \bra{e,m'}g,m,1,q\rangle .
 \end{align}
 In the frequency domain, we define 
 \begin{align}
 \hat{\mathbf{d}}(\omega) &= \int_0^\infty \hat{\mathbf{d}}(t)e^{-i\omega t}\mathrm{d}t\\
-&= \sum_e \left[ \frac{i\hat{\mathbf{d}}_{eg}}{ \omega -\omega_{eg}-i\gamma_{eg}/2 } + \frac{i\hat{\mathbf{d}}_{ge}}{ - \omega-\omega_{eg}-i\gamma_{eg}/2}\right].
+&= \sum_e \left[ \frac{i\hat{\mathbf{d}}_{eg}}{ \omega -\omega_{eg}-i\Gamma_{eg}/2 } + \frac{i\hat{\mathbf{d}}_{ge}}{ - \omega-\omega_{eg}-i\Gamma_{eg}/2}\right].
 \end{align}
 
-Now, consider a radiation reaction that an atom is polarized in response to a traveling guided mode electric field operator $ \hat{\mathbf{E}}_0(t)=\frac{1}{2}\left[\hat{\mathbf{E}}^{(+)}_0e^{-i\omega t} +  \hat{\mathbf{E}}^{(-)}_0e^{i\omega t}\right] $, with the guided mode labeled by an index $ \mu = (\omega,f,p)$
-\begin{align}
-\hat{\mathbf{E}}^{(+)}_0 &= \sqrt{\frac{\hbar \omega}{v_g}} \hat{a}_\mu \mathbf{u}_{\mu} (r\!_\perp) e^{if\beta z+ip\phi},
-\end{align} 
-where $ \mathbf{u}_{\mu} (r\!_\perp)=\mathbf{u}_\mu(r\!_\perp,\omega) $  is one of the normalized guided modes of the nanofiber. 
-
+We consider a radiation reaction that an atom is polarized in response to a traveling guided mode electric field operator $ \hat{\mathbf{E}}_0(t)=\frac{1}{2}\left[\hat{\mathbf{E}}^{(+)}_0e^{-i\omega t} +  \hat{\mathbf{E}}^{(-)}_0e^{i\omega t}\right] $. 
+%with the guided mode labeled by an index $ \mu = (\omega,f,p)$
+%\begin{align}
+%\hat{\mathbf{E}}^{(+)}_0 &= \sqrt{\frac{\hbar \omega}{v_g}} \hat{a}_\mu \mathbf{u}_{\mu} (r\!_\perp) e^{if\beta z+ip\phi},
+%\end{align} 
+%where $ \mathbf{u}_{\mu} (r\!_\perp)=\mathbf{u}_\mu(r\!_\perp,\omega) $  is one of the normalized guided modes of the nanofiber. 
 The induced dipole moment can be given by
 \begin{align}
 \hat{\mathbf{d}}(t) 
 %&= \frac{1}{2} \left[\boldsymbol{\alpha}^*(\omega)e^{i\omega t} +\boldsymbol{\alpha}(\omega)e^{-i\omega t} \right] \hat{\mathbf{E}}_0\\
-&= \Re\left[ \boldsymbol{\alpha}(\omega)\hat{\mathbf{E}}_0^{(+)} e^{-i\omega t}\right]
+&= \re\left[ \boldsymbol{\alpha}(\omega)\hat{\mathbf{E}}_0^{(+)} e^{-i\omega t}\right]
 \end{align}
 with the polarizability 
 \begin{align}\label{Eq::PTensorGen}
-\boldsymbol{\alpha}(\omega) &=\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\omega_{eg} -\omega -i\gamma_{eg}/2)} =-\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\Delta_{eg} +i\gamma_{eg}/2)}
+\poltens(\omega) &=\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\omega_{eg} -\omega -i\Gamma_{eg}/2)} =-\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\Delta_{eg} +i\Gamma_{eg}/2)}
 %\left[ \frac{1}{\omega_{eg} -\omega -i\gamma_{eg}/2 } + \frac{1}{\omega_{eg} +\omega +i\gamma_{eg}/2 } \right].
 \end{align}
-where we have ignored the counter-rotating terms for our near-resonance case and defined $ \Delta_{eg}=\omega-\omega_{eg} $. In the case that $ |\Delta_{eg} |\gg \gamma_{eg} $, we can ignore the $ i\gamma_{eg} $ component and simplify the polarizability of the atom as
+where we have ignored the counter-rotating terms for our near-resonance case and defined $ \Delta_{eg}=\omega-\omega_{eg} $. In the case that $ |\Delta_{eg} |\gg \Gamma_{eg} $, we can ignore the $ i\Gamma_{eg} $ component and simplify the polarizability of the atom as
 \begin{align}
-\boldsymbol{\alpha} &= -\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar\Delta_{eg}} 
+\poltens &= -\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar\Delta_{eg}} 
 \end{align} 
 
-For a real Cesium atom case, we focus on the transition from $ F=3 $ and $ F=4 $ manifolds of the ground state $ 6S_{1/2} $ to the $ F'=3 $ manifold of the exited state $ 6P_{1/2} $. We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014}
+For a real Cesium atom case, we take an example of the transitions between $ f=3 $ and $ f=4 $ manifolds of the ground state $ 6S_{1/2} $ to the $ f'=3 $ manifold of the exited state $ 6P_{1/2} $. We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014}
 \begin{align}
 \hat{\mathbf{d}}_{f'f} &=  \sum_q \sum_{m, m'}  \bra{f' m'} d_{f'\!,f}^q \ket{f m} \op{f' m'}{f m} \mathbf{e}_q^* \\
 & = \bra{ f' }| d | \ket{ f } \sum_q \sum_{m, m'}  \bravket{f m; 1 q}{f' m'} \op{f' m'}{f m} \mathbf{e}_q^*
 \end{align}
-where we used the Wigner-Eckart theorem to pull out the reduced matrix element $\bra{ f' }| d | \ket{ f } $.  It can be further simplified with another application of the Wigner-Eckart theorem,
+where we used the Wigner-Eckart theorem\index{Wigner-Eckart theorem} to pull out the reduced matrix element $\bra{ f' }| d | \ket{ f } $.  It can be further simplified with another application of the Wigner-Eckart theorem,
 	\begin{align}
 		\bra{ f' }| d | \ket{ f } = \bra{ j' }| d | \ket{ j } o^{j' f'}_{j f},
 	\end{align}
@@ -1079,7 +1048,8 @@ and $\delta_{f f'} \equiv \Delta_{f,f'} - \Delta$ is the residual detuning for t
 	\begin{align} \label{Eq::alpha0}
 		\alpha_0(\Delta) & =  -\frac{|  \bra{ j' }| d | \ket{ j } |^2}{\hbar \Delta } = - \frac{3 \lambda_{j' j}^3}{32 \pi^3} \frac{ \Gamma }{ \Delta }.
 	\end{align}
-\textcolor{red}{Note that this polarizability formula does not hold if we plug in the real numbers of Cs D1-line transition data, for example. I need to check the units later, but I would prefer to use the irreducible dipole moment element representation formula for now as it appears in Steck's data sheet.} The wavelength of the transition $\lambda_{j' j}$ and spontaneous emission rate $\Gamma$ are defined with respect to the fine-structure splitting $j' \rightarrow j$; that is,
+%\textcolor{red}{Note that this polarizability formula does not hold if we plug in the real numbers of Cs D1-line transition data, for example. I need to check the units later, but I would prefer to use the irreducible dipole moment element representation formula for now as it appears in Steck's data sheet.} 
+The wavelength of the transition $\lambda_{j' j}$ and spontaneous emission rate $\Gamma$ are defined with respect to the fine-structure splitting $j' \rightarrow j$. The spontaneous emission or decay rate is,
 	\begin{align}
 		\Gamma = \frac{1}{\hbar} \frac{4}{3} \frac{\omega_{j j'}^3}{c^3} | \bra{ j' }| d | \ket{ j } |^2.
 	\end{align}
@@ -1090,7 +1060,7 @@ The atomic polarizability tensor in \erf{Eq::PTensorGen} can then be written in 
 \tensor{\boldsymbol{\alpha}}(f) &=  \alpha_0(\Delta) \sum_{f'} \frac{ \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f}}{ 1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)}\\
 & = \alpha_0(\Delta) \sum_{q,q'}  \sum_{f,f'} \sum_{m_1, m_2, m'}  \frac{\mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}}{1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)},
 \end{align}
-where $ C^{fm;1q}_{f'm'}=  \bravket{f' m'}{f m; 1 q}= \bravket{f m; 1 q}{f' m'}$ is the Clebsch-Gordan coefficient. Also nothing that $m' = m_1 + q'$ and $m' = m_2 + q$ and thus
+where $ C^{fm;1q}_{f'm'}=  \bravket{f' m'}{f m; 1 q}= \bravket{f m; 1 q}{f' m'}$ are the Clebsch-Gordan coefficients\index{Clebsch-Gordan coefficient}. Also nothing that $m' = m_1 + q'$ and $m' = m_2 + q$ and thus
 \begin{align}
 	m_2 - m_1 = q-q'.
 \end{align}
@@ -1103,44 +1073,45 @@ For ${}^{133}$Cs with ground hyperfine manifolds $f = \{3,4\}$, this gives
 \tensor{\boldsymbol{\alpha}}(4) &=\alpha_0(\Delta_{4}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{4 f'} \hat{\mathbf{D}}_{f' 4}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4) }\\
 	 &= \alpha_0(\Delta_{4}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j4} |^2 C^{4m_2;1q}_{f'm'} C^{4m_1;1q'}_{f'm'} \op{4 m_2}{4 m_1}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4)} .
 \end{align}
-We have explicitly labeled the detunings by the ground state hyperfine level $f$ in order to emphasize that the detunings are different on each of the two terms.  Unless the laser detuning is chosen such that $\Delta_3$ and $\Delta_4$ are of the same order, one of the two terms will dominant the dynamics and the other can be ignored.
+We have explicitly labeled the detunings by the ground state hyperfine level $f$ in order to emphasize that the detunings may be different on each of the two terms.  Unless the laser detuning is chosen such that $\Delta_3$ and $\Delta_4$ are of the same order, one of the two terms will dominant the dynamics and the other can be ignored.
 
 
 % Irreducible tensors.
 \subsection{Irreducible tensor representation of atomic polarizability}
-\textcolor{red}{Content around this part is mainly copied from Ben's dissertation with some modifications.}
-The atomic polarizability tensor, being a dyad of two vector operators, can be decomposed into rank-0, rank-1, and rank-2 irreducible tensor components \cite{Stockton2007, Hammerer2006, Geremia2006, Deutsch2010a, LeKien2013}.  The terms in the Hamiltonian can be written in a Cylindrical basis, $ (r\!_\perp,\phi,z) $, which is useful for describing atomic interaction with nanofiber field. The dimensionless Cylindrical $ij$-component of the atomic polarizability tensor\index{polarizability!polarizability tensor} in the ground hyperfine state $f$ is defined,
+The beauty of some tensor operators is that it can be divided into lower-rank operators so that one can think about the state-independent operator component and the state-dependent operator components. In our case, the atomic polarizability tensor, being a dyad of two vector operators, can be decomposed into rank-0, rank-1, and rank-2 irreducible tensor components \cite{Baragiola2014Open,Stockton2007, Hammerer2006, Geremia2006, Deutsch2010a, LeKien2013}.  The polarizability tensor can be written in the spherical basis. The dimensionless spherical $ij$-component of the atomic polarizability tensor\index{polarizability!polarizability tensor} in the ground hyperfine state $f$ is defined as,
 \begin{align} \label{Eq::alphaij}
 \hat{\alpha}_{ij}(f) &\equiv \mathbf{e}_i \cdot \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f} \cdot \mathbf{e}_j\\
 &= \sum_{q,q'} \sum_{m_1, m_2, m'} \mathbf{e}_i \cdot\mathbf{e}_q \mathbf{e}^*_{q'}\cdot \mathbf{e}_j | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}.
 \end{align}	
-It can be shown that the block-diagonal terms have a basis-independent form whose Cartesian $ij$-components are \cite{Deutsch2010a},
+Note that the notation in \erf{Eq::alphaij} is different from that for the full polarizability tensor, \erf{Eq::AtomicPolarizabilityF}, (and different from that in Ref. \cite{Deutsch2010a}) in that it contains no units, detunings, or sums over excited states. This notation is intent to to isolate the irreducible tensor components in a simpler form. We will add in the detunings and other factors straightforwardly when needed.
+
+It has been proven that the block-diagonal terms have a basis-independent form whose Cartesian $ij$-components are~\cite{Deutsch2010a},
 	\begin{align} \label{Eq::IrreducibleDecomp}
-		\hat{\alpha}_{ij} (f) = C_{j' f f'}^{(0)} \delta_{ij} \hat{ I } + i C_{j' f f'}^{(1)} \varepsilon_{ijk} \hat{f}_k + C_{j' f f'}^{(2)} \left(\frac{1}{2} \big(\hat{f}_i \hat{f}_j + \hat{f}_j \hat{f}_i \big) - \frac{1}{3} \delta_{ij} \hat{ \mathbf{f} } \cdot \hat{ \mathbf{f} }  \right).  
+		\hat{\alpha}_{ij} (f) = C_{j' f f'}^{(0)} \delta_{ij} \hat{ I } \!+\! i C_{j' f f'}^{(1)} \varepsilon_{ijk} \hat{f}_k \!+\! C_{j' f f'}^{(2)} \left(\frac{1}{2} \big(\hat{f}_i \hat{f}_j \!+\! \hat{f}_j \hat{f}_i \big) \!-\! \frac{1}{3} \delta_{ij} \hat{ \mathbf{f} } \cdot \hat{ \mathbf{f} }  \right).  
 	\end{align}
-The $\hat{f}_i$ are dimensionless hyperfine spin operators satisfying
+The $\hat{f}_i$ operators are dimensionless hyperfine spin operators satisfying
 	\begin{align}
 		[\hat{f}_i, \hat{f}_j] = i \varepsilon_{ijk} \hat{f}_k,
 	\end{align}
-with total angular momentum $f$ for each ground hyperfine manifold.  The tensor coefficients are~\cite{Deutsch2010a}
+with total angular moment $f$ for each ground hyperfine manifold.  The tensor rank-$ k $ coefficients, $ C_{j'ff'}^{(k)} $, are~\cite{Deutsch2010a}
 		\begin{align}
 			C_{j' f f'}^{(0)} &= (-1)^{3f - f' + 1} \frac{1}{ \sqrt{3} } \frac{2f'+1}{\sqrt{2f+1}}  \left\{ \begin{array}{ccc} f& 1 & f' \\ 1 & f & 0 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
 			C_{j' f f'}^{(1)} &= (-1)^{3f - f' } \sqrt{\frac{3}{ 2} } \frac{2f'+1}{ \sqrt{f(f+1)(2f+1)} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 1 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
 			C_{j' f f'}^{(2)} &= (-1)^{3f - f' } \frac{\sqrt{30} (2f'+1)}{\sqrt{ f(f+1)(2f+1)(2f-1)(2f+3))} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 2 \end{array} \right\} |o^{j' f'}_{j f}|^2 .
 		\end{align}	
-These coefficients depend on the fine-structure quantum numbers $\{j, j'\}$ through the relative oscillator strengths, $o^{j' f'}_{j f}$, given in \erf{Eq::OscStrength}.  Note that the notation in \erf{Eq::alphaij} is different from that for the full polarizability tensor, \erf{Eq::AtomicPolarizabilityF}, (and different from that in Ref. \cite{Deutsch2010a}) in that it contains no units, detunings, or sums over excited states.  Instead its intention is to isolate the irreducible tensor components.   
+These coefficients depend on the fine-structure quantum numbers $\{j, j'\}$ through the relative oscillator strengths, $o^{j' f'}_{j f}$, given in \erf{Eq::OscStrength}. In the cases that some ground or excited state levels are fixed, we might remove the $ j' $ or $ f $ occupants in the subscripts of $ C_{j'ff'}^{(k)} $.
 
-When the detuning is very large compared to the excited hyperfine splitting the detuning becomes independent of $f'$ (essentially $\delta_{f'}/\Delta \rightarrow 0$).  Then, the sums over the tensor coefficients in Eqs. (\ref{Eq::GenPolarizability}) can be done explicitly to yield,
+If the detuning is very large compared to the excited hyperfine splitting the detuning becomes independent of $f'$ (essentially $\delta_{f'}/\Delta \rightarrow 0$).  Then, the sums over the tensor coefficients in Eqs.~\eqref{Eq::GenPolarizability} can be calculated explicitly to yield,
 	\begin{align}
 		C_{j' f}^{(0)} &\equiv \sum_{f'} C_{j' f f'}^{(0)} =   \frac{2^{j'-1/2}}{3} \label{Eq::ScalarCoefSum} \\ 
 		C_{j' f}^{(1)} &\equiv  \sum_{f'} C_{j' f f'}^{(1)} = (-1)^{j'-1/2} \frac{g_f}{3} \\
 		C_{j' f}^{(2)} &\equiv  \sum_{f'} C_{j' f f'}^{(2)} = 0. \label{Eq::Rank2Sum}
 	\end{align}
-The Land\'{e} g-factor depends on the ground state manifold:  $g_f = 1/f_{\uparrow}$ for $f_{\uparrow} = i + 1/2$ and $g_f = -1/f_{\uparrow}$ for $f_{\downarrow} = i - 1/2$.  In this far-detuned limit, we see that the $C_{j' f f'}^{(2)}$ coefficients sum to zero and the rank-2 terms in \erf{Eq::GenPolarizability} vanish,
+The Land\'{e} g-factor\index{Land\'{e} g-factor}, $ g_f $, depends on the ground state manifold:  $g_f = 1/f_{\uparrow}$ for $f_{\uparrow} = i + 1/2$ and $g_f = -1/f_{\uparrow}$ for $f_{\downarrow} = i - 1/2$, in which the $ \uparrow $ and $ \downarrow $ levels should be equally divided in the $ f $ hyperfine manifold for alkali atoms, in general.  In this far-detuned limit, we see that the $C_{j' f f'}^{(2)}$ coefficients sum to zero and the rank-2 terms in \erf{Eq::GenPolarizability} vanish,
 	\begin{equation} \label{Eq::GenPolarizability}
 		\hat{\alpha}_{ij} (f) \rightarrow  C_{j' f}^{(0)} \delta_{ij} \hat{ I } + i C_{j' f }^{(1)} \varepsilon_{ijk} \hat{f}_k  .
 	\end{equation}
-This reflects the fact that in the absence of hyperfine resolution, the nuclear spin is decoupled and the ground state angular momentum is given by the total electronic angular moment, $j=1/2$. 
+This reflects the fact that in the absence of hyperfine resolution, the nuclear spin is decoupled and the ground state angular momentum is given by the total electronic angular moment. 
 
 
 \subsection{Modification of decay rates of atomic transitions}
@@ -1843,8 +1814,8 @@ The free space dipole emits an electromagnetic field described by
 &=\frac{i}{k}(\frac{1}{r\!_\perp}\!\pp{\mathcal{B}^{(\!0\!)}_z}{\phi}\!-\! \pp{\mathcal{B}^{(\!0\!)}_\phi}{z})\mathbf{e}_{r\!_{\perp}} \!\!+\! \frac{i}{k}(\!\pp{\mathcal{B}^{(\!0\!)}_{r\!_\perp}}{z} \!-\! \pp{\mathcal{B}^{(\!0\!)}_z}{r\!_\perp})\mathbf{e}_\phi \!\!+\! \frac{i}{r\!_\perp\! k} (\!\pp{(\! r\!_\perp \mathcal{B}^{(\!0\!)}_\phi)}{r\!_\perp} \!\!-\!\! \pp{\mathcal{B}^{(\!0\!)}_{r\!_\perp}}{\phi}\! )\mathbf{e}_z\\
 &=\mathcal{E}^{(0)}_{r\!_\perp}\mathbf{e}_{r\!_{\perp}} +\mathcal{E}^{(0)}_\phi\mathbf{e}_\phi + \mathcal{E}^{(0)}_z\mathbf{e}_z,
 \end{align}
-or, by Eq.~\eqref{EGd}. Here, $ \mathbf{d}_0 $ is the dipole momentum in vacuum. We denote $d_{r\!_\perp},\, d_\phi$ and $d_z$ as the cylindrical components of the dipole momentum at arbitrary observation point ${\rm {\bf r}}=\left( {r\!_\perp ,\phi ,z}\right) $; while we use $d^0_{r\!_\perp}$, $d^0_\phi$ and $d^0_z$ to indicate the cylindrical components of the dipole momentum at the dipole position ${\rm 
-{\bf {r}^{\prime }}}=\left( {{r\!_\perp }^{\prime },{\phi }^{\prime },{z}^{\prime }}\right) $. As shown in Fig.(\ref{fig:dipolemomentumtransmission}) on page~\pageref{fig:dipolemomentumtransmission}, we defined the vector from the center of the nanofiber's core pointing to the atom position as the $x$ axis, and the rotating symmetric axis of the nanofiber as the $z$ axis. The relationships between the dipole momentum components at $\mathbf{r}$ and $\mathbf{r}'$ can be given by
+or, by Eq.~\eqref{EGd}. Here, $ \mathbf{d}_0 $ is the dipole moment in vacuum. We denote $d_{r\!_\perp},\, d_\phi$ and $d_z$ as the cylindrical components of the dipole moment at arbitrary observation point ${\rm {\bf r}}=\left( {r\!_\perp ,\phi ,z}\right) $; while we use $d^0_{r\!_\perp}$, $d^0_\phi$ and $d^0_z$ to indicate the cylindrical components of the dipole moment at the dipole position ${\rm 
+{\bf {r}^{\prime }}}=\left( {{r\!_\perp }^{\prime },{\phi }^{\prime },{z}^{\prime }}\right) $. As shown in Fig.(\ref{fig:dipolemomentumtransmission}) on page~\pageref{fig:dipolemomentumtransmission}, we defined the vector from the center of the nanofiber's core pointing to the atom position as the $x$ axis, and the rotating symmetric axis of the nanofiber as the $z$ axis. The relationships between the dipole moment components at $\mathbf{r}$ and $\mathbf{r}'$ can be given by
 \begin{align}
 d_{r\!_\perp}\! &= \cos(\phi\!-\!\phi')d^0_{r\!_\perp}\!\!+\!\sin(\phi\!-\!\phi')d^0_\phi=\frac{1}{\sqrt{2}}\left(-e^{-i(\phi\!-\!\phi')}d_++e^{i(\phi\!-\!\phi')}d_- \right),\\
 d_\phi &=\cos(\phi\!-\!\phi')d^0_\phi\!-\!\sin(\phi\!-\!\phi')d^0_{r\!_\perp}=\frac{i}{\sqrt{2}}\left(e^{-i(\phi\!-\!\phi')}d_++e^{i(\phi\!-\!\phi')}d_- \right),\\
@@ -1931,7 +1902,7 @@ Note that we have dropped the subscript $ _0 $ for $ k_0 $, $ \beta_0 $ and $ \o
   \draw[style=dotted,assisvectorcolor] ($(R.center)+(90:\dphi)$) -- ($(R.center)+(\AngleOfd:\LenOfd)$);
   \draw [fill=blue] (R) circle (0.2mm) node {}; % starting point at r'
 \end{tikzpicture}}
-\caption{Dipole momentum decompositions in the $xy$ plane.}
+\caption{Dipole moment decompositions in the $xy$ plane.}
 \label{fig:dipolemomentumtransmission}
 \end{figure}
 
