@@ -313,7 +313,9 @@ We emphasize here the dependence of the rotation angle on the position of the at
 \end{equation}
 where $n_g = c/v_g$ is the group index.  A more tightly confined (smaller) area corresponds to a stronger interaction.
 
-By monitoring the Faraday rotation, we can perform a continuous measurement on the collective spin projection $\hat{F}_z$.  The ``measurement strength," which characterizes the rate at which we gain information and thereby squeeze the spin, is given by
+By monitoring the Faraday rotation, we can perform a continuous measurement on the collective spin projection $\hat{F}_z$.  
+Note that we have chosen the $ z $ axis as the quantization axis for the collective spin measurement, which follows the detailed discussion in Appendix~\ref{chap:choiceofquantizationaxisFaraday}.  
+The ``measurement strength," which characterizes the rate at which we gain information and thereby squeeze the spin, is given by
 \begin{equation}\label{eq:kappa}
 \kappa = \left\vert \chi_3(\mbf{r}'_\perp) \right\vert^2 \frac{P_{\rm in}}{\hbar \omega_0},
 \end{equation}
@@ -475,6 +477,7 @@ where we have employed the Ito calculus $dW^2 = dt$.
 Note that when the third-order cumulants are set to $ 0 $,  the contribution of the $\mathcal{L}$ superoperator to the dynamics of the two-body covariances vanishes,  $ \left.d\expect{\Delta \sigma_{ba}^{(1)} \Delta \sigma_{dc}^{(2)}}_s\right|_\mathcal{L} =\frac{\kappa}{4}\expect{\mathcal{L}^\dagger\left[\Delta\sigma_{ba}^{(1)}\Delta\sigma_{dc}^{(2)} \right]}_sdt=0 $.  This indicates that the events of no-photon detection under the Gaussian-state approximation do not affect atom-atom correlations;  the measurement backaction and squeezing arise from the homodyne detection in the guided modes. 
 
 Using all of the approximations above, we can efficiently calculate the collective spin dynamics for the ensemble of qutrits (dimension  $d=3$) with $ d^2=9 $ equations for the one-body quantity, $ \expect{\hat{\sigma}_{ba}} $, and $ d^2(d^2+1)/2=45 $ equations for the two-body covariances, $ \expect{\Delta \sigma_{ba}^{(1)}\Delta\sigma_{dc}^{(2)} }_s $, in the symmetric subspace independent of the number of atoms.  With this formalism in hand, we can calculate the squeezing parameter, Eq.~\eqref{eq:xi2Faraday}, as a function of the time by finding time-dependent solutions for the one-body averages $\expect{\hat{f}_x}$ and  $\expect{\Delta f_z^2}$, and the two-body covariances $\expect{\Delta f_z^{(1)} \Delta f_z^{(2)}}$.  The detailed approach to calculating the collective spin dynamics is given in Appendix~\ref{Sec::opticalpumpinginrotatingframe}. 
+Once the dynamics of the microscopic operators are solved, we follow Appendix~\ref{Appendix::collectivespinoperators} to find the dynamics of some key collective operators.
 
 Using this formalism, we calculate the squeezing of an ensemble of cesium atoms, initially spin-polarized in the $6S_{1/2},\ket{f=4, m_x=4}$ state.  We choose the guided mode frequency near the D2 resonance, $6S_{1/2}\rightarrow 6P_{3/2}$, far detuned compared to the excited-state hyperfine splitting. In Fig.~\ref{fig:xi_rpfix_NA_t}, we plot the reciprocal of the spin squeezing parameter as a function of the time and its peak as a function of the atom number, $ N_A $, in both the optical nanofiber and the square waveguide cases. By placing atoms $ 200$  nm from the nanofiber surface ($ r'\!_\perp=1.8a $), our simulations for $ 2500 $ atoms yield $ 6.3 $ dB of squeezing. Using the square waveguide platform with the same number of atoms placed $150 $ nm from the surface, our calculation yields $12.9$ dB squeezing. As we have shown in Sec.~\ref{Sec::QNDandCooperativityTheory}, the square waveguide geometry enhances the anisotropic contrast of the two orthogonal guided modes and dramatically reduces the relative local intensity when the atoms are placed on the $ y $ axis. This results in a large cooperativity and higher peak spin squeezing, achieved in a shorter time and with a relatively slower decay compared to the nanofiber. 
 In addition, in Figs.~\ref{fig:nanofiber_peakxi_NA_rp1d8a} and~\ref{fig:square waveguide_peakxi_NA_rp1d} we show how the peak squeezing scales with the number of trapped atoms when the atom positions are fixed as above. 
@@ -583,6 +586,41 @@ Sandia National Laboratories is a multimission laboratory managed and operated b
 %===============Appendix================= %
 \appendix
 %\begin{appendix}
+%<*quantizationaxisforFaradaysqueezing>
+\chapter[Quantization axis for the Faraday-interaction protocol]{The choice of quantization axis for the Faraday-interaction-based spin squeezing protocol}\label{chap:choiceofquantizationaxisFaraday}
+Faraday interaction is the interaction when the helicity of the input and output of the light signal is preserved. 
+In the context of QND measurement, a Faraday-interaction-based protocol is the protocol when the phase change of the output light on the equator of the \Poincare sphere with a linear polarization input is used to calibrate the spin state after the atom-light interaction.
+This phase change of light polarization corresponds to a rotation about $ \mathbf{S}_3 $ axis on the \Poincare sphere. 
+From Eq.\eqref{eq:chippp}, the coupling atomic term is proportional to 
+\begin{align}
+\hat{\chi}_{i3} &= \hat{\chi}_{HV}-\hat{\chi}_{VH}=\hat{\chi}_{RR}-\hat{\chi}_{LL},
+\end{align}
+where the last step is derived in appendix~\ref{chap:basistransfHS}. These relationships indicate the Faraday effect is generated by the intensity or photon number difference between the right- and left-polarized modes or by the phase difference between two linearly polarized modes due to the polarizability of the atoms.
+One can prove that the strength of the Faraday interaction is dominated by the vector interaction term in Eq.\eqref{eq:chippp}.
+This implies that, to maximize the Faraday interaction, it is optimal to choose a quantization axis along the direction of $ \mathbf{v}_F=\mathbf{u}_H^*(\br'\!_\perp)\!\times\!\mathbf{u}_{V}(\br'\!_\perp)\!-\!\mathbf{u}_V^*(\br'\!_\perp)\!\times\!\mathbf{u}_{H}(\br'\!_\perp)$ given the atoms are placed at $ \br'\!_\perp $ position in the transverse plane of the waveguide. 
+In reality, this product of modes may be elliptical with at least one direction component is imaginary while others are real.
+If this happens, since the quantization axis is the direction in which a magnetic field is pointing to in 3D real space, the optimal choice of quantization axis should be the direction corresponding to the largest component of the $ \mathbf{v}_F $ vector. 
+For a waveguide discussed in this dissertation, this occurrence of imaginary product direction doesn't seem to happen.
+
+Take the example of a cylindrical nanofiber, at an arbitrary position $ \br'\!_\perp=(r'\!_\perp,\phi') $ of atoms in the transverse plane (see Appendix~\ref{chap:fibereigenmodes}),
+\begin{align}
+\mathbf{u}_H^*(r'\!_\perp,\phi')\times \mathbf{u}_V(r'\!_\perp,\phi') &= 2u_{r\!_\perp} u_\phi\mathbf{e}_z - 2iu_zu_{r\!_\perp}\sin2\phi \mathbf{e}_\phi + 2iu_\phi u_z\cos2\phi \mathbf{e}_{r\!_\perp} \\
+\mathbf{u}_V^*(r'\!_\perp,\phi')\times \mathbf{u}_H(r'\!_\perp,\phi') &= -2u_{r\!_\perp} u_\phi\mathbf{e}_z - 2iu_zu_{r\!_\perp}\sin2\phi \mathbf{e}_\phi + 2iu_\phi u_z\cos2\phi \mathbf{e}_{r\!_\perp},
+\end{align}
+and therefore,
+\begin{align}\label{eq:Faradayaxis}
+\mathbf{v}_F=\mathbf{u}_H^*(\br'\!_\perp)\!\times\!\mathbf{u}_{V}(\br'\!_\perp)\!-\!\mathbf{u}_V^*(\br'\!_\perp)\!\times\!\mathbf{u}_{H}(\br'\!_\perp) = 4u_{r\!_\perp} u_\phi\mathbf{e}_z,
+\end{align}
+where $ u_{r\!_\perp}=u_{r\!_\perp}(r'\!_\perp) $, $ u_\phi=u_\phi(r'\!_\perp) $ and $ u_z=u_z(r'\!_\perp) $ are the right-circularly polarized mode components independent of longitudinal and azimuthal positions.
+Based on this result, choosing $ z $ direction as the quantization axis is optimal for the QND measurement and spin squeezing protocol for atoms trapped near an optical nanofiber.
+
+This conclusion may be general to translation-symmetric waveguides at large, which have a constant or slow change of index of refraction along the light propagation direction in the wavelength scale while the cross-section of the waveguides is uniform and can be arbitrary shape.
+From the perspective of transformation optics~\cite{Leonhardt2006Optical,Kundtz2011Electromagnetic}, we can regard a set of $H$- and $V$-modes for an arbitrary this type of waveguide as if generated by adiabatically transforming the corresponding orthogonal set of modes from a cylindrical nanofiber boundary condition to the targeted waveguide boundary condition.
+Since the transformation is approximately restricted to the $xy$-plane of the coordinate system transformation determined by a Jacobian matrix, Eq.\eqref{eq:Faradayaxis} will preserve the form in the new waveguide coordinate system where only $ z $-component is non-zero and should be chosen as the optimal choice of the quantization axis.
+
+%</quantizationaxisforFaradaysqueezing>
+
+
 %<*Faradayprotocoldetails>
 \chapter{Modeling collective spin dynamics}\label{Sec::opticalpumpinginrotatingframe}
 
@@ -635,10 +673,53 @@ By combining the optical pumping and QND measurement contribution to Eqs.~\eqref
 in the symmetric qutrit subspace. 
 %All the coefficients in these equations are calculated numerically. 
 The matrix of equations is sparse and close to diagonal, which indicates that only nearest-neighbor coupling is possible in the $\left\{\expect{\hat{\sigma}_{ba}},\expect{\Delta\sigma_{ba}\Delta\sigma_{dc} }_s\right\}$ basis. 
-%The number of non-zero elements in the coefficient matrix is proportional to the number of variables. To respect the nature of the exchange symmetry in two-body moment variables, we label $ \hat{\sigma}_{ba} $ as $ \hat{\sigma}_i $ with $ i=1,2,\cdots, 9 $ for $ b$ and $a  $ counting from $ (\uparrow,\downarrow,T) $ qutrit state labels; the two-body moment variables can then be ordered in the symmetric subspace as $ \expect{\Delta\sigma_i\Delta\sigma_j} $ given $ j\ge i $ to represent $ \expect{\!\Delta \sigma_{ba}^{(\!1\!)}\! \Delta \sigma_{dc}^{(\!2\!)}}_s $ satisfying $ \expect{\!\Delta \sigma_{ba}^{(\!1\!)}\! \Delta \sigma_{dc}^{(\!2\!)}}_s=\expect{\!\Delta \sigma_{dc}^{(\!1\!)}\! \Delta \sigma_{ba}^{(\!2\!)}}_s $ under the exchange symmetry. 
+
+The number of non-zero elements in the coefficient matrix is proportional to the number of variables. To respect the nature of the exchange symmetry in two-body moment variables, we label $ \hat{\sigma}_{ba} $ as $ \hat{\sigma}_i $ with $ i=1,2,\cdots, 9 $ for $ b$ and $a  $ counting from $ (\uparrow,\downarrow,T) $ qutrit state labels; the two-body moment variables can then be ordered in the symmetric subspace as $ \expect{\Delta\sigma_i\Delta\sigma_j} $ given $ j\ge i $ to represent $ \expect{\!\Delta \sigma_{ba}^{(\!1\!)}\! \Delta \sigma_{dc}^{(\!2\!)}}_s $ satisfying $ \expect{\!\Delta \sigma_{ba}^{(\!1\!)}\! \Delta \sigma_{dc}^{(\!2\!)}}_s=\expect{\!\Delta \sigma_{dc}^{(\!1\!)}\! \Delta \sigma_{ba}^{(\!2\!)}}_s $ under the exchange symmetry. 
 In the symmetric qutrit subspace, we have $ 45 $ two-body moment variables and corresponding sparse second-order equations, which we solve numerically. 
 
 %</Faradayprotocoldetails>
+
+
+%<*collectiveandmicroscopicoperators>
+
+%===================APPENDIX: Relationships between collective spin operators and microscopic operators =====================%
+\chapter{Relationships between some collective operators and the first- and second-moments in the symmetric subspace} \label{Appendix::collectivespinoperators}
+
+\qxd{Possible Todo: Relations between collective angular momentum operators and microscopic $\sigma_{ba}$ operators in the qubit and qutrit symmetric subspace. See handwritten notes: QND measurement and spin squeezing using Faraday interactions (part IV).}
+
+We use the following relations to calculate the collective operator dynamics once the equations of microscopic operators, $ \hat{\sigma}_{ba}$ and $ \expect{\Delta\sigma_i\Delta\sigma_j} $, are solved.
+\begin{subequations}
+	\begin{align}
+	\expect{\hat{F}_x} &= \sum_i^{N_A}\expect{\hat{f}_x}\nonumber\\
+	&= -N_A \left[f\expect{\sigmauu}+(f-1)\expect{\sigmadd}+(f-2)\expect{\sigmatt } \right]\label{eq:Fx_qutrit}\\
+	\expect{\Delta F_z^2} &= N_A\expect{\Delta f_z^2} + N_A(N_A-1)\expect{\Delta f_z^{(1)}\Delta f_z^{(2)} }_s\nn\\
+	&=N_A\left\{ \frac{f}{2}\left(\expect{\sigmauu}+\expect{\sigmadd}-2\expect{\sigmaud}\expect{\sigmadu}-\expect{\sigmaud}^2-\expect{\sigmadu}^2 \right)\right. \label{eq:DeltaFz2_fz}\\
+	&\quad\quad+ \frac{2f-1}{2}\left(\expect{\sigmadd}+\expect{\sigmatt}-2\expect{\sigmadt}\expect{\sigmatd}-\expect{\sigmadt}^2-\expect{\sigmatd}^2 \right)\nn\\
+	&\quad\quad + \frac{\sqrt{f(2f-1)}}{2}\left[\expect{\sigmaut }+\expect{\sigmatu}\right. \nn\\
+	&\quad\left.\phantom{\frac{\sqrt{f(2f-1)}}{f}}\left. -2\expect{\sigmaud}(\expect{\sigmadt}+\expect{\sigmatd}) -2\expect{\sigmadu}(\expect{\sigmadt}+\expect{\sigmatd} ) \right] \right\}\nn\\
+	&\quad +N_A(N_A-1)\left[\frac{f}{2}\left(\expect{\Dsigmaud^{(1)}\Dsigmaud^{(2)} }_s \right.\right. \label{eq:DeltaFz2_qutrit}\\
+	&\qquad\qquad\qquad\qquad\qquad\qquad \left.\left. +2\expect{\Dsigmaud^{(1)}\Dsigmadu^{(2)} }_s+\expect{\Dsigmadu^{(1)}\Dsigmadu^{(2)} }_s \right)\right. \nn \\
+	&\quad\quad + \frac{2f-1}{2}(\expect{\Dsigmadt^{(1)}\Dsigmadt^{(2)} }_s +2\expect{\Dsigmadt^{(1)}\Dsigmatd^{(2)} }_s +\expect{\Dsigmatd^{(1)}\Dsigmatd^{(2)} }_s) \nn\\
+	&\quad\quad + \sqrt{f(2f-1)}\left(\expect{\Dsigmaud^{(1)}\Dsigmadt^{(2)} }_s +\expect{\Dsigmaud^{(1)}\Dsigmatd^{(2)} }_s\right.\nn\\ 
+	&\qquad\qquad\qquad\qquad \left.\phantom{\frac{2f-1}{2}}\left. +\expect{\Dsigmadu^{(1)}\Dsigmadt^{(2)} }_s+\expect{\Dsigmadu^{(1)}\Dsigmatd^{(2)} }_s \right)\right]\nn
+	\end{align}
+\end{subequations}
+
+If further approximations are allowed, the collective spin dynamics can also be calculated in the \\ $ \left\{\left.\expect{\hat{f}_i},\expect{\Delta f_i^{(1)}\Delta f_j^{(2)} }_s\right|i,j=0,x,y,z \right\} $ basis with $ \hat{f}_0=\hat{\mathbbm{1}} $. For example, one can prove that, by ignoring couplings between $ \ket{\uparrow} $ and $ \ket{T} $, Eqs.~\ref{eq:Fx_qutrit} and~\ref{eq:DeltaFz2_qutrit} lead to 
+\begin{subequations}
+\begin{align}
+\expect{\hat{F}_x} &= -f \expect{\hat{N}_\uparrow}-(f-1)\expect{\hat{N}_\downarrow}-(f-2)\expect{\hat{N}_T}\\
+\expect{\Delta F_z^2} &\approx \expect{\hat{N}_f}\expect{\Delta f_z^2}+\expect{\hat{N}_f}(\expect{\hat{N}_f}-1)\expect{\Delta f_z^{(1)}\Delta f_z^{(2)} }\!_s,
+\end{align}
+\end{subequations}
+where $ \hat{N}_i=\sum_n^{N_A}\hat{\sigma}_{ii}^{(n)} $ (for $ i=\uparrow,\downarrow,T $) and $ \hat{N}_f=\hat{N}_\uparrow+\hat{N}_\downarrow+\hat{N}_T $ are the population operators. Then the problem is to establish and solve the stochastic equations for the expectation values and covariances of the population and angular momentum operators. For example, the QND measurement process which generates the spin squeezing dynamics is governed by
+\begin{align}
+d\expect{\Delta f_z^2}|_{QN\!D} &= -\kappa \left[\expect{\Delta f_z^2}+(N_A-1)\expect{\Delta f_z^{(1)}\Delta f_z^{(2)} }_s \right]^2dt\nn\\
+&=d\expect{\Delta f_z^{(1)}\Delta f_z^{(2)} }_s|_{QN\!D}.
+\end{align} 
+It seems the spin squeezing dynamics is purely determined by the $ \expect{\Delta f_z^2} $ and $ \expect{\Delta f_z^{(1)}\Delta f_z^{(2)} }$, but in deriving the equations for the full set of operator basis elements considering both the optical pumping and QND measurement contributions, all operators become coupled to each other, which doesn't have a nice general form to be easily coded in a computer program. Also, since it involves more approximations than using the $ \hat{\sigma}_{ba} $ representation, we only use this approach to verify our results, but not to generate the final simulation results presented in this piece of dissertation work.
+
+%</collectiveandmicroscopicoprators>
 
 %\end{appendix}
 

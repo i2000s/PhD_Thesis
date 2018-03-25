@@ -1,0 +1,298 @@
+\documentclass[fleqn, final]{../styles/unmphythesis}
+\usepackage{../styles/qxd}
+\renewcommand{\thechapter}{6}
+%\newcommand{\thechapter}{1}
+
+\makeindex
+\begin{document}
+
+%<*twocolorprotocol>
+
+\chapter{Canceling the tensor light shift with two-color probes}\label{chap:twocolor}
+
+Following Chapter~\ref{chap:quantumdynamicsrepresentation}, the light-atom interaction Hamiltonian with one atom can be written as
+\begin{align}
+\hat{h}_\eff &= -\hat{\mathbf{E}}^{(-)}(\br')\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot\hat{\mathbf{E}}^{(+)}(\br')\nn\\
+&= -\frac{2\pi\hbar\omega}{v_g}\left[\mathbf{u}_H^*\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot \mathbf{u}_H\hat{a}_H^\dagger\hat{a}_H\right.
++ \mathbf{u}_H^*\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot \mathbf{u}_V\hat{a}_H^\dagger\hat{a}_V\nn\\
+&\quad\quad + \mathbf{u}_V^*\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot \mathbf{u}_H\hat{a}_V^\dagger\hat{a}_H 
+\left. + \mathbf{u}_V^*\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot \mathbf{u}_V\hat{a}_V^\dagger\hat{a}_V\right]\\
+&= \hbar\left[(\hat{\chi}_{HH}+\hat{\chi}_{VV})\hat{S}_0 + (\hat{\chi}_{HH}-\hat{\chi}_{VV})\hat{S}_1 + (\hat{\chi}_{HV}+\hat{\chi}_{VH})\hat{S}_2 + i(\hat{\chi}_{HV}-\hat{\chi}_{VH})\hat{S}_3 \right]\\
+%\hbar \left[\left(\chi_{RR\uparrow} + \chi_{RR\downarrow} +\chi_{LL\uparrow}+\chi_{LL\downarrow} \right)\hat{F}_0\hat{S}_0 \right.\nonumber\\
+%&\quad+\left(\chi_{RR\uparrow} + \chi_{RR\downarrow} -\chi_{LL\uparrow}-\chi_{LL\downarrow} \right)\hat{F}_0\hat{S}_3\nonumber\\
+%&\quad+\left(\chi_{RR\uparrow} + \chi_{LL\uparrow} -\chi_{RR\downarrow}-\chi_{LL\downarrow} \right)\hat{F}_3\hat{S}_0\nonumber\\
+%&\quad+\left(\chi_{RR\uparrow} - \chi_{RR\downarrow} +\chi_{LL\downarrow}-\chi_{LL\uparrow} \right)\hat{F}_3\hat{S}_3\nonumber\\
+%&\quad+i\left(\chi_{LR\uparrow} - \chi_{RL\uparrow} +\chi_{RL\downarrow}-\chi_{RL\downarrow} \right)\hat{F}_0\hat{S}_1\nonumber\\
+%&\quad+\left(\chi_{RL\uparrow} + \chi_{LR\uparrow} +\chi_{RL\downarrow}+\chi_{LR\downarrow} \right)\hat{F}_0\hat{S}_2\nonumber\\
+%&\quad+i\left(\chi_{LR\uparrow} - \chi_{RL\uparrow} +\chi_{RL\downarrow}-\chi_{LR\downarrow} \right)\hat{F}_3\hat{S}_1\nonumber\\
+%&\quad+\left.\left(\chi_{LR\uparrow} + \chi_{RL\uparrow} -\chi_{LR\downarrow}-\chi_{RL\downarrow} \right)\hat{F}_3\hat{S}_2 \right]\\
+&=\hbar\sum_{i=0}^3 \hat{\chi}_{i}\hat{S}_i\\
+&=\hbar\sum_{i,j=0} \chi_{ij}\hat{f}_i\hat{S}_j,
+\end{align}
+where $ \hat{S}_i $ are the Stokes vector operators of the light indicating its polarization, and the mode-atom coupling operator
+\begin{align}
+\hat{\chi}_{pp'} 
+&=-\frac{2\pi \omega}{v_g}\mathbf{u}_{p}^*(r'\!_\perp,\phi')\cdot \hat{\tensor{\alpha}}\cdot \mathbf{u}_{p'}(r'\!_\perp,\phi')\\
+&= \sum_{f'} \frac{n_g\sigma_0}{4}\frac{\Gamma_{f'}}{\Delta_{ff'}+i\Gamma_{f'}/2}\cdot \left\{ C_{j'ff'}^{(0)}\mathbf{u}_p^*(r'\!_\perp)\cdot \mathbf{u}_{p'}(r'\!_\perp)\hat{\mathbbm{1}}\right.\nn\\
+&\quad\quad +iC_{j'ff'}^{(1)}\left(\mathbf{u}_p^*(r'\!_\perp)\times\mathbf{u}_{p'}(r'\!_\perp) \right)\cdot \hat{\mathbf{f}} \nonumber\\
+&\quad\quad\left. + C_{j'ff'}^{(2)}\sum_{i,j}\left[u^*_{p,i}u_{p',j}(\frac{\hat{f}_i\hat{f}_j+\hat{f}_j\hat{f}_i}{2}-\frac{\delta_{ij}}{3}\hat{\mathbf{f}}\cdot\hat{\mathbf{f}}) \right]\right\}
+%&\left.+C_{jj'ff'}^{(2)}\left[\mathbf{u}_p^*(r'\!_\perp)\cdot \mathbf{u}_{p'}(r'\!_\perp)\left(\frac{f(f+1)}{6}-\frac{m^2}{2} \right)+\mathbf{u}_p^*(r'\!_\perp)\cdot (\hat{e}^*_{\tilde{z}}\hat{e}_{\tilde{z}})\cdot \mathbf{u}_{p'}(r'\!_\perp)\left(\frac{3m^2}{2}-\frac{f(f+1)}{2} \right) \right] \right\}
+\label{eq:chippp}
+\end{align}
+with the horizontally(H)- and vertically(V)-linearly polarized guided modes, $ \mathbf{u}_p(r'\!_\perp) $, at the atom position $ \br'=(r'\!_\perp,\phi',z') $. 
+$ \chi_{ij}=\tr[\hat{f}_i\hat{\chi}_j]/(2f+1) $ is the coupling strength between spin operator $ \hat{f}_i $ and Stokes operator $ \hat{S}_j $. 
+For example, $ \chi_{33} $ is the coupling strength between $ \hat{f}_z $ and $ \hat{S}_3 $.
+The fundamental guided modes of an optical nanofiber has been defined in the appendix of our previous paper~\cite{Qi2016}. 
+In general, for a cylindrical waveguide, the H- and V-modes are the guided modes adiabatically transferred from a corresponding linearly polarized input light from one end of the waveguide, where H- and V-directions are orthogonal to each other in the transverse plane.
+The coupling operator or Eq.\eqref{eq:chippp} includes three terms corresponding to scalar, vector and tensor interactions between atoms and the probe light which are proportional to $ C_{j'ff'}^{(K)} $ with $ K=0,\,1,\,2 $, respectively.
+
+\qxd{Generalize the above to the two-color case. Some words on finding the correct frequencies.}
+
+We also ignore the tensor coupling strength related to $ C_{jj'ff'}^{(2)} $ terms in Eq.\eqref{eq:chippp} as the tensor interaction strength ($ \sim 1/\Delta^2 $) is relatively small compared to the vector interaction strength ($ \sim 1/\Delta $)~\cite{Deutsch2010a}. 
+For a nanofiber geometry, the Faraday interaction coupling strength is independent of the azimuthal position of the atoms and can be simplified as
+\begin{align}
+\chi_{33} &= -\sum_{f'}n_g\sigma_0\frac{\Gamma_0}{\Delta_{ff'}+i\Gamma_0/2}C_{jj'ff'}^{(1)}u_{r\!_\perp}(r'\!_\perp)u_\phi(r'\!_\perp)\\
+&=\frac{\sigma_0}{A_F}\frac{\Gamma_0}{\Delta_F},
+\end{align}
+where the effective Faraday interaction mode area $ A_F=1/2n_g|u_{r\!_\perp}(r'\!_\perp)u_\phi(r\!_\perp)| $, and the effective detuning $ \Delta_F=\sum_{f'}\frac{-C_{j'ff'}^{(1)}}{\Delta_{ff'}} $.
+The measurement strength is now defined as
+\begin{align}
+\kappa\equiv|\chi_{33}|^2\dot{N}_L=\frac{\sigma_0A_{in}}{A_F^2}\gamma_s,
+\end{align}
+where the characteristic photon scattering rate $ \gamma_s\equiv \frac{\Gamma_0\Omega^2}{4\Delta_F}=\frac{\sigma_0}{A_{in}}\frac{\Gamma_0^2}{4\Delta_F^2}\dot{N}_L $ and the effective mode area $ A_{in}=1/n_g|u_{\mathrm{in}}(\br'\!_\perp)|^2 $.
+Now we can define the OD per atom for the Faraday interaction using SCS by
+\begin{align}
+\frac{\mathrm{OD}}{N_A} \equiv \frac{\kappa}{\gamma_s}=\frac{\sigma_0A_{in}}{A_F^2}.
+\end{align}
+
+\qxd{Again, generalize to two-color case.}
+\section{A two-color spin squeezing protocol to cancel the tensor light shift}
+As illustrated in Enrique Montano's PhD dissertation work, the tensor light shift due to the external field can be canceled in a free-space spin squeezing setup, we will generalize this idea to the nanophotonic waveguide case.
+
+From Eq.~\eqref{eq:Heff_Faraday_C02}, the state-dependent tensor light shift (the term proportional to $ \hat{f}_x^2 $) is proportional to 
+\begin{align}
+\delta E_T &= \sum_{f'} \frac{\Gamma_{f'}^x\Omega^2}{\Delta_{ff'}^2+(\Gamma_{f'}^x)^2/4}C_{ff'}^{(2)}\\
+&\approx \sum_{f'}\frac{\Gamma_{f'}^x\Omega^2}{\Delta_{ff'}^2}C_{ff'}^{(2)} = \sum_{f'}\frac{\sigma_0}{\Ain}\left(\frac{\Gamma_{f'}^x}{\Delta_{ff'}} \right)^2 \dot{N}_L C_{ff'}^{(2)}
+\end{align}
+
+\qxd{To be continue...}
+
+
+\section{Spin dynamics with two-color probes}
+
+To study the spin squeezing dynamics, we employ a first-principles stochastic master equation for the collective state of $N_A$ atoms,
+\begin{align}\label{eq:totaldrhodt_twocolor}
+\mathrm{d}\hat{\rho}= \left.\mathrm{d}\hat{\rho}\right|_{QND}+\left.\mathrm{d}\hat{\rho}\right|_{op}.
+\end{align}
+The first term on the right-hand side of Eq.\eqref{eq:totaldrhodt_twocolor} governs the spin dynamics arising from QND measurement~\cite{Jacobs2006,Baragiola2014},
+\begin{align}
+\left.\mathrm{d}\hat{\rho}\right|_{QND} &= \sqrt{\frac{\kappa_1}{4}}\mathcal{H}\left[\hat{\rho} \right]\mathrm{d}W_1 + \sqrt{\frac{\kappa_2}{4}}\mathcal{H}\left[\hat{\rho} \right]\mathrm{d}W_2 + \frac{\kappa_1+\kappa_2}{4}\mathcal{L}\left[ \hat{\rho}\right]\mathrm{d}t, 
+\end{align}
+where  $\kappa_1$ and $ \kappa_2 $ are the measurement strengths defined in Eq.~\eqref{eq:kappa} for the two probes in different frequencies, respectively; $\mathrm{d}W_1$ and $ \mathrm{d}W_2 $ are independent stochastic Weiner intervals for the two probes. The conditional dynamics are generated by superoperators that depend on the {\em collective} spin
+\begin{subequations}
+\begin{align}
+\mathcal{H}\left[ \hat{\rho}\right] &= \hat{F}_z \hat{\rho} + \hat{\rho}\hat{F}_z -2\expect{\hat{F}_z}\hat{\rho}, \\
+\mathcal{L}\left[ \hat{\rho} \right] &= \hat{F}_z \hat{\rho}\hat{F}_z -\frac{1}{2}\left(\hat{\rho}\hat{F}_z^2+\hat{F}_z^2\hat{\rho} \right)=\frac{1}{2}\left[\hat{F}_z,\left[\hat{\rho},\hat{F}_z \right] \right].
+\end{align}
+\end{subequations}
+The second term governs decoherence arising from optical pumping, which acts {\em locally} on each atom$,\mathrm{d}\hat{\rho}|_{op}=\sum_n^{N_A} \mathcal{D}^{(n)}\left[ \hat{\rho}\right] \mathrm{d}t$, where 
+\begin{equation}
+\mathcal{D}^{(n)}\left[ \hat{\rho}\right] = -\frac{i}{\hbar}\left(\hat{H}^{(n)}_{\rm eff}\hat{\rho} - \hat{\rho} \hat{H}^{(n)\dag}_{\rm eff}\right) + \gamma_{op} \sum_q \hat{W}^{(n)}_q \hat{\rho}\hat{W}^{(n)\dag}_q.
+\label{op_superator}
+\end{equation}
+Here $\hat{H}^{(n)}_{\rm eff}$ is the effective nonHermitian Hamiltonian describing the local light shift and absorption by the $i^{th}$ atom and $\hat{W}^{(n)}_q$ is the jump operator corresponding to optical pumping through spontaneous emission of a photon of polarization $q$~\cite{Deutsch2010a} (see Appendix~\ref{sec::opticalpumpingwithmodifiedrates} \qxd{Need to update this with modified decay rates.}).   
+The rate of decoherence is characterized by optical pumping rate, $\gamma_{op}$.  Note, the optical pumping superoperator, Eq.\eqref{op_superator},  is not trace preserving when restricted to a given ground-state hyperfine manifold $f$.  In this case, optical pumping of atoms to the other hyperfine manifold in the ground-electronic state is treated as loss.  If the atoms are placed at the optimal position, the local field is linearly polarized.  In that case the vector light shift vanishes, and for detunings large compared to the excited-state hyperfine splitting, the rank-2 tensor light shift is negligible over the time scales of interest.  In that case the light shift is dominated by the scalar component, which has no effect on the spin dynamics.  In that case $\hat{H}_{\rm eff} = -i\hbar \gamma_{op}/2 1$.
+
+
+%</twocolorprotocol>
+
+\appendix
+
+%<*opticalpumpingwithmodifiedrates>
+\chapter{Optical pumping considering the modified emission rates}
+ 
+The collective spin dynamics in the QND measurement and spin squeezing process is described by the stochastic master equation defined in Eq.~\eqref{eq:totaldrhodt}. The optical pumping dynamics of the $ j $-th atom are governed by 
+\begin{align}
+\left.\dt{\hat{\rho}^{(j)}}\right|_{op} &= \mathcal{D}[\hat{\rho}^{(j)}]=-\frac{i}{\hbar}\left\{\hat{H}_{\rm eff}^{(j)},\hat{\rho}^{(j)} \right\}_+ + \gamma_s\sum_{q}\hat{W}_q(\br'_j)\hat{\rho}^{(j)}\hat{W}_q^\dagger(\br'_j) %\\
+%&=-\gamma_s\frac{1}{2}\sum_{a,b}\gamma_{ba}\ket{b}\bra{a}+
+%\!\!\!\!\!\!\sum_{q,q',q'',a,b,c,d,f',f'',m',m''}\!\!\!\!\!\! \gamma_sw_{dcq}^{f''m''q''}\left(w_{abq}^{f'm'q'}\right)^*\ket{d}\bra{c}\hat{\rho}^{(i)}\ket{b}\bra{a}.
+\end{align} 
+We have defined a characteristic photon scattering rate, $\gamma_s \equiv \frac{\Gamma_0\Omega^2}{4\Delta_{F}^2}= \frac{\sigma_0}{A_{\rm in}}\frac{\Gamma_0^2}{4 \Delta_{F}^2} \dot{N}_L $ with an effective detuning $ \Delta_F $ defined by $ \frac{1}{\Delta_F}=\sum_{f'}\frac{C_{ff'}^{(1)}}{\Delta_{ff'}} $ and $ \Delta_{ff'}=\omega-\omega_{ff'} $.
+We have also defined Rabi frequency $ \Omega=2\bra{j}|d|\ket{j'}\mathcal{E}^{(+)}_{\rm in}/\hbar $ with reduced optical dipole matrix element $\bra{j}|d|\ket{j'}$ and field amplitude $ \mathcal{E}^{(+)}_{\rm in}=|\mathbf{E}_{\rm in}^{(+)}(\br')| $.
+The total rate of photon scattering by an atom from the $\ket{a}\equiv \ket{f,f_x=a}$ to $ \ket{b}\equiv\ket{f,f_x=b} $ hyperfine ground state in the $x$-basis is
+	\begin{equation}\label{Eq::gammaf}
+		\gamma_{ba}=- \frac{2}{\hbar} {\rm Im} \big[ \bra{f,b} \hat{h}_{\rm eff}\ket{f,a} \big] ,
+	\end{equation}
+The effective nonHermitian light-shift Hamiltonian for one atom (labeled with superscript $ (i) $) is given by
+\begin{align}
+\hat{H}_{\rm eff}^{(i)} \equiv \hat{h}_{\rm eff}&= - \hat{\mathbf{E}}^{(-)}_{\rm in}(\mathbf{r}' ; t ) \cdot \poltens \cdot \hat{\mathbf{E}}^{(+)}_{\rm in}(\mathbf{r}' ;t ),
+\end{align}
+where the polarizability operator $  \poltens=\sum_{f',q}\hat{\tensor{\mathbf{A}}}(f,f',q)$ with elements of $ \hat{\tensor{\mathbf{A}}} $ given by
+\begin{align} \label{Eq::PolarizabilityIrrep}
+		\hat{A}_{ij}(f,f',q)&\equiv -\frac{\sigma_0}{8\pi k_0\gamma_s}\frac{\Gamma_{f'\!\!,\, i}^q}{\Delta_{ff'}^q+i\Gamma_{f'\!\!,\, i}^q/2}\hat{e}_i^*\cdot\hat{\mathbf{D}}_{ff'}\hat{\mathbf{D}}_{f'f}^\dagger \cdot \hat{e}_j \\
+		&=  -\frac{\sigma_0}{8\pi k_0\gamma_s}\frac{\Gamma_{f'\!\!,\, i}^q}{\Delta_{ff'}^q\!+\! i\Gamma_{f'\!\!,\, i}^q/2}\left\{ C_{ff'}^{(0)} \delta_{i,j}\hat{\mathbbm{1}}\!+\! iC_{ff'}^{(1)}\epsilon_{ijk}\hat{f}_k \!+\! C_{ff'}^{(2)} \Big[ \smallfrac{1}{2} ( \hat{f}_i\hat{f}_j \!+\!\hat{f}_j\hat{f}_i )\!-\!\smallfrac{1}{3} \hat{\mathbf{f}}\!\cdot\!\hat{\mathbf{f}} \delta_{i,j} \Big]\right\}, 
+\end{align}
+where $\hat{\mathbf{f}}$ is the atomic spin operator in hyperfine multiplet $f$, and $ \epsilon_{ijk} $ is the Levi-Civita symbol. 
+Definitions of the interaction coefficients $ C_{ff'}^{(n)} $ can be found in Ref.~\cite{Qi2016}, which correspond to scalar, vector and tensor atom-light interactions for $ n=0,1,2 $, respectively.
+
+Given the geometry of the Faraday spin squeezing protocol for optical nanofiber and square waveguides discussed in this paper, the local electric field at the atom positions is linearly polarized. 
+By denoting the local field's polarization direction as the $ x$-direction and the propagation direction of the guided light as the $ z $-direction, the effective atom-light interaction Hamiltonian in a static reference frame can be written as 
+\begin{align}
+\hat{h}_{\rm eff} &= -\frac{i\hbar}{2}\sum_{f'} \gamma'_s \left[C_{ff'}^{(0)}\hat{\mathbbm{1}}+C_{ff'}^{(2)}(\hat{f}_{x}^2-\frac{\hat{\mathbf{f}}^2}{3} ) \right],\label{eq:Heff_Faraday_C02}
+\end{align}
+where the intrinsic photon scattering rate $ \gamma'_s\equiv \frac{\Gamma_{f'}^x\Omega^2}{4(\Delta_{ff'}^2+\left(\Gamma_{f'}^x\right)^2/4 )}$ and in the far-detuning regime, $\gamma'_s \approx \frac{\Gamma_{f'}^x\Omega^2}{4\Delta_{\rm eff}^2}=\frac{\sigma_0}{\Ain}\left(\frac{\Gamma_{f'}^x}{2\Delta_{\rm eff}} \right)^2\dot{N}_L $. Note here the vector interaction term vanishes given a linearly polarized light; we have ignored the energy shift, which is valid when the detuning is much larger than the hyperfine level splitting.
+In our simulations of spin squeezing in this paper, we have used the decay rate $ \Gamma_{f',q} $ to indicate the decay rates from the hyperfine $ f' $ manifold sublevels of excited states with a photon emission polarized along the $ \mathbf{e}_q $ direction; the effective detuning is also an averaged detuning from the fine structure excited level $ j' $ to the ground fine structure manifold $ j $ with resonant frequency $ \omega_D $ of $ D_1 $ line transitions--that is $ \Delta_{\rm eff}=\omega -\omega_D $ with probe frequency at $ \omega $ in vacuum given a far-detuned $ \sim 1 $nm of detuning from the $ D_1 $ line transition of $ ^{133}Cs $ atoms. 
+Compared to the normal characteristic photon scattering rate $ \gamma_s $, we can see they are defined in different scales.
+In general, they are related given a transition between ground hyperfine structure level $ f $ and excited hyperfine structure level $ f' $ by 
+\begin{align}
+\gamma'_s(f')=\gamma_s \frac{\Delta_F^2}{\Delta_{ff'}^2},
+\end{align}
+and hence $ \frac{\sqrt{\Gamma_{f'}^x}\Omega/2}{\Delta_{ff'}\pm i\Gamma_{f'}^x/2}\approx \frac{\sqrt{\Gamma_{f'}^x}\Omega/2}{\Delta_{ff'}}=\sqrt{\gamma_s}\frac{\Delta_F}{\Delta_{ff'}} $ in the far-detuning regime.
+
+We define the Lindblad jump operators of optical pumping among ground states by~\cite{Deutsch2010a}
+	\begin{align}\label{Eq::Wq_Faraday}
+		\hat{W}_q &= \frac{1}{\sqrt{\gamma_s}}\sum_{f'}\frac{\sqrt{\Gamma_{f'}^q}\Omega/2}{\Delta_{f'f}^q+i\Gamma_{f'}^q/2}\mathbf{e}_q^*\cdot(\hat{\mathbf{D}}_{ff'}  \hat{\mathbf{D}}^\dagger_{f'f} )\cdot\mathbf{e}_{\rm in} \\
+		&= \frac{1}{\sqrt{\gamma_s}}\!\sum_{f'k}\! \frac{\sqrt{\Gamma_{f'}^q}\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}^q/2} \left[\delta_{qx}C_{ff'}^{(0)}\hat{\mathbbm{1}} \!+\! iC_{ff'}^{(1)}\epsilon_{qxk}\hat{f}_k \!+\! C_{ff'}^{(2)}\left(\frac{\hat{f}_q\!\hat{f}_{x}\!+\!\hat{f}_{x}\!\hat{f}_q }{2} \!-\! \frac{\delta_{qx}}{3}\hat{\mathbf{f}}^2 \right) \right].
+%		&=\sum_{f',m',q',a,b} w_{baq }^{f'm'q'}\ket{b}\bra{a}.
+	\end{align}
+Each jump operator $\hat{W}_q$ is associated with absorption of the probe photon polarized along $ \mathbf{e}_{\rm in} $ followed by spontaneous emission of a photon with polarization $ \mathbf{e}_q $, where $q= \{0,\pm 1\}$ labels spherical basis elements for $\pi$ and $ \sigma_\pm$ transitions. 
+%Here the dimensionless raising operator $ \mathbf{e}_q\cdot\hat{\mathbf{D}}_{f'f}^\dagger= \sum_{m',m} o_{jf}^{j'f'} C_{f',m'}^{f,m;1, q}\ket{f',m'}\bra{f,m} $,
+%where $ C_{f',m'}^{f,m;1, q}=0 $ unless $ m'=m+q $ with $ C_{f',m+q}^{f,m;1, q}=\Braket{f',m+q}{f,m;1,q}$ being the Clebsch-Gordan coefficients, and
+%\begin{equation}
+%\big| o_{jf}^{j'f'} \big|^2=(2j'+1)(2f+2) \bigg\{
+%\begin{array}{ccc}
+%f' & 7/2 & j' \\
+% j & 1 & f
+% \end{array}
+% \bigg\}
+%\end{equation}
+%are the relative oscillator strengths determined by the relevant Wigner 6-$J$ symbol.
+%In our protocols, we assume the probe light is so far-detuned from any of the atomic resonances that the tilting of the hyperfine structure levels due to an external magnetic field becomes irrelevant and we can set $ \Delta_{ff'}^q=\Delta_{ff'} $ and $ \Delta_{ff'}\gg \Gamma_f'^q $ for arbitrary $ f' $ and $ q $.
+
+Therefore, in the static $ \left\{x,y,z \right\} $ basis, we have
+\begin{align}
+\hat{W}_{x} &= \frac{1}{\sqrt{\gamma_s}}\!\sum_{f'} \frac{\sqrt{\Gamma_{f'}^x}\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}^x/2} \left[C_{ff'}^{(0)}\hat{\mathbbm{1}} + C_{ff'}^{(2)}\left(\hat{f}_{x}^2-\frac{1}{3}\hat{\mathbf{f}}^2 \right) \right]\\
+\hat{W}_{y} &= \frac{1}{\sqrt{\gamma_s}}\!\sum_{f'} \frac{\sqrt{\Gamma_{f'}^y}\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}^y/2} \left(-iC_{ff'}^{(1)}\hat{f}_z + C_{ff'}^{(2)}\frac{\hat{f}_{x}\hat{f}_{y}+\hat{f}_{y}\hat{f}_{x}}{2} \right)\\
+\hat{W}_{z} &= \frac{1}{\sqrt{\gamma_s}}\!\sum_{f'} \frac{\sqrt{\Gamma_{f'}^z}\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}^z/2} \left(iC_{ff'}^{(1)}\hat{f}_{y} + C_{ff'}^{(2)}\frac{\hat{f}_z\hat{f}_{x}+\hat{f}_{x}\hat{f}_z}{2}  \right).
+\end{align}
+
+
+The optical pumping dynamics of the $ j $-th atom are governed by 
+\begin{align}
+\left.\dt{\hat{\rho}^{(j)}}\right|_{op} &= \gamma_s\mathcal{D}[\hat{\rho}^{(j)}]=-\frac{i\gamma_s}{\hbar}\left\{\hat{h}^{\rm eff}_{\rm eff},\hat{\rho}^{(j)} \right\}_+ + \gamma_s\sum_{q}\hat{W}_q(\br'_j)\hat{\rho}^{(j)}\hat{W}_q^\dagger(\br'_j)\\
+\\
+&=-\gamma_s\frac{1}{2}\sum_{a,b}\gamma_{ba}\ket{b}\bra{a}+
+\!\!\!\!\!\!\sum_{q,q',q'',a,b,c,d,f',f'',m',m''}\!\!\!\!\!\! \gamma_sw_{dcq}^{f''m''q''}\left(w_{abq}^{f'm'q'}\right)^*\ket{d}\bra{c}\hat{\rho}^{(i)}\ket{b}\bra{a}
+\end{align}
+Eqs.~\eqref{Eq::gammaf} and~\eqref{Eq::Wq_Faraday} yield,
+\begin{subequations}
+	\begin{align}
+		\gamma_{ba} 
+		&=\frac{n_g\dot{N}_L}{\gamma_s}  \sum_{f',q} \sigma (\Delta_{ff'} ) \mathbf{u}^*_\inp(\br'_\perp)\cdot \bra{b} \hat{\tensor{\mbf{A}}}(f,f') \ket{a}  \cdot \mathbf{u}_\inp(\br'_\perp)\\
+		&\approx  \sum_{f',m'} \frac{\Delta_{F}^2}{\Delta_{ff'}^2}\sum_{q,q'} \big| o_{jf}^{j'f'} \big|^2C_{f',b+q'}^{f,b;1, q'}C_{f',a+q}^{f,a;1, q} \mathbf{e}_{q'}^* \cdot (\mathbf{e}_{\rm in}\mathbf{e}_{\rm in}^* )\cdot \mathbf{e}_q,
+	\end{align}
+\end{subequations}
+	\begin{align}
+		w_{baq}^{f'm'q'}
+		&\approx  \frac{\Delta_{F}}{\Delta_{ff'}+i\Gamma_{f'}^q/2} \big| o_{jf}^{j'f'}  \big|^2 C_{f'm'}^{f,b;1 q}C_{f',m'}^{f,a;1,q'} (\mathbf{e}_{q'}^* \cdot \mathbf{e}_{\rm in}),
+	\end{align}
+where $ \sigma (\Delta_{ff'} )  = \sigma_0 \Gamma_0^2/4\Delta^2_{f' f}$ is the the scattering cross section at the probe detuning in free space. 
+
+Now, we consider a static magnetic field is applied to the atoms to fix the quantization axis to the $ \mathbf{e}_{z} $ direction pointing along the waveguide axis.
+We assume the magnetic field is so strong that the Larmor processing is much faster than the atomic decay and atom-photon interaction processes and the transverse components of the atomic angular momentum operators will be averaged out in the process of spin squeezing dynamics.
+In theory, this leads us to transfer the master equations of the collective spin dynamics to the rotating frame determined by the fast-rotating transform operator
+\begin{align}
+\hat{U}_B(t) &= e^{-i\Omega_Bt\hat{f}_z},
+\end{align}
+where $ \Omega_B $ is the Larmor processing frequency of the external magnetic field.
+In the rotating frame, a quantum operator $ \hat{A} $ is transfered into $ \hat{A}' $ through $ \hat{A}\rightarrow \hat{A}'=\expect{\hat{U}_B^\dagger\hat{A}\hat{U}_B }_T $, where the notation $ \expect{\cdot}_T=\frac{1}{T}\int\cdot dt $ is the time average of observables in a period $ T $.
+The density operator preserves its form in the rotating frame.
+We can solve the transformed master equations by employing the Baker-Campbell-Hausdorff formula that $ e^{\lambda\hat{A}}\hat{B}e^{-\lambda\hat{A}}=\sum_{n=0}^\infty\frac{\lambda^n}{n!}\hat{C}_n $, where $ \hat{C}_0=\hat{B} $ and $ \hat{C}_n=\left[\hat{A},\hat{C}_{n-1} \right] $ for $ n>1 $, and the commutators of atomic angular momentum operators, $ \left[\hat{f}_m, \hat{f}_n\right]=i\sum_p\epsilon_{mnp}\hat{f}_p $.
+The following static-rotating frame transformation relationships can be proved easily:
+\begin{subequations}\label{eq:rotationtransf}
+	\begin{align}
+	\hat{U}_B^\dagger\hat{f}_{x}\hat{U}_B&=\cos(\Omega_Bt)\hat{f}_x-\sin(\Omega_Bt)\hat{f}_y,\\
+	\hat{U}_B^\dagger\hat{f}_{y}\hat{U}_B &= \sin(\Omega_Bt)\hat{f}_x+ \cos(\Omega_Bt)\hat{f}_y, \\ \hat{U}_B^\dagger\hat{f}_{z}\hat{U}_B &=\hat{f}_z,\quad \hat{U}_B^\dagger\hat{\mathbbm{1}}\hat{U}_B =\hat{\mathbbm{1}}.
+	\end{align}
+\end{subequations}
+In the rotating frame, operators with a transverse atomic angular momentum will be averaged to vanish. For example,
+\begin{subequations}\label{eq:rotationtransf_f}
+	\begin{align}
+	\hat{f}_{x}&=\hat{f}_{y} \rightarrow 0, \quad \hat{f}_{z}\rightarrow\hat{f}_z, \quad \hat{f}_{z}^ 2\rightarrow\hat{f}_z^2,\\
+	\hat{f}^2_{x} &= \hat{f}^ 2_{y} \rightarrow \frac{1}{2}(\hat{\mathbf{f}}^2-\hat{f}_z^2),\\
+	\hat{f}_{x}\hat{f}_{y} &\rightarrow\frac{1}{2}\hat{f}_z,\quad \hat{f}_{y}\hat{f}_{x}\rightarrow -\frac{1}{2}\hat{f}_z,\quad \hat{f}_{i=x,y}\hat{f}_{z}\rightarrow 0.
+	\end{align}
+\end{subequations}
+
+
+
+Using the transformation relationships defined in Eqs.\eqref{eq:rotationtransf}, the loss Hamiltonian in the rotating frame becomes
+\begin{subequations}\label{eq:rotationtransf_hloss}
+\begin{align}
+\hat{h}_{\rm eff} =-\frac{i\hbar}{2} \sum_{f'}\gamma'_s \left[C_{ff'}^{(0)}\hat{\mathbbm{1}} + \frac{C_{ff'}^{(2)}}{6}(\hat{\mathbf{f}}^2-3\hat{f}_z^2 ) \right],
+\end{align}
+\end{subequations}
+where $ z $-direction is the waveguide axis direction, and $ \hat{\mathbf{f}}^2=\hat{\mathbf{f}}\cdot\hat{\mathbf{f}} $.
+
+
+By using the transformation relationships of Eqs.\eqref{eq:rotationtransf}, the jump operators become 
+\begin{subequations}\label{eq:rotationtransf_Wxyz}
+\begin{align}
+\hat{W}_{x} &= \frac{1}{\sqrt{\gamma_s}}\!\sum_{f'} \frac{\sqrt{\Gamma_{f'}^x}\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}/2} \left[C_{ff'}^{(0)}\hat{\mathbbm{1}} + \frac{C_{ff'}^{(2)}}{6}\left(\hat{\mathbf{f}}^2-3\hat{f}_{z}^2 \right) \right]\\
+\hat{W}_{y} &= \frac{1}{\sqrt{\gamma_s}}\!\sum_{f'} -\frac{i\sqrt{\Gamma_{f'}^y}\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}^y/2} C_{ff'}^{(1)}\hat{f}_z  \\
+\hat{W}_{z} &= 0.
+\end{align}
+\end{subequations}
+
+By using the fact that 
+\begin{subequations}
+\begin{align}
+\hat{\mathbf{f}}^2 &=f(f+1)\hat{\mathbbm{1}}\\
+\hat{f}_z &=\sum_{m=1}^{2f+1}(f-m+1)\hat{\sigma}_{mm}\\
+\hat{f}_z^2 &= \sum_{m=1}^{2f+1}(f-m+1)^2\hat{\sigma}_{mm}
+\end{align}
+\end{subequations}
+in the rotating frame, both $ \hat{h}_{\rm eff} $ and $ \hat{W}_{q} $ become diagonal, and Eqs.\eqref{eq:rotationtransf_hloss} and~\eqref{eq:rotationtransf_Wxyz} can be simplified as
+\begin{subequations}
+\begin{align}
+\hat{h}_{\rm eff} &= -\frac{i\hbar}{2} \sum_{f'} \gamma'_s(f') \sum_{m=-f}^f\left[C_{ff'}^{(0)} + \frac{C_{ff'}^{(2) }}{6}(f(f+1)-3m^2) \right]\hat{\sigma}_{mm}\\
+\hat{W}_{x} &= \frac{1}{\sqrt{\gamma_s}}\!\sum_{f'} \frac{\sqrt{\Gamma_{f'}^x }\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}^x/2 } \sum_{m=-f}^f\left[C_{ff'}^{(0)} + \frac{C_{ff'}^{(2) }}{6}(f(f+1)-3m^2) \right]\hat{\sigma}_{mm}\\
+\hat{W}_{y} &= -\frac{i}{\sqrt{\gamma_s}}\!\sum_{f'} \frac{\sqrt{\Gamma_{f'}^y }\Omega/2}{\Delta_{ff'}+i\Gamma_{f'}^y/2 } \sum_{m=-f}^f C_{f'ff'}^{(1)}m\hat{\sigma}_{mm}\\
+\hat{W}_z &=0.
+\end{align}
+\end{subequations}
+After some algebra, one can obtain the optical pumping master equation in the rotating frame as
+\begin{align}
+\left. \dt{\hat{\rho}}\right|_{\rm op} 
+&= - \sum_{f'} \gamma'_s(f') \left[\left(C_{ff'}^{(0)}+\frac{f(f+1)}{12}C_{ff'}^{(2)} \right)\hat{\rho}-\frac{C_{ff'}^{(2)}}{4}(\hat{f}_z^2\hat{\rho}+\hat{\rho}\hat{f}_z^2) \right]\nn\\
+&\quad+\sum_{f',f''} \frac{\sqrt{\Gamma_{f'}\Gamma_{f''} }\Omega^2/4 }{\Delta_{ff'}\Delta_{ff''}+\Gamma_{f'}\Gamma_{f''}/4+i(\Delta_{ff''}\Gamma_{f'}-\Delta_{ff'}\Gamma_{f''} ) }\nn\\
+&\quad\cdot\left\{C_{ff'}^{(0)}C_{ff''}^{(0)}\hat{\rho}+ C_{ff'}^{(0)}C_{ff''}^{(2)}\frac{\hat{\rho}}{6}(\fo^2-3\hat{f}_z^2) + C_{ff''}^{(0)}C_{ff'}^{(2)}(\fo^2-3\hat{f}_z^2)\frac{\hat{\rho}}{6} \right.\nn\\
+&\quad\quad + \frac{1}{2}C_{ff'}^{(1)}C_{ff''}^{(1)}(\hat{f}_x\hat{\rho}\hat{f}_x+\hat{f}_y\hat{\rho}\hat{f}_y+2\hat{f}_z\hat{\rho}\hat{f}_z )\nn\\
+&\quad\quad -\frac{1}{4}C_{ff'}^{(1)}C_{ff''}^{(2)}(\fx\rhoo\fx-\fy\rhoo\fy-2i\fx\rhoo\fz\fy+2i\fy\rhoo\fx\fz )\nn\\
+&\quad\quad +\frac{1}{4}C_{ff''}^{(1)}C_{ff'}^{(2)}(\fx\rhoo\fx-\fy\rhoo\fy-2i\fz\fy\rhoo\fx+2i\fx\fz\rhoo\fy ) \nn\\
+&\quad +C_{ff'}^{(2)}C_{ff''}^{(2)}\left[\frac{1}{4}f^2(f+1)^2\rhoo-\frac{f(f+1)}{6}(\fo^2-\fz^2)\rhoo-\frac{f(f+1)}{6}\rhoo(\fo^2-\fz^2) \right.\nn\\
+&\quad\quad\quad+\frac{1}{2}\fx^2\rhoo\fx^2+\frac{1}{2}\fy^2\rhoo\fy^2+\frac{1}{4}(i\fz+2\fy\fx)\rhoo(i\fz+2\fy\fx)\nn\\
+&\left.\left.\quad\quad\quad +\frac{1}{8}(i\fy+2\fx\fz)\rhoo(i\fy+2\fx\fz)+\frac{1}{8}(i\fx+2\fz\fy)\rhoo(i\fx+2\fz\fy) \right]\right\}.
+\end{align}
+As a sanity check, we consider a far-detuning regime where the detuning on hyperfine sublevels is indistinguishable so that we can denote $ f''=f' $ and ignore all tensor polarizability terms where $ C_{ff'}^{(2)} $ presents, and the optical pumping part of the master equation above becomes
+\begin{align}
+\left.\dt{\rhoo}\right|_{\rm op} &= \gamma'_s  \left[C_{fj'}^{(0)}(C_{fj'}^{(0)}-1)\rhoo+\frac{1}{2}(C_{fj'}^{(1)})^2(\fx\rhoo\fx+\fy\rhoo\fy+2\fz\rhoo\fz ) \right]\\
+&= -\frac{2\gamma'_s}{9}+\frac{\gamma'_s}{18f^2}(\fx\rhoo\fx+\fy\rhoo\fy+2\fz\rhoo\fz )
+\end{align}
+for the far-detuned $ D_1 $- and $ D_2 $-line transitions of cesium atoms,
+which is a well-known result in previous studies~\cite{Deutsch2010a,Baragiola2014}.
+Above, we have defined $ C_{fj'}^{(0)}=\sum_{f'}C^{(0)}_{ff'}=1/3  $ for $ j'=1/2 $ or $ 2/3 $ for $ j'=3/2 $; $ C^{(1)}_{fj'}=\sum_{f'}C^{(1)}_{ff'}=\pm g_f/3 $ for $ j'=1/2 $ and $ j'=3/2 $, respectively, and $ g_f=1/f $ for our case. 
+
+
+%</opticalpumpingwithmodifiedrates>
+
+%\bibliography{Nanofiber}
+%\bibliographystyle{amsplain}
+\bibliographystyle{../styles/abbrv-alpha-letters-links}
+%\bibliographystyle{unsrt}
+% \nocite{*}
+\bibliography{../refs/Archive,../chap4/Nanofiber}
+
+\printindex
+
+\end{document}          
