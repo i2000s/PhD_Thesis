@@ -1359,7 +1359,7 @@ Based on Eq.~\eqref{eq:Gamma_e}, we define an equivalent dipole with moment $ \m
 \begin{align}
 \Gamma_0 &= \frac{4\omega_0^3|\mathbf{d}|^2}{3\hbar c^3}=\frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_0(\br',\br')]\cdot \mathbf{d}^* \right\}\\
 \Gamma &= \frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT(\br',\br')]\cdot \mathbf{d}^* \right\}\\
-&=\frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_0(\br',\br')+\GFT_R(\br'\br')]\cdot \mathbf{d}^* \right\}.
+&=\frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_0(\br',\br')+\GFT_R(\br'\br')]\cdot \mathbf{d}^* \right\}.\label{eq:GammaG0GRrprp}
 \end{align}
 Obviously, $ \Gamma $ is a scalar and includes a free dipole emission part and a reflected or induced dipole emission part, by the physics meaning of its parts. 
 We interpret the total spontaneous emission rate of a dipole close to an interface of dielectric medium is a result of interference between a free oscillating dipole and its image mirrored by the interface~\cite{Vos2009}.
@@ -1377,7 +1377,7 @@ Meanwhile, the fact that both the atomic polarizability tensor and the Green's d
 
 Now, we diagonalize $\mathrm{Im}[\GFT(\br',\br')]$ by
 \begin{align}
-\mathrm{Im}[\mathbf{G}(\br',\br')] &= \sum_{i=1,2,3} g_i\mathbf{v}_i\mathbf{v}_i,\,\text{with}\, g_i>0,
+\mathrm{Im}[\GFT(\br',\br')] &= \sum_{i=1,2,3} g_i\mathbf{v}_i\mathbf{v}_i,\,\text{with}\, g_i>0,
 \end{align}
 where $\mathbf{v}_i$ as the eigenvectors of $ \mathrm{Im}[\GFT(\br',\br')] $ form the principal axes of the decay rate, and $ g_i $ are the principal values of decay rates on these axes. 
 \begin{align}
@@ -1385,15 +1385,22 @@ where $\mathbf{v}_i$ as the eigenvectors of $ \mathrm{Im}[\GFT(\br',\br')] $ for
 = \sum_i (d'_i)^2 g_i \\
 &= \Gamma_1\cos^2\phi\sin^2\theta+\Gamma_2\sin^2\phi\sin^2\theta+\Gamma_3\cos^2\theta,
 \end{align}
-where vector elements $ d'_i=\frac{2}{\hbar}\sqrt{\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i}$, and $\mathbf{d}'=\sum_i d'_i\mathbf{v}_i$ defines the equivalent dipole orientation of the atomic polarizability transitions. We order $ \Gamma_i $'s by
+where vector elements $ d'_i=\frac{2}{\hbar}\sqrt{\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i}$, and $\mathbf{d}'=\sum_i d'_i\mathbf{v}_i$ defines the equivalent dipole orientation of the atomic polarizability in the principal basis of the dielectric medium interface. The amplitude $ |\mathbf{d}'|=2d^2/\hbar $, where $ d=|\mathbf{d}| $. We order $ \Gamma_i $'s by
 \begin{align}
 \Gamma_1=\Gamma_{max}\ge \Gamma (\theta,\phi) \ge \Gamma_{min}=\Gamma_3.
 \end{align}
+Correspondingly, $ g_1\ge g_2\ge g_3 $. We have 
+\begin{align}
+\Gamma_i &= \frac{2d^2g_i}{\hbar},
+\end{align}
+The angles $ 0\le \theta\le \pi $ and $ 0\le \phi\le 2\pi $ define the incident and azimuthal angles on the spherical coordinate using the principal axes of the Green's tensor. Therefore, the value of the spontaneous decay rate $ \Gamma (\theta,\phi) $ is limited by the eigenvalues $ g_i $ of the imaginary part of the Green's tensor of the dipole radiation, which is solely determined by the geometry of the dielectric interface and the position of the dipole source, and is evaluated by the alignment, $ (\theta,\phi) $, of the equivalent dipole of the atom relative to the principal axes of the Green's tensor. The distribution of $ \Gamma $ with arbitrary $ (\theta,\phi) $ is called the spontaneous \emph{emission surface} of an optical dipole placed in a medium background\index{emission surface}~\cite{Vos2009}. The simplest example of a medium interface is the vacuum or a homogeneous bulk medium. Placing a dipole in such a medium will result in a Green's tensor characterized by $ \GFT_0(\br',\br') $, the imaginary part of which is proportional to a unit tensor with diagonal elements equal to $ 2(nk_0)^3/3 $. In this case, the emission surface is a perfect ball, which means the dipole doesn't have a preferred orientation and the decay rate of the dipole in such a medium is determined by its dipole moment and the index of refraction, $ n $, of the background medium. 
+
+With an inhomogeneous medium, we follow the argument by Vos \emph{et al.} and our interpretation of Eq.~\eqref{eq:GammaG0GRrprp} that the principal axes and the eigenvalues of the imaginary part of the Green's dyad can be visualized using the interference picture of the original dipole source and its image behind the interface~\cite{Vos2009}. Figure~\ref{fig:dipoleinterferencepic} illustrates the interference effect of dipoles placed on top of a semi-infinite half space medium (flat interface) and a cylindrical waveguide medium. 
 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.8\textwidth]{../media/Figs/dipoleorientation}}
-\caption{Modified dipole decay rates due to image dipoles mirrored on flat (a) and cylindrical (b) surfaces.}
+\caption{Modified dipole decay rates due to image dipoles mirrored on flat (a) and cylindrical (b) surfaces.}\label{fig:dipoleinterferencepic}
 \end{figure}
 
 \begin{figure}[!tbp]
