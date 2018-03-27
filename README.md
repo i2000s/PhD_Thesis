@@ -1,4 +1,16 @@
-Title: Dispersive quantum interface with atoms and nanophotonic waveguides
+#Dispersive quantum interface with atoms and nanophotonic waveguides
+
+Work in progress. [Comments](https://github.com/i2000s/PhD_Thesis/issues) and editorial inputs are welcome!
+
+Some data of plots are compiled into TikZ files. 
+Some data and scripts can be found in our previous paper repositories, for example, including [the repo for our Faraday spin squeezing protocol paper](https://github.com/CQuIC/FaradaySqueezingProtocol), 
+and [the repo for the simulations of Green's tensors and spontaneous emission rates with waveguides](https://github.com/i2000s/simnanophotonics) (Jupyter notebooks with Julia v0.6 as the scripting language).
+
+First complete draft release is scheduled in early April.
+
+Dissertation submission release should be before the middle of May, 2018.
+
+***Proposed outline:***
 
 Chapter 1: Introduction
 (Dispersive quantum interface, cooperativity and optical depth, outline, and the list of publications)
@@ -12,7 +24,7 @@ Chapter 2: Photon emission near a nanophotonic waveguide
     2.6 Modification of the spontaneous emission of atoms in presence of a dielectric waveguide
 
 Chapter 3: Quantum dynamics of atom-light interaction
-    3.1 Polarizability of alkali atoms
+    3.1 Polarizability of alkali atoms (moved to Chap 2)
     3.2 Dispersive atom-light interaction in the Heisenberg-Langevin picture
     3.3 Polarization spectroscopy and quantum nondemolition measurement
     3.4 Spin squeezing induced by QND measurement
