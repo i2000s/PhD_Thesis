@@ -32,6 +32,8 @@ At the end of this chapter, we will conclude with some geometric explanations on
 
 \section{Polarization spectroscopy and dispersive light shift measures}
 \subsection{Polarization states of light}
+\qxd{This subsection has been proofread by Teves on March 26.}
+
 In free space, light is a transverse field. The polarization state of light\index{polarization} can be fully described by the amplitudes and relative phase of two orthogonal electric field components, $ \mathbf{E}_x $ and $ \mathbf{E}_y $. That is, one can write the electric field of a propagating mono-chromatic light field as: 
 \begin{equation} \label{eq:freeEfield}
 \mathbf{E}(\br,t)=\mathbf{E}_x(\br,t)+\mathbf{E}_y(\br,t)
@@ -73,7 +75,6 @@ where the field has been decomposed into the $ q=\pm $ components by
 \end{align} 
 with $ \mathcal{E}_q=\mathbf{e}_q^*\cdot \mathbf{E} $, and the left- and right-circular polarization amplitudes $ \mathcal{E}_L=\mathcal{E}_+ $ and $ \mathcal{E}_R=\mathcal{E}_- $, respectively. 
 Note that the definition of \emph{left} and \emph{right} rotations in modern physics, including quantum mechanics, is different from that in traditional optics. In order to match the classical definitions of basic concepts with the quantum mechanical derivation in Chapter~\ref{chap:quantumdynamicsrepresentation}, we will primarily stick to the concept of \emph{helicity} in this chapter.
-\teves{This would be a good place to redefine helicity for the reader, unless you're just assuming that the audience is familiar with helicity. The surrounding text, though, indicates that this is not the case since you're defining electric field vectors for them.}\qxd{I changed ``definition" to ``concept", which is stated in earlier paragraph. Does it sound ok?}
 
 The Cartesian basis of the polarization measurement is usually called as the linear polarization basis (see Eq.~\eqref{eq:circularlightfield} for the circular polarization case). We can also use $ H $ (horizontal) and $ V $ (vertical) to label the $ x $ and $ y $ components of the field.
 Alternatively, if the actual field is detected in the circular polarization basis, only one non-zero amplitude may be detected proportional to the circular polarization component 
@@ -86,8 +87,8 @@ If $\mathcal{E}_{x}$ and $ \mathcal{E}_{y} $ have different phases, the light is
 \begin{align}
 \mathbf{E}=(\mathcal{E}_+\mathbf{e}_+ + \mathcal{E}_-\mathbf{e}_-)e^{i(k_0z-\omega_0 t)},
 \end{align}
-where $ \mathcal{E}_\pm $ are complex amplitudes, and $ \mathrm{angle}\left(\mathcal{E}_+\right)$ may not equal to $\mathrm{angle}\left(\mathcal{E}_-\right) $. \teves{I'm confused about what your notation is doing here, are you sure you mean square brackets? I could just be unaware of the notation type you're using, but to me this usually means "floor," not angle.} \qxd{I changed to round brackets. Hopefully, I don't have this used in other places.}
-When $ \mathcal{E}_+ $ and $ \mathcal{E}_- $ have different magnitudes yet the same phase, the light is elliptically polarized with the $ \mathbf{E} $ vector traced as an ellipse defined by the principle axes pointing along $ \mathbf{e}_x $ and $ \mathbf{e}_y $ directions~\cite{Jackson1975}. The semimajor and semiminor axes of the ellipse have a ratio of $ |(1+r)/(1-r)| $, where $ r=\mathcal{E}_+/\mathcal{E}_- $. \teves{I believe you should put this on its own line for clarity.} \qxd{This is a place I am trying to hide the definition, since $ r $ is also a variable for position coordinates, and the $ r $, defined here, will never be used again in other chapters.}
+where $ \mathcal{E}_\pm $ are complex amplitudes, and $ \mathrm{angle}\left(\mathcal{E}_+\right)$ may not equal to $\mathrm{angle}\left(\mathcal{E}_-\right) $. 
+When $ \mathcal{E}_+ $ and $ \mathcal{E}_- $ have different magnitudes yet the same phase, the light is elliptically polarized with the $ \mathbf{E} $ vector traced as an ellipse defined by the principle axes pointing along $ \mathbf{e}_x $ and $ \mathbf{e}_y $ directions~\cite{Jackson1975}. The semimajor and semiminor axes of the ellipse have a ratio of $ |(1+r)/(1-r)| $, where $ r=\mathcal{E}_+/\mathcal{E}_- $. 
 When the two complex amplitudes in the circular polarization basis have a phase difference, $ \phi $, or $ \mathcal{E}_+/\mathcal{E}_-=re^{i\phi} $, then the traced ellipse of the $ \mathcal{E} $ vector has its principal axes rotated by an angle $ \phi/2 $ from the $ \mathbf{e}_x $ and $ \mathbf{e}_y $ axes. 
 The real parameter $ r $ is the ellipticity\index{polarization!ellipticity} of the ellipse of the $ \mathbf{E} $ vector trace. For $ r=\pm 1 $, we recover the linear polarization case. 
 
@@ -1360,7 +1361,7 @@ Based on Eq.~\eqref{eq:Gamma_e}, we define an equivalent dipole with moment $ \m
 \begin{align}
 \Gamma_0 &= \frac{4\omega_0^3|\mathbf{d}|^2}{3\hbar c^3}=\frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_0(\br',\br')]\cdot \mathbf{d}^* \right\}\\
 \Gamma &= \frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT(\br',\br')]\cdot \mathbf{d}^* \right\}\\
-&=\frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_0(\br',\br')+\GFT_R(\br'\br')]\cdot \mathbf{d}^* \right\}.
+&=\frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_0(\br',\br')+\GFT_R(\br'\br')]\cdot \mathbf{d}^* \right\}.\label{eq:GammaG0GRrprp}
 \end{align}
 Obviously, $ \Gamma $ is a scalar and includes a free dipole emission part and a reflected or induced dipole emission part, by the physics meaning of its parts. 
 We interpret the total spontaneous emission rate of a dipole close to an interface of dielectric medium is a result of interference between a free oscillating dipole and its image mirrored by the interface~\cite{Vos2009}.
@@ -1378,7 +1379,7 @@ Meanwhile, the fact that both the atomic polarizability tensor and the Green's d
 
 Now, we diagonalize $\mathrm{Im}[\GFT(\br',\br')]$ by
 \begin{align}
-\mathrm{Im}[\mathbf{G}(\br',\br')] &= \sum_{i=1,2,3} g_i\mathbf{v}_i\mathbf{v}_i,\,\text{with}\, g_i>0,
+\mathrm{Im}[\GFT(\br',\br')] &= \sum_{i=1,2,3} g_i\mathbf{v}_i\mathbf{v}_i,\,\text{with}\, g_i>0,
 \end{align}
 where $\mathbf{v}_i$ as the eigenvectors of $ \mathrm{Im}[\GFT(\br',\br')] $ form the principal axes of the decay rate, and $ g_i $ are the principal values of decay rates on these axes. 
 \begin{align}
@@ -1386,15 +1387,22 @@ where $\mathbf{v}_i$ as the eigenvectors of $ \mathrm{Im}[\GFT(\br',\br')] $ for
 = \sum_i (d'_i)^2 g_i \\
 &= \Gamma_1\cos^2\phi\sin^2\theta+\Gamma_2\sin^2\phi\sin^2\theta+\Gamma_3\cos^2\theta,
 \end{align}
-where vector elements $ d'_i=\frac{2}{\hbar}\sqrt{\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i}$, and $\mathbf{d}'=\sum_i d'_i\mathbf{v}_i$ defines the equivalent dipole orientation of the atomic polarizability transitions. We order $ \Gamma_i $'s by
+where vector elements $ d'_i=\frac{2}{\hbar}\sqrt{\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i}$, and $\mathbf{d}'=\sum_i d'_i\mathbf{v}_i$ defines the equivalent dipole orientation of the atomic polarizability in the principal basis of the dielectric medium interface. The amplitude $ |\mathbf{d}'|=2d^2/\hbar $, where $ d=|\mathbf{d}| $. We order $ \Gamma_i $'s by
 \begin{align}
 \Gamma_1=\Gamma_{max}\ge \Gamma (\theta,\phi) \ge \Gamma_{min}=\Gamma_3.
 \end{align}
+Correspondingly, $ g_1\ge g_2\ge g_3 $. We have 
+\begin{align}
+\Gamma_i &= \frac{2d^2g_i}{\hbar},
+\end{align}
+The angles $ 0\le \theta\le \pi $ and $ 0\le \phi\le 2\pi $ define the incident and azimuthal angles on the spherical coordinate using the principal axes of the Green's tensor. Therefore, the value of the spontaneous decay rate $ \Gamma (\theta,\phi) $ is limited by the eigenvalues $ g_i $ of the imaginary part of the Green's tensor of the dipole radiation, which is solely determined by the geometry of the dielectric interface and the position of the dipole source, and is evaluated by the alignment, $ (\theta,\phi) $, of the equivalent dipole of the atom relative to the principal axes of the Green's tensor. The distribution of $ \Gamma $ with arbitrary $ (\theta,\phi) $ is called the spontaneous \emph{emission surface} of an optical dipole placed in a medium background\index{emission surface}~\cite{Vos2009}. The simplest example of a medium interface is the vacuum or a homogeneous bulk medium. Placing a dipole in such a medium will result in a Green's tensor characterized by $ \GFT_0(\br',\br') $, the imaginary part of which is proportional to a unit tensor with diagonal elements equal to $ 2(nk_0)^3/3 $. In this case, the emission surface is a perfect ball, which means the dipole doesn't have a preferred orientation and the decay rate of the dipole in such a medium is determined by its dipole moment and the index of refraction, $ n $, of the background medium. 
+
+With an inhomogeneous medium, we follow the argument by Vos \emph{et al.} and our interpretation of Eq.~\eqref{eq:GammaG0GRrprp} that the principal axes and the eigenvalues of the imaginary part of the Green's dyad can be visualized using the interference picture of the original dipole source and its image behind the interface~\cite{Vos2009}. Figure~\ref{fig:dipoleinterferencepic} illustrates the interference effect of dipoles placed on top of a semi-infinite half space medium (flat interface) and a cylindrical waveguide medium. 
 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.8\textwidth]{../media/Figs/dipoleorientation}}
-\caption{Modified dipole decay rates due to image dipoles mirrored on flat (a) and cylindrical (b) surfaces.}
+\caption{Modified dipole decay rates due to image dipoles mirrored on flat (a) and cylindrical (b) surfaces.}\label{fig:dipoleinterferencepic}
 \end{figure}
 
 \begin{figure}[!tbp]
