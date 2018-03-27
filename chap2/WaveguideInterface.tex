@@ -32,6 +32,8 @@ At the end of this chapter, we will conclude with some geometric explanations on
 
 \section{Polarization spectroscopy and dispersive light shift measures}
 \subsection{Polarization states of light}
+\qxd{This subsection has been proofread by Teves on March 26.}
+
 In free space, light is a transverse field. The polarization state of light\index{polarization} can be fully described by the amplitudes and relative phase of two orthogonal electric field components, $ \mathbf{E}_x $ and $ \mathbf{E}_y $. That is, one can write the electric field of a propagating mono-chromatic light field as: 
 \begin{equation} \label{eq:freeEfield}
 \mathbf{E}(\br,t)=\mathbf{E}_x(\br,t)+\mathbf{E}_y(\br,t)
@@ -73,7 +75,6 @@ where the field has been decomposed into the $ q=\pm $ components by
 \end{align} 
 with $ \mathcal{E}_q=\mathbf{e}_q^*\cdot \mathbf{E} $, and the left- and right-circular polarization amplitudes $ \mathcal{E}_L=\mathcal{E}_+ $ and $ \mathcal{E}_R=\mathcal{E}_- $, respectively. 
 Note that the definition of \emph{left} and \emph{right} rotations in modern physics, including quantum mechanics, is different from that in traditional optics. In order to match the classical definitions of basic concepts with the quantum mechanical derivation in Chapter~\ref{chap:quantumdynamicsrepresentation}, we will primarily stick to the concept of \emph{helicity} in this chapter.
-\teves{This would be a good place to redefine helicity for the reader, unless you're just assuming that the audience is familiar with helicity. The surrounding text, though, indicates that this is not the case since you're defining electric field vectors for them.}\qxd{I changed ``definition" to ``concept", which is stated in earlier paragraph. Does it sound ok?}
 
 The Cartesian basis of the polarization measurement is usually called as the linear polarization basis (see Eq.~\eqref{eq:circularlightfield} for the circular polarization case). We can also use $ H $ (horizontal) and $ V $ (vertical) to label the $ x $ and $ y $ components of the field.
 Alternatively, if the actual field is detected in the circular polarization basis, only one non-zero amplitude may be detected proportional to the circular polarization component 
@@ -86,8 +87,8 @@ If $\mathcal{E}_{x}$ and $ \mathcal{E}_{y} $ have different phases, the light is
 \begin{align}
 \mathbf{E}=(\mathcal{E}_+\mathbf{e}_+ + \mathcal{E}_-\mathbf{e}_-)e^{i(k_0z-\omega_0 t)},
 \end{align}
-where $ \mathcal{E}_\pm $ are complex amplitudes, and $ \mathrm{angle}\left(\mathcal{E}_+\right)$ may not equal to $\mathrm{angle}\left(\mathcal{E}_-\right) $. \teves{I'm confused about what your notation is doing here, are you sure you mean square brackets? I could just be unaware of the notation type you're using, but to me this usually means "floor," not angle.} \qxd{I changed to round brackets. Hopefully, I don't have this used in other places.}
-When $ \mathcal{E}_+ $ and $ \mathcal{E}_- $ have different magnitudes yet the same phase, the light is elliptically polarized with the $ \mathbf{E} $ vector traced as an ellipse defined by the principle axes pointing along $ \mathbf{e}_x $ and $ \mathbf{e}_y $ directions~\cite{Jackson1975}. The semimajor and semiminor axes of the ellipse have a ratio of $ |(1+r)/(1-r)| $, where $ r=\mathcal{E}_+/\mathcal{E}_- $. \teves{I believe you should put this on its own line for clarity.} \qxd{This is a place I am trying to hide the definition, since $ r $ is also a variable for position coordinates, and the $ r $, defined here, will never be used again in other chapters.}
+where $ \mathcal{E}_\pm $ are complex amplitudes, and $ \mathrm{angle}\left(\mathcal{E}_+\right)$ may not equal to $\mathrm{angle}\left(\mathcal{E}_-\right) $. 
+When $ \mathcal{E}_+ $ and $ \mathcal{E}_- $ have different magnitudes yet the same phase, the light is elliptically polarized with the $ \mathbf{E} $ vector traced as an ellipse defined by the principle axes pointing along $ \mathbf{e}_x $ and $ \mathbf{e}_y $ directions~\cite{Jackson1975}. The semimajor and semiminor axes of the ellipse have a ratio of $ |(1+r)/(1-r)| $, where $ r=\mathcal{E}_+/\mathcal{E}_- $. 
 When the two complex amplitudes in the circular polarization basis have a phase difference, $ \phi $, or $ \mathcal{E}_+/\mathcal{E}_-=re^{i\phi} $, then the traced ellipse of the $ \mathcal{E} $ vector has its principal axes rotated by an angle $ \phi/2 $ from the $ \mathbf{e}_x $ and $ \mathbf{e}_y $ axes. 
 The real parameter $ r $ is the ellipticity\index{polarization!ellipticity} of the ellipse of the $ \mathbf{E} $ vector trace. For $ r=\pm 1 $, we recover the linear polarization case. 
 
