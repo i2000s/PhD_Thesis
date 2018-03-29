@@ -210,21 +210,21 @@ where the vector $ \boldsymbol{\chi}=(\chi_0,\chi_1,\chi_2,\chi_3) $ are the rot
 
 In the next section, we will step into the properties of the bare waveguide modes and the dispersive response of the waveguide modes due to the presence of the atoms from the perspective of Green's function approach.
 
-\section{Dispersive light response in the perspective of Green's function approach}
+\section{Dispersive light response in the perspective of Green's function approach \nd{Tom is working on it.}}
 \subsection{Eigenmodes of a dielectric waveguide}\label{sec:eigenmodesofwaveguides}
-We assume that the waveguide we are going to study is infinitely long and has a uniform profile of refractive index through the fiber axis. For a nanophotonic waveguide that can trap atoms using its evanescent field, its dimension of the cross-section is smaller than the wavelength $ \lambda $ of the trapping field (typically, a quasi-monochromatic laser beam operating around $ \lambda=894 $nm or $852  $nm which are the D1 and D2 lines of the cesium atoms considered in the numerical simulations later in this dissertation). 
-We assume the waveguide is a linear medium with no absorption to the traveling wave. The refractive bulk index\index{refractive index} of the waveguide can be given by
+We assume that the waveguide we are going to study is infinitely long and has a uniform profile of refractive index through the fiber axis. For a nanophotonic waveguide that can trap atoms using its evanescent field, its dimension of the cross-section is smaller than the wavelength $ \lambda $ of the trapping field (typically, a quasi-monochromatic laser beam operating around $ \lambda=894 $nm or $852  $nm which are the D1 and D2 lines of the cesium atoms considered in the numerical simulations later in this dissertation \nd{This parenthetical comment is pretty long.}). 
+We assume the waveguide is a linear medium with no absorption to the guided modes. The refractive bulk index\index{refractive index} of the waveguide can be given by
 \begin{align}
 n_0(\br_\perp) = \begin{cases} 
 n_1(\br_\perp), &\quad \text{core region},\\
 n_2(\br_\perp), &\quad \text{clad},
 \end{cases} 
 \end{align}
-where $ n_1>n_2 $, $ \br_\perp=(x,y) $ is the coordinate in the transverse plane of the waveguide, and the index of refraction defined above applies to all transverse slices along the $ z $ axis which is the waveguide axis along the light propagation direction.
+where $ n_1>n_2 $, $ \br_\perp=(x,y) $ are the coordinates in the transverse plane of the waveguide, and the index of refraction defined above applies to all transverse slices along the $ z $ axis which is the waveguide axis along the light propagation direction.
 
-For a typical optical nanofiber as an example, it has a cylindrical cross-section with a radius $ a $. We use $ a=225 $nm, $ n_1=1.4496 $ as a constant in the core region ($ r_\perp\le a $) and $ n_2=1.0000 $ in vacuum clad region ($ r_\perp>a $), where we have set the $ z $ axis to be the symmetric center of the nanofiber and $ r_\perp =\sqrt{x^2+y^2} $.
-Another nanophotonic waveguide we are going to utilize is a \SWG, which has a square cross-section of the waveguide core with a width of $ w=300 $nm, $ n_1=2.0 $ for an ideal Si$_3$N$_4$ core medium $ (|x|\le w/2,|y|\le w/2) $, and the clad is also vacuum. 
-In both cases, only the fundamental guided modes are allowed to propagate through the waveguide. That is the allowed guided modes have a single propagation constant\index{propagation constant} or projected wavenumber $ \beta_0 \,(n_1k_0<\beta_0<n_2k_0)$ with wavenumber\index{wave number} $k_0=2\pi/\lambda=\omega_0/c $, where $\omega_0$ is the angular frequency of the electric field, and $ c $ is the speed of light in vacuum. 
+As an example, a typical optical nanofiber has a cylindrical cross-section of radius $ a $. We use $ a=225 $nm, $ n_1=1.4496 $ as a constant in the core region ($ r_\perp\le a $) and $ n_2=1.0000 $ in the vacuum clad region ($ r_\perp>a $), where we have set the $ z $ axis to be the symmetric center of the nanofiber and $ r_\perp =\sqrt{x^2+y^2} $.
+Another nanophotonic waveguide we are going to utilize is a \SWG, which has a square cross-section of the waveguide core with a width of $ w=300 $nm, $ n_1=2.0 $ for an ideal Si$_3$N$_4$ core medium $ (|x|\le w/2,|y|\le w/2) $, and the clad is also a vacuum. 
+In both cases, only the fundamental guided modes are allowed to propagate through the waveguide. That is, the allowed guided modes have a single propagation constant\index{propagation constant} or projected wavenumber $ \beta_0 \,(n_1k_0<\beta_0<n_2k_0)$ with wavenumber\index{wave number} $k_0=2\pi/\lambda=\omega_0/c $, where $\omega_0$ is the angular frequency of the electric field, and $ c $ is the speed of light in a vacuum. 
 A monochromatic electric field propagating in such a waveguide can be given by~\cite{Jackson1975}
 \begin{equation}
 \mathbf{E}_0(\br,t)=\boldsymbol{\mathcal{E}}_0(\br_\perp)e^{i(b\beta_0 z-\omega_0 t)} %+\frac{1}{2}\mathrm{c.c.}
