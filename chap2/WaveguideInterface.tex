@@ -1298,12 +1298,16 @@ and
 \end{align}
 where the last two equations calculate the averaged decay rates for the $ f' $ sublevels due to the radiation and guided modes. 
 Above, $ \Gamma^q_{e,rad}/\Gamma_0 $ and $ \Gamma^q_{e,gyd} $ are the dipole decay rates defined through Eqs.~\eqref{eq:Gammaeq_rad} and~\eqref{eq:Gammaeq_guide} with the excited state level $ e $ set to be the common energy level for the summations in the corresponding equations, which can be calculated with the information of emission frequency and equivalent dipole orientation $ \mathbf{e}_q $.
-In general, given the possibility of transition, the dielectric modified atomic decay rate due to the transition $ \ket{f'm'} \rightarrow \ket{fm}$ can be given by 
+In details, we define the quantum transition from the sublevel $ \ket{j',f',m'} $ to $\ket{j,f, m} $ as an equivalent optical dipole that is oscillating along the $ \mathbf{e}_q $ direction with branching ratio determined by $ o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m} $. That is the equivalent dipole moment is given by\footnote{We will discuss the general strategy of finding the equivalent dipole moment in the next section.}
+\begin{align}\label{eq:dipolem'meq}
+\mathbf{d}_{m'\rightarrow m} = \sum_q o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m} \mathbf{e}_q.
+\end{align}
+Therefore, the dielectric modified atomic decay rate due to the transition $ \ket{j',f',m'} \rightarrow \ket{j,f,m}$ can be given by 
 \begin{align}
-\frac{\Gamma_{m'\rightarrow m\!,rad}}{\Gamma_0} &= 1+ |o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2\frac{\mathbf{e}_q\cdot \mathrm{Im}\left[\tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{G_0}\\
-&= 1+ |o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right) \label{eq:Gammampmrad}\\
-\frac{\Gamma_{m'\rightarrow m\!,gyd}}{\Gamma_0} &= |o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \frac{\mathbf{e}_q\cdot \mathrm{Im}\left[ \tensor{\mathbf{G}}_{gyd}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{ G_0}\\
-&=|o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \frac{\Gamma^q_{e,gyd}}{\Gamma_0}.\label{eq:Gammampmgyd}
+\frac{\Gamma_{m'\rightarrow m\!,rad}}{\Gamma_0} &= 1+ |o_{jf}^{j'f'}|^2 \left|C_{f'm'}^{f,m;1,q=m'-m}\right|^2\frac{\mathbf{e}_q\cdot \mathrm{Im}\left[\tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{G_0}\\
+&= 1+ |o_{jf}^{j'f'}|^2 \left|C_{f'm'}^{f,m;1,q=m'-m}\right|^2 \left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right) \label{eq:Gammampmrad}\\
+\frac{\Gamma_{m'\rightarrow m\!,gyd}}{\Gamma_0} &= |o_{jf}^{j'f'}|^2 \left|C_{f'm'}^{f,m;1,q=m'-m}\right|^2 \frac{\mathbf{e}_q\cdot \mathrm{Im}\left[ \tensor{\mathbf{G}}_{gyd}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{ G_0}\\
+&=|o_{jf}^{j'f'}|^2 \left|C_{f'm'}^{f,m;1,q=m'-m}\right|^2 \frac{\Gamma^q_{e,gyd}}{\Gamma_0}.\label{eq:Gammampmgyd}
 \end{align}
 For the decay rate equations above, whenever we sum over $ f $-levels, the frequencies of the photon emissions for different $ f $-levels are different, in general; given the hyperfine energy splitting ($ \sim 100 $ MHz) and the detuning of the light (typically on the order of a few GHz), the frequency difference between the hyperfine level splittings could be negligible, in practice. 
 It is also a good approximation to set the decay rates of sublevels in the same hyperfine manifold share the same value as long as the atoms are not too close to the waveguide surface. 
@@ -1405,7 +1409,7 @@ where $\mathbf{v}_i$ as the eigenvectors of $ \mathrm{Im}[\GFT(\br',\br')] $ for
 = \sum_i (d'_i)^2 g_i \\
 &= \Gamma_1\cos^2\phi\sin^2\theta+\Gamma_2\sin^2\phi\sin^2\theta+\Gamma_3\cos^2\theta,\label{eq:Gammathetaphi}
 \end{align}
-where vector elements $ d'_i=\frac{2}{\hbar}\sqrt{\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i}$, and $\mathbf{d}'=\sum_i d'_i\mathbf{v}_i$ defines the equivalent dipole orientation of the atomic polarizability in the principal basis of the dielectric medium interface. The amplitude $ |\mathbf{d}'|=2d^2/\hbar $, where $ d=|\mathbf{d}| $. We order $ \Gamma_i $'s by
+where vector elements $ d'_i=\frac{2}{\hbar}\sqrt{\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i}$, and $\mathbf{d}'=\sum_i d'_i\mathbf{v}_i$ defines the equivalent dipole orientation of the atomic polarizability written in the principal basis of the dielectric medium interface [see Eq.~\eqref{eq:dipolem'meq} for finding the equivalent dipole moment, more details will follow]. The amplitude $ |\mathbf{d}'|=2d^2/\hbar $, where $ d=|\mathbf{d}| $. We order $ \Gamma_i $'s by
 \begin{align}
 \Gamma_1=\Gamma_{max}\ge \Gamma (\theta,\phi) \ge \Gamma_{min}=\Gamma_3.
 \end{align}
@@ -1443,14 +1447,14 @@ When the dipole is moving away from a flat surface, the contrast between $ \Gamm
 In general, the anisotropy of a flat medium interface is stronger than that of a curved interface. 
 This is one intuitive guideline when we design a waveguide to enhance the anisotropic properties of waveguide-induced decay rates and phase shifts as we will discussion in Chapter`~\ref{chap:birefringence} and~\ref{chap:Faraday}. 
 
-To find the equivalent dipole orientation of a given atom and probe, we first find out what the possible quantum transitions are, under the polarization of the light, and then find out the branching ratios of the $ \sigma_\pm $ and $ \pi $ transitions following Eqs.~\eqref{eq:Gammampmgyd} and~\eqref{eq:Gammampmrad}, for example. 
-The correspondence of spherical quantum transitions and dipole orientations are
+To find the equivalent dipole orientation of a given atom state and probe, we first find out what the possible quantum transitions are from the initial atomic state under the polarization of the light, and then find out the branching ratios of the $ \sigma_\pm $ and $ \pi $ transitions following Eq.~\eqref{eq:dipolem'meq}, for example, where the correspondence of spherical quantum transitions and dipole orientations are determined by
 \begin{align}
 \sigma_+ &\leftrightarrow \mathbf{d}_+\propto \frac{1}{\sqrt{2}}(i\mathbf{e}_{r\!_\perp}+\mathbf{e}_\phi)\\
 \pi &\leftrightarrow \mathbf{d}_0 \propto \mathbf{e}_z\\
 \sigma_- &\leftrightarrow \mathbf{d}_-\propto \frac{1}{\sqrt{2}}(-i\mathbf{e}_{r\!_\perp}+\mathbf{e}_\phi).
 \end{align}
-This method works obviously for atoms in pure states. Similar trick also applies to mixed states. 
+When the quantum transitions have different resonant frequencies, we group the physics processes by the corresponding frequencies and calculate the decay rates using the Green's tensors at the correct frequencies accordingly, and then sum them up to obtain the total decay rate for the system.
+This method works obviously for atoms in pure states. In fact, this treatment also applies to mixed states. 
 For example, we consider a completely mixed state, which has the equal possibility of generating $ \gamma_+ $, $ \sigma_- $ and $ \pi $ transition. In terms of the dipole moment tensor, $ \tensor{\boldsymbol{\rho}} $, we have
 \begin{align}
 \tensor{\boldsymbol{\rho}} &=\frac{1}{3}(\tensor{\boldsymbol{\rho}}_++\tensor{\boldsymbol{\rho}}_0+\tensor{\boldsymbol{\rho}}_-)=\frac{d_0^2}{3}\unittensor
