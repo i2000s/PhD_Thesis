@@ -504,7 +504,7 @@ The numerical method we used to solve the eigenmodes for the \SWG and general ge
 Here are some side notes, which may help clarify the reasons why we only consider a \SWG with a width of $ 300 $ nm besides the long-studied nanofiber case. In fact, on the course of this study, we have considered ridge and other types of waveguides. Eventually, we decided to study a simple shape of waveguides--a \SWG--as a proof of principles. There has also been a long discussion on purposefully designing a rectangular waveguide and imperfections on fabricating a \SWG, in which a \SWG essentially becomes a rectangular one. Based on some back-of-envelope calculations and simple simulations, we find a useful rectangular waveguide might have to be too long to fabricate and, if we choose a width of $ 300$--$320 $ nm, the imperfections in fabricating a \SWG processes would not generate noticeable influence on the physical effects we care about. As these reasonings involve the knowledge we are going to introduce later, we provide the details in Appendix~\ref{chap:choozingSWGs} in case readers are curious about them.
 
 \subsection{Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide}\label{sec:calculatingGreenstensor}
-Starting from this section, we consider the light response in presence of a photon emitter outside of a dielectric waveguide. The dyadic Green's function, $ \GFT(\br,\br')=\GFT(\br,\br';\omega_0) $ is naturally a response function of the field measured at $ \br $ responding to a point radiating source at $ \br' $ in frequency $ \omega_0 $. Once the dyadic Green's function is solved, a field response due to some point sources can then be calculated. In this section, we consider a scenario that a bunch of atoms are trapped near to a nanophotonic waveguide, and formulate the general theory of field response using the Green's function method. For simplicity, we regard atoms as optical dipoles, which interact with light in terms of optical dipole radiation. The dipoles oscillate in space and time to form a current, $ \mathbf{J} $, which collectively generates an effective susceptibility for the atomic ensemble as a ``medium" and modulates the phase and amplitude of the light passing through the waveguide. 
+Starting from this section, we consider the light response in presence of a photon emitter outside of a dielectric waveguide. The dyadic Green's function\index{dyadic Green's function}, or Green's tensor\index{Green's tensor}\footnote{We may also call it Green's function tensor\index{Green's function tensor} or Green's function dyad\index{Green's function dyad}.}, $ \GFT(\br,\br')=\GFT(\br,\br';\omega_0) $ is naturally a response function of the field measured at $ \br $ responding to a point radiating source at $ \br' $ in frequency $ \omega_0 $. Once the dyadic Green's function is solved, a field response due to some point sources can then be calculated. In this section, we consider a scenario that a bunch of atoms are trapped near to a nanophotonic waveguide, and formulate the general theory of field response using the Green's function method. For simplicity, we regard atoms as optical dipoles, which interact with light in terms of optical dipole radiation. The dipoles oscillate in space and time to form a current, $ \mathbf{J} $, which collectively generates an effective susceptibility for the atomic ensemble as a ``medium" and modulates the phase and amplitude of the light passing through the waveguide. 
 
 Given the index of refraction distribution function $ n(\br) $ with the waveguide as the background medium, a chromatic electric field modulated by the presence of atoms can be described by the wave equation below~\cite{Jackson1975}: 
 \begin{align}\label{eq:Maxwellwithsource2}
@@ -611,14 +611,29 @@ On the other hand, the BEM we use calculates the Maxwell equations in the freque
 
 For our simulations, we decide to use a BEM program to simulate the electromagnetic field due to a unit dipole for the nanofiber geometry first to check the accuracy against our analytical solution, and then applied this method to the \SWG case. Since the field components on the $ z $ direction only yield a phase difference compared to the $ z=0 $ plane, we can fully solve our radiation problem on a 2D plane. With boundary points set for every $ 5 $--$ 6 $ nm away from each other on the boundary, we can achieve a negligible error deviation from our known solution (below $ 1\% $). We use $ \Delta \beta = 0.01k_0 $ interval to sample the $ \beta $-space calculations. One issue of this approach is that we have to make the medium of the waveguide ``imperfect" to avoid a divergent problem when we calculate the field response at the guided mode condition point $ \beta=\beta_0 $, by making $ n_1(\br_\perp\in \text{waveguide region})=n_1+i\delta n_1 $, where $ n_1 $ is the real waveguide bulk index of refraction constant and $ \delta n_1 $ is a small number (we find $ \delta n_1\sim 0.001 $ or $ 0.01 $ is good enough) to generate an artificial photon absorption. Without this treatment, since the field at $ \beta=\beta_0 $ is a delta function, the result will diverge. To calculate the field responded at the dipole position, which will be used for the modified decay rate calculation, we only calculate the induced electric field for a similar reason of the divergence of the real part of the Green's function. 
 In BEM, the Green's function tensor responded at the dipole position at $ \omega_0 $ due to the radiation modes can be decomposed into the free-dipole or homogeneous radiation contribution and the induced-dipole radiation contribution, that is 
-\begin{align} \GFT_{rad}(\br',\br';\omega_0)=\GFT_0(\br',\br';\omega_0)+\GFT_{ind,rad}(\br',\br';\omega_0),
+\begin{align} \GFT_{rad}(\br',\br';\omega_0)=\GFT_0(\br',\br';\omega_0)+\GFT_{ind,rad}(\br',\br';\omega_0).
 \end{align}
-where $ \GFT_{ind,rad}(\br',\br';\omega_0) $ plays the rule of the reflected field contribution, $ \GFT_R(\br',\br';\omega_0) $, in Eq.~\eqref{eq:GFTdecomp0RT}. 
-With a unit dipole orientated along $j$ direction placed at $ \br' $, the induced-dipole radiation Green's tensor elements can be calculated by~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}
-\begin{align}\label{eq:BEMGindij}
-G_{ind,rad}^{ij}(\mathbf{r}',\mathbf{r}')=\frac{2k_0^2}{3\pi^2}\int_{-n_2k_0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')=\frac{4k_0^2}{3\pi^2}\int_{0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')
+To not be confused, when $ \br' $ is outside of the waveguide, Eq.~\eqref{eq:GFTdecomp0RT} implies that 
+\begin{align}
+\GFT_R(\br',\br';\omega_0) &= \GFT_{ind,gyd}(\br',\br';\omega_0) + \GFT_{ind,rad}(\br',\br';\omega_0). 
 \end{align}
-where $ E_j^i(\mathbf{r}') $ is the $i$-th electric field component measured at the dipole position.
+That is the reflected part of Green's tensor includes both the guided ($ gyd $) and the radiation ($ rad $) parts that are calculated by integrating over different ranges of $ \beta $. 
+For a single mode waveguide, with a unit dipole orientated along $j$ direction placed at $ \br' $, the induced-dipole radiation Green's tensor elements can be calculated by~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}
+\begin{align}
+G_{ind,gyd}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\left[\int_{-n_1k_0}^{-n_2k_0} d\beta E_j^i(\mathbf{r}') +\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\right]\nn\\
+&=\frac{4k_0^2}{3\pi^2}\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\\
+G_{ind,rad}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\int_{-n_2k_0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')=\frac{4k_0^2}{3\pi^2}\int_{0}^{n_2k_0} d\beta E_j^i(\mathbf{r}') \label{eq:BEMGindij}
+\end{align}
+where $ E_j^i(\mathbf{r}') $ is the $i$-th electric field component measured at the dipole position. 
+To calculate the guided mode induced Green's tensor using the first equation above, we need to give an artificial loss to the medium, that is to make the permittivity of the waveguide as
+\begin{align}
+\varepsilon(\br_\perp) = n^2(\br_\perp) + i\delta n(\br_\perp),
+\end{align}
+where $ \delta n(\br_\perp) $ is a small real number in the waveguide region and being zero outside. Same for the radiation mode induced Green's tensor calculation. 
+In practice, we find it's tricky to find a proper artificial loss to obtain an accurate value for the guided mode induced Green's tensor--especially when $ \beta_0 $ is close to the integration limit points; and even more trickier to use the equation of the guided mode induced Green's tensor calculation to find the contribution from a particular guided mode if the waveguide allows multiple guided modes. 
+So, we decide to use the eigenmode decomposition method to calculate the guided mode induced Green's tensor, which will be introduced next.
+However, the calculation for the unguided mode induced Green's tensor equation [Eq.~\eqref{eq:BEMGindij}] is quite robust to the choice of artificial material loss, and is very accurate if the artificial loss is small for the waveguide. 
+If we want to calculate $ \GFT(\br,\br') $, Eq.~\eqref{eq:BEMGindij} holds if we replace $ E_j^i(\br') $ with $ E_j^i(\br) $. 
  
 
 \subsubsection{II. The \emph{eigenmode-decomposition} approach}
@@ -1286,12 +1301,16 @@ Above, $ \Gamma^q_{e,rad}/\Gamma_0 $ and $ \Gamma^q_{e,gyd} $ are the dipole dec
 In general, given the possibility of transition, the dielectric modified atomic decay rate due to the transition $ \ket{f'm'} \rightarrow \ket{fm}$ can be given by 
 \begin{align}
 \frac{\Gamma_{m'\rightarrow m\!,rad}}{\Gamma_0} &= 1+ |o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2\frac{\mathbf{e}_q\cdot \mathrm{Im}\left[\tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{G_0}\\
-&= 1+ |o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right)\\
+&= 1+ |o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right) \label{eq:Gammampmrad}\\
 \frac{\Gamma_{m'\rightarrow m\!,gyd}}{\Gamma_0} &= |o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \frac{\mathbf{e}_q\cdot \mathrm{Im}\left[ \tensor{\mathbf{G}}_{gyd}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{ G_0}\\
-&=|o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \frac{\Gamma^q_{e,gyd}}{\Gamma_0}.
+&=|o_{jf}^{j'f'}|^2\sum_{q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \frac{\Gamma^q_{e,gyd}}{\Gamma_0}.\label{eq:Gammampmgyd}
 \end{align}
 For the decay rate equations above, whenever we sum over $ f $-levels, the frequencies of the photon emissions for different $ f $-levels are different, in general; given the hyperfine energy splitting ($ \sim 100 $ MHz) and the detuning of the light (typically on the order of a few GHz), the frequency difference between the hyperfine level splittings could be negligible, in practice. 
 It is also a good approximation to set the decay rates of sublevels in the same hyperfine manifold share the same value as long as the atoms are not too close to the waveguide surface. 
+With the components solved, the total decay rate for corresponding transitions or of particular excited states can be given by
+\begin{align}
+\frac{\Gamma}{\Gamma_0} =1+ \frac{\Gamma_{ind,rad}}{\Gamma_0}+\frac{\Gamma_{gyd}}{\Gamma_0}=\frac{\Gamma_{rad}}{\Gamma_0}+\frac{\Gamma_{gyd}}{\Gamma_0}.
+\end{align}
 
 \begin{figure}[!tbp]
   \centering
@@ -1384,7 +1403,7 @@ where $\mathbf{v}_i$ as the eigenvectors of $ \mathrm{Im}[\GFT(\br',\br')] $ for
 \begin{align}
 \Gamma &= \frac{2}{\hbar}\sum_i g_i(\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i) 
 = \sum_i (d'_i)^2 g_i \\
-&= \Gamma_1\cos^2\phi\sin^2\theta+\Gamma_2\sin^2\phi\sin^2\theta+\Gamma_3\cos^2\theta,
+&= \Gamma_1\cos^2\phi\sin^2\theta+\Gamma_2\sin^2\phi\sin^2\theta+\Gamma_3\cos^2\theta,\label{eq:Gammathetaphi}
 \end{align}
 where vector elements $ d'_i=\frac{2}{\hbar}\sqrt{\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i}$, and $\mathbf{d}'=\sum_i d'_i\mathbf{v}_i$ defines the equivalent dipole orientation of the atomic polarizability in the principal basis of the dielectric medium interface. The amplitude $ |\mathbf{d}'|=2d^2/\hbar $, where $ d=|\mathbf{d}| $. We order $ \Gamma_i $'s by
 \begin{align}
@@ -1401,28 +1420,75 @@ With an inhomogeneous medium, we follow the argument by Vos \emph{et al.} and ou
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.8\textwidth]{../media/Figs/dipoleorientation}}
-\caption[Modified dipole decay rates due to image dipoles mirrored on flat and cylindrical surfaces.]{Modified dipole decay rates due to image dipoles mirrored on flat (a) and cylindrical (b) surfaces. Coordinate systems are defined on the left. In the middle plots, the red arrows (on top of reference interface lines) indicate dipole sources with the arrows pointing to the positive charge direction at a moment. The green arrows (below the interface) indicate the image dipole below the medium interface. Three orthogonal dipole orientations are considered. Emission surfaces are illustrated on the right. }\label{fig:dipoleinterferencepic}
+\caption[Modified dipole decay rates due to the interference of the radiations from the dipole and its image dipole mirrored on flat and cylindrical surfaces.]{Modified dipole decay rates due to the interference of radiations from the dipole and its image dipole mirrored on flat (a) and cylindrical (b) surfaces. Coordinate systems are defined on the left. We picture the dipole as an oscillator of two opposite charges separated by some distance. In the middle plots, the red arrows (on top of reference interface lines) indicate dipole sources with the arrows pointing to the positive charge direction at a moment. The green arrows (below the interface) indicate the image dipole below the medium interface. We ignore the separation of charges in the dipole source and qualitatively establish the physics intuition in thinking about how the dipole orientation affects the spontaneous emission rate of the dipole. Three orthogonal dipole orientations are considered. Emission surfaces are illustrated on the right. }\label{fig:dipoleinterferencepic}
 \end{figure}
 
-With a flat surface interface [Fig.~\ref{fig:dipoleinterferencepic} (a)], the dipole source has a mirror dipole with the same distance to the interface and the same oscillation strength as the source yet a mirrored oscillation direction. Using three orthogonal dipole orientations, we find that, if the source dipole oscillates along the $ x $ direction perpendicular to the interface, the mirrored dipole has the same oscillation direction as the source and could contribute a constructive interference at the source dipole position when the source dipole is close to the interface. This could yield an enhanced spontaneous emission rate. To the extreme, when the dipole is placed on the surface, the emission rate will be enhanced twice as that of the free-space case. In contrast, if the source dipole is orientated along the $ y $ and $ z $ direction, the interference from the mirrored dipole will be destructive, which reduces the emission rate. As the dipole approaches to the interface, all photon emissions will be canceled. Note that there is a degeneracy over the choice of $ y $ and $ z $ directions. In other words, $ y $ and $ z $ directions can be any two orthogonal directions parallel to the interface, and the emission rates on both directions have the same amplitude.
+With a flat surface interface [Fig.~\ref{fig:dipoleinterferencepic} (a)], the dipole source has a mirror dipole with the same distance to the interface and the same oscillation strength as the source yet a mirrored oscillation direction in the static limit. Using three orthogonal dipole orientations, we find that, if the source dipole oscillates along the $ x $ direction perpendicular to the interface, the mirrored dipole has the same oscillation direction as the source and could contribute a constructive interference at the source dipole position when the source dipole is close to the interface. This could yield an enhanced spontaneous emission rate. To the extreme, when the dipole is placed on the surface, the emission rate will be enhanced twice as that of the free-space case. In contrast, if the source dipole is orientated along the $ y $ and $ z $ direction, the interference from the mirrored dipole will be destructive, which reduces the emission rate. As the dipole approaches to the interface, all photon emissions will be canceled. Note that there is a degeneracy over the choice of $ y $ and $ z $ directions. In other words, $ y $ and $ z $ directions can be any two orthogonal directions parallel to the interface, and the emission rates on both directions have the same amplitude.
 
-When we use a cylindrical waveguide as the medium interface [Fig.~\ref{fig:dipoleinterferencepic} (b)], the dipole mirroring will yield a smaller oscillation amplitude and shorter distance below the interface than the case if only the interface is changed to a flat surface (equivalent to make the radius of the cylinder to infinity). 
+Qualitatively, when we use a cylindrical waveguide as the medium interface [Fig.~\ref{fig:dipoleinterferencepic} (b)], the dipole mirroring will yield a smaller oscillation amplitude and shorter distance below the interface than the case if only the interface is changed to a flat surface (equivalent to make the radius of the cylinder to infinity). 
+This property of curved interface makes the constructive and destructive interference between the dipole source and the image dipole less complete than the flat interface case. 
+Particularly, the destructive interference when the dipole is orientated along the $ y $ axis--when the interface along $ y $ is curved--could be much weaker than along the $ z $ axis--when the interface along $ z $ can be treated as straight.
+We plot out the emission surface of a dipole placed outside of a cylindrical waveguide with $ r'_\perp=a $ (dipole on the surface) and $ r'_\perp=2a $ in Fig.~\ref{fig:emissionsurfacenanofiber}. 
+Using the cylindrical coordinate system, we find the decay rate due to a $ z $-polarized dipole get the minimum value while that of a $ r_\perp $-polarized dipole reaches the maximum, and the decay rate of a $ \phi $-polarized dipole is in the middle range. 
  
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.8\textwidth]{../media/Figs/emissionsurfacefiber}}
-\caption{Dipole emission surface in presence of a nanofiber when $ r\!_\perp=a $ (left) and $ r\!_\perp=2a $ (right).}
+\caption{Dipole emission surfaces of a dipole placed on the surface ($ r\!_\perp=a $) and outside ($ r\!_\perp=2a $) of a nanofiber.} \label{fig:emissionsurfacenanofiber}
 \end{figure}
 
-This geometric perspective might be helpful to design quantum tomography and control protocols based on the nanophotonic waveguides and atoms quantum interface.
+The range of $ \{\Gamma_1,\Gamma_2,\Gamma_3 \} $ characterizes the anisotropy of the medium interface for the modification of dipole emissions. 
+From Fig.~\ref{fig:emissionsurfacenanofiber}, we can picture the emission surface of a dipole on top of a flat interface similar to the one of the nanofiber case with $ r'_\perp =a$. 
+When the dipole is moving away from a flat surface, the contrast between $ \Gamma_y $ ($ \Gamma_z $) and $ \Gamma_x $ due to a dipole orientated along the $ y $ ($ z $) and $ x $ directions, respectively, will reduce gradually.
+In general, the anisotropy of a flat medium interface is stronger than that of a curved interface. 
+This is one intuitive guideline when we design a waveguide to enhance the anisotropic properties of waveguide-induced decay rates and phase shifts as we will discussion in Chapter`~\ref{chap:birefringence} and~\ref{chap:Faraday}. 
 
-\subsection{Enhanced anisotropy of $ H $ and $ V $ modes with different geometries of waveguides}
+To find the equivalent dipole orientation of a given atom and probe, we first find out what the possible quantum transitions are, under the polarization of the light, and then find out the branching ratios of the $ \sigma_\pm $ and $ \pi $ transitions following Eqs.~\eqref{eq:Gammampmgyd} and~\eqref{eq:Gammampmrad}, for example. 
+The correspondence of spherical quantum transitions and dipole orientations are
+\begin{align}
+\sigma_+ &\leftrightarrow \mathbf{d}_+\propto \frac{1}{\sqrt{2}}(i\mathbf{e}_{r\!_\perp}+\mathbf{e}_\phi)\\
+\pi &\leftrightarrow \mathbf{d}_0 \propto \mathbf{e}_z\\
+\sigma_- &\leftrightarrow \mathbf{d}_-\propto \frac{1}{\sqrt{2}}(-i\mathbf{e}_{r\!_\perp}+\mathbf{e}_\phi).
+\end{align}
+This method works obviously for atoms in pure states. Similar trick also applies to mixed states. 
+For example, we consider a completely mixed state, which has the equal possibility of generating $ \gamma_+ $, $ \sigma_- $ and $ \pi $ transition. In terms of the dipole moment tensor, $ \tensor{\boldsymbol{\rho}} $, we have
+\begin{align}
+\tensor{\boldsymbol{\rho}} &=\frac{1}{3}(\tensor{\boldsymbol{\rho}}_++\tensor{\boldsymbol{\rho}}_0+\tensor{\boldsymbol{\rho}}_-)=\frac{d_0^2}{3}\unittensor
+\end{align}
+The decay rate for such a case can be calculated by
+\begin{align}
+\Gamma &=\frac{2}{3\hbar}d_0^2 \mathrm{tr}\left\{ \mathrm{Im}[\GFT(\br',\br')] \right\}=\frac{1}{3}(\Gamma_1+\Gamma_2+\Gamma_3).
+\end{align}
+This is equivalent to assume the dipole is uniformly pointing to any direction, and hence
+$\Gamma = \int \frac{\mathrm{\Omega}}{4\pi}\Gamma(\theta,\phi)=\frac{1}{3}(\Gamma_1+\Gamma_2+\Gamma_3)$ based on Eq.\eqref{eq:Gammathetaphi}.
+
+
+This geometric perspective might be helpful to design nanophotonic waveguide interfaces and atomic states to enhance quantum tomography and control protocols.
+For our study, we are interested in quantum measurements, which require us to generalize this idea to our context.
+
+\subsection{Enhanced anisotropy of guided modes with different geometries of waveguides}
+For the quantum measurement scenario we are interested in, only guided modes will be detected. Therefore, we define the decay rates coupled to a particular guided mode labeled by $ \mu $ with degeneracies of propagation directions and polarizations as
+\begin{align}
+\Gamma_\mu &= \frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_\mu(\br',\br')]\cdot \mathbf{d}^* \right\},
+\end{align}
+where 
+\begin{align}
+\GFT_\mu (\br',\br';\omega_{eg}) &= i\pi \frac{\omega_{eg}}{v_g}
+		\mathbf{u}_\mu (\br_{\!\perp}^\prime)\mathbf{u}^*_\mu (\br_{\!\perp}^\prime) 
+\end{align}
+based on Eq.~\eqref{Eq::ImGreenLocal_general}. 
+Since the phase shift of a guided mode after atom-light interaction is proportional to the coupled decay rate [see Eq.~\eqref{phaseshiftGamma1D_nanofiber}, for instance], given the decay rates coupled to the two mode bases, we can characterize the transitions of the polarization state of the guided modes, which are measured using our polarization spectroscopy technique. 
+Therefore, the contrast of the decay rates coupled to two basis modes $ \mu_1 $ and $ \mu_2 $ defines the anisotropic property of the system. 
+Using the $ H $ and $ V $ mode basis and assuming the polarizability of the atom is scalar, $ \Gamma_H-\Gamma_V $ maximizes when the intensity difference between the $ H $ and $ V $ modes has the largest contrast, which is consistent with Eq.~\eqref{eq:birefringencerotang} defining the polarization transform from the first principle. 
+In practice, one of our goal is to find a proper geometry so that the quantum measurement is enhanced due to the anisotropy of the waveguide modes. See Fig.~\ref{fig:anisotropybirefringence} for the example of a measurement geometry using the birefringence effect.
 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.8\textwidth]{../media/Figs/anisotropicmodes}}
-\caption{Anisotropic guided modes of a nanofiber (left) and a \SWG (right).}
+\caption[Anisotropic guided modes and quantum measurement geometry for a nanofiber and a \SWG using the birefringence effect.]{Feasible quantum measurement geometry designs for a nanofiber (left) and a \SWG (right) using the birefringence effect by maximizing the anisotropy of local guided mode components. At the atom positions, the intensity difference between the $ H $ and $ V $ modes reaches the maximum value, which could be beneficial to enhance the birefringence rotation of the guided light even with a scalar polarizability interaction with the atoms.}\label{fig:anisotropybirefringence}
 \end{figure}
+
+Based on a naive intuition that the confinement of light might be stronger for a waveguide with a square cross-section than a rounded one, a \SWG may have some advantages of enhancing the quantum measurement of some type over the nanofiber geometry. However, to fully understand the figure of merit of design and optimization, we have to consider the state space of the atoms and the particular quantum measurement protocols. We will extend this discussion of protocol designs and optimizations in-depth in Chapters~\ref{chap:birefringence} and~\ref{chap:Faraday} using quantitative definitions of cooperativity, which are the core of this dissertation.
 
 %</waveguideinterface>
 
