@@ -31,11 +31,9 @@ The corresponding positive-frequency electric field operators in the orthogonal 
 where the sum over $ p $ includes all components of a complete mode basis. Below, we only consider the $ \{H,V \} $ mode basis. The transformation of operators to another arbitrary mode bases is derived in Appendix~\ref{chap:basistransfHS}. 
 With $ N_A $ atoms interacting with the propagating electric field of the local guided modes, the dispersive light-shift Hamiltonian can be defined as~\cite{Deutsch2010a,LeKien2013,Baragiola2014Open},
 	\begin{equation} \label{Eq::LightShiftHam_forward}
-		\hat{H}_{LS} = - \sum_{n=1}^{N_A} \hat{\mathbf{E}}^{(-)}(\mathbf{r}'_n ; t ) \cdot \poltens {}^{(n)} \cdot \hat{\mathbf{E}}^{(+)}(\mathbf{r}'_n ;t ),
+		\hat{H}_{LS} = \sum_{n=1}^{N_A} \hat{h}_{\rm eff},
 	\end{equation}
-where $\poltens {}^{(n)}$ is the atomic tensor polarizability operator, given in \erf{Eq::PolarizabilityOperator}, for the $n^{th}$ atom trapped near the nanofiber surface at position $\mathbf{r}'_n$.  We ignore here any effects of atomic motion and treat the atoms as localized at fixed positions in space.
-
-The light-atom interaction Hamiltonian with one atom can be written as
+with the light-atom interaction Hamiltonian with one atom given by
 \begin{align}
 \hat{h}_\eff &= -\hat{\mathbf{E}}^{(-)}(\br')\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot\hat{\mathbf{E}}^{(+)}(\br')\nn\\
 &= -\frac{2\pi\hbar\omega}{v_g}\left[\mathbf{u}_H^*\cdot\hat{\tensor{\mathbf{\alpha}}}\cdot \mathbf{u}_H\hat{a}_H^\dagger\hat{a}_H\right.
@@ -55,7 +53,24 @@ The light-atom interaction Hamiltonian with one atom can be written as
 &=\hbar\sum_{i=0}^3 \hat{\chi}_{i}\hat{S}_i\\
 &=\hbar\sum_{i,j=0} \chi_{ij}\hat{f}_i\hat{S}_j,
 \end{align}
-where $ \hat{S}_i $ are the Stokes vector operators of the light indicating its polarization, and the mode-atom coupling operator
+where $\poltens$ is the atomic tensor polarizability operator, given in \erf{Eq::AtomicPolarizabilityF}, for each atom trapped near the waveguide surface at position $\mathbf{r}'_\perp$ in the transverse plane. We ignore here any effects of atomic motion and treat the atoms as localized at fixed positions in space. We have also defined $ \hat{S}_i $ as the Stokes vector operators of the light indicating its polarization. The vector Stokes operators that describe the polarization of the propagating fields in the quasilinear $HV$-basis are given as below:
+\begin{subequations}\label{Eq::StokesComponents}
+	\begin{align} 
+		\hat{S}_1(t) & = \smallfrac{1}{2}\big[ \hat{a}^\dag_H(t) \hat{a}_H(t)-\hat{a}^\dag_V(t) \hat{a}_V(t) \big], \\
+	 	\hat{S}_2(t) & = \smallfrac{1}{2}\big[ \hat{a}^\dag_H(t) \hat{a}_V(t)+\hat{a}^\dag_V(t) \hat{a}_H(t) \big], \\ 
+		\hat{S}_3(t) & = \smallfrac{1}{2i}\big[ \hat{a}^\dag_H(t) \hat{a}_V(t) -\hat{a}^\dag_V(t) \hat{a}_H(t) \big],
+	\end{align}
+\end{subequations}
+that satisfy equal-$z$ commutation relations following from \erf{Eq::InputOutputCommutation},
+	\begin{equation} \label{Eq::StokesCommutation}
+		\big[\hat{S}_i(t), \hat{S}_j(t')\big] =i \epsilon_{ijk} \delta(t-t')  \hat{S}_k(t).
+	\end{equation}
+These, along with the total photon flux operator,
+	\begin{equation}
+		\hat{S}_0(t) = \smallfrac{1}{2}\big[ \hat{a}^\dag_H(t) \hat{a}_H(t)+\hat{a}^\dag_V(t) \hat{a}_V(t) \big],
+	\end{equation}
+are the quantum version of the Stokes vectors defined in Eq.~\eqref{eq:S_intensitydiff}. 
+We also define the mode-atom coupling operator
 \begin{align}
 \hat{\chi}_{pp'} 
 &=-\frac{2\pi \omega}{v_g}\mathbf{u}_{p}^*(r'\!_\perp,\phi')\cdot \hat{\tensor{\alpha}}\cdot \mathbf{u}_{p'}(r'\!_\perp,\phi')\\
@@ -68,11 +83,14 @@ where $ \hat{S}_i $ are the Stokes vector operators of the light indicating its 
 with the horizontally(H)- and vertically(V)-linearly polarized guided modes, $ \mathbf{u}_p(r'\!_\perp) $, at the atom position $ \br'=(r'\!_\perp,\phi',z') $. 
 $ \chi_{ij}=\tr[\hat{f}_i\hat{\chi}_j]/(2f+1) $ is the coupling strength between spin operator $ \hat{f}_i $ and Stokes operator $ \hat{S}_j $. 
 For example, $ \chi_{33} $ is the coupling strength between $ \hat{f}_z $ and $ \hat{S}_3 $.
-The fundamental guided modes of an optical nanofiber has been defined in the appendix of our previous paper~\cite{Qi2016}. 
-In general, for a cylindrical waveguide, the H- and V-modes are the guided modes adiabatically transferred from a corresponding linearly polarized input light from one end of the waveguide, where H- and V-directions are orthogonal to each other in the transverse plane.
 The coupling operator or Eq.\eqref{eq:chippp} includes three terms corresponding to scalar, vector and tensor interactions between atoms and the probe light which are proportional to $ C_{j'ff'}^{(K)} $ with $ K=0,\,1,\,2 $, respectively.
+These terms may be vanished depending on the state of atoms and the polarization state of the probe defined for the atom-light interaction protocol.
 
-\qxd{Generalize the above to the two-color case. Some words on finding the correct frequencies.}
+\section{Some special states of an alkali atom}
+\subsection{Clock states}
+
+\subsection{Stretched states}
+
 
 We also ignore the tensor coupling strength related to $ C_{jj'ff'}^{(2)} $ terms in Eq.\eqref{eq:chippp} as the tensor interaction strength ($ \sim 1/\Delta^2 $) is relatively small compared to the vector interaction strength ($ \sim 1/\Delta $)~\cite{Deutsch2010a}. 
 For a nanofiber geometry, the Faraday interaction coupling strength is independent of the azimuthal position of the atoms and can be simplified as

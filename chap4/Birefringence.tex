@@ -349,23 +349,8 @@ The forward-propagating output fields are then given by the Fourier transform of
 where $\{N_0,N_\pi \}$ are the total number of atoms trapped at $\phi' = \{0,\pi\}$. The quantum effects from the first term give rise to shot noise in the transmitted field at the detector.  
 The second term represents scattering into the guided modes, as described by the dyadic Green's function, \erf{Eq::Gamma1DGreens}.  
 
-We introduce the vector Stokes operators that describe the polarization of the propagating fields in the quasilinear $HV$-basis,
-\begin{subequations}\label{Eq::StokesComponents}
-	\begin{align} 
-		\hat{S}_1(t) & = \smallfrac{1}{2}\big[ \hat{a}^\dag_H(t) \hat{a}_H(t)-\hat{a}^\dag_V(t) \hat{a}_V(t) \big], \\
-	 	\hat{S}_2(t) & = \smallfrac{1}{2}\big[ \hat{a}^\dag_H(t) \hat{a}_V(t)+\hat{a}^\dag_V(t) \hat{a}_H(t) \big], \\ 
-		\hat{S}_3(t) & = \smallfrac{1}{2i}\big[ \hat{a}^\dag_H(t) \hat{a}_V(t) -\hat{a}^\dag_V(t) \hat{a}_H(t) \big],
-	\end{align}
-\end{subequations}
-that satisfy equal-$z$ commutation relations following from \erf{Eq::InputOutputCommutation},
-	\begin{equation} \label{Eq::StokesCommutation}
-		\big[\hat{S}_i(t), \hat{S}_j(t')\big] =i \epsilon_{ijk} \delta(t-t')  \hat{S}_k(t).
-	\end{equation}
-These, along with the total photon flux operator,
-	\begin{equation}
-		\hat{S}_0(t) = \smallfrac{1}{2}\big[ \hat{a}^\dag_H(t) \hat{a}_H(t)+\hat{a}^\dag_V(t) \hat{a}_V(t) \big],
-	\end{equation}
-are used to reexpress the Hamiltonian, \erf{Eq::LightShiftHam}, in the $HV$-basis,
+We have introduced the vector Stokes operators that describe the polarization of the propagating fields in Eqs.~\eqref{Eq::StokesComponents} and~\eqref{Eq::StokesCommutation} in the quasilinear $HV$-basis.
+These operators are used to reexpress the Hamiltonian, \erf{Eq::LightShiftHam}, in the $HV$-basis,
 	\begin{align}  
 		\hat{H}_{LS} 	=& - 2 \pi \hbar k_0 n_g \nonumber \\
 		&\times\!\sum_{\phi'=0,\pi}N_{\phi'} \Big\{ \big[ \polcomp_{HH}(\phi')+\polcomp_{VV}(\phi') \big] \hat{S}_0(t) +  \big[\polcomp_{HH}(\phi')  - \polcomp_{VV}(\phi')  \big] \hat{S}_1(t)  \nonumber  \\
