@@ -640,7 +640,7 @@ With all the components of the stochastic master equation defined in Eqs.~\eqref
 \begin{align}
 \left.d\expect{\hat{\sigma}_{ba}}\right|_{op}&= \expect{\mathcal{D}^\dagger\left[\hat{\sigma}_{ba} \right]}dt=\sum_{c,d}\tr(\mathcal{D}^\dagger\left[\hat{\sigma}_{ba}\right]\hat{\sigma}_{dc} )\expect{\hat{\sigma}_{dc}}dt.\label{eq:dsigmaba_op_expand}
 \end{align}
-%The last step is to project the expression onto the $ \expect{\hat{\sigma}_{dc}} $ qutrit basis ($ d,c\in \{\uparrow,\downarrow,T\} $) with coefficients defined in the trace form in the equation above. 
+The last step is to project the expression onto the $ \expect{\hat{\sigma}_{dc}} $ qutrit basis ($ d,c\in \{\uparrow,\downarrow,T\} $) with coefficients defined in the trace form in the equation above. 
 The equations of two-body moments of the optical pumping can be derived similarly. Continuing from Eq.~\eqref{eq:dsigmabadc_op}, we have 
 \begin{align}
 &\quad\left.d\expect{\!\Delta \sigma_{ba}^{(\!1\!)}\Delta\sigma_{dc}^{(\!2\!)} }_s\right|_{op} \!= \expect{\Delta\mathcal{D}^\dagger[ \sigma_{ba}^{(1)}]\Delta\sigma_{dc}^{(2)} }_sdt + \expect{\Delta \sigma_{ba}^{(1)} \Delta\mathcal{D}^\dagger[\sigma_{dc}^{(2)}] }_sdt\nn \\
@@ -674,8 +674,28 @@ in the symmetric qutrit subspace.
 %All the coefficients in these equations are calculated numerically. 
 The matrix of equations is sparse and close to diagonal, which indicates that only nearest-neighbor coupling is possible in the $\left\{\expect{\hat{\sigma}_{ba}},\expect{\Delta\sigma_{ba}\Delta\sigma_{dc} }_s\right\}$ basis. 
 
+To calculate up to two-body moments, we treat the system to have only two distinguishable atoms, and initially each atom is prepared in the $ \ket{\Psi}=\ket{\uparrow}_x $ state. Then the initial value of $ \expect{\hat{\sigma}_{ba} } $ and $ \expect{\Delta\sigma_i\Delta\sigma_j}=\expect{\Delta\sigma_{ba}\Delta\sigma_{dc}}_s $ at time $ t=0 $ can be given by
+ \begin{subequations}
+ \begin{align}
+ \expect{\hat{\sigma}_{ba}(0)}&=\bra{\Psi}\hat{\sigma}_{ba}\ket{\Psi}\\
+ \expect{\Delta\sigma_i\Delta\sigma_j(0)} &= (\bra{\Psi}\otimes\bra{\Psi})\frac{\hat{\sigma}_{ba}^{(1)} \otimes\hat{\sigma}_{dc}^{(2)}+\hat{\sigma}_{dc}^{(1)} \otimes\hat{\sigma}_{ba}^{(2)}}{2}(\ket{\Psi}\otimes\ket{\Psi})\nn\\
+ &\quad-\bra{\Psi}\hat{\sigma}_{ba}\ket{\Psi}\bra{\Psi}\hat{\sigma}_{dc}\ket{\Psi}.
+ \end{align}
+ \end{subequations}
+ With the initial values and equations of motion given above, the stochastic time evolution of the one- and two-body moments can then be solved by evolving the equations from the initial value to arbitrary time $ t $ in a Wiener process.
+ 
 The number of non-zero elements in the coefficient matrix is proportional to the number of variables. To respect the nature of the exchange symmetry in two-body moment variables, we label $ \hat{\sigma}_{ba} $ as $ \hat{\sigma}_i $ with $ i=1,2,\cdots, 9 $ for $ b$ and $a  $ counting from $ (\uparrow,\downarrow,T) $ qutrit state labels; the two-body moment variables can then be ordered in the symmetric subspace as $ \expect{\Delta\sigma_i\Delta\sigma_j} $ given $ j\ge i $ to represent $ \expect{\!\Delta \sigma_{ba}^{(\!1\!)}\! \Delta \sigma_{dc}^{(\!2\!)}}_s $ satisfying $ \expect{\!\Delta \sigma_{ba}^{(\!1\!)}\! \Delta \sigma_{dc}^{(\!2\!)}}_s=\expect{\!\Delta \sigma_{dc}^{(\!1\!)}\! \Delta \sigma_{ba}^{(\!2\!)}}_s $ under the exchange symmetry. 
 In the symmetric qutrit subspace, we have $ 45 $ two-body moment variables and corresponding sparse second-order equations, which we solve numerically. 
+
+Our formalism of deriving the spin dynamics using the microscopic operators allows us to generalize the equations of motion to $ n $-body dynamics straightforwardly. For example, following Eq.~\eqref{eq:dsigmabadc_op_expand}, the equations of $ n $-body moments due to optical pumping can be given by 
+\begin{align}
+&\quad\left.d\expect{\!\Delta \sigma_{b^{(1)}a^{(1)}}^{(1)}\Delta\sigma_{b^{(2)}a^{(2)}}^{(2)}\cdots \Delta\sigma_{b^{(n)}a^{(n)}}^{(n)} }_s\right|_{op} \nn\\
+&\!\!=\!\sum_{p,q}\! \tr\!\left(\mathcal{D}^\dagger[\hat{\sigma}_{b^{(1)}a^{(1)}} ]\hat{\sigma}_{pq} \right)\!\expect{\!\Delta\sigma_{pq}^{(1)}\Delta\sigma_{b^{(2)}a^{(2)} }^{(2)}\cdots \Delta\sigma_{b^{(n)}a^{(n)} }^{(n)}  }_s \nn\\
+&\quad + \sum_{p,q}\!\tr\!\left(\mathcal{D}^\dagger[\hat{\sigma}_{b^{(2)}a^{(2)} }]\hat{\sigma}_{pq} \right)\!\expect{\!\Delta\hat{\sigma}_{b^{(1)} a^{(1)} }^{(\!1\!)}\Delta\sigma_{pq}^{(2)}\cdots \Delta\sigma_{b^{(n)}a^{(n)} }^{(n)} }_s+\cdots \\
+&\!\!=\sum_{i=1}^n\sum_{p,q} \! \tr\!\left(\mathcal{D}^\dagger[\hat{\sigma}_{b^{(i)}a^{(i)}} ]\hat{\sigma}_{pq} \right) \!\expect{\!\hat{\sigma}_{b^{(1)}a^{(1)}}^{(1)} \cdots \Delta\sigma_{pq}^{(i)}\cdots  \Delta\sigma_{b^{(n)}a^{(n)} }^{(n)}  }_s .\label{eq:dsigmabadcn_op_expand}
+\end{align} 
+
+In general, to include the $ n $-body correlations, $ \sum_i^n\left(\!\begin{array}{c}i\\d^2\end{array} \! \right) $ equations are required and the formalism above can be extended to cut off the covariances at the $ (n+1)^{\text{th}} $ order. Here, $ d $ is the dimension of the atomic subspace for the spin squeezing simulations. Despite the considerable number of equations required, the collective spin dynamics problem may still be efficiently solved because the coefficient matrices of the set of equations are almost diagonal and are very sparse due to the $ \delta $-function-like selection rules of products of $ \hat{\sigma}_{ba} $ operators for arbitrary subscripts in deriving the spin dynamics equations.
 
 %</Faradayprotocoldetails>
 
