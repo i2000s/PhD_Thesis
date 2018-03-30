@@ -444,9 +444,9 @@ A similar experiment based on a two-color QND measurement in a nanofiber geometr
 	%===================QND spin squeezing=====================%
 	\subsection{Collective spin squeezing via QND measurement}
 
-The same birefringent interaction, \erf{Eq::GenHamiltonian}, can be utilized in a QND measurement to squeeze the projection noise of the collective atomic spin.  We consider squeezing of the uncertainty associated with the ``clock states" of cesium, $\ket{\uparrow} = \ket{6S_{1/2}, f=4, m_f=0}$ and $\ket{\downarrow} = \ket{6S_{1/2}, f=3, m_f=0}$, which define a pseudospin within each atom and associated Pauli operators $\{\hat{\sigma}_1, \hat{\sigma}_2, \hat{\sigma}_3\}$.  The quantum uncertainty in the collective pseudospin,
+The same birefringent interaction, \erf{Eq::GenHamiltonian}, can be utilized in a QND measurement to squeeze the projection noise of the collective atomic spin.  We consider squeezing of the uncertainty associated with the ``clock states" of cesium\index{state!clock state}, $\ket{\uparrow} = \ket{6S_{1/2}, f=4, m_f=0}$ and $\ket{\downarrow} = \ket{6S_{1/2}, f=3, m_f=0}$, which define a pseudospin within each atom and associated Pauli operators $\{\hat{\sigma}_x, \hat{\sigma}_y, \hat{\sigma}_z\}$.  The quantum uncertainty in the collective pseudospin,
 	\begin{align}
-		\jz = \frac{1}{2} \sum_{n=1}^{N_A} \hat{\sigma}_3^{(n)},  
+		\jz = \frac{1}{2} \sum_{n=1}^{N_A} \hat{\sigma}_z^{(n)},  
 	\end{align}
 fundamentally limits the precision of atomic clocks \cite{wineland_spin_1992}. For atoms prepared in a spin coherent state (SCS) the projection noise, $\varz \big|_{\scs} = N_A/4$, sets the standard quantum limit for spin measurements. A spin squeezed state (SSS) exhibits reduced fluctuations, $ \varz \big|_{\rm SSS}  < N_A/4$, due to negative pairwise correlations between the atoms \cite{kitagawa_squeezed_1993}. Spin squeezing is typically quantified with the metrological squeezing parameter defined by Wineland \emph{et al.} \cite{wineland_spin_1992},
 	\begin{align} \label{Eq::SqueezingParameter}
@@ -454,12 +454,12 @@ fundamentally limits the precision of atomic clocks \cite{wineland_spin_1992}. F
 	\end{align}
 where $\expt{\hat{J}_{||}}$ is the mean collective spin along the direction of spin polarization. 
 
-The clock states are defined to have zero projection of angular momentum with respect to a bias magnetic field that defines a quantization axis, $\mathbf{e}_{\tilde{z}}$.  
+The clock states\index{state!clock state} are defined to have zero projection of angular momentum with respect to a bias magnetic field that defines a quantization axis, $\mathbf{e}_{\tilde{z}}$.  
 Within the clock-state subspace the rank-1 vector light shift in the dispersive Hamiltonian, \erf{Eq::GenHamiltonian}, vanishes since $\bra{\uparrow}\hat{f}_k \ket{\uparrow} =\bra{\downarrow}\hat{f}_k \ket{\downarrow} = 0$ for any direction of the spin, $k$, and any quantization axis, $\mathbf{e}_{\tilde{z}}$. 
 Furthermore, as shown below, atoms on either side of the nanofiber experience the same birefringent coupling. 
-The resulting Hamiltonian, restricted to the clock subspace, couples the guided field of the nanofiber to the $J_3$-component of the collective pseudospin. The interaction has contributions from both the scalar and tensor light shifts,
+The resulting Hamiltonian, restricted to the clock subspace, couples the guided field of the nanofiber to the $J_z$-component of the collective pseudospin. The interaction has contributions from both the scalar and tensor light shifts,
 	\begin{align} \label{Eq::ClockHamiltonian}
-		\hat{H}_{J_3} = \hbar \Big\{ & \big[ \big( \chi_{H,\uparrow} +\chi_{V,\uparrow} \big) - \big( \chi_{H,\downarrow} + \chi_{V,\downarrow}\big) \big] \jz \hat{S}_0(t) \\
+		\hat{H}_{J_z} = \hbar \Big\{ & \big[ \big( \chi_{H,\uparrow} +\chi_{V,\uparrow} \big) - \big( \chi_{H,\downarrow} + \chi_{V,\downarrow}\big) \big] \jz \hat{S}_0(t) \\
 		+ & \big[  \big( \chi_{H, \uparrow} - \chi_{V,\uparrow} \big) - \big(\chi_{H,\downarrow} - \chi_{V,\downarrow} \big) \big]  \jz \hat{S}_1(t) \Big\}, \nonumber
 	\end{align}
 where the coupling strength between an atom in the clock subspace and a photon with polarization $p = \{H,V\}$ is
@@ -469,24 +469,24 @@ where the coupling strength between an atom in the clock subspace and a photon w
 and $f = \{4,3\}$ labels $\{\uparrow,\downarrow\}$.  
 The diagonal terms in the polarizability tensor are the same for atoms at positions above and below the nanofiber, and thus all atoms contribute equally. 
 In addition, a constant birefringence proportional to $ \hat{J}_0\hat{S}_1 $ is neglected here as it can be canceled with a compensating waveplate. 
-Finally, the first term in \erf{Eq::ClockHamiltonian} does not affect polarization spectroscopy, but will act to rotate the pseudo-spin around the $J_3$ axis of the generalized Bloch sphere proportional to classical intensity fluctuations.
-While this does not affect the squeezing of projection noise in $\hat{J}_3$, it affects the metrologically relevant squeezing by adding uncertainty to the direction of the mean spin.  By choosing a ``magic frequency" at which the light shifts on the two clock states are equal, 
+Finally, the first term in \erf{Eq::ClockHamiltonian} does not affect polarization spectroscopy, but will act to rotate the pseudo-spin around the $J_z$ axis of the generalized Bloch sphere proportional to classical intensity fluctuations.
+While this does not affect the squeezing of projection noise in $\hat{J}_z$, it affects the metrologically relevant squeezing by adding uncertainty to the direction of the mean spin.  By choosing a ``magic frequency" at which the light shifts on the two clock states\index{state!clock state} are equal, 
 	\begin{align} \label{Eq::MagicWavelengthCondition}
 		\chi_{H,\uparrow} +\chi_{V,\uparrow}  = \chi_{H,\downarrow} + \chi_{V,\downarrow},
 	\end{align}
 this term can be canceled \cite{chaudhury_continuous_2006}, where we have ignored the imaginary part of the coupling strengths in the dispersive regime.
 Using the D1-line of $^{133}$Cs atoms as the probe light, there are two magic-frequency solutions, $ \magic{3} $ and $\magic{4}$, shown in \frf{Fig::CouplingStrength}(a).  
 
-Because the guided probe light at the position of the atom will generally be elliptical, the light-shift interaction coherently couples different magnetic sublevels in a given manifold $f$, and thus does not conserve $\hat{J}_3$.  For example, the ellipticity of the probe light leads to a fictitious magnetic field proportional to $i \mathbf{E}^{(-)}_{\inp}(\br') \times \mathbf{E}^{(+)}_{\inp}(\br')$ that causes a precession of the spin within hyperfine manifold $f$.  This can be mitigated by a sufficiently strong bias magnetic field compared to the fictitious field \cite{smith_continuous_2004}. 
+Because the guided probe light at the position of the atom will generally be elliptical, the light-shift interaction coherently couples different magnetic sublevels in a given manifold $f$, and thus does not conserve $\hat{J}_z$.  For example, the ellipticity of the probe light leads to a fictitious magnetic field proportional to $i \mathbf{E}^{(-)}_{\inp}(\br') \times \mathbf{E}^{(+)}_{\inp}(\br')$ that causes a precession of the spin within hyperfine manifold $f$.  This can be mitigated by a sufficiently strong bias magnetic field compared to the fictitious field \cite{smith_continuous_2004}. 
 
 
 %========= FIGURE: Geometry (coupling strength, magic wavelength, area and detuning) =========%
 \begin{figure}[!htbp]
 \centering
 \includegraphics[scale=0.64]{../chap4/Fig3}
-\caption{Parameters of the atom-light interface using the clock states of $^{133}$Cs.  
+\caption[Parameters of the atom-light interface using the clock states of $^{133}$Cs and magic frequencies.]{Parameters of the atom-light interface using the clock states of $^{133}$Cs.  
 (a) Energy level structure for atoms probed with one of two magic frequencies on the D1-line. 
-(b) Magnitude of the magic detunings at which the clock states are equally light-shifted, $| \tilde{\Delta}_{f}|/2\pi \equiv | \omega_0 - \magic{f} |/2\pi$ (in units of MHz). There are two solutions shown as blue (dashed) and red lines. (c) The coupling strength, as measured by the magnitude of the polarization rotation angle on the Poincar\'{e} sphere, $|\chi_{_{ J_3}}|$, for an atom trapped in the $x$-$z$ plane at a distance $ r'\!_\perp=1.8a $ from the fiber center.  In both (b) and (c) we plot the parameter as the direction of the clock-state quantization axis is varied in the $x$-$y$ plane, for the two possible choices of magic detunings.
+(b) Magnitude of the magic detunings at which the clock states are equally light-shifted, $| \tilde{\Delta}_{f}|/2\pi \equiv | \omega_0 - \magic{f} |/2\pi$ (in units of MHz). There are two solutions shown as blue (dashed) and red lines. (c) The coupling strength, as measured by the magnitude of the polarization rotation angle on the Poincar\'{e} sphere, $|\chi_{_{ J_z}}|$, for an atom trapped in the $x$-$z$ plane at a distance $ r'\!_\perp=1.8a $ from the fiber center.  In both (b) and (c) we plot the parameter as the direction of the clock-state quantization axis is varied in the $x$-$y$ plane, for the two possible choices of magic detunings.
 See text for details.}\label{Fig::CouplingStrength}
 \end{figure}
 %=============================================
@@ -494,7 +494,7 @@ See text for details.}\label{Fig::CouplingStrength}
 
 The remaining QND interaction Hamiltonian is
 	\begin{equation} \label{Eq::FaradayHam}
-		\hat{H}_{J_3} = \hbar \chieff \jz \hat{S}_1(t),
+		\hat{H}_{J_z} = \hbar \chieff \jz \hat{S}_1(t),
 	\end{equation}
 where the rotation angle on the Poincar\'{e} sphere at the magic wavelength is,
 \begin{equation}\label{eq:chiJ3}
@@ -505,13 +505,13 @@ In the standard way, squeezing the uncertainty in $\jz$ by QND measurement can b
 		\kappa \equiv |\chieff|^2 \dot{N}_L, 
 	\end{align}
 quantifies the rate at which we squeeze projection noise, with $\chieff$ given in \erf{eq:chiJ3}. 
-In the absence of any decoherence, such a QND measurement for integration time $T$ squeezes the initial uncertainty in $\jz$ according to $(\Delta J_3^2)_{\rm out}= (\Delta J_3^2)_{\rm in}/(1+r)$, where
+In the absence of any decoherence, such a QND measurement for integration time $T$ squeezes the initial uncertainty in $\jz$ according to $(\Delta J_z^2)_{\rm out}= (\Delta J_z^2)_{\rm in}/(1+r)$, where
 	\begin{equation}
-		r = \kappa T  (\Delta J_3^2)_{\inp}
+		r = \kappa T  (\Delta J_z^2)_{\inp}
 	\end{equation}
 is the integrated measurement strength \cite{hammerer_quantum_2010, baragiola_three-dimensional_2014}.
 
-The strength of the birefringent interaction arises from two fundamental sources.  The anisotropy of the   $H$ and $V$ polarized modes leads to a polarization-dependent index of refraction, as described in Sec.~\ref{Sec::AtomNumberMeasurement}.  In addition there is a dependence of the atom-photon coupling on the internal spin state of the atom due to the atomic tensor polarizability.  In particular, we are interested in the dependence on the two clock states of the atom.  This spin-dependent coupling will depend on the choice of quantization axis that defines the clock state with projection $m_f=0$. 
+The strength of the birefringent interaction arises from two fundamental sources.  The anisotropy of the   $H$ and $V$ polarized modes leads to a polarization-dependent index of refraction, as described in Sec.~\ref{Sec::AtomNumberMeasurement}.  In addition there is a dependence of the atom-photon coupling on the internal spin state of the atom due to the atomic tensor polarizability.  In particular, we are interested in the dependence on the two clock states of the atom.  This spin-dependent coupling will depend on the choice of quantization axis that defines the clock state\index{state!clock state} with projection $m_f=0$. 
 
 We combine these two effects and obtain a compact expression for the coupling strength $\chieff$ using the irreducible tensor decomposition of the atomic polarizability, \erf{Eq::PolarizabilityIrrep}.  
 Let $\{\mathbf{e}_{\tilde{x}},\mathbf{e}_{\tilde{y}}, \mathbf{e}_{\tilde{z}}\}$ be a space-fixed Cartesian coordinate system, where $\mathbf{e}_{\tilde{z}}$ defines the quantization axis of the atom, set by the magnetic field.  Because of the azimuthal symmetry of clock state around the $\qaxis$ axis, the polarizability tensor is diagonal in that basis.  
@@ -536,17 +536,17 @@ which depends on the choice of quantization axis. Note that, in Appendix~\ref{ch
 
 We write the effective rotation angle in the Hamiltonian, \erf{Eq::FaradayHam}, as
 	\begin{align} \label{Eq::chieff}
-		\chieff = \frac{\sigma_0}{A_{J_3}} \frac{\Gamma}{ 2 \Delta_{J_3}},
+		\chieff = \frac{\sigma_0}{A_{J_z}} \frac{\Gamma}{ 2 \Delta_{J_z}},
 	\end{align}
 with an ``effective detuning" set by the magic-wavelength condition,
 	\begin{align} \label{Eq::SqueezingEffectiveDetuning}
-		 \Delta_{J_3}^{-1} \equiv \frac{4}{\Gamma} (b_4 - b_3) =   \sum_{f'}  \left( C^{(2)}_{4f'}\frac{10}{\Delta_{4f'}} -  C^{(2)}_{3f'}\frac{6}{ \Delta_{3f'} } \right),
+		 \Delta_{J_z}^{-1} \equiv \frac{4}{\Gamma} (b_4 - b_3) =   \sum_{f'}  \left( C^{(2)}_{4f'}\frac{10}{\Delta_{4f'}} -  C^{(2)}_{3f'}\frac{6}{ \Delta_{3f'} } \right),
 	\end{align}
 and an effective area given by
 	\begin{align} \label{Eq::SqueezingModeArea}
-		A_{J_3}^{-1} & = n_g \frac{ |\mathbf{e}_{\tilde{z}} \cdot \mathbf{u}_V(\br'_\perp)|^2 |\mathbf{u}_H(\br'_\perp)|^2 - |\mathbf{e}_{\tilde{z}} \cdot \mathbf{u}_H(\br'_\perp) |^2 |\mathbf{u}_V(\br'_\perp)|^2 }{ |\mathbf{u}_H(\br'_\perp)|^2 + |\mathbf{u}_V(\br'_\perp)|^2 } 
+		A_{J_z}^{-1} & = n_g \frac{ |\mathbf{e}_{\tilde{z}} \cdot \mathbf{u}_V(\br'_\perp)|^2 |\mathbf{u}_H(\br'_\perp)|^2 - |\mathbf{e}_{\tilde{z}} \cdot \mathbf{u}_H(\br'_\perp) |^2 |\mathbf{u}_V(\br'_\perp)|^2 }{ |\mathbf{u}_H(\br'_\perp)|^2 + |\mathbf{u}_V(\br'_\perp)|^2 } 
 	\end{align}	
-We see here the explicit dependence of the coupling strength on both the anisotropy of the modes and on the tensor atomic response, which in turn depends on a particular choice of clock states.  The quantization axis that maximizes $\chieff$ is that which minimizes $A_{J_3}$ at a given magic detuning.  
+We see here the explicit dependence of the coupling strength on both the anisotropy of the modes and on the tensor atomic response, which in turn depends on a particular choice of clock states\index{state!clock state}.  The quantization axis that maximizes $\chieff$ is that which minimizes $A_{J_z}$ at a given magic detuning.  
 Since the $z$-component of the guided modes is $90^\circ$ out-of-phase with the transverse components, the quantization axis maximizing the atom-light coupling is specified by an angle in the transverse $x$-$y$ plane, $\varphi$,
 	\begin{align} \label{Eq::QuantizationAxis}
 		\qaxis = \cos \varphi \mbf{e}_x + \sin \varphi \mbf{e}_y.
@@ -584,7 +584,7 @@ and the collective Lindblad map is
 The final term in \erf{Eq::SME} describes the effect of optical pumping acting locally on each atom along the nanofiber. 
 
 The optical pumping map is governed by a standard master equation~\cite{deutsch_quantum_2010}.  
-Restricting to the two-dimensional subspace associated with the clock states, the action on the $n^{th}$ atom is
+Restricting to the two-dimensional subspace associated with the clock states\index{state!clock state}, the action on the $n^{th}$ atom is
 	\begin{align}
 		\mathcal{D}_n[\hat{\rho}] =  \sum_{f=3,4} \Big\{& -\frac{\gamma_{f}}{2} \big[ \hat{\rho} (\op{f,0}{f,0})^{(n)} + (\op{f,0}{f,0})^{(n)}\hat{\rho} \big]\\
 		&+  \sum_{\tilde{f} =3,4}  \gamma_{f \rightarrow \tilde{f}}(\op{\tilde{f},0}{f,0})^{(n)} \hat{\rho}(\op{f,0}{\tilde{f},0})^{(n)} \Big\}.\nonumber
@@ -592,33 +592,33 @@ Restricting to the two-dimensional subspace associated with the clock states, th
 Here, $\gamma_{f}$ is the total rate of photon scattering by atoms in state $\ket{f,0}$ and  $\gamma_{f \rightarrow \tilde{f} }$ is the rate of optical pumping between the clock states, $\ket{f,0} \rightarrow \ket{\tilde{f},0}$ (see Appendix~\ref{Appendix::Rates}). Expressed in terms of Pauli operators on the clock-state pseudospin, the map acts as
 	\begin{align} \label{Eq::OpticalPumpingMapSchr}
 		\mathcal{D}_n [\hat{\rho}] 
-				=& - \!\bigg[ \frac{2(\gammau \!+\! \gammad) \!-\! \gammauu \!-\! \gammadd}{4} \bigg] \hat{\rho} \!-\! \frac{ \gammau \!-\! \gammad \!-\! \gammauu \!+\! \gammadd }{4} \big( \hat{\sigma}_3^{(n)} \hat{\rho}\!+\! \hat{\rho} \hat{\sigma}_3^{(n)} \big) \nn \\
-		&+ \frac{\gammauu+\gammadd}{4} \hat{\sigma}_ 3^{(n)}\hat{\rho} \hat{\sigma}_3^{(n)} + \gammaud  \hat{\sigma}_-^{(n)} \hat{\rho} \hat{\sigma}_+^{(n)} + \gammadu  \hat{\sigma}_+^{(n)} \hat{\rho} \hat{\sigma}_- ^{(n)}.   
+				=& - \!\bigg[ \frac{2(\gammau \!+\! \gammad) \!-\! \gammauu \!-\! \gammadd}{4} \bigg] \hat{\rho} \!-\! \frac{ \gammau \!-\! \gammad \!-\! \gammauu \!+\! \gammadd }{4} \big( \hat{\sigma}_z^{(n)} \hat{\rho}\!+\! \hat{\rho} \hat{\sigma}_z^{(n)} \big) \nn \\
+		&+ \frac{\gammauu+\gammadd}{4} \hat{\sigma}_ 3^{(n)}\hat{\rho} \hat{\sigma}_z^{(n)} + \gammaud  \hat{\sigma}_-^{(n)} \hat{\rho} \hat{\sigma}_+^{(n)} + \gammadu  \hat{\sigma}_+^{(n)} \hat{\rho} \hat{\sigma}_- ^{(n)}.   
 	\end{align} 
 There are three important features of this map that are not typical in a QND measurement of ideal spin-$\half$ particles.  
-First, the map is not trace preserving because atoms can be pumped out of the clock states. 
+First, the map is not trace preserving because atoms can be pumped out of the clock states\index{state!clock state}. 
 Second, unequal rates of optical pumping for $\ket{\uparrow}$ and $\ket{\downarrow}$ polarize the mean $\expt{\jz}$ towards a value different from that found in the QND measurement. 
 Third, owing to the large ground hyperfine splitting, photons arising from optical pumping of $f \rightarrow \tilde{f}=3$ and $f \rightarrow \tilde{f}=4$ are distinguishable, thus these processes destroy coherences between $\ket{\uparrow}$ and $\ket{\downarrow}$. 
 
 We calculate the squeezing parameter as a function of time based on the evolution of atomic correlation functions, where operators evolve according to the adjoint form of the SME in \erf{Eq::SME}.  The collective atomic variables obey the following stochastic equations of motion (see Appendix \ref{Appendix::OpticalPumping}),
 \begin{subequations}\label{Eq::collectivedynamics}
 	\begin{align} 
-		&d N_C = -\gamma_{00} N_C dt + 2\gamma_{03} \expt{\hat{J}_3} dt \label{Eq::NA}\\
-		&d \expt{\hat{J}_1}  = -\gamma_{11} \expt{\hat{J}_1} dt , \label{Eq::MeanSpinDecay} \\
-		&d \expt{\hat{J}_3}  = s\sqrt{\kappa} \varz dW -\gamma_{33} \expt{\hat{J}_3}dt + \smallfrac{1}{2}\gamma_{30} N_C dt,   \\
-		&d \varz  = \!- \kappa \big(\varz\big)\!^2\! dt\!-\! 2 \gamma_{33} \varz dt \!\!+\! \smallfrac{1}{4} \!\big( 2\gamma_{33}\!\!-\!\!\gamma_{00} \!\big) N_C dt \!\!+\! \smallfrac{1}{2} \big( \gamma_{03} \!\!-\!\! 2 \gamma_{30} \big)\! \expt{\!\hat{J}_3\!} dt,   \label{Eq::varJz} 
+		&d N_C = -\gamma_{00} N_C dt + 2\gamma_{03} \expt{\hat{J}_z} dt \label{Eq::NA}\\
+		&d \expt{\hat{J}_x}  = -\gamma_{11} \expt{\hat{J}_x} dt , \label{Eq::MeanSpinDecay} \\
+		&d \expt{\hat{J}_z}  = s\sqrt{\kappa} \varz dW -\gamma_{33} \expt{\hat{J}_z}dt + \smallfrac{1}{2}\gamma_{30} N_C dt,   \\
+		&d \varz  = \!- \kappa \big(\varz\big)\!^2\! dt\!-\! 2 \gamma_{33} \varz dt \!\!+\! \smallfrac{1}{4} \!\big( 2\gamma_{33}\!\!-\!\!\gamma_{00} \!\big) N_C dt \!\!+\! \smallfrac{1}{2} \big( \gamma_{03} \!\!-\!\! 2 \gamma_{30} \big)\! \expt{\!\hat{J}_z\!} dt,   \label{Eq::varJz} 
 	\end{align}
 \end{subequations}
 where the decay and feeding rates are given in \erf{Eq::DecayRates}.
 The total number of atoms in the clock-state subspace is given by $N_C$, which primarily decays at rate $\gamma_{00}$. 
-The final term in \erf{Eq::varJz}, proportional to $\expt{\hat{J}_3}$, is typically negligible since in most applications $\expt{\hat{J}_3} \ll N_C$.  
+The final term in \erf{Eq::varJz}, proportional to $\expt{\hat{J}_z}$, is typically negligible since in most applications $\expt{\hat{J}_z} \ll N_C$.  
 We retain this small correction since unbalanced optical pumping acts to polarize the atoms and alters the rate of atom loss.  
 
 To find the peak squeezing in the presence of optical pumping, we numerically integrate Eqs. (\ref{Eq::NA}--\ref{Eq::varJz}) and then use \erf{Eq::SqueezingParameter} to calculate the metrological squeezing parameter, $\xi^2$, as a function of time. 
 We choose here the magic frequency close to the $ f=4\leftrightarrow f'=4 $ transition, $ \magic{4} $, which is furthest from resonance with both excited hyperfine transitions. 
 Typical time evolution is shown in \frf{Fig::Squeezing_Dynamics} for $2500$ atoms trapped a distance $r'\!_\perp=1.8a$ from the center of the nanofiber, where time is scaled to the characteristic scattering rate, 
 \begin{align}\label{Eq::gamma_s}
-\gamma_s \equiv \frac{\sigma_0}{A_{\rm in}}\frac{\Gamma^2}{4 \Delta_{J_3}^2} \dot{N}_L .
+\gamma_s \equiv \frac{\sigma_0}{A_{\rm in}}\frac{\Gamma^2}{4 \Delta_{J_z}^2} \dot{N}_L .
 \end{align}  
 We study the dynamics for two choices of quantization axis: (i) along the $x$ axis and (ii) along the numerically determined optimal axis.  Figure \ref{Fig::Squeezing_Dynamics}(a) shows the time evolution of the squeezing parameter.  We achieve a maximum squeezing of 4.7 dB when the clock states are chosen along the optimal axis; $\qangle_{\rm opt} \approx 86^\circ$ in \erf{Eq::QuantizationAxis}. 
 
@@ -627,12 +627,12 @@ We study the dynamics for two choices of quantization axis: (i) along the $x$ ax
 \centering
 \hspace{-50pt}
 \includegraphics[scale=0.42]{../chap4/Fig4}
-\caption{Squeezing on the clock states as a function of time in units of the scattering rate $\gamma_s$ for $2500$ atoms trapped in the $x$-$z$ plane at a distance $ r'\!_\perp=1.8a$ from the axis of the nanofiber. The optimal quantization axis (red) is compared to the quantization along the $x$ axis (blue). 
+\caption[Squeezing on the clock states as a function of time in units of the scattering rate $\gamma_s$ for $2500$ atoms trapped in the $x$-$z$ plane at a distance $ r'\!_\perp=1.8a$ from the axis of the nanofiber.]{Squeezing on the clock states as a function of time in units of the scattering rate $\gamma_s$ for $2500$ atoms trapped in the $x$-$z$ plane at a distance $ r'\!_\perp=1.8a$ from the axis of the nanofiber. The optimal quantization axis (red) is compared to the quantization along the $x$ axis (blue). 
 Dashed lines indicate simulations without optical pumping; i.e. no decoherence. 
 (a) Metrological spin squeezing parameter $\xi^{-2}$, \erf{Eq::SqueezingParameter}, in dB. 
-(b) Collective mean spin $\expt{\hat{J}_1}$ and decaying atom number in the clock states, $N_C$ (inset).
+(b) Collective mean spin $\expt{\hat{J}_1}\equiv \expt{\hat{J}_x}$ and decaying atom number in the clock states, $N_C$ (inset).
 (c) Conditional squeezed variance $\varz$. 
-The inset shows the decomposition at the optimal quantization axis of $ \Delta J_3^2 $ (red dashed) into the single-body variance, $N_A (\Delta j_3^{(1)})^2$ (green) and the two-body covariance, $N_A(N_A-1)\expect{\Delta j_3^{(1)}\Delta j_3^{(2)}}$ (black), as given by \erf{Eq::VarianceDecomposition}.
+The inset shows the decomposition at the optimal quantization axis of $ \Delta J_3^2\equiv \Delta J_z^2 $ (red dashed) into the single-body variance, $N_A (\Delta j_z^{(1)})^2$ (green) and the two-body covariance, $N_A(N_A-1)\expect{\Delta j_z^{(1)}\Delta j_z^{(2)}}$ (black), as given by \erf{Eq::VarianceDecomposition}.
 }\label{Fig::Squeezing_Dynamics}
 \end{figure*}
 %================
@@ -645,16 +645,16 @@ These effects are captured by the depolarization rate $\gamma_{11}$ in the equat
   
 We can gain deeper understanding in the microscopic effects of optical pumping on spin squeezing by looking at the evolution of the one and two-body correlation functions.  In terms of its constituent pseudospins, the collective variance takes the form
 	\begin{align} \label{Eq::VarianceDecomposition}
-	\varz & = N_A \big( \Delta j_3^{(1)} \big)^2 + N_A(N_A-1) \expt{ \Delta j_3^{(1)} \Delta j_3^{(2)} }
+	\varz & = N_A \big( \Delta j_z^{(1)} \big)^2 + N_A(N_A-1) \expt{ \Delta j_z^{(1)} \Delta j_z^{(2)} }
 	\end{align}
 for permutationally symmetric states considered here, where $(1)$ and $(2)$ label any two atoms in the ensemble. Loss of atoms affects the first (single-body) variance term, which scales as $N_A$.
 The two-body correlations which contribute as $N_A^2$ to the collective fluctuations, 
 	\begin{align}
-		\expt{ \Delta j_3^{(1)} \Delta j_3^{(2)} } &\equiv \smallfrac{1}{4} \big( \expt{ \hat{\sigma}_3^{(1)} \otimes \hat{\sigma}_3^{(2)}  } - \expt{\hat{\sigma}_3^{(1)} }^2  \big).
+		\expt{ \Delta j_z^{(1)} \Delta j_z^{(2)} } &\equiv \smallfrac{1}{4} \big( \expt{ \hat{\sigma}_z^{(1)} \otimes \hat{\sigma}_z^{(2)}  } - \expt{\hat{\sigma}_z^{(1)} }^2  \big).
 \end{align}
-have a much larger influence on the total variance. Spin-spin correlations at the heart of spin squeezing, $\expt{ \hat{\sigma}_3^{(1)} \otimes \hat{\sigma}_3^{(2)} }$, rapidly generated by the measurement backaction decohere by optical pumping according to Eqs. (\ref{Eq::TwoBodyDecay}--\ref{Eq::OperatorMap}),
+have a much larger influence on the total variance. Spin-spin correlations at the heart of spin squeezing, $\expt{ \hat{\sigma}_z^{(1)} \otimes \hat{\sigma}_z^{(2)} }$, rapidly generated by the measurement backaction decohere by optical pumping according to Eqs. (\ref{Eq::TwoBodyDecay}--\ref{Eq::OperatorMap}),
 	\begin{align} \label{Eq::TwoBodySpinDecay}
-		\frac{d}{dt} \expt{\hat{\sigma}_3^{(1)} \otimes \hat{\sigma}_3^{(2)} }  \Big|_{\rm op} = - 2 \gamma_{33}  \expt{\hat{\sigma}_3^{(1)} \otimes \hat{\sigma}_3^{(2)}} + \gamma_{30} \expt{ \hat{\mathbbm{1}}^{(1)}_C \otimes \hat{\sigma}_3^{(2)} + \hat{\sigma}_3^{(1)} \otimes \hat{\mathbbm{1}}^{(2)}_C },
+		\frac{d}{dt} \expt{\hat{\sigma}_z^{(1)} \otimes \hat{\sigma}_z^{(2)} }  \Big|_{\rm op} = - 2 \gamma_{33}  \expt{\hat{\sigma}_z^{(1)} \otimes \hat{\sigma}_z^{(2)}} + \gamma_{30} \expt{ \hat{\mathbbm{1}}^{(1)}_C \otimes \hat{\sigma}_z^{(2)} + \hat{\sigma}_z^{(1)} \otimes \hat{\mathbbm{1}}^{(2)}_C },
 	\end{align}
 where $\hat{\mathbbm{1}}^{(n)}_C \equiv \big( \op{\uparrow}{\uparrow} + \op{\downarrow}{\downarrow} \big){}^{(n)}$ is the single-body projector onto the clock states.   
 In addition, atoms that return to the clock subspace after scattering a photon inject additional noise into $\varz$.  
@@ -665,10 +665,10 @@ All of these effects are included in the equation for $\varz$, \erf{Eq::varJz}, 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[scale=0.5]{../chap4/Fig5}
-\caption{Dependence of the parameters that determine metrological squeezing  on the direction of the quantization axis that defines the clock states, $\qaxis$.  In all cases we consider $2500$ atoms trapped in the $x$-$z$ plane at distance $ r'\!_\perp=1.8a$ from the axis of the nanofiber. 
+\caption[Dependence of the parameters that determine metrological squeezing  on the direction of the quantization axis that defines the clock states, $\mathbf{e}_{\tilde{z}}$.]{Dependence of the parameters that determine metrological squeezing  on the direction of the quantization axis that defines the clock states, $\qaxis$.  In all cases we consider $2500$ atoms trapped in the $x$-$z$ plane at distance $ r'\!_\perp=1.8a$ from the axis of the nanofiber. 
 In (b--d) $\qaxis$ is confined to the $x$-$y$ plane, where the optimal peak squeezing occurs.
 (a,b)  Peak achievable squeezing at the maximum time, measured in dB, as a function of the direction of  $\qaxis$. 
-(c) OD/$N_A$=$\sigma_0 A_{in}/A^2_{J_3}$, \erf{Eq::OD/atom}.
+(c) OD/$N_A$=$\sigma_0 A_{in}/A^2_{J_z}$, \erf{Eq::OD/atom}.
 (d) Rates of atom loss, $\gamma_{00}$, and depolarization, $\gamma_{11}$ relative to the characteristic scattering rate $\gamma_s$.  See Eqs.~\eqref{Eq::lrate} and~\eqref{Eq::frate}. }\label{Fig::Squeezing_QuantizationAxis}
 \end{figure}
 %================
@@ -678,7 +678,7 @@ With our model, we explore optimal conditions for generating spin squeezing.   T
 We gain insight into the tradeoffs between QND entangling interaction and decoherence by independent inspection of the measurement strength and optical pumping rates.  
 First, the rate of squeezing is determined by the effective optical density per atom on resonance,
 \begin{align}\label{Eq::OD/atom}
-\mathrm{OD}/N_A \equiv \frac{\kappa}{\gamma_s}=\frac{\sigma_0 A_{\rm in}}{A_{J_3}^2},
+\mathrm{OD}/N_A \equiv \frac{\kappa}{\gamma_s}=\frac{\sigma_0 A_{\rm in}}{A_{J_z}^2},
 \end{align} 
 which peaks when $\qaxis$ is along the $y$ axis, as seen in \frf{Fig::Squeezing_QuantizationAxis}(c). 
 Choosing $\qaxis$ along $y$, the OD/$N_A$ is about 50\% larger than along $x$ axis.  
@@ -702,7 +702,7 @@ At distances $r'\!_\perp > 1.5a$ the atoms' local environment is roughly that of
 \centering
 \hspace{-50pt}
 \includegraphics[scale=0.41]{../chap4/Fig6}
-\caption{Parameters that define squeezing as a function of trapping distance $r'_\perp$ and initial atom number $N_A$. (a) OD/$N_A$. Inset is the corresponding magic detuning in units of MHz (see text).
+\caption[Parameters that define squeezing as a function of trapping distance $r'_\perp$ and initial atom number $N_A$.]{Parameters that define squeezing as a function of trapping distance $r'_\perp$ and initial atom number $N_A$. (a) OD/$N_A$. Inset is the corresponding magic detuning in units of MHz (see text).
 (b) Optimal quantization axis orientation angle $\qaxis$ in the $x$-$y$ plane for different atom numbers. 
 The line with $ 500 $ atoms terminates when the squeezing effect is too weak to be observed ($ r'\!_\perp>2.3a $).
 (c) Peak metrological squeezing at the optimal $\qaxis$ for different atom numbers.} \label{Fig::Squeezing_Distance}
@@ -839,7 +839,7 @@ where $ \mathrm{OD}/N_A=\frac{\Abir^2}{A_{in}\sigma_0} $ is the optical depth pe
 In this Appendix we provide, for reference, the fundamental HE$_{11}$ solutions to the homogeneous wave equation, \erf{Eq::WaveEquationSource} with $\tensor{\boldsymbol{\alpha}} = 0$, for a cylindrical nanofiber of radius $a$ and index of refraction given by \erf{Eq::IndexofRefraction}.  At a given frequency, $\omega_0 = c k_0$, the magnitudes of the longitudinal and transverse wave vectors for a guided mode are related by $n^2 k_0^2 = \beta_0^2 + k_\perp^2$.  
 The positive propagation constant, $\beta_0 \equiv \beta(\omega_0)$, is determined from the eigenvalue equation that results from enforcing physical boundary conditions at the fiber surface \cite{Snyder1983Optical},
 	\begin{align}
-		\frac{J_0(ha)}{ha J_1(ha)} = - \frac{n_1^2+n_2^2}{2n_1^2} \frac{K'(qa)}{qa K_1(qa)} + \frac{1}{h^2 a^2} - \bigg[ \bigg(\frac{n_1^2 - n_2^2}{2 n_1^2} \frac{K'(qa)}{qa K_1(qa)} \bigg)^2  + \frac{\beta_0^2}{n^2_1 k^2} \bigg(\frac{1}{q^2a^2} + \frac{1}{h^2a^2} \bigg)^2 \bigg]^{1/2}.
+		\frac{J_0(ha)}{ha J_x(ha)} = - \frac{n_1^2+n_2^2}{2n_1^2} \frac{K'(qa)}{qa K_1(qa)} + \frac{1}{h^2 a^2} - \bigg[ \bigg(\frac{n_1^2 - n_2^2}{2 n_1^2} \frac{K'(qa)}{qa K_1(qa)} \bigg)^2  + \frac{\beta_0^2}{n^2_1 k^2} \bigg(\frac{1}{q^2a^2} + \frac{1}{h^2a^2} \bigg)^2 \bigg]^{1/2}.
 	\end{align}
 Inside the nanofiber the transverse wavevector is real, $k_\perp = q$, where $q=\sqrt{\beta_0^2- n_2^2k_0^2}$, and outside the nanofiber it is purely imaginary, $k_\perp = i h$, where $h=\sqrt{n_1^2 k_0^2 - \beta_0^2}$.  The vector eigenfunctions are expressed as $\mbf{f}_{\mu}(\br) = (2\pi)^{-1/2}\mbf{u}_{b,p}(\mbf{r}_\perp) e^{i b \beta_0 z}$, where the modes are indexed by frequency $\omega_0$, propagation direction $b = \pm$, and polarization $p$.
 
@@ -867,12 +867,12 @@ The modes are expressed in terms of real-valued functions that depend only on th
 	\begin{align} 
 		u_{r_{\!\perp}}(r_\perp) =& u_0 \big[ (1-s) K_0(q{r_{\!\perp}}) + (1+s)K_2(q{r_{\!\perp}})\big] \\
 		u_\phi(r_\perp) =& u_0\big[ (1-s) K_0(q{r_{\!\perp}}) - (1+s)K_2(q{r_{\!\perp}})\big] \\
-		u_z(r_\perp) =& u_0 \frac{2 q}{\beta_0} \frac{K_1(qa)}{J_1(ha)} J_1(h{r_{\!\perp}}), \label{Eq::zprofile}
+		u_z(r_\perp) =& u_0 \frac{2 q}{\beta_0} \frac{K_1(qa)}{J_x(ha)} J_x(h{r_{\!\perp}}), \label{Eq::zprofile}
 	\end{align}
 	\end{subequations}
 where $u_0$ is set by the normalization condition, $\int d^2 \mathbf{r}_\perp n(r_\perp) | \mathbf{u}_\mu(\br_\perp)|^2=1$, $J_n$ and $K_n$ are the $n^{th}$ Bessel functions of the first and second kind, $f'(x)$ indicates a derivative with respect to the argument $x$, and 
 	\begin{align}
-		s = \frac{1/(q^2 a^2)^{2} + 1/(h^2 a^2)^{2}}{[J'_1(ha)/haJ_1(ha) + K'_1(qa)/qaK_1(qa)]}.
+		s = \frac{1/(q^2 a^2)^{2} + 1/(h^2 a^2)^{2}}{[J'_1(ha)/haJ_x(ha) + K'_1(qa)/qaK_1(qa)]}.
 	\end{align}  
 Of particular interest is the $z$-component, \erf{Eq::zprofile}, which can become appreciable.  Note that the phase convention in Eqs. (\ref{Eq::QuasicircularModes}-\ref{Eq::ProfileFunctions}) has been chosen to emphasize properties of the quasilinear modes and differs from that of \emph{Le Kien et al.} -- for instance in Ref. \cite{le_kien_propagation_2014}.  
 Further details about the guided-mode fields inside the nanofiber ($r_\perp\leq a$), the radiation (unguided) modes, and the quantized form of both can be found in Refs. \cite{Sondergaard2001, tong_single-mode_2004, Kien2004, LeKien2005a, vetsch_eugen_optical_2010}.
@@ -902,18 +902,24 @@ The rate of optical pumping between clock states $\ket{f,0} \rightarrow \ket{\ti
 where $ \hat{W}_q^{\tilde{f}f} = \sum_{f'}\frac{\Omega/2}{\Delta_{f'\tilde{f}}+i\Gamma/2}(\mathbf{e}_q^*\cdot\hat{\mathbf{D}}_{\tilde{f} f'} )(\mathbf{e}_{\rm in}\cdot \hat{\mathbf{D}}^\dagger_{f'f} ) $ are the Lindblad jump operators for optical pumping between ground levels $ f\rightarrow \tilde{f} $~\cite{deutsch_quantum_2010}. 
 Each jump operator $\hat{W}_q^{\tilde{f}f}$ is associated with absorption of the probe photon polarized along $ \mathbf{e}_{\rm in} $ followed by spontaneous emission of a photon with polarization $ \mathbf{e}_q $, where $q= \{0,\pm 1\}$ labels spherical basis elements for $\pi$ and $ \sigma_\pm$ transitions.  
 
-To find the dependence on the input field intensity, we define a characteristic photon scattering rate, $\gamma_s \equiv \frac{\Gamma\Omega^2}{4\Delta_{J_3}^2}= \frac{\sigma_0}{A_{\rm in}}\frac{\Gamma^2}{4 \Delta_{J_3}^2} \dot{N}_L $, with Rabi frequency $ \Omega=2\bra{j}|d|\ket{j'}\mathcal{E}^{(+)}_{\rm in}/\hbar $, reduced optical dipole matrix element $\bra{j}|d|\ket{j'}$, and field amplitude $ \mathcal{E}^{(+)}_{\rm in}=|\mathbf{E}_{\rm in}^{(+)}(\br')| $.
+To find the dependence on the input field intensity, we define a characteristic photon scattering rate, $\gamma_s \equiv \frac{\Gamma\Omega^2}{4\Delta_{J_z}^2}= \frac{\sigma_0}{A_{\rm in}}\frac{\Gamma^2}{4 \Delta_{J_z}^2} \dot{N}_L $, with Rabi frequency $ \Omega=2\bra{j}|d|\ket{j'}\mathcal{E}^{(+)}_{\rm in}/\hbar $, reduced optical dipole matrix element $\bra{j}|d|\ket{j'}$, and field amplitude $ \mathcal{E}^{(+)}_{\rm in}=|\mathbf{E}_{\rm in}^{(+)}(\br')| $.
 Eqs.~\eqref{Eq::gammaf} and~\eqref{Eq::gammaff} yield,
 \begin{subequations}
 	\begin{align}
 		\gamma_f &=n_g\dot{N}_L  \sum_{f'} \sigma (\Delta_{ff'} ) \mathbf{u}^*_\inp(\br'_\perp)\cdot \bra{f,0} \hat{\tensor{\mbf{A}}}(f,f') \ket{f,0}  \cdot \mathbf{u}_\inp(\br'_\perp)\\
-		&\approx  \gamma_s \sum_{f'} \frac{\Delta_{J_3}^2}{\Delta_{ff'}^2}\sum_q \big| o_{jf}^{j'f'}C_{f'q}^{f0;1 q} \big|^2 \mathbf{e}_q^* \cdot (\mathbf{e}_{\rm in}\mathbf{e}_{\rm in}^* )\cdot \mathbf{e}_q, 
+		&= \dot{N}_L\frac{\pi \omega_0}{\hbar v_g} \!\!\sum_{f'\! , q}\! \frac{\Gamma |\bra{j'}|d|\ket{j}|^2}{\Delta_{ff'}^2+\Gamma^2/4} |o^{j'f'}_{jf}\! C^{f 0;1q}_{f' q}|^2  
+		|\mathbf{e}_q \!\cdot\! 
+		\left( \mathbf{u}_{H}^*(\br^\prime\!\!_\perp) \!+\! 
+		\mathbf{u}_{V}^*(\br^\prime\!\!_\perp)\right) |^2\\
+		&\approx  \gamma_s \sum_{f'} \frac{\Delta_{J_z}^2}{\Delta_{ff'}^2}\sum_q \big| o_{jf}^{j'f'}C_{f'q}^{f0;1 q} \big|^2 \mathbf{e}_q^* \cdot (\mathbf{e}_{\rm in}\mathbf{e}_{\rm in}^* )\cdot \mathbf{e}_q, 
 	\end{align}
 \end{subequations}
+\begin{subequations}
 	\begin{align}
-		\gamma_{f \rightarrow \tilde{f}} 
-		&\approx \gamma_s \sum_{f'} \frac{\Delta_{J_3}^2}{\Delta_{ff'}^2}\sum_q \big| o_{j\tilde{f}}^{j'f'} o_{jf}^{j'f'}C_{f'q}^{\tilde{f}0;1 q}C_{f'q}^{f0;1q} \big|^2 \mathbf{e}_q^* \cdot (\mathbf{e}_{\rm in}\mathbf{e}_{\rm in}^* )\cdot \mathbf{e}_q,
+		\gamma_{f \rightarrow \tilde{f}} &= \frac{\Gamma\Omega^2(\mathbf{r}')}{4}\sum_{f',q}   \frac{ \left|o^{j'f'}_{j\tilde{f}}\! o^{j'f'}_{jf}\!  C^{\tilde{f} 0;1q}_{f' q}\! C^{f 0;1q}_{f' q}\! \left(\mathbf{e}^*_{q}\! \cdot\! \mathbf{e}_{\rm in} \right)\right|^2}{ \Delta_{ff'}^2 \!\!+\! \Gamma^2/4}\\
+		&\approx \gamma_s \sum_{f'} \frac{\Delta_{J_z}^2}{\Delta_{ff'}^2}\sum_q \big| o_{j\tilde{f}}^{j'f'} o_{jf}^{j'f'}C_{f'q}^{\tilde{f}0;1 q}C_{f'q}^{f0;1q} \big|^2 \mathbf{e}_q^* \cdot (\mathbf{e}_{\rm in}\mathbf{e}_{\rm in}^* )\cdot \mathbf{e}_q,
 	\end{align}
+\end{subequations}
 where $ \sigma (\Delta_{ff'} )  = \sigma_0 \Gamma^2/4\Delta^2_{f' f}$ is the the scattering cross section at the probe detuning, $ C_{f'q}^{f0;1 q}=\Braket{f'q}{f0;1q}$ are the Clebsch-Gordan coefficients, and
 \begin{equation}
 \big| o_{jf}^{j'f'} \big|^2=(2j'+1)(2f+2) \bigg\{
@@ -923,7 +929,15 @@ f' & 7/2 & j' \\
  \end{array}
  \bigg\}
 \end{equation}
-are the relative oscillator strengths determined by the relevant Wigner 6-$J$ symbol.
+are the relative oscillator strengths determined by the relevant Wigner 6-$J$ symbol. 
+We have also expanded the jump operators as
+\begin{align} \label{Eq::JumpOperators}
+\hat{W}_q^{\tilde{f}f} 
+&= \sum_{f'} \sqrt{\Gamma}\frac{\Omega(\mathbf{r}')/2}{ \Delta_{f'f} + i\Gamma/2} o^{j'f'}_{j\tilde{f}} o^{j'f'}_{jf}\nonumber\\
+& \sum_{\tilde{m}=0,m=0,m'=q}\!\!\!\!\!\!\!\!\!\! C^{\tilde{f} \tilde{m};1q}_{f' m'} \sum_{q'=q}C^{f m;1q'}_{f' m'} \left(\mathbf{e}^*_{q'} \cdot\mathbf{e}_{\rm in} \right) \op{\tilde{f},\tilde{m}}{f,m}\nn\\
+&= \sum_{f'} \!\!\frac{\sqrt{\Gamma}\Omega(\mathbf{r}')/2}{ \Delta_{f'f} \!\!+\! i\Gamma/2} o^{j'f'}_{j\tilde{f}}\! o^{j'f'}_{jf}\!  C^{\tilde{f} 0;1q}_{f' q}\! C^{f 0;1q}_{f' q}\! \left(\mathbf{e}^*_{q}\! \cdot\! \mathbf{e}_{\rm in} \right)\! \op{\tilde{f},0}{f,0}.
+\end{align}
+As shorthands, we also denote $ \gamma_{\tilde{f}f}=\gamma_{\tilde{f}\rightarrow f} $.
 
 %</birefringencerates>
 
@@ -931,14 +945,14 @@ are the relative oscillator strengths determined by the relevant Wigner 6-$J$ sy
 %===================APPENDIX: Equations of motion =====================%
 \chapter[Equations of motion for the moments]{Derivation of the equations of motion for the moments} \label{Appendix::OpticalPumping}	
 
-In this Appendix we derive the equations of motion for the correlation functions that define the metrologically relevant squeezing parameter, $\xi^2 = N_A \Delta J_3^2/\expt{\hat{J}_1}^2$.  
+In this Appendix we derive the equations of motion for the correlation functions that define the metrologically relevant squeezing parameter, $\xi^2 = N_A \Delta J_z^2/\expt{\hat{J}_x}^2$.  
 We seek the time evolution of the one and two-body correlation functions:
 \begin{subequations}
 \begin{align}
 &\expt{\hat{N}_C} = \sum_n \expt{\hat{\mathbbm{1}}^{(n)}_C} \\
-&\expt{\hat{J}_1} = \frac{1}{2} \sum_n \expt{\hat{\sigma}_1^{(n)}} \\
-&\expt{\hat{J}_3} = \frac{1}{2} \sum_n \expt{\hat{\sigma}_3^{(n)}} \\
-&\expt{\hat{J}_3^2} = \frac{\expt{\hat{N}_C}}{4} +\frac{1}{4} \sum_{m \neq n} \expt{\hat{\sigma}_3^{(m)}\otimes \hat{\sigma}_3^{(n)}}, 
+&\expt{\hat{J}_x} = \frac{1}{2} \sum_n \expt{\hat{\sigma}_x^{(n)}} \\
+&\expt{\hat{J}_z} = \frac{1}{2} \sum_n \expt{\hat{\sigma}_z^{(n)}} \\
+&\expt{\hat{J}_z^2} = \frac{\expt{\hat{N}_C}}{4} +\frac{1}{4} \sum_{m \neq n} \expt{\hat{\sigma}_z^{(m)}\otimes \hat{\sigma}_z^{(n)}}, 
 \end{align}
 \end{subequations}
 where $\hat{\mathbbm{1}}_C \equiv \op{\uparrow}{\uparrow} + \op{\downarrow}{\downarrow}$ is the single-atom projector onto the clock states. 
@@ -949,13 +963,16 @@ Two-body microscopic operators decay by optical pumping according to \cite{barag
 	\end{align}
 where the superscripts refer to the $m^{th}$ and $n^{th}$ atoms. 
 
+\section{Summary of results}
+Since the derivation is rather long, we first summarize the main results below, and then provide more details in the next section.
+
 Applying the adjoint map to the single-atom operators yields 
 	\begin{subequations} \label{Eq::OperatorMap}
 	\begin{align}
-		\mathcal{D}\dg[\hat{\mathbbm{1}}_C] & = - \gamma_{00} \hat{\mathbbm{1}}_C +\gamma_{03} \hat{\sigma}_3 \label {Eq::Idecay} \\
-		\mathcal{D}\dg[\hat{\sigma}_3] & =- \gamma_{33} \hat{\sigma}_3 +  \gamma_{30} \hat{\mathbbm{1}}_C 
+		\mathcal{D}\dg[\hat{\mathbbm{1}}_C] & = - \gamma_{00} \hat{\mathbbm{1}}_C +\gamma_{03} \hat{\sigma}_z \label {Eq::Idecay} \\
+		\mathcal{D}\dg[\hat{\sigma}_z] & =- \gamma_{33} \hat{\sigma}_z +  \gamma_{30} \hat{\mathbbm{1}}_C 
 \label{Eq::zdecay} \\
-		\mathcal{D}\dg[\hat{\sigma}_1] & = - \gamma_{11} \hat{\sigma}_1\label{Eq::xdecay},
+		\mathcal{D}\dg[\hat{\sigma}_x] & = - \gamma_{11} \hat{\sigma}_x\label{Eq::xdecay},
 	\end{align}
 	\end{subequations}
 with rates	
@@ -973,20 +990,367 @@ with rates
 			& = \frac{\gamma_{\uparrow}+\gamma_{\downarrow}}{2}. \label{Eq::frate}
 	\end{align}
 	\end{subequations}
-Given Eqs. (\ref{Eq::TwoBodyDecay}, \ref{Eq::OperatorMap}), the equations for the two-body spin correlations, \erf{Eq::TwoBodySpinDecay}, follow.  Similarly, one can derive equations of motion for the remaining two-body microscopic operator correlations $ \expt{\hat{\mathbbm{1}}^{(m)}_C \otimes \hat{\mathbbm{1}}^{(n)}_C} $ and $ \expt{\hat{\mathbbm{1}}^{(m)}_C \otimes \hat{\sigma}_3^{(n)} + \hat{\sigma}_3^{(m)} \otimes \hat{\mathbbm{1}}^{(n)}_C } $ when $ m\neq n $ and from these, the macroscopic operator expectation values $ \expt{\hat{J}_3^2} $, $ \expt{\hat{N}_C^2} $, and $ \expt{\hat{N}_C\hat{J}_3} $.  As we have examined numerically, on the time scale of the QND measurement, the correlation between atom number in the clock state subspace and the pseudospin moment is weak, and one can thus treat the atom number operator in the clock state subspace as a $c$-number.
-We therefore set $ \expt{\hat{N}_C\hat{J}_3}-\expt{\hat{N}_C}\expt{\hat{J}_3} = 0 $ and $ \expt{\hat{N}_C^2} - \expt{\hat{N}_C}^2 = 0 $ and define $ N_C\equiv \expt{\hat{N}_C}$. 
+Given Eqs. (\ref{Eq::TwoBodyDecay}, \ref{Eq::OperatorMap}), the equations for the two-body spin correlations, \erf{Eq::TwoBodySpinDecay}, follow.  Similarly, one can derive equations of motion for the remaining two-body microscopic operator correlations $ \expt{\hat{\mathbbm{1}}^{(m)}_C \otimes \hat{\mathbbm{1}}^{(n)}_C} $ and $ \expt{\hat{\mathbbm{1}}^{(m)}_C \otimes \hat{\sigma}_z^{(n)} + \hat{\sigma}_z^{(m)} \otimes \hat{\mathbbm{1}}^{(n)}_C } $ when $ m\neq n $ and from these, the macroscopic operator expectation values $ \expt{\hat{J}_z^2} $, $ \expt{\hat{N}_C^2} $, and $ \expt{\hat{N}_C\hat{J}_z} $.  As we have examined numerically, on the time scale of the QND measurement, the correlation between atom number in the clock state subspace and the pseudospin moment is weak, and one can thus treat the atom number operator in the clock state subspace as a $c$-number.
+We therefore set $ \expt{\hat{N}_C\hat{J}_z}-\expt{\hat{N}_C}\expt{\hat{J}_z} = 0 $ and $ \expt{\hat{N}_C^2} - \expt{\hat{N}_C}^2 = 0 $ and define $ N_C\equiv \expt{\hat{N}_C}$. 
 
 The equations of motion for the moments of $\jz$ are now found from the SME, \erf{Eq::SME},
 	\begin{subequations} \label{Eq::J3MomentEquations}
 	\begin{align} 
 		d \expt{\jz} =& s \sqrt{\kappa} \varz \, dW - \gamma_{33} \expt{\jz}dt + \smallfrac{1}{2} \gamma_{30} N_C dt ,  \\
-		d \expt{\jz^2} =& 2 s\sqrt{\kappa} \expt{\jz}\Delta J_3^2 \, dW - 2 \gamma_{33} \expt{\jz^2}dt + \smallfrac{1}{4} \big( 2 \gamma_{33}-\gamma_{00}\big) N_C dt \\
+		d \expt{\jz^2} =& 2 s\sqrt{\kappa} \expt{\jz}\Delta J_z^2 \, dW - 2 \gamma_{33} \expt{\jz^2}dt + \smallfrac{1}{4} \big( 2 \gamma_{33}-\gamma_{00}\big) N_C dt \\
 		&+ \gamma_{30} \expt{\jz} N_C dt + \smallfrac{1}{2}\left(\gamma_{03} -2 \gamma_{30}\right) \expt{\jz} dt. \nonumber 
 	\end{align}
 	\end{subequations}
 The stochastic term in $d\expt{\jz^2}$ was simplified by assuming Gaussian statistics \cite{jacobs_straightforward_2006}, $\expt{\jz^3} = 3\expt{\jz^2}\expt{\jz}- 2\expt{\jz}^3$. 
 Finally, the It\={o} calculus governing the stochastically evolving moments requires that differentials be taken to second order, and the evolution of the variance is given by $d \varz = d \expt{\jz^2} - 2 \expt{\jz} d \expt{\jz} - ( d \expt{\jz} )^2$. 
 The equation of motion for the conditional variance, \erf{Eq::varJz}, then follows from Eqs. \eqref{Eq::J3MomentEquations}.
+
+\section{More details of the derivation}
+
+In the \emph{clock-state}\index{state!clock state} case, we define $ \ket{\uparrow} = \ket{f=4,m=0} $, $ \ket{\downarrow}=\ket{f_3,m=0} $ for an arbitrary $ i $-th atom. 
+There are some useful properties we can use for our calculations below:
+\begin{align}
+\ket{f,0}\bra{f,0} &= \frac{1}{2}\left(\hat{\mathbbm{1}}_C+(-1)^f\hat{\sigma}_z \right)\\
+\op{\uparrow}{\downarrow} &= \hat{\sigma}_+=\frac{1}{2}(\hat{\sigma}_x+i\hat{\sigma}_y)\\
+\op{\downarrow}{\uparrow} &= \hat{\sigma}_-=\frac{1}{2}(\hat{\sigma}_x-i\hat{\sigma}_y).
+\end{align}
+
+From the equations of motion (we will show later the physics meaning of terms), we define
+\begin{align}
+\gamma_s^+ &= \frac{\gamma_{\uparrow}+\gamma_{\downarrow} }{2}\\
+\gamma_s^- &= \frac{\gamma_{\uparrow}-\gamma_{\downarrow} }{2}\\
+\Gamma_{\rm{loss},\uparrow} &\equiv \gamma_\uparrow - (\gamma_{44}+\gamma_{43})=\gamma_\uparrow - \big(\gammauu + \gammadu \big), \\
+\Gamma_{\rm{loss},\downarrow} &\equiv \gamma_\downarrow - (\gamma_{33}+\gamma_{34})=\gamma_\downarrow - \big(\gammadd + \gammaud \big),\\
+\Gamma_{\rm loss} &\equiv \frac{\Gamma_{\rm{loss},\uparrow} +\Gamma_{\rm{loss},\downarrow}}{2}=-\left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34} \right)-\gamma_s^+\right]=\gamma_{00}, \\
+\Gamma_{\rm pol} &\equiv -\frac{\Gamma_{\rm{loss},\uparrow} - \Gamma_{\rm{loss},\downarrow}}{2}=\left[\frac{1}{2}\left(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34}\right) -\gamma_s^-\right]=\gamma_{30},\\
+\Gamma_1 &\equiv \frac{\gammauu + \gammadd + \gammaud + \gammadu}{2}=\frac{\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34}}{2},\\
+\Gamma_3 &\equiv \gammaud+\gammadu=\gamma_{43}+\gamma_{34},\\
+\Gamma_a &= \Gamma_{\rm pol}+\gamma_{34}-\gamma_{43}= \left[\frac{1}{2}\left(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34}\right) -\gamma_s^-\right]=\gamma_{03},\\
+\Gamma_b &= \Gamma_{\rm loss}+\gamma_{34}+\gamma_{43}=-\left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} \right)-\gamma_s^+\right]=\gamma_{33} .
+\end{align}
+$ \Gamma_1 $ is the rate of $ \expect{\hat{J}_x} $ depolarization, and $ \Gamma_3 $ is the rate of $ \expect{\hat{J}_z} $ depolarization. 
+The loss part of the effective Hamiltonian at a magic frequency can be given by
+\begin{align}
+\hat{h}_{\rm eff} &= -i\hbar  \left(  \frac{\gamma_{\uparrow}}{2} \op{\uparrow}{\uparrow} + \frac{\gamma_{\downarrow}}{2} \op{\downarrow}{\downarrow} \right)\\
+&=  -\frac{i\hbar}{2}  \left[ \frac{ \gamma_{\uparrow}}{2} \left(\hat{I}+\hat{\sigma}_z \right) + \frac{ \gamma_{\downarrow}}{2} \left(\hat{I}-\hat{\sigma}_z \right) \right]\\
+&= -\frac{i\hbar}{2} \left(  \frac{\gamma_{\uparrow}+\gamma_{\downarrow}}{2} \hat{I} + \frac{\gamma_{\uparrow}-\gamma_{\downarrow}}{2} \hat{\sigma}_z  \right)\\
+&= -\frac{i\hbar}{2}\left(\gamma_s^+\hat{I} + \gamma_s^-\hat{\sigma}_z \right)
+\end{align}
+
+We can calculate the fluctuation of the collective spin operators $ \hat{\mathbf{J}}=\sum_i^{N_A}\hat{\boldsymbol{\sigma}}^{(i)}/2 $ using the master equation. 
+For instance, 
+\begin{align}
+\dt{\expect{\hat{J}_z}} &= \frac{1}{2}\sum_i^{N_A} \dt{\expect{\hat{\sigma}_z^{(i)}}}\\
+&= \left[\frac{1}{2}\left(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} \right)-\gamma_s^+\right]\expect{\hat{J}_z} \nonumber \\
+&\quad + \left[\left(\gamma_{44} -\gamma_{33}+\gamma_{43}-\gamma_{34}\right)- 2\gamma_s^-\right] \frac{\expect{\hat{N}_C}}{4}\\
+&= -\Gamma_b \expect{\hat{J}_z} +\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_C}.\label{eq:expJzeq}
+\end{align}
+
+The evolution of the atom population operator on the clock-state subspace, $ \hat{N}_C=\sum_i^{N_A}\hat{\mathbbm{1}}_C^{(i)} $, evolves as
+\begin{align}
+\dt{\expect{\hat{N}_C}} &= \sum_i^{N_A} \dt{ \expect{\hat{\mathbbm{1}}_C^{(i)}}}  =\sum_i^{N_A} \expect{\mathcal{D}^{(i)\dagger}\left[\hat{\mathbbm{1}}_C^{(i)}\right] }\\
+&= \left[\frac{1}{2}(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34}) -\gamma_s^+\right]\expect{\hat{N}_C} \nonumber \\
+&\quad + \left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34}) -2\gamma_s^- \right] \expect{\hat{J}_z}\\
+&= -\Gamma_{\rm loss}\expect{\hat{N}_C} +2\Gamma_a \expect{\hat{J}_z}. \label{Eq:NAt}
+\end{align}
+Similarly, 
+\begin{align}
+\dt{\expect{\hat{J}_x}} &= \frac{1}{2} \sum_i^{N_A} \expect{\mathcal{D}^{(i)\dagger}\left[\hat{\sigma}_x^{(i)} \right] }\\
+&= -\gamma_s^+\expect{\hat{J}_x}\\
+&= -\left(\Gamma_{\rm loss} +\Gamma_1 \right)\expect{\hat{J}_x} .
+\end{align}
+
+%We know the solution for the differential equation 
+%\begin{align}
+%\dt{x} &= -A x+B
+%\end{align}
+%is 
+%\begin{align}
+%x(t) &= x(0)e^{-At} + \frac{B}{A} (1-e^{-At}). 
+%\end{align}
+%Similarly, one can solve the equations for $ \expect{\hat{J}_x} $ and $ \expect{\hat{N}_C} $ with $ \expect{\hat{J}_z(t)}\approx 0 $ to give
+%\begin{align}
+%\expect{\hat{J}_x(t)} &= \expect{\hat{J}_x(0)}e^{-\gamma_s^+ t}+ \frac{\gamma_+}{4\gamma_s^+}N_A^2\left(1-e^{-\gamma_s^+ t} \right) \nonumber\\
+%&= \frac{N_A}{2} e^{-\gamma_s^+ t}+ \frac{\gamma_+}{4\gamma_s^+}N_A^2\left(1-e^{-\gamma_s^+ t} \right)\\
+%\expect{\hat{N}_C(t)} &= N_A e^{-\gamma_s^+ t}+ \frac{\gamma_+}{2\gamma_s^+}N_A^2\left(1-e^{-\gamma_s^+ t} \right).
+%\end{align}
+
+In the meantime, we use the property that $ \hat{J}_z^2=\frac{1}{4} \sum_{i,j} \hat{\sigma}_z^{(i)}\hat{\sigma}_z^{(j)}=\frac{1}{4} \sum_{i} \left(\hat{\sigma}_z^{(i)}\right)^2 + \frac{1}{4} \sum_{i\neq j} \hat{\sigma}_z^{(i)}\hat{\sigma}_z^{(j)} $, and then 
+\begin{align}
+\dt{\expect{\hat{J}_z^2}} &=  \frac{1}{4}\dt{\expect{\hat{N}_C}} \!+\! \frac{1}{4}\sum_{i\neq j}^{N_A}\dt{}\expect{\hat{\sigma}_z^{(i)}\hat{\sigma}_z^{(j)}}\\
+&= \frac{1}{4}\left[ \frac{1}{2} (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -\gamma_s^+\right]\expect{\hat{N}_C} \nonumber\\
+&\quad \!+\! \frac{1}{4} \left[  (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right] \expect{\hat{J}_z} \nonumber\\
+&\quad \!+\! \frac{1}{4}\sum_{i,j\neq i}^{N_A} \left[ (\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\sigma}_z^{(i)} \hat{\sigma}_z^{(j)}} \nonumber\\
+&\quad \!+\! \frac{1}{4}\sum_{i,j\neq i}^{N_A} \left[ (\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(i)}\hat{\sigma}_z^{(j)} ) }\\
+&= \frac{1}{4}\left[ \frac{1}{2} (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -\gamma_s^+\right]\expect{\hat{N}_C} \nonumber\\
+&\quad \!+\! \frac{1}{4} \left[  (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right] \expect{\hat{J}_z} \nonumber\\
+&\quad \!+\! \frac{N_A(N_A-1)}{4} \left[ (\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} \nonumber\\
+&\quad \!+\! \frac{N_A(N_A-1)}{4} \left[ (\gamma_{44} \!-\! \gamma_{33}\!+\!\gamma_{43}\!-\!\gamma_{34})  \!-\! 2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) }.\label{eq:expJz2eq}
+\end{align}
+Note that we explicitly use $ \mathrm{Sym}(\hat{A}^{(1)}\hat{B}^{(2)})= \left(\hat{A}^{(1)}\hat{B}^{(2)}+ \hat{B}^{(1)}\hat{A}^{(2)}\right)/2$ to denote symmetric two-body operators in this appendix. In the main text, we assume atoms have exchange symmetry, and hence we hide the $ \mathrm{Sym}(\cdot) $ symbol for two-body operators.
+
+To calculate the equation above, we also have a set of equations for some other expectation values of two-body operators:
+\begin{align}
+\left.\dt{}\expect{\hat{\sigma}_z^{(i)} \hat{\sigma}_z^{(j)}}\right|_{i\neq j} &= \dt{}\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}}\\
+&= \left[ (\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}}\nonumber\\
+&\quad \!\!+\! \left[ (\gamma_{44}\!-\!\gamma_{33}\!+\!\gamma_{43}\!-\!\gamma_{34})  \!-\! 2\gamma_s^-\right]\! \expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(\!1\!)}\!\hat{\sigma}_z^{(2)} )}\\
+&=-2\Gamma_b \expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} \!+\! 2\Gamma_{\rm pol} \expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(\!1\!)}\!\hat{\sigma}_z^{(2)} )}\\
+\left.\dt{}\expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(i)}\hat{\sigma}_z^{(j)} ) }\right|_{i\neq j} &\equiv \dt{}\expect{\frac{1}{2}\left( \hat{\mathbbm{1}}_C^{(i)}\hat{\sigma}_z^{(j)}+\hat{\sigma}_z^{(i)}\hat{\mathbbm{1}}_C^{(j)} \right) }\\
+&= \dt{}\expect{\mathrm{Sym}( \hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) }\\
+&= \left[(\gamma_{44}+\gamma_{33})-2\gamma_s^+ \right] \expect{\mathrm{Sym}( \hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) }\nonumber\\
+&\quad + \left[ \frac{1}{2}(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -\gamma_s^-\right]\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} \nonumber\\
+&\quad + \left[ \frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -\gamma_s^-\right]\expect{\hat{\mathbbm{1}}_C^{(1)} \hat{\mathbbm{1}}_C^{(2)}}\\
+&= -(\Gamma_{\rm loss}+\Gamma_b )\expect{\mathrm{Sym}( \hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) } \nonumber\\
+&\quad +\Gamma_a \expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} + \Gamma_{\rm pol}\expect{\hat{\mathbbm{1}}_C^{(1)} \hat{\mathbbm{1}}_C^{(2)}}\\
+\left.\dt{}\expect{\hat{\mathbbm{1}}_C^{(i)} \hat{\mathbbm{1}}_C^{(j)}}\right|_{i\neq j} &= \dt{}\expect{\hat{\mathbbm{1}}_C^{(1)} \hat{\mathbbm{1}}_C^{(2)}}\\
+&= \left[ (\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{\mathbbm{1}}_C^{(1)} \hat{\mathbbm{1}}_C^{(2)}}\nonumber\\
+&\quad +\left[ (\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(1)} \hat{\sigma}_z^{(2)})} \nonumber\\
+&= -2\Gamma_{\rm loss}\expect{\hat{\mathbbm{1}}_C^{(1)} \hat{\mathbbm{1}}_C^{(2)}}+2\Gamma_a \expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(1)} \hat{\sigma}_z^{(2)})}.
+\end{align}
+Note, with $ i\neq j $, $ \sum_{i,j\neq i}\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(i)}\hat{\sigma}_z^{(j)} )= \sum_{i,j\neq i}\hat{\mathbbm{1}}_C^{(i)}\hat{\sigma}_z^{(j)}$.
+
+Using the relationship that 
+\begin{align}
+\expect{\hat{J}_z^2} &= \sum_{m,n}^{N_A} \hat{j}_z^{(m)}\hat{j}_z^{(n)} = \frac{\expect{\hat{N}_C}}{4} + \sum_{m,n\neq m}^{N_A} \hat{j}_z^{(m)}\hat{j}_z^{(n)}\\
+&= \frac{\expect{\hat{N}_C}}{4} + \frac{N_A(N_A-1)}{4} \expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}}\\
+\expect{\hat{N}_C \hat{J}_z} &= \expect{\hat{J}_z } + \frac{N_A(N_A-1)}{2} \expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) }\\
+\expect{\hat{N}_C^2} &= \expect{\hat{N}_C} + N_A(N_A-1)\expect{\hat{\mathbbm{1}}_C^{(1)}\hat{\mathbbm{1}}_C^{(2)}},
+\end{align}
+Eq.~\eqref{eq:expJz2eq} can be rewritten as
+\begin{align}
+\dt{\expect{\hat{J}_z^2}} &=\left[ (\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})  -2\gamma_s^+\right]\expect{\hat{J}_z^2} \nonumber\\
+&\quad \!+\!  \left[ \frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -\gamma_s^-\right]\expect{\hat{N}_{A}\hat{J}_z } \nonumber\\
+&\quad \!+\!  \frac{1}{4}\left[ -\frac{1}{2} (\gamma_{44}+\gamma_{33} - 3\gamma_{43} -3\gamma_{34})  +\gamma_s^+\right]\expect{\hat{N}_C} \nonumber\\
+&\quad \!-\! \frac{1}{4} \left[  (\gamma_{44}-\gamma_{33}+3\gamma_{43}-3\gamma_{34})  -2\gamma_s^-\right] \expect{\hat{J}_z}\\
+&= -2\Gamma_b\expect{\hat{J}_z^2}+\Gamma_{\rm pol}\expect{\hat{N}_{A}\hat{J}_z }\nonumber\\
+&\quad +\left(2\Gamma_b-\Gamma_{\rm loss} \right)\frac{\expect{\hat{N}_C}}{4} +\left(\frac{\Gamma_a}{2}-\Gamma_{\rm pol} \right) \expect{\hat{J}_z},\label{eq:expJz2eq_op}
+\end{align}
+together with
+\begin{align}
+\dt{\expect{\hat{N}_C\hat{J}_z}} &=\dt{} \expect{\hat{J}_z } + \frac{N_A(N_A-1)}{2} \dt{}\expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) }\\
+&= -\Gamma_b \expect{\hat{J}_z} +\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_C} \nonumber\\
+&\quad -\frac{N_A(N_A-1)}{2}(\Gamma_{\rm loss}+\Gamma_b) \expect{\mathrm{Sym}( \hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) }\nonumber\\
+&\quad +\frac{N_A(N_A-1)}{2}\Gamma_a\expect{\hat{\sigma}_z^{(1)} \hat{\sigma}_z^{(2)}} \!+\! \frac{N_A(N_A-1)}{2}\Gamma_{\rm pol} \expect{\hat{\mathbbm{1}}_C^{(\!1\!)}\!\hat{\mathbbm{1}}_C^{(2)} }\\
+&= -\Gamma_b \expect{\hat{J}_z} +\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_C} \nonumber\\
+&\quad -(\Gamma_{\rm loss}+\Gamma_b) \left( \expect{ \hat{N}_C\hat{J}_z }-\expect{\hat{J}_z}\right)\nonumber\\
+&\quad+2\Gamma_a\left(\expect{\hat{J}_z^2 }-\frac{\expect{\hat{N}_C}}{4}\right)+\frac{\Gamma_{\rm pol}}{2}\left(\expect{\hat{N}_C^2}-\expect{\hat{N}_C}\right)\\
+&=-\left(\Gamma_{\rm loss}+\Gamma_b\right)\expect{\hat{N}_C \hat{J}_z} +2\Gamma_a\expect{\hat{J}_z^2}+\frac{\Gamma_{\rm pol}}{2}\expect{\hat{N}_C^2 }\nonumber\\ 
+&\quad+\Gamma_{\rm loss} \expect{\hat{J}_z} -\frac{\Gamma_a}{2}\expect{\hat{N}_C}
+\end{align}
+\begin{align}
+\dt{\expect{\hat{N}_C^2}} &= \dt{}\expect{\hat{N}_C} + N_A(N_A-1)\dt{}\expect{\hat{\mathbbm{1}}_C^{(1)}\hat{\mathbbm{1}}_C^{(2)}}\\
+&= -\Gamma_{\rm loss}\expect{\hat{N}_C} +2\Gamma_a \expect{\hat{J}_z}\nonumber\\
+&\quad -2N_A(N_A-1)\Gamma_{\rm loss}\expect{\hat{\mathbbm{1}}_C^{(1)} \hat{\mathbbm{1}}_C^{(2)}} +2N_A(N_A-1)\Gamma_a\expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(1)} \hat{\sigma}_z^{(2)})}\nonumber\\
+&= -\Gamma_{\rm loss}\expect{\hat{N}_C} +2\Gamma_a \expect{\hat{J}_z}\nonumber\\
+&\quad - 2\Gamma_{\rm loss} \left(\expect{\hat{N}_C^2}-\expect{\hat{N}_C} \right) + 4\Gamma_a \left(\expect{\hat{N}_C\hat{J}_z} -\expect{\hat{J}_z} \right)\\
+&= 4\Gamma_a \expect{\hat{N}_C\hat{J}_z} -2\Gamma_{\rm loss}\expect{\hat{N}_C^2} -2\Gamma_a \expect{\hat{J}_z} +\Gamma_{\rm loss}\expect{\hat{N}_C} .
+\end{align}
+%\textcolor{red}{To be included: the measurement effect in generating spin squeezing or the $ \Delta J_z^2 $ term. A quick fix is given below:}
+Eqs.~\eqref{eq:expJz2eq} and~\eqref{eq:expJzeq} only describe the optical pumping dynamics of the spin system. The measurement effect will yield a $ -\kappa \left(\Delta J_z^2 \right)^2 $ term in the differential equation of $ \Delta J_z^2 $. So, we can use the relationship that
+\begin{align}
+\mathrm{d} \Delta J_z^2 &= \mathrm{d} \expect{\hat{J}_z^2} - 2\expect{\hat{J}_z}\mathrm{d}\expect{\hat{J}_z},
+\end{align}
+and hence, considering only the optical pumping effect, Eqs.~\eqref{eq:expJz2eq} and~\eqref{eq:expJzeq} yield
+\begin{align}
+\!\!\!\! \dt{\Delta J_z^2} &= \dt{\expect{\hat{J}_z^2}} - 2\expect{\hat{J}_z}\dt{\expect{\hat{J}_z}}\\
+&= \left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
+&\quad -\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \expect{\hat{N}_C }\nonumber\\
+&\quad +\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
+&\quad -\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\hat{J}_z }\expect{\hat{N}_C}\nonumber\\
+&\quad +\frac{N_A(N_A-1)}{4} \left[ (\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) }.
+\end{align}
+
+Now with the measurement effect correction, we have 
+\begin{align}
+\dt{\Delta J_z^2} &= -\kappa \left(\Delta J_z^2 \right)^2 +\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
+&\quad -\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \expect{\hat{N}_C }\nonumber\\
+&\quad +\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
+&\quad -\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\hat{J}_z }\expect{\hat{N}_C}\nonumber\\
+&\quad +\frac{N_A(N_A-1)}{4} \left[ (\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})  -2\gamma_s^-\right]\expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) }\\
+&= -\kappa \left(\Delta J_z^2 \right)^2 +\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
+&\quad -\frac{1}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \expect{\hat{N}_C }\nonumber\\
+&\quad +\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
+&\quad +\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \expect{\Delta J_z \Delta N_C}\\
+&=-\kappa \left(\Delta J_z^2 \right)^2 +\left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+\right] \Delta J_z^2\nonumber\\
+&\quad -\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right] \frac{\expect{\hat{N}_C }}{4}\nonumber\\
+&\quad -\frac{1}{4}\left[(\gamma_{44}-\gamma_{33}+3\gamma_{43}-3\gamma_{34} ) -2\gamma_s^-\right] \expect{\hat{J}_z }\nonumber\\
+&\quad +\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34} ) -\gamma_s^-\right] \left(\expect{\hat{N}_C \hat{J}_z}-\expect{\hat{N}_C}\expect{\hat{J}_z}\right)\\
+&= -\kappa(\Delta J_z^2)^2 -2\Gamma_b\Delta J_z^2 + \left(2\Gamma_b-\Gamma_{\rm loss}\right)\frac{\expect{\hat{N}_C}}{4} +\left(\frac{\Gamma_a}{2}-\Gamma_{\rm pol} \right)\expect{\hat{J}_z}\nonumber\\
+&\quad +\Gamma_{\rm pol}\left( \expect{\hat{N}_C\hat{J}_z}-\expect{\hat{N}_C}\expect{\hat{J}_z} \right) .
+\end{align}
+We have defined the two-body operator covariance $ \expect{\Delta J_z \Delta N_C}=\expect{\Delta N_C\Delta J_z}\equiv  \frac{N_A(N_A-1)}{2}\expect{\mathrm{Sym}(\hat{\mathbbm{1}}_C^{(1)}\hat{\sigma}_z^{(2)} ) } - \expect{\hat{J}_z }\expect{\hat{N}_C}$. Along this line, we can define the following two-body operator covariances,
+\begin{align}
+\expect{\Delta N_C \Delta N_C} &\equiv N_A(N_A-1)\expect{\hat{\mathbbm{1}}_C^{(1)}\hat{\mathbbm{1}}_C^{(2)} } - \expect{\hat{N}_C}^2\\
+\expect{\Delta J_z \Delta J_z} &\equiv \frac{N_A(N_A-1)}{4}\expect{\hat{\sigma}_z^{(1)}\hat{\sigma}_z^{(2)} } - \expect{\hat{J}_z }^2.
+\end{align}
+Notice that the two-body covariances $ \expect{\Delta J_z \Delta J_z} $ and $ \expect{\Delta N_C \Delta N_C} $ may be related to the collective spin variances $ \Delta J_z^2 $ and $\Delta N_C^2 $ by
+\begin{align}
+\Delta J_z^2 &= \expect{\Delta J_z \Delta J_z} + \frac{1}{4} \expect{\hat{N}_C}\\
+\Delta N_C^2 &= \expect{\Delta N_C \Delta N_C} + \expect{\hat{N}_C}.
+\end{align}
+But these are not obvious from the equations of motion of those operators as will be discussed shortly.
+If the relationships above are valid, then $ \Delta J_z^2 $ could be non-zero in the steady state limit if two-body covariance exists--even though $\expect{\hat{N}_C}\rightarrow 0  $.  
+
+From the two-body covariances, one may also define two-body operator correlations given by
+\begin{align}
+\mathrm{cor}(\hat{J}_z,\hat{J}_z) &= \frac{\expect{\Delta J_z \Delta J_z}}{\Delta J_z^2}\\
+\mathrm{cor}(\hat{N}_C,\hat{N}_C) &= \frac{\expect{\Delta N_C \Delta N_C}}{\Delta N_C^2}\\
+\mathrm{cor}(\hat{J}_z,\hat{N}_C) &= \frac{\expect{\Delta J_z \Delta N_C}}{\sqrt{\Delta J_z^2\Delta N_C^2}}.
+\end{align}
+
+The three two-body covariances are governed by a close set of equations of motion as given below:
+\begin{align}
+\dt{} \expect{\Delta J_z \Delta N_C} &= \left[(\gamma_{44}+\gamma_{33})-2\gamma_s^+ \right] \expect{\Delta J_z \Delta N_C} \nonumber \\
+&\quad +  \frac{1}{2} \left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})-\gamma_s^- \right]\expect{\Delta N_C \Delta N_C}\nonumber\\
+&\quad + \left[(\gamma_{44}-\gamma_{33} - \gamma_{43}+\gamma_{34})-2\gamma_s^- \right]\expect{\Delta J_z \Delta J_z}\\
+\dt{} \expect{\Delta N_C \Delta N_C} &= \left[(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34})-2\gamma_s^+ \right]\expect{\Delta N_C \Delta N_C}\nonumber\\
+&\quad +2 \left[(\gamma_{44}-\gamma_{33}-\gamma_{43}+\gamma_{34})-2\gamma_s^- \right]\expect{\Delta J_z \Delta N_C}\\
+\dt{}\expect{\Delta J_z \Delta J_z} &= \left[(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34})-2\gamma_s^+ \right]\expect{\Delta J_z \Delta J_z}\nonumber\\
+&\quad +\left[\frac{1}{2}(\gamma_{44}-\gamma_{33}+\gamma_{43}-\gamma_{34})-\gamma_s^- \right]\expect{\Delta J_z \Delta N_C}.
+\end{align}
+In the steady state, all two-body correlations vanish.
+It implies that variance like $ \Delta J_z^2 $ would also vanish in the steady state limit. 
+
+Notice that, since the equations for those covariances have not considered measurement backaction which is a second-order but important effect, the model of covariance dynamics is not complete.
+
+
+\section{Approximations and the physical interpretation of coefficients}
+To estimation of the solution of the $ \Delta J_z^2 $ equation above, we may assume $ \expect{\hat{J}_z}\approx 0 $ and $ \expect{\hat{N}_C}=N_A $. 
+The $ \Delta J_z^2 $ equation can be rewritten in the following general form
+\begin{align}
+	\frac{d x}{d t} = -A x^2 - B x + C
+\end{align}
+with $ x=\Delta J_z^2 $, $ A = \kappa $, $ B=(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+ $ and\\ $ C=-\frac{N_A}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right]  $. 
+It can be solved as~\cite{Baragiola2014Open}
+\begin{align}
+x(t)&  = \frac{ \sqrt{B^2 + 4 AC}x_0 - (Bx_0-2C) \tanh \left( \sqrt{B^2 + 4 AC}  \frac{t}{2} \right) }{\sqrt{B^2 + 4 AC} + (2Ax_0 + B) \tanh \left( \sqrt{B^2 + 4 AC}  \frac{t}{2} \right) } ,
+\end{align}
+with the initial condition $x_0=\Delta J_z^2(0)=N_A/4$. 
+
+If we consider $ \expect{\hat{N}_C}\rightarrow N_A(t) $ is a pure decay function governed by $ \dt{\expect{\hat{N}_C}} = -\Gamma_{\rm loss}\expect{\hat{N}_C} $ with $ \Gamma_{\rm loss}= \gamma_s^+ - \frac{1}{2}(\gamma_{44}+\gamma_{33}+\gamma_{43}+\gamma_{34}) $ from Eq.\eqref{Eq:NAt}, then the equation for $ \Delta J_z^2 $ can be approximated in the follow form:
+\begin{align}
+	\frac{d x}{d t} = -A x^2 - B x + C e^{-\Gamma_{\rm loss}t},
+\end{align}
+where $ x=\Delta J_z^2 $, $ x_0=\Delta J_z^2(0)=N_A^2/4=d $, $ A = \kappa $, $ B=(\gamma_{44}+\gamma_{33}-\gamma_{43}-\gamma_{34} ) -2\gamma_s^+ $ and $ C=-\frac{N_A}{4}\left[\frac{1}{2}(\gamma_{44}+\gamma_{33}-3\gamma_{43}-3\gamma_{34} ) -\gamma_s^+\right]  $.
+The solution for $ x(t) $ or $ \Delta J_z^2(t) $ can be given by
+\begin{align}
+&\Delta J_z^2(t) = x(t)\nonumber\\
+% Solution with initial value included in the equation explicitly.
+%&\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!=\left. \frac{e^{\frac{Bt}{2}-k t} \left(\frac{AC}{k^2}\right)^{-\frac{B}{k}}  
+%\left(2 k \left(\frac{ AC e^{-k t}}{k^2}\right)^{\frac{ B}{k}} \left((A d+B) \, _0\tilde{F}_1\left(;1-\frac{B}{k};\frac{A C}{k^2}\right)+k \, _0\tilde{F}_1\left(;-\frac{B}{k};\frac{A C}{k^2}\right)\right) \left(A C \, _0\tilde{F}_1\left(;\frac{B}{k}+2;\frac{A C e^{-k t}}{k^2}\right)+k e^{k t} \left(k \, _0\tilde{F}_1\left(;\frac{B}{k};\frac{A C e^{-k x}}{k^2}\right)+B \, _0\tilde{F}_1\left(;\frac{B+k}{k};\frac{A C e^{-k t}}{k^2}\right)\right)\right)
+%-2 A C \left(\frac{AC}{k^2}\right)^{\frac{B}{k}} \left(k \left((2 A d+B) \, _0\tilde{F}_1\left(;\frac{B+k}{k};\frac{A C}{k^2}\right)+k \, _0\tilde{F}_1\left(;\frac{B}{k};\frac{A C}{k^2}\right)\right)+A C \, _0\tilde{F}_1\left(;\frac{B}{k}+2;\frac{A C}{k^2}\right)\right) \, _0\tilde{F}_1\left(;2-\frac{B}{k};\frac{A C e^{-k t}}{k^2}\right)\right)}
+%% Bottom part
+%{k^2 \left(\frac{2 A  e^{\frac{Bt}{2}} \left(k \left((2 A d+B) \, _0\tilde{F}_1\left(;\frac{B+k}{k};\frac{A C}{k^2}\right)+k \, _0\tilde{F}_1\left(;\frac{B}{k};\frac{A C}{k^2}\right)\right)+A C \, _0\tilde{F}_1\left(;\frac{B}{k}+2;\frac{A C}{k^2}\right)\right) \, _0\tilde{F}_1\left(;1-\frac{B}{k};\frac{A C e^{-k x}}{k^2}\right)}{k}
+%-4 A \left(\frac{AC}{k^2}\right)^{-\frac{B}{2k}} \left((A d+B) \, _0\tilde{F}_1\left(;1-\frac{B}{k};\frac{A C}{k^2}\right)+k \, _0\tilde{F}_1\left(;-\frac{B}{k};\frac{A C}{k^2}\right)\right) I_{\frac{B}{k}}\left(\frac{2 \sqrt{AC} \sqrt{e^{-k t}}}{k}\right)\right)}\right\}
+% Solution with initial value separated.
+%&\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!= -\frac{D\sqrt{ACe^{\Gamma_{\rm loss}  (-t)}} \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{1\!-\!\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{ACe^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)+D B \Gamma \left(1-\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)+D \sqrt{ACe^{\Gamma_{\rm loss}  (-t)}} \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)+ (-1)^{B/\Gamma_{\rm loss} } \sqrt{AC e^{\Gamma_{\rm loss}  (-t)}} \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }\!-\!1}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right) + (-1)^{B/\Gamma_{\rm loss} }B \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right) 
+%+ (-1)^{B/\Gamma_{\rm loss} } \sqrt{AC e^{\Gamma_{\rm loss}  (-t)}} \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)}
+%{2 A D \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)
+%+(-1)^{B/\Gamma_{\rm loss} } \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)}\\
+&= \frac{\mathcal{P}+\mathcal{Q}+\mathcal{R}+\mathcal{S}+\mathcal{T}+\mathcal{U} }
+{\mathcal{V}+\mathcal{W}},
+\end{align}
+where 
+\begin{align}
+\mathcal{P} &= D\sqrt{ACe^{-\Gamma_{\rm loss}  t}} \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{1\!-\!\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{ACe^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{Q} &= D B \Gamma \left(1-\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{R} &= D \sqrt{ACe^{-\Gamma_{\rm loss} t}} \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{S} &= (-1)^{B/\Gamma_{\rm loss} } \sqrt{AC e^{-\Gamma_{\rm loss} t}} \Gamma \left(\!\frac{B\!+\!\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\!\right) I_{\frac{B}{\Gamma_{\rm loss} }-1}\left(\!\frac{2 \sqrt{AC e^{-t \Gamma_{\rm loss} }}}{\Gamma_{\rm loss} }\!\right)\\
+\mathcal{T} &= (-1)^{B/\Gamma_{\rm loss} }B \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-\Gamma_{\rm loss} t}}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{U} &= (-1)^{B/\Gamma_{\rm loss} } \sqrt{AC e^{-\Gamma_{\rm loss}  t}} \Gamma \left(\!\frac{B\!+\!\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\!\right) I_{\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }}\left(\!\frac{2 \sqrt{AC e^{- \Gamma_{\rm loss}t }}}{\Gamma_{\rm loss} }\!\right)\\
+\mathcal{V} &= 2 A D \Gamma \left(1\!-\!\frac{B}{\Gamma_{\rm loss} }\right) I_{-\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-\Gamma_{\rm loss}t }}}{\Gamma_{\rm loss} }\right)\\
+\mathcal{W} &= (-1)^{B/\Gamma_{\rm loss} } \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) I_{\frac{B}{\Gamma_{\rm loss} }}\left(\frac{2 \sqrt{AC e^{-\Gamma_{\rm loss}t }}}{\Gamma_{\rm loss} }\right)
+\end{align}
+with 
+\begin{align}
+D &\!= \frac{- \left(-\frac{AC }{\Gamma_{\rm loss}^2 }\right)^{\frac{ B}{\Gamma_{\rm loss} }} e^{-(B+\Gamma_{\rm loss})t} \Gamma \left(\frac{B+\Gamma_{\rm loss} }{\Gamma_{\rm loss} }\right) }
+{\Gamma_{\rm loss}  \left[]2 (A d\!+\!B) \, _0F\!_1\left(;1\!-\!\frac{B}{\Gamma_{\rm loss} };\frac{A C e^{\!-\Gamma_{\rm loss} t}}{\Gamma_{\rm loss} ^2}\right)\!-\!2 B \, _0F\!_1\left(;-\frac{B}{\Gamma_{\rm loss} };\frac{A C e^{\!-\Gamma_{\rm loss}t }}{\Gamma_{\rm loss} ^2}\right)\right]}\nonumber\\
+&\times\! \left\{\!\!\Gamma_{\rm loss}  e^{\!\Gamma_{\rm loss}  t}\! \left[\!(2 A d \!\!+\!\! B) \, _0\!\tilde{F}\!_1\!\!\left(\!;\!\frac{B}{\Gamma_{\rm loss} }\!+\!1;\!\frac{A C e^{\!-\Gamma_{\rm loss} t}}{\Gamma_{\rm loss} ^2}\!\right)\!\!+\!\!\Gamma_{\rm loss}  \, _0\!\tilde{F}\!_1\!\left(\!;\!\frac{B}{\Gamma_{\rm loss} }\!;\!\frac{A C e^{\!-\Gamma_{\rm loss} t}}{\Gamma_{\rm loss} ^2}\!\right)\!\right]\right. \nonumber\\
+&\quad \quad \left. +A C \, _0\!\tilde{F}_1\!\!\left(\!;\!\frac{B}{\Gamma_{\rm loss} }\!+\! 2;\!\frac{A C e^{-\Gamma_{\rm loss} t }}{\Gamma_{\rm loss} ^2}\!\right)\!\right\}.
+\end{align}
+Above, $ I_n(z) $ are the Bessel functions of the first kind, $ \Gamma(z) $ is the Euler gamma function, $ _0F_1(;b;z) $ are the confluent hypergeometric functions, and $ _0\tilde{F}_1(;,b;z) $ are the regularized confluent hypergeometric functions. 
+The solution is obtained in \emph{Mathematica}. 
+
+To obtain the solution for $ \Delta J_z^2(t) $ exactly, numerical methods can be applied to the full set of equations discussed above in this section. 
+The variance, $\Delta J_z^2 $, can be characterized by the normalized rate $ \gamma_{\rm norm}= \sqrt{B^2 + 4 AC}$ or by the characteristic decay rate $ \gamma_s $. 
+
+In the end, for a weak measurement, $ \hat{J}_\perp\approx \hat{J}_z $ and $ \hat{J}_\parallel\approx\hat{J}_x $, we should expect the Wineland squeezing parameter~\cite{Wineland1992} to be
+\begin{align}
+\xi &= 2j\expect{\hat{N}_C(t=0)}\frac{\Delta J_z^2}{\expect{\hat{J}_x}^2}
+=N_A\frac{\Delta J_z^2}{\expect{\hat{J}_x}^2}.
+\end{align}
+%The dynamics of the expectation values of collective spin operators and their variance can be seen in Fig.~\ref{fig:clockdynamics_m_yq_rp1d5}. The squeezing parameter is shown in Fig.~\ref{fig:xi_magic}. 
+%In the plots, we have normalized the time scale in accordance to $ 1/\gamma_{\rm norm} $, where $ \gamma_{\rm norm} = \sqrt{ (\gamma_{44} +\gamma_{33} -\gamma_{43} -\gamma_{34} -2\gamma_s^+ )^2 -\kappa [\frac{1}{2}(\gamma_{44} +\gamma_{33} -3\gamma_{43} -3\gamma_{34}) -\gamma_s^+ ] N_A } $.
+
+
+Since the optical depth per atom in the nanofiber case is orders of magnitude higher than the free-space QND measurement case, the correlations between atoms are strong. Therefore, equations of motions are inevitably coupled to each other. The two approximations above about the equation of $ \Delta J_z^2 $ have a big deviation from the exact solution. However, we can still make the following approximation as being verified numerically. 
+During the measurement period, the atom number is fixed and hence one can ignore the quantum nature of atom number operators--that is no fluctuation and correlations with the atom number operator. In our equations, for example, $ \expect{\hat{J}_z\hat{N}_C}=\expect{\hat{J}_z}\expect{\hat{N}_C}= \expect{\hat{J}_z}N_C$ or $ \expect{\hat{\mathbbm{1}}_C\hat{\sigma}_z}+\expect{\hat{\sigma}_z\hat{\mathbbm{1}}_C}=2\expect{\hat{\sigma}_z} $.
+We also have $ \Delta N_C=0 $ and can vanish terms like $ \expect{\Delta N_C\Delta N_C} $ in our equations of motion.
+
+Now, we considering the physics meaning of different coefficients in the exact equations of motion. 
+The $ \gamma_\uparrow $ and $ \gamma_\downarrow $ coefficients come from the imaginary part of the effective Hamiltonian and should indicate the population loss from the $ \ket{\uparrow} $ and $ \ket{\downarrow} $ respectively; the other rates from the expectation values of jump operators, like $ \gamma_{34} $, are the optical pumping terms indicating coherence refeeding from one sublevel to another for the collective spins. Since the process we consider is not trace-preserving and the atomic state will be polarized in the end, from the equation of $ \expect{\hat{N}_C} $, one can interpret the coefficient associated with the $ \expect{\hat{N}_C} $ as the loss rate while the coefficient associated with the $ \expect{\hat{J}_z} $ as the polarization rate. Therefore, we define
+\begin{align}
+\gamma_{\rm{loss},\uparrow} &\equiv \gamma_\uparrow - (\gamma_{44}+\gamma_{43})=\gamma_\uparrow - \big(\gammauu + \gammadu \big), \\
+\gamma_{\rm{loss},\downarrow} &\equiv \gamma_\downarrow - (\gamma_{33}+\gamma_{34})=\gamma_\downarrow - \big(\gammadd + \gammaud \big),\\
+\gamma_{\rm loss} &\equiv \frac{\gamma_{\rm{loss},\uparrow} +\gamma_{\rm{loss},\downarrow}}{2}=\gamma_{00}\\
+\gamma_{\rm pol} &\equiv \frac{\gamma_{\rm{loss},\uparrow} - \gamma_{\rm{loss},\downarrow}}{2},\\
+\gamma_{\rm flip} &\equiv \frac{\gammauu + \gammadd + \gammaud + \gammadu}{2}.
+\end{align}
+$ \gamma_{\rm{loss},\uparrow} $ is the total rate of population loss for the state $\ket{\uparrow}$ and similarly for $\gamma_{\rm{loss},\downarrow}$.
+There are two important features of this map that are not typical in a QND measurement of an ensemble of spin-1/2 particles.  First, since $\gamma_{\rm{loss},\uparrow} \neq \gamma_{\uparrow \rightarrow \downarrow}$ and  $\gamma_{\rm{loss},\downarrow} \neq \gamma_{\downarrow \rightarrow \uparrow}$, the map is {\em not} trace preserving to account for atoms optically pumped out of the clock subspace.  
+In addition, since $\gamma_{\rm{loss},\uparrow} \neq \gamma_{\rm{loss},\downarrow}$, optical pumping will lead to a polarization of the mean along $\hat{J}_z$, different from the value found in a usual QND measurement.
+
+Similarly, one can introduce $\tilde{\gamma}_\uparrow  \equiv \gamma_\uparrow - \gamma_{\uparrow \rightarrow \uparrow}$ as the rate of optical pumping out of the state $\ket{\uparrow}$ without considering the optical self-refeeding effect, and similarly for $\tilde{\gamma}_\downarrow$. Then one can define 
+\begin{align}
+\Gamma'_1 &= \frac{\tilde{\gamma}_\uparrow + \tilde{\gamma}_\downarrow}{2}\\
+\Gamma'_2 &= \frac{\tilde{\gamma}_\uparrow - \tilde{\gamma}_\downarrow}{2},
+\end{align}
+which appear in the equations of motion of some expectation values of operators to count for the sum of and the difference between the population losses of the $ \ket{\uparrow} $ and $ \ket{\downarrow} $ states.
+These decay rates are associated with depolarization processes of the spin dynamics.
+
+%\begin{figure}
+%\begin{minipage}{.5\linewidth}
+%\centering
+%\subfloat[]{\label{fig:clockdynamics_m33_yq_rp1d5_exact}\includegraphics[scale=0.45]{../media/Figs/clockdynamics_m33_yq_rp1d5_exact}}
+%\end{minipage}
+%\begin{minipage}{.5\linewidth}
+%\centering
+%\subfloat[]{\label{fig:clockdynamics_m33_yq_rp1d5_approx}\includegraphics[scale=0.45]{../media/Figs/clockdynamics_m33_yq_rp1d5_approx}}
+%\end{minipage}
+%\par\medskip
+%\begin{minipage}{.5\linewidth}
+%\centering
+%\subfloat[]{\label{fig:clockdynamics_m44_yq_rp1d5_exact}\includegraphics[scale=0.45]{../media/Figs/clockdynamics_m44_yq_rp1d5_exact}}
+%\end{minipage}
+%\begin{minipage}{.5\linewidth}
+%\centering
+%\subfloat[]{\label{fig:clockdynamics_m44_yq_rp1d5_approx}\includegraphics[scale=0.45]{../media/Figs/clockdynamics_m44_yq_rp1d5_approx}}
+%\end{minipage}
+%\caption{Evolution of expectation values of collective spin operators as a function of time with $ N_A=1000 $ atoms trapped at $ r'\!_\perp =1.5a $ along the $ H/x $ axis of the nanofiber. Subfigs.~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_exact} and~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_approx} use the magic frequencies close to the $ F=3\leftrightarrow F'=3 $ transition frequency $ \omega_{33'} $. Subfigs.~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_exact} and~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_approx} used the magic frequencies close to $ \omega_{44'} $. The $ \phi $ axis was defined as the quantization axis for these plots. Subfigs.~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_exact} and~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_exact} were calculated using the exact solution of the coupled differential equations of the expectation values of spin operators. In contrast, Subfigs.~\protect\subref{fig:clockdynamics_m33_yq_rp1d5_approx} and~\protect\subref{fig:clockdynamics_m44_yq_rp1d5_approx} use approximations by ignoring the dynamics of $ \expect{\hat{J}_z} $ for all calculations, and treat $ \expect{\hat{N}_C} $ as a constant in solving the differential equation for $ \Delta J_z^2 $. Other parameters used: $ \Omega/2\pi=52 $ MHz (does not matter). }\label{fig:clockdynamics_m_yq_rp1d5}
+%\end{figure}
+
+%\begin{figure}
+%\begin{minipage}{.5\linewidth}
+%\centering
+%\subfloat[]{\label{fig:xi_magic33_yq}\includegraphics[scale=0.45]{../media/Figs/xi_magic33_yq}}
+%\end{minipage}
+%\begin{minipage}{.5\linewidth}
+%\centering
+%\subfloat[]{\label{fig:xi_magic44_yq}\includegraphics[scale=0.45]{../media/Figs/xi_magic44_yq}}
+%\end{minipage}
+%\par\medskip
+%\begin{minipage}{.5\linewidth}
+%\centering
+%\subfloat[]{\label{fig:xi_magic33_xq}\includegraphics[scale=0.45]{../media/Figs/xi_magic33_xq}}
+%\end{minipage}
+%\begin{minipage}{.5\linewidth}
+%\centering
+%\subfloat[]{\label{fig:xi_magic44_xq}\includegraphics[scale=0.45]{../media/Figs/xi_magic44_xq}}
+%\end{minipage}
+%%\centering\makebox[\textwidth]{
+%%\includegraphics[width=0.65\textwidth]{./Figs/xi_magic44_yq}}
+%\caption{Spin squeezing evolution as a function of time with $ N_A=1000 $ atoms trapped at $ r'\!_\perp =1.5a $ along the $ H/x $ axis of the nanofiber. Subfigs.~\protect\subref{fig:xi_magic33_yq} and~\protect\subref{fig:xi_magic33_xq} use the magic frequencies close to the $ F=3\leftrightarrow F'=3 $ transition frequency $ \omega_{33'} $. Subfigs.~\protect\subref{fig:xi_magic44_yq} and~\protect\subref{fig:xi_magic44_xq} used the magic frequencies close to $ \omega_{44'} $. The magic frequencies and spin squeezing parameters are different for different choices of quantization axis. Subfigs.~\protect\subref{fig:xi_magic33_yq} and~\protect\subref{fig:xi_magic44_yq} define $ \phi $ axis as the quantization axis. In contrast, subfigs.~\protect\subref{fig:xi_magic33_xq} and~\protect\subref{fig:xi_magic44_xq} use $ r\!_\perp $ axis as the quantization axis. When $ z $ axis is chosen to be the quantization axis, almost no squeezing effect can be observed at the magic frequencies. As can be seen, when the quantization axis close to the local field direction, the spin squeezing parameter can reach to a higher value. Other parameters used: $ \Omega/2\pi=52 $ MHz (does not matter). }\label{fig:xi_magic}
+%\end{figure}
 
 %</birefringencemotioneq>
 
