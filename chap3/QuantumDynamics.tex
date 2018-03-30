@@ -16,24 +16,21 @@ In this chapter, we will fully quantize the optical field and study the quantum 
 \section[Atom-light coupling with waveguide modes]{Atom-light coupling with waveguide modes}
 We consider atoms are trapped on a one-side or two-side chain of optical lattice near a nanophotonic waveguide and a probe is launched to perform the quantum measurement using the polarization spectroscopy technique introduced in the last chapter. We assume all atoms are trapped at the same distance to the waveguide surface and have the same local intensity of the probe. Defects of occupations on the optical lattices are allowed in our theory, and the minimum distance between atoms is large enough that we can ignore the photon scattering effect among atoms in the dispersive regime. Experiments on implementing such an atom-waveguide quantum interface have been done with optical nanofibers~\cite{Goban2012,Lacroute2012,Vetsch2010Optical,Lee2015,Beguin2014,Bajcsy2011Laser}, integrated optical waveguide couplers~\cite{Lee2013} and photonic crystal waveguides~\cite{Yu2014,Goban2014}. The designs of general nanophotonic waveguides for feasible atomic traps and atom-light interaction experiments have also been proposed for a broader range of atom-waveguide interfaces~\cite{Muniz2015Designing,Hung2013,Lee2017Characterizations}. We focus on the waveguides that allows two orthogonally polarized forward-propagating guided modes with degenerate group index of refraction, $ n_g $. 
 
-With a guided mode with polarization state $ p $, we define the field operator as
-
-We consider quasi-monochromatic fields at carrier frequency $\omega_0$ that are sufficiently narrowband, $\Delta \omega \ll \omega_0$. 
-For each guided mode we define input propagating, continuous-mode field operators in the interaction picture \cite{gardiner_input_1985, blow_continuum_1990, le_kien_correlations_2008},
+Given an input light that adiabatically connects to the forward-propagating quasi-monochromatic $ p $-mode at frequency $ \omega_0 $, we define the field operators $ \hat{a}^\dagger_p(z,t) $ by~\cite{Gardiner1985Input,Blow1990Continuum,LeKien2008}
 	\begin{align}
-		\hat{a}_{b,p}(z,t) =\frac{1}{\sqrt{2 \pi}}  \int_0^{\infty}\!\!\!\!\! d \omega \, \hat{a}_{b,p}(\omega) e^{i[b \beta_0 z- (\omega-\omega_0) t ]}, 
+		\hat{a}_{p}(z,t) =\frac{1}{\sqrt{2 \pi}}  \int_0^{\infty}\!\!\!\!\! d \omega \, \hat{a}_{p}(\omega) e^{i[\beta_0 z- (\omega-\omega_0) t ]}, 
 	\end{align}
 that satisfy the free-field commutation relations,
 	\begin{equation} \label{Eq::InputOutputCommutation}
-		\big[\hat{a}_{b,p}(z,t),\hat{a}^\dag_{b',p'}(z',t')\big]=\delta_{b,b'}\delta_{p,p'}  \delta(t-t'-(z-z')/v_g).
+		\big[\hat{a}_{p}(z,t),\hat{a}^\dag_{p'}(z',t')\big]=\delta_{p,p'}  \delta(t-t'-(z-z')/v_g).
 	\end{equation}
-In terms of these propagating modes the quantized electric field operator, \erf{Eq::QuantizedElectricField}, becomes
-	\begin{equation} \label{Eq::PropagatingElectricField}
-		\hat{\mathbf{E}}^{(+)}(r\!_\perp,\phi,z;t) = \sum_{b,p} \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \mathbf{u}_{b,p}(r\!_\perp,\phi) \hat{a}_{b,p}(z,t)  e^{i b \beta_0 z}.
+The corresponding positive-frequency electric field operators in the orthogonal mode basis can be defined as
+	\begin{equation} \label{Eq::PropagatingElectricField_forward}
+		\hat{\mathbf{E}}^{(+)}(r\!_\perp,\phi,z;t) = \sum_{p} \sqrt{ \frac{2 \pi \hbar \omega_0}{ v_g} } \mathbf{u}_{p}(r\!_\perp,\phi) \hat{a}_{p}(z,t)  e^{i \beta_0 z},
 	\end{equation}	
-Considering here only the forward-propagating guided modes ($b=+$), we drop the $b$ index.  
-The propagating electric field, \erf{Eq::PropagatingElectricField}, interacts with the trapped atoms via the dispersive light-shift Hamiltonian~\cite{deutsch_quantum_2010,kien_dynamical_2013,baragiola_open_2014},
-	\begin{equation} \label{Eq::LightShiftHam}
+where the sum over $ p $ includes all components of a complete mode basis. Below, we only consider the $ \{H,V \} $ mode basis. The transformation of operators to another arbitrary mode bases is derived in Appendix~\ref{chap:basistransfHS}. 
+With $ N_A $ atoms interacting with the propagating electric field of the local guided modes, the dispersive light-shift Hamiltonian can be defined as~\cite{Deutsch2010a,LeKien2013,Baragiola2014Open},
+	\begin{equation} \label{Eq::LightShiftHam_forward}
 		\hat{H}_{LS} = - \sum_{n=1}^{N_A} \hat{\mathbf{E}}^{(-)}(\mathbf{r}'_n ; t ) \cdot \poltens {}^{(n)} \cdot \hat{\mathbf{E}}^{(+)}(\mathbf{r}'_n ;t ),
 	\end{equation}
 where $\poltens {}^{(n)}$ is the atomic tensor polarizability operator, given in \erf{Eq::PolarizabilityOperator}, for the $n^{th}$ atom trapped near the nanofiber surface at position $\mathbf{r}'_n$.  We ignore here any effects of atomic motion and treat the atoms as localized at fixed positions in space.
