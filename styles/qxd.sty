@@ -222,6 +222,7 @@
 \definecolor{medium-blue}{rgb}{0,0,0.5}
 \definecolor{OliveGreen}{rgb}{0,0.6,0}
 \definecolor{RedViolet}{rgb}{0.78, 0.08, 0.52}
+\definecolor{safetyorange}{rgb}{1.0, 0.4, 0.0}
 \RequirePackage[pagebackref]{hyperref}
 \RequirePackage[all]{hypcap}%fix problems with figures and tables of the 'hyperref' package
 \RequirePackage{cleveref}% Package hperref works wrongly within the 'subequations' environment without this.
@@ -243,6 +244,7 @@
 \newcommand{\sr}[1]{\ {\color{red!70!blue}SR: #1}\ }
 \newcommand{\pablo}[1]{\ {\color{red!40!green}Pablo: #1}\ }
 \newcommand{\ra}[1]{\ {\color{OliveGreen}RA: #1}\ }
+\newcommand{\rie}[1]{\ {\color{safetyorange}Rie: #1}\ }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %######################### Some overall settings ############################
@@ -660,9 +662,9 @@
 \newcommand{\der}[1]{\frac{d {#1}}{dt}}
 \newcommand{\unittens}{\tensor{\mathbf{I}}}
 \newcommand{\poltens}{\hat{\tensor{\boldsymbol{\alpha}}}}
-\newcommand{\varz}{\Delta J_3^2}
-\newcommand{\jx}{\hat{J}_1}
-\newcommand{\jz}{\hat{J}_3}
+\newcommand{\varz}{\Delta J_z^2}
+\newcommand{\jx}{\hat{J}_x}
+\newcommand{\jz}{\hat{J}_z}
 \newcommand{\shotnoise}{\Delta \mathcal{M}^2 |_{\rm SN}}
 \newcommand{\projnoise}{\Delta \mathcal{M}^2_{\rm PN}}
 \newcommand{\polcomp}{\hat{K}} % p,p' component of the tensor polarizability
