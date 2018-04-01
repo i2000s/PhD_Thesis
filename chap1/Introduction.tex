@@ -20,7 +20,7 @@
 %--  Wolfgang Ketterle\ai{Ketterle, Wolfgang}
 %\end{quote}
 %\url{http://cua.mit.edu/ketterle_group/Projects_1997/atomlaser_97/atomlaser_comm.html}
-
+\section{The big picture}
 \noindent This is left for writing a brief introduction.
 
 After billions of years of evolution since life originated on earth, human being as one of the most wondering and collaborative species have come to the point that we are working together to understand the quantum nature of matter and use our accumulated knowledge to control the flow of information on microscopic scale for various purposes. 
@@ -37,9 +37,57 @@ While neutral atoms, on the other hand, may not have strong useful interactions 
 
 This dissertation work is mainly about how to maximize the ratio between useful interactions and damaging interactions using an ensemble of neutral atoms while using a nanophotonic waveguide as an interface to enhance the atom-light interactions. 
 
-\section{Atom-light interfaces}
+
+\section{Quantum entanglement and correlations in an atomic ensemble}
+The power of quantum measurement comes from quantum entanglement between the the quantum object to be measured and the probe. 
+Below, I share my favorite example taught by Dr. Ivan Deutsch to illustrate this statement. Suppose a laser beam in a linearly polarized state $ \ket{\phi_L} $ is shined on an atom that is in a state of $ \ket{\phi_A} =(\ket{\uparrow}+\ket{\downarrow})/\sqrt{2} $. We want to use the laser as a probe to detect the state of the atom, where we have access to the polarization state of the light. The joint state of the atom-polarization system can be given by
+\begin{align}
+\ket{\Psi(0)} &=\frac{1}{\sqrt{2}}(\ket{\uparrow}+\ket{\downarrow})\mathbin{\ket{\phi_L}}.
+\end{align}
+We consider an atom-light interaction is defined by an evolution operator, $ \hat{U}(\tau)=e^{i\chi \hat{S}_3 \hat{J_z}} $, where $ \chi $ is the coupling strength between the atom and light, $ \hat{S_3} $ is the Stokes vector operator changing the polarization state of light, and $ \hat{J}=\hat{\sigma}_z/2$ is the angular momentum operator for atoms. We will introduce these operators in details for sequential chapters. 
+For now, we give that $ \hat{J}_z $ outputs $ +1/2 $ if the atom is in the $ \ket{\uparrow} $ state, and $ -1/2 $ if the atom is in the $ \ket{\downarrow} $ state. 
+Then the joint state at time $ \tau $ becomes
+\begin{align}
+\ket{\Psi(\tau)}&=\frac{1}{\sqrt{2}}\left[\ket{\uparrow}e^{+i\chi \hat{S}_3/2}\ket{\phi_L} 
++\ket{\downarrow}e^{-i\chi \hat{S}_3/2}\ket{\phi_L} \right]\\
+&=\frac{1}{\sqrt{2}}\left[\ket{\uparrow}\ket{\phi^1_L} 
++\ket{\downarrow}\ket{\phi^2_L} \right]
+\end{align}
+where $ \ket{\phi_L^1}=e^{+i\chi \hat{S}_3/2}\ket{\phi_L} $ and $ \ket{\phi_L^2}=e^{-i\chi \hat{S}_3/2}\ket{\phi_L} $ are two polarization states with the polarization axis of the light rotated by $ \pm \chi /2 $, respectively. 
+Therefore, the output state of the system is an entangled state. It predicts that, if the polarization state of the light is measured to be rotated by $ +\chi/2 $ from the original state, then the atom is in the $ \ket{\uparrow} $ state; otherwise, if the light is rotated by $ -\chi/2 $, the atom is in the $ \ket{\downarrow} $ state. 
+Therefore, the probe works as a meter for us to access to the state of the atom through their entanglement. The sensitivity of the measurement is determined by the rotation angle of the polarization state of the light. 
+In other words, to make the measurement outputs more distinguishable, we need to enhance the coupling strength of the bipartite system. 
+
+A quantum state is so fragile that, if you measure it, you also destroy it. We can only gain partial information from one shot of measurement based on the uncertainty principle. 
+If we know the recipe to prepare the quantum state, there are two naive ways to reconstructing the quantum state: 1. to prepare multiple copies of the quantum object and measure them sequentially in different bases; or, to measure the object multiple times by repeating the preparation processes. 
+After the seminar work by Holevo, we now know that the optimal quantum measurement strategy to gain more information with less destructive measurement trials is to prepare multiple copies of the object and measure all of them collectively. Various protocols have been implemented on different quantum systems. Particularly, the quantum non-demolition (QND) measurement technique has been implemented on atomic systems.
+The continuous measurements allowed by QND measurement techniques have paved the foundation to recent hot fields including quantum state tomography, quantum process tomography, quantum compressed sensing and so on. 
+
+Moreover, as a result of continuous measurement on a collective state, a squeezed state can be generated. 
+The mechanism of measurement-induced squeezing is usually called measurement backaction\index{measurement backaction}.
+It has been proven by Caves that a squeezed state is crucially useful quantum resource for precise measurements. 
+In some sense, how much an ensemble state is squeezed determines how precise a quantum measurement can be. 
+When we plot a squeezed collective state on a Bloch sphere that represents the possibility distribution of the state, it may look like an elongated blob from a coherent state, which is represented as a circle area on the Bloch sphere. \qxd{May need a plot to show a coherent state, a squeezed state and a Dicke state on the Bloch sphere.} 
+When the elongation is weak, the squeezed state can be regarded as a Gaussian state, which is dominated by pairwise quantum correlations of the ensemble. If the elongation is on the order of the radius of the Bloch sphere, the collective state become non-Gaussian, which is usually dominated by many-body correlations~\cite{Strobel2014}. To the extreme, if the state wrap around the Bloch sphere as a line of circle, it is called a Dicke state~\cite{Dicke1954}. 
+Using a non-Gaussian state for quantum metrology, quantum communications, and in general, for quantum information processing, can usually offer a better performance than using a Gaussian state~\cite{Strobel2014}.
+Until today, however, a highly non-Gaussian state of an atomic ensemble is still difficult to produce. 
+
+Generally, to make a quantum-measurement--induced squeezed state more useful, it is better to squeeze more, towards a non-Gaussian state. 
+For an ensemble of atoms, the radius of the Bloch sphere to represent the collective state is defined by the total number of atoms and the dimension of the internal structure of the quantum states we consider. 
+Therefore, we prefer to use fewer atoms. 
+On the other hand, the measurement backaction that generates the squeezing effect is proportional to the coupling strength between atoms and probe. 
+To produce a certain level of squeezing effect, if the coupling strength is large, we will need fewer atoms than otherwise. 
+Therefore, the key is to enhance the atom-probe coupling strength.
+
+
+
+\section{Our toolbox: Atom-waveguide interfaces}
 
 A review.
+
+The combination of cold atoms and nanophotonic structures is a long journey. Since 1990s or even earlier, theoretical ideas on trapping atoms along a waveguide have been proposed~\cite{Ovchinnikov1991,Bures1999,Barnett2000,Domokos2001,Burke2002,Domokos2002a}, some proof-of-principle experiments are also demonstrated and discussed~\cite{Hinds1999}. The benefits are clear: the atom-light coupling can be enhanced dramatically using nanophotonic modes compared to the free propagating optical field, and the systems are naturally compatible to current integrated optical systems for immediate applications. After the key issues and some basic properties of dielectric waveguides have been clear, a lot of efforts of the community have been gradually tunneled into the atom traps using tapered optical nanofibers. First, relatively speaking, the nanofibers are technically easy and economically cheap to fabricate; second, the guided modes have rich structures to support a broad range of applications~\cite{Tong2004,Kien2004,Tong2012}, and so on.
+The early studies of the tapered optical nanofiber systems are ranging from the implementations of atom traps~\cite{LeKien2004,LeKien2005b,Sague2008,LeKien2008a,Fu2008,Baade2009,LeKien2009c}, spontaneous emission of trapped atoms and the efficient coupling of the emissions to the fiber~\cite{LeKien2005a,LeKien2007,Kien2007,Kien2008,LeKien2009b}, interactions between atoms mediated by the fiber~\cite{LeKien2005,Sague2007}, fiber modes and photon correlations mediated by the trapped atoms~\cite{Shen2005,LeKien2006,Shen2007,LeKien2008,Chang2008,LeKien2009,Nayak2009a}, to quantum effects for quantum information applications~\cite{LeKien2009a,Nayak2007,Zoubi2010,Zoubi2012}, and the list goes on. 
+Compared to the progress in theoretical studies, experiments really take a while to nail down technical details. The first bunch of experiments (by Nayak \textit{et al. in 2007}) with neutral atoms and a tapered nanofiber were done by confining a cloud of atoms in a magneto-optical trap (MOT)\index{magneto-optical trap} close to a nanofiber, and the nanofiber was used to collect the fluorescence of atoms close by~\cite{Nayak2007}. ...
 
 Techniques advance when contradictories are solved.
 Among conventional interfaces of atom-light interactions, there are two contradictories to be solved: 1. strong field for one and for all; 2. useful strong interaction and damages.
@@ -71,16 +119,6 @@ In general
 %   \caption[A Double-Well Atom Interferometer]{A double-well atom interferometer~\cite{shin_atom_2004}: (i)~cool the atoms trapped in a single-well potential to form a BEC; (ii)~split the condensate by slowly deforming the single-well potential to a double-well potential; (iii)~apply ac Stark shift potentials to either of the two separated condensates; (iv)~turn off the double-well trapping potential, and let the condensates ballistically expand, overlap, and interfere; and (v)~take an absorption image.}
 %   \label{fig:double_well_interfer}
 %\end{figure}
-
-\section{Quantum entanglement and correlations in atomic ensembles}
-\begin{align}
-\hat{U}(\tau)&=e^{i\chi \mathbin{\hat{\mathbf{S}}} \cdot \hat{\mathbf{J}}}\\
-\ket{\Psi(0)} &=\frac{1}{\sqrt{2}}(\ket{\uparrow}+\ket{\downarrow})\mathbin{\ket{\phi_L}}\\
-\ket{\Psi(\tau)}&=\frac{1}{\sqrt{2}}\left[\ket{\uparrow}e^{+i\chi \mathbin{\hat{S}_3}}\mathbin{\ket{\phi_L}} 
-+\ket{\downarrow}e^{-i\chi \mathbin{\hat{S}_3}}\mathbin{\ket{\phi_L}} \right]\\
-&=\frac{1}{\sqrt{2}}\left[\ket{\uparrow}\mathbin{\ket{\phi^1_L}} 
-+\ket{\downarrow}\mathbin{\ket{\phi^2_L}} \right]
-\end{align}
 
 
 \section{Outline of This Dissertation}
