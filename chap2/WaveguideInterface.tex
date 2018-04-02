@@ -10,7 +10,7 @@
 
 \chapter{Atom-waveguide interfaces}
 \section{Introduction}
-In this chapter, we look at the case that only one atom is trapped nearby a waveguide. As will be discussed later, in the dispersive regime, the interaction from many atoms can be treated as a sum of the interactions from all individual atoms. To be specific, for this chapter, we consider the following scenario: a laser beam propagates through a waveguide along $ z $ direction; an alkali atom (cesium, for example) is trapped at $ \mathbf{r}_{\rm atom} =\mathbf{r}'$ in the evanescent field of the waveguide~\footnote{We will use the prime ($ ' $) notation to indicate the position of a photon emitter.} and responds to the guided optical field dispersively. In the dynamics, the atom can be treated as an optical dipole that adiabatically eliminates from an excited state to the ground state as an effective two-level system. The light, on the other hand, experiences dispersive phase shift and usually negligible intensity attenuation afterwards. Effectively, the presence of the atom outside of the waveguide changes the index of refraction\index{index of refraction} of the waveguide. 
+In this chapter, we look at the case that only one atom is trapped nearby a waveguide. As will be discussed later, in the dispersive regime, the interaction from many atoms can be treated as a sum of the interactions from all individual atoms. To be specific, for this chapter, we consider the following scenario: a laser beam propagates through a waveguide along the $ z $ direction; an alkali atom (cesium, for example) is trapped at $ \mathbf{r}_{\rm atom} =\mathbf{r}'$ in the evanescent field of the waveguide~\footnote{We will use the prime ($ ' $) notation to indicate the position of a photon emitter.} and responds to the guided optical field dispersively. In the dynamics, the atom can be treated as an optical dipole that adiabatically eliminates \nd{Grammar? The dipole is the one doing the elimination?} from an excited state to the ground state as an effective two-level system. The light, on the other hand, experiences a dispersive phase shift and a usually negligible intensity attenuation afterwards. Effectively, the presence of the atom outside of the waveguide changes the index of refraction\index{index of refraction} of the waveguide. 
 The dispersive light shift applies when the saturation parameter is small,
 \begin{align}
 s=\frac{\Omega^2/4}{\Delta^2+\Gamma^2/4}\ll 1,
@@ -20,18 +20,18 @@ where $ \Omega $ is the Rabi frequency, $ \Gamma $ is the spontaneous emission r
 \begin{figure}
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.85\textwidth]{../media/Figs/NanofiberTrappedAtoms}}
-\caption[Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide.]{Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide. In the dispersive regime and when the atoms are placed a few hundred nm away from each other, the effect of the unguided radiation from the atoms can be ignored, and the photon scatterings among atoms are also negligible. For a quantum-measurement--targeted research, we mainly care about how the atomic emissions got modified by the waveguide interface and coupled to the guided modes to be detected at the measurement apparatus. Color contour on the left-hand part is an illustration of one guided mode intensity distribution of an optical nanofiber, which leaks into the free space to interact with atoms and propagates through the fiber. }\label{fig:trappedatomradiation}
+\caption[Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide.]{Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide. In the dispersive regime and when the atoms are placed a few hundred nm away from each other, the effect of the unguided radiation from the atoms can be ignored, and the photon scatterings among atoms are also negligible. For a quantum-measurement--targeted research, we mainly care about how the atomic emissions are modified by the waveguide interface and coupled to the guided modes to be detected at the measurement apparatus. Color contour on the left-hand part is an illustration of one guided mode intensity distribution of an optical nanofiber, which leaks into the free space to interact with atoms and propagates through the fiber. }\label{fig:trappedatomradiation}
 \end{figure}
 
-In this chapter, we will first outline the basic concept of the polarization state of light and introduce the experimental setup in characterizing the dispersive light shift interaction, which is called \emph{polarization spectroscopy}\index{polarization spectroscopy}.
+In this chapter, we will first outline the basic concept of the polarization state of light and introduce the experimental setup to characterize the dispersive light shift interaction, which is called \emph{polarization spectroscopy}\index{polarization spectroscopy}.
 The theme of this dissertation is set based on the atom-light interactions which includes two aspects: one is how the light respond to the presence of the atoms, and the other is how the atoms' properties are modified by the light. For the light response aspect, we will derive a general theory in the language of Green's function to formulate the atom-light interaction mainly from the semi-classical perspective where the light is treated as a continuous wave while the atom has discrete level structures. 
-In simulations, we will show the radiation modes of the waveguides do not propagate too far from atoms and can be ignored for the light response detected at the measurement apparatus (see Fig.~\ref{fig:trappedatomradiation}).
-For the atoms' response, we will extend the definition of polarizability of atoms from a classical oscillator picture to the multiple-level quantum representation, and then introduce the Purcell effect and derive the modified spontaneous decay rates of atoms in presence of a waveguide using the Green's function language. 
-We will show the modifications of spontaneous emissions when atoms are placed at certain distance can be ignored.
+In simulations, we will show that the radiation modes of the waveguides do not propagate too far from atoms and can be ignored for the light response detected at the measurement apparatus (see Fig.~\ref{fig:trappedatomradiation}).
+For the atoms' response, we will extend the definition of the polarizability of atoms from a classical oscillator picture to the multiple-level quantum representation, and then introduce the Purcell effect and derive the modified spontaneous decay rates of atoms in the presence of a waveguide using the Green's function language. 
+We will show that the modifications of spontaneous emissions when atoms are placed at certain distance can be ignored.
 At the end of this chapter, we will conclude with some geometric explanations on the unique features and advantages of using a nanophotonic waveguide interface to implement atom-light coupling over the free-space interface commonly employed in previous experiments.
 
 \section{Polarization spectroscopy and dispersive light shift measures}
-\subsection{Polarization states of light \nd{Tom is working on subsection 2.2.2 and beyond} }
+\subsection{Polarization states of light}
 \qxd{This subsection has been proofread by Teves on March 26.}
 
 In free space, light is a transverse field. The polarization state of light\index{polarization} can be fully described by the amplitudes and relative phase of two orthogonal electric field components, $ \mathbf{E}_x $ and $ \mathbf{E}_y $. That is, one can write the electric field of a propagating mono-chromatic light field as: 
@@ -224,7 +224,7 @@ where $ n_1>n_2 $, $ \br_\perp=(x,y) $ are the coordinates in the transverse pla
 
 As an example, a typical optical nanofiber has a cylindrical cross-section of radius $ a $. We use $ a=225 $nm, $ n_1=1.4496 $ as a constant in the core region ($ r_\perp\le a $) and $ n_2=1.0000 $ in the vacuum clad region ($ r_\perp>a $), where we have set the $ z $ axis to be the symmetric center of the nanofiber and $ r_\perp =\sqrt{x^2+y^2} $.
 Another nanophotonic waveguide we are going to utilize is a \SWG, which has a square cross-section of the waveguide core with a width of $ w=300 $nm, $ n_1=2.0 $ for an ideal Si$_3$N$_4$ core medium $ (|x|\le w/2,|y|\le w/2) $, and the clad is also a vacuum. 
-In both cases, only the fundamental guided modes are allowed to propagate through the waveguide. That is, the allowed guided modes have a single propagation constant\index{propagation constant} or projected wavenumber $ \beta_0 \,(n_1k_0<\beta_0<n_2k_0)$ with wavenumber\index{wave number} $k_0=2\pi/\lambda=\omega_0/c $, where $\omega_0$ is the angular frequency of the electric field, and $ c $ is the speed of light in a vacuum. 
+In both cases, only the fundamental guided modes are allowed to propagate through the waveguide. That is, the allowed guided modes have a single propagation constant\index{propagation constant} or projected wavenumber $ \beta_0 \,(n_1k_0<\beta_0<n_2k_0)$ with wavenumber\index{wave number} $k_0=2\pi/\lambda=\omega_0/c $, where $\omega_0$ is the angular frequency of the electric field, and $ c $ is the speed of light in the vacuum. 
 A monochromatic electric field propagating in such a waveguide can be given by~\cite{Jackson1975}
 \begin{equation}
 \mathbf{E}_0(\br,t)=\boldsymbol{\mathcal{E}}_0(\br_\perp)e^{i(b\beta_0 z-\omega_0 t)} %+\frac{1}{2}\mathrm{c.c.}
@@ -239,7 +239,7 @@ The fundamental modes of the nanofiber are the \HE modes with the degeneracy of 
 \int d^2 \mbf{r}_\perp \, n^2(r_\perp)\mathbf{u}^*_\mu (\br_\perp) \cdot \mathbf{u}_{\mu'} (\br_\perp)\big|_{\beta = \beta'} = \delta_{j,j'}\delta_{p,p'},
 \end{align}
 and have units \nd{dimension?} $1/\sqrt{A}$, where $ A $ is the area~\cite{LeKien2014}.
-The degeneracy of polarizations of the \HE modes allow one to write the eigenmodes of the nanofiber in an arbitrary polarization basis. Two convenient guided-mode bases are the quasilinear and quasicircular polarization modes. In Figs.~\ref{fig:Modes_Rot45HV_fiber} and~\ref{fig:Modes_Rot45LR_fiber}, we show the decomposition of a diagonally polarized $ D $ mode of a nanofiber in the $ HV $- and $ LR $-bases, respectively. From the figures, if we place an atom on the $ x $ axis, we find that the $ H $ mode component has a much stronger intensity at the atom position than the $ V $ mode component. This property of \emph{mode isotropy}\index{isotropy of waveguide modes} on azimuthal directions is intrinsic to the waveguides but does not exist in freely propagating fundamental Gaussian laser beams typically used in atom-light coupling experiments. In contrast, the decomposed $ R $ and $ L $ modes at the atom position have the same intensity. As we will see later, how to choose a good mode basis based on the atomic internal structure and fully utilize the isotropic property of the waveguide modes is the key to optimally designing some quantum operations on the atoms for wide applications, which yields great advantages of the nanophotonic waveguides over the atom-light quantum interface in a vacuum. \nd{Long sentence} For now, we have to hold our breath to pave some necessary foundations.
+The degeneracy of polarizations of the \HE modes allow one to write the eigenmodes of the nanofiber in an arbitrary polarization basis. Two convenient guided-mode bases are the quasilinear and quasicircular polarization modes. In Figs.~\ref{fig:Modes_Rot45HV_fiber} and~\ref{fig:Modes_Rot45LR_fiber}, we show the decomposition of a diagonally polarized $ D $ mode of a nanofiber in the $ HV $- and $ LR $-bases, respectively. From the figures, if we place an atom on the $ x $ axis, we find that the $ H $ mode component has a much stronger intensity at the atom position than the $ V $ mode component. This property of \emph{mode isotropy}\index{isotropy of waveguide modes} on azimuthal directions is intrinsic to the waveguides but does not exist in freely propagating fundamental Gaussian laser beams typically used in atom-light coupling experiments. In contrast, the decomposed $ R $ and $ L $ modes at the atom position have the same intensity. As we will see later, how to choose a good mode basis based on the atomic internal structure and fully utilize the isotropic property of the waveguide modes is the key to optimally designing some quantum operations on the atoms for wide applications, which yields great advantages of the nanophotonic waveguides over the atom-light quantum interface in the vacuum. \nd{Long sentence} For now, we have to hold our breath to pave some necessary foundations.
 
 \begin{figure}
 \centering\makebox[\textwidth]{
@@ -505,20 +505,20 @@ The numerical method we used to solve the eigenmodes for the \SWG and general ge
 \nd{As an aside, here are the reasons why we only consider...}
 Here are some side notes, which may help clarify the reasons why we only consider a \SWG with a width of $ 300 $ nm besides the long-studied nanofiber case. In fact, on the course of this study, we have considered ridge and other types of waveguides. Eventually, we decided to study a simple shape of waveguides--a \SWG--as a proof of principles. There has also been a long discussion on purposefully designing a rectangular waveguide and imperfections on fabricating a \SWG, in which a \SWG essentially becomes a rectangular one. \nd{Do you mean that the discussion leads to the choice of a square waveguide?} Based on some back-of-envelope calculations and simple simulations, we find that \nd{to be useful,} a rectangular waveguide might have to be \nd{very long} too long to fabricate and, if we choose a width of $ 300$--$320 $ nm, the imperfections in fabricating a \SWG processes would not generate noticeable influence on the physical effects we care about. As these reasonings involve the knowledge we are going to introduce later, we provide the details in Appendix~\ref{chap:choozingSWGs} in case readers are curious about them.
 
-\subsection{Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide}\label{sec:calculatingGreenstensor}
-\nd{Tom was here.} Starting from this section, we consider the light response in the presence of a photon emitter outside of a dielectric waveguide. The dyadic Green's function\index{dyadic Green's function}, or Green's tensor\index{Green's tensor}\footnote{We may also call it Green's function tensor\index{Green's function tensor} or Green's function dyad\index{Green's function dyad}.}, $ \GFT(\br,\br')=\GFT(\br,\br';\omega_0) $ is naturally a response function of the field measured at $ \br $ responding to a point radiating source at $ \br' $ in frequency $ \omega_0 $. Once the dyadic Green's function is solved, a field response due to some point sources can then be calculated. In this section, we consider a scenario that a bunch of atoms are trapped near to a nanophotonic waveguide, and formulate the general theory of field response using the Green's function method. For simplicity, we regard atoms as optical dipoles, which interact with light in terms of optical dipole radiation. The dipoles oscillate in space and time to form a current, $ \mathbf{J} $, which collectively generates an effective susceptibility for the atomic ensemble as a ``medium" and modulates the phase and amplitude of the light passing through the waveguide. 
+\subsection{Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide \nd{You have``field responded" in a few places in this section. Is ``field response" a better word?} }\label{sec:calculatingGreenstensor}
+Starting from this section, we consider light response in the presence of a photon emitter outside of a dielectric waveguide. The dyadic Green's function\index{dyadic Green's function}, or Green's tensor\index{Green's tensor}\footnote{We may also call it Green's function tensor\index{Green's function tensor} or Green's function dyad\index{Green's function dyad}.}, $ \GFT(\br,\br')=\GFT(\br,\br';\omega_0) $ is naturally a response function of the field measured at $ \br $ responding to a \nd{radiating point source?} at $ \br' $ at a frequency $ \omega_0 $. Once the dyadic Green's function is solved, a field response due to some point sources can then be calculated. In this section, we consider a scenario that a gruop of atoms are trapped near a nanophotonic waveguide, and formulate a general theory of field response using the Green's function method. For simplicity, we regard atoms as optical dipoles, which interact with light in terms of optical dipole radiation. The dipoles oscillate in space and time to form a current, $ \mathbf{J} $, which collectively generates an effective susceptibility for the atomic ensemble as a ``medium" and modulates the phase and amplitude of the light passing through the waveguide. 
 
 Given the index of refraction distribution function $ n(\br) $ with the waveguide as the background medium, a chromatic electric field modulated by the presence of atoms can be described by the wave equation below~\cite{Jackson1975}: 
 \begin{align}\label{eq:Maxwellwithsource2}
 \left[\! -\! \nabla\!\!\times\!\nabla\!\!\times + n^2\!(\br)\frac{\omega_0^2}{c^2} \right]\!\! \boldsymbol{\mathcal{E}}(\br) &\!=\! -i4\pi\! \frac{\omega_0}{c^2}\! \mathbf{J}(\br) \!=\! -4\pi\! \frac{\omega_0^2}{c^2}\! \mathbf{P}(\br)\!=\! -4\pi\! \frac{\omega_0^2}{c^2}\! \tensor{\boldsymbol{\chi}}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-where the only difference from the homogeneous wave equation, Eq.~\eqref{MaxwellHelmholtz0}, is that we have brought in dipole source terms represented by the equivalent expressions on the right-hand side of the equation. For the source terms, we have defined the source of current\index{current source} $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega_0 \tensor{\boldsymbol{\chi}}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\boldsymbol{\chi}}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\boldsymbol{\alpha}} \, (\br')$ \footnote{We have used Gaussian-cgs units here. In SI units, the corresponding relationship is $ \tensor{\boldsymbol{\chi}}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\boldsymbol{\alpha}} \, (\br')$ and $\tensor{\boldsymbol{\chi}}{}^{SI}=4\pi\tensor{\boldsymbol{\chi}}{}^{G}  $. Here, $ 4\pi $ is a typical multiplier factor between the SI and the Gaussian-cgs unit systems. }, where $ \tensor{\boldsymbol{\alpha}} $ is the polarizability tensor\index{polarizability!polarizability tensor} of the atoms located at $ \br' $. Specifically, using the dipole approximation, the polarizability due to the presence of atoms, $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\boldsymbol{\alpha}} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $, where $ \mathbf{d}(\br') $ is the induced dipole moment of an atom at $ \br' $. 
+where the only difference from the homogeneous wave equation, Eq.~\eqref{MaxwellHelmholtz0}, is that we have brought in dipole source terms represented by the equivalent expressions on the right-hand side of the equation. For the source terms, we have defined the source of the current\index{current source} $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega_0 \tensor{\boldsymbol{\chi}}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\boldsymbol{\chi}}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\boldsymbol{\alpha}} \, (\br')$ \footnote{We have used the Gaussian-cgs units here. In the SI units, the corresponding relationship is $ \tensor{\boldsymbol{\chi}}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\boldsymbol{\alpha}} \, (\br')$ and $\tensor{\boldsymbol{\chi}}{}^{SI}=4\pi\tensor{\boldsymbol{\chi}}{}^{G}  $. Here, $ 4\pi $ is a typical multiplier factor between the SI and the Gaussian-cgs unit systems. }, where $ \tensor{\boldsymbol{\alpha}} $ is the polarizability tensor\index{polarizability!polarizability tensor} of the atoms located at $ \br' $. Specifically, using the dipole approximation, the polarizability due to the presence of atoms, $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\boldsymbol{\alpha}} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $, where $ \mathbf{d}(\br') $ is the induced dipole moment of an atom at $ \br' $. 
 
 Based on Eq.~\eqref{eq:Maxwellwithsource2}, we define a source term 
 \begin{align}
 \tensor{S}(\br)=\tensor{\boldsymbol{\chi}}(\br),% \boldsymbol{\mathcal{E}}(\br),
 \end{align}
-so that Eq.~\eqref{eq:Maxwellwithsource2} can be solved by finding the corresponding dyadic Green's function equation\index{Green's function!dyadic Green's function} in the frequency domain\footnote{Although the definition of the source term is arbitrary, to make the relation between $ \mathbf{E}(\br) $ and the dyadic Green's function $ \GFT(\br,\br') $ consistent with our later expressions, we have chosen the source term carefully. If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$ and the source term $\tensor{\bf S}(\br)=-4\pi \frac{\omega_0^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega_0^2/c^2$ factor compared to our definition in the text, the $4\pi\omega_0^2/c^2$ factor will be carried over to the relation between $ \mathbf{E}(\br) $ and $ \GFT(\br,\br') $ and other quantities as well. }
+so that Eq.~\eqref{eq:Maxwellwithsource2} can be solved by finding the corresponding dyadic Green's function equation\index{Green's function!dyadic Green's function} in the frequency domain\footnote{Although the definition of the source term is arbitrary, to make the relation between $ \mathbf{E}(\br) $ and the dyadic Green's function $ \GFT(\br,\br') $ consistent with our later expressions, we have chosen the source term carefully. If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$ and the source term \nd{by?} $\tensor{\bf S}(\br)=-4\pi \frac{\omega_0^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega_0^2/c^2$ factor compared to our definition in the text, the $4\pi\omega_0^2/c^2$ factor will be carried over to the relation between $ \mathbf{E}(\br) $ and $ \GFT(\br,\br') $ and other quantities as well. }
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br';\omega_0) &= -4\pi \frac{\omega_0^2}{c^2}\delta^{(3)}(\br-\br')\unittensor. \label{eq:dyadicGF}
 \end{align}
@@ -527,24 +527,24 @@ A special case of the dyadic Green's function is when a dipole source is placed 
 \begin{align}
 G_0(\br,\br';\omega_0) =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},\label{eq:G0rrp}
 \end{align}
-where we only take the positive frequency solution for our studies. This result reflects the fact that the field responded at $ \br $ is a free spherical wave coming out from a point dipole source as we can recognize from basic electromagnetic knowledge. This solution is a key to solve radiation problems and normalize modified decay rates of atoms in presence of a waveguide as we will discuss later. When $ \br\rightarrow \br' $ or the field responded at the dipole position, the real part of the Green's function divergent yet the imaginary part of $ G_0(\br,\br') $ takes the form
+where we only keep the positive frequency solution for our studies. This result reflects the fact that the field responded at $ \br $ is a free spherical wave coming out from a point dipole source as we can recognize from basic electromagnetism. This solution is a key to solve radiation problems and normalize modified decay rates of atoms in the presence of a waveguide as we will discuss later. When $ \br\rightarrow \br' $ or the field responded at the dipole position, the real part of the Green's function diverges yet the imaginary part of $ G_0(\br,\br') $ takes the form
 \begin{align}\label{eq:G0}
 G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
 \end{align}
-The details of solving the free-space Green's function and the techniques we are going to using without explaining, including Born approximation~\cite{Gubernatis1977Born} and other general methods of solving a radiation problem can be found in Appendix~\ref{chap:freespacegreenfunction}. 
+The details of solving the free-space Green's function and techniques we are going to use without explaining, including Born approximation~\cite{Gubernatis1977Born} and other general methods of solving a radiation problem can be found in Appendix~\ref{chap:freespacegreenfunction}. \nd{Do you need a comma, either after ``Born approximation" or before ``can be found in Appendix C"?} 
 
 
 
-Following the Born approximation to the first order, which has been used in Appendix~\ref{chap:freespacegreenfunction}---but here, in general, the output field in the form of a Lippmann-Schwinger equation\index{Lippmann-Schwinger eqation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $ can be approximated by
+Following the Born approximation to the first order, \nd{This additional comment is confusing. Why is an em-dash here?: which has been used in Appendix~\ref{chap:freespacegreenfunction}---but here, in general,} the output field in the form of a Lippmann-Schwinger equation\index{Lippmann-Schwinger eqation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $ can be approximated by
 \begin{subequations}
 \begin{align}
 \mathbf{E}(\br) &=\mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}(\br'_n)\\
 &\approx \mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}_0(\br'_n)\label{eq:EGFTnatoms}
 \end{align}
 \end{subequations}
-where $ \tensor{\boldsymbol{\alpha}}^{(n)} $ is the polarizability of the atom positioned at $ \br'_n $. The right-hand-side of Eq.~\eqref{eq:EGFTnatoms} implies that the total field after interaction includes two origins of fields: one is the original propagating field through the waveguide (the first summation part), and the other is the scattered field due to the presence of the atoms (the second summation part). Because of the Born approximation, the scattering effect terms in the equation above only contains the first-order scattering directly due to the background propagating field incident to the atoms, and the photon scattering among atoms and high-order scattering involving self-polarizations have been ignored. This approximation is valid in the dispersive regime, which can be verified based on Ref.~\cite{Asenjo-Garcia2017Atom} including the atom-atom interactions and other scattering effects using the Green's function approach~\footnote{See, for example, Eq.~(10) in Ref.~\cite{Asenjo-Garcia2017Atom} describing the field transformation relationships will be recovered to our results presented in Eq.~\eqref{eq:EGFTnatoms} if the detuning $ \Delta_A $ is much larger than the frequency shift $ J_{\xi,\mathrm{1D}} $ and the modified decay rates $ \Gamma_{\xi,\mathrm{1D} }$ of atoms, which is a condition for dispersive interactions.}. Now, the only barrier for fully solving the output electric field is to solve the dyadic Green's function.
+where $ \tensor{\boldsymbol{\alpha}}^{(n)} $ is the polarizability of the atom positioned at $ \br'_n $. The right hand side of Eq.~\eqref{eq:EGFTnatoms} implies that the total field after the interaction includes two origins \nd{I thought the ``origins" here mean coordinate origins. Maybe use ``sources" instead?} of fields: one is the original propagating field through the waveguide (the first summation part), and the other is the scattered field due to the presence of the atoms (the second summation part). \nd{Where are the first and the second sums?} Because of the Born approximation, the scattering terms in the equation above only contains the first-order scattering directly due to the background propagating field incident to the atoms, and the photon scattering among atoms and high-order scattering involving self-polarizations have been ignored. This approximation is valid in the dispersive regime, which can be verified based on Ref.~\cite{Asenjo-Garcia2017Atom} including the atom-atom interactions and other scattering effects using the Green's function approach~\footnote{See, for example, Eq.~(10) in Ref.~\cite{Asenjo-Garcia2017Atom} \nd{New sentence here?} describing the field transformation relationships will be recovered \nd{from?} our results presented in Eq.~\eqref{eq:EGFTnatoms} if the detuning $ \Delta_A $ is much larger than the frequency shift $ J_{\xi,\mathrm{1D}} $ and the modified decay rates $ \Gamma_{\xi,\mathrm{1D} }$ of atoms, which is a condition for dispersive interactions.}. Now, the only barrier for fully solving the output electric field is to solve the dyadic Green's function.
 
-In general, there are two strategies to solve the dyadic Green's function: one is to solve the dipole radiation problem numerically and/or analytically; the other one involves eigenmode decomposition and only needs bare waveguide modes. We call the first approach as the \emph{normalization} approach, and call the other one as the \emph{eigenmode-decomposition} approach. We will describe the two approaches in the successive subsections. 
+In general, there are two strategies to solve the dyadic Green's function: one is to solve the dipole radiation problem numerically and/or analytically; the other involves eigenmode decomposition and only needs bare waveguide modes. We call the first approach the \emph{normalization} approach, and the other the \emph{eigenmode-decomposition} approach. We will describe the two approaches in the successive subsections. 
 
 \subsubsection{I. The \emph{normalization} approach}
 
@@ -556,9 +556,9 @@ each column of which can be expressed as
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}_i(\br,\br') &= -4\pi k_0^2\mathbf{e}_i\delta(\br-\br'), \label{eq:Gi}
 \end{align}
-where the subscriptions $ i=r\!_\perp,\phi,z $ written in the cylindrical coordinate system or $ i=x,y,z $ in the Cartesian coordinate system denote the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i$th column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we have used $\omega_0$ to indicate the angular frequency of the radiation from the source (the difference in the full quantum description will be discussed in Section~\ref{Sec::GreensFunction}).  
+where the subscripts $ i=r\!_\perp,\phi,z $ written in the cylindrical coordinate system or $ i=x,y,z $ in the Cartesian coordinate system denote the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i$th column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we have used $\omega_0$ to indicate the angular frequency of the radiation from the source (the difference in the full quantum description will be discussed in Section~\ref{Sec::GreensFunction}).  
 
-Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a unit dipole source orientated along $ \mathbf{e}_i $ direction and placed at $ \br' $  (\qxd{the Gaussian-cgs convention factor $ -4\pi k^2 $ in some old plots following the code in \url{Example_DGF.m} and others is no longer needed based on the new standard. Although the plots might have been normalized to the vacuum values, double check and correct the unnormalized Green's function plots by multiplying $ -4\pi k_0^2$ before publishing. } ). That is to say, once we solve the electric field components with a unit dipole source orientated along all $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis directions:
+Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a unit dipole source orientated along $ \mathbf{e}_i $ and placed at $ \br' $  (\qxd{the Gaussian-cgs convention factor $ -4\pi k^2 $ in some old plots following the code in \url{Example_DGF.m} and others is no longer needed based on the new standard. Although the plots might have been normalized to the vacuum values, double check and correct the unnormalized Green's function plots by multiplying $ -4\pi k_0^2$ before publishing. } ). That is to say, once we solve the electric field components with a unit dipole source orientated along all the $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis directions:
 \begin{equation}
 \GFT(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
   \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
@@ -592,12 +592,12 @@ Note that all calculations are performed with a fixed frequency $ \omega_0 $. Al
 \begin{align}\label{eq:GFTijEd}
 G_{ij}(\br,\br';\omega_0) =\frac{E^i_j(\br)}{d^{(j)}(\br')},
 \end{align}
-where $ d^{(j)}(\br') $ is the dipole moment of a dipole at $ \br' $ with an orientation along the $ \mathbf{e}_j $ direction, and $ E^i_j(\br) $ is the $ i $th component of the calculated electric field responded at $ \br $ in presence of the dipole source.
-Therefore, the key to calculate the dyadic Green's function in this approach is to solve the field emitted by a normalized dipole in presence of the waveguide in the frequency domain. In fact, there are many ways to calculate the fields with a dipole source in a medium. 
+where $ d^{(j)}(\br') $ is the dipole moment of a dipole at $ \br' $ with an orientation along the $ \mathbf{e}_j $ direction, and $ E^i_j(\br) $ is the $ i $th component of the calculated electric field responded at $ \br $ in the presence of the dipole source.
+Therefore, the key to calculate the dyadic Green's function in this approach is to solve the field emitted by a normalized dipole in the presence of the waveguide in the frequency domain. In fact, there are many ways to calculate the fields with a dipole source in a medium. 
 
-The field can be analytically solved only if there is some special geometry of the waveguide. A nanofiber geometry is one example that one can solve the radiation problem analytically.  
-in Appendix~\ref{sec:boundrad}, we provide some details to solve the $ \mathbf{E}(\br) $ field with three orthogonal unit dipoles by decomposing the dipole radiation function described by Eq.~\eqref{eq:G0rrp} into the cylindrical coordinate system and solving the guided mode and the radiation mode contributions via corresponding residual of poles and contour integrals of branch cuts. In the end, numerical integrations are simplified to integrations over the real axis to calculate the radiation mode contributions to the dyadic Green's function if the waveguide is lossless. 
-Using this method, we are able to decompose the unguided mode contribution to the dyadic Green's function being the part due to free-dipole radiation, $ \GFT_0(\br,\br') $, and the reflection due to the presence of the waveguide interface, $ \GFT_R(\br,\br') $; and we interpret the guided mode contribution part, $ \GFT_T(\br,\br') $, being a result of mode transmission. Each part is calculated by projecting the total dipole radiation into the corresponding orthonormal modes. Therefore, the dyadic Green's function can be written as
+The field can be analytically solved only if the waveguide has some special geometry. A nanofiber geometry is one example that one can solve the radiation problem analytically.  
+in Appendix~\ref{sec:boundrad}, we provide some details to solve the $ \mathbf{E}(\br) $ field with three orthogonal unit dipoles by decomposing the dipole radiation function described by Eq.~\eqref{eq:G0rrp} into the cylindrical coordinate system and solving the guided mode and the radiation mode contributions via corresponding \nd{residues?} of poles and contour integrals of branch cuts. In the end, numerical integrations are simplified to integrations over the real axis to calculate the radiation mode contributions to the dyadic Green's function if the waveguide is lossless. 
+\nd{What do the two ``being"'s mean?: Using this method, we are able to decompose the unguided mode contribution to the dyadic Green's function being the part due to free-dipole radiation, $ \GFT_0(\br,\br') $, and the reflection due to the presence of the waveguide interface, $ \GFT_R(\br,\br') $; and we interpret the guided mode contribution part, $ \GFT_T(\br,\br') $, being a result of mode transmission.} Each part is calculated by projecting the total dipole radiation into the corresponding orthonormal modes. Therefore, the dyadic Green's function can be written as
 \begin{align}\label{eq:GFTdecomp0RT}
 \GFT(\br,\br') = \left\{ 
 \begin{array}{lc}
@@ -606,20 +606,20 @@ Using this method, we are able to decompose the unguided mode contribution to th
 \end{array}\right..
 \end{align}
 
-As an extension to this mode decomposition method, we decompose a plane wave into cylindrical modes in Appendix~\ref{Ch:PlanewaveDecomposition}. Although the result hasn't been used for this dissertation work, it might be useful when we consider the atomic cooling and state preparation protocols if an external incident light is needed (see experiments in Refs.\cite{Meng2017ground,Ostfeldt2017Dipole}). 
+As an extension to this mode decomposition method, we decompose a plane wave into cylindrical modes in Appendix~\ref{Ch:PlanewaveDecomposition}. Although the result has not been used for this dissertation work, it might be useful when we consider the atomic cooling and state preparation protocols if an external incident light is needed (see experiments in Refs.\cite{Meng2017ground,Ostfeldt2017Dipole}). 
 
-However, in most geometries of waveguides, an analytical solution is not always available, and numerical methods including finite-difference time-domain (FDTD) method\index{FDTD method}~\cite{Taflove2005}, boundary-element method (BEM)\index{BEM} for radiation problems~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}, finite-element method (FEM)\index{FEM} and so on. The FDTD method solves the Maxwell equations by dividing the real space under consideration completely into regular Yee-cell grids and transforming the differential equations into a linear equation system on those grid points in the time domain. I have used this method to study quantum dynamics and photon emission spectrum of a many-body system involving nanophotonic cavities for my master's thesis~\cite{Qi2012}. From my past experience, the FDTD method requires a large computer memory or a long simulation time to perform first-principle time evolution of the field propagation matching the boundary conditions, and then Fourier transfers the results into the frequency domain for the dyadic Green's function we want. Since we only need to calculate the dyadic Green's function at a particular frequency point, this method is overkilling. Also, it cannot easily separate the guided mode and the radiation mode contributions to help us develop some insights and simplify the simulation with some reasonable approximations. 
-On the other hand, the BEM we use calculates the Maxwell equations in the frequency domain and evolve the equations as a linear system in the $ \beta $ (projected wave vector) space, which makes it possible to separate the guided and the radiation mode contributions based on the range of $ \beta $ (see Section~\ref{sec:eigenmodesofwaveguides}). It expresses electromagnetic field in terms of charges and currents distributed on the surfaces and interfaces of the structure under consideration. The boundary conditions for the electromagnetic field yield a set of linear integral equations, with unknown charges and currents, which are eventually solved self-consistently in the presence of the external incident field from the dipole source by discretizing the integrals with a finite set of boundary points (elements). The only assumption in this method is that the different media involved in the structures under study are described by frequency-dependent local dielectric functions, which is valid for our problem and we can use constant index of refractions for our study. Therefore, the complexity of BEM only scales quadratically with respect to the points on the boundary elements, not on the full simulation space as the FDTD method does, which makes BEM computational efficient to solve our problem. FEM has a computational complexity between FDTD method and BEM, by using a flexible mesh griding trick to simplify the calculations yet not as much as BEM does. 
+However, in most geometries of waveguides, an analytical solution is not always available, and \nd{Incomplete sentence} numerical methods including finite-difference time-domain (FDTD) method\index{FDTD method}~\cite{Taflove2005}, boundary-element method (BEM)\index{BEM} for radiation problems~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}, finite-element method (FEM)\index{FEM} and so on. The FDTD method solves the Maxwell equations by dividing the real space under consideration completely into regular Yee-cell grids and transforming the differential equations into a linear equation system on those grid points in the time domain. I have used this method to study quantum dynamics and the photon emission spectrum of a many-body system involving nanophotonic cavities for my master's thesis~\cite{Qi2012}. From my past experience, the FDTD method requires a large computer memory or a long simulation time to perform first-principle time evolution of the field propagation matching the boundary conditions, and then Fourier transfers \nd{transform?} the results into the frequency domain for the dyadic Green's function that we want. Since we only need to calculate the dyadic Green's function at a particular frequency point, this method is an overkilling. Also, it cannot easily separate the guided mode and the radiation mode contributions to help us develop some insights and simplify the simulation with some reasonable approximations. 
+On the other hand, \nd{Grammar} the BEM we use calculates the Maxwell equations in the frequency domain and evolve the equations as a linear system in the $ \beta $ (projected wave vector) space, which makes it possible to separate the guided and the radiation mode contributions based on the range of $ \beta $ (see Section~\ref{sec:eigenmodesofwaveguides}). It \nd{The BEM method?} expresses electromagnetic field in terms of charges and currents distributed on the surfaces and interfaces of the structure under consideration. The boundary conditions for the electromagnetic field yield a set of linear integral equations, with unknown charges and currents, which are eventually solved self-consistently in the presence of the external incident field from the dipole source by discretizing the integrals with a finite set of boundary points (elements). The only assumption in this method is that the different media involved in the structures under study are described by frequency-dependent local dielectric functions, which is valid for our problem and we can use constant index of refractions for our study. Therefore, the complexity of BEM only scales quadratically with respect to the points on the boundary elements, not on the full simulation space as the FDTD method does, which makes BEM computational efficient to solve our problem. FEM has a computational complexity between FDTD method and BEM, by using a flexible mesh \nd{Is this the correct word?: griding} trick to simplify the calculations yet not as much as BEM does. 
 
-For our simulations, we decide to use a BEM program to simulate the electromagnetic field due to a unit dipole for the nanofiber geometry first to check the accuracy against our analytical solution, and then applied this method to the \SWG case. Since the field components on the $ z $ direction only yield a phase difference compared to the $ z=0 $ plane, we can fully solve our radiation problem on a 2D plane. With boundary points set for every $ 5 $--$ 6 $ nm away from each other on the boundary, we can achieve a negligible error deviation from our known solution (below $ 1\% $). We use $ \Delta \beta = 0.01k_0 $ interval to sample the $ \beta $-space calculations. One issue of this approach is that we have to make the medium of the waveguide ``imperfect" to avoid a divergent problem when we calculate the field response at the guided mode condition point $ \beta=\beta_0 $, by making $ n_1(\br_\perp\in \text{waveguide region})=n_1+i\delta n_1 $, where $ n_1 $ is the real waveguide bulk index of refraction constant and $ \delta n_1 $ is a small number (we find $ \delta n_1\sim 0.001 $ or $ 0.01 $ is good enough) to generate an artificial photon absorption. Without this treatment, since the field at $ \beta=\beta_0 $ is a delta function, the result will diverge. To calculate the field responded at the dipole position, which will be used for the modified decay rate calculation, we only calculate the induced electric field for a similar reason of the divergence of the real part of the Green's function. 
-In BEM, the Green's function tensor responded at the dipole position at $ \omega_0 $ due to the radiation modes can be decomposed into the free-dipole or homogeneous radiation contribution and the induced-dipole radiation contribution, that is 
+For our simulations, we decide to use a BEM program to simulate the electromagnetic field due to a unit dipole for the nanofiber geometry first to check the accuracy against our analytical solution, and then apply this method to the \SWG case. Since the field components in the $ z $ direction only yield a phase difference compared to the $ z=0 $ plane, we can fully solve our radiation problem on a 2D plane. With boundary points set for every $ 5 $--$ 6 $ nm away from each other on the boundary, we can achieve a negligible error deviation from our known solution (below $ 1\% $). We use $ \Delta \beta = 0.01k_0 $ interval to sample the $ \beta $-space calculations. One issue of this approach is that we have to make the medium of the waveguide ``imperfect" to avoid a divergent problem when we calculate the field response at the guided mode condition point $ \beta=\beta_0 $, by making $ n_1(\br_\perp\in \text{waveguide region})=n_1+i\delta n_1 $, where $ n_1 $ is the \nd{This noun is too long. Maybe ``the real bulk index of refraction of the wave guide"?: real waveguide bulk index of refraction constant} and $ \delta n_1 $ is a small number (we find $ \delta n_1\sim 0.001 $ or $ 0.01 $ is good enough) to generate an artificial photon absorption. Without this treatment, since the field at $ \beta=\beta_0 $ is a delta function, the result will diverge. To calculate the field responded at the dipole position, which will be used for the modified decay rate calculation, we only calculate the induced electric field for a similar reason of the divergence of the real part of the Green's function. 
+In BEM, the Green's function tensor response at the dipole position at $ \omega_0 $ due to the radiation modes can be decomposed into the free-dipole or homogeneous radiation contribution and the induced-dipole radiation contribution, that is 
 \begin{align} \GFT_{rad}(\br',\br';\omega_0)=\GFT_0(\br',\br';\omega_0)+\GFT_{ind,rad}(\br',\br';\omega_0).
 \end{align}
 To not be confused, when $ \br' $ is outside of the waveguide, Eq.~\eqref{eq:GFTdecomp0RT} implies that 
 \begin{align}
 \GFT_R(\br',\br';\omega_0) &= \GFT_{ind,gyd}(\br',\br';\omega_0) + \GFT_{ind,rad}(\br',\br';\omega_0). 
 \end{align}
-That is the reflected part of Green's tensor includes both the guided ($ gyd $) and the radiation ($ rad $) parts that are calculated by integrating over different ranges of $ \beta $. 
+That is, the \nd{reflection? reflective?} part of Green's tensor includes both the guided ($ gyd $) and the radiation ($ rad $) parts that are calculated by integrating over different ranges of $ \beta $. 
 For a single mode waveguide, with a unit dipole orientated along $j$ direction placed at $ \br' $, the induced-dipole radiation Green's tensor elements can be calculated by~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}
 \begin{align}
 G_{ind,gyd}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\left[\int_{-n_1k_0}^{-n_2k_0} d\beta E_j^i(\mathbf{r}') +\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\right]\nn\\
@@ -627,14 +627,14 @@ G_{ind,gyd}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\left[\int_{-n_1
 G_{ind,rad}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\int_{-n_2k_0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')=\frac{4k_0^2}{3\pi^2}\int_{0}^{n_2k_0} d\beta E_j^i(\mathbf{r}') \label{eq:BEMGindij}
 \end{align}
 where $ E_j^i(\mathbf{r}') $ is the $i$-th electric field component measured at the dipole position. 
-To calculate the guided mode induced Green's tensor using the first equation above, we need to give an artificial loss to the medium, that is to make the permittivity of the waveguide as
+To calculate the guided-mode-induced Green's tensor using the first equation above, we need to give an artificial loss to the medium, that is to make the permittivity of the waveguide as
 \begin{align}
 \varepsilon(\br_\perp) = n^2(\br_\perp) + i\delta n(\br_\perp),
 \end{align}
-where $ \delta n(\br_\perp) $ is a small real number in the waveguide region and being zero outside. Same for the radiation mode induced Green's tensor calculation. 
-In practice, we find it's tricky to find a proper artificial loss to obtain an accurate value for the guided mode induced Green's tensor--especially when $ \beta_0 $ is close to the integration limit points; and even more trickier to use the equation of the guided mode induced Green's tensor calculation to find the contribution from a particular guided mode if the waveguide allows multiple guided modes. 
-So, we decide to use the eigenmode decomposition method to calculate the guided mode induced Green's tensor, which will be introduced next.
-However, the calculation for the unguided mode induced Green's tensor equation [Eq.~\eqref{eq:BEMGindij}] is quite robust to the choice of artificial material loss, and is very accurate if the artificial loss is small for the waveguide. 
+where $ \delta n(\br_\perp) $ is a small real number in the waveguide region and zero outside. Same for the radiation-mode-induced Green's tensor calculation. 
+In practice, we find it tricky to find a proper artificial loss to obtain an accurate value for the guided-mode-induced Green's tensor--especially when $ \beta_0 $ is close to the integration limit points; and even more trickier to use the equation for the guided-mode-induced Green's tensor calculation to find the contribution from a particular guided mode if the waveguide allows multiple guided modes. 
+So, we decide to use the eigenmode decomposition method to calculate the guided-mode-induced Green's tensor, which will be introduced next.
+However, the calculation for the unguided-mode-induced Green's tensor equation [Eq.~\eqref{eq:BEMGindij}] is quite robust to the choice of artificial material loss, and is very accurate if the artificial loss is small for the waveguide. 
 If we want to calculate $ \GFT(\br,\br') $, Eq.~\eqref{eq:BEMGindij} holds if we replace $ E_j^i(\br') $ with $ E_j^i(\br) $. 
  
 
@@ -646,14 +646,14 @@ In the case that the source is extremely small, the total dyadic Green's functio
 \end{align}
 where the transverse and longitudinal current components, $ \mathbf{J}_T(\br) $ and $\mathbf{J}_L(\br)$, satisfy
 \begin{align}
-\nabla\cdot\mathbf{J}_T (\br) &=0\\
+\nabla\cdot\mathbf{J}_T (\br) &=0,\\
 \nabla\times \mathbf{J}_L (\br) &=0.
 \end{align}
 The continuity condition reads
 \begin{align}
 \nabla\cdot\mathbf{J}=-\pp{}{t}\rho.
 \end{align}
-Under Coulomb gauge ($ \nabla\cdot \mathbf{A}=0 $), the transverse and longitudinal currents can then be written as~\cite{Jackson1975} 
+Under the Coulomb gauge ($ \nabla\cdot \mathbf{A}=0 $), the transverse and longitudinal currents can then be written as~\cite{Jackson1975} 
 \begin{align}
 \mathbf{J}_T &= -\frac{c}{4\pi}(\nabla^2 -\frac{1}{c^2}\spp{}{t})\mathbf{A}\label{eq:Jt_cg}\\
 \mathbf{J}_L &= \frac{1}{4\pi} \pp{}{t}\nabla\phi .\label{eq:Jl_cg}
@@ -661,7 +661,7 @@ Under Coulomb gauge ($ \nabla\cdot \mathbf{A}=0 $), the transverse and longitudi
 Notice that, the longitudinal current equation (Eq.~\eqref{eq:Jl_cg}) will become purely local for an ideal dipole source, and can be ignored. Therefore, the longitudinal components may only become important for the case with a charged source. Below, we only consider the transverse eigenmode decompositions for our analysis of neutral atoms that can be treated as neutral point dipole sources.
 
 
-A complete set of eigenmodes in the presence of lossless, spatially inhomogeneous dielectric are defined according to the procedure of Glauber and Lewenstein~\cite{Glauber1991}.  We seek the eigenmodes $\eigenf(\mathbf{r})$, indexed by $\eta$, that satisfy the homogeneous wave equation in the absence of sources, i.e., \erf{eq:Maxwellwithsource2} for $\tensor{\boldsymbol{\alpha}} = 0$ or Eq.~\eqref{MaxwellHelmholtz0} with the eigen-wavenumber $k_0 \rightarrow k_\eta$.  To do so, one defines functions $\eigeng(\mbf{r}) \equiv n(\br) \eigenf(\mbf{r})$ that form a complete basis, as they are eigenfunctions of the Hermitian operator, $\mathcal{H}(k_0) = -\frac{1}{n(\br)} \nabla\times\nabla\times \frac{1}{n(\br)} + k_0^2$, according to $\mathcal{H}(k_0)  \eigeng(\mbf{r}) = \lambda_\eta \eigeng(\mbf{r})$. The eigenvalue, $\lambda_\eta= (\omega_0^2-\omega_\eta^2)/c^2$, determines the wavenumber for a given mode at frequency $\omega_\eta$.  We are interested specifically in the generalized transverse functions satisfying $\nabla\cdot [ n(\mathbf{r}) \eigeng(\br) ] = 0$ with eigenvalues $\lambda_n \neq 0$ \cite{Wubs2004}. These fall into two categories, guided ($\eta = \mu$) and unguided ($\eta = \nu$) modes, which together form a complete, orthonormal set for transverse vector functions,
+A complete set of eigenmodes in the presence of lossless, spatially inhomogeneous dielectric is defined according to the procedure of Glauber and Lewenstein~\cite{Glauber1991}.  We seek the eigenmodes $\eigenf(\mathbf{r})$, indexed by $\eta$, that satisfy the homogeneous wave equation in the absence of sources, i.e., \erf{eq:Maxwellwithsource2} for $\tensor{\boldsymbol{\alpha}} = 0$ or Eq.~\eqref{MaxwellHelmholtz0} with the eigen-wavenumber $k_0 \rightarrow k_\eta$.  To do so, one defines functions $\eigeng(\mbf{r}) \equiv n(\br) \eigenf(\mbf{r})$ that form a complete basis, as they are eigenfunctions of the Hermitian operator, $\mathcal{H}(k_0) = -\frac{1}{n(\br)} \nabla\times\nabla\times \frac{1}{n(\br)} + k_0^2$, according to $\mathcal{H}(k_0)  \eigeng(\mbf{r}) = \lambda_\eta \eigeng(\mbf{r})$. The eigenvalue, $\lambda_\eta= (\omega_0^2-\omega_\eta^2)/c^2$, determines the wavenumber for a given mode at frequency $\omega_\eta$.  We are interested specifically in the generalized transverse functions satisfying $\nabla\cdot [ n(\mathbf{r}) \eigeng(\br) ] = 0$ with eigenvalues $\lambda_n \neq 0$ \cite{Wubs2004}. These fall into two categories, guided ($\eta = \mu$) and unguided ($\eta = \nu$) modes, which together form a complete, orthonormal set for transverse vector functions,
 	\begin{align}
 	\int \mathrm{d}^3\br \, \eigeng^*(\mbf{r}) \cdot \eigengp(\mbf{r})  = \int \mathrm{d}^3\br \, n^2(\br) \eigenf^* (\br)\cdot  \eigenfp(\br) =\delta_{\eta, \eta'},\label{Eq::Orthogonality}\\
 	 \sum_\eta \mathbf{g}_\eta(\br) \mathbf{g}_\eta^*(\br') =  \sum_\mu \mathbf{g}_\mu(\br) \mathbf{g}_\mu^*(\br')  + \sum_\nu \mathbf{g}_\nu(\br) \mathbf{g}_\nu^*(\br')  = \tilde{\delta}^{(T)}(\br-\br') \unittens, \label{Eq::Completeness}
@@ -675,11 +675,11 @@ where the eigenvalues appear as $\omega_\eta^2 = c^2 k_\eta^2$.  The sum include
 \begin{align}
 \tensor{\mathbf{G}}{}^{(T)}(\br,\br'; \omega_0) = \tensor{\mathbf{G}}_g(\br,\br'; \omega_0)+\tensor{\mathbf{G}}_{rad}(\br,\br'; \omega_0),
 \end{align}
-where $ \tensor{\mathbf{G}}_g $ is the guided-mode--induced dyadic Green's function, and $ \tensor{\mathbf{G}}_{rad} $ the unguided-mode--induced dyadic Green's function.
+where $ \tensor{\mathbf{G}}_g $ is the guided-mode-induced dyadic Green's function, and $ \tensor{\mathbf{G}}_{rad} $ the unguided-mode-induced dyadic Green's function.
 
-For the dielectric waveguides we are interested in, the guided modes are $\mathbf{f}_\mu (\br) = \mathbf{u}_\mu (\br_\perp) e^{i\beta z}/\sqrt{2 \pi}$, with indices $\mu=\{j, \beta , p\}$ for the $j$th guided mode with propagation constant $\beta$ at frequency $\omega_\mu=\omega(\beta)$ and polarization $p$.  The transverse mode functions are normalized according to $\int d^2 \mbf{r}_\perp \, n^2(r_\perp)\mathbf{u}^*_\mu (\br_\perp) \cdot \mathbf{u}_{\mu'} (\br_\perp)\big|_{\beta = \beta'} = \delta_{j,j'}\delta_{p,p'}$ and have units $1/\sqrt{A}$ \cite{LeKien2014}. Similarly, one can define the transverse unguided modes in a similar way with indices $ \nu=\{\omega,\beta,m,p \} $, where $ m=0,\pm 1, \pm 2,\cdots $ are the mode indices, and $ p=\pm $ indicate the polarization patterns. The unguided modes, $ \mathbf{u}_\nu (\br_\perp) $, are normalized according to $ \int\mathrm{d}^2\br_\perp n^2(\br_\perp)\left[\mathbf{u}_{\nu}(r\!_\perp )\cdot\mathbf{u}_{\nu'}^*(r\!_\perp )\right]_{\beta=\beta',m=m'} =\delta(\omega-\omega')\delta_{pp'} $. 
+For the dielectric waveguides we are interested in, the guided modes are $\mathbf{f}_\mu (\br) = \mathbf{u}_\mu (\br_\perp) e^{i\beta z}/\sqrt{2 \pi}$, with indices $\mu=\{j, \beta , p\}$ for the $j$th guided mode with propagation constant $\beta$ at frequency $\omega_\mu=\omega(\beta)$ and polarization $p$.  The transverse mode functions are normalized according to $\int d^2 \mbf{r}_\perp \, n^2(r_\perp)\mathbf{u}^*_\mu (\br_\perp) \cdot \mathbf{u}_{\mu'} (\br_\perp)\big|_{\beta = \beta'} = \delta_{j,j'}\delta_{p,p'}$ and have the dimension of $1/\sqrt{A}$ \cite{LeKien2014}. Similarly, one can define the transverse unguided modes in a similar way with indices $ \nu=\{\omega,\beta,m,p \} $, where $ m=0,\pm 1, \pm 2,\cdots $ is the mode index, and $ p=\pm $ indicates the polarization patterns. The unguided modes, $ \mathbf{u}_\nu (\br_\perp) $, are normalized according to $ \int\mathrm{d}^2\br_\perp n^2(\br_\perp)\left[\mathbf{u}_{\nu}(r\!_\perp )\cdot\mathbf{u}_{\nu'}^*(r\!_\perp )\right]_{\beta=\beta',m=m'} =\delta(\omega-\omega')\delta_{pp'} $. 
 
-We consider nanophotonic waveguides that support only the lowest $ j=1 $ fundamental guided modes at the relevant frequency $\omega_0$, and hence we can drop the $ j $ index.  In this case there are four guided modes: two polarizations $p$, each with propagation constant $\beta(\omega_0) = \pm\beta_0$ corresponding to forward and backward propagation.  The guided-mode contribution to the dyadic Greens function is then 
+We consider nanophotonic waveguides that support only the lowest $ j=1 $ fundamental guided modes at the relevant frequency $\omega_0$, and hence we can drop the $ j $ index.  In this case there are four guided modes: two polarizations $p$, each with propagation constant $\beta(\omega_0) = \pm\beta_0$ corresponding to forward and backward propagation.  The guided mode contribution to the dyadic Greens function is then 
 	\begin{equation} \label{Eq::GreensEigenmodes}
 		\tensor{\mathbf{G}}\!_g(\br,\br'; \omega_0) \!=\!\! \int_{\!-\infty}^\infty\!\!\!\! \mathrm{d} \beta \!\sum_{p}\! 
 \frac{-2\omega_0^2}{\omega_0^2\!\!-\!\omega^2(\beta)} \mathbf{u}_\mu (\br\!_\perp)\mathbf{u}^*_\mu 
@@ -691,10 +691,10 @@ and the unguided mode contribution part of the dyadic Green's function can be gi
 \frac{-2\omega_0^2}{\omega_0^2\!\!-\!\omega^2(\beta)} \mathbf{u}_\nu (\br\!_\perp)\mathbf{u}^*_\nu 
 (\br_{\!\perp}^\prime) e^{i\beta(\!z\!-\!z'\!)},
 \end{align}
-where $ \omega(\beta)$ is the frequency of the modes for a given $\beta$. 
-Based on the division of the guided and unguided modes we have discussed in Sec.~\ref{sec:eigenmodesofwaveguides}, the guided modes only exist when $ n_2k_0<|\beta|<n_1k_0 $ with the sign of $ \beta $ indicating the direction of propagation, and the unguided modes exist when $ -n_2k_0<\beta<n_2k_0 $. Therefore, we can transfer the integration over $ \beta $ into a contour integral around discrete poles within regions of $ (-n_1k_0,-n_2k_0) $ and $ (n_2k_0,n_1k_0) $ for the guided-mode Green's function, and a integration from $ -n_2k_0 $ to $ n_2k_0 $ for unguided-mode Green's function using a similar trick discussed in Appendix~\ref{sec:boundrad} and illustrated in Fig.~\ref{fig:integralpaths} for a lossless waveguide. 
+where $ \omega(\beta)$ is the frequency of the mode for a given $\beta$. 
+Based on the division of the guided and unguided modes we have discussed in Sec.~\ref{sec:eigenmodesofwaveguides}, the guided modes only exist when $ n_2k_0<|\beta|<n_1k_0 $ with the sign of $ \beta $ indicating the direction of propagation, and the unguided modes exist when $ -n_2k_0<\beta<n_2k_0 $. Therefore, we can transfer the integration over $ \beta $ into a contour integral around discrete poles within regions of $ (-n_1k_0,-n_2k_0) $ and $ (n_2k_0,n_1k_0) $ for the guided-mode Green's function, and an integration from $ -n_2k_0 $ to $ n_2k_0 $ for the unguided-mode Green's function using a similar trick discussed in Appendix~\ref{sec:boundrad} and illustrated in Fig.~\ref{fig:integralpaths} for a lossless waveguide. 
 
-We first focus here on the guided-mode contribution to the Green's function. 
+We first focus here on the guided mode contribution to the Green's function. 
 We define $v_g= \vert d\omega/d\beta \vert_{\beta=\beta_0}$ as the group velocity at $\omega_0$ so that the dispersion expansion of $ \omega_\beta $ around $ \omega_0 $ yields 
 \begin{align}
 \omega(\beta) &=\omega_0 + \dd{\omega_\beta}{\beta}(\beta-b\beta_0) +\cdots = \omega_0 + bv_g(\beta-b\beta_0) +\cdots\\
@@ -713,7 +713,7 @@ the complex plane. The result for $z \neq z'$ is \cite{MangaRao2007Single}
 	\end{align}
 where $\Theta \big( b(z-z') \big)$ is a Heaviside function enforcing causality for the forward- and backward-scattered fields. In the second line, we have suppressed the label $\beta_0$ as it is implicit in the definition of the guided modes at frequency $\omega_0$. 
 
-Radiative properties of a scatterer (the decay rate and energy level shift) are determined by evaluation of the dyadic Green's function at the source point $\mbf{r} = \mbf{r}'$ \cite{Fussell2005Decay}.  However, for $z=z'$ we cannot close the contour. Instead, we expand the resonant denominator in \erf{Eq::GreensEigenmodes} with the poles moved to yield the retarded (causal) response,
+Radiative properties of a scatterer (the decay rate and energy level shift) are determined by evaluating the dyadic Green's function at the source point $\mbf{r} = \mbf{r}'$ \cite{Fussell2005Decay}.  However, for $z=z'$ we cannot close the contour. Instead, we expand the resonant denominator in \erf{Eq::GreensEigenmodes} with the poles moved to yield the retarded (causal) response,
 \begin{equation}
 \frac{1}{(\omega_0+i\epsilon)^2-\omega^2(\beta)}=\frac{1}{2 \omega(\beta)}\left[ \frac{1}{\omega_0+ i 
 \epsilon - \omega(\beta)} - \frac{1}{\omega_0+ i \epsilon + \omega(\beta)} \right],
@@ -729,7 +729,7 @@ Only the positive-frequency component contributes to the $\delta$-function, and 
 		\tensor{\mathbf{G}}^{(+)}_g(\br',\br'; \omega_0=\omega_{eg}) = i\pi \frac{\omega_{eg}}{v_g } \sum_{b, p} 
 		\mathbf{u}_\mu (\br_{\!\perp}^\prime)\mathbf{u}^*_\mu (\br_{\!\perp}^\prime),
 	\end{equation}
-where $\omega_{eg}$ is resonance frequency of the atomic scatterer.  The energy level shift of the scatterer due to its proximity to the dielectric is found from the real part of the Green's function at $\br = \br'$. 
+where $\omega_{eg}$ is the resonance frequency of the atomic scatterer.  The energy level shift of the scatterer due to its proximity to the dielectric is found from the real part of the Green's function at $\br = \br'$. 
 To find the total modified spontaneous emission rate and energy level shift one must include the unguided radiation modes \cite{LeKien2005a} or employ other representations of the Green's function \cite{Klimov2004}.  
 
 Applying a similar trick, we provide--without details of proofs--the radiation mode contribution to the positive-frequency Green's function tensor to be~\cite{LeKien2005a}
@@ -740,16 +740,16 @@ for $ z\neq z' $; and for $ \br=\br' $, the imaginary part of the Green's functi
 \begin{align}
 \im\left[\GFT_{rad}^{(+)}(\br',\br';\omega_0=\omega_{eg})\right] &= \pi \omega_{eg}  \int_{-n_2k_0}^{n_2k_0}\!\!\!\mathrm{d}\beta\sum_{m,p} \mathbf{u}_\nu (\br_{\!\perp}^\prime)\mathbf{u}^*_\nu (\br_{\!\perp}^\prime).
 \end{align} 
-With these expressions of Green's function components, we can calculate the modified spontaneous emission rates of an optical dipole next to a nanofiber (will discussion later in this chapter). Our results recover the spontaneous emission rate calculations presented in Ref.~\cite{LeKien2005a} based on the Heisenberg-Langevin equations of quantum dynamics, for example. 
+With these expressions of Green's function components, we can calculate the modified spontaneous emission rates of an optical dipole next to a nanofiber (which will be discussed later in this chapter). Our results recover the spontaneous emission rate calculations presented in Ref.~\cite{LeKien2005a} based on the Heisenberg-Langevin equations of quantum dynamics, for example. 
 
-The eigenmode decomposition approach of solving dyadic Green's function works really well if the eigenmodes of the waveguide are known, especially for the guided mode contribution part. The guided modes of a waveguide can either be solved analytically or numerically, which provides an efficient and accurate method of decomposing the dyadic Green's function into the guided-mode contribution part, which is most relevant to the QND measurement study we are going to discussion in the next chapter. However, since there are infinite number of unguided modes, we usually have to cut off the sum of all unguided modes to a finite set as an approximation, which makes the calculation of the unguided-mode--induced dyadic Green's function not exact--especially when the detection position is far from the surface of the waveguide. 
+The eigenmode decomposition approach of solving dyadic Green's function works really well if the eigenmodes of the waveguide are known, especially for the guided mode contribution part. The guided modes of a waveguide can either be solved analytically or numerically, which provides an efficient and accurate method of decomposing the dyadic Green's function into the guided mode contribution part, which is most relevant to the QND measurement study we are going to discuss in the next chapter. However, since there is an infinite number of unguided modes, we usually have to cut off the sum of all unguided modes to a finite set as an approximation, which makes the calculation of the unguided-mode-induced dyadic Green's function not exact--especially when the detection position is far from the surface of the waveguide. 
 
 We verified the equivalence of the two methods by numerically comparing the Green's tensors and also the derived spontaneous emission rates using the two methods for the nanofiber case first, and then partially for the \SWG case. We provide some of the details and data files in Ref.~\cite{Qi2018i2000s/simnanophotonics}. 
 
-Combining these two methods also makes the decomposition of the dyadic Green's function flexible and accurate. For instance, some numerical techniques of calculating radiation problems (like BEM) diverge at the poles due to guided modes for a lossless medium, and one has to artificially add some loss to the medium to transfer the guided-mode--induced Green's function calculation to be an integral around the poles. Given the limited width and finite data points sampled around the poles, the radiation problem solver cannot simultaneously guarantee the precision and efficiency for the guided mode contribution. In this case, using the eigenmode decomposition approach to calculate the guided mode part of the dyadic Green's function while using the radiation problem solver to calculate the unguided mode contribution to the dyadic Green's function might be a good solution in practice. For some other numerical solvers for the radiation problem, like the FDTD method, they can only calculate the total dyadic Green's function. To extra the unguided mode contribution, one can subtract the total dyadic Green's function by the guided mode contribution computed using the eigenmode decomposition approach if the guided modes are known. 
+Combining these two methods also makes the decomposition of the dyadic Green's function flexible and accurate. For instance, some numerical techniques of calculating radiation problems (like BEM) diverge at the poles due to guided modes for a lossless medium, and one has to artificially add some loss to the medium to transfer the guided-mode-induced Green's function calculation to be an integral around the poles. Given the limited width and finite data points sampled around the poles, the radiation problem solver cannot simultaneously guarantee the precision and efficiency for the guided mode contribution. In this case, using the eigenmode decomposition approach to calculate the guided mode part of the dyadic Green's function while using the radiation problem solver to calculate the unguided mode contribution to the dyadic Green's function might be a good solution in practice. For some other numerical solvers for the radiation problem, like the FDTD method, they can only calculate the total dyadic Green's function. To extract the unguided mode contribution, one can subtract the total dyadic Green's function by the guided mode contribution computed using the eigenmode decomposition approach if the guided modes are known. 
 
 
-\includefig{../media/Figs/GFTz0x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=0 $ plane. The calculation follows Appendix~\ref{sec:boundrad}. A dipole source (marked as $ \times $) is placed at $\br'=(r^\prime_\perp=2a,\phi'=0,z'=0) $ position or $ r'_\perp=2a $ from the fiber axis, where $a=225 $ nm is the radius of the nanofiber. The position of the observer is chosen to be in the $ z=0\lambda $ plane. Wavelength is set to be $ \lambda=852 $ nm, which is the D2 line of cesium atoms. All values are normalized to the vacuum Green's function, $ G_0$, by Eq.~\eqref{eq:G0}. The value labeled for each subplot is the max value of the corresponding Green's function tensor element among all data points in the transverse plane excluding the dipole position. The radiation modes calculated up to $ |m|=8 $.}
+\includefig{../media/Figs/GFTz0x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=0 $ plane. The calculation follows Appendix~\ref{sec:boundrad}. A dipole source (marked as $ \times $) is placed at $\br'=(r^\prime_\perp=2a,\phi'=0,z'=0) $ position or $ r'_\perp=2a $ from the fiber axis, where $a=225 $ nm is the radius of the nanofiber. The position of the observer is chosen to be in the $ z=0\lambda $ plane \nd{Is it $0$ or $\lambda$?}. The wavelength is set to be $ \lambda=852 $ nm, which is the D2 line of cesium atoms. All values are normalized to the vacuum Green's function, $ G_0$, by Eq.~\eqref{eq:G0}. The value labeled for each subplot is the maximum value of the corresponding Green's function tensor element among all data points in the transverse plane excluding the dipole position. The radiation modes are calculated up to $ |m|=8 $.}
 {$\mathrm{abs}{\left[ G_{ij}(\mathbf{r},\mathbf{r}')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=0\lambda$.}{!tbp}
 
 \includefig{../media/Figs/GFTz1x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=\lambda $ plane. Same as Fig.~\ref{../media/Figs/GFTz0x2a} but observed in the $ z=\lambda $ plane.}
@@ -767,25 +767,25 @@ Combining these two methods also makes the decomposition of the dyadic Green's f
 \includefig{../media/Figs/GFTz100x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=100\lambda $ plane. Same as Fig.~\ref{../media/Figs/GFTz0x2a} but observed in the $ z=100\lambda $ plane. At such a far distance, the patterns are very close to the guided mode contribution components to be plotted in the next figure.}
 {$\mathrm{abs}{\left[ G_{ij}(\mathbf{r},\mathbf{r}')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=100\lambda$.}{!tbp}
 
-\includefig{../media/Figs/GFTgz0x2a}{0.95\linewidth}{The absolute value of the \emph{guided-mode--induced} dyadic Green's function's elements $ G^g_{ij}(\br,\br') $ observed in the transverse plane. Settings are the same as Fig.~\ref{../media/Figs/GFTz0x2a} but for the guided mode contribution part only. Absolute values of the elements are the same for all $ z $ slices. For the purpose of comparison, the Green's function elements are plotted with only the forwarding propagation part.}
+\includefig{../media/Figs/GFTgz0x2a}{0.95\linewidth}{The absolute value of the \emph{guided-mode-induced} dyadic Green's function's elements $ G^g_{ij}(\br,\br') $ observed in the transverse plane. Settings are the same as Fig.~\ref{../media/Figs/GFTz0x2a} but for the guided mode contribution part only. Absolute values of the elements are the same for all $ z $ slices. For the purpose of comparison, the Green's function elements are plotted with only the forwarding propagation part.}
 {$\mathrm{abs}{\left[ G_{ij}^g(\mathbf{r},\mathbf{r}')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $.}{!tbp}
 
-Now, we apply the radiation problem solver to calculate the elements of the dyadic Green's function of an atom trapped near a nanofiber at $ r'\!_\perp=2a $ from the fiber axis, and see if the radiation mode contributions vanish after a long propagation distance. The contour plots of the absolute values of the Green's function tensor elements are shown in Figs.~\ref{../media/Figs/GFTz0x2a} through~\ref{../media/Figs/GFTz100x2a} for slices at $ z=0,1,2,5,10, $ and $ 100\lambda $ with a dipole source fixed at $ r'\!_\perp=2a $ position on the $ x $-axis. The maximum values of each tensor element are also notated in the plots normalized to the imaginary part of the scalar Green's function in vacuum ($ G_0 $ defined in Eq.~\eqref{eq:G0}, which indicates how the radiation mode contributions dissipate along the propagation direction. Note that, since the Green's function diverges at the source position, to find the maximum values shown in the plots we have excluded the source position. We see the maximum value oscillates a little bit in the near distance, due to the interference between the free-dipole radiation and the reflected field from the fiber interface, and then decays with the remaining amplitude inversely proportional to the propagation distance as the reflected field dies out in a long distance, which only leaves over the free-dipole radiation and the guided mode contributions. To demonstrate the pattern left in a distant $ z $ slice is mainly the guided mode contribution after a long propagation, we plot the guided mode contribution in Fig.~\ref{../media/Figs/GFTgz0x2a}, which has a constant amplitude over $ z $ slices. At $ z=10\lambda $ distance (Fig.~\ref{../media/Figs/GFTz10x2a}), the total Green's function tensor has already been very close to the bare forward-propagating guided-mode Green's function tensor. At $ z=100\lambda $ (Fig.~\ref{../media/Figs/GFTz100x2a}), the radiation modes have essentially completely dissipate into free space. Considering the photon detectors to measure the transported signal are usually at least centimeters away from the nanofiber region, we can safely ignore the influence of the unguided field to the measurement results. 
+Now, we apply the radiation problem solver to calculate the elements of the dyadic Green's function of an atom trapped near a nanofiber at $ r'\!_\perp=2a $ from the fiber axis, and see if the radiation mode contributions vanish after a long propagation distance. The contour plots of the absolute values of the Green's function tensor elements are shown in Figs.~\ref{../media/Figs/GFTz0x2a} through~\ref{../media/Figs/GFTz100x2a} for slices at $ z=0,1,2,5,10, $ and $ 100\lambda $ with a dipole source fixed at $ r'\!_\perp=2a $ position on the $ x $-axis. The maximum values of each tensor element are also notated in the plots normalized to the imaginary part of the scalar Green's function in the vacuum ($ G_0 $ defined in Eq.~\eqref{eq:G0}, which indicates how the radiation mode contributions dissipate along the propagation direction. Note that, since the Green's function diverges at the source position, to find the maximum values shown in the plots we have excluded the source position. We see the maximum value oscillates a little bit in the near distance, due to the interference between the free-dipole radiation and the reflected field from the fiber interface, and then decays with the remaining amplitude inversely proportional to the propagation distance as the reflected field dies out in a long distance, which only leaves over the free-dipole radiation and the guided mode contributions. \nd{There are two verbs: To demonstrate the pattern left in a distant $ z $ slice is mainly the guided mode contribution after a long propagation}, we plot the guided mode contribution in Fig.~\ref{../media/Figs/GFTgz0x2a}, which has a constant amplitude over the $ z $ slices. At $ z=10\lambda $ (Fig.~\ref{../media/Figs/GFTz10x2a}), the total Green's function tensor has already been very close to the bare forward-propagating guided-mode Green's function tensor. At $ z=100\lambda $ (Fig.~\ref{../media/Figs/GFTz100x2a}), the radiation modes have essentially completely dissipate into free space. Considering the photon detectors to measure the transported signal at least centimeters away from the nanofiber region, we can safely ignore the influence of the unguided field to the measurement results. 
 \qxd{Double check all parameters used in the simulations. I thought the radiation modes have been cut up to $ |m|=8 $ but not entirely sure.}
 
-In sum, given the two approaches, we can compute the dyadic Green's function for arbitrary nanophotonic waveguides and decompose the total Green's function into its guided and unguided mode components. The strategies of performing this computing and decomposition only depends on the availability of software and computer resources, and one can combine the two approaches for fast and accurate calculations. We also show that the radiation modes doesn't propagate long enough to affect the measurement signal. In the next section, we will assume the dyadic Green's function is known and study the dispersive response theory of the guided light in a semi-classical scenario.
+In sum, given the two approaches, we can compute the dyadic Green's function for arbitrary nanophotonic waveguides and decompose the total Green's function into its guided and unguided mode components. The strategies of the computation and the decomposition only depend on the availability of software and computer resources, and one can combine the two approaches for fast and accurate calculations. We also show that the radiation modes does not propagate long enough to affect the measurement signal. In the next section, we will assume the dyadic Green's function is known and study the dispersive response theory of the guided light in a semi-classical scenario.
 
 
 \section{Phase shift and polarizability transformation}
-Now, we can formulate the theory of light response due to the presence of a waveguide next to atoms. We assume the atoms interact with the light equally for all polarization state of the light, that is to treat the atomic polarizability as a scalar in this section, and study the influence of a nanophotonic waveguide, as an example, by comparing the light response to the free-space case. A generalized light response theory including a tensor polarizability will be drawn in Chapter~\ref{chap:birefringence}. 
+Now, we can formulate the theory of light response due to the presence of a waveguide next to atoms. We assume that the atoms interact with the light equally for all polarization states of the light, that is, to treat the atomic polarizability as a scalar in this section, and study the influence of a nanophotonic waveguide, as an example, by comparing the light response to the free-space case. A generalized light response theory including a tensor polarizability will be drawn in Chapter~\ref{chap:birefringence}. 
 
-We start with the electric field defined in Eq.~\eqref{eq:EGFTnatoms}, and rewrite the output field by only considering the guided-mode dyadic Green's function responding from one atom source placed at $ \br' $. The output field
+We start with the electric field defined in Eq.~\eqref{eq:EGFTnatoms}, and rewrite the output field by only considering the guided-mode dyadic Green's function responding from a single atom source placed at $ \br' $. \nd{Incomplete sentence: The output field
 \begin{align}
 \mathbf{E}(\br) & = \mathbf{E}_0(\br) +\alpha \GFT_g(\br,\br')\cdot\mathbf{E}_0(\br'),
 \end{align}
-where $ \mathbf{E}_0(\br) $ is the input field propagating in a bare waveguide. We have also set the polarizability of the atom as a scalar, $ \alpha $. 
+where $ \mathbf{E}_0(\br) $ is the input field propagating in a bare waveguide.} We have also set the polarizability of the atom as a scalar, $ \alpha $. 
 
-As a concrete example, we can consider the case that the atom is placed at $ z'=0 $ and $ \phi'=0 $ (along the $ H $ axis), and the input field is the right circularly polarized $ p=+,\,b=+ $ \HE forward propagating mode of a nanofiber that
+As a concrete example, we can consider the case that the atom is placed at $ z'=0 $ and $ \phi'=0 $ (along the $ H $ axis), and the input field is the right circularly polarized $ p=+,\,b=+ $ \HE\, forward propagating mode of a nanofiber
 \begin{align}
 \mathbf{E}_0(\br) &= E_0n_{e\!f\!f} \mathbf{u}_{p=+,b=+} (\br) = E_0n_{e\!f\!f} \mathbf{u}_{++} (r\!_\perp)e^{i\phi+i\beta_0 z}. 
 \end{align}
@@ -801,7 +801,7 @@ The output field in the forward direction at $ z\ge 0 $ can be written as
 where the projection coefficients are 
 \begin{align}
 C_{pb} &=  \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}_{p,b}}^*(\mathbf{r},z)\cdot \GFT_g(\br,\br') \!\cdot\! \mathbf{u}_{++}(\mathbf{r}^\prime,z')\\
-&=  \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}_{p,b}}^*(\mathbf{r}\!_\perp)\cdot \GFT_g(\br,\br') \!\cdot\! \mathbf{u}_{++}(\mathbf{r}^\prime\!_\perp)
+&=  \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}_{p,b}}^*(\mathbf{r}\!_\perp)\cdot \GFT_g(\br,\br') \!\cdot\! \mathbf{u}_{++}(\mathbf{r}^\prime\!_\perp).
 %&=  \alpha \!\int\! \mathrm{d}^2r\!_\perp n^2_{e\!f\!f} {\mathbf{u}_{p,b}}^{\!\!*}(r\!_\perp)\!\cdot\! \GFT_g(\br,\br') \!\cdot\! \mathbf{u}_{++}(r^\prime\!\!_\perp)e^{i\beta_0(z'-bz)+i(\phi'-p\phi)}.
 \end{align}
 Using the transverse mode decomposition of the dyadic Green's function, Eq.~\ref{Eq::GreensGuided_general}, these coefficients become
@@ -823,20 +823,20 @@ C_{-+}=i2\pi n_gk_0\alpha  {\mathbf{u}^1_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1
 \end{align}
 Similarly, the backwarding $ p=+ $ and $ p=- $ modes have amplitudes 
 \begin{align}
-C_{+-} &=i2\pi n_gk_0\alpha  {\mathbf{u}^{-1}_1}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'}\\
+C_{+-} &=i2\pi n_gk_0\alpha  {\mathbf{u}^{-1}_1}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'},\\
 C_{--} &=i2\pi n_gk_0\alpha {\mathbf{u}^{-1}_{-1}}^*(r'_{\!\perp})\cdot \mathbf{u}_1^1(r'_{\!\perp})e^{i2\beta_0 z'+i2\phi'}.
 \end{align}
 
-The output $ p=+ $ \HE mode component in presence of the atom in the forward direction is then given by
+The output $ p=+ $ \HE\, mode component in presence of the atom in the forward direction is then given by
 \begin{align}
 \mathbf{E}_+(\br) &= (1+C_{++})E_0n_{e\!f\!f}\mathbf{u}_{++} (\br)\\
 &=\left[1 +i2\pi n_gk_0\alpha  | \mathbf{u}_{++}(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{++} (\br)\\
 &\approx \exp\left[i2\pi n_gk_0\alpha  | \mathbf{u}_{++}(r'_{\!\perp})|^2 \right] E_0n_{e\!f\!f}\mathbf{u}_{++} (\br)\\
 &= te^{i\delta\phi}E_0n_{e\!f\!f}\mathbf{u}_{++} (\br), 
 \end{align}
-where the amplitude change of the mode's amplitude is 
+where the change in amplitude is 
 \begin{align}
-t=\exp\left[-\im[C_{++}]\right]=\exp\left[ -2\pi n_g k_0 \Im[\alpha]  | \mathbf{u}_{++}(r'_{\!\perp})|^2 \right]
+t=\exp\left[-\im[C_{++}]\right]=\exp\left[ -2\pi n_g k_0 \Im[\alpha]  | \mathbf{u}_{++}(r'_{\!\perp})|^2 \right],
 \end{align}
 and the phase shift is
 \begin{align}
@@ -847,34 +847,34 @@ and the phase shift is
 \end{align}
 where the symbols $ \im[\cdot] $ and $ \re[\cdot] $ indicate the imaginary and real parts of the variable inside; we have also defined an effective mode area at the atom position by $ A_{e\!f\!f}^{\rm nanofiber}=1/\left[ n_g| \mathbf{u}_{++}(r'_{\!\perp})|^2\right] $. 
 
-Similar expressions of the output field $ \mathbf{E}_{-}(\br) $, phase shift and amplitude attenuation for the field coupling into the forward propagating $ p=- $ \HE mode can be derived.  
+Similar expressions of the output field $ \mathbf{E}_{-}(\br) $, phase shift and amplitude attenuation for the field coupling into the forward propagating $ p=- $ \HE\, mode can be derived.  
 %\begin{align}
 %\mathbf{E}_{-}(\br) &=  i2\pi k_0 n_g\alpha  \mathbf{u}^*_{-1}(r'_{\!\perp})\cdot \mathbf{u}_{-+}(r'_{\!\perp})e^{i2\phi'}E_0n_{e\!f\!f}\mathbf{u}_{-+}(\br).
 %\end{align}
-$ \mathbf{E}_{+}(\br) $ and $\mathbf{E}_{-}(\br)$ defines the transformation of polarization of the forward-propagating guided light. 
+$ \mathbf{E}_{+}(\br) $ and $\mathbf{E}_{-}(\br)$ define the transformation of polarization of the forward-propagating guided light. 
 
-Although we have taken the example of circularly polarized light as the input, the results above can be generalized to linearly polarized input as well. We only need to change the polarization labels to the corresponding linear polarization states for this generalization. Below, we will first estimate the enhancement of phase shifts of one guied mode, and then take a look at the linear-polarization-input case and calculate the polarization transformation relations.  
+Although we have taken the example of a circularly polarized light as the input, the results above can be generalized to a linearly polarized input as well; we only need to change the polarization labels to the corresponding linear polarization states. Below, we will first estimate the enhancement of phase shifts of one guided mode, and then take a look at the linear-polarization-input case and calculate the polarization transformation relations.  
 
 
 
 \bigskip
 \textbf{Comparison to the vacuum case:}
 
-To further compare our results with the free-space atom-light interaction case, we would like to rewrite our equations above following the commonly used quantities and conventions~\cite{Baragiola2014Open}. Following these analog of conventions (see summary in Appendix~\ref{chap:summaryofatomicphysicsformulas}), we define the polarizability and the atomic decay rates due to the coupling to the guided modes of a nanofiber, $ \Gamma^{1D}_{\rm nanofiber} $, in the dispersive regime as below 
+To further compare our results with the free-space atom-light interaction case, we would like to rewrite our equations above following the commonly used quantities and conventions~\cite{Baragiola2014Open}. Following these conventions (see summary in Appendix~\ref{chap:summaryofatomicphysicsformulas}), we define the polarizability and the atomic decay rates due to the coupling to the guided modes of a nanofiber, $ \Gamma^{1D}_{\rm nanofiber} $, in the dispersive regime as below 
 \begin{align}
 \alpha &=-\frac{|d_{eg}|^2}{\hbar \Delta}, \,\, (\Delta=\omega-\omega_{eg}=\omega-\omega_0)\\
 \Gamma^{1D}_{\rm nanofiber} &= \Gamma_g=2\pi \frac{|d_{eg}|^2}{\hbar A_{e\!f\!f}^{\rm nanofiber}}\left(\frac{\omega_0}{c} \right),
 \end{align}
 where $ d_{eg} $ is the dipole moment of the atom, and we have ignored the imaginary part of the atomic polarizability in the dispersive regime~\cite{Deutsch2010a}.
-We recall the natural linewidth of the atom is (see Eq.~\eqref{eq:naturallinewidth})
+We recall the natural linewidth of the atom (see Eq.~\eqref{eq:naturallinewidth})
 \begin{align}
 \Gamma_0 &= \frac{4}{3} \left( \frac{\omega_0}{c}\right)^3 \frac{|d_{eg}|^2}{\hbar}
 \end{align}
 and the resonant cross section of the atom 
 \begin{align}
-\sigma_0 &= \frac{3\lambda^2}{2\pi}=\frac{6\pi}{k_0^2}=\frac{6\pi c^2}{\omega_0^2},
+\sigma_0 &= \frac{3\lambda^2}{2\pi}=\frac{6\pi}{k_0^2}=\frac{6\pi c^2}{\omega_0^2}.
 \end{align}
-we can then rewrite the modified decay rate due to the coupling to the guided nanofiber modes by
+We can then rewrite the modified decay rate due to the coupling to the guided nanofiber modes by
 \begin{align}
 \Gamma^{1D}_{\rm nanofiber} &= \frac{1}{4} \frac{\sigma_0}{A_{e\!f\!f}^{\rm nanofiber}} \Gamma_0.
 \end{align}
@@ -884,16 +884,16 @@ Plugging the equations above into Eq.~\eqref{eq:deltaphi_alphaA}, we find that
 \delta\phi^{\rm nanofiber} &= -2\pi \frac{|d_{eg}|^2}{\hbar \Delta} \frac{\omega_0}{cA_{e\!f\!f}^{\rm nanofiber}}=-\frac{\Gamma^{1\!D}_{\rm nanofiber}}{\Delta}.
 \end{align}
 
-Now, we consider a trapped atom probed by a Gaussian beam of the TEM$_{00}$ mode (see Appendix~\ref{chap:paraxialapproximation}). We assume the beam is focused with a typical waist radius $ w_0=10 \,\mu$m so that the atom-light coupling is very strong. Based on the well known results (see Eqs.~\eqref{Gamma1DGammavac_appendix} and~\eqref{phaseshiftGamma1D}), we have similar equations for the modified decay rate of the atom and the phase shift for the Gaussian beam case:
+Now, we consider a trapped atom probed by a Gaussian beam of the TEM$_{00}$ mode (see Appendix~\ref{chap:paraxialapproximation}). We assume that the beam is focused with a typical waist radius $ w_0=10 \,\mu$m so that the atom-light coupling is very strong. Based on the well known results (see Eqs.~\eqref{Gamma1DGammavac_appendix} and~\eqref{phaseshiftGamma1D}), we have similar equations for the modified decay rate of the atom and the phase shift for the Gaussian beam case:
 \begin{align}
 \Gamma^{1D}_{\rm GaussianBeam} &= \frac{1}{4} \frac{\sigma_0}{A_{e\!f\!f}^{\rm GaussianBeam}}\Gamma_0,\\
 \delta\phi &= -\frac{\Gamma^{1\!D}_{\rm GaussianBeam}}{\Delta},
 \end{align}
 where the effective mode area at the atom position for the Gaussian beam, $ A_{e\!f\!f}^{\rm GaussianBeam} $, is given by
 \begin{align}
-A_{e\!f\!f}^{\rm GaussianBeam} = \frac{A}{|\mathbf{u}_{00}(r'_\perp)|^2}
+A_{e\!f\!f}^{\rm GaussianBeam} = \frac{A}{|\mathbf{u}_{00}(r'_\perp)|^2},
 \end{align}
-with $ A=\frac{\pi w_0^2}{2} $ being the mode area of the Gaussian beam. 
+$ A=\frac{\pi w_0^2}{2} $ being the mode area of the Gaussian beam. 
 
 
 Hence, the relative atom-light coupling strength enhancement indicated by the mode phase shift due to the presence of a nanofiber versus the Gaussian laser beam can be given by
@@ -907,10 +907,10 @@ In the last step, we have used the fact that the mode of the Gaussian beam reach
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.95\linewidth]{../media/Figs/RelEnhancement}}
-\caption[Relative atom-light coupling enhancement by using an optical nanofiber compared to a typical Gaussian beam trap.]{Relative enhancement of the atom-light coupling due to the use of a nanofiber compared to a typical Gaussian beam trap system. For the Gaussian beam system, an atom is placed at the center of the beam waist and the beam waist radius is $ 10\,\mu $m. Plotted are the relative phase shift or the modified decay rate as a function of the trapping radial position of the atom in the nanofiber system, where the atom is trapped along the $ H $ direction or the $ x $ axis. The $ H $ mode (red, top), $ V $ mode (blue, bottom) and the circular modes (green, middle) are plotted in the main figure. Inset indicates the coordinate of the atom position relative to the fiber (circle). The probe wavelength is $ \lambda=895 $ nm for the comparison.}\label{fig:relenhancement}
+\caption[Relative atom-light coupling enhancement by using an optical nanofiber compared to a typical Gaussian beam trap.]{Relative enhancement of the atom-light coupling due to the use of a nanofiber compared to a typical Gaussian beam trap system. For the Gaussian beam system, an atom is placed at the center of the beam waist and the beam waist radius is $ 10\,\mu $m. Plotted are the relative phase shift or the modified decay rate as a function of the trapping radial position of the atom in the nanofiber system, where the atom is trapped along the $ H $ direction or the $ x $ axis. The $ H $ mode (red, top), $ V $ mode (blue, bottom) and the circular modes (green, middle) are plotted in the main figure. Inset indicates the coordinate of the atom position relative to the fiber (circle). The probe wavelength is $ \lambda=895 $ nm for comparison.}\label{fig:relenhancement}
 \end{figure}
 
-Figure~\ref{fig:relenhancement} plots the relative enhancement of the atom-light coupling due to the use of an optical nanofiber ($ a=225 $ nm) as a function of the atom's radial distance to the fiber axis. Different polarization states of the input light is studied in the figure while the atom is trapped along the $ x $ or $ H $ axis. The enhancement value is normalized to the case that the atom is probed at the center point of a Gaussian beam's waist with a typical waist radius $ w_0=10\,\mu $m. As shown, the nanofiber enhances the atom-light coupling by $ 30 $---$ 100 $ folds if the atom is trapped at $ r'_\perp=2a $ position, depending on the polarization state of the input light. If the atom is moved closer to the fiber surface, the enhancement can be further increased up to a few hundred folds. Note that both $ R $ and $ L $ circular modes of the nanofiber generate the same atom-light coupling strength in this rough model.
+Figure~\ref{fig:relenhancement} plots the relative enhancement of the atom-light coupling due to the use of an optical nanofiber ($ a=225 $ nm) as a function of the atom's radial distance to the fiber axis. Different polarization states of the input light is studied in the figure while the atom is trapped along the $ x $ or $ H $ axis. The enhancement value is normalized to the case that the atom is probed at the center point of a Gaussian beam's waist with a typical waist radius $ w_0=10\,\mu $m. As shown, the nanofiber enhances the atom-light coupling by $ 30 $---$ 100 $ folds if the atom is trapped at $ r'_\perp=2a $, depending on the polarization state of the input light. If the atom is moved closer to the fiber surface, the enhancement can be further increased up to a few hundred folds. Note that both $ R $ and $ L $ circular modes of the nanofiber generate the same atom-light coupling strength in this rough model.
 
 Similar result can be drawn to the \SWG case, of course. 
 
@@ -921,43 +921,45 @@ Similar result can be drawn to the \SWG case, of course.
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=12cm]{../media/Figs/BirefringenceMeasurement}}
-\caption[Diagram of polarization rotation measurement with an optical nanofiber.]{Diagram of polarization rotation measurement with an optical nanofiber (brown). The input light is initially polarized along the diagonal direction on the $ xy $ plane. The output polarization state is measured with photon flux differential counting between the $ H $ and $ V $ linear polarization states. The rotated angle on the \Poincare sphere indicates a birefringence rotation of the guided light.}\label{fig:birefringencenanofibersetup}
+\caption[Diagram depicting the polarization rotation measurement with an optical nanofiber.]{Diagram of polarization rotation measurement with an optical nanofiber (brown). The input light is initially polarized along the diagonal direction on the $ xy $ plane. The output polarization state is measured with photon flux differential counting \nd{the differential counting of the photon flux?} between the $ H $ and $ V $ linear polarization states. The rotated angle on the \Poincare sphere indicates a birefringence rotation of the guided light.}\label{fig:birefringencenanofibersetup}
 \end{figure}
 
-If we launch two equal-power yet orthogonal quasi-linear modes, $H$ and $V$, and let the atoms sit along the major axis of the H mode or the $ x $ axis, the atoms will feel both $ H $ and $ V $ modes in different strengths. Equivalently, we can also launch a linearly polarized light bisect the angle between the $ x $ and $ y $ axes, and let the atoms sit along the $ x $ axis (see Fig.~\ref{fig:birefringencenanofibersetup}). Since the local intensities of the $ H $ and $ V $ modes at the atom positions are different, there will be a differential phase shift between the output $ H $- and $ V $-polarized light components ($ \mathbf{E}_{H}(\br) $ and $ \mathbf{E}_{V}(\br) $), which generates a birefringence rotation on the \Poincare sphere. The rotation angle of the output light on the \Poincare sphere due to a scalar interaction with one atom can be given by
+If we launch two equal-power but orthogonal quasi-linear modes, $H$ and $V$, and let the atoms sit along the major axis of the H mode or the $ x $ axis, the atoms will feel both $ H $ and $ V $ modes \nd{in different strengths: This part sounds weird to me but I don't know how to fix it.}. Equivalently, we can also launch a linearly polarized light bisecting the angle between the $ x $ and $ y $ axes, and let the atoms sit along the $ x $ axis (see Fig.~\ref{fig:birefringencenanofibersetup}). Since the local intensities of the $ H $ and $ V $ modes at the atom positions are different, there will be a differential phase shift between the output $ H $- and $ V $-polarized light components ($ \mathbf{E}_{H}(\br) $ and $ \mathbf{E}_{V}(\br) $), which generates a birefringence rotation on the \Poincare sphere. The rotation angle of the output light on the \Poincare sphere due to a scalar interaction with one atom can be given by
 \begin{align}
 \varphi &= \delta\phi_H-\delta\phi_V= 2\pi \frac{\omega_0}{v_g} \re[\alpha] \left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]\\
 &= -\sigma_0\frac{c}{v_g}\frac{\Gamma_0}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].\label{eq:birefringencerotang}
 \end{align}
 
-From Fig.~\ref{fig:relenhancement}, using the nanofiber, we find there is a $ 3 $---$ 4 $ folds of enhancement difference between the $ H $ and $ V $ modes. This is a otherwise unavailable resource for birefringence rotation with a scalar polarizability of atoms in free-space. 
+From Fig.~\ref{fig:relenhancement}, using the nanofiber, we find there is a $ 3 $---$ 4 $ folds of enhancement difference between the $ H $ and $ V $ modes. This is an otherwise unavailable resource for birefringence rotation with a scalar polarizability of atoms in free-space. 
 
 
-\section{Modification of the spontaneous emission of atoms trapped near a nanophotonic waveguide}
-In the last section, we have estimated the atom-light coupling enhancement due to the presence of an optical nanofiber, and in general a nanophotonic waveguide. Despite the estimation is good enough for our purpose, the model we used may be too rough for us to study other quantum effects to be discussed later, given that the polarizability of the atom was assumed to be a scalar and the modification of the atomic decay rate doesn't consider the detailed atom's internal structure. In this section, we provide a detailed theory on the polarizability of atoms and the modification of atomic decay rates due to external field. We will process the theory from classical to quantum description.
+\section{Modification of the spontaneous emission of atoms trapped near a nanophotonic waveguide \id{This becomes Chapter 3}} 
+
+\id{In Chapter 2, we treated the electromagnetic field classically, and neglected how the atom's decay is modified due to the presence of the nearby dielectric. Though the resulting estimate of dispersive response is a good approximation is many cases}, the model we used may be too rough to study other quantum effects to be discussed later, given that the polarizability of the atom was assumed to be a scalar and the modification of the atomic decay rate does not account for the detailed internal structure of the atom. In this chapter, we provide a detailed theory of the polarizability of atoms and the modification of atomic decay rates due to external field. We will develop the theory from classical to quantum description.
 
 \subsection{Dipole oscillation and emission of polarized light}
 In this subsection, we present a simple model to show how the polarizability of alkali atoms are modified by an external field. Again, we assume the intrinsic polarizability of an atom is a scalar $ \alpha $, and a light shines at the atom through an arbitrary interface of media, which can be fully characterized by the dyadic Green's function $ \GFT(\br,\br') $. Under the Born approximation, the resulted electric field at the atom position can be given by
 \begin{align}
 \mathbf{E}(\br') 
-&=\mathbf{E}_0(\br')+ \alpha\mathbf{G}(\br',\br') \cdot \mathbf{E}_0(\br').\label{eq:EoutG}
+&=\mathbf{E}_0(\br')+ \alpha \id{\GFT(\br,\br')} \cdot \mathbf{E}_0(\br').\label{eq:EoutG}
 \end{align}
 Note that, in the context of nanophotonic waveguides, the dyadic Green's function can be decomposed into the free-dipole, reflective and transmissive mode contributions as defined in Eq.~\eqref{eq:GFTdecomp0RT} denoted by the subscripts, $ 0 $, $ R $ and $ T $, respectively. By treating the atom as a classical oscillator of a single electron around the nucleus, a self-consistent equation for an atom at $ \br' $ excited by an incident optical field may be given by 
 \begin{align}
 (-\omega^2+\omega_0^2)\br' &= -\frac{e}{m}\mathbf{E}(\br')\\
 &=-\frac{e}{m}\left[\mathbf{E}_0(\br')+ {\alpha}\GFT(\br',\br')\cdot  \mathbf{E}_0(\br') \right],\label{eq:rEG}
 \end{align}
-where $\omega_0$ is the atomic resonance. The dipole moment, $ \mathbf{d}=d\mathbf{e}_d $, can be defined by 
+where $\omega_0$ is the atomic resonance. The dipole moment, $ \mathbf{d}=d\mathbf{e}_d $, can be defined by \id{
 \begin{align}
-\mathbf{d}(\br') &=-e\br'=\alpha \mathbf{E}(\br')\label{eq:dralphaE}\\
-&\approx \alpha \mathbf{E}_0(\br'),
+\mathbf{d}(\br') &=-e\br'=\alpha' \mathbf{E}(\br')\label{eq:dralphaE}\\
+&\approx \alpha' \mathbf{E}_0(\br'),
 \end{align}
+}
 where $ \alpha' $ is the modified polarizability after the interaction, $ e $ is the charge of the electron and $ m $ is the effective mass of the oscillator. 
 Assuming the dipole is oscillating along the $ \mathbf{e}_d $ direction and plugging Eq.~\eqref{eq:rEG} into Eq.~\eqref{eq:dralphaE}, we can obtain
 \begin{align}
 \mathbf{d}(\br') &=\frac{e^2}{m(\omega_0^2-\omega^2)}\left\{\mathbf{E}_0(\br')+ \GFT(\br',\br')\cdot  \left[{\alpha}\mathbf{E}(\br')\right] \right\}.
 \end{align}
-In the near resonant regime, $ \omega_0^2-\omega^2\approx -2\omega_0\Delta $, with and the detuning, $ \Delta =\omega-\omega_0$, and hence
+In the near resonant regime, $ \omega_0^2-\omega^2\approx -2\omega_0\Delta $, with the detuning, $ \Delta =\omega-\omega_0$, and hence
 \begin{align}
 \left[-\Delta\unittensor -\frac{e^2}{2m\omega_0}\GFT(\br',\br') \right] &\cdot \mathbf{d}(\br') = \frac{e^2}{2m\omega_0}\mathbf{E}_0(\br').
 \end{align}
@@ -971,7 +973,7 @@ where we have defined the Lamb shift $ \delta \Delta= \frac{e^2}{2m\omega_0}\re\
 \Gamma &= \frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT(\br',\br')\cdot \mathbf{e}_d\right]\\
 &= \Gamma_0 + \delta \Gamma,
 \end{align}
-the natural linewidth $ \Gamma_0 =\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_0(\br',\br')\cdot \mathbf{e}_d\right] $, and the shift in decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_R(\br',\br')\cdot \mathbf{e}_d\right] $. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the dipole oscillating direction. Therefore, the scalar atomic polarizability can be given by
+the natural linewidth $ \Gamma_0 =\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_0(\br',\br')\cdot \mathbf{e}_d\right] $, and the shift in the decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_R(\br',\br')\cdot \mathbf{e}_d\right] $. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the dipole oscillating direction. \nd{The direction that the dipole oscillates?} Therefore, the scalar atomic polarizability can be given by
 \begin{align}
 \alpha &= \frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma},
 \end{align}
@@ -980,28 +982,28 @@ which includes the modification of the atom's resonance and decay rate due to th
 By solving the free-space dipole radiation problem (see Appendix~\ref{chap:freespacegreenfunction}), the imaginary part of the free-space Green's function can be given by
 \begin{align}
 \mathrm{Im}\left[ \GFT_0 (\br^\prime\!_\perp, \br^\prime\!_\perp) \right] &=  \frac{
-2k^3}{3}\unittensor = \frac{2}{3}\left(\frac{\omega_0}{c}\right)^3\unittensor
+2k^3}{3}\unittensor = \frac{2}{3}\left(\frac{\omega_0}{c}\right)^3\unittensor.
 %\Im\left[\mathbf{G}_0(\br',\br') \right] =\frac{k^3}{6\pi} \mathbbm{1} \approx \frac{1}{6\pi}k^3_0\mathbbm{1}.
 \end{align}
 Hence the natural linewidth of an atom can be given by
 \begin{align}
 \Gamma_0 = \frac{2}{3}\frac{e^2\omega_0^2}{mc^3}=\frac{2}{3}k_0r_{class},
 \end{align}
-where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the classical radius of the atom. Note that, after considering quantum effects, there may be a factor of $ f_0=\frac{2m\omega_0}{\hbar e^2}|d_{eg}|^2 $ modification to the decay rates. 
+where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the classical radius of the atom. \id{This classical model of the natural linewidth  differs from the quantum Einstein-$A$ coefficient only through the``oscillator strength".} \nd{Where should $f_0=\frac{2m\omega_0}{\hbar e^2}|d_{eg}|^2 $ go?}
 
 
 %\section{Polarizability of alkali atoms}
 \subsection{Polarizability of alkali atoms}
-Now, we consider the inner quantum structure of the alkali atoms.
+Now, we consider the internal quantum structure of the alkali atoms. \id{Cite Deutsch/Jessen (The Long Paper)}
 
 In the interaction picture, the dipole operator associated with an atomic level $ g $ can be given by
 \begin{align}\label{eq:dtop}
-\hat{\mathbf{d}}(t) &= \sum_e \left[ \hat{\mathbf{d}}_{eg}e^{i(\omega_{eg}+i\gamma_{eg}/2)t} + \hat{\mathbf{d}}_{ge}e^{-i(\omega_{eg}-i\gamma_{eg}/2)t}\right]
+\hat{\mathbf{d}}(t) &= \sum_e \left[ \hat{\mathbf{d}}_{eg}e^{i(\omega_{eg}+i\gamma_{eg}/2)t} + \hat{\mathbf{d}}_{ge}e^{-i(\omega_{eg}-i\gamma_{eg}/2)t}\right],
 \end{align}
 where the upward and downward transitions are described by
 \begin{align}
 \hat{\mathbf{d}}_{eg} &= \mathbbmss{P}_e\mathbf{d}_{eg}\mathbbmss{P}_g\\
-&= \ketbra{e} \mathbf{d}\ketbra{g} = \bra{e} \mathbf{d}\ket{g} \ket{e}\!\!\bra{g}\\
+&= \ketbra{e} \mathbf{d}\ketbra{g} = \bra{e} \mathbf{d}\ket{g} \ket{e}\!\!\bra{g},\\
 &= \mathbf{d}_{eg} \hat{\sigma}_{eg}\\
 \hat{\mathbf{d}}_{ge} &=\hat{\mathbf{d}}_{eg}^\dagger \\
 &= \bra{g} \mathbf{d}^*\ket{e} \ket{g}\!\!\bra{e} = \mathbf{d}_{ge}\hat{\sigma}_{ge}.
@@ -1016,7 +1018,7 @@ In the frequency domain, we define
 &= \sum_e \left[ \frac{i\hat{\mathbf{d}}_{eg}}{ \omega -\omega_{eg}-i\Gamma_{eg}/2 } + \frac{i\hat{\mathbf{d}}_{ge}}{ - \omega-\omega_{eg}-i\Gamma_{eg}/2}\right].
 \end{align}
 
-We consider a radiation reaction that an atom is polarized in response to a traveling guided mode electric field operator $ \hat{\mathbf{E}}_0(t)=\frac{1}{2}\left[\hat{\mathbf{E}}^{(+)}_0e^{-i\omega t} +  \hat{\mathbf{E}}^{(-)}_0e^{i\omega t}\right] $. 
+We consider a radiation reaction that an atom is polarized in response to a traveling guided-mode electric field operator $ \hat{\mathbf{E}}_0(t)=\frac{1}{2}\left[\hat{\mathbf{E}}^{(+)}_0e^{-i\omega t} +  \hat{\mathbf{E}}^{(-)}_0e^{i\omega t}\right] $. 
 %with the guided mode labeled by an index $ \mu = (\omega,f,p)$
 %\begin{align}
 %\hat{\mathbf{E}}^{(+)}_0 &= \sqrt{\frac{\hbar \omega}{v_g}} \hat{a}_\mu \mathbf{u}_{\mu} (r\!_\perp) e^{if\beta z+ip\phi},
@@ -1026,22 +1028,22 @@ The induced dipole moment can be given by
 \begin{align}
 \hat{\mathbf{d}}(t) 
 %&= \frac{1}{2} \left[\boldsymbol{\alpha}^*(\omega)e^{i\omega t} +\boldsymbol{\alpha}(\omega)e^{-i\omega t} \right] \hat{\mathbf{E}}_0\\
-&= \re\left[ \boldsymbol{\alpha}(\omega)\hat{\mathbf{E}}_0^{(+)} e^{-i\omega t}\right]
+&= \re\left[ \boldsymbol{\alpha}(\omega)\hat{\mathbf{E}}_0^{(+)} e^{-i\omega t}\right],
 \end{align}
 with the polarizability 
 \begin{align}\label{Eq::PTensorGen}
-\poltens(\omega) &=\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\omega_{eg} -\omega -i\Gamma_{eg}/2)} =-\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\Delta_{eg} +i\Gamma_{eg}/2)}
+\poltens(\omega) &=\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\omega_{eg} -\omega -i\Gamma_{eg}/2)} =-\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar(\Delta_{eg} +i\Gamma_{eg}/2)},
 %\left[ \frac{1}{\omega_{eg} -\omega -i\gamma_{eg}/2 } + \frac{1}{\omega_{eg} +\omega +i\gamma_{eg}/2 } \right].
 \end{align}
 where we have ignored the counter-rotating terms for our near-resonance case and defined $ \Delta_{eg}=\omega-\omega_{eg} $. In the case that $ |\Delta_{eg} |\gg \Gamma_{eg} $, we can ignore the $ i\Gamma_{eg} $ component and simplify the polarizability of the atom as
 \begin{align}
-\poltens &= -\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar\Delta_{eg}} 
+\poltens &= -\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar\Delta_{eg}}. 
 \end{align} 
 
-For a real Cesium atom case, we take an example of the transitions between $ f=3 $ and $ f=4 $ manifolds of the ground state $ 6S_{1/2} $ to the $ f'=3 $ manifold of the exited state $ 6P_{1/2} $. We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014}
+\id{For the case of a Cesium atom ${}^{133}$Cs, we take an example of the transitions between $ f=3 $ and $ f=4 $ hyperfine manifolds} of the ground state $ 6S_{1/2} $ to the $ f'=3 $ manifold of the exited state $ 6P_{1/2} $. We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014}
 \begin{align}
 \hat{\mathbf{d}}_{f'f} &=  \sum_q \sum_{m, m'}  \bra{f' m'} d_{f'\!,f}^q \ket{f m} \op{f' m'}{f m} \mathbf{e}_q^* \\
-& = \bra{ f' }| d | \ket{ f } \sum_q \sum_{m, m'}  \bravket{f m; 1 q}{f' m'} \op{f' m'}{f m} \mathbf{e}_q^* \label{eq:opdff'}
+& = \bra{ f' }| d | \ket{ f } \sum_q \sum_{m, m'}  \bravket{f m; 1 q}{f' m'} \op{f' m'}{f m} \mathbf{e}_q^* \label{eq:opdff'},
 \end{align}
 where we used the Wigner-Eckart theorem\index{Wigner-Eckart theorem} to pull out the reduced matrix element $\bra{ f' }| d | \ket{ f } $. We denote $ C^{fm;1q}_{f'm'}=  \bravket{f' m'}{f m; 1 q}= \bravket{f m; 1 q}{f' m'}$ as the Clebsch-Gordan coefficients\index{Clebsch-Gordan coefficient}. It can be further simplified with another application of the Wigner-Eckart theorem,
 	\begin{align}
@@ -1055,9 +1057,9 @@ in terms of a reduced matrix element involving the $j \rightarrow j'$ transition
 					f' & i & j' \\
 					j & 1 & f
 				\end{array}
-			\right\} .
+			\right\} ,
 	\end{align}
-that determines the spontaneous decay branching ratios on allowed dipole transitions; $\Gamma_{j' f' \rightarrow j f} / \Gamma_{j'\rightarrow j} = |o^{j' f'}_{j f}|^2$ \cite{Deutsch2010a}.	
+that determines the spontaneous decay branching ratios on the allowed dipole transitions; $\Gamma_{j' f' \rightarrow j f} / \Gamma_{j'\rightarrow j} = |o^{j' f'}_{j f}|^2$ \cite{Deutsch2010a}.	
 	
 This allows us to factor out characteristic units from the dipole operator and define dimensionless dipole operators,
 	\begin{align}
@@ -1072,23 +1074,23 @@ where we have factored out the detuning relative to the largest hyperfine excite
 	\begin{align} \label{Eq::DetuningChoice}
 		\Delta \equiv \Delta_{f,f'_{\rm max}} = \omega - ( \omega_{f'_{\rm max}} - \omega_f),
 	\end{align} 
-and $\delta_{f f'} \equiv \Delta_{f,f'} - \Delta$ is the residual detuning for the other hyperfine excited states.  All the units are collected in a characteristic polarizability\index{polarizability!characteristic polarizability},
+and $\delta_{f f'} \equiv \Delta_{f,f'} - \Delta$ is the residual detuning for the other hyperfine excited states.  All the units are collected in the characteristic polarizability\index{polarizability!characteristic polarizability},
 	\begin{align} \label{Eq::alpha0}
 		\alpha_0(\Delta) & =  -\frac{|  \bra{ j' }| d | \ket{ j } |^2}{\hbar \Delta } = - \frac{3 \lambda_{j' j}^3}{32 \pi^3} \frac{ \Gamma }{ \Delta }.
 	\end{align}
 %\textcolor{red}{Note that this polarizability formula does not hold if we plug in the real numbers of Cs D1-line transition data, for example. I need to check the units later, but I would prefer to use the irreducible dipole moment element representation formula for now as it appears in Steck's data sheet.} 
-The wavelength of the transition $\lambda_{j' j}$ and spontaneous emission rate $\Gamma$ are defined with respect to the fine-structure splitting $j' \rightarrow j$. The spontaneous emission or decay rate is,
+The wavelength of the transition $\lambda_{j' j}$ and the spontaneous emission rate $\Gamma$ are defined with respect to the fine-structure splitting $j' \rightarrow j$. The spontaneous emission or decay rate is,
 	\begin{align}
 		\Gamma = \frac{1}{\hbar} \frac{4}{3} \frac{\omega_{j j'}^3}{c^3} | \bra{ j' }| d | \ket{ j } |^2.
 	\end{align}
-One could define a slightly different characteristic polarizability using a different detuning in \erf{Eq::DetuningChoice}, such as the fine structure splitting on the $j \rightarrow j'$ transition.
+One could define a slightly different characteristic polarizability using a different detuning in \erf{Eq::DetuningChoice}, such as the fine-structure splitting on the $j \rightarrow j'$ transition.
 
 The atomic polarizability tensor in \erf{Eq::PTensorGen} can then be written in terms of the dimensionless dipole operators and the characteristic polarizability,
 \begin{align} \label{Eq::AtomicPolarizabilityF}
 \tensor{\boldsymbol{\alpha}}(f) &=  \alpha_0(\Delta) \sum_{f'} \frac{ \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f}}{ 1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)}\\
 & = \alpha_0(\Delta) \sum_{q,q'}  \sum_{f,f'} \sum_{m_1, m_2, m'}  \frac{\mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}}{1 + \delta_{f'} / \Delta + i \Gamma/(2\Delta)}.
 \end{align}
-Also nothing that $m' = m_1 + q'$ and $m' = m_2 + q$ and thus
+Also note that $m' = m_1 + q'$ and $m' = m_2 + q$ and thus
 \begin{align}
 	m_2 - m_1 = q-q'.
 \end{align}
@@ -1097,21 +1099,21 @@ For ${}^{133}$Cs with ground hyperfine manifolds $f = \{3,4\}$, this gives
 \begin{align}
 \tensor{\boldsymbol{\alpha}}(3) 
 		& = \alpha_0(\Delta_{3}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{3 f'} \hat{\mathbf{D}}_{f' 3}}{ 1 + \delta_{3, f'} / \Delta_{3} + i \Gamma/(2\Delta_3) } \\
-		&= \alpha_0(\Delta_{3}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j3} |^2 C^{3m_2;1q}_{f'm'} C^{3m_1;1q'}_{f'm'} \op{3 m_2}{3 m_1}}{ 1 + \delta_{3, f'} / \Delta_{3} + i \Gamma/(2\Delta_3) }\\
+		&= \alpha_0(\Delta_{3}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j3} |^2 C^{3m_2;1q}_{f'm'} C^{3m_1;1q'}_{f'm'} \op{3 m_2}{3 m_1}}{ 1 + \delta_{3, f'} / \Delta_{3} + i \Gamma/(2\Delta_3) },\\
 \tensor{\boldsymbol{\alpha}}(4) &=\alpha_0(\Delta_{4}) \sum_{f'} \frac{ \hat{\mathbf{D}}_{4 f'} \hat{\mathbf{D}}_{f' 4}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4) }\\
 	 &= \alpha_0(\Delta_{4}) \sum_{f'} \sum_{q,q'} \sum_{m_1, m_2, m'}\frac{ \mathbf{e}_q \mathbf{e}^*_{q'} | o^{j'f'}_{j4} |^2 C^{4m_2;1q}_{f'm'} C^{4m_1;1q'}_{f'm'} \op{4 m_2}{4 m_1}}{ 1 + \delta_{4, f'} / \Delta_{4} + i \Gamma/(2\Delta_4)} .
 \end{align}
-We have explicitly labeled the detunings by the ground state hyperfine level $f$ in order to emphasize that the detunings may be different on each of the two terms.  Unless the laser detuning is chosen such that $\Delta_3$ and $\Delta_4$ are of the same order, one of the two terms will dominant the dynamics and the other can be ignored.
+We have explicitly labeled the detunings by the ground state hyperfine level $f$ in order to emphasize that the detunings may be different on each of the two terms.  Unless the laser detuning is chosen such that $\Delta_3$ and $\Delta_4$ are of the same order, one of the two terms will dominate the dynamics and the other can be ignored.
 
 
 % Irreducible tensors.
 \subsection{Irreducible tensor representation of atomic polarizability}
-The beauty of some tensor operators is that it can be divided into lower-rank operators so that one can think about the state-independent operator component and the state-dependent operator components. In our case, the atomic polarizability tensor, being a dyad of two vector operators, can be decomposed into rank-0, rank-1, and rank-2 irreducible tensor components \cite{Baragiola2014Open,Stockton2007, Hammerer2006, Geremia2006, Deutsch2010a, LeKien2013}.  The polarizability tensor can be written in the spherical basis. The dimensionless spherical $ij$-component of the atomic polarizability tensor\index{polarizability!polarizability tensor} in the ground hyperfine state $f$ is defined as,
+\id{The beauty of tensor operators is that they can be expressed in terms of irreducible components} so that one can think about state-independent and state-dependent operator components. In our case, the atomic polarizability tensor, being a dyad of two vector operators, can be decomposed into rank-0, rank-1, and rank-2 irreducible tensor components \cite{Baragiola2014Open,Stockton2007, Hammerer2006, Geremia2006, Deutsch2010a, LeKien2013}.  The polarizability tensor can be written in the spherical basis. The dimensionless spherical $ij$-component of the atomic polarizability tensor\index{polarizability!polarizability tensor} in the ground hyperfine state $f$ is defined as,
 \begin{align} \label{Eq::alphaij}
 \hat{\alpha}_{ij}(f) &\equiv \mathbf{e}_i \cdot \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f} \cdot \mathbf{e}_j\\
 &= \sum_{q,q'} \sum_{m_1, m_2, m'} \mathbf{e}_i \cdot\mathbf{e}_q \mathbf{e}^*_{q'}\cdot \mathbf{e}_j | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}.
 \end{align}	
-Note that the notation in \erf{Eq::alphaij} is different from that for the full polarizability tensor, \erf{Eq::AtomicPolarizabilityF}, (and different from that in Ref. \cite{Deutsch2010a}) in that it contains no units, detunings, or sums over excited states. This notation is intent to to isolate the irreducible tensor components in a simpler form. We will add in the detunings and other factors straightforwardly when needed.
+Note that the notation in \erf{Eq::alphaij} is different from that for the full polarizability tensor, \erf{Eq::AtomicPolarizabilityF}, (and different from that in Ref. \cite{Deutsch2010a}) in that it contains no units, detunings, or sums over excited states. The use of this notation is intended to isolate the irreducible tensor components in a simpler form. We will add in the detunings and other factors straightforwardly when needed.
 
 It has been proven that the block-diagonal terms have a basis-independent form whose Cartesian $ij$-components are~\cite{Deutsch2010a},
 	\begin{align} \label{Eq::IrreducibleDecomp}
@@ -1129,13 +1131,14 @@ with total angular moment $f$ for each ground hyperfine manifold.  The tensor ra
 		\end{align}	
 These coefficients depend on the fine-structure quantum numbers $\{j, j'\}$ through the relative oscillator strengths, $o^{j' f'}_{j f}$, given in \erf{Eq::OscStrength}. In the cases that some ground or excited state levels are fixed, we might remove the $ j' $ or $ f $ occupants in the subscripts of $ C_{j'ff'}^{(K)} $.
 
-If the detuning is very large compared to the excited hyperfine splitting the detuning becomes independent of $f'$ (essentially $\delta_{f'}/\Delta \rightarrow 0$).  Then, the sums over the tensor coefficients in Eqs.~\eqref{Eq::GenPolarizability} can be calculated explicitly to yield,
+If the detuning is very large compared to the excited hyperfine splitting, the detuning becomes independent of $f'$ (essentially $\delta_{f'}/\Delta \rightarrow 0$).  Then, the sums over the tensor coefficients in Eqs.~\eqref{Eq::GenPolarizability} can be calculated explicitly to yield
 	\begin{align}
-		C_{j' f}^{(0)} &\equiv \sum_{f'} C_{j' f f'}^{(0)} =   \frac{2^{j'-1/2}}{3} \label{Eq::ScalarCoefSum} \\ 
-		C_{j' f}^{(1)} &\equiv  \sum_{f'} C_{j' f f'}^{(1)} = (-1)^{j'-1/2} \frac{g_f}{3} \\
+		C_{j' f}^{(0)} &\equiv \sum_{f'} C_{j' f f'}^{(0)} =   \frac{2^{j'-1/2}}{3} \label{Eq::ScalarCoefSum}, \\ 
+		C_{j' f}^{(1)} &\equiv  \sum_{f'} C_{j' f f'}^{(1)} = (-1)^{j'-1/2} \frac{g_f}{3}, \\
 		C_{j' f}^{(2)} &\equiv  \sum_{f'} C_{j' f f'}^{(2)} = 0. \label{Eq::Rank2Sum}
 	\end{align}
-The Land\'{e} g-factor\index{Land\'{e} g-factor}, $ g_f $, depends on the ground state manifold:  $g_f = 1/f_{\uparrow}$ for $f_{\uparrow} = i + 1/2$ and $g_f = -1/f_{\uparrow}$ for $f_{\downarrow} = i - 1/2$, in which the $ \uparrow $ and $ \downarrow $ levels should be equally divided in the $ f $ hyperfine manifold for alkali atoms, in general.  In this far-detuned limit, we see that the $C_{j' f f'}^{(2)}$ coefficients sum to zero and the rank-2 terms in \erf{Eq::GenPolarizability} vanish,
+The Land\'{e} g-factor\index{Land\'{e} g-factor}, $ g_f $, depends on the ground state manifold:  $g_f = 1/f_{\uparrow}$ for $f_{\uparrow} = i + 1/2$ and $g_f = -1/f_{\uparrow}$ for $f_{\downarrow} = i - 1/2$. %in which the $ \uparrow $ and $ \downarrow $ levels should be equally divided in the $ f $ hyperfine manifold for alkali atoms, in general.  
+In this far-detuned limit, we see that the $C_{j' f f'}^{(2)}$ coefficients sum to zero and the rank-2 terms in \erf{Eq::GenPolarizability} vanish,
 	\begin{equation} \label{Eq::GenPolarizability}
 		\hat{\alpha}_{ij} (f) \rightarrow  C_{j' f}^{(0)} \delta_{ij} \hat{ I } + i C_{j' f }^{(1)} \varepsilon_{ijk} \hat{f}_k  .
 	\end{equation}
@@ -1144,33 +1147,34 @@ This reflects the fact that in the absence of hyperfine resolution, the nuclear 
 
 \subsection{Modification of decay rates of atomic transitions}\label{sec:modifieddecayrates}
 
-We specify the dipole source as an atom with arbitrary excited state level $ e $ and ground level $ g $ in the hyperfine structure manifold. 
-The atomic decay rate\index{decay rate} or spontaneous emission rate\index{spontaneous emission rate} of the excited level $ e $ will be modified due to the presence of the nanophotonic structure and can be given by
+We specify the dipole source as an atom with an arbitrary excited state level $ e $ and the ground level $ g $ in the hyperfine structure manifold. 
+The atomic decay rate\index{decay rate} or spontaneous emission rate\index{spontaneous emission rate} of the excited level $ e $ will be modified due to the presence of the nanophotonic structure and can be given by \id{Need a reference here.}
 \begin{align}
 \Gamma_e &= \frac{2}{\hbar}\sum_g \bra{g}\hat{\mathbf{d}}\ket{e} \cdot \mathrm{Im}\left[\tensor{\mathbf{G}}(\br',\br';\omega_{eg}) \right]\cdot \bra{e}\hat{\mathbf{d}}\ket{g}\label{eq:Gamma_e}
 \end{align}
 with the total Green's function tensor as a combination of the contributions from the guided modes and radiation modes, $ \tensor{\mathbf{G}}(\br',\br';\omega_{eg})=\tensor{\mathbf{G}}_{gyd}(\br',\br';\omega_{eg})+\tensor{\mathbf{G}}_{rad}(\br',\br';\omega_{eg}) $.
 For simplicity, we will hide the frequency-dependence part from the Green's function tensors below.
 Correspondingly, $ \Gamma_e=\Gamma_{e,gyd}+\Gamma_{e,rad} $ can also be decomposed into the guided mode and radiation mode contribution parts. 
-Depending on the method to use for the Green's tensor calculation, the radiation mode contribution part can be decomposed in various ways, which usually include the free-dipole radiation contribution (see Sec.~\ref{sec:calculatingGreenstensor}).
-What we are interested in is the relative ratio between the modified decay rates for given $e\rightarrow g$ transitions for all $ g $'s and the natural linewidth, $ \Gamma_0 $, of an atom, that is $ \Gamma_e^q/\Gamma_0 $. 
+Depending on the method used for the Green's tensor calculation, the radiation mode contribution part can be decomposed in various ways, which usually include the free-dipole radiation contribution (see Sec.~\ref{sec:calculatingGreenstensor}).
+What we are interested in is the relative ratio between the modified decay rates for given $e\rightarrow g$ transitions for all $ g $'s and the natural linewidth, $ \Gamma_0 $, of the atom, that is $ \Gamma_e^q/\Gamma_0 $. 
 Moreover, the local Green's tensor due to a free dipole's radiation has a divergent real part and the imaginary part has been given in Appendix~\ref{chap:freespacegreenfunction}. 
-Therefore, we only need to solve for the transmissive Green's tensor (if using the analytical solution given in Appendix~\ref{chap:fibereigenmodes}) or the induced-dipole radiation Green's tensor (if the BEM method is used defined by Eq.~\eqref{eq:BEMGindij}) and the guided mode Green's tensor (usually can be calculated using the eigenmode decomposition method by Eq.~\eqref{Eq::ImGreenLocal_general}).
+\id{I don't understand this sentence. Please clarify: Therefore, we only need to solve for the transmissive Green's tensor (if using the analytical solution given in Appendix~\ref{chap:fibereigenmodes}) or the induced-dipole radiation Green's tensor (if the BEM method is used defined by Eq.~\eqref{eq:BEMGindij}) and the guided mode Green's tensor (usually can be calculated using the eigenmode decomposition method by Eq.~\eqref{Eq::ImGreenLocal_general}).}
 
     
-We can define an equivalent classical dipole, $ \mathbf{d}=\bra{g}\hat{\mathbf{d}}\ket{e} $, corresponding to the $ e\rightarrow g $ decay transition which is along the $ \mathbf{e}_q $ ($q=\{\pm,0\}$) unit vector direction in the spherical irreducible harmonic basis, where
+We can define a dipole, $ \mathbf{d}=\bra{g}\hat{\mathbf{d}}\ket{e} $, corresponding to the $ e\rightarrow g $ decay transition which is along the $ \mathbf{e}_q $ ($q=\{\pm,0\}$) unit vector direction in the spherical irreducible harmonic basis, where
 \begin{align}
-    \mathbf{e}_\pm &=\mp \frac{\mathbf{e}_{\tilde{x}}\pm i\mathbf{e}_{\tilde{y}}}{\sqrt{2}}\\
-    \mathbf{e}_0 &=\mathbf{e}_{\tilde{z}}
+    \mathbf{e}_\pm &=\mp \frac{\mathbf{e}_{\tilde{x}}\pm i\mathbf{e}_{\tilde{y}}}{\sqrt{2}},\\
+    \mathbf{e}_0 &=\mathbf{e}_{\tilde{z}},
 \end{align}
 correspond to the $\sigma_\pm$ and $\pi$ transitions, respectively.
-We have defined $ (\tilde{x},\tilde{y},\tilde{z}) $ as the quantization basis, which is fixed by using a magnetic field in experiments and can be arbitrary.
-In our simulation of the square waveguide case, we have used $\varepsilon=4$ (without loss) to calculate the induced radiation mode Green's function tensor elements.
-In that case, the radiation-mode-caused decay rates can be calculated by
+We have defined $ (\tilde{x},\tilde{y},\tilde{z}) $ as the \id{basis, where the quantization axis $\tilde{z}$ is fixed by using a magnetic field in experiments and can be arbitrary relative to the geometry of the waveguide.}
+\id{This seems out of place.  It's very specific before you define the general expression: In our simulation of the square waveguide case, we have used $\varepsilon=4$ (without loss) to calculate the induced radiation mode Green's function tensor elements.}
+\id{With our given definition of the spherical basis}, the radiation-mode-caused decay rates can be calculated by
 \begin{align}
 \frac{\Gamma_{e,rad}^{q}}{\Gamma_0} &= 1\!+\!  \frac{\mathrm{Im}\!\left[\mathbf{e}_q \!\cdot\! \tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}')\!\cdot\!  \mathbf{e}_q^*\right]}{ \mathrm{Im}\left[\mathbf{e}_q\cdot \tensor{\mathbf{G}}_0(\mathbf{r}',\mathbf{r}')\cdot \mathbf{e}_q^*\right]}
 =1 \!+\! \frac{\mathbf{e}_q \!\cdot\! \mathrm{Im}\!\left[\tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}')\right] \!\cdot\! \mathbf{e}_q^*}{G_0}.\label{eq:Gammaeq_rad}
 \end{align}
+\id{I don't think this is generally correct.  $\Gamma_0$ will generally depend on a sub over all ground states (as in 2.168).  Then we need to sum over all $q$ -- let's discuss}
 Replacing $ \tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}') $ with $ \tensor{\mathbf{G}}_R(\mathbf{r}',\mathbf{r}') $ using the radiation field solutions provided in Appendix~\ref{sec:boundrad} gives another way to calculate the radiation-mode Green's tensor for the nanofiber case when the reflected field solutions are known.
 
 Similarly, the guided mode contribution to the decay rates can be given by
@@ -1179,16 +1183,16 @@ Similarly, the guided mode contribution to the decay rates can be given by
 = \frac{\mathbf{e}_q\cdot \mathrm{Im}\left[ \tensor{\mathbf{G}}_{gyd}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{ G_0}.\label{eq:Gammaeq_guide}
 \end{align}
 We find the easiest way to calculate the guided-mode Green's tensor is to use the eigenmode decomposition method provided in Eq.~\eqref{Eq::ImGreenLocal_general},
-as long as the guided eigenmodes $\mathbf{u}_{b, p} (\br_{\!\perp}^\prime)$ with propagation direction $ b=\pm 1 $ and corresponding polarization degeneracy indices $ p $ can be solved analytically or numerically.
+as long as the guided eigenmodes $\mathbf{u}_{b, p} (\br_{\!\perp}^\prime)$ with propagation direction $ b=\pm 1 $ and the corresponding polarization degeneracy indices $ p $ can be solved analytically or numerically.
 The group velocity $v_g$ or the group index of refraction $ n_g $ of the degenerate guided modes can usually be solved as a by-product of solving the eigenmode of the waveguide.
 For the nanofiber case, $ p=\pm 1 $ correspond to the right- and left-circularly polarized fundamental $\mathrm{HE}_{11}$ modes; the eigenmode in the $ \{H,V\} $ basis is also available for the nanofiber geometry (see Appendix~\ref{chap:fibereigenmodes}).
 For the \SWG case, $ p=\mathrm{H}/\mathrm{V} $ correspond to the quasi-\TE and quasi-\TM modes.
 
-By choosing the waveguide axis as the quantization axis and the direction connecting the center of the waveguide and the atom's azimuthal position--which is perpendicular to the waveguide surface--as the $ \tilde{x} $ axis, we calculated the modified spontaneous emission rates of various dipole orientations for both the nanofiber and the \SWG, and decompose the rates into the guided and unguided mode contributions (see Fig.~\ref{fig:decayrates}). It is an immediate result that the decay rates of the atom coupled to the $ \sigma_\pm $ and $ \pi $ transitions become different--whether its guided and unguided mode components or the total values, which won't happen in a homogeneous medium. The presence of the waveguides has obviously broken the symmetry of quantum transitions of the atom.
+By choosing the waveguide axis as the quantization axis $\tilde{z}$ and the direction connecting the center of the waveguide and the atom's azimuthal position--which is perpendicular to the waveguide surface--as the $ \tilde{x} $ axis, we calculated the modified spontaneous emission rates of various dipole orientations for both the nanofiber and the \SWG, and decompose the rates into the guided and unguided mode contributions (see Fig.~\ref{fig:decayrates}). It is an immediate result that the decay rates of the atom coupled to the $ \sigma_\pm $ and $ \pi $ transitions become different--whether its guided and unguided mode components or the total values, which will not happen in a homogeneous medium. The presence of the waveguides has obviously broken the symmetry of the quantum transitions of the atom.
 The \SWG geometry seems to yield a greater contrast of emission rates between the $ \sigma_\pm $ transitions and the $ \pi $ transitions compared to the nanofiber.
-Upon a further notice, however, the degeneracy of the $ \sigma_+ $ and $ \sigma_- $ transitions preserves as long as the atom is sitting at a mirror symmetric axis of the waveguides. 
+\id{Upon a further inspection, however, the degeneracy of the $ \sigma_+ $ and $ \sigma_- $ transitions is preserved as long as the atom is sitting at a mirror of the symmetric axis of the waveguides. 
 Moreover, based on our simulations, we find that if $ r^\prime\!_\perp\ge 1.8a $ for the nanofiber or $ r^\prime\!_\perp\ge 1.4w $ for the \SWG, the total decay rates are barely modified from the natural linewidth, despite of various dipole orientations.
-That is we can ignore the modification of the decay rates due to the presence of the two types of waveguides when the atoms are trapped in a far distance from the waveguide surface. We also compare the modifications of spontaneous emission rates at the D1 line and the D2 line of cesium atoms in Fig.~\ref{fig:decayrates} [(a,b) versus (c,d)], and find that, at the D1 line with a longer wavelength, the emission rates are more increased than at the D2 line due to the leakage of the evanescent field--especially for the \SWG case, which has a smaller dimension; however, in the current dimension of waveguides, the difference between the D1 line and the D2 line is very small. 
+That is, we can ignore the modification of the decay rates due to the presence of the two types of waveguides when the atoms are trapped sufficiently far from the waveguide surface. We also compare the modifications of the spontaneous emission rates at the D1 line and the D2 line of cesium atoms in Fig.~\ref{fig:decayrates} [(a,b) versus (c,d)], and find that, at the D1 line with a longer wavelength, the emission rates are more increased than at the D2 line due to the leakage of the evanescent field--especially for the \SWG case, which has a smaller dimension. In the current dimension of waveguides, the difference between the D1 line and the D2 line is very small.} 
 
 % MakePlot script and data files available in the FaradayProtocol repo. Code: Example_waveguide_GFT_decayrates.m.
 \begin{figure}[!tbp]
@@ -1224,11 +1228,11 @@ That is we can ignore the modification of the decay rates due to the presence of
        }
   \end{minipage}
     %\end{tabular}
-\caption[(color online) Polarizability-dependent decay rates for the nanofiber and SWG as functions of the atoms' radial position relative to the waveguides' symmetric centers.]{(color online) Polarizability-dependent decay rates for the nanofiber (a,c) and SWG (b,d) as functions of the radial distance of the trapped atoms to the waveguides' symmetric centers. (a,b) use D1 line ($ \lambda=894 $ nm), and (c,d) use D1 line ($ \lambda=852 $ nm). Line types distinguish the contributions from the guided and radiation modes and the combined total value; colors distinguish the polarizabilities or equivalent dipole orientations of $ \sigma_\pm $, $ \pi $ transitions and the averaged case. }\label{fig:decayrates}
+\caption[(color online) \id{Polarization}-dependent decay rates for the nanofiber and SWG as functions of the atoms' radial position relative to the waveguides' symmetric centers.]{(color online) \id{Polarization}-dependent decay rates for the nanofiber (a,c) and SWG (b,d) as functions of the radial distance of the trapped atoms to the waveguides' symmetric centers. (a,b) use D1 line ($ \lambda=894 $ nm), and (c,d) use D1 line ($ \lambda=852 $ nm). Line types distinguish the contributions from the guided and radiation modes and the combined total value; colors distinguish the polarizabilities or equivalent dipole orientations of $ \sigma_\pm $, $ \pi $ transitions and the averaged case. }\label{fig:decayrates}
 \end{figure}
 
-I have to point out that, the modification of spontaneous emission rates also depends on the choice of quantization axis (see Fig.~\ref{fig:decayrates_D2_qxqy}), which defines how the polarization state of the photon emitted by the atom aligns with respect to the waveguide axis. 
-Based on our simulations with different choices of the quantization axis, $ r\!_\perp>1.9a $ for the nanofiber or $ r\!_\perp>1.4w $ seem to be a good distance to ignore the dipole-orientation-dependence of the decay rate modification, which also yield a negligible waveguide modification effect. We will work in these atom trapping ranges for most of this dissertation work to explore the quantum measurement dynamics.
+\id{I want to emphasize that, the modification of the spontaneous emission rates also depends on the choice of the quantization axis (see Fig.~\ref{fig:decayrates_D2_qxqy}), which defines how the different polarization states of the photon emitted by the atom align} with respect to the waveguide axis. 
+Based on our simulations with different choices of quantization axes, $ r\!_\perp>1.9a $ for the nanofiber or $ r\!_\perp>1.4w $ seems to be a good distance to ignore \nd{avoid?} the dipole-orientation-dependence of the decay rate modification, which also yields a negligible waveguide modification effect. \nd{effect on the waveguide?} We will work in these atom trapping ranges for most of this dissertation work to explore the dynamics of quantum measurements.
 For the \SWG case, the azimuthal angle of the atoms' trapping position will also affect the estimation of decay rate modification, but we only consider the particular azimuthal trapping angle discussed above, which is along the $ x $ or $ y $ axes and could be the easiest trapping angle to implement in experiments.
 
 
@@ -1265,54 +1269,55 @@ For the \SWG case, the azimuthal angle of the atoms' trapping position will also
        }
   \end{minipage}
     %\end{tabular}
-\caption[(color online) Similar to the last figure, but to compare the choice of quantization axis to the modification of decay rates.]{(color online) Similar to Fig.~\ref{fig:decayrates}, but to compare the choice of quantization axis to the modification of decay rates. (a,b) use the $ x $ axis as the quantization axis; (c,d) use $ y $ axis as the quantization axis. Plots are polarizability-dependent decay rates for the nanofiber (a,c) and SWG (b,d) as functions of the radial distance of the trapped atoms to the waveguides' symmetric centers. Values are taken at the D2 line wavelength. }\label{fig:decayrates_D2_qxqy}
+\caption[(color online) Similar to the last figure, but to compare the choice of the quantization axis to the modification of decay rates.]{(color online) Similar to Fig.~\ref{fig:decayrates}, but to compare the choice of quantization axis to the modification of decay rates. (a,b) use the $ x $ axis as the quantization axis; (c,d) use $ y $ axis as the quantization axis. Plots are \id{polarization}-dependent decay rates for the nanofiber (a,c) and SWG (b,d) as functions of the radial distance of the trapped atoms to the waveguides' symmetric centers. Values are taken at the D2 line wavelength. }\label{fig:decayrates_D2_qxqy}
 \end{figure}
 
-To calculate the modified decay rates of a multilevel atom in presence of a nanophotonic waveguide, one needs to represent the dipole operators using the particular level structure of the atom. 
-In our case, we consider an alkali atom with the excited state $ \ket{e}=\ket{j'f'm'} $ indicated by the orbital angular momentum quantum number $ j' $, the total atomic angular momentum quantum number $ f' $ and the projected total atomic angular momentum quantum number $ m' $ of the hyperfine sublevel of the excited state; correspondingly, the ground state is indicated by $ \ket{g}=\ket{jfm} $. Based on Eq.~\eqref{eq:opdff'}, the dipole moment operator matrix elements defining the quantum transition from hyperfine sublevel $ m $ to $ m' $ can be given by
+To calculate the modified decay rates of a multilevel atom in the presence of a nanophotonic waveguide, one needs to represent the dipole operators using the particular level structure of the atom. 
+In our case, we consider an alkali atom with the excited state $ \ket{e}=\ket{j'f'm'} $ indicated by the \id{fine-structure} angular momentum quantum number $ j' $, the \id{hyperfine} angular momentum quantum number $ f' $ \id{with projection} total atomic angular momentum quantum number $ m' $ of the hyperfine sublevel of the excited state \id{You should include a level diagram here as a figure}; correspondingly, the ground state is indicated by $ \ket{g}=\ket{jfm} $. Based on Eq.~\eqref{eq:opdff'}, the matrix elements of the dipole moment operator defining the quantum transition from hyperfine sublevel $ m $ to $ m' $ \nd{``between hyperfine sublevels $m$ and $m'$"?} can be given by
 \begin{align}
 \hat{\mathbf{d}}_{m'm} &= \sum_q \bra{j'f'm'}d_{f'f}^q\ket{jfm}\ket{j'f'm'}\bra{jfm}\mathbf{e}_q^*\\
 &= \bra{f'}\vert d\vert\ket{f}\sum_q C_{f'm'}^{f,m;1,q}\ket{f'm'}\bra{fm}\mathbf{e}_q^*. \label{eq:opdmm'}
 \end{align} 
 Based on the selection rules, the Clebsch-Gordan coefficient $C_{f',m'}^{f,m;1,q}  $ is non-zero only if $ q+m=m' $.
-Similarly, we can define the dipole moment operator defining the quantum transitions from hyperfine level $ f $ to $ f' $ by 
+Similarly, we can define the dipole moment operator defining the quantum transitions from hyperfine level $ f $ to $ f' $ \nd{Ditto} by 
 \begin{align}
 \hat{\mathbf{d}}_{f'f} &= \sum_{m,m'} \hat{\mathbf{d}}_{m'm},
 \end{align}
-and from fine structure level $ j $ to $ j' $ by
+and from fine-structure level $ j $ to $ j' $ \nd{Ditto} by
 \begin{align}
 \hat{\mathbf{d}}_{j'j} &= \sum_{f,f'} \hat{\mathbf{d}}_{f'f}.
 \end{align}
-The summations about $ m,m' $ and $ f,f' $ only cover the the corresponding sublevels for $ f,f'$ and $j,j' $ levels, respectively.
-Given that the natural linewidth of the alkali atom is determined by the quantum transitions between fine structure levels, which is proportional to the reduced dipole moment matrix element $ \bra{j'}\vert d\vert \ket{j} $, one can normalize the modified decay rates for particular levels to the natural linewidth by factorizing out the factor of $ \bra{j'}\vert d\vert \ket{j} $. For example, using the expressions of dipole moment operators, Eqs.~\eqref{eq:Gamma_e}, ~\eqref{eq:Gammaeq_rad} and~\eqref{eq:Gammaeq_guide} become
+The summations over $ m,m' $ and $ f,f' $ only cover the the corresponding sublevels for the $ f,f'$ and $j,j' $ levels, respectively.
+Given that the natural linewidth of the alkali atom is determined by quantum transitions between the fine-structure levels, which is proportional to the reduced dipole moment matrix element $ \bra{j'}\vert d\vert \ket{j} $, one can normalize the modified decay rates for particular levels to the natural linewidth by factoring out the factor of $ \bra{j'}\vert d\vert \ket{j} $. For example, using the expressions of dipole moment operators, Eqs.~\eqref{eq:Gamma_e}, ~\eqref{eq:Gammaeq_rad} and~\eqref{eq:Gammaeq_guide} become
 \begin{align}
 \frac{\Gamma_{m'\!,rad}}{\Gamma_0} &= 1+ \sum_f |o_{jf}^{j'f'}|^2 \!\!\!\sum_{m,q=m'-m}\!\!\!\! \left|C_{f'm'}^{f,m;1,q}\right|^2\frac{\mathbf{e}_q\cdot \mathrm{Im}\left[\tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{G_0}\\
-&= 1+ \sum_f |o_{jf}^{j'f'}|^2 \!\!\!\sum_{m,q=m'-m}\!\!\!\! \left|C_{f'm'}^{f,m;1,q}\right|^2 \left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right)\\
+&= 1+ \sum_f |o_{jf}^{j'f'}|^2 \!\!\!\sum_{m,q=m'-m}\!\!\!\! \left|C_{f'm'}^{f,m;1,q}\right|^2 \left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right),\\
 \frac{\Gamma_{m'\!,gyd}}{\Gamma_0} &= \sum_f |o_{jf}^{j'f'}|^2\sum_{m,q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \frac{\mathbf{e}_q\cdot \mathrm{Im}\left[ \tensor{\mathbf{G}}_{gyd}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{ G_0}\\
 &= \sum_f |o_{jf}^{j'f'}|^2\sum_{m,q=m'-m} \left|C_{f'm'}^{f,m;1,q}\right|^2 \frac{\Gamma^q_{e,gyd}}{\Gamma_0},
 \end{align}
 and 
 \begin{align}
 \frac{\Gamma_{f'\!,rad}}{\Gamma_0} &= 1 \!+\! \frac{1}{2f' \!+\! 1}\!\sum_f\! |o_{jf}^{j'f'}|^2 \!\!\!\!\!\!\!\!\sum_{m',m,q=m'-m}\!\!\!\!\!\!\!\!  \left|C_{f'm'}^{f,m;1,q}\right|^2\frac{\mathbf{e}_q\!\cdot\! \mathrm{Im}\!\left[\tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}'\!,\mathbf{r}')\right]\!\!\cdot \mathbf{e}_q^*}{G_0}\\
-&= 1 \!+\! \frac{1}{2f' \!+\! 1}\!\sum_f\! |o_{jf}^{j'f'}|^2 \!\!\!\!\!\!\!\!\sum_{m',m,q=m'-m}\!\!\!\!\!\!\!\!  \left|C_{f'm'}^{f,m;1,q}\right|^2\left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right)\\
+&= 1 \!+\! \frac{1}{2f' \!+\! 1}\!\sum_f\! |o_{jf}^{j'f'}|^2 \!\!\!\!\!\!\!\!\sum_{m',m,q=m'-m}\!\!\!\!\!\!\!\!  \left|C_{f'm'}^{f,m;1,q}\right|^2\left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right),\\
 \frac{\Gamma_{f'\!,gyd}}{\Gamma_0} &= \frac{1}{2f'+1}\sum_f |o_{jf}^{j'f'}|^2 \!\!\!\!\!\!\sum_{m',m,q=m'-m}\!\!\!\!\!\! \left|C_{f'm'}^{f,m;1,q}\right|^2 \frac{\mathbf{e}_q\cdot \mathrm{Im}\left[ \tensor{\mathbf{G}}_{gyd}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{ G_0}\\
 &=\frac{1}{2f'+1}\sum_f |o_{jf}^{j'f'}|^2 \!\!\!\!\!\!\sum_{m',m,q=m'-m}\!\!\!\!\!\! \left|C_{f'm'}^{f,m;1,q}\right|^2 \frac{\Gamma^q_{e,gyd}}{\Gamma_0},
 \end{align}
-where the last two equations calculate the averaged decay rates for the $ f' $ sublevels due to the radiation and guided modes. 
-Above, $ \Gamma^q_{e,rad}/\Gamma_0 $ and $ \Gamma^q_{e,gyd} $ are the dipole decay rates defined through Eqs.~\eqref{eq:Gammaeq_rad} and~\eqref{eq:Gammaeq_guide} with the excited state level $ e $ set to be the common energy level for the summations in the corresponding equations, which can be calculated with the information of emission frequency and equivalent dipole orientation $ \mathbf{e}_q $.
-In details, we define the quantum transition from the sublevel $ \ket{j',f',m'} $ to $\ket{j,f, m} $ as an equivalent optical dipole that is oscillating along the $ \mathbf{e}_q $ direction with branching ratio determined by $ o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m} $. That is the equivalent dipole moment is given by\footnote{We will discuss the general strategy of finding the equivalent dipole moment in the next section.}
+where the last two equations calculate the average decay rates for the $ f' $ sublevels due to the radiation and guided modes. 
+Above, $ \Gamma^q_{e,rad}/\Gamma_0 $ and $ \Gamma^q_{e,gyd} $ are the dipole decay rates defined through Eqs.~\eqref{eq:Gammaeq_rad} and~\eqref{eq:Gammaeq_guide} with the excited state level $ e $ set to be the common energy level for the summations in the corresponding equations, which can be calculated with the information of the emission frequency and the equivalent dipole orientation $ \mathbf{e}_q $.
+
+\id{to carry out the calculation}, we define the quantum transition from the sublevel $ \ket{j',f',m'} $ to $\ket{j,f, m} $ as an equivalent optical dipole that is oscillating along the $ \mathbf{e}_q $ direction with the branching ratio determined by $ o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m} $. That is the equivalent dipole moment is given by\footnote{We will discuss the general strategy of finding the equivalent dipole moment in the next section.}
 \begin{align}\label{eq:dipolem'meq}
 \mathbf{d}_{m'\rightarrow m} = \sum_q o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m} \mathbf{e}_q.
 \end{align}
 Therefore, the dielectric modified atomic decay rate due to the transition $ \ket{j',f',m'} \rightarrow \ket{j,f,m}$ can be given by 
 \begin{align}
 \frac{\Gamma_{m'\rightarrow m\!,rad}}{\Gamma_0} &= 1+ |o_{jf}^{j'f'}|^2 \left|C_{f'm'}^{f,m;1,q=m'-m}\right|^2\frac{\mathbf{e}_q\cdot \mathrm{Im}\left[\tensor{\mathbf{G}}_{ind,rad}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{G_0}\\
-&= 1+ |o_{jf}^{j'f'}|^2 \left|C_{f'm'}^{f,m;1,q=m'-m}\right|^2 \left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right) \label{eq:Gammampmrad}\\
+&= 1+ |o_{jf}^{j'f'}|^2 \left|C_{f'm'}^{f,m;1,q=m'-m}\right|^2 \left( \frac{\Gamma^q_{e,rad}}{\Gamma_0}-1\right) \label{eq:Gammampmrad},\\
 \frac{\Gamma_{m'\rightarrow m\!,gyd}}{\Gamma_0} &= |o_{jf}^{j'f'}|^2 \left|C_{f'm'}^{f,m;1,q=m'-m}\right|^2 \frac{\mathbf{e}_q\cdot \mathrm{Im}\left[ \tensor{\mathbf{G}}_{gyd}(\mathbf{r}',\mathbf{r}')\right]\cdot \mathbf{e}_q^*}{ G_0}\\
 &=|o_{jf}^{j'f'}|^2 \left|C_{f'm'}^{f,m;1,q=m'-m}\right|^2 \frac{\Gamma^q_{e,gyd}}{\Gamma_0}.\label{eq:Gammampmgyd}
 \end{align}
-For the decay rate equations above, whenever we sum over $ f $-levels, the frequencies of the photon emissions for different $ f $-levels are different, in general; given the hyperfine energy splitting ($ \sim 100 $ MHz) and the detuning of the light (typically on the order of a few GHz), the frequency difference between the hyperfine level splittings could be negligible, in practice. 
-It is also a good approximation to set the decay rates of sublevels in the same hyperfine manifold share the same value as long as the atoms are not too close to the waveguide surface. 
+For the decay rate equations above, whenever we sum over $ f $-levels, the frequencies of the photon emissions for different $ f $-levels are different, in general; given the hyperfine energy splitting ($ \sim 100 $ MHz) and the detuning of the light (typically on the order of a few GHz), the frequency difference between the hyperfine level splittings could be negligible in practice. 
+It is also a good approximation to set the decay rates of sublevels in the same hyperfine manifold \nd{There are two verbs here.} share the same value as long as the atoms are not too close to the waveguide surface. 
 With the components solved, the total decay rate for corresponding transitions or of particular excited states can be given by
 \begin{align}
 \frac{\Gamma}{\Gamma_0} =1+ \frac{\Gamma_{ind,rad}}{\Gamma_0}+\frac{\Gamma_{gyd}}{\Gamma_0}=\frac{\Gamma_{rad}}{\Gamma_0}+\frac{\Gamma_{gyd}}{\Gamma_0}.
@@ -1351,15 +1356,19 @@ With the components solved, the total decay rate for corresponding transitions o
        }
   \end{minipage}
     %\end{tabular}
-\caption[Waveguide-modified spontaneous decay rates of hyperfine structure sublevels.]{The modified spontaneous decay rates due to quantum transitions among hyperfine structure sublevels of a $ ^{133}Cs $ atom trapped close to a nanofiber (a,c) and a \SWG (b,d). (a,b) use the $ y $ axis as the quantization axis; (c,d) use $ z $ axis as the quantization axis. Plotted are the decay rates of different levels as functions of the radial distance of the trapped atoms to the waveguides' symmetric centers. Values are calculated for the D2 line transitions. }\label{fig:decayrates_hyperfine_D2_qyqz}
+\caption[Waveguide-modified spontaneous decay rates of hyperfine structure sublevels.]{The modified spontaneous decay rates due to quantum transitions among hyperfine sublevels of a $ ^{133}$Cs atom trapped close to a nanofiber (a,c) and a \SWG (b,d). (a,b) use the $ y $ axis as the quantization axis; (c,d) use the $ z $ axis as the quantization axis. Plotted are the decay rates of different levels as functions of the radial distance of the trapped atoms to the waveguides' symmetric centers. Values are calculated for the D2 line transitions. }\label{fig:decayrates_hyperfine_D2_qyqz}
 \end{figure}
 
 \allowbreak
-We plot some decay rates of a cesium atom due to D2 line transitions modified as the atom varies its radial position to a nanofiber or a \SWG axis in Fig.~\ref{fig:decayrates_hyperfine_D2_qyqz}. As an example of individual transitions among hyperfine sublevels, we plot three decay rates due to a $ \pi $ photon emission process: $ \ket{6P_{3/2},f'\!=\!4,m'\!=\!3}\rightarrow \ket{6S_{1/2},f\!=\!4,m\!=\!3} $ (solid magenta line), $ \ket{6P_{3/2},f'\!=\!4,m'\!=\!4} \rightarrow \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ (red dashed line), and $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!4}\rightarrow \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ (green dotted line). Their normalized values with respect to the natural linewidth are determined by $ 1+ \left|o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m}\right|^2\! (\Gamma_{e,gyd}\!+\!\Gamma_{e,ind,rad})/\Gamma_0 $, where $ \Gamma_{e,ind,rad}=\Gamma_{e,rad} \!-\! \Gamma_0 $ is the induced dipole radiation contribution part of the decay rate. We ignore the frequency difference among these three transitions since the energy splitting between the $ \ket{6P_{3/2},f'\!=\!5} $ and $ \ket{6P_{3/2},f'\!=\!4} $ hyperfine structure levels is negligible compared to the D2 line energy gap. Therefore, the relative values of the three transition rates are largely determined by the branching factor $ \left|o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m}\right|^2 $ and the coupled dipole decay rate $ (\Gamma_{e,gyd}+\Gamma_{e,ind,rad}) $ at a D2 line transition frequency for the two types of waveguides. When we use the $ y $ axis as the quantization axis [Fig.~\ref{fig:decayrates_hyperfine_D2_qyqz}(a,b)], since both $ \Gamma_{e,gyd}$ and $\Gamma_{e,ind,rad} $ are positive [see Fig.~\ref{fig:decayrates} (c,d)], the three transitions all generate decay rates greater than $ 1 $. Between $ \ket{6P_{3/2},f'\!=\!4,m'\!=\!3} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!3} $ and $ \ket{6P_{3/2},f'\!=\!4,m'\!=\!4} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ transitions, they all share the same relative oscillation strength $ o_{j=1/2,f=4}^{j'=3/2,f'=4}=-\sqrt{21}/6 $ but have different Clebsch-Gordan coefficients, which are given by $ |C_{f'\!=\!4,m'\!=\!3}^{f\!=\!4,m\!=\!3;1,0}|^2=9/20 $ and $ |C_{f'\!=\!4,m'\!=\!4}^{f\!=\!4,m\!=\!4;1,0}|^2=4/5 $, and hence $ \ket{6P_{3/2},f'\!=\!4,m'\!=\!4} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ transitions happen more frequently and yield a larger decay rate than the other. For the $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!4} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ transition, the branching factor is smaller than the other two transitions, and hence yield a smallest decay rate among the three transitions as shown in the figure for both the nanofiber and the \SWG cases. When we use the $ z $ axis as the quantization axis, since the radiation mode contribution can be less than $ 1 $ at some radial distance [see Fig.~\ref{fig:decayrates} (c,d)], the three transitions could reach to a common point at $ 1 $ as shown.
-\qxd{Maybe I should provide a level structure diagram for the quantum transitions involved in this part.}
+We plot some decay rates of a cesium atom due to D2 line transitions as \id{a function of the radial position of the atom for} a nanofiber or a \SWG axis in Fig.~\ref{fig:decayrates_hyperfine_D2_qyqz}. As an example of individual transitions among hyperfine sublevels, we plot three decay rates due to a $ \pi $ photon emission process: 
+\nd{ See Ivan's comment. I'm not sure what he wants:
+$ \ket{6P_{3/2},f'\!=\!4,m'\!=\!3}\rightarrow \ket{6S_{1/2},f\!=\!4,m\!=\!3} $ (solid magenta line), $ \ket{6P_{3/2},f'\!=\!4,m'\!=\!4} \rightarrow \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ (red dashed line), and $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!4}\rightarrow \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ (green dotted line).} 
+Their normalized values with respect to the natural linewidth are determined by $ 1+ \left|o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m}\right|^2\! (\Gamma_{e,gyd}\!+\!\Gamma_{e,ind,rad})/\Gamma_0 $, where $ \Gamma_{e,ind,rad}=\Gamma_{e,rad} \!-\! \Gamma_0 $ is the induced dipole radiation contribution part of the decay rate. We ignore the frequency difference among these three transitions since the energy splitting between the $ \ket{6P_{3/2},f'\!=\!5} $ and $ \ket{6P_{3/2},f'\!=\!4} $ hyperfine levels is negligible compared to the D2 line energy gap. Therefore, the relative values of the three transition rates are largely determined by the branching factor $ \left|o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m}\right|^2 $ and the coupled dipole decay rate $ (\Gamma_{e,gyd}+\Gamma_{e,ind,rad}) $ at a D2 line transition frequency for the two types of waveguides. When we use the $ y $ axis as the quantization axis [Fig.~\ref{fig:decayrates_hyperfine_D2_qyqz}(a,b)], since both $ \Gamma_{e,gyd}$ and $\Gamma_{e,ind,rad} $ are positive [see Fig.~\ref{fig:decayrates} (c,d)], the three transitions all generate decay rates greater than $ 1 $. Between $ \ket{6P_{3/2},f'\!=\!4,m'\!=\!3} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!3} $ and $ \ket{6P_{3/2},f'\!=\!4,m'\!=\!4} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ transitions, they all share the same relative oscillation strength $ o_{j=1/2,f=4}^{j'=3/2,f'=4}=-\sqrt{21}/6 $ but have different Clebsch-Gordan coefficients, which are given by $ |C_{f'\!=\!4,m'\!=\!3}^{f\!=\!4,m\!=\!3;1,0}|^2=9/20 $ and $ |C_{f'\!=\!4,m'\!=\!4}^{f\!=\!4,m\!=\!4;1,0}|^2=4/5 $, and hence $ \ket{6P_{3/2},f'\!=\!4,m'\!=\!4} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ transitions happen more frequently and yield a larger decay rate than the other\nd{s?}. For the $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!4} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ transition, the branching factor is smaller than the other two transitions, and hence yields the smallest decay rate among the three transitions as shown in the figure for both the nanofiber and the \SWG cases. When we use the $ z $ axis as the quantization axis, since the radiation mode contribution can be less than $ 1 $ at some radial distance [see Fig.~\ref{fig:decayrates} (c,d)], the three transitions could reach to a common point at $ 1 $ as shown. \nd{``could reach a common point"? ``of 1" or ``at 1"?}
+\qxd{Maybe I should provide a level structure diagram for the quantum transitions involved in this part.} \id{Yes!}
 
-Figure~\ref{fig:decayrates_hyperfine_D2_qyqz} also shows two total decay rates on hyperfine structure sublevel $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!5} $, which only allows the $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!5} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ transition (thick black line with dots), and $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!4} $ (lighter gray line with circles), in which, note, the $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!4}$ to $\ket{6S_{1/2},f\!=\!3,m\!=\!3} $ transition is not allowed due to selection rules. The decay rates for the two sublevels have slightly different values despite they are all on the same energy level, which would be degenerate for atoms in free-space or in a homogeneous background medium. This is a feature of the waveguide interface, which we will explain in the next section in the perspective of emission geometry. 
-Only when the atoms are in a far distance to the waveguide surface, sublevels on the same hyperfine structure manifold will have negligible decay rate splittings. 
+Figure~\ref{fig:decayrates_hyperfine_D2_qyqz} also shows two total decay rates on the hyperfine sublevel $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!5} $, which \id{decays to} $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!5} $ to $ \ket{6S_{1/2},f\!=\!4,m\!=\!4} $ transition (thick black line with dots), and $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!4} $ (lighter gray line with circles). % \id{} in which, note, the $ \ket{6P_{3/2},f'\!=\!5,m'\!=\!4}$ to $\ket{6S_{1/2},f\!=\!3,m\!=\!3} $ transition is not allowed due to selection rules. 
+The \id{total} decay rates for the two sublevels have slightly different values despite \nd{the fact that} they are \id{associated with} the same energy level, which would be degenerate for atoms in free-space or in a homogeneous background medium. This is a feature of the waveguide interface, which we will explain in the next section \nd{from} the perspective of emission geometry. 
+Only when the atoms are \nd{far from} the waveguide surface, sublevels on the same hyperfine structure manifold will have negligible decay rate splittings. 
 
 Due to the photon reflection from the dielectric interface, the frequency of the emitted light due to the $ e\rightarrow g $ transition will also be shifted from the intrinsic atomic resonance by 
 \begin{align}
@@ -1371,71 +1380,73 @@ By noting the scattered electrical field $ \mathbf{E}_{scatt}(\br)=\tensor{\math
 &=\frac{1}{2} \frac{\left|o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m}\right|^2 \mathrm{Re}\left[ \mathbf{e}_q\cdot\left(\mathbf{E}_{ind,rad}^{(q^*)}(\br')+\mathbf{E}_{ind,gyd}^{(q^*)}(\br')\right)\right]}{G_0},
 \end{align}
 where $ \mathbf{E}_{ind,rad/gyd}^{(q^*)}(\br') $ are the induced radiative/guided mode components of the local electric field due to a dipole polarized along $ \mathbf{e}_q^* $ direction, which can be calculated using the BEM or other methods. 
-By definition, this is the Lamb shift due to the light scattering from the dielectric interface and has excluded the propagating field in vacuum. 
+By definition, this is the Lamb shift due to the light scattering from the dielectric interface and \nd{Grammar?} has excluded the propagating field in the vacuum. 
 
-Alternatively, the Lamb shift can also be calculated through evaluating the real part of the medium's Green's function tensor from its imaginary part using the Kramers-Kronig relations~\cite{Dzsotjan2011}. In this case, the total Green's tensor and the vacuum Green's tensor may be required to be evaluated accordingly, but the approximated solution for a cylindrical waveguide geometry has been given in Ref.~\cite{Dzsotjan2011} which works pretty well when the atoms are not too close to the waveguide surface as the Lamb shift decays on the order of $ 1/(r_\perp-r_\perp^0)^3 $, where $ r_\perp^0 $ is the radial coordinate of the closest waveguide surface point. One can use the approximated solution for a cylindrical waveguide to validate the accuracy of the Lamb shift calculation using the other numerical approaches. In the dispersive regime, the Purcell-effect-caused energy level shifts are usually negligible.
+Alternatively, the Lamb shift can also be calculated through evaluating the real part of the medium's Green's function tensor from its imaginary part using the Kramers-Kronig relations~\cite{Dzsotjan2011}. In this case, the total Green's tensor and the vacuum Green's tensor may be required to be evaluated accordingly, but the approximated solution for a cylindrical waveguide geometry has been given in Ref.~\cite{Dzsotjan2011} which works pretty well when the atoms are not too close to the waveguide surface as the Lamb shift decays on the order of $ 1/(r_\perp-r_\perp^0)^3 $, where $ r_\perp^0 $ is the radial coordinate of the closest waveguide surface point. One can use the approximated solution for a cylindrical waveguide to validate the accuracy of the Lamb shift calculation using the other numerical approaches. In the dispersive regime, the energy level shifts caused by the Purcell effect are usually negligible.
 
 
 
 \section{Geometric effects of dielectric waveguide interfaces}\label{sec:waveguideinterfacegeometry}
-To conclude this chapter, we will explain some of the unique features of dielectric waveguide interfaces compared to the homogeneous background medium for atomic systems. We start with the problem of modification of spontaneous emission rate of atoms using a waveguide, which eventually determines the phase shift of the guided light modes and the quantum measurement strength we are going to extend to in the rest of this dissertation. Then we consider the geometric factors that can enhance the atom-light coupling for particular purpose by designing the shape of waveguides.
+To conclude this chapter, we will explain some of the unique features of dielectric waveguide interfaces compared to a homogeneous background medium for atomic systems. We start with the problem of the modification of the spontaneous emission rate of atoms using a waveguide, which eventually determines the phase shift of the guided light modes and the quantum measurement strength we are going to extend to in the rest of this dissertation. Then we consider the geometric factors that can enhance the atom-light coupling for a particular purpose by designing the shape of waveguides.
 
-\subsection{Modified decay rates in the perspective of waveguide geometry}\label{sec:geometryofemission}
-Based on Eq.~\eqref{eq:Gamma_e}, we define an equivalent dipole with moment $ \mathbf{d} $ for the quantum transitions involved for an alkali atom. Then the spontaneous emission rate for the dipole in free space ($ \Gamma_0 $) and close by a waveguide ($ \Gamma $) can be rewritten as
+\subsection{Modified decay rates \nd{from} the perspective of waveguide geometry}\label{sec:geometryofemission}
+Based on Eq.~\eqref{eq:Gamma_e}, we define an equivalent dipole with the moment $ \mathbf{d} $ for the quantum transitions involved for an alkali atom. Then the spontaneous emission rate for the dipole in free space ($ \Gamma_0 $) and close by a waveguide ($ \Gamma $) can be rewritten as
 \begin{align}
-\Gamma_0 &= \frac{4\omega_0^3|\mathbf{d}|^2}{3\hbar c^3}=\frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_0(\br',\br')]\cdot \mathbf{d}^* \right\}\\
+\Gamma_0 &= \frac{4\omega_0^3|\mathbf{d}|^2}{3\hbar c^3}=\frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_0(\br',\br')]\cdot \mathbf{d}^* \right\},\\
 \Gamma &= \frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT(\br',\br')]\cdot \mathbf{d}^* \right\}\\
 &=\frac{2}{\hbar}\left\{ \mathbf{d}\cdot \mathrm{Im}[\GFT_0(\br',\br')+\GFT_R(\br'\br')]\cdot \mathbf{d}^* \right\}.\label{eq:GammaG0GRrprp}
 \end{align}
-Obviously, $ \Gamma $ is a scalar and includes a free dipole emission part and a reflected or induced dipole emission part, by the physics meaning of its parts. 
-We interpret the total spontaneous emission rate of a dipole close to an interface of dielectric medium is a result of interference between a free oscillating dipole and its image mirrored by the interface~\cite{Vos2009}.
+Obviously, $ \Gamma $ is a scalar and includes a free dipole emission part and a reflected or induced dipole emission part, \nd{What does this mean?: by the physics meaning of its parts.} 
+We interpret the total spontaneous emission rate of a dipole close to \nd{a dielectric medium interface} to be a result of interference between a free oscillating dipole and its image mirrored by the interface~\cite{Vos2009}.
 
 By using some mathematical properties of tensor-vector products and the trace of tensors, we can further write
 \begin{align}
 \Gamma &\propto \tr\left\{\mathbf{d}\cdot \mathrm{Im}[\GFT(\br',\br')]\cdot \mathbf{d}^* \right\} \\
 &=\mathrm{tr}\left\{(\mathbf{d}^*\mathbf{d})\cdot \mathrm{Im}[\GFT(\br',\br')]  \right\}\\
-&= \mathrm{tr}\left\{ \tensor{\boldsymbol{\rho}} \cdot \mathrm{Im}[\GFT(\br',\br')]  \right\}\ge 0
+&= \mathrm{tr}\left\{ \tensor{\boldsymbol{\rho}} \cdot \mathrm{Im}[\GFT(\br',\br')]  \right\}\ge 0,
 \end{align}
-where $\tensor{\boldsymbol{\rho}}=(\mathbf{d}^*\mathbf{d})$ is defined to be the dipole moment tensor as a dyad of two dipole moment vectors, which is essential the polarizability operator (tensor) in the quantum regime [see Eq.~\eqref{Eq::PTensorGen}] and is solely a property of the atom. $ \tensor{\boldsymbol{\rho}} $ is positive semidefinite based on its definition as a dyad.
-Therefore, $\mathrm{Im}[\GFT(\br',\br')]$ is also positive semidefinite to make sure $ \Gamma\ge 0 $. 
-Written in this way, the $\Gamma$ are decomposed into a part only depending on the internal structure of the atom and a part only depending on the optical response property of the dielectric interface. By controlling either part of the two systems, one can manipulate the atom-light coupling and their response. 
-Meanwhile, the fact that both the atomic polarizability tensor and the Green's dyad are positive semidefinite could mean a practical controllability and observability on the polarization state of the light via controlling the atomic state, and vice verse.
+where $\tensor{\boldsymbol{\rho}}=(\mathbf{d}^*\mathbf{d})$ is defined to be the dipole moment tensor, a dyad of two dipole moment vectors, which is essential the polarizability operator (tensor) in the quantum regime [see Eq.~\eqref{Eq::PTensorGen}] and is solely a property of the atom. $ \tensor{\boldsymbol{\rho}} $ is positive semidefinite based on its definition as a dyad.
+Therefore, $\mathrm{Im}[\GFT(\br',\br')]$ \nd{also needs to be positive semidefinite to make} $ \Gamma\ge 0 $. 
+Written in this way, $\Gamma$ is decomposed into a part only depending on the internal structure of the atom and another part only depending on the optical response property of the dielectric interface. By controlling either part of the two systems, one can manipulate the atom-light coupling and their responses. 
+Meanwhile, the fact that both the atomic polarizability tensor and the Green's dyad are positive semidefinite could mean practical controllability and observability on the polarization state of the light via controlling the atomic state, and vice versa.
 
 Now, we diagonalize $\mathrm{Im}[\GFT(\br',\br')]$ by
 \begin{align}
 \mathrm{Im}[\GFT(\br',\br')] &= \sum_{i=1,2,3} g_i\mathbf{v}_i\mathbf{v}_i,\,\text{with}\, g_i>0,
 \end{align}
-where $\mathbf{v}_i$ as the eigenvectors of $ \mathrm{Im}[\GFT(\br',\br')] $ form the principal axes of the decay rate, and $ g_i $ are the principal values of decay rates on these axes. 
+where $\mathbf{v}_i$ are the eigenvectors of $ \mathrm{Im}[\GFT(\br',\br')] $ \nd{from?} the principal axes of the decay rate, and $ g_i $ are the principal values of the decay rates on these axes. 
 \begin{align}
 \Gamma &= \frac{2}{\hbar}\sum_i g_i(\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i) 
 = \sum_i (d'_i)^2 g_i \\
 &= \Gamma_1\cos^2\phi\sin^2\theta+\Gamma_2\sin^2\phi\sin^2\theta+\Gamma_3\cos^2\theta,\label{eq:Gammathetaphi}
 \end{align}
-where vector elements $ d'_i=\frac{2}{\hbar}\sqrt{\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i}$, and $\mathbf{d}'=\sum_i d'_i\mathbf{v}_i$ defines the equivalent dipole orientation of the atomic polarizability written in the principal basis of the dielectric medium interface [see Eq.~\eqref{eq:dipolem'meq} for finding the equivalent dipole moment, more details will follow]. The amplitude $ |\mathbf{d}'|=2d^2/\hbar $, where $ d=|\mathbf{d}| $. We order $ \Gamma_i $'s by
+where the vector elements $ d'_i=\frac{2}{\hbar}\sqrt{\mathbf{v}_i\cdot \tensor{\boldsymbol{\rho}}\cdot \mathbf{v}_i}$, and $\mathbf{d}'=\sum_i d'_i\mathbf{v}_i$ define the equivalent dipole orientation of the atomic polarizability written in the principal basis of the dielectric medium interface [see Eq.~\eqref{eq:dipolem'meq} for finding \nd{``how to find"?} the equivalent dipole moment, more details will follow]. \nd{Is this supposed to be a sentence?: The amplitude $ |\mathbf{d}'|=2d^2/\hbar $, where $ d=|\mathbf{d}| $.} We order $ \Gamma_i $'s by
 \begin{align}
 \Gamma_1=\Gamma_{max}\ge \Gamma (\theta,\phi) \ge \Gamma_{min}=\Gamma_3.
 \end{align}
 Correspondingly, $ g_1\ge g_2\ge g_3 $. We have 
 \begin{align}
-\Gamma_i &= \frac{2d^2g_i}{\hbar},
+\Gamma_i &= \frac{2d^2g_i}{\hbar}.
 \end{align}
-The angles $ 0\le \theta\le \pi $ and $ 0\le \phi\le 2\pi $ define the incident and azimuthal angles on the spherical coordinate using the principal axes of the Green's tensor. Therefore, the value of the spontaneous decay rate $ \Gamma (\theta,\phi) $ is limited by the eigenvalues $ g_i $ of the imaginary part of the Green's tensor of the dipole radiation, which is solely determined by the geometry of the dielectric interface and the position of the dipole source, and is evaluated by the alignment, $ (\theta,\phi) $, of the equivalent dipole of the atom relative to the principal axes of the Green's tensor. The distribution of $ \Gamma $ with arbitrary $ (\theta,\phi) $ is called the spontaneous \emph{emission surface} of an optical dipole placed in a medium background\index{emission surface}~\cite{Vos2009}. The simplest example of a medium interface is the vacuum or a homogeneous bulk medium. Placing a dipole in such a medium will result in a Green's tensor characterized by $ \GFT_0(\br',\br') $, the imaginary part of which is proportional to a unit tensor with diagonal elements equal to $ 2(nk_0)^3/3 $. In this case, the emission surface is a perfect ball, which means the dipole doesn't have a preferred orientation and the decay rate of the dipole in such a medium is determined by its dipole moment and the index of refraction, $ n $, of the background medium. 
+The angles $ 0\le \theta\le \pi $ and $ 0\le \phi\le 2\pi $ define the incident and azimuthal angles in the spherical coordinate using the principal axes of the Green's tensor. Therefore, the value of the spontaneous decay rate $ \Gamma (\theta,\phi) $ is limited by the eigenvalues $ g_i $ of the imaginary part of the Green's tensor of the dipole radiation, which is solely determined by the geometry of the dielectric interface and the position of the dipole source, and is evaluated by the alignment, $ (\theta,\phi) $, of the equivalent dipole of the atom relative to the principal axes of the Green's tensor. 
+
+The distribution of $ \Gamma $ with arbitrary $ (\theta,\phi) $ is called the spontaneous \emph{emission surface} of an optical dipole placed in a medium background\index{emission surface}~\cite{Vos2009}. The simplest example of a medium interface is the vacuum or a homogeneous bulk medium. Placing a dipole in such a medium will result in a Green's tensor characterized by $ \GFT_0(\br',\br') $, the imaginary part of which is proportional to a unit tensor with diagonal elements equal to $ 2(nk_0)^3/3 $. In this case, the emission surface is a perfect ball, which means that the dipole does not have a preferred orientation and the decay rate of the dipole in such a medium is determined by its dipole moment and the index of refraction, $ n $, of the background medium. 
 
 With an inhomogeneous medium, we follow the argument by Vos \emph{et al.} and our interpretation of Eq.~\eqref{eq:GammaG0GRrprp} that the principal axes and the eigenvalues of the imaginary part of the Green's dyad can be visualized using the interference picture of the original dipole source and its image behind the interface~\cite{Vos2009}. Figure~\ref{fig:dipoleinterferencepic} illustrates the interference effect of dipoles placed on top of a semi-infinite half space medium (flat interface) and a cylindrical waveguide medium. 
 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.8\textwidth]{../media/Figs/dipoleorientation}}
-\caption[Modified dipole decay rates due to the interference of the radiations from the dipole and its image dipole mirrored on flat and cylindrical surfaces.]{Modified dipole decay rates due to the interference of radiations from the dipole and its image dipole mirrored on flat (a) and cylindrical (b) surfaces. Coordinate systems are defined on the left. We picture the dipole as an oscillator of two opposite charges separated by some distance. In the middle plots, the red arrows (on top of reference interface lines) indicate dipole sources with the arrows pointing to the positive charge direction at a moment. The green arrows (below the interface) indicate the image dipole below the medium interface. We ignore the separation of charges in the dipole source and qualitatively establish the physics intuition in thinking about how the dipole orientation affects the spontaneous emission rate of the dipole. Three orthogonal dipole orientations are considered. Emission surfaces are illustrated on the right. }\label{fig:dipoleinterferencepic}
+\caption[Modified dipole decay rates due to the interference of the radiations from the dipole and its image dipole mirrored on flat and cylindrical surfaces.]{Modified dipole decay rates due to the interference of radiations from the dipole and its image dipole mirrored on flat (a) and cylindrical (b) surfaces. Coordinate systems are defined on the left. We picture the dipole as an oscillator of two opposite charges separated by some distance. In the middle plots, the red arrows (on top of the reference interface lines) indicate dipole sources with the arrows pointing to the positive charge \nd{Unnecessary?: direction at a moment}. The green arrows (below the interface) indicate the image dipole below the medium interface. We ignore the separation of charges in the dipole source and establish a qualitative physical intuition in thinking about how the dipole orientation affects the spontaneous emission rate of the dipole. Three orthogonal dipole orientations are considered. Emission surfaces are illustrated on the right. }\label{fig:dipoleinterferencepic}
 \end{figure}
 
-With a flat surface interface [Fig.~\ref{fig:dipoleinterferencepic} (a)], the dipole source has a mirror dipole with the same distance to the interface and the same oscillation strength as the source yet a mirrored oscillation direction in the static limit. Using three orthogonal dipole orientations, we find that, if the source dipole oscillates along the $ x $ direction perpendicular to the interface, the mirrored dipole has the same oscillation direction as the source and could contribute a constructive interference at the source dipole position when the source dipole is close to the interface. This could yield an enhanced spontaneous emission rate. To the extreme, when the dipole is placed on the surface, the emission rate will be enhanced twice as that of the free-space case. In contrast, if the source dipole is orientated along the $ y $ and $ z $ direction, the interference from the mirrored dipole will be destructive, which reduces the emission rate. As the dipole approaches to the interface, all photon emissions will be canceled. Note that there is a degeneracy over the choice of $ y $ and $ z $ directions. In other words, $ y $ and $ z $ directions can be any two orthogonal directions parallel to the interface, and the emission rates on both directions have the same amplitude.
+With a flat surface interface [Fig.~\ref{fig:dipoleinterferencepic} (a)], the dipole source has a mirror dipole with the same distance to the interface and the same oscillation strength as the source yet a mirrored oscillation direction in the static limit. Using three orthogonal dipole orientations, we find that, if the source dipole oscillates along the $ x $ direction perpendicular to the interface, the mirrored dipole has the same oscillation direction as the source and could contribute a constructive interference at the source dipole position when the source dipole is close to the interface. This could yield an enhanced spontaneous emission rate. To the extreme, when the dipole is placed on the surface, the emission rate will be enhanced twice as that of the free-space case. In contrast, if the source dipole is orientated along the $ y $ and $ z $ directions, the interference from the mirrored dipole will be destructive, which reduces the emission rate. As the dipole approaches the interface, all photon emissions will be canceled. Note that there is a degeneracy over the choice of $ y $ and $ z $ directions. In other words, $ y $ and $ z $ directions can be any two orthogonal directions parallel to the interface, and the emission rates on both directions will have the same amplitude.
 
 Qualitatively, when we use a cylindrical waveguide as the medium interface [Fig.~\ref{fig:dipoleinterferencepic} (b)], the dipole mirroring will yield a smaller oscillation amplitude and shorter distance below the interface than the case if only the interface is changed to a flat surface (equivalent to make the radius of the cylinder to infinity). 
-This property of curved interface makes the constructive and destructive interference between the dipole source and the image dipole less complete than the flat interface case. 
+This property of curved interfaces makes the constructive and destructive interference between the dipole source and the image dipole less complete than the case of a flat interface. 
 Particularly, the destructive interference when the dipole is orientated along the $ y $ axis--when the interface along $ y $ is curved--could be much weaker than along the $ z $ axis--when the interface along $ z $ can be treated as straight.
 We plot out the emission surface of a dipole placed outside of a cylindrical waveguide with $ r'_\perp=a $ (dipole on the surface) and $ r'_\perp=2a $ in Fig.~\ref{fig:emissionsurfacenanofiber}. 
-Using the cylindrical coordinate system, we find the decay rate due to a $ z $-polarized dipole get the minimum value while that of a $ r_\perp $-polarized dipole reaches the maximum, and the decay rate of a $ \phi $-polarized dipole is in the middle range. 
+Using the cylindrical coordinate system, we find that the decay rate due to a $ z $-polarized dipole attains the minimum value while that of a $ r_\perp $-polarized dipole reaches the maximum, and the decay rate of a $ \phi $-polarized dipole is in the middle range. 
  
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
@@ -1444,28 +1455,28 @@ Using the cylindrical coordinate system, we find the decay rate due to a $ z $-p
 \end{figure}
 
 The range of $ \{\Gamma_1,\Gamma_2,\Gamma_3 \} $ characterizes the anisotropy of the medium interface for the modification of dipole emissions. 
-From Fig.~\ref{fig:emissionsurfacenanofiber}, we can picture the emission surface of a dipole on top of a flat interface similar to the one of the nanofiber case with $ r'_\perp =a$. 
-When the dipole is moving away from a flat surface, the contrast between $ \Gamma_y $ ($ \Gamma_z $) and $ \Gamma_x $ due to a dipole orientated along the $ y $ ($ z $) and $ x $ directions, respectively, will reduce gradually.
+From Fig.~\ref{fig:emissionsurfacenanofiber}, we can picture the emission surface of a dipole on top of a flat interface similar to the one in the nanofiber case with $ r'_\perp =a$. 
+When the dipole is moving away from the flat surface, the contrast between $ \Gamma_y $ ($ \Gamma_z $) and $ \Gamma_x $ due to a dipole orientated along the $ y $ ($ z $) and $ x $ directions, respectively, will reduce gradually.
 In general, the anisotropy of a flat medium interface is stronger than that of a curved interface. 
-This is one intuitive guideline when we design a waveguide to enhance the anisotropic properties of waveguide-induced decay rates and phase shifts as we will discussion in Chapter`~\ref{chap:birefringence} and~\ref{chap:Faraday}. 
+This is one intuitive guideline when we design a waveguide to enhance the anisotropic properties of waveguide-induced decay rates and phase shifts as we will discuss in Chapter`~\ref{chap:birefringence} and~\ref{chap:Faraday}. 
 
-To find the equivalent dipole orientation of a given atom state and probe, we first find out what the possible quantum transitions are from the initial atomic state under the polarization of the light, and then find out the branching ratios of the $ \sigma_\pm $ and $ \pi $ transitions following Eq.~\eqref{eq:dipolem'meq}, for example, where the correspondence of spherical quantum transitions and dipole orientations are determined by
+To find the equivalent dipole orientation of a given atomic state and probe, we first find out what the possible quantum transitions are from the initial atomic state under the polarization of the light, and then find out the branching ratios of the $ \sigma_\pm $ and $ \pi $ transitions following Eq.~\eqref{eq:dipolem'meq}, for example, where the correspondence between spherical quantum transitions and dipole orientations are determined by
 \begin{align}
-\sigma_+ &\leftrightarrow \mathbf{d}_+\propto \frac{1}{\sqrt{2}}(i\mathbf{e}_{r\!_\perp}+\mathbf{e}_\phi)\\
-\pi &\leftrightarrow \mathbf{d}_0 \propto \mathbf{e}_z\\
+\sigma_+ &\leftrightarrow \mathbf{d}_+\propto \frac{1}{\sqrt{2}}(i\mathbf{e}_{r\!_\perp}+\mathbf{e}_\phi),\\
+\pi &\leftrightarrow \mathbf{d}_0 \propto \mathbf{e}_z,\\
 \sigma_- &\leftrightarrow \mathbf{d}_-\propto \frac{1}{\sqrt{2}}(-i\mathbf{e}_{r\!_\perp}+\mathbf{e}_\phi).
 \end{align}
-When the quantum transitions have different resonant frequencies, we group the physics processes by the corresponding frequencies and calculate the decay rates using the Green's tensors at the correct frequencies accordingly, and then sum them up to obtain the total decay rate for the system.
+When the quantum transitions have different resonance frequencies, we group the physical processes by the corresponding frequencies and calculate the decay rates using the Green's tensors at the correct frequencies accordingly, and then sum them up to obtain the total decay rate for the system.
 This method works obviously for atoms in pure states. In fact, this treatment also applies to mixed states. 
-For example, we consider a completely mixed state, which has the equal possibility of generating $ \gamma_+ $, $ \sigma_- $ and $ \pi $ transition. In terms of the dipole moment tensor, $ \tensor{\boldsymbol{\rho}} $, we have
+For example, we consider a completely mixed state, which has the equal possibility of generating $ \gamma_+ $, $ \sigma_- $ and $ \pi $ transitions. In terms of the dipole moment tensor, $ \tensor{\boldsymbol{\rho}} $, we have
 \begin{align}
-\tensor{\boldsymbol{\rho}} &=\frac{1}{3}(\tensor{\boldsymbol{\rho}}_++\tensor{\boldsymbol{\rho}}_0+\tensor{\boldsymbol{\rho}}_-)=\frac{d_0^2}{3}\unittensor
+\tensor{\boldsymbol{\rho}} &=\frac{1}{3}(\tensor{\boldsymbol{\rho}}_++\tensor{\boldsymbol{\rho}}_0+\tensor{\boldsymbol{\rho}}_-)=\frac{d_0^2}{3}\unittensor.
 \end{align}
 The decay rate for such a case can be calculated by
 \begin{align}
 \Gamma &=\frac{2}{3\hbar}d_0^2 \mathrm{tr}\left\{ \mathrm{Im}[\GFT(\br',\br')] \right\}=\frac{1}{3}(\Gamma_1+\Gamma_2+\Gamma_3).
 \end{align}
-This is equivalent to assume the dipole is uniformly pointing to any direction, and hence
+This is equivalent to assuming that the dipole is uniformly pointing to any  direction \nd{``in all directions"?}, and hence
 $\Gamma = \int \frac{\mathrm{\Omega}}{4\pi}\Gamma(\theta,\phi)=\frac{1}{3}(\Gamma_1+\Gamma_2+\Gamma_3)$ based on Eq.\eqref{eq:Gammathetaphi}.
 
 
@@ -1483,10 +1494,10 @@ where
 		\mathbf{u}_\mu (\br_{\!\perp}^\prime)\mathbf{u}^*_\mu (\br_{\!\perp}^\prime) 
 \end{align}
 based on Eq.~\eqref{Eq::ImGreenLocal_general}. 
-Since the phase shift of a guided mode after atom-light interaction is proportional to the coupled decay rate [see Eq.~\eqref{phaseshiftGamma1D_nanofiber}, for instance], given the decay rates coupled to the two mode bases, we can characterize the transitions of the polarization state of the guided modes, which are measured using our polarization spectroscopy technique. 
+\id{This sentence is a bit awkward. Try to simplify: Since the phase shift of a guided mode after atom-light interaction is proportional to the coupled decay rate [see Eq.~\eqref{phaseshiftGamma1D_nanofiber}, for instance], given the decay rates coupled to the two mode bases, we can characterize the transitions of the polarization state of the guided modes, which are measured using our polarization spectroscopy technique.} 
 Therefore, the contrast of the decay rates coupled to two basis modes $ \mu_1 $ and $ \mu_2 $ defines the anisotropic property of the system. 
-Using the $ H $ and $ V $ mode basis and assuming the polarizability of the atom is scalar, $ \Gamma_H-\Gamma_V $ maximizes when the intensity difference between the $ H $ and $ V $ modes has the largest contrast, which is consistent with Eq.~\eqref{eq:birefringencerotang} defining the polarization transform from the first principle. 
-In practice, one of our goal is to find a proper geometry so that the quantum measurement is enhanced due to the anisotropy of the waveguide modes. See Fig.~\ref{fig:anisotropybirefringence} for the example of a measurement geometry using the birefringence effect.
+Using the $ H $ and $ V $ mode basis and assuming that the polarizability of the atom is scalar, $ \Gamma_H-\Gamma_V $ is maximized when the intensity difference between the $ H $ and $ V $ modes has the largest contrast, which is consistent with Eq.~\eqref{eq:birefringencerotang}. %\id{} defining the polarization transform from the first principle. 
+In practice, one of our goals is to find a proper geometry so that the quantum measurement is enhanced due to the anisotropy of the waveguide modes. See Fig.~\ref{fig:anisotropybirefringence} for the example of a measurement geometry using the birefringence effect.
 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
@@ -1494,7 +1505,7 @@ In practice, one of our goal is to find a proper geometry so that the quantum me
 \caption[Anisotropic guided modes and quantum measurement geometry for a nanofiber and a \SWG using the birefringence effect.]{Feasible quantum measurement geometry designs for a nanofiber (left) and a \SWG (right) using the birefringence effect by maximizing the anisotropy of local guided mode components. At the atom positions, the intensity difference between the $ H $ and $ V $ modes reaches the maximum value, which could be beneficial to enhance the birefringence rotation of the guided light even with a scalar polarizability interaction with the atoms.}\label{fig:anisotropybirefringence}
 \end{figure}
 
-Based on a naive intuition that the confinement of light might be stronger for a waveguide with a square cross-section than a rounded one, a \SWG may have some advantages of enhancing the quantum measurement of some type over the nanofiber geometry. However, to fully understand the figure of merit of design and optimization, we have to consider the state space of the atoms and the particular quantum measurement protocols. We will extend this discussion of protocol designs and optimizations in-depth in Chapters~\ref{chap:birefringence} and~\ref{chap:Faraday} using quantitative definitions of cooperativity, which are the core of this dissertation.
+Based on a naive intuition that the confinement of light might be stronger for a waveguide with a square cross-section than a rounded one, a \SWG may have some advantages of enhancing the quantum measurement of some type over the nanofiber geometry. However, to fully understand the figure of merit of design and optimization, we have to consider the state space of the atoms and the particular quantum measurement protocols. We will extend this discussion of protocol designs and optimizations in-depth in Chapters~\ref{chap:birefringence} and~\ref{chap:Faraday} using quantitative definitions \nd{There are many definitions?} of cooperativity, which are the core of this dissertation.
 
 %</waveguideinterface>
 
