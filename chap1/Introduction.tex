@@ -38,7 +38,66 @@ While neutral atoms, on the other hand, may not have strong useful interactions 
 This dissertation work is mainly about how to maximize the ratio between useful interactions and damaging interactions using an ensemble of neutral atoms while using a nanophotonic waveguide as an interface to enhance the atom-light interactions. 
 
 
-\section{Quantum entanglement and correlations in an atomic ensemble}
+\section{Our toolbox: Atom-waveguide interfaces}
+
+A review.
+
+The combination of cold atoms and nanophotonic structures is a long journey. Since 1990s or even earlier, theoretical ideas on trapping atoms along a waveguide have been proposed~\cite{Ovchinnikov1991,Bures1999,Barnett2000,Domokos2001,Burke2002,Domokos2002a}, some proof-of-principle experiments are also demonstrated and discussed~\cite{Hinds1999}. The benefits are clear: the atom-light coupling can be enhanced dramatically using nanophotonic modes compared to the free propagating optical field, and the systems are naturally compatible to current integrated optical systems for immediate applications. After the key issues and some basic properties of dielectric waveguides have been clear, a lot of efforts of the community have been gradually tunneled into the atom traps using tapered optical nanofibers. First, relatively speaking, the nanofibers are technically easy and economically cheap to fabricate~\cite{Stiebeiner2010}; second, the guided modes have rich structures to support a broad range of applications~\cite{Tong2004,Kien2004,Tong2012}, and so on.
+The early studies of the tapered optical nanofiber systems are ranging from the implementations of atom traps~\cite{Balykin2004,LeKien2004,LeKien2005b,Sague2008,LeKien2008a,Fu2008,Baade2009,LeKien2009c}, spontaneous emission of trapped atoms and the efficient coupling of the emissions to the fiber~\cite{LeKien2005a,LeKien2007,Kien2007,Kien2008,LeKien2009b}, interactions between atoms mediated by the fiber~\cite{LeKien2005,Sague2007}, fiber modes and photon correlations mediated by the trapped atoms~\cite{Shen2005,LeKien2006,Shen2007,LeKien2008,Chang2008,LeKien2009,Nayak2009a}, to quantum effects for quantum information applications~\cite{LeKien2009a,Nayak2007,Zoubi2010,Zoubi2012}, and the list goes on. 
+Compared to the progress in theoretical studies, experiments really take a while to nail down technical details. The first bunch of experiments (by Nayak {\it et al.} in 2007) with neutral atoms and a tapered nanofiber were done by confining a cloud of atoms in a magneto-optical trap (MOT)\index{magneto-optical trap} close to a nanofiber, and the nanofiber was used to collect the fluorescence of atoms close by~\cite{Nayak2007,Nayak2008}. 
+Despite the simplicity of the system, the fluorescence spectrum has exhibited the fingerprint of the coupled spontaneous emission by a few atoms very close to the fiber surface. 
+Once the technique to distinguish the one and a few coupled atoms from the rest of the atom cloud is established, experimental twists to improve the number of trapped atoms and the quality of nanofiber fabrications become easier than ever before. In 2010, Rauschenbeutel's group reported they have observed about $ 2000 $ cesium atoms on trap with a mean distance to the fiber surface of $ 200 $ nm~\cite{Vetsch2010Optical}. 
+Followed up is the proposal of the dispersive optical interface based on nanofiber-trapped atoms, standing on a technique to count atom number with a resolution of a few tens~\cite{Dawkins2011}. 
+In 2012, Kimble's group demonstrated a state-independent trapping technique~\cite{Goban2012,Lacroute2012}. 
+In 2014, the number of trapped atoms have been improved to about $ 3000 $ by Polzik's group~\cite{Beguin2014}, with a new technique to count the number of trapped atoms in two-color probes under a resolution below 10.
+In the meantime, the fabrication technique to produce centimeter-long nanofibers with cavity mirrors have been demonstrated~\cite{Keloth2017Fabrication}, which opens our imagination on trapping more atoms with stronger coupling to the fiber modes than ever before. 
+Techniques and theories of the state-dependent trapping and manipulating atomic states with real and fictitious magnetic fields have also been studied~\cite{LeKien2013,LeKien2013a,LeKien2013b,Schneeweiss2014,Albrecht2016Fictitious}, which eventually lead to the recent experimental progress on cooling the atom near to the vibrational ground state~\cite{Beguin2017Observation,Meng2017ground}. 
+Based on the platform of nanofiber-trapped atoms, optical switch~\cite{OShea2013,Mitsch2014a,LeKien2014}, quantum memory~\cite{Sayrin2015,Gouraud2015Demonstration,Asenjo-Garcia2017Exponential}, optical isolator~\cite{Sayrin2015a}, anti-bunched photon generators~\cite{LeKien2011a,LeKien2011} and other applications have also been discussed in theory and demonstrated in experiments in recent years. 
+
+
+To further lower down the cost and improve the scalability and coupling strength, there have been other emerging waveguide platforms proposed as atom-waveguide interfaces during the last a couple of decades, especially for waveguides that can be integrated into semiconductor optical circuits using current mature plane photolithographic techniques. 
+These waveguides usually have a rectangular-like shape, being suspended or etched on top of a flat substrate. 
+Current studies on these waveguides focus more on the basic properties and system designs. To list a few, there are studies ranging from the modal selection and design of integrated waveguides~\cite{Fu2007,Lee2013,Stievater2016Modal}, trapping potential calculations~\cite{Barnett2000,Paul2015Push}, decay rate modeling~\cite{Blanco2004Spontaneous,LeKien2016}, new techniques to transport atoms~\cite{Marchant2011}, new material and structures to enhance the coupling~\cite{Chang2009,Salem2010,Hung2013}. 
+There have been experimental progresses on trapping atoms using a photonic crystal waveguide from Kimble's group~\cite{Yu2014,Douglas2013,Douglas2015,Paulisch2015}.
+But the number of trapped atoms is much less than the nanofiber case so far, and their focus seems to observe few- to many-body strong interactions for quantum simulations and other applications using waveguides for now~\cite{Manzoni2016Designing,Manzoni2017Simulating}. 
+
+In the optical nanofiber systems, the diameter of the waist is about $ 450 $---$ 500 $ nm, which is a half of the trapping and probe lights and only supports the fundamental modes of the fiber. 
+Therefore, atoms could be sitting in the evanescent field of the trapping and probing lights in the nanofiber region.
+Nanofiber traps are usually formed by using red-detuned and blue-detuned guided lights, where the detuning is relative to the D1 and D2 emission lines of the alkali atoms~\cite{Goban2012,LeKien2004}. The red-detuned light provides an attraction force dragging the atoms towards the fiber surface, while the blue-detuned light repulse the atoms from the fiber. Balancing the power of the two, trapping positions can be formed in a certain distance to the fiber surface. By using linearly polarized input light beams, the trapping positions can be aligned on both sides of the fiber. 
+Further more, with one of the colors of the trapping beams (usually the red-detuned one) shined from both ends of the fiber, a standing wave can be formed, which fixes the trapping spots on two chains of optical lattices with a period determined by the half wavelength of the standing wave. 
+In this dissertation, we will study a square waveguide geometry towards more general integrated waveguides, which can trap atoms with a similar two-color scheme as the nanofiber case.
+\qxd{Put a figure here to illustrate the trapping positions.}
+
+Comparing these nanophotonic configurations with a free-space atom-light quantum interface, the tight confinement of the waveguide modes provide a stronger coupling between atoms and light, and all atoms could be designed to sit in the same field environment, which provides a better mode matching condition~\cite{Qi2016}. 
+In fact, when the free-space trapping and probing configuration is used as a quantum interface, there is a dilemma to enhance the atom-light coupling. If the light is focused too much to enhance the coupling of atoms at the waist of light, the atoms outside of the focused small region will have weak coupling, and there cannot trap too many atoms at the beam waist; If the light is designed to couple to as many atoms as possible, then the coupling per atom (or optical depth\index{optical depth} (OD) per atom) will be weak. A tradeoff between enhancing the coupling to one atom or to all atoms has to set~\cite{Baragiola2014}.
+The waveguide platforms doesn't have this problem, and one can enhance the OD per atom for all atoms. 
+
+Nevertheless, the new platforms bring in new challenges. 
+For example, due to the anisotropy of modes, the interactions of the light with the atoms become polarization-dependent. The alignment-dependent spontaneous emission rates of atoms have been observed in laboratories~\cite{Solano2017Alignment}. 
+This new phenomenon hasn't been well considered in many of previous theoretical modes of atomic optics, quantum measurement and quantum control when this dissertation study started.
+What's worse, because of the strong field that atoms are sitting in, there could be stronger mechanical oscillations through the waveguide~\cite{Wuttke2013} and trapped atoms~\cite{Solano2017Dynamics}.
+This casts a new dilemma of the benefit over the damage for increasing the effective coupling between atoms and light.
+
+We need new theories to incorporate new phenomena emerged when using the atom-waveguide interfaces.
+For quantum information applications, we also need new protocols to best use of the enhanced atom-light coupling while to avoid the disadvantages due to the enhancement itself, which is a grand dilemma limiting the quality of quantum operations. 
+As a concrete example, beside our studies, there has been any theory quantitatively guiding faithful quantum measurements of the internal states of atoms trapped near a nanophotonic waveguides using the guided light field. 
+Without it, atom-waveguide interfaces are rather a blackbox. 
+By understanding the physics code encrypted in the nature of atom-waveguide interfaces, we could potentially gain in-depth insights towards the foundation of quantum mechanics, particularly on matter-light interactions. 
+
+This dissertation focuses on solving these problems in the context of quantum measurement and spin squeezing.
+
+Techniques advance when contradictories are solved.
+Among conventional interfaces of atom-light interactions, there are two contradictories to be solved: 1. strong field for one and for all; 2. useful strong interaction and damages.
+
+%\begin{figure}[ht] % This is generated by inkscape with the option ``PDF+Latex''. The PDF image is in the sub-folder ``images''. The path of the sub-folder is included by adding ``\graphicspath{{images/}}'' to zj.sty.
+%   \centering
+%   \def\svgwidth{0.85\textwidth} % set the image width, this is optional
+%   \input{../Inputs/temperature_gradient.pdf_tex}
+%   \caption[Temperature Gradient from a BEC to the Center of the Sun]{Temperature gradient from a BEC to the center of the sun.}
+%   \label{fig:temperature_gradient}
+%\end{figure}
+
+\section{Quantum measurement, entanglement and spin squeezing with an atomic ensemble}
 The power of quantum measurement comes from quantum entanglement between the the quantum object to be measured and the probe. 
 Below, I share my favorite example taught by Dr. Ivan Deutsch to illustrate this statement. Suppose a laser beam in a linearly polarized state $ \ket{\phi_L} $ is shined on an atom that is in a state of $ \ket{\phi_A} =(\ket{\uparrow}+\ket{\downarrow})/\sqrt{2} $. We want to use the laser as a probe to detect the state of the atom, where we have access to the polarization state of the light. The joint state of the atom-polarization system can be given by
 \begin{align}
@@ -78,39 +137,36 @@ Therefore, we prefer to use fewer atoms.
 On the other hand, the measurement backaction that generates the squeezing effect is proportional to the coupling strength between atoms and probe. 
 To produce a certain level of squeezing effect, if the coupling strength is large, we will need fewer atoms than otherwise. 
 Therefore, the key is to enhance the atom-probe coupling strength.
+We consider to graft atoms onto a nanophotonic waveguide to achieve this goal.
 
 
-
-\section{Our toolbox: Atom-waveguide interfaces}
-
-A review.
-
-The combination of cold atoms and nanophotonic structures is a long journey. Since 1990s or even earlier, theoretical ideas on trapping atoms along a waveguide have been proposed~\cite{Ovchinnikov1991,Bures1999,Barnett2000,Domokos2001,Burke2002,Domokos2002a}, some proof-of-principle experiments are also demonstrated and discussed~\cite{Hinds1999}. The benefits are clear: the atom-light coupling can be enhanced dramatically using nanophotonic modes compared to the free propagating optical field, and the systems are naturally compatible to current integrated optical systems for immediate applications. After the key issues and some basic properties of dielectric waveguides have been clear, a lot of efforts of the community have been gradually tunneled into the atom traps using tapered optical nanofibers. First, relatively speaking, the nanofibers are technically easy and economically cheap to fabricate; second, the guided modes have rich structures to support a broad range of applications~\cite{Tong2004,Kien2004,Tong2012}, and so on.
-The early studies of the tapered optical nanofiber systems are ranging from the implementations of atom traps~\cite{LeKien2004,LeKien2005b,Sague2008,LeKien2008a,Fu2008,Baade2009,LeKien2009c}, spontaneous emission of trapped atoms and the efficient coupling of the emissions to the fiber~\cite{LeKien2005a,LeKien2007,Kien2007,Kien2008,LeKien2009b}, interactions between atoms mediated by the fiber~\cite{LeKien2005,Sague2007}, fiber modes and photon correlations mediated by the trapped atoms~\cite{Shen2005,LeKien2006,Shen2007,LeKien2008,Chang2008,LeKien2009,Nayak2009a}, to quantum effects for quantum information applications~\cite{LeKien2009a,Nayak2007,Zoubi2010,Zoubi2012}, and the list goes on. 
-Compared to the progress in theoretical studies, experiments really take a while to nail down technical details. The first bunch of experiments (by Nayak \textit{et al. in 2007}) with neutral atoms and a tapered nanofiber were done by confining a cloud of atoms in a magneto-optical trap (MOT)\index{magneto-optical trap} close to a nanofiber, and the nanofiber was used to collect the fluorescence of atoms close by~\cite{Nayak2007}. ...
-
-Techniques advance when contradictories are solved.
-Among conventional interfaces of atom-light interactions, there are two contradictories to be solved: 1. strong field for one and for all; 2. useful strong interaction and damages.
-
-%\begin{figure}[ht] % This is generated by inkscape with the option ``PDF+Latex''. The PDF image is in the sub-folder ``images''. The path of the sub-folder is included by adding ``\graphicspath{{images/}}'' to zj.sty.
-%   \centering
-%   \def\svgwidth{0.85\textwidth} % set the image width, this is optional
-%   \input{../Inputs/temperature_gradient.pdf_tex}
-%   \caption[Temperature Gradient from a BEC to the Center of the Sun]{Temperature gradient from a BEC to the center of the sun.}
-%   \label{fig:temperature_gradient}
-%\end{figure}
 
 
 \section{The philosophy of cooperativity}
 
 For single atom and many.
 
-In general
-\begin{flalign}
-\mathbf{S}_{out} &= \mathbf{S}_{in}+\mathbf{\Theta}\times\mathbf{S}_{in}&\\
-\Theta_i &\propto \underbrace{N_A\left( \frac{\sigma_0}{A}\right)}_{OD} 
-\left(\frac{\Gamma}{2\Delta}\right)
-\end{flalign}
+In general, the polarization state of the light in the context of atom-light interaction, characterized by the Stokes vector $\mathbf{S} $, rotates on the \Poincare sphere under the following equation~\cite{Deutsch2010a}
+\begin{align}
+\dt{\mathbf{S}} &= \mathbf{\Theta}\times\mathbf{S}_{in}
+\end{align}
+where the rotating angle vector around $ S_i $ axis can be given by
+\begin{align}
+\Theta_i &\propto \mathrm{OD}\frac{\Gamma}{2\Delta} =N_A\left( \frac{\sigma_0}{A}\right) 
+\left(\frac{\Gamma}{2\Delta}\right),
+\end{align}
+where OD is the total optical depth of the atoms\index{optical depth}, $ \Gamma $ is the spontaneous decay rate, and $ \Delta $ is the detuning. 
+
+The optical depth for an atom coupled to an optical cavity can be defined as
+\begin{align}
+\mathrm{OD} &= \mathcal{F} \left( \frac{\sigma_0}{A}\right),
+\end{align} 
+where $ \mathcal{F} $ is the finesse of the cavity, $ \sigma_0 $ is the on-resonant cross section of the atom, and $ A $ is the effective mode area of the optical field at the atom position. 
+Therefore, to 
+\begin{align}
+\frac{\mathrm{OD}}{N_A} &= \frac{\sigma_0}{A}.
+\end{align}
+The formula of OD per atom above has been commonly 
 
 %\begin{figure}[ht] %This figure is drew by Inkscape using the very handy tool 'parametric curves'. The fringe is the hard part, and I don't know how to do it elegantly (I just use a combination of 'cheating' methods to generate it). However, there is one command called '\pgfdeclarefunctionalshading' in the tikZ package which could be helpful. But, unfortunately, it requires knowing how to write PostScript codes.
 %   \centering
