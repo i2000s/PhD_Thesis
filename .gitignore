@@ -19,12 +19,12 @@
 desktop.ini
 
 # Figures not to ignore.
-!chap4/Fig1.pdf
-!chap4/Fig2.pdf
-!chap4/Fig3.pdf
-!chap4/Fig4.pdf
-!chap4/Fig5.pdf
-!chap4/Fig6.pdf
+!chap5/Fig1.pdf
+!chap5/Fig2.pdf
+!chap5/Fig3.pdf
+!chap5/Fig4.pdf
+!chap5/Fig5.pdf
+!chap5/Fig6.pdf
 !/media/Figs/anisotropicmodes.pdf
 !/media/Figs/dipoleorientation.pdf
 !/media/Figs/emissionsurfacefiber.pdf
