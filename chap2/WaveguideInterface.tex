@@ -296,7 +296,7 @@ These modes are expressed in terms of real-valued functions $ \left[u_{r_{\!\per
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=12cm]{../media/Figs/nanofiber_HVmode_E_xy}}
-\caption[Non-zero $ H $- and $ V $-mode components of a nanofiber in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a nanofiber in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:nanofiber_HVmode_E_xy}
+\caption[Non-zero $ H $- and $ V $-mode components of a nanofiber in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a nanofiber in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. The white lines outline the profile of the nanofiber on each subplot. }\label{fig:nanofiber_HVmode_E_xy}
 \end{figure}
 
 We plot the non-zero mode component parts of the quasi-linear $ H$ and $ V $ modes of a nanofiber in Fig.~\ref{fig:nanofiber_HVmode_E_xy}.
@@ -314,7 +314,7 @@ Putting the atom on the $ y $ axis gives a similar result by exchanging the $ H 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=12cm]{../media/Figs/swg_HVmode_E_xy}}
-\caption[Non-zero $ H $- and $ V $-mode components of a square waveguide in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a \SWG in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:swg_HVmode_E_xy}
+\caption[Non-zero $ H $- and $ V $-mode components of a square waveguide in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a \SWG in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. The white lines outline the profile of the square waveguide on each subplot. }\label{fig:swg_HVmode_E_xy}
 \end{figure}
 
 For the \SWG and general geometries, we solve the eigenmodes using a numerical method called \emph{Boundary Element Method}\index{Boundary Element Method} or BEM~\cite{Fallahkhair2008}. This method divides the regions close to the waveguide boundaries into finite grids and solve the wave equations by matching the boundary conditions on the grids. 
@@ -419,7 +419,7 @@ The details of solving the free-space Green's function and techniques we are goi
 
 The output field as Lippmann-Schwinger equation\index{Lippmann-Schwinger eqation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $
 \begin{subequations}
-\begin{align}
+\begin{align}\label{eq:Lippmann-Schwinger}
 \mathbf{E}(\br) &=\mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}(\br'_n)\\
 &\approx \mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}_0(\br'_n)\label{eq:EGFTnatoms}
 \end{align}
@@ -908,7 +908,7 @@ Let us consider the concrete case of a nanofiber with step-function-like permitt
 %problem. $ \varepsilon(r\!_\perp)=\varepsilon_{f} =n_1^2$ if $ r_\perp < a $; otherwise, $\varepsilon
 %(r\!_\perp) =1 $. The parameter $ a $ is the radium of the nanofiber. } 
 
-\begin{figure}
+\begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \begin{tikzpicture}[scale=1,cap=round]
 % Configurable parameters
@@ -972,7 +972,7 @@ Let us consider the concrete case of a nanofiber with step-function-like permitt
 \section{Categorizing eigenmodes based on the total internal reflection condition}
 The division of guided and radiation modes based on the value of $ \beta $ can also be roughly understood in the perspective of geometric optics as elucidated in Fig.~\ref{fig:Fibermodes}. We regard $ \beta $ as the $ z $-projected wave number of a wave vector of the light ray on the $ \vec{k} $ direction. If the ray is incident in an angle that satisfies the total internal reflection condition (in our case, $ k_0<\beta<n_1k_0 $ with $ n_2=1 $), the corresponding modes are guided; otherwise, the modes are unguided with the light leaking out and decaying along $ z $.
 
-\begin{figure}
+\begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \begin{tikzpicture}[scale=1,cap=round]
 % Configurable parameters
@@ -1614,7 +1614,11 @@ where $ \boldsymbol{\alpha}(\br') $ denote the polarizability of atoms or dipole
 
 Back to the scattering problem with a homogeneous medium background, when $ \br\rightarrow \br' $ or when we measure the self-induced field at the point source's position $ \br' $, the real part of the Green's function divergent. However, the imaginary part can be calculated. At that position, the tensor Green's function reduced to the scalar Green's function, and the imaginary part of it can be calculated by first extract the imaginary part of the Green's function in the Fourier domain or the $ k $-space following Eq.~\ref{eq:Gkk'equation}, and then transform it back to the real 3D space by using the corresponding contour integral part (assuming outgoing radiation part). One can show that at the atom position, the imaginary part reads
 \begin{align}
-G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
+\mathrm{Im}\left[ \GFT_0 (\br^\prime\!_\perp, \br^\prime\!_\perp) \right] &=  G_0\unittensor,
+\end{align}
+where we have defined
+\begin{align}
+G_0 &=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
 \end{align}
 
 Note that, using different conventions of Green's function or units might result in a different expression. For example, without the factor of $ k_0^2 $ when we defining the Green's function equation, $ G_0= \frac{2}{3}k_0 $ (the usual Gauss units); or in the SI units, one might get $ G_0=\frac{\varepsilon_0 k_0^3}{6\pi} $~\cite{Novotny2012}. One can prove that, if the dipole is radiating in a homogeneous medium with index of refraction $ n $, then $ G_0 $ will need to replace $ k_0 $ with $ nk_0 $ from the expressions above. Other equations can be adapted from our derivations above straightforwardly.

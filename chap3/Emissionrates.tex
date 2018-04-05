@@ -14,30 +14,36 @@
 
 \chapter{Spontaneous emission of atoms near a nanophotonic waveguide}\label{chap:emissionrates} 
 
-\id{In Chapter 2, we treated the electromagnetic field classically, and neglected how the atom's decay is modified due to the presence of the nearby dielectric. Though the resulting estimate of dispersive response is a good approximation is many cases}, the model we used may be too rough to study other quantum effects to be discussed later, given that the polarizability of the atom was assumed to be a scalar and the modification of the atomic decay rate does not account for the detailed internal structure of the atom. In this chapter, we provide a detailed theory of the polarizability of atoms and the modification of atomic decay rates due to external field. We will develop the theory from classical to quantum description.
+In Chapter 2, we treat the electromagnetic field classically, and neglected how the atom's decay is modified due to the presence of the nearby dielectric. 
+Though the resulting estimate of dispersive response is a good approximation in many cases, the model we have used may be too rough to study other quantum effects to be discussed later, given that the polarizability of the atom was assumed to be a scalar and the modification of the atomic decay rate does not account for the detailed internal structure of the atom. 
+In this chapter, we develop a detailed theory of the polarizability of atoms and the modification of atomic decay rates due to external field, from classical to quantum description. 
 
-\section{Modification of the spontaneous emission of atoms trapped near a nanophotonic waveguide}
+\section{Polarizability of atoms}
 \subsection{Dipole oscillation and emission of polarized light}
-In this subsection, we present a simple model to show how the polarizability of alkali atoms are modified by an external field. Again, we assume the intrinsic polarizability of an atom is a scalar $ \alpha $, and a light shines at the atom through an arbitrary interface of media, which can be fully characterized by the dyadic Green's function $ \GFT(\br,\br') $. Under the Born approximation, the resulted electric field at the atom position can be given by
+In this subsection, we present a simple model to show how the polarizability of alkali atoms are modified by an external field. Again, we assume the intrinsic polarizability of an atom is a scalar $ \alpha $, and a light shines at the atom through an arbitrary interface of media, which can be fully characterized by the dyadic Green's function $ \GFT(\br,\br') $. 
+Using the Lippmann-Schwinger equation, Eq.~\eqref{eq:Lippmann-Schwinger}, the resulted electric field at the atom position can be given by
 \begin{align}
 \mathbf{E}(\br') 
-&=\mathbf{E}_0(\br')+ \alpha \id{\GFT(\br,\br')} \cdot \mathbf{E}_0(\br').\label{eq:EoutG}
+&=\mathbf{E}_0(\br')+ \alpha \GFT(\br,\br') \cdot \mathbf{E}(\br').\label{eq:EoutG}
 \end{align}
 Note that, in the context of nanophotonic waveguides, the dyadic Green's function can be decomposed into the free-dipole, reflective and transmissive mode contributions as defined in Eq.~\eqref{eq:GFTdecomp0RT} denoted by the subscripts, $ 0 $, $ R $ and $ T $, respectively. By treating the atom as a classical oscillator of a single electron around the nucleus, a self-consistent equation for an atom at $ \br' $ excited by an incident optical field may be given by 
 \begin{align}
 (-\omega^2+\omega_0^2)\br' &= -\frac{e}{m}\mathbf{E}(\br')\\
-&=-\frac{e}{m}\left[\mathbf{E}_0(\br')+ {\alpha}\GFT(\br',\br')\cdot  \mathbf{E}_0(\br') \right],\label{eq:rEG}
+&=-\frac{e}{m}\left[\mathbf{E}_0(\br')+ {\alpha}\GFT(\br',\br')\cdot  \mathbf{E}(\br') \right],\label{eq:rEG}
 \end{align}
-where $\omega_0$ is the atomic resonance. The dipole moment, $ \mathbf{d}=d\mathbf{e}_d $, can be defined by \id{
+where $\omega_0$ is the atomic resonance, and $ \alpha $ is the polarizability of the atom. 
+The dipole moment, $ \mathbf{d}=d\mathbf{e}_d $, can be defined by
 \begin{align}
-\mathbf{d}(\br') &=-e\br'=\alpha' \mathbf{E}(\br')\label{eq:dralphaE}\\
-&\approx \alpha' \mathbf{E}_0(\br'),
+\mathbf{d}(\br') &=-e\br'=\alpha \mathbf{E}(\br')\label{eq:dralphaE}\\
+&\approx \alpha' \mathbf{E}_0(\br'),\label{eq:dalphaE0}
 \end{align}
-}
-where $ \alpha' $ is the modified polarizability after the interaction, $ e $ is the charge of the electron and $ m $ is the effective mass of the oscillator. 
+where 
+$ \alpha $ is the modified polarizability after the interaction, 
+$ e $ is the charge of the electron, and $ m $ is the effective mass of the oscillator. 
 Assuming the dipole is oscillating along the $ \mathbf{e}_d $ direction and plugging Eq.~\eqref{eq:rEG} into Eq.~\eqref{eq:dralphaE}, we can obtain
 \begin{align}
-\mathbf{d}(\br') &=\frac{e^2}{m(\omega_0^2-\omega^2)}\left\{\mathbf{E}_0(\br')+ \GFT(\br',\br')\cdot  \left[{\alpha}\mathbf{E}(\br')\right] \right\}.
+\mathbf{d}(\br') &=\frac{e^2}{m(\omega_0^2-\omega^2)}\left\{\mathbf{E}_0(\br')+ \GFT(\br',\br')\cdot  \left[{\alpha}\mathbf{E}(\br')\right] \right\}\\
+&= \frac{e^2}{m(\omega_0^2-\omega^2)}\left[\mathbf{E}_0(\br')+ \GFT(\br',\br')\cdot  \mathbf{d}(\br') \right].
 \end{align}
 In the near resonant regime, $ \omega_0^2-\omega^2\approx -2\omega_0\Delta $, with the detuning, $ \Delta =\omega-\omega_0$, and hence
 \begin{align}
@@ -46,35 +52,37 @@ In the near resonant regime, $ \omega_0^2-\omega^2\approx -2\omega_0\Delta $, wi
 Therefore, we obtain the dipole moment
 \begin{align}
 d &=\frac{\frac{e^2}{2m\omega_0}}{-\Delta-\frac{ e^2}{2m\omega_0}\mathbf{e}_d\cdot\GFT(\br',\br')\cdot \mathbf{e}_d}E_0(\br')\\
-&=\frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma}E_0(\br'),
+&=\frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma}E_0(\br'),\label{eq:dE0expanded}
 \end{align}
 where we have defined the Lamb shift $ \delta \Delta= \frac{e^2}{2m\omega_0}\re\left[\mathbf{e}_d\cdot\GFT(\br',\br')\cdot \mathbf{e}_d \right]$ with the radiation reaction decay rate 
 \begin{align}
 \Gamma &= \frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT(\br',\br')\cdot \mathbf{e}_d\right]\\
 &= \Gamma_0 + \delta \Gamma,
 \end{align}
-the natural linewidth $ \Gamma_0 =\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_0(\br',\br')\cdot \mathbf{e}_d\right] $, and the shift in the decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_R(\br',\br')\cdot \mathbf{e}_d\right] $. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the dipole oscillating direction. \nd{The direction that the dipole oscillates?} Therefore, the scalar atomic polarizability can be given by
+the natural linewidth $ \Gamma_0 =\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_0(\br',\br')\cdot \mathbf{e}_d\right] $, and the shift in the decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_R(\br',\br')\cdot \mathbf{e}_d\right] $. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the direction that the dipole oscillates. 
+Comparing Eq.~\eqref{eq:dE0expanded} with Eq.~\eqref{eq:dalphaE0}, we obtain the modified scalar atomic polarizability 
 \begin{align}
-\alpha &= \frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}\Gamma},
+\alpha' &= \frac{\frac{e^2}{2m\omega_0}}{-(\Delta+\delta \Delta)-\frac{i}{2}(\Gamma_0+\delta\Gamma)},
 \end{align}
 which includes the modification of the atom's resonance and decay rate due to the incident field. 
 
 By solving the free-space dipole radiation problem (see Appendix~\ref{chap:freespacegreenfunction}), the imaginary part of the free-space Green's function can be given by
 \begin{align}
 \mathrm{Im}\left[ \GFT_0 (\br^\prime\!_\perp, \br^\prime\!_\perp) \right] &=  \frac{
-2k^3}{3}\unittensor = \frac{2}{3}\left(\frac{\omega_0}{c}\right)^3\unittensor.
+2k_0^3}{3}\unittensor = \frac{2}{3}\left(\frac{\omega_0}{c}\right)^3\unittensor.
 %\Im\left[\mathbf{G}_0(\br',\br') \right] =\frac{k^3}{6\pi} \mathbbm{1} \approx \frac{1}{6\pi}k^3_0\mathbbm{1}.
 \end{align}
 Hence the natural linewidth of an atom can be given by
 \begin{align}
 \Gamma_0 = \frac{2}{3}\frac{e^2\omega_0^2}{mc^3}=\frac{2}{3}k_0r_{class},
 \end{align}
-where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the classical radius of the atom. \id{This classical model of the natural linewidth  differs from the quantum Einstein-$A$ coefficient only through the``oscillator strength".} \nd{Where should $f_0=\frac{2m\omega_0}{\hbar e^2}|d_{eg}|^2 $ go?}
+where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the classical radius of the atom. 
+This classical model of the natural linewidth differs from the quantum Einstein-$A$ coefficient only through the ``oscillator strength" $f_0=\frac{2m\omega_0}{\hbar e^2}|d_{eg}|^2 $.
 
 
 %\section{Polarizability of alkali atoms}
 \subsection{Polarizability of alkali atoms}
-Now, we consider the internal quantum structure of the alkali atoms. \id{Cite Deutsch/Jessen (The Long Paper)}
+Now, we consider the internal quantum structure of the alkali atoms following Ref.~\cite{Deutsch2010a}.
 
 In the interaction picture, the dipole operator associated with an atomic level $ g $ can be given by
 \begin{align}\label{eq:dtop}
@@ -120,7 +128,8 @@ where we have ignored the counter-rotating terms for our near-resonance case and
 \poltens &= -\sum_e \frac{\hat{\mathbf{d}}_{ge}\hat{\mathbf{d}}_{eg}}{\hbar\Delta_{eg}}. 
 \end{align} 
 
-\id{For the case of a Cesium atom ${}^{133}$Cs, we take an example of the transitions between $ f=3 $ and $ f=4 $ hyperfine manifolds} of the ground state $ 6S_{1/2} $ to the $ f'=3 $ manifold of the exited state $ 6P_{1/2} $. We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014}
+For the case of a Cesium atom, ${}^{133}$Cs, we take an example of the transitions between $ f=3 $ and $ f=4 $ hyperfine manifolds of the ground state $ 6S_{1/2} $ to the $ f'=3 $ manifold of the exited state $ 6P_{1/2} $. 
+We define the dipole operator of transition from the hyperfine ground state $ f $ to the excited state $ f' $ as~\cite{Baragiola2014}
 \begin{align}
 \hat{\mathbf{d}}_{f'f} &=  \sum_q \sum_{m, m'}  \bra{f' m'} d_{f'\!,f}^q \ket{f m} \op{f' m'}{f m} \mathbf{e}_q^* \\
 & = \bra{ f' }| d | \ket{ f } \sum_q \sum_{m, m'}  \bravket{f m; 1 q}{f' m'} \op{f' m'}{f m} \mathbf{e}_q^* \label{eq:opdff'},
@@ -137,7 +146,7 @@ in terms of a reduced matrix element involving the $j \rightarrow j'$ transition
 					f' & i & j' \\
 					j & 1 & f
 				\end{array}
-			\right\} ,
+			\right\} 
 	\end{align}
 that determines the spontaneous decay branching ratios on the allowed dipole transitions; $\Gamma_{j' f' \rightarrow j f} / \Gamma_{j'\rightarrow j} = |o^{j' f'}_{j f}|^2$ \cite{Deutsch2010a}.	
 	
@@ -188,7 +197,8 @@ We have explicitly labeled the detunings by the ground state hyperfine level $f$
 
 % Irreducible tensors.
 \subsection{Irreducible tensor representation of atomic polarizability}
-\id{The beauty of tensor operators is that they can be expressed in terms of irreducible components} so that one can think about state-independent and state-dependent operator components. In our case, the atomic polarizability tensor, being a dyad of two vector operators, can be decomposed into rank-0, rank-1, and rank-2 irreducible tensor components \cite{Baragiola2014Open,Stockton2007, Hammerer2006, Geremia2006, Deutsch2010a, LeKien2013}.  The polarizability tensor can be written in the spherical basis. The dimensionless spherical $ij$-component of the atomic polarizability tensor\index{polarizability!polarizability tensor} in the ground hyperfine state $f$ is defined as,
+The beauty of tensor operators is that they can be expressed in terms of irreducible components so that one can separate state-independent and state-dependent operator components. 
+In our case, the atomic polarizability tensor, being a dyad of two vector operators, can be decomposed into rank-0, rank-1, and rank-2 irreducible tensor components \cite{Baragiola2014Open,Stockton2007, Hammerer2006, Geremia2006, Deutsch2010a, LeKien2013}.  The polarizability tensor can be written in the spherical basis. The dimensionless spherical $ij$-component of the atomic polarizability tensor\index{polarizability!polarizability tensor} in the ground hyperfine state $f$ is defined as,
 \begin{align} \label{Eq::alphaij}
 \hat{\alpha}_{ij}(f) &\equiv \mathbf{e}_i \cdot \hat{\mathbf{D}}_{f f'} \hat{\mathbf{D}}_{f' f} \cdot \mathbf{e}_j\\
 &= \sum_{q,q'} \sum_{m_1, m_2, m'} \mathbf{e}_i \cdot\mathbf{e}_q \mathbf{e}^*_{q'}\cdot \mathbf{e}_j | o^{j'f'}_{jf} |^2 C^{fm_2;1q}_{f'm'} C^{fm_1;1q'}_{f'm'} \op{f m_2}{f m_1}.
@@ -225,10 +235,10 @@ In this far-detuned limit, we see that the $C_{j' f f'}^{(2)}$ coefficients sum 
 This reflects the fact that in the absence of hyperfine resolution, the nuclear spin is decoupled and the ground state angular momentum is given by the total electronic angular moment. 
 
 
-\subsection{Modification of decay rates of atomic transitions}\label{sec:modifieddecayrates}
+\section{Modification of decay rates of atomic transitions}\label{sec:modifieddecayrates}
 
 We specify the dipole source as an atom with an arbitrary excited state level $ e $ and the ground level $ g $ in the hyperfine structure manifold. 
-The atomic decay rate\index{decay rate} or spontaneous emission rate\index{spontaneous emission rate} of the excited level $ e $ will be modified due to the presence of the nanophotonic structure and can be given by \id{Need a reference here.}
+The atomic decay rate\index{decay rate} or spontaneous emission rate\index{spontaneous emission rate} of the excited level $ e $ will be modified due to the presence of the nanophotonic structure and can be given by~\cite{Novotny2012}
 \begin{align}
 \Gamma_e &= \frac{2}{\hbar}\sum_g \bra{g}\hat{\mathbf{d}}\ket{e} \cdot \mathrm{Im}\left[\tensor{\mathbf{G}}(\br',\br';\omega_{eg}) \right]\cdot \bra{e}\hat{\mathbf{d}}\ket{g}\label{eq:Gamma_e}
 \end{align}
