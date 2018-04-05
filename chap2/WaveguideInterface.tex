@@ -54,7 +54,7 @@ A light is said to be \emph{circularly polarized}\index{polarization!circular po
 with $ E_0 $ the common real amplitude. Taking any point $ \br_0=(x_0,y_0,z_0) $ in space, the combined polarization vector $ \mathbf{e}_l(z_0)=(\mathbf{e}_x \pm i\mathbf{e}_y)e^{i(k_0z_0-\omega_0 t)} $ sweeps a complete circle at an angular frequency $ \omega_0 $.
 %Directionality of the field is defined from Equation (2.5) [Note: you should label the equations that will be referenced, but I've avoided doing so here in case I accidentally cause a name collision], with the upper sign corresponding to the $ (\mathbf{e}_x + i\mathbf{e}_y) $ basis indicating that the rotation is clockwise if the observer is hit by the propagating light. The light in this case is said to be \emph{left-circularly polarized}\index{polarization!circular polarization!left-circular polarization} in optics, and has a \emph{positive helicity}\index{polarization!positive helicity} in modern physics. Correspondingly, the lower sign, $ (\mathbf{e}_x - i\mathbf{e}_y) $, indicates the light is counterclockwise rotating at a fixed point and is \emph{right-circularly polarized}\index{polarization!circular polarization!right-circular polarization}, and \emph{negative helicity}\index{polarization!negative helicity}. 
 We define the circular polarization basis by the complex orthogonal unit vectors
-\begin{align}
+\begin{align}\label{eq:epm}
 \mathbf{e}_{\pm}=\frac{1}{\sqrt{2}}(\mathbf{e}_x \pm i\mathbf{e}_y)
 \end{align}
 with properties
@@ -267,13 +267,11 @@ For a single-mode \SWG, the quasi-\TE and the quasi-\TM modes together with a si
 
 To calculate the eigenmodes of a dielectric waveguide, one may find analytical solutions if the waveguide has a solvable symmetry--like the cylindrical nanofiber, or one has to rely on numerical tools in most general cases--like the \SWG. 
  
+
+
 The solution of the electric field and the fundamental eigenmodes of a cylindrical fiber have been solved in previous works~\cite{Snyder1983Optical,LeKien2014}. We provide a brief review of the method to solve the fiber problem in Appendix~\ref{chap:fibereigenmodes} with solutions of the \HE eigenmodes and its group velocity. The radiation mode solution is less used in this dissertation and can be found in, for example, Ref.~\cite{LeKien2014}. 
 
-
-For the \SWG and general geometries, we solve the eigenmodes using a numerical method called \emph{Boundary Element Method}\index{Boundary Element Method} or BEM~\cite{Fallahkhair2008}. This method divides the regions close to the waveguide boundaries into finite grids and solve the wave equations by matching the boundary conditions on the grids. The wave equations are discretized to a set of linear equations. The eigenmodes are found by solving the eigenvalue problem defined by the boundary condition in the frequency domain. It is fairly efficient when we have a fixed frequency point. We can check the accuracy of the BEM calculation with the nanofiber case since we know the analytical solution, which is great in the regime we care about. Then we use BEM to solve the eigenmodes for the \SWG geometry. 
-By find the propagation constant $ \beta $ of the guided eigenmode as varying $ \omega $, we can solve for the group velocity $ v_g=\left.\dd{\omega}{\beta}\right|_{\beta=\beta_0} $ and the group index of refraction $n_g = \frac{c}{v_g}=\left.\dd{\beta}{k}\right|_{\beta=\beta_0}$.
-
-For both nanofibers and square waveguides, a relatively simple form for the guided eigenmodes can be expressed in a cylindrical basis $(r_\perp, \phi, z)$ with longitudinal unit vector $\mathbf{e}_z$, oriented along the waveguide axis.  
+A relatively simple form for the guided eigenmodes of a nanofiber can be expressed in a cylindrical basis $(r_\perp, \phi, z)$ with longitudinal unit vector $\mathbf{e}_z$, oriented along the waveguide axis.  
 The transverse unit vectors are related to their fixed Cartesian counterparts via the relations
 \begin{subequations}
 	\begin{align}
@@ -282,62 +280,116 @@ The transverse unit vectors are related to their fixed Cartesian counterparts vi
 	\end{align}
 \end{subequations}
 The transverse profile for the quasicircular guided modes, $p = \pm$, is
-	\begin{align} \label{Eq::QuasicircularModes_wg}
-		\mbf{u}_{b,\pm}(\mathbf{r}_\perp) = \big[\mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(\br_\perp) \pm i \mathbf{e}_\phi u_\phi(\br_\perp) +  i b \mathbf{e}_z  u_z(\br_\perp) \big]e^{ \pm i \phi}, 
+	\begin{align} \label{Eq::QuasicircularModes_nanofiber}
+		\mbf{u}_{b,\pm}(\mathbf{r}_\perp) = \big[\mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \pm i \mathbf{e}_\phi u_\phi(r_\perp) +  i b \mathbf{e}_z  u_z(r_\perp) \big]e^{ \pm i \phi}, 
 	\end{align}
 and for the quasilinear guided modes, $p = \{H,V\}$, is
-	\begin{subequations} \label{Eq::QuasilinearModes_wg}
+	\begin{subequations} \label{Eq::QuasilinearModes_nanofiber}
 	\begin{align}
-		\mbf{u}_{b,H}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(\br_\perp) \cos \phi - \mathbf{e}_\phi u_\phi(\br_\perp) \sin \phi +  ib \mathbf{e}_z  u_z(\br_\perp) \cos \phi \big] \\
-		\mbf{u}_{b,V}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(\br_\perp) \sin \phi + \mathbf{e}_\phi u_\phi(\br_\perp) \cos \phi +  ib \mathbf{e}_z  u_z(\br_\perp) \sin \phi \big]. 
+		\mbf{u}_{b,H}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \cos \phi - \mathbf{e}_\phi u_\phi(r_\perp) \sin \phi +  ib \mathbf{e}_z  u_z(r_\perp) \cos \phi \big] \\
+		\mbf{u}_{b,V}(\mathbf{r}_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp) \sin \phi + \mathbf{e}_\phi u_\phi(r_\perp) \cos \phi +  ib \mathbf{e}_z  u_z(r_\perp) \sin \phi \big]. 
 	\end{align}
 	\end{subequations}
-The modes are expressed in terms of real-valued functions $ \left[u_{r_{\!\perp}}(\br_\perp), u_\phi(\br_\perp), u_z(\br_\perp)\right] $.
-For the HE$_{11}  $ modes of a nanofiber, $u_{r_{\!\perp}}(\br_\perp)=u_{r_{\!\perp}}(r_\perp)$, $u_\phi(\br_\perp)=u_\phi(r_\perp)$, and $u_z(\br_\perp)=u_z(r_\perp)$ depend only on the radial coordinate $r_\perp$ given by Eq.~\eqref{Eq::ProfileFunctions}.
+These modes are expressed in terms of real-valued functions $ \left[u_{r_{\!\perp}}(r_\perp), u_\phi(r_\perp), u_z(r_\perp)\right] $ of the HE$_{11}  $ modes of a nanofiber, which depend only on the radial coordinate $r_\perp$ given by Eq.~\eqref{Eq::ProfileFunctions}.
 
-For both waveguides, these eigenmodes usually have non-zero longitudinal component. 
+%\qxd{Need mode plots for the nanofiber and the \SWG. Codes: \url{rectwg_TETMlow_fullvector.m} and \url{fibermodestudy.m}.}
+\begin{figure}[!tbp]
+\centering\makebox[\textwidth]{
+\includegraphics[width=12cm]{../media/Figs/nanofiber_HVmode_E_xy}}
+\caption[Non-zero $ H $- and $ V $-mode components of a nanofiber in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a nanofiber in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:nanofiber_HVmode_E_xy}
+\end{figure}
+
+We plot the non-zero mode component parts of the quasi-linear $ H$ and $ V $ modes of a nanofiber in Fig.~\ref{fig:nanofiber_HVmode_E_xy}.
+These eigenmodes usually have non-zero longitudinal component. 
 Moreover, if we place an atom on the $ x $ axis ($ \phi'=0 $), the forward-propagating $ H $ and $ V $ modes at the atom position have the following form:
 \begin{subequations}\label{eq:uHVrx}
 \begin{align}
-\mbf{u}_{H}(\mathbf{r}'_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(\br_\perp') +  i \mathbf{e}_z  u_z(\br_\perp') \big] \\
-\mbf{u}_{V}(\mathbf{r}'_\perp) = & \sqrt{2}  \mathbf{e}_\phi u_\phi(\br_\perp') ， 
+\mbf{u}_{H}(\mathbf{r}'_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp') +  i \mathbf{e}_z  u_z(r_\perp') \big] \\
+\mbf{u}_{V}(\mathbf{r}'_\perp) = & \sqrt{2}  \mathbf{e}_\phi u_\phi(r_\perp') ， 
 \end{align}
 \end{subequations}
-where the $ H $ mode is elliptically polarized, and the $ V $ is linearly polarized. 
-Putting the atom on the $ y $ axis will give a similar result by exchanging the $ H $ and $ V $ labels from Eq.~\eqref{eq:uHVrx}.
+where the $ H $ mode is elliptically polarized, and the $ V $ mode is linearly polarized. 
+Putting the atom on the $ y $ axis gives a similar result by exchanging the $ H $ and $ V $ labels from Eq.~\eqref{eq:uHVrx}. 
+
+\begin{figure}[!tbp]
+\centering\makebox[\textwidth]{
+\includegraphics[width=12cm]{../media/Figs/swg_HVmode_E_xy}}
+\caption[Non-zero $ H $- and $ V $-mode components of a square waveguide in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a \SWG in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:swg_HVmode_E_xy}
+\end{figure}
+
+For the \SWG and general geometries, we solve the eigenmodes using a numerical method called \emph{Boundary Element Method}\index{Boundary Element Method} or BEM~\cite{Fallahkhair2008}. This method divides the regions close to the waveguide boundaries into finite grids and solve the wave equations by matching the boundary conditions on the grids. 
+The wave equations are discretized to a set of linear equations. The eigenmodes are found by solving the eigenvalue problem defined by the boundary condition in the frequency domain. 
+It is fairly efficient when we have a fixed frequency point. 
+We verify the accuracy of the BEM calculation with the nanofiber case since we know the analytical solution. Then we use BEM to solve the eigenmodes for the \SWG geometry. 
+By find the propagation constant $ \beta $ of the guided eigenmode as varying $ \omega $, we can solve for the group velocity $ v_g=\left.\dd{\omega}{\beta}\right|_{\beta=\beta_0} $ and the group index of refraction $n_g = \frac{c}{v_g}=\left.\dd{\beta}{k}\right|_{\beta=\beta_0}$.
 
 
-\qxd{Need mode plots for the nanofiber and the \SWG. Codes: \url{rectwg_TETMlow_fullvector.m} and \url{fibermodestudy.m}.}
+
+The quasi-\TE and quasi-\TM modes are eigenmodes of the \SWG with orthogonal polarizations and can be adiabatically connected to the $ x $- and $ y $-polarized linear free-space light inputs. Therefore, we can define the quasi-\TE and quasi-\TM modes as the $ H $ and $ V $ modes for the \SWG geometry.
+We plot the non-zero mode component parts of the quasi-linearly $ H $ and $ V $ modes of a \SWG in Fig.~\ref{fig:swg_HVmode_E_xy}.
+As shown, the field on the $ y $ axis of the $ H $ mode is also purely linearly polarized along the $ x $ direction. The electric fields on the $ x $ axis of the $ H $ mode are also elliptically polarized with the $ x $ component and the out-of-phase $ z $ component.
+
+
 
 %As an aside, here are the reasons why we only consider a \SWG with a width of $ 300 $ nm besides the long-studied nanofiber case. In fact, on the course of this study, we have considered ridge and other types of waveguides. Eventually, we decided to study a simple shape of waveguides--a \SWG--as a proof of principles. There has also been a long discussion on purposefully designing a rectangular waveguide and imperfections on fabricating a \SWG, in which a \SWG essentially becomes a rectangular one. \nd{Do you mean that the discussion leads to the choice of a square waveguide?} Based on some back-of-envelope calculations and simple simulations, we find that, to be useful, a rectangular waveguide might have to be very long to fabricate and, if we choose a width of $ 300$--$320 $ nm, the imperfections in fabricating a \SWG processes would not generate noticeable influence on the physical effects we care about. As these reasonings involve the knowledge we are going to introduce later, 
 
 \subsubsection{Mode superposition and decomposition}
-The degeneracy in polarizations of the \HE modes allow one to write the eigenmodes of the nanofiber in an arbitrary polarization basis. 
+\begin{figure}[!tbp]
+\centering\makebox[\textwidth]{
+\includegraphics[width=12cm]{../media/Figs/nanofiber_DaDmode_E_xy}}
+\caption[Non-zero $ D $- and $ \bar{D} $-mode components of a nanofiber in the $xy $ plane.]{Non-zero $ D $ and $ \thickbar{D} $ mode components of a nanofiber in the $xy $ plane. The first (second) row plots the $ D $($ \thickbar{D} $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:nanofiber_DaDmode_E_xy}
+\end{figure}
+
+%\begin{figure}[!tbp]
+%\centering\makebox[\textwidth]{
+%\includegraphics[width=12cm]{../media/Figs/nanofiber_HVDaDmode_Ints_xy}}
+%\caption[Intensity distributions of quasi-linearly polarized modes  in the $xy $ plane of a nanofiber.]{Intensity distributions of quasi-linearly polarized modes  in the $xy $ plane of a nanofiber. }\label{fig:nanofiber_HVDaDmode_Ints_xy}
+%\end{figure}
+
+The degeneracy in polarizations of the \HE modes allows one to write the eigenmodes of the nanofiber in an arbitrary polarization basis. 
 Two convenient guided-mode bases are the quasilinear and quasicircular polarization modes. 
-In Figs.~\ref{fig:Modes_Rot45HV_fiber} and~\ref{fig:Modes_Rot45LR_fiber}, we show the decomposition of a diagonally polarized $ D $ mode of a nanofiber in the $ HV $- and $ LR $-bases, respectively. From the figures, if we place an atom on the $ x $ axis, we find that the $ H $ mode component has a much stronger intensity at the atom position than the $ V $ mode component. 
+%In Figs.~\ref{fig:Modes_Rot45HV_fiber} and~\ref{fig:Modes_Rot45LR_fiber}, we show the decomposition of a diagonally polarized $ D $ mode of a nanofiber in the $ HV $- and $ LR $-bases, respectively. 
+Based on Eq.~\eqref{eq:eDeDbar}, the $ D $ and $ \bar{D} $ mode bases can be written as a linear combination of the $ H $ and $ V $ modes [see Fig.~\ref{fig:Modes_Rot45HV_fiber}]. We plot the non-zero component parts of the $ D $ and $ \bar{D} $ modes in Fig.~\ref{fig:nanofiber_DaDmode_E_xy}, which has a non-intuitive phase difference from the $ H $ and $ V $ mode basis [Fig.~\ref{fig:nanofiber_HVmode_E_xy}].
+%We also plot the intensity distribution of $ H $, $ V $, $ D $ and $ \bar{D} $ modes of a nanofiber in Fig.~\ref{fig:nanofiber_HVDaDmode_Ints_xy} for comparison. 
+The quasi-circular polarization mode bases can be found from the $ H $ and $ V $ modes. 
+In other words, a quasi-linear mode can be decomposed into the quasi-circular mode bases. See Fig.~\ref{fig:Modes_Rot45LR_fiber}.
+From Fig.~\ref{fig:Modes_Rot45HV_fiber}, if we place an atom on the $ x $ axis, we find that the $ H $ mode component has a much stronger intensity at the atom position than the $ V $ mode component. 
 This property of \emph{mode anisotropy}\index{anisotropy of waveguide modes} in azimuthal direction is intrinsic to the waveguides but does not exist in freely propagating fundamental Gaussian laser beams typically used in atom-light coupling experiments. In contrast, the decomposed $ R $ and $ L $ modes at the atom position have the same intensity. 
 As we will see later, we can choose a good mode basis based on the atomic internal structure and fully utilize the isotropic property of waveguide modes, which is the key to optimally designing some quantum operations and yields great advantages for the nanophotonic waveguides over the free-space atom-light quantum interface. For now, we pave some necessary foundations.
 
 \begin{figure}
 \centering\makebox[\textwidth]{
 \includegraphics[width=12cm]{../media/Figs/Modes_Rot45HV}}
-\caption[Mode decomposition of an input quasilinear polarized laser beam in the $ |H\rangle $ and $ |V\rangle $ mode basis.]{Mode decomposition of an input quasilinear polarized $ D $ ($ \ket{\Psi_\phi}=\ket{D} $) mode. The $ D $ mode is formed by shining an input laser beam polarized along the bisection between the $ x $  and $ y $ axes. It is equivalent to having one $ H $ ($ |H\rangle $) mode and one $ V $ ($ |V\rangle $) mode with an input light polarized along the $ x $ axis and $ y $ axis, respectively. Shown in color are the equipotential lines of the intensities of the modes. The dark dot indicates a possible atom position on the $ x $ axis, where the intensity of the $ H $ mode is much larger than that of the $ V $ mode. \id{I have no idea what the exponents mean.} }\label{fig:Modes_Rot45HV_fiber}
+\caption[Mode decomposition of an input quasilinear polarized laser beam in the $ H$ and $V$ mode basis.]{Mode decomposition of an input quasilinear polarized $ D $ mode in the $ H $ and $ V $ mode basis of a nanofiber. Red double-arrowed lines indicate the linear polarization directions of the free-space mode correspondence. This figure shows that the decomposition relation $ D=(H+V)/\sqrt{2} $. 
+We put a dark dot on the $ x $ axis of each mode plot to highlight the anisotropy of modes (see text). }\label{fig:Modes_Rot45HV_fiber}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=12cm]{../media/Figs/Modes_Rot45LR}}
-\caption[Mode decomposition of an input quasilinear polarized laser beam in the $ L $ ($ |L\rangle $) and $ R $($ |R\rangle $) mode basis.]{Same as Fig.~\ref{fig:Modes_Rot45HV_fiber} but decomposed in the $ LR$-mode basis. At the dark dot's position, the $ L $ and $ R $ modes have the same intensity.}\label{fig:Modes_Rot45LR_fiber}
+\caption[Mode decomposition of an input quasilinear polarized laser beam in the quasi-circular mode basis.]{Same as Fig.~\ref{fig:Modes_Rot45HV_fiber} but decomposed in the $ LR$-mode basis. At the dark dot's position, the $ L $ and $ R $ modes have the same intensity.}\label{fig:Modes_Rot45LR_fiber}
 \end{figure}
 
-The quasi-\TE and quasi-\TM modes are eigenmodes of the \SWG with orthogonal polarizations and can be adiabatically connected to the $ x $- and $ y $-polarized linear free-space light inputs. Therefore, we can define the quasi-\TE and quasi-\TM modes as the $ H $ and $ V $ modes for the \SWG geometry. They have similar anisotropic properties as the fiber modes do.
+For the \SWG case, similarly, we can define the quasi-linear $ D $ and $ \bar{D} $ modes using the $ H $ and $ V $ mode basis with non-zero components plotted in Fig.~\ref{fig:swg_DaDmode_E_xy}. 
+We plot the intensity distribution of these quasi-linear modes of a \SWG in the $ xy $ plane in Fig.~\ref{fig:swg_HVDaDmode_Ints_xy}. These quasi-linear modes have similar anisotropic properties as the fiber modes do.
 
 
 
+\begin{figure}[!tbp]
+\centering\makebox[\textwidth]{
+\includegraphics[width=12cm]{../media/Figs/swg_DaDmode_E_xy}}
+\caption[Non-zero $ D $- and $ \bar{D} $-mode components of a square waveguide in the $xy $ plane.]{Non-zero $ D $ and $ \thickbar{D} $ mode components of a \SWG in the $xy $ plane. The first (second) row plots the $ D $($ \thickbar{D} $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:swg_DaDmode_E_xy}
+\end{figure}
+
+\begin{figure}[!tbp]
+\centering\makebox[\textwidth]{
+\includegraphics[width=12cm]{../media/Figs/swg_HVDaDmode_Ints_xy}}
+\caption[Intensity distributions of quasi-linearly polarized modes in the $xy $ plane of a square waveguide.]{Intensity distributions of quasi-linearly polarized modes in the $xy $ plane of a \SWG. }\label{fig:swg_HVDaDmode_Ints_xy}
+\end{figure}
 
 
-\subsection{Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide \nd{You have``field responded" in a few places in this section. Is ``field response" a better word?} }\label{sec:calculatingGreenstensor}
-Starting from this section, we consider light response in the presence of a photon emitter outside of a dielectric waveguide. The dyadic Green's function\index{dyadic Green's function}, or Green's tensor\index{Green's tensor}\footnote{We may also call it Green's function tensor\index{Green's function tensor} or Green's function dyad\index{Green's function dyad}.}, $ \GFT(\br,\br')=\GFT(\br,\br';\omega_0) $ is naturally a response function of the field measured at $ \br $ responding to a \nd{radiating point source?} at $ \br' $ at a frequency $ \omega_0 $. Once the dyadic Green's function is solved, a field response due to some point sources can then be calculated. In this section, we consider a scenario that a gruop of atoms are trapped near a nanophotonic waveguide, and formulate a general theory of field response using the Green's function method. For simplicity, we regard atoms as optical dipoles, which interact with light in terms of optical dipole radiation. The dipoles oscillate in space and time to form a current, $ \mathbf{J} $, which collectively generates an effective susceptibility for the atomic ensemble as a ``medium" and modulates the phase and amplitude of the light passing through the waveguide. 
+\subsection{Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide}\label{sec:calculatingGreenstensor}
+We consider light response in the presence of a photon emitter outside of a dielectric waveguide. The dyadic Green's function\index{dyadic Green's function}, or Green's tensor\index{Green's tensor}\footnote{We may also call it Green's function tensor\index{Green's function tensor} or Green's function dyad\index{Green's function dyad}.}, $ \GFT(\br,\br')=\GFT(\br,\br';\omega_0) $ is naturally a response function of the field measured at $ \br $ responding to a unit radiating point source at $ \br' $ at a frequency $ \omega_0 $. With the dyadic Green's function, a field response due to an arbitrary source can be calculated. In this section, we consider a scenario that atoms are trapped near a nanophotonic waveguide, and formulate a general theory of field response using the Green's function method. For simplicity, we regard atoms as optical dipoles, which interact with light in terms of optical dipole radiation. The dipoles oscillate in space and time to form a current, $ \mathbf{J} $, which collectively generates an effective susceptibility for the atomic ensemble as a ``medium" and modulates the phase and amplitude of the light passing through the waveguide. 
 
 Given the index of refraction distribution function $ n(\br) $ with the waveguide as the background medium, a chromatic electric field modulated by the presence of atoms can be described by the wave equation below~\cite{Jackson1975}: 
 \begin{align}\label{eq:Maxwellwithsource2}
@@ -345,35 +397,37 @@ Given the index of refraction distribution function $ n(\br) $ with the waveguid
 \end{align}
 where the only difference from the homogeneous wave equation, Eq.~\eqref{MaxwellHelmholtz0}, is that we have brought in dipole source terms represented by the equivalent expressions on the right-hand side of the equation. For the source terms, we have defined the source of the current\index{current source} $ \mathbf{J}(\br)=\pp{\mathbf{P}}{t}=-i\omega\mathbf{P}(\br)=-i\omega_0 \tensor{\boldsymbol{\chi}}(\br)\cdot \boldsymbol{\mathcal{E}}(\br) $ with electric susceptibility\index{electric susceptibility} $ \tensor{\boldsymbol{\chi}}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\boldsymbol{\alpha}} \, (\br')$ \footnote{We have used the Gaussian-cgs units here. In the SI units, the corresponding relationship is $ \tensor{\boldsymbol{\chi}}(\br) = \sum_{\br'}\delta(\br-\mathbf{r}')\tensor{\boldsymbol{\alpha}} \, (\br')$ and $\tensor{\boldsymbol{\chi}}{}^{SI}=4\pi\tensor{\boldsymbol{\chi}}{}^{G}  $. Here, $ 4\pi $ is a typical multiplier factor between the SI and the Gaussian-cgs unit systems. }, where $ \tensor{\boldsymbol{\alpha}} $ is the polarizability tensor\index{polarizability!polarizability tensor} of the atoms located at $ \br' $. Specifically, using the dipole approximation, the polarizability due to the presence of atoms, $ \mathbf{P}(\br)=\sum_{\br'}\delta(\br-\br')\mathbf{d}(\br')=\sum_{\br'}\delta(\br-\br')\tensor{\boldsymbol{\alpha}} \, (\br')\cdot \boldsymbol{\mathcal{E}}(\br) $, where $ \mathbf{d}(\br') $ is the induced dipole moment of an atom at $ \br' $. 
 
-Based on Eq.~\eqref{eq:Maxwellwithsource2}, we define a source term 
-\begin{align}
-\tensor{S}(\br)=\tensor{\boldsymbol{\chi}}(\br),% \boldsymbol{\mathcal{E}}(\br),
-\end{align}
-so that Eq.~\eqref{eq:Maxwellwithsource2} can be solved by finding the corresponding dyadic Green's function equation\index{Green's function!dyadic Green's function} in the frequency domain\footnote{Although the definition of the source term is arbitrary, to make the relation between $ \mathbf{E}(\br) $ and the dyadic Green's function $ \GFT(\br,\br') $ consistent with our later expressions, we have chosen the source term carefully. If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$ and the source term \nd{by?} $\tensor{\bf S}(\br)=-4\pi \frac{\omega_0^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega_0^2/c^2$ factor compared to our definition in the text, the $4\pi\omega_0^2/c^2$ factor will be carried over to the relation between $ \mathbf{E}(\br) $ and $ \GFT(\br,\br') $ and other quantities as well. }
+Eq.~\eqref{eq:Maxwellwithsource2} can be solved by finding the corresponding dyadic Green's function\index{Green's function!dyadic Green's function} in the frequency domain defined by\footnote{Although the definition of the source term is arbitrary, to make the relation between $ \mathbf{E}(\br) $ and the dyadic Green's function $ \GFT(\br,\br') $ consistent with our later expressions, we have chosen the source term self-consistently. 
+If we define the Green's function by $\left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br') = \delta^{(3)}(\br-\br')\unittensor$ and the source term by $\tensor{\bf S}(\br)=-4\pi \frac{\omega_0^2}{c^2} \tensor{\boldsymbol{\chi}}(\br)$, which has a $4\pi\omega_0^2/c^2$ factor compared to our definition in the text, the $4\pi\omega_0^2/c^2$ factor will be carried over to the relation between $ \mathbf{E}(\br) $ and $ \GFT(\br,\br') $ and other quantities as well. Also see Ref.~\cite{Wubs2004} as another commonly used definition.}
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega_0^2}{c^2} \right] \GFT(\br,\br';\omega_0) &= -4\pi \frac{\omega_0^2}{c^2}\delta^{(3)}(\br-\br')\unittensor. \label{eq:dyadicGF}
 \end{align}
 
-A special case of the dyadic Green's function is when a dipole source is placed in a homogeneous medium, say, the vacuum. In this case, one can solve the dyadic Green's function by solving a scalar Green's function, which gives 
+A special case of the dyadic Green's function is when a dipole source is placed in a homogeneous medium, say, the vacuum. In this case, the Green's tensor is given by
+\begin{align}
+\GFT(\br,\br') &=  \left[\unittensor + \frac{1}{k_0^2}\nabla\nabla \right]G_0(\br,\br')
+\end{align}
+with a scalar Green's function 
 \begin{align}
 G_0(\br,\br';\omega_0) =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},\label{eq:G0rrp}
 \end{align}
-where we only keep the positive frequency solution for our studies. This result reflects the fact that the field responded at $ \br $ is a free spherical wave coming out from a point dipole source as we can recognize from basic electromagnetism. This solution is a key to solve radiation problems and normalize modified decay rates of atoms in the presence of a waveguide as we will discuss later. When $ \br\rightarrow \br' $ or the field responded at the dipole position, the real part of the Green's function diverges yet the imaginary part of $ G_0(\br,\br') $ takes the form
+where we only need to keep the positive frequency solution for outgoing radiations. This result reflects the fact that the field responded at $ \br $ is a free spherical wave coming out from a point dipole source as we can recognize from basic electromagnetism. This solution is a key to solve radiation problems and normalize modified decay rates of atoms in the presence of a waveguide as we will discuss later. When $ \br\rightarrow \br' $ or the field responded at the dipole position, the real part of the Green's function diverges yet the imaginary part of $ G_0(\br,\br') $ takes the form
 \begin{align}\label{eq:G0}
 G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
 \end{align}
-The details of solving the free-space Green's function and techniques we are going to use without explaining, including Born approximation~\cite{Gubernatis1977Born} and other general methods of solving a radiation problem can be found in Appendix~\ref{chap:freespacegreenfunction}. \nd{Do you need a comma, either after ``Born approximation" or before ``can be found in Appendix C"?} 
+The details of solving the free-space Green's function and techniques we are going to use, including Born approximation~\cite{Gubernatis1977Born} and other general methods of solving a radiation problem, can be found in Appendix~\ref{chap:freespacegreenfunction}. 
 
-
-
-Following the Born approximation to the first order, \nd{This additional comment is confusing. Why is an em-dash here?: which has been used in Appendix~\ref{chap:freespacegreenfunction}---but here, in general,} the output field in the form of a Lippmann-Schwinger equation\index{Lippmann-Schwinger eqation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $ can be approximated by
+The output field as Lippmann-Schwinger equation\index{Lippmann-Schwinger eqation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $
 \begin{subequations}
 \begin{align}
 \mathbf{E}(\br) &=\mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}(\br'_n)\\
 &\approx \mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}_0(\br'_n)\label{eq:EGFTnatoms}
 \end{align}
 \end{subequations}
-where $ \tensor{\boldsymbol{\alpha}}^{(n)} $ is the polarizability of the atom positioned at $ \br'_n $. The right hand side of Eq.~\eqref{eq:EGFTnatoms} implies that the total field after the interaction includes two origins \nd{I thought the ``origins" here mean coordinate origins. Maybe use ``sources" instead?} of fields: one is the original propagating field through the waveguide (the first summation part), and the other is the scattered field due to the presence of the atoms (the second summation part). \nd{Where are the first and the second sums?} Because of the Born approximation, the scattering terms in the equation above only contains the first-order scattering directly due to the background propagating field incident to the atoms, and the photon scattering among atoms and high-order scattering involving self-polarizations have been ignored. This approximation is valid in the dispersive regime, which can be verified based on Ref.~\cite{Asenjo-Garcia2017Atom} including the atom-atom interactions and other scattering effects using the Green's function approach~\footnote{See, for example, Eq.~(10) in Ref.~\cite{Asenjo-Garcia2017Atom} \nd{New sentence here?} describing the field transformation relationships will be recovered \nd{from?} our results presented in Eq.~\eqref{eq:EGFTnatoms} if the detuning $ \Delta_A $ is much larger than the frequency shift $ J_{\xi,\mathrm{1D}} $ and the modified decay rates $ \Gamma_{\xi,\mathrm{1D} }$ of atoms, which is a condition for dispersive interactions.}. Now, the only barrier for fully solving the output electric field is to solve the dyadic Green's function.
+where $ \tensor{\boldsymbol{\alpha}}^{(n)} $ is the polarizability of the atom positioned at $ \br'_n $. 
+The right hand side of Eq.~\eqref{eq:EGFTnatoms} implies that the total field after the interaction includes two sources of fields: one is the original propagating field through the waveguide (the first term), and the other is the scattered field due to the presence of the atoms (the second term). 
+Using the Born approximation, the photon scattering among atoms and high-order scattering generating self-polarizations have been ignored. 
+This approximation is valid in the dispersive regime, which can be verified based on Ref.~\cite{Asenjo-Garcia2017Atom} including the atom-atom interactions and other scattering effects~\footnote{See, for example, Eq.~(10) in Ref.~\cite{Asenjo-Garcia2017Atom}. It describes the field transformation relations and will recover to our result presented in Eq.~\eqref{eq:EGFTnatoms} if the detuning $ \Delta_A $ is much larger than the frequency shift $ J_{\xi,\mathrm{1D}} $ and the modified decay rates $ \Gamma_{\xi,\mathrm{1D} }$ of atoms for dispersive interactions.}. Now, the only barrier for fully solving the output electric field is to solve the dyadic Green's function.
 
 In general, there are two strategies to solve the dyadic Green's function: one is to solve the dipole radiation problem numerically and/or analytically; the other involves eigenmode decomposition and only needs bare waveguide modes. We call the first approach the \emph{normalization} approach, and the other the \emph{eigenmode-decomposition} approach. We will describe the two approaches in the successive subsections. 
 
@@ -387,9 +441,9 @@ each column of which can be expressed as
 \begin{align}
 \left[ -\nabla\times\nabla\times + n^2\frac{\omega^2_0}{c^2} \right] \mathbf{G}_i(\br,\br') &= -4\pi k_0^2\mathbf{e}_i\delta(\br-\br'), \label{eq:Gi}
 \end{align}
-where the subscripts $ i=r\!_\perp,\phi,z $ written in the cylindrical coordinate system or $ i=x,y,z $ in the Cartesian coordinate system denote the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i$th column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we have used $\omega_0$ to indicate the angular frequency of the radiation from the source (the difference in the full quantum description will be discussed in Section~\ref{Sec::GreensFunction}).  
+where the subscripts $ i=r\!_\perp,\phi,z $ written in the cylindrical coordinate system or $ i=x,y,z $ in the Cartesian coordinate system denote the coordinate components. The $ \mathbf{G}_i(\br,\br') $ in the equation above is the $ i$th column of the dyadic Green's function of $ \GFT(\br,\br') $. Here, we have used $\omega_0$ to indicate the angular frequency of the radiation from the source.  
 
-Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a unit dipole source orientated along $ \mathbf{e}_i $ and placed at $ \br' $  (\qxd{the Gaussian-cgs convention factor $ -4\pi k^2 $ in some old plots following the code in \url{Example_DGF.m} and others is no longer needed based on the new standard. Although the plots might have been normalized to the vacuum values, double check and correct the unnormalized Green's function plots by multiplying $ -4\pi k_0^2$ before publishing. } ). That is to say, once we solve the electric field components with a unit dipole source orientated along all the $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis directions:
+Comparing Eq.~\eqref{eq:Gi} with Eq.~\eqref{eq:Maxwellwithsource2}, we find that Eq.~\eqref{eq:Gi} is exactly the chromatic wave equation of $ \mathbf{E}(\br) $ when there is a unit dipole source orientated along $ \mathbf{e}_i $ and placed at $ \br' $. That is to say, once we solve the electric field components with a unit dipole source orientated along all the $ \mathbf{e}_i $ directions, the columns of the dyadic function is just the corresponding field components. Concretely, in the cylindrical coordinate system, the dyadic Green's function elements correspond to the following electric field components emitted by a unit dipole source orientated in the three orthogonal basis directions:
 \begin{equation}
 \GFT(\mathbf{r},\mathbf{r}')=\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\! \!\!\!\!\!\!\!\!
   \begin{tikzpicture}[baseline=-\the\dimexpr\fontdimen22\textfont2\relax ]
@@ -426,9 +480,9 @@ G_{ij}(\br,\br';\omega_0) =\frac{E^i_j(\br)}{d^{(j)}(\br')},
 where $ d^{(j)}(\br') $ is the dipole moment of a dipole at $ \br' $ with an orientation along the $ \mathbf{e}_j $ direction, and $ E^i_j(\br) $ is the $ i $th component of the calculated electric field responded at $ \br $ in the presence of the dipole source.
 Therefore, the key to calculate the dyadic Green's function in this approach is to solve the field emitted by a normalized dipole in the presence of the waveguide in the frequency domain. In fact, there are many ways to calculate the fields with a dipole source in a medium. 
 
-The field can be analytically solved only if the waveguide has some special geometry. A nanofiber geometry is one example that one can solve the radiation problem analytically.  
-in Appendix~\ref{sec:boundrad}, we provide some details to solve the $ \mathbf{E}(\br) $ field with three orthogonal unit dipoles by decomposing the dipole radiation function described by Eq.~\eqref{eq:G0rrp} into the cylindrical coordinate system and solving the guided mode and the radiation mode contributions via corresponding \nd{residues?} of poles and contour integrals of branch cuts. In the end, numerical integrations are simplified to integrations over the real axis to calculate the radiation mode contributions to the dyadic Green's function if the waveguide is lossless. 
-\nd{What do the two ``being"'s mean?: Using this method, we are able to decompose the unguided mode contribution to the dyadic Green's function being the part due to free-dipole radiation, $ \GFT_0(\br,\br') $, and the reflection due to the presence of the waveguide interface, $ \GFT_R(\br,\br') $; and we interpret the guided mode contribution part, $ \GFT_T(\br,\br') $, being a result of mode transmission.} Each part is calculated by projecting the total dipole radiation into the corresponding orthonormal modes. Therefore, the dyadic Green's function can be written as
+\textbf{Analytical solutions:} The field can be analytically solved only if the waveguide has some special geometry. A nanofiber geometry is one example that can be solved analytically.  
+In Appendix~\ref{sec:boundrad}, we provide some details of solving the $ \mathbf{E}(\br) $ field radiated from three orthogonal unit dipoles by decomposing the dipole radiation function described by Eq.~\eqref{eq:G0rrp} into the cylindrical coordinate basis. We solve the guided mode and the radiation mode contributions via finding residues of poles and contour integrals of branch cuts. In the end, complex integrations are simplified to be over the real axis to assuming the waveguide is lossless. 
+Using this method, we are able to decompose the responding Green's tensor outside of the waveguide to a part due to free-dipole radiation, $ \GFT_0(\br,\br') $, and a part due to the reflection from the waveguide interface, $ \GFT_R(\br,\br') $; and we interpret the Green's tensor responding inside of the waveguide medium, $ \GFT_T(\br,\br') $, as a result of mode transmission. Each part is calculated by projecting the total dipole radiation into the corresponding orthonormal modes. Therefore, the dyadic Green's function can be written as
 \begin{align}\label{eq:GFTdecomp0RT}
 \GFT(\br,\br') = \left\{ 
 \begin{array}{lc}
@@ -437,12 +491,23 @@ in Appendix~\ref{sec:boundrad}, we provide some details to solve the $ \mathbf{E
 \end{array}\right..
 \end{align}
 
-As an extension to this mode decomposition method, we decompose a plane wave into cylindrical modes in Appendix~\ref{Ch:PlanewaveDecomposition}. Although the result has not been used for this dissertation work, it might be useful when we consider the atomic cooling and state preparation protocols if an external incident light is needed (see experiments in Refs.\cite{Meng2017ground,Ostfeldt2017Dipole}). 
+As an extension to this mode decomposition method, we decompose a plane wave into cylindrical modes in Appendix~\ref{Ch:PlanewaveDecomposition}. Although the result has not been used for this dissertation work, it might be useful when we consider the atomic cooling and state preparation protocols with an incident light not through the waveguide (see experiments in Refs.\cite{Meng2017ground,Ostfeldt2017Dipole}). 
 
-However, in most geometries of waveguides, an analytical solution is not always available, and \nd{Incomplete sentence} numerical methods including finite-difference time-domain (FDTD) method\index{FDTD method}~\cite{Taflove2005}, boundary-element method (BEM)\index{BEM} for radiation problems~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}, finite-element method (FEM)\index{FEM} and so on. The FDTD method solves the Maxwell equations by dividing the real space under consideration completely into regular Yee-cell grids and transforming the differential equations into a linear equation system on those grid points in the time domain. I have used this method to study quantum dynamics and the photon emission spectrum of a many-body system involving nanophotonic cavities for my master's thesis~\cite{Qi2012}. From my past experience, the FDTD method requires a large computer memory or a long simulation time to perform first-principle time evolution of the field propagation matching the boundary conditions, and then Fourier transfers \nd{transform?} the results into the frequency domain for the dyadic Green's function that we want. Since we only need to calculate the dyadic Green's function at a particular frequency point, this method is an overkilling. Also, it cannot easily separate the guided mode and the radiation mode contributions to help us develop some insights and simplify the simulation with some reasonable approximations. 
-On the other hand, \nd{Grammar} the BEM we use calculates the Maxwell equations in the frequency domain and evolve the equations as a linear system in the $ \beta $ (projected wave vector) space, which makes it possible to separate the guided and the radiation mode contributions based on the range of $ \beta $ (see Section~\ref{sec:eigenmodesofwaveguides}). It \nd{The BEM method?} expresses electromagnetic field in terms of charges and currents distributed on the surfaces and interfaces of the structure under consideration. The boundary conditions for the electromagnetic field yield a set of linear integral equations, with unknown charges and currents, which are eventually solved self-consistently in the presence of the external incident field from the dipole source by discretizing the integrals with a finite set of boundary points (elements). The only assumption in this method is that the different media involved in the structures under study are described by frequency-dependent local dielectric functions, which is valid for our problem and we can use constant index of refractions for our study. Therefore, the complexity of BEM only scales quadratically with respect to the points on the boundary elements, not on the full simulation space as the FDTD method does, which makes BEM computational efficient to solve our problem. FEM has a computational complexity between FDTD method and BEM, by using a flexible mesh \nd{Is this the correct word?: griding} trick to simplify the calculations yet not as much as BEM does. 
+\textbf{Numerical methods:} For most geometries of waveguides, an analytical solution is not always available, and we have to use numerical methods, including finite-difference time-domain (FDTD) method\index{FDTD method}~\cite{Taflove2005}, boundary-element method (BEM)\index{BEM} for radiation problems~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}, finite-element method (FEM)\index{FEM} and so on. 
 
-For our simulations, we decide to use a BEM program to simulate the electromagnetic field due to a unit dipole for the nanofiber geometry first to check the accuracy against our analytical solution, and then apply this method to the \SWG case. Since the field components in the $ z $ direction only yield a phase difference compared to the $ z=0 $ plane, we can fully solve our radiation problem on a 2D plane. With boundary points set for every $ 5 $--$ 6 $ nm away from each other on the boundary, we can achieve a negligible error deviation from our known solution (below $ 1\% $). We use $ \Delta \beta = 0.01k_0 $ interval to sample the $ \beta $-space calculations. One issue of this approach is that we have to make the medium of the waveguide ``imperfect" to avoid a divergent problem when we calculate the field response at the guided mode condition point $ \beta=\beta_0 $, by making $ n_1(\br_\perp\in \text{waveguide region})=n_1+i\delta n_1 $, where $ n_1 $ is the \nd{This noun is too long. Maybe ``the real bulk index of refraction of the wave guide"?: real waveguide bulk index of refraction constant} and $ \delta n_1 $ is a small number (we find $ \delta n_1\sim 0.001 $ or $ 0.01 $ is good enough) to generate an artificial photon absorption. Without this treatment, since the field at $ \beta=\beta_0 $ is a delta function, the result will diverge. To calculate the field responded at the dipole position, which will be used for the modified decay rate calculation, we only calculate the induced electric field for a similar reason of the divergence of the real part of the Green's function. 
+The FDTD method solves the Maxwell equations by dividing the real space under consideration completely into regular Yee-cell grids and transforming the differential equations into a linear equation system on those grid points in the time domain. I have used this method to study quantum dynamics and the photon emission spectrum of a many-body system involving nanophotonic cavities for my master's thesis~\cite{Qi2012}. From my past experience, the FDTD method requires a large computer memory or a long simulation time to perform first-principle time evolution of the field propagation matching the boundary conditions, and then Fourier transform the results into the frequency domain for the dyadic Green's function that we want. Since we only need to calculate the dyadic Green's function at a particular frequency point, this method is an overkilling. Also, it cannot easily separate the guided mode and the radiation mode contributions to help us develop some insights and simplify the simulation with some reasonable approximations. 
+
+On the other hand, BEM evolves the Maxwell equations as a linear system in the $ \beta $ (projected wave vector) space, which makes it possible to separate the guided and the radiation mode contributions based on the range of $ \beta $ (see Section~\ref{sec:eigenmodesofwaveguides}). 
+This method expresses electromagnetic field in terms of charges and currents distributed on the surfaces and interfaces of the structure under consideration. 
+The boundary conditions for the electromagnetic field yields a set of linear integral equations, with unknown charges and currents, which are eventually solved self-consistently in the presence of the external incident field from the dipole source by discretizing the integrals with a finite set of boundary points (elements). 
+The only assumption in this method is that the different media involved in the structures under study are described by frequency-dependent local dielectric functions, which is valid for our problem and we can use constant index of refractions. Therefore, the complexity of BEM only scales quadratically with respect to the points on the boundary elements, not on the full simulation space as the FDTD method does, which makes BEM computational efficient to solve our problem. FEM has a computational complexity between FDTD method and BEM, by using a flexible meshing trick to simplify the calculations yet not as much as BEM does. 
+
+For our study, we decide to use a BEM program to simulate the electromagnetic field due to a unit dipole for the nanofiber geometry first to check the accuracy against our analytical solution, and then apply this method to the \SWG case. 
+Since the field components in the $ z $ direction only yield a phase difference compared to the $ z=0 $ plane, we can fully solve our radiation problem on a 2D plane. 
+With boundary points set for every $ 5 $--$ 6 $ nm away from each other on the boundary, we can achieve a negligible error deviation from our known solution (below $ 1\% $). 
+We use $ \Delta \beta = 0.01k_0 $ to sample the $ \beta $-space calculations. One issue of this approach is that we have to make the medium of the waveguide ``imperfect" to avoid a divergent problem when we calculate the field response at the guided mode condition point $ \beta=\beta_0 $. 
+We set $ n_1(\br_\perp\in \text{waveguide region})=n_1+i\delta n_1 $, where $ n_1 $ is the the real bulk index of refraction of the waveguide and $ \delta n_1 $ gives a small fake non-radiative loss (we find $ \delta n_1\sim 0.001 $ or $ 0.01 $ might be good enough). Without this treatment, since the field at $ \beta=\beta_0 $ is a delta function, the result will diverge. To calculate the field response at the dipole position, which will be used for the modified decay rate calculation, we only calculate the induced electric field for a similar reason of the divergence of the real part of the Green's function. 
+
 In BEM, the Green's function tensor response at the dipole position at $ \omega_0 $ due to the radiation modes can be decomposed into the free-dipole or homogeneous radiation contribution and the induced-dipole radiation contribution, that is 
 \begin{align} \GFT_{rad}(\br',\br';\omega_0)=\GFT_0(\br',\br';\omega_0)+\GFT_{ind,rad}(\br',\br';\omega_0).
 \end{align}
@@ -450,8 +515,8 @@ To not be confused, when $ \br' $ is outside of the waveguide, Eq.~\eqref{eq:GFT
 \begin{align}
 \GFT_R(\br',\br';\omega_0) &= \GFT_{ind,gyd}(\br',\br';\omega_0) + \GFT_{ind,rad}(\br',\br';\omega_0). 
 \end{align}
-That is, the \nd{reflection? reflective?} part of Green's tensor includes both the guided ($ gyd $) and the radiation ($ rad $) parts that are calculated by integrating over different ranges of $ \beta $. 
-For a single mode waveguide, with a unit dipole orientated along $j$ direction placed at $ \br' $, the induced-dipole radiation Green's tensor elements can be calculated by~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}
+That is, the reflection part of Green's tensor includes both the guided ($ gyd $) and the radiation ($ rad $) parts that are calculated by integrating over different ranges of $ \beta $. 
+For a single-mode waveguide, with a unit dipole orientated along $j$ direction placed at $ \br' $, the induced-dipole radiation Green's tensor elements can be calculated by~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}
 \begin{align}
 G_{ind,gyd}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\left[\int_{-n_1k_0}^{-n_2k_0} d\beta E_j^i(\mathbf{r}') +\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\right]\nn\\
 &=\frac{4k_0^2}{3\pi^2}\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\\
@@ -463,9 +528,9 @@ To calculate the guided-mode-induced Green's tensor using the first equation abo
 \varepsilon(\br_\perp) = n^2(\br_\perp) + i\delta n(\br_\perp),
 \end{align}
 where $ \delta n(\br_\perp) $ is a small real number in the waveguide region and zero outside. Same for the radiation-mode-induced Green's tensor calculation. 
-In practice, we find it tricky to find a proper artificial loss to obtain an accurate value for the guided-mode-induced Green's tensor--especially when $ \beta_0 $ is close to the integration limit points; and even more trickier to use the equation for the guided-mode-induced Green's tensor calculation to find the contribution from a particular guided mode if the waveguide allows multiple guided modes. 
+In practice, it is tricky to find a proper artificial loss to obtain an accurate value for the guided-mode-induced Green's tensor--especially when $ \beta_0 $ is close to the integration limit points; and even trickier to use the equation for the guided-mode-induced Green's tensor calculation to find the contribution from a particular guided mode if the waveguide allows multiple guided modes. 
 So, we decide to use the eigenmode decomposition method to calculate the guided-mode-induced Green's tensor, which will be introduced next.
-However, the calculation for the unguided-mode-induced Green's tensor equation [Eq.~\eqref{eq:BEMGindij}] is quite robust to the choice of artificial material loss, and is very accurate if the artificial loss is small for the waveguide. 
+However, the calculation for the unguided-mode-induced Green's tensor equation [Eq.~\eqref{eq:BEMGindij}] is quite robust to the choice of artificial material loss, since the artificial loss is solely set for avoiding the divergent problem of the guided modes and does not bring in new radiations. 
 If we want to calculate $ \GFT(\br,\br') $, Eq.~\eqref{eq:BEMGindij} holds if we replace $ E_j^i(\br') $ with $ E_j^i(\br) $. 
  
 
@@ -563,7 +628,7 @@ Only the positive-frequency component contributes to the $\delta$-function, and 
 where $\omega_{eg}$ is the resonance frequency of the atomic scatterer.  The energy level shift of the scatterer due to its proximity to the dielectric is found from the real part of the Green's function at $\br = \br'$. 
 To find the total modified spontaneous emission rate and energy level shift one must include the unguided radiation modes \cite{LeKien2005a} or employ other representations of the Green's function \cite{Klimov2004}.  
 
-Applying a similar trick, we provide--without details of proofs--the radiation mode contribution to the positive-frequency Green's function tensor to be~\cite{LeKien2005a}
+Applying a similar process, we provide--without details of proofs--the radiation mode contribution to the positive-frequency Green's function tensor to be~\cite{LeKien2005a}
 \begin{align}
 \GFT_{rad}^{(+)} (\br,\br';\omega_0)&= i2\pi \omega_0  \int_{-n_2k_0}^{n_2k_0}\!\!\!\mathrm{d}\beta\sum_{b,m,p} \mathbf{u}_\nu (\br_{\!\perp}^\prime)\mathbf{u}^*_\nu (\br_{\!\perp}^\prime) e^{i b\beta_0(z-z')} \Theta \big( b(z-z') \big)
 \end{align} 
@@ -577,10 +642,11 @@ The eigenmode decomposition approach of solving dyadic Green's function works re
 
 We verified the equivalence of the two methods by numerically comparing the Green's tensors and also the derived spontaneous emission rates using the two methods for the nanofiber case first, and then partially for the \SWG case. We provide some of the details and data files in Ref.~\cite{Qi2018i2000s/simnanophotonics}. 
 
-Combining these two methods also makes the decomposition of the dyadic Green's function flexible and accurate. For instance, some numerical techniques of calculating radiation problems (like BEM) diverge at the poles due to guided modes for a lossless medium, and one has to artificially add some loss to the medium to transfer the guided-mode-induced Green's function calculation to be an integral around the poles. Given the limited width and finite data points sampled around the poles, the radiation problem solver cannot simultaneously guarantee the precision and efficiency for the guided mode contribution. In this case, using the eigenmode decomposition approach to calculate the guided mode part of the dyadic Green's function while using the radiation problem solver to calculate the unguided mode contribution to the dyadic Green's function might be a good solution in practice. For some other numerical solvers for the radiation problem, like the FDTD method, they can only calculate the total dyadic Green's function. To extract the unguided mode contribution, one can subtract the total dyadic Green's function by the guided mode contribution computed using the eigenmode decomposition approach if the guided modes are known. 
+Combining these two methods also makes the decomposition of the dyadic Green's function flexible and accurate. For instance, some numerical techniques of calculating radiation problems (like BEM) diverge at the poles due to guided modes for a lossless medium, and one has to artificially add some loss to the medium to transfer the guided-mode-induced Green's function calculation to be an integral around the poles. Given the limited width and finite data points sampled around the poles, the radiation problem solver cannot simultaneously guarantee the precision and efficiency for the guided mode contribution. In this case, using the eigenmode decomposition approach to calculate the guided mode part of the dyadic Green's function while using the radiation problem solver to calculate the unguided mode contribution might be a good solution in practice. 
+For some other numerical solvers for the radiation problems, like the FDTD method, can only calculate the total dyadic Green's function. To separate out the unguided mode contribution, one can subtract the total dyadic Green's function by the guided mode contribution computed using the eigenmode decomposition approach if the guided modes are known. 
 
-
-\includefig{../media/Figs/GFTz0x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=0 $ plane. The calculation follows Appendix~\ref{sec:boundrad}. A dipole source (marked as $ \times $) is placed at $\br'=(r^\prime_\perp=2a,\phi'=0,z'=0) $ position or $ r'_\perp=2a $ from the fiber axis, where $a=225 $ nm is the radius of the nanofiber. The position of the observer is chosen to be in the $ z=0\lambda $ plane \nd{Is it $0$ or $\lambda$?}. The wavelength is set to be $ \lambda=852 $ nm, which is the D2 line of cesium atoms. All values are normalized to the vacuum Green's function, $ G_0$, by Eq.~\eqref{eq:G0}. The value labeled for each subplot is the maximum value of the corresponding Green's function tensor element among all data points in the transverse plane excluding the dipole position. The radiation modes are calculated up to $ |m|=8 $.}
+\subsection{Example Green's function of the nanofiber}
+\includefig{../media/Figs/GFTz0x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=0 $ plane. The calculation follows Appendix~\ref{sec:boundrad}. A dipole source (marked as $ \times $) is placed at $\br'=(r^\prime_\perp=2a,\phi'=0,z'=0) $ position or $ r'_\perp=2a $ from the fiber axis, where $a=225 $ nm is the radius of the nanofiber. The position of the observer is chosen to be in the $ z=0 $ plane. The wavelength is set to be $ \lambda=852 $ nm, which is the D2 line of cesium atoms. All values are normalized to the vacuum Green's function, $ G_0$, by Eq.~\eqref{eq:G0}. The value labeled for each subplot is the maximum value of the corresponding Green's function tensor element among all data points in the transverse plane excluding the dipole position. The radiation modes are calculated up to $ |m|=8 $.}
 {$\mathrm{abs}{\left[ G_{ij}(\mathbf{r},\mathbf{r}')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=0\lambda$.}{!tbp}
 
 \includefig{../media/Figs/GFTz1x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=\lambda $ plane. Same as Fig.~\ref{../media/Figs/GFTz0x2a} but observed in the $ z=\lambda $ plane.}
@@ -601,8 +667,12 @@ Combining these two methods also makes the decomposition of the dyadic Green's f
 \includefig{../media/Figs/GFTgz0x2a}{0.95\linewidth}{The absolute value of the \emph{guided-mode-induced} dyadic Green's function's elements $ G^g_{ij}(\br,\br') $ observed in the transverse plane. Settings are the same as Fig.~\ref{../media/Figs/GFTz0x2a} but for the guided mode contribution part only. Absolute values of the elements are the same for all $ z $ slices. For the purpose of comparison, the Green's function elements are plotted with only the forwarding propagation part.}
 {$\mathrm{abs}{\left[ G_{ij}^g(\mathbf{r},\mathbf{r}')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $.}{!tbp}
 
-Now, we apply the radiation problem solver to calculate the elements of the dyadic Green's function of an atom trapped near a nanofiber at $ r'\!_\perp=2a $ from the fiber axis, and see if the radiation mode contributions vanish after a long propagation distance. The contour plots of the absolute values of the Green's function tensor elements are shown in Figs.~\ref{../media/Figs/GFTz0x2a} through~\ref{../media/Figs/GFTz100x2a} for slices at $ z=0,1,2,5,10, $ and $ 100\lambda $ with a dipole source fixed at $ r'\!_\perp=2a $ position on the $ x $-axis. The maximum values of each tensor element are also notated in the plots normalized to the imaginary part of the scalar Green's function in the vacuum ($ G_0 $ defined in Eq.~\eqref{eq:G0}, which indicates how the radiation mode contributions dissipate along the propagation direction. Note that, since the Green's function diverges at the source position, to find the maximum values shown in the plots we have excluded the source position. We see the maximum value oscillates a little bit in the near distance, due to the interference between the free-dipole radiation and the reflected field from the fiber interface, and then decays with the remaining amplitude inversely proportional to the propagation distance as the reflected field dies out in a long distance, which only leaves over the free-dipole radiation and the guided mode contributions. \nd{There are two verbs: To demonstrate the pattern left in a distant $ z $ slice is mainly the guided mode contribution after a long propagation}, we plot the guided mode contribution in Fig.~\ref{../media/Figs/GFTgz0x2a}, which has a constant amplitude over the $ z $ slices. At $ z=10\lambda $ (Fig.~\ref{../media/Figs/GFTz10x2a}), the total Green's function tensor has already been very close to the bare forward-propagating guided-mode Green's function tensor. At $ z=100\lambda $ (Fig.~\ref{../media/Figs/GFTz100x2a}), the radiation modes have essentially completely dissipate into free space. Considering the photon detectors to measure the transported signal at least centimeters away from the nanofiber region, we can safely ignore the influence of the unguided field to the measurement results. 
-\qxd{Double check all parameters used in the simulations. I thought the radiation modes have been cut up to $ |m|=8 $ but not entirely sure.}
+Now, we apply the radiation problem solver to calculate the elements of the dyadic Green's function of an atom trapped near a nanofiber at $ r'\!_\perp=2a $ from the fiber axis, and see if the radiation mode contributions vanish after a long propagation distance. The contour plots of the absolute values of the Green's function tensor elements are shown in Figs.~\ref{../media/Figs/GFTz0x2a} through~\ref{../media/Figs/GFTz100x2a} for slices at $ z=0,1,2,5,10, $ and $ 100\lambda $ with a dipole source fixed at $ r'\!_\perp=2a $ position on the $ x $-axis. The maximum values of each tensor element are also notated in the plots normalized to the imaginary part of the scalar Green's function in the vacuum ($ G_0 $ defined in Eq.~\eqref{eq:G0}, which indicates how the radiation mode contributions dissipate along the propagation direction. Note that, since the Green's function diverges at the source position, to find the maximum values shown in the plots we have excluded the source position. 
+
+We see the maximum value oscillates a little bit in the near distance, due to the interference between the free-dipole radiation and the reflected field from the fiber interface, and then decays with the remaining amplitude inversely proportional to the propagation distance as the reflected field dies out in a long distance.
+This only leaves over the free-dipole radiation and the guided mode contributions in a long distance. To demonstrate that the pattern left in a distant $ z $ slice is mainly the guided mode contribution, we plot the guided mode contribution in Fig.~\ref{../media/Figs/GFTgz0x2a}, which has a constant amplitude over the $ z $ slices. At $ z=10\lambda $ (Fig.~\ref{../media/Figs/GFTz10x2a}), the total Green's function tensor has already been very close to the bare forward-propagating guided-mode Green's function tensor. 
+At $ z=100\lambda $ (Fig.~\ref{../media/Figs/GFTz100x2a}), the radiation modes have essentially completely dissipated into free space. 
+Considering the photon detectors to measure the transported signal being at least centimeters away from the nanofiber region, we can safely ignore the influence of the unguided field to the measurement results. 
 
 In sum, given the two approaches, we can compute the dyadic Green's function for arbitrary nanophotonic waveguides and decompose the total Green's function into its guided and unguided mode components. The strategies of the computation and the decomposition only depend on the availability of software and computer resources, and one can combine the two approaches for fast and accurate calculations. We also show that the radiation modes does not propagate long enough to affect the measurement signal. In the next section, we will assume the dyadic Green's function is known and study the dispersive response theory of the guided light in a semi-classical scenario.
 
@@ -610,11 +680,11 @@ In sum, given the two approaches, we can compute the dyadic Green's function for
 \section{Phase shift and polarizability transformation}
 Now, we can formulate the theory of light response due to the presence of a waveguide next to atoms. We assume that the atoms interact with the light equally for all polarization states of the light, that is, to treat the atomic polarizability as a scalar in this section, and study the influence of a nanophotonic waveguide, as an example, by comparing the light response to the free-space case. A generalized light response theory including a tensor polarizability will be drawn in Chapter~\ref{chap:birefringence}. 
 
-We start with the electric field defined in Eq.~\eqref{eq:EGFTnatoms}, and rewrite the output field by only considering the guided-mode dyadic Green's function responding from a single atom source placed at $ \br' $. \nd{Incomplete sentence: The output field
+We start with the electric field defined in Eq.~\eqref{eq:EGFTnatoms}, and rewrite the output field by only considering the guided-mode dyadic Green's function responding from a single atom source placed at $ \br' $. The output field
 \begin{align}
 \mathbf{E}(\br) & = \mathbf{E}_0(\br) +\alpha \GFT_g(\br,\br')\cdot\mathbf{E}_0(\br'),
 \end{align}
-where $ \mathbf{E}_0(\br) $ is the input field propagating in a bare waveguide.} We have also set the polarizability of the atom as a scalar, $ \alpha $. 
+where $ \mathbf{E}_0(\br) $ is the input field propagating in a bare waveguide. We have also set the polarizability of the atom as a scalar, $ \alpha $. 
 
 As a concrete example, we can consider the case that the atom is placed at $ z'=0 $ and $ \phi'=0 $ (along the $ H $ axis), and the input field is the right circularly polarized $ p=+,\,b=+ $ \HE\, forward propagating mode of a nanofiber
 \begin{align}
@@ -688,13 +758,13 @@ Although we have taken the example of a circularly polarized light as the input,
 
 
 
-\bigskip
-\textbf{Comparison to the vacuum case:}
+\subsection{Compare to the free-space case}
 
-To further compare our results with the free-space atom-light interaction case, we would like to rewrite our equations above following the commonly used quantities and conventions~\cite{Baragiola2014Open}. Following these conventions (see summary in Appendix~\ref{chap:summaryofatomicphysicsformulas}), we define the polarizability and the atomic decay rates due to the coupling to the guided modes of a nanofiber, $ \Gamma^{1D}_{\rm nanofiber} $, in the dispersive regime as below 
+To further compare our results with the free-space atom-light interaction case, we rewrite our equations above following the commonly used quantities and conventions (see summary in Appendix~\ref{chap:summaryofatomicphysicsformulas})~\cite{Baragiola2014Open}. 
+We define the polarizability and the atomic decay rates due to the coupling to the guided modes of a nanofiber, $ \Gamma^{1D}_{\rm nanofiber} $, in the dispersive regime as below 
 \begin{align}
 \alpha &=-\frac{|d_{eg}|^2}{\hbar \Delta}, \,\, (\Delta=\omega-\omega_{eg}=\omega-\omega_0)\\
-\Gamma^{1D}_{\rm nanofiber} &= \Gamma_g=2\pi \frac{|d_{eg}|^2}{\hbar A_{e\!f\!f}^{\rm nanofiber}}\left(\frac{\omega_0}{c} \right),
+\Gamma^{1D}_{\rm nanofiber} &=2\pi \frac{|d_{eg}|^2}{\hbar A_{e\!f\!f}^{\rm nanofiber}}\left(\frac{\omega_0}{c} \right),
 \end{align}
 where $ d_{eg} $ is the dipole moment of the atom, and we have ignored the imaginary part of the atomic polarizability in the dispersive regime~\cite{Deutsch2010a}.
 We recall the natural linewidth of the atom (see Eq.~\eqref{eq:naturallinewidth})
@@ -743,7 +813,7 @@ In the last step, we have used the fact that the mode of the Gaussian beam reach
 
 Figure~\ref{fig:relenhancement} plots the relative enhancement of the atom-light coupling due to the use of an optical nanofiber ($ a=225 $ nm) as a function of the atom's radial distance to the fiber axis. Different polarization states of the input light is studied in the figure while the atom is trapped along the $ x $ or $ H $ axis. The enhancement value is normalized to the case that the atom is probed at the center point of a Gaussian beam's waist with a typical waist radius $ w_0=10\,\mu $m. As shown, the nanofiber enhances the atom-light coupling by $ 30 $---$ 100 $ folds if the atom is trapped at $ r'_\perp=2a $, depending on the polarization state of the input light. If the atom is moved closer to the fiber surface, the enhancement can be further increased up to a few hundred folds. Note that both $ R $ and $ L $ circular modes of the nanofiber generate the same atom-light coupling strength in this rough model.
 
-Similar result can be drawn to the \SWG case, of course. 
+Similar results apply to the \SWG case. 
 
 
 \bigskip
@@ -752,16 +822,21 @@ Similar result can be drawn to the \SWG case, of course.
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=12cm]{../media/Figs/BirefringenceMeasurement}}
-\caption[Diagram depicting the polarization rotation measurement with an optical nanofiber.]{Diagram of polarization rotation measurement with an optical nanofiber (brown). The input light is initially polarized along the diagonal direction on the $ xy $ plane. The output polarization state is measured with photon flux differential counting \nd{the differential counting of the photon flux?} between the $ H $ and $ V $ linear polarization states. The rotated angle on the \Poincare sphere indicates a birefringence rotation of the guided light.}\label{fig:birefringencenanofibersetup}
+\caption[Diagram depicting the polarization rotation measurement with an optical nanofiber.]{Diagram of polarization rotation measurement with an optical nanofiber (brown). The input light is initially polarized along the diagonal direction on the $ xy $ plane. 
+The output polarization state is measured by the differential counting of the photon flux between the $ H $ and $ V $ linear polarization states. The rotated angle on the \Poincare sphere indicates a birefringence rotation of the guided light.}\label{fig:birefringencenanofibersetup}
 \end{figure}
 
-If we launch two equal-power but orthogonal quasi-linear modes, $H$ and $V$, and let the atoms sit along the major axis of the H mode or the $ x $ axis, the atoms will feel both $ H $ and $ V $ modes \nd{in different strengths: This part sounds weird to me but I don't know how to fix it.}. Equivalently, we can also launch a linearly polarized light bisecting the angle between the $ x $ and $ y $ axes, and let the atoms sit along the $ x $ axis (see Fig.~\ref{fig:birefringencenanofibersetup}). Since the local intensities of the $ H $ and $ V $ modes at the atom positions are different, there will be a differential phase shift between the output $ H $- and $ V $-polarized light components ($ \mathbf{E}_{H}(\br) $ and $ \mathbf{E}_{V}(\br) $), which generates a birefringence rotation on the \Poincare sphere. The rotation angle of the output light on the \Poincare sphere due to a scalar interaction with one atom can be given by
+Suppose we launch a quasi-linear $ D $ mode to the waveguide, which can be decomposed into two equal-power but orthogonal quasi-linear modes, $H$ and $V$. 
+Suppose we also place atoms along the major axis of the $H$ mode or the $ x $ axis. 
+The atoms will feel both $ H $ and $ V $ modes in different strengths [see Figs.~\ref{fig:birefringencenanofibersetup} and~\ref{fig:Modes_Rot45HV_fiber}]. 
+Since the local intensities of the $ H $ and $ V $ modes at the atom positions are different, there will be a differential phase shift between the output $ H $- and $ V $-polarized light components ($ \mathbf{E}_{H}(\br) $ and $ \mathbf{E}_{V}(\br) $), which generates a birefringence rotation on the \Poincare sphere. The rotation angle of the output light on the \Poincare sphere due to a scalar interaction with one atom can be given by
 \begin{align}
 \varphi &= \delta\phi_H-\delta\phi_V= 2\pi \frac{\omega_0}{v_g} \re[\alpha] \left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right]\\
 &= -\sigma_0\frac{c}{v_g}\frac{\Gamma_0}{4\Delta}\left[| \mathbf{u}_H(r'_{\!\perp})|^2- | \mathbf{u}_V(r'_{\!\perp})|^2 \right].\label{eq:birefringencerotang}
 \end{align}
 
-From Fig.~\ref{fig:relenhancement}, using the nanofiber, we find there is a $ 3 $---$ 4 $ folds of enhancement difference between the $ H $ and $ V $ modes. This is an otherwise unavailable resource for birefringence rotation with a scalar polarizability of atoms in free-space. 
+From Fig.~\ref{fig:relenhancement}, using the nanofiber, we find that the local $ H $ mode is usually $ 3 $---$ 4 $ folds stronger than the $ V $ mode along the $ x $ axis. 
+This generates a strong birefringence effect even with a scalar polarizability of atoms, and is an otherwise unavailable resource for a free-space interface. 
 
 
 %</waveguideinterface>
