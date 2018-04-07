@@ -20,81 +20,110 @@
 %--  Wolfgang Ketterle\ai{Ketterle, Wolfgang}
 %\end{quote}
 %\url{http://cua.mit.edu/ketterle_group/Projects_1997/atomlaser_97/atomlaser_comm.html}
-\section{The big picture}
+\section{Motivation}
 
-After billions of years of evolution since life originated on earth, human being emerge as one of the most wondering and collaborative species, who have come to the point as of today that we work together to understand the quantum nature of matter and use our accumulated knowledge to control the flow of information on microscopic scale for our own purposes. 
-We kill, we conquer, we adapt, we change, we imagine, we love, we give, we steal, we organize, we take, we smile, we write, we educate, we talk, we cheer, and we think, therefore we are. 
-We may indeed need to pass information in the precise units of quanta to be energy-efficient, as the bits of information we rely on in our daily life grow exponential.
-We may indeed need so-called quantum computers to speed up information processing exponentially faster than ever before in order to cope the big mess and the entropy growth we damped to the environment to make ourselves look cool. 
+%After billions of years of evolution since life originated on earth, human being emerge as one of the most wondering and collaborative species, who have come to the point as of today that we work together to understand the quantum nature of matter and use our accumulated knowledge to control the flow of information on microscopic scale for our own purposes. 
+%We kill, we conquer, we adapt, we change, we imagine, we love, we give, we steal, we organize, we take, we smile, we write, we educate, we talk, we cheer, and we think, therefore we are. 
+%We may indeed need to pass information in the precise units of quanta to be energy-efficient, as the bits of information we rely on in our daily life grow exponential.
+%We may indeed need so-called quantum computers to speed up information processing exponentially faster than ever before in order to cope the big mess and the entropy growth we damped to the environment to make ourselves look cool. 
 
+There has been a rapid growth of information demand. 
+Our need of information storage increases exponentially over years, we want more secure communication technologies, and we need faster processors to solve complicated problems. 
+Emerged in recent decades, quantum information theory promises a new way of handling information~\cite{Nielsen2010a}, in which the minimum unit that quantum information processes is called a qubit~\cite{Schumacher1995Quantum}. 
+Different from the classical counterpart, a qubit can be a superposition of the traditional binary $ 0 $ and $ 1 $ states of information. 
+Quantum information processing can be implemented in atomic scale, controlled energy-efficiently using single photons, and yield an ultra-precise measurement readout~\cite{DiVincenzo1998}. 
+Quantum information processing can guarantee unconditional security based on the non-cloning theorem~\cite{Park1970concept}, and can compute with an exponential speedup compared to a classical computer in solving some particular problems~\cite{Deutsch1985,Beckman1996Efficient,Shor1999Polynomial,Grover1996fast}. We can also use these quantum devices to simulate quantum physics itself to help us understand nature in a new way~\cite{Feynman1982Simulating,Lloyd1996Universal,Cirac2012Goals}.
 
-So far, we have already recognized handful of architecture proposals for the dream quantum devices. In the types of qubits or qudits, they are solid-state, natural element of particles and other artificial ``quasi-particles" based on the former two types~\cite{Aasen2016Milestones,Nayak2008Non}.
-While solid-state-based systems need to be fabricated near-perfect to make every individual unit indistinguishable enough to be a qubit, trapped ion and neutral atom based systems are provided with identical units already by nature after some isotope selections, which are not a big deal nowadays. 
-Interestingly, while engineers are working on making 50 identical qubits from one or two~\cite{Preskill2012Quantum} using quantum dots~\cite{Mi2018coherent}, superconductor Josephson junctions~\cite{Kelly2015State,Knight2017IBM}, and defects in solid state materials~\cite{Ondic2017Enhanced}, the community of trapped ions and atoms--especially for neutral atoms--have been moving on another direction, which is to isolate a few of atoms from a bunch for perfect and useful controls immunized from the noisy environment~\cite{Zhang2017Observation,Bernien2017Probing}. 
-In some cases, the atom-based systems work as a supplemental testbed using a lot of identical units to study the nature of many-body interactions, to perform quantum simulations, and to discover new technologies to prepare ourselves for the day when other systems can be scaled to a lot of qubits.
-Of course, atoms and ions, themselves can also be used as the ultimate platform for quantum information processing, given their theoretical low requirement of energy consuming and extremely high efficiency in manipulating one qubit.
+So far, the community have already recognized handful of architectures for the dream quantum devices: solid-state, natural element of particles and other artificial ``quasi-particles" based on the former two types~\cite{Aasen2016Milestones,Nayak2008Non}.
+While solid-state-based systems need to be fabricated near-perfect to make every individual unit indistinguishable enough to be a qubit, trapped-ion-- and neutral-atom--based systems provide with identical units already by nature after some isotope selections. 
+Engineers are working on making 50 or more identical qubits from scratch~\cite{Preskill2012Quantum} using quantum dots~\cite{Mi2018coherent}, superconductor Josephson junctions~\cite{Kelly2015State,Knight2017IBM}, and defects in solid state materials~\cite{Ondic2017Enhanced}, the community of trapped ions and atoms have been working on isolating atoms from an ensemble for high-fidelity and useful controls immunized from the noisy environment~\cite{Zhang2017Observation,Bernien2017Probing,Friis2017Observation}. 
+In some cases, the atom-based systems work as a supplemental testbed using a lot of identical units to study the nature of many-body interactions, to perform quantum simulations, and to discover new technologies to prepare ourselves for the day when other systems can be scaled to a lot of qubits~\cite{Hempel2018Quantum,Komar2016Quantum,Pagano2018Cryogenic,Debnath2018Observation,Tai2017Microscopy,Aidelsburger2015Measuring}.
+Of course, atoms and ions, themselves can also be used as the ultimate platform for quantum information processing and precise measurements, given their theoretical low requirement of energy consuming and extremely high efficiency in manipulating one particle~\cite{Deutsch2000Quantum,Saffman2016Quantum,Daley2008Quantum,Bloch2012Quantum,Bermudez2017Assessing,Marti2018Imaging,Zhang2016Precision,Hagemann2014Ultrastable}.
 The cost and difficulty of manipulating an atomic system, in some sense, is to simultaneously produce strong and useful interactions with the control or probe field while very weak damaging interactions with the environment. 
-That may be the "Tao" (Dao) of quantum information processing with neutral atoms, as always being emphasized by my supervisor, Prof. Ivan Deutsch, when talking about this topic.
+That may be the ``Tao" (Dao) of quantum information processing with neutral atoms, as always being emphasized by my supervisor, Prof. Ivan Deutsch, when talking about this topic.
 This philosophy may also be true to follow for manipulating qubits based on other systems at large.
 
-One of the most spooky topic of quantum mechanics is about quantum measurement.
-Although it has been discussed and discovered since the invention of quantum mechanics, only until the recent past decades, our community appreciates the quantum nature of measurement even more when our technologies have been reasonably ready.
-Long time ago, we recognize that a quantum measurement is not just the same as the classical measurement, in which case we measure an object, and can usually read out the result from a meter without disturbing the object. 
-In the quantum case, a measurement is an quantum operator, which not only could yield a readout, but also would change the state of the object~\cite{C.Cohen-Tannoudji1977}. 
-Using this interesting nature of quantum measurement, we can examine the EPR paradox to test the foundation of quantum mechanics~\cite{Hensen2015Loophole,Giustina2015Significant,Shalm2015Strong};
-Based on this nature of quantum measurement, the famous measurement-based quantum computing approach has also been invented for an attainable fantasy of quantum computers~\cite{Briegel2009}. 
-So far, most of the quantum measurement protocols on ensembles of atoms are done in the vacuum, and we may need billions of atoms to obtain some detectable signal, since the interaction between atoms and the probe is weak.
-The question is: can we implement strong atom-light coupling on quantum interfaces other than vacuum, and apply some quantum measurement and collective state preparation protocols to begin with? 
+One of the foundations of quantum mechanics and a required operation for quantum information processing is quantum measurement.
+Although it has been discussed since the invention of quantum mechanics, our community appreciate the quantum nature of measurement even more using the technologies developed in recent decades.
+The community recognize that a quantum measurement is not just the same as the classical counterpart, in which a measure is just a readout process. 
+A quantum measurement may also change the state of the object in observation~\cite{C.Cohen-Tannoudji1977}.
+%In the quantum case, a measurement is an quantum operator, which not only could yield a readout, but also would change the state of the object. 
+Using this interesting nature of quantum measurement, one can examine the EPR paradox to test the foundation of quantum mechanics~\cite{Hensen2015Loophole,Giustina2015Significant,Shalm2015Strong}.
+Based on this nature of quantum measurement, the famous measurement-based quantum computing approach has also been invented for an attainable of quantum computers~\cite{Briegel2009}. 
 
-This dissertation is mainly about a theory and its implementations of the philosophy of manipulating atoms in the context of precise quantum measurement with fewer atoms, and to discuss possibilities of using collective measurement towards generating non-classical resources and for other future quantum information applications.
-Our physical system is an atom-waveguide hybrid quantum interface, which we also refer as a quantum data bus, where the state of the input photons can be mapped to the atoms to apply quantum control operations sequentially, and the state of atoms can also be shuffled to the light for readouts.
+In one of our collaborators' lab, quantum measurement experiments have already been demonstrated with ensembles of atoms confined in free-space magneto-optical traps (MOTs)\index{magneto-optical trap}~\cite{Smith2003a,Montano2015Quantum,Smith2012Quantum}. 
+Since the interaction between atoms and the probe is weak, billions of atoms are used.
+Our question is: can we implement strong atom-light coupling on quantum interfaces other than vacuum, and apply some quantum measurement and collective state preparation protocols to begin with? 
+
+This dissertation focuses on the theory of dispersive atom-light interactions with a nanophotonic interface. 
+We also refer our physical system, the atom-waveguide hybrid quantum interface, as a quantum data bus, where the state of the input photons can be mapped to the atoms to for state storage and quantum control, and the state of atoms can also be shuffled to the photons for continuous quantum measurement and other applications.
 
 
-\section{Our toolbox: Atom-waveguide interfaces}
+\section{Our toolbox: Atom-waveguide interface}
 
-The combination of cold atoms and nanophotonic structures is a long journey. Since 1990s or even earlier, theoretical ideas on trapping atoms along a waveguide have been proposed~\cite{Ovchinnikov1991,Bures1999,Barnett2000,Domokos2001,Burke2002,Domokos2002a}, some proof-of-principle experiments are also demonstrated and discussed~\cite{Hinds1999}. The benefits are clear: the atom-light coupling can be enhanced dramatically using nanophotonic modes compared to the free propagating optical field, and the systems are naturally compatible to current integrated optical systems for immediate applications. After the key issues and some basic properties of dielectric waveguides have been clear, a lot of efforts of the community have been gradually tunneled into the atom traps using tapered optical nanofibers. First, relatively speaking, the nanofibers are technically easy and economically cheap to fabricate~\cite{Stiebeiner2010}; second, the guided modes have rich structures to support a broad range of applications~\cite{Tong2004,Kien2004,Tong2012}, and so on.
-The early studies of the tapered optical nanofiber systems are ranging from the implementations of atom traps~\cite{Balykin2004,LeKien2004,LeKien2005b,Sague2008,LeKien2008a,Fu2008,Baade2009,LeKien2009c}, spontaneous emission of trapped atoms and the efficient coupling of the emissions to the fiber~\cite{LeKien2005a,LeKien2007,Kien2007,Kien2008,LeKien2009b}, interactions between atoms mediated by the fiber~\cite{LeKien2005,Sague2007}, fiber modes and photon correlations mediated by the trapped atoms~\cite{Shen2005,LeKien2006,Shen2007,LeKien2008,Chang2008,LeKien2009,Nayak2009a}, to quantum effects for quantum information applications~\cite{LeKien2009a,Nayak2007,Zoubi2010,Zoubi2012}, and the list goes on. 
-Compared to the progress in theoretical studies, experiments really take a while to nail down technical details. The first bunch of experiments (by Nayak {\it et al.} in 2007) with neutral atoms and a tapered nanofiber were done by confining a cloud of atoms in a magneto-optical trap (MOT)\index{magneto-optical trap} close to a nanofiber, and the nanofiber was used to collect the fluorescence of atoms close by~\cite{Nayak2007,Nayak2008}. 
+There has been a long exploration in combining cold atoms and nanophotonic waveguides together. 
+Since 1990s or even earlier, theoretical ideas on trapping atoms along a waveguide have been proposed~\cite{Ovchinnikov1991,Bures1999,Barnett2000,Domokos2001,Burke2002,Domokos2002a}, some proof-of-principle experiments are also demonstrated and discussed~\cite{Hinds1999}. The benefits are clear: the atom-light coupling can be enhanced dramatically using nanophotonic modes compared to the free propagating optical field, and the systems are naturally compatible to current integrated optical systems for immediate applications. 
+
+%After the key issues and some basic properties of dielectric waveguides have been clear, a lot of efforts of the community have been gradually tunneled into the atom traps using tapered optical nanofibers. 
+Trapping atoms along a tapered optical nanofiber became one of the dominant early study subjects in the field for the following reasons. 
+First, relatively speaking, nanofibers are technically easy and economically cheap to fabricate~\cite{Stiebeiner2010}. 
+Second, the guided modes have rich structures to support a broad range of applications~\cite{Tong2004,Kien2004,Tong2012}.
+The early studies of the tapered optical nanofiber systems range from the implementations of atom traps~\cite{Balykin2004,LeKien2004,LeKien2005b,Sague2008,LeKien2008a,Fu2008,Baade2009,LeKien2009c}, spontaneous emission of trapped atoms and the efficient coupling of the emissions to the fiber~\cite{LeKien2005a,LeKien2007,Kien2007,Kien2008,LeKien2009b}, interactions between atoms mediated by the fiber~\cite{LeKien2005,Sague2007}, fiber modes and photon correlations mediated by the trapped atoms~\cite{Shen2005,LeKien2006,Shen2007,LeKien2008,Chang2008,LeKien2009,Nayak2009a}, to quantum effects for quantum information applications~\cite{LeKien2009a,Nayak2007,Zoubi2010,Zoubi2012}, and the list goes on. 
+%Compared to the progress in theoretical studies, experiments really take a while to nail down technical details. 
+
+The first experiments (by Nayak {\it et al.} in 2007) with neutral atoms and a tapered nanofiber were done by confining a cloud of atoms in a magneto-optical trap (MOT)\index{magneto-optical trap} close to a nanofiber, and the nanofiber was used to collect the fluorescence of atoms close by~\cite{Nayak2007,Nayak2008}. 
 Despite the simplicity of the system, the fluorescence spectrum has exhibited the fingerprint of the coupled spontaneous emission by a few atoms very close to the fiber surface. 
-Once the technique to distinguish the one and a few coupled atoms from the rest of the atom cloud is established, experimental twists to improve the number of trapped atoms and the quality of nanofiber fabrications become easier than ever before. In 2010, Rauschenbeutel's group reported they have observed about $ 2000 $ cesium atoms on trap with a mean distance to the fiber surface of $ 200 $ nm~\cite{Vetsch2010Optical}. 
-Followed up is the proposal of the dispersive optical interface based on nanofiber-trapped atoms, standing on a technique to count atom number with a resolution of a few tens~\cite{Dawkins2011}. 
+Once the technique to distinguish the one and a few coupled atoms from the rest of the atom cloud is established, experimental progress to improve the number of trapped atoms and the quality of nanofiber fabrications become easier than ever before. 
+In 2010, Rauschenbeutel's group reported about $ 2000 $ cesium atoms on trap with a mean distance to the fiber surface of $ 200 $ nm~\cite{Vetsch2010Optical}. 
+They also proposed a dispersive optical interface using a nanofiber and trapped atoms, based on a technique to count atom number with a resolution of a few tens~\cite{Dawkins2011}. 
 In 2012, Kimble's group demonstrated a state-independent trapping technique~\cite{Goban2012,Lacroute2012}. 
 In 2014, the number of trapped atoms have been improved to about $ 3000 $ by Polzik's group~\cite{Beguin2014}, with a new technique to count the number of trapped atoms in two-color probes under a resolution below 10.
-In the meantime, the fabrication technique to produce centimeter-long nanofibers with cavity mirrors have been demonstrated~\cite{Keloth2017Fabrication}, which opens our imagination on trapping more atoms with stronger coupling to the fiber modes than ever before. 
-Techniques and theories of the state-dependent trapping and manipulating atomic states with real and fictitious magnetic fields have also been studied~\cite{LeKien2013,LeKien2013a,LeKien2013b,Schneeweiss2014,Albrecht2016Fictitious}, which eventually lead to the recent experimental progress on cooling the atom near to the vibrational ground state~\cite{Beguin2017Observation,Meng2017ground}. 
+In the meantime, the fabrication technique to produce centimeter-long nanofibers with cavity mirrors have been demonstrated~\cite{Keloth2017Fabrication}, which opens the door to trap more atoms with stronger coupling than ever before. 
+Techniques and theories of the state-dependent trapping and manipulating atomic states with real and fictitious magnetic fields have also been studied~\cite{LeKien2013,LeKien2013a,LeKien2013b,Schneeweiss2014,Albrecht2016Fictitious}. 
+These studies eventually contributed to the recent experiments on cooling the atom near to the vibrational ground state~\cite{Beguin2017Observation,Meng2017ground}. 
 Based on the platform of nanofiber-trapped atoms, optical switch~\cite{OShea2013,Mitsch2014a,LeKien2014}, quantum memory~\cite{Sayrin2015,Gouraud2015Demonstration,Asenjo-Garcia2017Exponential}, optical isolator~\cite{Sayrin2015a}, anti-bunched photon generators~\cite{LeKien2011a,LeKien2011} and other applications have also been discussed in theory and demonstrated in experiments in recent years. 
 
 
-To further lower down the cost and improve the scalability and coupling strength, there have been other emerging waveguide platforms proposed as atom-waveguide interfaces during the last a couple of decades, especially for waveguides that can be integrated into semiconductor optical circuits using current mature plane photolithographic techniques. 
+To further improve the scalability and coupling strength, there have been other emerging waveguide platforms proposed as atom-waveguide interfaces during the last a couple of decades, especially for waveguides that can be integrated into semiconductor optical circuits using current mature plane photolithographic techniques. 
 These waveguides usually have a rectangular-like shape, being suspended or etched on top of a flat substrate. 
 Current studies on these waveguides focus more on the basic properties and system designs. To list a few, there are studies ranging from the modal selection and design of integrated waveguides~\cite{Fu2007,Lee2013,Stievater2016Modal}, trapping potential calculations~\cite{Barnett2000,Paul2015Push}, decay rate modeling~\cite{Blanco2004Spontaneous,LeKien2016}, new techniques to transport atoms~\cite{Marchant2011}, new material and structures to enhance the coupling~\cite{Chang2009,Salem2010,Hung2013}. 
 There have been experimental progresses on trapping atoms using a photonic crystal waveguide from Kimble's group~\cite{Yu2014,Douglas2013,Douglas2015,Paulisch2015}.
-But the number of trapped atoms is much less than the nanofiber case so far, and their focus seems to observe few- to many-body strong interactions for quantum simulations and other applications using waveguides for now~\cite{Manzoni2016Designing,Manzoni2017Simulating}. 
+But the number of trapped atoms is much less than the nanofiber case so far, and their focus seems to observe few- to many-body strong interactions for quantum simulations and other applications~\cite{Manzoni2016Designing,Manzoni2017Simulating}. 
 
-In the optical nanofiber systems, the diameter of the waist is about $ 450 $---$ 500 $ nm, which is a half of the trapping and probe lights and only supports the fundamental modes of the fiber. 
-Therefore, atoms could be sitting in the evanescent field of the trapping and probing lights in the nanofiber region.
-Nanofiber traps are usually formed by using red-detuned and blue-detuned guided lights, where the detuning is relative to the D1 and D2 emission lines of the alkali atoms~\cite{Goban2012,LeKien2004}. The red-detuned light provides an attraction force dragging the atoms towards the fiber surface, while the blue-detuned light repulse the atoms from the fiber. Balancing the power of the two, trapping positions can be formed in a certain distance to the fiber surface. By using linearly polarized input light beams, the trapping positions can be aligned on both sides of the fiber. 
+In the optical nanofiber systems, the diameter of the waist is about $ 450 $---$ 500 $ nm, which is a half of the trapping and probe light and only supports the fundamental modes of the fiber. 
+Therefore, atoms are trapped in the evanescent field of the trapping and probing lights in the nanofiber region.
+Nanofiber traps are usually formed by using red-detuned and blue-detuned guided lights, where the detuning is relative to the D1 and D2 emission lines of the alkali atoms~\cite{Goban2012,LeKien2004}. 
+The red-detuned light pulls the atoms towards the fiber surface, while the blue-detuned light pushes the atoms away from the fiber~\cite{Lacroute2012}. 
+Balancing the power of the two, trapping positions can be formed in a certain distance to the fiber surface. 
+By using linearly polarized input light beams, the trapping positions can be aligned on both sides of the fiber. 
 Further more, with one of the colors of the trapping beams (usually the red-detuned one) shined from both ends of the fiber, a standing wave can be formed, which fixes the trapping spots on two chains of optical lattices with a period determined by the half wavelength of the standing wave. 
 In this dissertation, we will study a square waveguide geometry towards more general integrated waveguides, which can trap atoms with a similar two-color scheme as the nanofiber case.
 \qxd{Put a figure here to illustrate the trapping positions.}
 
-Comparing these nanophotonic configurations with a free-space atom-light quantum interface, the tight confinement of the waveguide modes provide a stronger coupling between atoms and light, and all atoms could be designed to sit in the same field environment, which provides a better mode matching condition~\cite{Qi2016}. 
-In fact, when the free-space trapping and probing configuration is used as a quantum interface, there is a dilemma to enhance the atom-light coupling. If the light is focused too much to enhance the coupling of atoms at the waist of light, the atoms outside of the focused small region will have weak coupling, and there cannot trap too many atoms at the beam waist; If the light is designed to couple to as many atoms as possible, then the coupling per atom (or optical depth\index{optical depth} (OD) per atom) will be weak. A tradeoff between enhancing the coupling to one atom or to all atoms has to set~\cite{Baragiola2014}.
-The waveguide platforms doesn't have this problem, and one can enhance the OD per atom for all atoms. 
+Comparing these nanophotonic configurations with a free-space atom-light quantum interface, the tight confinement of the waveguide modes provide a stronger and uniform coupling between atoms and light~\cite{Qi2016}.
+%, and all atoms could be designed to sit in the same field environment, which provides a better mode matching condition. 
+In fact, when the free-space trapping and probing configuration is used, one has to compromise to a tradeoff in the following scenarios~\cite{Baragiola2014}.
+%between enhancing the coupling to one atom while trapping less atoms or to trap more atoms yet with a weaker coupling on every atom~\cite{Baragiola2014}.
+%as a quantum interface, there is a dilemma to enhance the atom-light coupling. 
+If the light is designed to enhance the coupling of atoms at the waist of the laser beam, fewer atoms can be coupled to. 
+If the light is designed to couple to as many atoms as possible, then the coupling per atom will be weak. %(or optical depth\index{optical depth} (OD) per atom)
+%A tradeoff between enhancing the coupling to one atom or to all atoms has to set~\cite{Baragiola2014}.
+The waveguide platforms do not have this problem, and one can multiply the coupling strength per atom for all trapped atoms. 
+The coupling strength can be characterized in terms of cooperativity.
 
 Nevertheless, the new platforms bring in new challenges. 
-For example, due to the anisotropy of modes, the interactions of the light with the atoms become polarization-dependent. The alignment-dependent spontaneous emission rates of atoms have been observed in laboratories~\cite{Solano2017Alignment}. 
-This new phenomenon hasn't been well considered in many of previous theoretical modes of atomic optics, quantum measurement and quantum control when this dissertation study started.
-What's worse, because of the strong field that atoms are sitting in, there could be stronger mechanical oscillations through the waveguide~\cite{Wuttke2013} and trapped atoms~\cite{Solano2017Dynamics}.
-This casts a new dilemma of the benefit over the damage for increasing the effective coupling between atoms and light.
+For example, due to the anisotropy of modes, the atom-light interactions become complicated. 
+The alignment-dependent spontaneous emission rates of atoms have been observed in laboratories~\cite{Solano2017Alignment}. 
+This new phenomenon hasn't been well considered in many of previous theoretical modes of atomic optics, quantum measurement and quantum controls before this study.
+What's worse, because of the strong field coupling, there could be strong mechanical oscillations through the waveguide of trapped atoms~\cite{Wuttke2013,Solano2017Dynamics}.
+These cast a new dilemma of the benefit over the damage for increasing the effective coupling between atoms and light.
 
-We need new theories to incorporate new phenomena emerged when using the atom-waveguide interfaces.
-For quantum information applications, we also need new protocols to best use of the enhanced atom-light coupling while to avoid the disadvantages due to the enhancement itself, which is a grand dilemma limiting the quality of quantum operations. 
-As a concrete example, beside our studies, there has been any theory quantitatively guiding faithful quantum measurements of the internal states of atoms trapped near a nanophotonic waveguides using the guided light field. 
+We need new theories to incorporate new phenomena when using the atom-waveguide interfaces.
+For quantum information applications, we also need new protocols to best use of the enhanced atom-light coupling while to avoid the disadvantages due to the enhancement itself, which limits the quality of quantum operations. 
+As a concrete example, there had not been any theory quantitatively guiding faithful quantum measurements of the internal states of atoms trapped near a nanophotonic waveguides using the guided light field. 
 Without it, atom-waveguide interfaces are rather a blackbox. 
-By understanding the physics code encrypted in the nature of atom-waveguide interfaces, we could potentially gain in-depth insights towards the foundation of quantum mechanics, particularly on matter-light interactions. 
-
-This dissertation focuses on solving these problems, with applications in the context of quantum measurement and spin squeezing.
+%By understanding the physics code encrypted in the nature of atom-waveguide interfaces, we could potentially gain in-depth insights towards the foundation of quantum mechanics, particularly on matter-light interactions. 
+This dissertation focuses on solving these theoretical problems, with applications to quantum measurement and spin squeezing.
 
 %\begin{figure}[ht] % This is generated by inkscape with the option ``PDF+Latex''. The PDF image is in the sub-folder ``images''. The path of the sub-folder is included by adding ``\graphicspath{{images/}}'' to zj.sty.
 %   \centering
@@ -106,91 +135,97 @@ This dissertation focuses on solving these problems, with applications in the co
 
 \section{Quantum measurement, entanglement \\and spin squeezing with an atomic ensemble}
 The power of quantum measurement comes from quantum entanglement between the the quantum object to be measured and the probe. 
-Below, I share my favorite example taught by Dr. Ivan Deutsch to illustrate this statement. Suppose a laser beam in a linearly polarized state $ \ket{\phi_L} $ is shined on an atom that is in a state of $ \ket{\phi_A} =(\ket{\uparrow}+\ket{\downarrow})/\sqrt{2} $. We want to use the laser as a probe to detect the state of the atom, where we have access to the polarization state of the light. The joint state of the atom-polarization system can be given by
+Below, I will illustrate this statement with a simple example\footnote{Taught by Dr. Ivan Deutsch.}. Suppose a laser beam in a linearly polarized state $ \ket{\phi_L} $ is shined on an atom that is in a state of $ \ket{\phi_A} =(\ket{\uparrow}+\ket{\downarrow})/\sqrt{2} $. We want to use the laser as a probe to detect the state of the atom, where we have access to the polarization state of the light. The joint state of the atom-polarization system at the initial time $ t=0 $ can be given by
 \begin{align}
 \ket{\Psi(0)} &=\frac{1}{\sqrt{2}}(\ket{\uparrow}+\ket{\downarrow})\mathbin{\ket{\phi_L}}.
 \end{align}
-We consider an atom-light interaction is defined by an evolution operator, $ \hat{U}(\tau)=e^{i\chi \hat{S}_3 \hat{J_z}} $, where $ \chi $ is the coupling strength between the atom and light, $ \hat{S_3} $ is the Stokes vector operator changing the polarization state of light, and $ \hat{J}=\hat{\sigma}_z/2$ is the angular momentum operator for atoms. We will introduce these operators in details for sequential chapters. 
+We consider an atom-light interaction defined by an evolution operator, $ \hat{U}(\tau)=e^{i\chi \hat{S}_3 \hat{J_z}\tau} $, where $ \chi $ is the coupling strength between the atom and light, $ \hat{S_3} $ is the Stokes vector operator changing the polarization state of light, and $ \hat{J}_z=\hat{\sigma}_z/2$ is the angular momentum operator for atoms. We will introduce these operators in details for sequential chapters. 
 For now, we give that $ \hat{J}_z $ outputs $ +1/2 $ if the atom is in the $ \ket{\uparrow} $ state, and $ -1/2 $ if the atom is in the $ \ket{\downarrow} $ state. 
 Then the joint state at time $ \tau $ becomes
 \begin{align}
-\ket{\Psi(\tau)}&=\frac{1}{\sqrt{2}}\left[\ket{\uparrow}e^{+i\chi \hat{S}_3/2}\ket{\phi_L} 
-+\ket{\downarrow}e^{-i\chi \hat{S}_3/2}\ket{\phi_L} \right]\\
+\ket{\Psi(\tau)}&=\frac{1}{\sqrt{2}}\left[\ket{\uparrow}e^{+i\chi \hat{S}_3\tau/2}\ket{\phi_L} 
++\ket{\downarrow}e^{-i\chi \hat{S}_3\tau/2}\ket{\phi_L} \right]\\
 &=\frac{1}{\sqrt{2}}\left[\ket{\uparrow}\ket{\phi^1_L} 
 +\ket{\downarrow}\ket{\phi^2_L} \right]
 \end{align}
-where $ \ket{\phi_L^1}=e^{+i\chi \hat{S}_3/2}\ket{\phi_L} $ and $ \ket{\phi_L^2}=e^{-i\chi \hat{S}_3/2}\ket{\phi_L} $ are two polarization states with the polarization axis of the light rotated by $ \pm \chi /2 $, respectively. 
-Therefore, the output state of the system is an entangled state. It predicts that, if the polarization state of the light is measured to be rotated by $ +\chi/2 $ from the original state, then the atom is in the $ \ket{\uparrow} $ state; otherwise, if the light is rotated by $ -\chi/2 $, the atom is in the $ \ket{\downarrow} $ state. 
-Therefore, the probe works as a meter for us to access to the state of the atom through their entanglement. The sensitivity of the measurement is determined by the rotation angle of the polarization state of the light. 
+where $ \ket{\phi_L^1}=e^{+i\chi \hat{S}_3\tau/2}\ket{\phi_L} $ and $ \ket{\phi_L^2}=e^{-i\chi \hat{S}_3\tau/2}\ket{\phi_L} $ are two polarization states with the polarization axis of the light rotated by $ \pm \chi \tau/2 $, respectively. 
+Therefore, the output state of the system is an entangled state. It predicts that, if the polarization state of the light is measured to be rotated by $ +\chi\tau/2 $ from the original state, then the atom is in the $ \ket{\uparrow} $ state. Otherwise, if the light is rotated by $ -\chi\tau/2 $, the atom is in the $ \ket{\downarrow} $ state. 
+Therefore, the probe works as a meter for us to access to the state of the atom through the mutual entanglement. 
+The sensitivity of the measurement is determined by the rotation angle of the polarization state of the light. 
 In other words, to make the measurement outputs more distinguishable, we need to enhance the coupling strength of the bipartite system. 
 \qxd{Put my picture of the meter and measurement here.}
 
-A quantum state is so fragile that, if you measure it, you also destroy it. We can only gain partial information from one shot of measurement based on the uncertainty principle. 
-If we know the recipe to prepare the quantum state, there are two naive ways to reconstructing the quantum state: to prepare multiple copies of the quantum object and measure them sequentially in different bases; or, to measure the object multiple times by repeating the preparation processes. 
-After the seminar work by Holevo~\cite{Holevo2011Probabilistic}, we now know that the optimal quantum measurement strategy to gain more information with less destructive measurement trials is to prepare multiple copies of the object and measure all of them collectively. Various protocols have been implemented on different quantum systems~\cite{Massar2005Optimal,Derka1998Universal,Jones1994Fundamental}. Particularly, the quantum non-demolition (QND) measurement technique has been implemented on atomic systems~\cite{Smith2003a,Smith2004Continuous}.
-The continuous measurements allowed by QND measurement techniques have paved a solid foundation to recent hot fields including quantum state tomography~\cite{Smith2013,SosaMartinez2016Quantum}, quantum process tomography~\cite{Baldwin2014Quantum}, quantum compressed sensing~\cite{Smith2013} and so on. 
+%A quantum state is so fragile that, if you measure it, you also destroy it. We can only gain partial information from one shot of measurement based on the uncertainty principle. 
+%If we know the recipe to prepare the quantum state, there are two naive ways to reconstructing the quantum state: to prepare multiple copies of the quantum object and measure them sequentially in different bases; or, to measure the object multiple times by repeating the preparation processes. 
+%After the seminar work by Holevo~\cite{Holevo2011Probabilistic}, we now know that the optimal quantum measurement strategy to gain more information with less destructive measurement trials is to prepare multiple copies of the object and measure all of them collectively. Various protocols have been implemented on different quantum systems~\cite{Massar2005Optimal,Derka1998Universal,Jones1994Fundamental}. Particularly, the quantum non-demolition (QND) measurement technique has been implemented on atomic systems~\cite{Smith2003a,Smith2004Continuous}.
+%The continuous measurements allowed by QND measurement techniques have paved a solid foundation to recent hot fields including quantum state tomography~\cite{Smith2013,SosaMartinez2016Quantum}, quantum process tomography~\cite{Baldwin2014Quantum}, quantum compressed sensing~\cite{Smith2013} and so on. 
 
-Moreover, as a result of continuous measurement on a collective state, a squeezed state can be generated. 
+%Moreover, as a result of continuous measurement on a collective state, a squeezed state can be generated. 
+Assume we have $ N_A $ atoms initially all prepared in the superposition state as above, $ \ket{\phi_A} = \left[(\ket{\uparrow}+\ket{\downarrow})/\sqrt{2} \right]^{\otimes N_A}$, which is called a spin coherent state\index{state!spin coherent state}.
+Based on the uncertainty principle, the spin coherent state has a possibility distribution for all eigenstate of the ensemble. 
+However, with all atoms entangled with a probe and let the joint system evolve in time $ \tau $ under the evolution operator introduced above yet replaced with the collective spin operator $\hat{J}_z=\sum_i^{N_A}\hat{\sigma}_z^{(i)}/2  $ for all individual spin operator $ \hat{\sigma}_z^{(i)} $ on the $ i $th atom, the uncertainty of the measurement result can be reduced compared to the initial state.
+We call this process as spin squeezing. The state generated is called a spin squeezed state\index{state!spin squeezed state}.
 The mechanism of measurement-induced squeezing is usually called measurement backaction\index{measurement backaction}.
+
 It has been proven by Caves that a squeezed state is crucially useful quantum resource for precise measurements~\cite{Caves1981Quantum,Caves1982Quantum}. 
 In some sense, how much an ensemble state is squeezed determines how precise a quantum measurement can be. 
-When we plot a squeezed collective state on a Bloch sphere that represents the possibility distribution of the state, it may look like an elongated blob from a coherent state, which is represented as a circle area on the Bloch sphere. \qxd{May need a plot to show a coherent state, a squeezed state and a Dicke state on the Bloch sphere.} 
-When the elongation is weak, the squeezed state can be regarded as a Gaussian state, which is dominated by pairwise quantum correlations of the ensemble. If the elongation is on the order of the radius of the Bloch sphere, the collective state become non-Gaussian, which is usually dominated by many-body correlations~\cite{Strobel2014}. To the extreme, if the state wrap around the Bloch sphere as a line of circle, it is called a Dicke state~\cite{Dicke1954}. 
+When we plot a squeezed collective state on a Bloch sphere that represents the possibility distribution of the state, the uncertainty region is squeezed from the initial spin coherent state (see Fig.*). \qxd{May need a plot to show a coherent state, a squeezed state and a Dicke state on the Bloch sphere.} 
+When the squeezing is weak, the squeezed state can be regarded as a Gaussian state, which is dominated by pairwise quantum correlations of atoms in the ensemble. 
+If the squeezing is on the order of the radius of the Bloch sphere, the collective state become non-Gaussian, which is usually dominated by many-body correlations~\cite{Strobel2014}. 
+To the extreme, if the state wrap around the Bloch sphere as a line of circle, it is called a Dicke state~\cite{Dicke1954}. 
 Using a non-Gaussian state for quantum metrology, quantum communications, and in general, for quantum information processing, can usually offer a better performance than using a Gaussian state~\cite{Strobel2014,Ji2016Quantum,Ghose2007Non,Borelli2016Quantum}.
-Until today, however, a highly non-Gaussian state of an atomic ensemble is still difficult to produce. 
+However, a highly non-Gaussian state of an atomic ensemble is still difficult to produce. 
 
-Generally, to make a quantum-measurement--induced squeezed state more useful, it is better to squeeze more, towards a non-Gaussian state~\cite{Buono2013Quantumness}. 
-For an ensemble of atoms, the radius of the Bloch sphere to represent the collective state is defined by the total number of atoms and the dimension of the internal structure of the quantum states we consider. 
-Therefore, we prefer to use fewer atoms. 
-On the other hand, the measurement backaction that generates the squeezing effect is proportional to the coupling strength between atoms and probe. 
-To produce a certain level of squeezing effect, if the coupling strength is large, we will need fewer atoms than otherwise. 
-Therefore, the key is to enhance the atom-probe coupling strength.
-We consider to graft atoms onto a nanophotonic waveguide to achieve this goal.
+One of the goals of spin squeezing is to generate a non-Gaussian state, to make a quantum-measurement--induced squeezed state more useful~\cite{Buono2013Quantumness}. 
+For an ensemble of atoms, the radius of the Bloch sphere is defined by the total number of atoms and the dimension of the internal states of an atom. 
+In addition, the measurement backaction that generates squeezing is proportional to the coupling strength between atoms and probe.
+Therefore, the key to generate a highly squeezed state is to enhance the coupling strength between atoms and light with a given number of atoms. 
+We consider the interface of nanophotonic waveguide-trapped atoms towards this goal.
 
 
 
 
-\section{The philosophy of cooperativity}
-
-For single atom and many.
-
-In general, the evolution of the polarization state of the light in the context of atom-light interaction, characterized by the Stokes vector $\mathbf{S} $ on the \Poincare sphere, may be governed by the following equation~\cite{Deutsch2010a}:
-\begin{align}
-\dt{\mathbf{S}} &= \mathbf{\Theta}\times\mathbf{S}_{in}
-\end{align}
-where the rotating angle vector around $ S_i $ axis can be given by
-\begin{align}
-\Theta_i &\propto \mathrm{OD}\frac{\Gamma}{2\Delta} =N_A\left( \frac{\sigma_0}{A}\right) 
-\left(\frac{\Gamma}{2\Delta}\right),
-\end{align}
-where OD is the total optical depth of the atoms\index{optical depth}, $ N_A $ is the number of atoms, $ \Gamma $ is the spontaneous decay rate of an atom, and $ \Delta $ is the detuning relative to the atomic resonance. 
-We have also defined the OD per atom in terms of the on-resonant cross section of the atom $ \sigma_0 $ and the effective mode area of the optical field at the atom position $ A $ by
-\begin{align}
-\frac{\mathrm{OD}}{N_A} &= \frac{\sigma_0}{A}.
-\end{align}
-Note that, in the free-space trapping case, an effective number of atoms is used to replace $ N_A $, since atoms are not equally coupled to the light.
-In the waveguide case, the formula of OD per atom above applies perfectly. However, there is a hidden secret. 
-
-We realize that the effective mode area can simply written as
-\begin{align}
-A= \frac{A_{\rm interaction}^2}{A_{\rm in}},
-\end{align}
-where $ A_{\rm interaction} $ is the effective area for the interaction depending on the polarization of the light and the internal structure of the atoms, and $ A_{\rm in} $ is the effective mode area of the total local field at the atom positions. 
-In addition, for QND measurements, we will show that the concept of cooperativity per atom, $ C_1 $, is essentially the OD per atom, and we have the following relations 
-\begin{align}
-C_1 =\frac{\kappa}{\gamma_s} \propto \frac{\sigma_0 A_{\rm in}}{A_{\rm interaction}^2},
-\end{align}
-where $ \kappa $ is the measurement strength--indicating the good effect we want, and $ \gamma_s $ is the characteristic photon scattering rate--indicating the damaging effect in the quantum measurement process. 
-Given that $ A_{\rm in} $ is associated with decoherence and such with $\gamma_s  $, we conclude that $ A_{\rm interaction} $ fully defines the useful interaction effects we target for. 
-Both $ A_{\rm in} $ and $ A_{\rm interaction} $ are geometry-dependent, while $ A_{\rm interaction} $ also depends on the internal state of the atoms. 
-Therefore, using nanophotonic waveguides with a given atomic state, one can enhance the atom-light coupling by optimizing the geometry defined by the boundary shape of the waveguide, the atoms' transverse location, the choice of quantization axis, and the polarization direction of the light. 
-In fact, we show protocols that enhance the atom-light coupling by placing the atoms at the azimuthal angle position that has the weakest field to the atom, which is counter-intuitive in the traditional way to think about atom-light coupling. But it is optimal--in the sense that it maximizes the good effect while minimizes the bad effect--and feasible to implement using the nanophotonic waveguides.
-This type of design could potentially solve the dilemma that the mechanical oscillations and other bad effects hindering manipulating atoms grow with the increase of atom-light coupling as people have thought. 
-All of these degrees of freedom of optimization are degenerate in free-space atom-light interfaces and are locked into the geometry-independent effective mode area $ A $--this is one of the main messages we have learned in studying this subject.  
-
-
-Techniques will advance and our knowledge will gain when contradictories are solved.
-We will elucidate these ideas to solve the traditional contradictories with the atom-waveguide interfaces and provide some concrete quantum information protocols in the following chapters. 
+%\section{The philosophy of cooperativity}
+%
+%For single atom and many.
+%
+%In general, the evolution of the polarization state of the light in the context of atom-light interaction, characterized by the Stokes vector $\mathbf{S} $ on the \Poincare sphere, may be governed by the following equation~\cite{Deutsch2010a}:
+%\begin{align}
+%\dt{\mathbf{S}} &= \mathbf{\Theta}\times\mathbf{S}_{in}
+%\end{align}
+%where the rotating angle vector around $ S_i $ axis can be given by
+%\begin{align}
+%\Theta_i &\propto \mathrm{OD}\frac{\Gamma}{2\Delta} =N_A\left( \frac{\sigma_0}{A}\right) 
+%\left(\frac{\Gamma}{2\Delta}\right),
+%\end{align}
+%where OD is the total optical depth of the atoms\index{optical depth}, $ N_A $ is the number of atoms, $ \Gamma $ is the spontaneous decay rate of an atom, and $ \Delta $ is the detuning relative to the atomic resonance. 
+%We have also defined the OD per atom in terms of the on-resonant cross section of the atom $ \sigma_0 $ and the effective mode area of the optical field at the atom position $ A $ by
+%\begin{align}
+%\frac{\mathrm{OD}}{N_A} &= \frac{\sigma_0}{A}.
+%\end{align}
+%Note that, in the free-space trapping case, an effective number of atoms is used to replace $ N_A $, since atoms are not equally coupled to the light.
+%In the waveguide case, the formula of OD per atom above applies perfectly. However, there is a hidden secret. 
+%
+%We realize that the effective mode area can simply written as
+%\begin{align}
+%A= \frac{A_{\rm interaction}^2}{A_{\rm in}},
+%\end{align}
+%where $ A_{\rm interaction} $ is the effective area for the interaction depending on the polarization of the light and the internal structure of the atoms, and $ A_{\rm in} $ is the effective mode area of the total local field at the atom positions. 
+%In addition, for QND measurements, we will show that the concept of cooperativity per atom, $ C_1 $, is essentially the OD per atom, and we have the following relations 
+%\begin{align}
+%C_1 =\frac{\kappa}{\gamma_s} \propto \frac{\sigma_0 A_{\rm in}}{A_{\rm interaction}^2},
+%\end{align}
+%where $ \kappa $ is the measurement strength--indicating the good effect we want, and $ \gamma_s $ is the characteristic photon scattering rate--indicating the damaging effect in the quantum measurement process. 
+%Given that $ A_{\rm in} $ is associated with decoherence and such with $\gamma_s  $, we conclude that $ A_{\rm interaction} $ fully defines the useful interaction effects we target for. 
+%Both $ A_{\rm in} $ and $ A_{\rm interaction} $ are geometry-dependent, while $ A_{\rm interaction} $ also depends on the internal state of the atoms. 
+%Therefore, using nanophotonic waveguides with a given atomic state, one can enhance the atom-light coupling by optimizing the geometry defined by the boundary shape of the waveguide, the atoms' transverse location, the choice of quantization axis, and the polarization direction of the light. 
+%In fact, we show protocols that enhance the atom-light coupling by placing the atoms at the azimuthal angle position that has the weakest field to the atom, which is counter-intuitive in the traditional way to think about atom-light coupling. But it is optimal--in the sense that it maximizes the good effect while minimizes the bad effect--and feasible to implement using the nanophotonic waveguides.
+%This type of design could potentially solve the dilemma that the mechanical oscillations and other bad effects hindering manipulating atoms grow with the increase of atom-light coupling as people have thought. 
+%All of these degrees of freedom of optimization are degenerate in free-space atom-light interfaces and are locked into the geometry-independent effective mode area $ A $--this is one of the main messages we have learned in studying this subject.  
+%
+%
+%Techniques will advance and our knowledge will gain when contradictories are solved.
+%We will elucidate these ideas to solve the traditional contradictories with the atom-waveguide interfaces and provide some concrete quantum information protocols in the following chapters. 
 
 %\begin{figure}[ht] %This figure is drew by Inkscape using the very handy tool 'parametric curves'. The fringe is the hard part, and I don't know how to do it elegantly (I just use a combination of 'cheating' methods to generate it). However, there is one command called '\pgfdeclarefunctionalshading' in the tikZ package which could be helpful. But, unfortunately, it requires knowing how to write PostScript codes.
 %   \centering
@@ -203,23 +238,27 @@ We will elucidate these ideas to solve the traditional contradictories with the 
 
 \section{Outline of This Dissertation}
 In Chapter 2, we introduce the basic properties of the waveguides to be used in modeling polarization spectroscopy measurements. 
-These includes the description of polarizations using the Stokes vector basis, the properties of the eigenmodes of the waveguides, the dyadic Green's function of the radiation from atoms near a waveguide and the modal evolution of the guided modes of waveguides. 
-We relate the phase shift of one guided mode of the waveguide with the decay rates of the atoms for atom-light interactions. 
-With the changes of the relative phase and amplitudes of two orthogonal guided modes, we fully describe the polarization transformation of the light responding to trapped atoms.
+These includes the description of polarizations using the Stokes vectors, the properties of the eigenmodes of the waveguides, the dyadic Green's function due to the radiation from atoms near a waveguide and the evolution of the guided modes of waveguides. 
+We relate the phase shift of one guided mode of the waveguide with the spontaneous emission rate of the atoms. 
+With the changes of the relative phase and amplitudes of two orthogonal guided modes, we can fully describe the polarization transformation of the guided light.
 Everything in this chapter is modeled in the classical picture, that is we treat the electromagnetic wave as a classical field and treat atoms as dipoles.
 
-In Chapter 3, we discuss the modification of the spontaneous emission rates (or decay rates) of atoms by generalizing some of the classical results introduced in Chapter 2 to the quantum regime. We introduce the polarizability tensor operators of atoms to describe the hyperfine structure of atomic states. 
+In Chapter 3, we discuss the modification of the spontaneous emission rate (or decay rate) of atoms by generalizing some of the classical results introduced in Chapter 2 to the quantum regime. 
+We introduce the polarizability tensor operators of atoms to describe the hyperfine state of atoms. 
 We model the spontaneous emission rates of atoms in presence of a dielectric waveguide using the Green's function language. 
-With the knowledge of modal decomposition, we separate the decay rates into the guided and unguided mode components, which are responsible to the polarization transformation of the measurement output of the light and the modification of atomic properties due to the waveguide. 
+Using modal decomposition, we separate the decay rates into the guided and unguided mode components, which are responsible to the polarization transformation of the light and the modification of atomic properties due to the waveguide. 
+We use the example of the decay rate calculation for a free dipole in vacuum to introduce the equivalent dipole method.
+With this method, we first develop the theory of calculating the modified spontaneous decay rate of classical dipoles due to waveguides without considering the internal structure of atoms. 
+Then we generalize this theory to include the internal structure of atoms to calculate the modified decay rates of alkali atoms. 
 In the dispersive regime, we find the cases where we can ignore the modification of the decay rates of atoms due to the waveguide.
-A geometric explanation of the unique features of waveguide interfaces compared to optical fields in vacuum is given at the end of the chapter to cast some insights on designing a good waveguide geometry for enhancing atom-light coupling, and lead our discussions on the generalization to cooperativity in the following chapters.
+A geometric explanation of the unique features of waveguide interfaces compared to optical fields in vacuum is given at the end of the chapter to cast some insights on designing a good waveguide geometry for enhancing atom-light coupling. 
 
 Chapter 4 introduces the Hamiltonian and characteristics of QND measurement and the measurement-induced spin squeezing effect. We define the clock states and the stretched states of individual alkali atoms and some collective states of an atomic ensemble, which will be used for designing our QND measurement and spin squeezing protocols that follow. 
 
 Chapter 5 is based on our publication, Ref.~\cite{Qi2016}, which establishes a general theory to describe atom-light interactions on a nanophotonic waveguide platform (mainly taking the nanofiber dispersive interface as an example) with applications to QND measurement and spin squeezing based on the birefringence interactions. 
 We develop an input-output formalism using the Green's function language and solve the light response problem due to atoms near a nanofiber in the Heisenberg-Langevin picture. 
-Then we apply our theory to design protocols for atom number counting, QND measurement and spin squeezing by optimizing the choice of quantization axis and defining a magic frequency to cancel noise terms in the interaction Hamiltonian.
-We show that $ \sim 4.7 $ dB of squeezing are attainable with $ 2500 $ atoms trapped near a realistic nanofiber, which is a great improvement towards generating non-Gaussian states of atoms compared to the free-space quantum interface.
+Then we apply our theory to design protocols for atom number counting, QND measurement and spin squeezing by optimizing the choice of quantization axis and finding a magic frequency to cancel noise terms in the interaction Hamiltonian.
+We show that $ \sim 4.7 $ dB of squeezing are attainable with $ 2500 $ atoms trapped near a realistic nanofiber, which is a great improvement towards generating non-Gaussian states with applications to precise atomic clocks, for example, compared to the free-space quantum interface.
 
 Chapter 6 is based on our publication, Ref.~\cite{Qi2017Enhanced}, which is about further enhancement of the cooperativity per atom in the context of Faraday-effect--based QND measurement and spin squeezing with waveguides. 
 We consider both a nanofiber and a square waveguide as examples for designing the protocol. We define the cooperativity formula for the QND measurement, which enables us to find the optical geometry to maximize the squeezing effect. 
@@ -230,13 +269,17 @@ We conclude and provide some suggestions for future works in Chapter 7.
 \section{Other Works}
 Besides the works presented in this dissertation, I have been also working on the following topics during my PhD study at UNM.
 
-1. Studies on the collective radiation effect of atoms near a nanophotonic waveguide. A summer project has been done and is still on-going in collaboration with Prof. Perry Rice from the Miami University at Ohio, who is in the process of moving to the University of Oregon. 
-One problem we were worried about for my dissertation study is that the collective photon emission of atoms in presence of a waveguide may make our problem more complicated, especially after the publications by Dr. Asenjo-Garcia from Kimble's group~\cite{Asenjo-Garcia2017Atom,Asenjo-Garcia2017Exponential}, which predict a dramatic enhancement of collective radiations of atoms for some geometries. 
-Through our summer project study, we conclude that, in the dispersive regime, the collective effect can be safely ignored as we expect, and the assumption of pairwise symmetry of atoms can be applied to the calculation of collective spin dynamics. 
-Prof. Rice also has some ideas on explaining some experimental observations of atomic decay rates in presence of a nanofiber by colleagues at the laboratories of Prof. Luis Orozco and Prof. Steve Rolston at the University of Maryland. We may put some efforts on this direction if we find something interesting.
+1. Studies on the collective radiation effect of atoms near a nanophotonic waveguide. 
+A summer project has been done and is still on-going in collaboration with Prof. Perry Rice from the Miami University at Ohio. 
+One problem we were worried about for my dissertation study is that the collective photon emission of atoms may be enhanced in presence of a waveguide which may make our problem more complicated~\cite{Asenjo-Garcia2017Atom,Asenjo-Garcia2017Exponential}.
+Through our summer project study, we conclude that, in the dispersive regime, the collective effect can be safely ignored as we wish, and the assumption of pairwise symmetry of atoms can be applied to the calculation of collective spin dynamics. 
+We also worked on some ideas proposed by Prof. Rice to explain collective emission rates of atoms in presence of a nanofiber, which were observed at the laboratories of Prof. Luis Orozco and Prof. Steve Rolston at the University of Maryland. 
 
-2. To design a probe scheme so that the tensor light shifts are canceled completely for the QND measurement and spin squeezing protocol. In our paper, Ref.~\cite{Qi2017Enhanced}, we assume the tensor light shift of atoms is negligible or has been canceled using experimental techniques developed for the free-space atom-light interfaces~\cite{Montano2015Quantum}. However, no one has done the modeling and simulations for the nanophotonic waveguide cases to-date, in which the decay rates of atoms are state-dependent and are no longer degenerate for different quantum transitions.
-Using the result of Chapter 3, I have developed a draft model for finding a magic frequency to cancel the tensor light shift with two-color probes and for calculating the spin squeezing dynamics including the modification of decay rates. But the math is messy, and no concrete result obtained yet. I plan to finish this project and incorporate my formalism with our colleagues at CQuIC and outside for a general theory of continuous measurement and control using the atom-waveguide interfaces introduced in this dissertation. 
+2. To design a probe scheme so that the tensor light shifts are canceled completely for the QND measurement and spin squeezing protocol. 
+In our paper, Ref.~\cite{Qi2017Enhanced}, we assume the tensor light shift of atoms is negligible or has been canceled using experimental techniques developed for the free-space atom-light interfaces~\cite{Montano2015Quantum}. 
+However, no one has done the modeling and simulations for the nanophotonic waveguide cases to-date, in which the decay rates of atoms are state-dependent and are no longer degenerate for different quantum transitions.
+Using the result of Chapter 3, I have developed a draft model for finding a magic frequency to cancel the tensor light shift with two-color probes and for calculating the spin squeezing dynamics including the modification of decay rates. 
+%But the math is messy, and no concrete result obtained yet. I plan to finish this project and incorporate my formalism with our colleagues at CQuIC and outside for a general theory of continuous measurement and control using the atom-waveguide interfaces introduced in this dissertation. 
 
 
 %</tag>
