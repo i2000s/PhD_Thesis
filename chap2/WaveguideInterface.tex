@@ -295,8 +295,8 @@ These modes are expressed in terms of real-valued functions $ \left[u_{r_{\!\per
 %\qxd{Need mode plots for the nanofiber and the \SWG. Codes: \url{rectwg_TETMlow_fullvector.m} and \url{fibermodestudy.m}.}
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
-\includegraphics[width=12cm]{../media/Figs/nanofiber_HVmode_E_xy}}
-\caption[Non-zero $ H $- and $ V $-mode components of a nanofiber in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a nanofiber in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. The white lines outline the profile of the nanofiber on each subplot. }\label{fig:nanofiber_HVmode_E_xy}
+\includegraphics[width=12cm]{../media/Figs/nanofiber_HVmode_absE_xy}}
+\caption[Non-zero $ H $- and $ V $-mode components of a nanofiber in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a nanofiber in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $ \left|\re\left[u_x(\br) \right]\right| $, $\left| \re\left[u_y(\br) \right]\right| $, and $\left| \im\left[u_z(\br) \right]\right| $ from left to right. Amplitudes are normalized to the maximum value of all component parts. The white lines outline the profile of the nanofiber on each subplot. }\label{fig:nanofiber_HVmode_E_xy}
 \end{figure}
 
 We plot the non-zero mode component parts of the quasi-linear $ H$ and $ V $ modes of a nanofiber in Fig.~\ref{fig:nanofiber_HVmode_E_xy}.
@@ -313,8 +313,8 @@ Putting the atom on the $ y $ axis gives a similar result by exchanging the $ H 
 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
-\includegraphics[width=12cm]{../media/Figs/swg_HVmode_E_xy}}
-\caption[Non-zero $ H $- and $ V $-mode components of a square waveguide in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a \SWG in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. The white lines outline the profile of the square waveguide on each subplot. }\label{fig:swg_HVmode_E_xy}
+\includegraphics[width=12cm]{../media/Figs/swg_HVmode_absE_xy}}
+\caption[Non-zero $ H $- and $ V $-mode components of a square waveguide in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a \SWG in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $\left| \re\left[u_x(\br) \right]\right| $, $\left| \re\left[u_y(\br) \right]\right| $, and $ \left|\im\left[u_z(\br) \right]\right| $ from left to right. Amplitudes are normalized to the maximum value of all component parts. The white lines outline the profile of the square waveguide on each subplot. }\label{fig:swg_HVmode_E_xy}
 \end{figure}
 
 For the \SWG and general geometries, we solve the eigenmodes using a numerical method called \emph{Boundary Element Method}\index{Boundary Element Method} or BEM~\cite{Fallahkhair2008}. This method divides the regions close to the waveguide boundaries into finite grids and solve the wave equations by matching the boundary conditions on the grids. 
@@ -336,8 +336,8 @@ As shown, the field on the $ y $ axis of the $ H $ mode is also purely linearly 
 \subsubsection{Mode superposition and decomposition}
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
-\includegraphics[width=12cm]{../media/Figs/nanofiber_DaDmode_E_xy}}
-\caption[Non-zero $ D $- and $ \bar{D} $-mode components of a nanofiber in the $xy $ plane.]{Non-zero $ D $ and $ \thickbar{D} $ mode components of a nanofiber in the $xy $ plane. The first (second) row plots the $ D $($ \thickbar{D} $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:nanofiber_DaDmode_E_xy}
+\includegraphics[width=12cm]{../media/Figs/nanofiber_DaDmode_absE_xy}}
+\caption[Non-zero $ D $- and $ \bar{D} $-mode components of a nanofiber in the $xy $ plane.]{Non-zero $ D $ and $ \thickbar{D} $ mode components of a nanofiber in the $xy $ plane. The first (second) row plots the $ D $($ \thickbar{D} $)-mode components $\left| \re\left[u_x(\br) \right]\right| $, $ \left|\re\left[u_y(\br) \right]\right| $, and $\left| \im\left[u_z(\br) \right]\right| $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:nanofiber_DaDmode_E_xy}
 \end{figure}
 
 %\begin{figure}[!tbp]
@@ -349,7 +349,7 @@ As shown, the field on the $ y $ axis of the $ H $ mode is also purely linearly 
 The degeneracy in polarizations of the \HE modes allows one to write the eigenmodes of the nanofiber in an arbitrary polarization basis. 
 Two convenient guided-mode bases are the quasilinear and quasicircular polarization modes. 
 %In Figs.~\ref{fig:Modes_Rot45HV_fiber} and~\ref{fig:Modes_Rot45LR_fiber}, we show the decomposition of a diagonally polarized $ D $ mode of a nanofiber in the $ HV $- and $ LR $-bases, respectively. 
-Based on Eq.~\eqref{eq:eDeDbar}, the $ D $ and $ \bar{D} $ mode bases can be written as a linear combination of the $ H $ and $ V $ modes [see Fig.~\ref{fig:Modes_Rot45HV_fiber}]. We plot the non-zero component parts of the $ D $ and $ \bar{D} $ modes in Fig.~\ref{fig:nanofiber_DaDmode_E_xy}, which has a non-intuitive phase difference from the $ H $ and $ V $ mode basis [Fig.~\ref{fig:nanofiber_HVmode_E_xy}].
+Based on Eq.~\eqref{eq:eDeDbar}, the $ D $ and $ \bar{D} $ mode bases can be written as a linear combination of the $ H $ and $ V $ modes [see Fig.~\ref{fig:Modes_Rot45HV_fiber}]. We plot the non-zero component parts of the $ D $ and $ \bar{D} $ modes in Fig.~\ref{fig:nanofiber_DaDmode_E_xy}.
 %We also plot the intensity distribution of $ H $, $ V $, $ D $ and $ \bar{D} $ modes of a nanofiber in Fig.~\ref{fig:nanofiber_HVDaDmode_Ints_xy} for comparison. 
 The quasi-circular polarization mode bases can be found from the $ H $ and $ V $ modes. 
 In other words, a quasi-linear mode can be decomposed into the quasi-circular mode bases. See Fig.~\ref{fig:Modes_Rot45LR_fiber}.
@@ -377,8 +377,8 @@ We plot the intensity distribution of these quasi-linear modes of a \SWG in the 
 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
-\includegraphics[width=12cm]{../media/Figs/swg_DaDmode_E_xy}}
-\caption[Non-zero $ D $- and $ \bar{D} $-mode components of a square waveguide in the $xy $ plane.]{Non-zero $ D $ and $ \thickbar{D} $ mode components of a \SWG in the $xy $ plane. The first (second) row plots the $ D $($ \thickbar{D} $)-mode components $ \re\left[u_x(\br) \right] $, $ \re\left[u_y(\br) \right] $, and $ \im\left[u_z(\br) \right] $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:swg_DaDmode_E_xy}
+\includegraphics[width=12cm]{../media/Figs/swg_DaDmode_absE_xy}}
+\caption[Non-zero $ D $- and $ \bar{D} $-mode components of a square waveguide in the $xy $ plane.]{Non-zero $ D $ and $ \thickbar{D} $ mode components of a \SWG in the $xy $ plane. The first (second) row plots the $ D $($ \thickbar{D} $)-mode components $ \left|\re\left[u_x(\br) \right]\right| $, $\left| \re\left[u_y(\br) \right]\right| $, and $\left| \im\left[u_z(\br) \right]\right| $ from left to right. Amplitudes are normalized to the maximum value of all component parts. }\label{fig:swg_DaDmode_E_xy}
 \end{figure}
 
 \begin{figure}[!tbp]
