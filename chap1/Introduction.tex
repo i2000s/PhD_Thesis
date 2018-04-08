@@ -168,7 +168,7 @@ Therefore, the output state of the system is an entangled state. It predicts tha
 Therefore, the probe works as a meter for us to access to the state of the atom through the mutual entanglement. 
 The sensitivity of the measurement is determined by the rotation angle of the polarization state of the light. 
 In other words, to make the measurement outputs more distinguishable, we need to enhance the coupling strength of the bipartite system. 
-\qxd{Put my picture of the meter and measurement here.}
+%\qxd{Put my picture of the meter and measurement here.}
 
 %A quantum state is so fragile that, if you measure it, you also destroy it. We can only gain partial information from one shot of measurement based on the uncertainty principle. 
 %If we know the recipe to prepare the quantum state, there are two naive ways to reconstructing the quantum state: to prepare multiple copies of the quantum object and measure them sequentially in different bases; or, to measure the object multiple times by repeating the preparation processes. 
@@ -182,9 +182,38 @@ However, with all atoms entangled with a probe and let the joint system evolve i
 We call this process as spin squeezing. The state generated is called a spin squeezed state\index{state!spin squeezed state}.
 The mechanism of measurement-induced squeezing is usually called measurement backaction\index{measurement backaction}.
 
+\begin{figure}[!tpb] % Poincare sphere.
+   \centering\makebox[\textwidth]{
+   %\includegraphics[width=0.55\textwidth]{../media/Figs/poincaresphere_initialS1_Faradayrot_crystal}}
+   \begin{minipage}[h]{\linewidth}
+    %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
+     \subfloat[h][]{
+       %\input{fig/nanofiber_peakxi_rp_NA2500.tex}
+       \includegraphics[width=0.3\linewidth]{../media/Figs/blochsphere_initialxJxyz_coherent}
+       \label{fig:blochsphere_initialxJxyz_coherent}
+       }
+       \hfill
+     \subfloat[h][]{
+         \label{fig:blochsphere_initialxJxyz_squeezed}
+         \includegraphics[width=0.3\linewidth]{../media/Figs/blochsphere_initialxJxyz_squeezed}
+         %\input{fig/nanofiber_C1_y.tex}
+         }\hfill
+     \subfloat[h][]{
+            %\input{fig/nanofiber_peakxi_rp_NA2500.tex}
+            \includegraphics[width=0.3\linewidth]{../media/Figs/blochsphere_initialxJxyz_Dicke}
+            \label{fig:blochsphere_initialxJxyz_Dicke}
+            }
+   \end{minipage}}
+   \caption[Coherent state, spin squeezed state and Dicke state on the Bloch sphere.]{Coherent state (a), spin squeezed state (b) and Dicke state (c) on the Bloch sphere. 
+   The red shadows indicate the possibility distributions on the Bloch sphere defined by the collective spin $ \hat{\mathbf{J}} $ vector operator.
+   }
+   \label{fig:collectivestatesonblochsphere}
+\end{figure}
+
+
 It has been proven by Caves that a squeezed state is crucially useful quantum resource for precise measurements~\cite{Caves1981Quantum,Caves1982Quantum}. 
 In some sense, how much an ensemble state is squeezed determines how precise a quantum measurement can be. 
-When we plot a squeezed collective state on a Bloch sphere that represents the possibility distribution of the state, the uncertainty region is squeezed from the initial spin coherent state (see Fig.*). \qxd{May need a plot to show a coherent state, a squeezed state and a Dicke state on the Bloch sphere.} 
+When we plot a squeezed collective state on a Bloch sphere that represents the possibility distribution of the state, the uncertainty region is squeezed from the initial spin coherent state (see Fig.~\ref{fig:collectivestatesonblochsphere}).  
 When the squeezing is weak, the squeezed state can be regarded as a Gaussian state, which is dominated by pairwise quantum correlations of atoms in the ensemble. 
 If the squeezing is on the order of the radius of the Bloch sphere, the collective state become non-Gaussian, which is usually dominated by many-body correlations~\cite{Strobel2014}. 
 To the extreme, if the state wrap around the Bloch sphere as a line of circle, it is called a Dicke state~\cite{Dicke1954}. 
