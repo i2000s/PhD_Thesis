@@ -14,7 +14,7 @@ So far, we have treated the light as a classical field.
 In this chapter, we will fully quantize the optical field and study the quantum noise origin of the light by redefining the Stokes operators using the bosonic operators, and introduce the Hamiltonian of the atom-light interaction for the quantum non-demolition (QND) measurement. We will also link the collective spin operators to the traditional squeezing operators and finally introduce the QND-measurement--induced spin squeezing. 
 
 \section[Atom-light coupling with waveguide modes]{Atom-light coupling with waveguide modes}
-We consider atoms trapped on a one- or two-side chain of optical lattice near a nanophotonic waveguide. A probe is launched to perform the quantum measurement using the polarization spectroscopy technique introduced in the Chapter~\ref{chap:waveguideinterfaces}. We assume all atoms are trapped the same distance to the waveguide surface with the same local intensity of the probe. Defects of occupations on the optical lattices are allowed in our theory, and the minimum distance between atoms is large enough that we can ignore the photon scattering effect among atoms in the dispersive regime. 
+We consider atoms trapped on a one- or two-side chain of optical lattice near a nanophotonic waveguide. A probe is launched to perform the quantum measurement using the polarization spectroscopy technique introduced in the Chapter~\ref{chap:waveguideinterfaces}. We assume all atoms are trapped the same distance to the waveguide surface with the same local intensity of the probe. Defects of occupations on the optical lattices are allowed in our theory, and the minimum distance between the atoms is large enough that we can ignore the photon scattering effect among atoms in the dispersive regime. 
 We concentrate on the waveguides that allow two orthogonally polarized forward-propagating guided modes with degenerate group index of refraction, $ n_g $. 
 
 %Experiments on implementing such an atom-waveguide quantum interface have been done with optical nanofibers~\cite{Goban2012,Lacroute2012,Vetsch2010Optical,Lee2015,Beguin2014,Bajcsy2011Laser}, integrated optical waveguide couplers~\cite{Lee2013} and photonic crystal waveguides~\cite{Yu2014,Goban2014}. The designs of general nanophotonic waveguides for feasible atomic traps and atom-light interaction experiments have also been proposed for a broader range of atom-waveguide interfaces~\cite{Muniz2015Designing,Hung2013,Lee2017Characterizations}. 
@@ -57,7 +57,7 @@ with the light-atom interaction Hamiltonian with one atom given by
 &=\hbar\sum_{i=0}^3 \hat{\chi}_{i}\hat{S}_i \label{eq:heff_chifS}
 %&=\hbar\sum_{i,j=0} \chi_{ij}\hat{f}_i\hat{S}_j,
 \end{align}
-where $\poltens$ is the atomic tensor polarizability operator, given in \erf{Eq::AtomicPolarizabilityF}, for each atom trapped near the waveguide surface at position $\mathbf{r}'_\perp$ in the transverse plane. We ignore here any effects of atomic motion and treat the atoms as localized at fixed positions in space. We have also defined $ \hat{S}_i $ as the Stokes vector operators of the light indicating its polarization, which are the quantum counterparts of the classical definition in Eq.~\eqref{eq:S_xybasis}. The vector Stokes operators that describe the polarization of the propagating fields in the quasilinear $HV$-basis are given as below:
+where $\poltens$ is the atomic tensor polarizability operator, given in \erf{Eq::AtomicPolarizabilityF}, for each atom trapped near the waveguide surface at position $\mathbf{r}'_\perp$ in the transverse plane. Here, we ignore any effects of atomic motion and treat the atoms as localized at fixed positions in space. We have also defined $ \hat{S}_i $ as the Stokes vector operators of the light indicating its polarization, which are the quantum counterparts of the classical definition in Eq.~\eqref{eq:S_xybasis}. The vector Stokes operators that describe the polarization of the propagating fields in the quasilinear $HV$-basis are given as below:
 \begin{subequations}\label{Eq::StokesComponents}
 	\begin{align} 
 		\hat{S}_1(t) & = \smallfrac{1}{2}\big[ \hat{a}^\dag_H(t) \hat{a}_H(t)-\hat{a}^\dag_V(t) \hat{a}_V(t) \big], \\
@@ -89,9 +89,9 @@ $ \hat{\mathbf{f}} $ is the total atomic angular moment operator.
 %$ \chi_{ij}=\tr[\hat{f}_i\hat{\chi}_j]/(2f+1) $ is the coupling strength between spin operator $ \hat{f}_i $ and Stokes operator $ \hat{S}_j $. 
 %For example, $ \chi_{33} $ is the coupling strength between $ \hat{f}_z $ and $ \hat{S}_3 $.
 The coupling operator or Eq.\eqref{eq:chippp} includes three terms corresponding to scalar, vector and tensor interactions between atoms and the probe light which are proportional to $ C_{j'ff'}^{(K)} $ with $ K=0,\,1,\,2 $, respectively.
-These terms may be vanished depending on the state of atoms and the polarization state of the probe defined for the atom-light interaction protocol.
+These terms may vanish depending on the state of atoms and the polarization state of the probe defined for the atom-light interaction protocol.
 
-Correspondingly, by writing the polarizability tensor in the irreducible representation [Eq.~\eqref{Eq::IrreducibleDecomp}], we can also write the Hamiltonian in the following form~\cite{Deutsch2010a}:
+Consequently, by writing the polarizability tensor in the irreducible representation [Eq.~\eqref{Eq::IrreducibleDecomp}], we can also write the Hamiltonian in the following form~\cite{Deutsch2010a}:
 \begin{align}  
 \hat{h}_{\rm eff} &= - \sum_{f,f'}\alpha_0(\Delta_{f,f'}) \left\{ C_{j'ff}^{(0)} \hat{\mathbf{E}}^{(-)} \cdot \hat{\mathbf{E}}^{(+)} \hat{\mathbbm{1}}_f \phantom{\frac{\hat{1}}{1}}\right. \nonumber\\
 &\quad\quad\quad + i C_{j'ff'}^{(1)} \left(\hat{\mathbf{E}}^{(-)} \times \hat{\mathbf{E}}^{(+)} \right) \cdot \hat{ \mathbf{f}} \nonumber\\
@@ -140,7 +140,7 @@ defines the collective measurement operators, where $ \hat{\mathbf{j}}^{(n)} $ i
 
 We consider the case that the atoms are placed at points on the $ x $ axis and a $ D $ mode of light is propagating through the waveguide. There are two useful properties of the system with atoms in the clock space.
 
-First, the cross couplings between $ H $ and $ V $ modes vanish in \erf{eq:heff_uhvalpha}. We outline the proof as below.
+First, the cross couplings between $ H $ and $ V $ modes vanish in \erf{eq:heff_uhvalpha}. We give an outline of the proof below.
 %In the clock state subspace, the light shift Hamiltonian, \erf{eq:heff_uhvalpha}, can be expressed in these state basis by finding 
 %the 
 %matrix elements between two relevant states.  
@@ -266,7 +266,7 @@ and
 \hat{f}_y&=i\sqrt{f/2}(\ket{\downarrow}\bra{\uparrow}-\ket{\uparrow}\bra{\downarrow})\\
 \hat{f}_z&=\sqrt{f/2}(\ket{\downarrow}\bra{\uparrow}+\ket{\uparrow}\bra{\downarrow})
 \end{align}
-in a qubit subspace of the $ f $ hyperfine manifold. These operators only capture a subset of the whole manifold space of the $ f $ hyperfine structure level. Any losses leaked out of the qubit subspace are not tracked. Moreover, they do not provide the information about transfer of coherences~\cite{Norris2014}. Therefore, it's better to extend the subspace to a larger space. 
+in a qubit subspace of the $ f $ hyperfine manifold. These operators only capture a subset of the whole manifold space of the $ f $ hyperfine structure level. Any losses leaked out of the qubit subspace are not tracked. Moreover, they do not provide the information about transfer of coherences~\cite{Norris2014}. Therefore, it is better to extend the subspace to a larger space. 
 Assuming initially, all atoms are prepared on the $ \ket{\uparrow} $ state, the spin squeezing operator $ \hat{f}_z $ will transfer some population to the $ \ket{f,m_x=f-1}$ state, but only a tiny fraction on the $ \ket{f,m_x=f-2} $ and sublevels further away from $ \ket{\uparrow} $. We call 
 \begin{align}
 \ket{T} = \ket{f,m_x=f-2}
@@ -297,7 +297,7 @@ Spin coherent states are the most classical-like quantum state of a collective s
 &= \sum_{M=-J}^J \left( \begin{matrix}N\\ M \end{matrix} \right) \left( \frac{1}{\sqrt{2}}\right)^{N-M} \left( \frac{1}{\sqrt{2}}\right)^{M} \ket{J,M}
 \end{align}
 \end{subequations}
-which is a Binomial distribution of all eigenstates $ \ket{J,M} $. 
+which is a binomial distribution of all eigenstates $ \ket{J,M} $. 
 Notice that the $ \ket{J,M} $ with $ |M|<J $ are known as the \emph{Dicke states}\index{state!Dicke state}. 
 A Dicke state with $ N $ qubits including $ k $ excitations is also defined as~\cite{Dicke1954,Toth2007Detection} 
 \begin{align}
@@ -305,7 +305,7 @@ A Dicke state with $ N $ qubits including $ k $ excitations is also defined as~\
 \end{align}
 where $ \sum_j P_j \left\{\cdot\right\} $ denotes the sum over all possible permutations. For example, $ \ket{D_2^3} =\frac{1}{\sqrt{3}}\left(\ket{110}+\ket{101}+\ket{011} \right) $. 
 
-When $ N $ is large, this Binomial distribution in Eq.~\eqref{eq:SCSJx} becomes a Gaussian based on the central limit theorem. As a concrete example, we can consider $ N=2 $ case of SCS:
+When $ N $ is large, this binomial distribution in Eq.~\eqref{eq:SCSJx} becomes a Gaussian based on the central limit theorem. As a concrete example, we can consider $ N=2 $ case of SCS:
 \begin{align}
 \ket{\uparrow_x}^{\otimes 2} &= \left(\frac{\ket{\uparrow}+\ket{\downarrow}}{\sqrt{2}}\right)^{\otimes 2}\\
 &= \frac{1}{2}\ket{\uparrow\uparrow} +\frac{1}{\sqrt{2}}\left(\frac{\ket{\uparrow\downarrow}+\ket{\downarrow\uparrow}}{\sqrt{2}} \right) + \frac{1}{2}\ket{\downarrow\downarrow}\\
@@ -488,15 +488,15 @@ H_{\rm eff} = \hbar \Big\{ & \big( \chi_{H,\uparrow} + \chi_{H,\downarrow} + \ch
 + & \left[ \big( \chi_{H,\uparrow} - \chi_{H,\downarrow}\big) + \big(\chi_{V,\uparrow} - \chi_{V,\downarrow} \big) \right] \hat{J}_z \hat{S}_0 \nonumber \\
 + & \left[ \big( \chi_{H,\uparrow} - \chi_{H,\downarrow}\big) - \big(\chi_{V,\uparrow} - \chi_{V,\downarrow} \big) \right]  \hat{J}_z \hat{S}_1\Big\}
 \end{align}
-The first term is an overall scalar shift and thus does not contribute to the relative dynamics.  The second term is a constant birefringence and can be canceled with a compensating waveplate as long as the atom number remains constant. 
+The first term is an overall scalar shift and thus does not contribute to the relative dynamics.  The second term is a constant birefringence and can be cancelled with a compensating waveplate as long as the atom number remains constant. 
 %which is usually the case when the trapping time is fairly large compared to the measurement time. Typically, if we choose to have the atoms on the bisection line of the $ x $- and $ y $-axes, we would have the coupling strengthen canceled. It will also remove the forth term in the equation above. The first two terms can be also be canceled when we have the detuning approximately equally biased for the $ f=3 $ and $ f=4 $ ground states. 
 %For example, we  can choose $ \Delta_3=-4.6 $ GHz and $ \Delta_4=4.6 $ GHz to the $ 6P_{1/2} $ excited state sublevels to satisfy this condition, where the hyperfine splitting of the excited state can be ignored ($ ~500 $ MHz) compared to the detuning. However, we would like to leave the choice of detuning to control the third and fourth terms as will be discussed consequently. 
 
-The final term describes the QND Faraday interaction we wish to isolate (similar to the Faraday interaction since we choose to use the $ x $ axis as the quantization axis), but this requires dealing with the third term that describes the effect of the scalar light shift on the rotation of the pseudo-spin, which injects photon fluctuation noise to the measurement signal.  Canceling the third term amounts to enforcing the condition that
+The final term describes the QND Faraday interaction we wish to isolate (similar to the Faraday interaction since we choose to use the $ x $ axis as the quantization axis), but this requires dealing with the third term that describes the effect of the scalar light shift on the rotation of the pseudo-spin, which injects photon fluctuation noise to the measurement signal.  Cancelling the third term amounts to enforcing the condition that
 \begin{align}\label{eq:magiccondition}
 	\chi_{H,\uparrow} - \chi_{H,\downarrow} = \chi_{V,\downarrow} - \chi_{V,\uparrow} ,
 \end{align}
-which can be satisfied if we carefully choose the detuning of the probe light. The wavelength to choose to cancel the third term is atom position related, since the condition is determined by the effective mode areas which may have different ratios for the $ H $ and $ V $ modes at different locals. We call the exact wavelength to satisfy this condition as the \emph{magic wavelength}\index{magic wavelength}, which will be discussed in details in the next chapter. Using a magic frequency, we can achieve an interaction Hamiltonian of the following form,
+which can be satisfied if we carefully choose the detuning of the probe light. The wavelength chosen to cancel the third term is atom position related, since the condition is determined by the effective mode areas which may have different ratios for the $ H $ and $ V $ modes at different locals. We call the exact wavelength to satisfy this condition as the \emph{magic wavelength}\index{magic wavelength}, which will be discussed in details in the next chapter. Using a magic frequency, we can achieve an interaction Hamiltonian of the following form,
 \begin{align}
 	H_{\rm LS} = \hbar \chi_{\rm eff} \hat{J}_z \hat{S}_1
 \end{align}
