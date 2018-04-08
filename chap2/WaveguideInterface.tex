@@ -35,29 +35,23 @@ At the end of this chapter, we will conclude with some geometric explanations on
 
 \subsection{Measuring the polarization state of light in free space}
 
-For details, see Appendix~\ref{chap:polarizationstokesvectors}.
-
-A free-propagating monochromatic plane wave can be rewritten in the 
-
-In free space, light is a transverse field. The polarization state of light\index{polarization} can be fully described by the amplitudes and relative phase of two orthogonal electric field components, $ \mathbf{E}_x $ and $ \mathbf{E}_y $:~\cite{Jackson1975}
+The electric field of a free-propagating monochromatic light can be expressed in the Cartesian coordinate system by~\cite{Jackson1975}
+\begin{align}
+\mathbf{E}(\br,t) = \mathbf{E}_x(\br,t) + \mathbf{E}_y (\br,t),
+\end{align}
+where the $ x $ and $ y $ components
 \begin{subequations}
 \begin{align}
 \mathbf{E}_x(\br,t) &= \mathcal{E}_{x}\mathbf{e}_x e^{i(k_0z-\omega_0 t)},\\
 \mathbf{E}_y(\br,t) &= \mathcal{E}_{y}\mathbf{e}_y e^{i(k_0z-\omega_0 t)},
 \end{align}
 \end{subequations}
-where $ \mathcal{E}_{0x} $ and $ \mathcal{E}_{0y} $ are the complex amplitudes and $ \mathbf{e}_x $ and $ \mathbf{e}_y $ are the direction vectors along the $ x $- and $ y $-axes, respectively, in the transverse plane, perpendicular to the propagation direction along the $ z $ axis. 
+with complex amplitudes $ \mathcal{E}_{0x} $ and $ \mathcal{E}_{0y} $ in the linear polarization basis supported by the direction vectors $ \mathbf{e}_x $ and $ \mathbf{e}_y $.
+We define the propagation direction of the light is along the $ z $ axis. 
+Depending on the relative amplitude and phase between the $ x $ and $ y $ components, the polarization state of the light can be \emph{linear}\index{polarization!linear polarization}, \emph{circular}\index{polarization!circular polarization} and elliptical\index{polarization!elliptical polarization}~\cite{Jackson1975}.
+For the convenience of describing the polarization state of light, we define the following polarization bases. 
 
-A light is said to be \emph{linearly polarized}\index{polarization!linear polarization} if $\mathcal{E}_{x}$ and $ \mathcal{E}_{y} $ have the same phase. The polarization direction is set by the polarization angle $ \theta=\arctan(\mathcal{E}_{y}/\mathcal{E}_{x}) $ from the $ \mathbf{e}_x $ direction.
-The polarization magnitude is defined to be $ E=\sqrt{\mathcal{E}_{x}^2+\mathcal{E}_{y}^2} $.
-
-A light is said to be \emph{circularly polarized}\index{polarization!circular polarization} if $\mathcal{E}_{x}$ and $ \mathcal{E}_{y} $ have the same magnitude, but differ in phase by $ 90^\circ $. The wave can then be described by 
-\begin{align}\label{eq:circularlightfield}
-\mathbf{E}=E_0(\mathbf{e}_x \pm i\mathbf{e}_y)e^{i(k_0z-\omega_0 t)}
-\end{align}
-with $ E_0 $ the common real amplitude. Taking any point $ \br_0=(x_0,y_0,z_0) $ in space, the combined polarization vector $ \mathbf{e}_l(z_0)=(\mathbf{e}_x \pm i\mathbf{e}_y)e^{i(k_0z_0-\omega_0 t)} $ sweeps a complete circle at an angular frequency $ \omega_0 $.
-%Directionality of the field is defined from Equation (2.5) [Note: you should label the equations that will be referenced, but I've avoided doing so here in case I accidentally cause a name collision], with the upper sign corresponding to the $ (\mathbf{e}_x + i\mathbf{e}_y) $ basis indicating that the rotation is clockwise if the observer is hit by the propagating light. The light in this case is said to be \emph{left-circularly polarized}\index{polarization!circular polarization!left-circular polarization} in optics, and has a \emph{positive helicity}\index{polarization!positive helicity} in modern physics. Correspondingly, the lower sign, $ (\mathbf{e}_x - i\mathbf{e}_y) $, indicates the light is counterclockwise rotating at a fixed point and is \emph{right-circularly polarized}\index{polarization!circular polarization!right-circular polarization}, and \emph{negative helicity}\index{polarization!negative helicity}. 
-We define the circular polarization basis by the complex orthogonal unit vectors
+First, we define the circular polarization basis by the complex orthogonal unit vectors
 \begin{align}\label{eq:epm}
 \mathbf{e}_{\pm}=\frac{1}{\sqrt{2}}(\mathbf{e}_x \pm i\mathbf{e}_y)
 \end{align}
@@ -68,44 +62,43 @@ with properties
 \end{align}
 where the field has been decomposed into the $ q=\pm $ components by 
 \begin{align} 
-\mathbf{E}&=\sum_q \mathcal{E}_q\mathbf{e}_q=\mathcal{E}_+ \mathbf{e}_+ +\mathcal{E}_-\mathbf{e}_-\\
-&=\mathcal{E}_L\mathbf{e}_++\mathcal{E}_R\mathbf{e}_- 
+\mathbf{E}&=\sum_q \mathcal{E}_q\mathbf{e}_q=\mathcal{E}_+ \mathbf{e}_+ +\mathcal{E}_-\mathbf{e}_-
 \end{align} 
-with $ \mathcal{E}_q=\mathbf{e}_q^*\cdot \mathbf{E} $, and the left- and right-circular polarization amplitudes $ \mathcal{E}_L=\mathcal{E}_+ $ and $ \mathcal{E}_R=\mathcal{E}_- $, respectively. 
-Note that the definition of \emph{left} and \emph{right} rotations in modern physics, including quantum mechanics, is different from that in traditional optics. In order to match the classical definitions of basic concepts with the quantum mechanical derivation in Chapter~\ref{chap:quantumdynamicsrepresentation}, we will primarily stick to the concept of \emph{helicity} in this chapter.
-
-The Cartesian basis of the polarization measurement is usually called as the linear polarization basis (see Eq.~\eqref{eq:circularlightfield} for the circular polarization case). We can also use $ H $ (horizontal) and $ V $ (vertical) to label the $ x $ and $ y $ components of the field.
-Alternatively, if the actual field is detected in the circular polarization basis, only one non-zero amplitude may be detected proportional to the circular polarization component 
+with $ \mathcal{E}_q=\mathbf{e}_q^*\cdot \mathbf{E} $.
+The circular polarization components can be given by 
 \begin{align}
 E_\pm(\br_0,t) &= \re\left[\mathbf{e}_\pm^* \cdot \mathbf{E}\right] = \re\left[\mathcal{E}_\pm \right].
 \end{align}
-I will label the polarization bases of positive and negative helicities with $ + $ and $- $ subscripts, respectively, in this dissertation. The choice of basis of polarization measurement can be operated by using beam splitters and proper wave planes in real experiments~\cite{Born1999Principles}.
+The $ + $ and $- $ subscripts correspond to the positive and negative helicity of circular polarizations.
 
-If $\mathcal{E}_{x}$ and $ \mathcal{E}_{y} $ have different phases, the light is \emph{elliptically polarized}\index{polarization!elliptical polarization} in general. Represented in the circular polarization basis, the wave can be given by
+Second, we define another linear polarization basis, namely, the diagonal polarization basis $ (\mathbf{e}_D,\mathbf{e}_{\thickbar{D}}) $ by 
+\begin{subequations}\label{eq:eDeDbar}
 \begin{align}
-\mathbf{E}=(\mathcal{E}_+\mathbf{e}_+ + \mathcal{E}_-\mathbf{e}_-)e^{i(k_0z-\omega_0 t)},
-\end{align}
-where $ \mathcal{E}_\pm $ are complex amplitudes, and $ \mathrm{angle}\left(\mathcal{E}_+\right)$ may not equal to $\mathrm{angle}\left(\mathcal{E}_-\right) $. 
-When $ \mathcal{E}_+ $ and $ \mathcal{E}_- $ have different magnitudes yet the same phase, the light is elliptically polarized with the $ \mathbf{E} $ vector traced as an ellipse defined by the principle axes pointing along $ \mathbf{e}_x $ and $ \mathbf{e}_y $ directions~\cite{Jackson1975}. The semimajor and semiminor axes of the ellipse have a ratio of $ |(1+r)/(1-r)| $, where $ r=\mathcal{E}_+/\mathcal{E}_- $. 
-When the two complex amplitudes in the circular polarization basis have a phase difference, $ \phi $, or $ \mathcal{E}_+/\mathcal{E}_-=re^{i\phi} $, then the traced ellipse of the $ \mathcal{E} $ vector has its principal axes rotated by an angle $ \phi/2 $ from the $ \mathbf{e}_x $ and $ \mathbf{e}_y $ axes. 
-The real parameter $ r $ is the ellipticity\index{polarization!ellipticity} of the ellipse of the $ \mathbf{E} $ vector trace. For $ r=\pm 1 $, we recover the linear polarization case. 
-
-\subsection{Stokes vectors and polarization measurement}
-
-To help visualize the polarization state of the light, we rewrite the field amplitudes\footnote{In the terminology of modern physics, they are also the components of Jones vectors defining a polarized light~\cite{Born1999Principles}.} in the linear and circular polarization bases by
-\begin{align}
-\mathcal{E}_x &= E_x e^{i\delta_x},\quad & \mathcal{E}_y &= E_y e^{i\delta_y},\\
-\mathcal{E}_+ &= E_+ e^{i\delta_+},\quad & \mathcal{E}_- &= E_- e^{i\delta_-},
-\end{align} 
-where $ E_{x/y} $, $ E_\pm  $, $ \delta_{x/y} $ and $ \delta_\pm $ are all real parameters. Traditionally, the Stokes vector $ \mathbf{S}=(S_0,S_1,S_2,S_3) $ is usually employed in literature to uniquely project the polarization state of the light onto the famous \Poincare sphere\cite{Born1999Principles} (see Fig.\ref{fig:Poincaresphere}). In terms of the linear polarization basis $ (\mathbf{e}_x,\mathbf{e}_y) $, the Stokes vector components are~\cite{Born1999Principles}
-\begin{subequations}\label{eq:S_xybasis}
-\begin{align}
-S_0 &= |\mathbf{e}_x\cdot \mathbf{E}|^2+|\mathbf{e}_y\cdot \mathbf{E}|^2 =E_x^2+E_y^2\\
-S_1 &= |\mathbf{e}_x\cdot \mathbf{E}|^2-|\mathbf{e}_y\cdot \mathbf{E}|^2 =E_x^2-E_y^2\\
-S_2 &= 2\re\left[ (\mathbf{e}_x\cdot \mathbf{E})^*(\mathbf{e}_y\cdot \mathbf{E})\right] =2E_xE_y\cos(\delta_y-\delta_x)\label{eq:S2_xybasis}\\
-S_3 &= 2\im\left[ (\mathbf{e}_x\cdot \mathbf{E})^*(\mathbf{e}_y\cdot \mathbf{E})\right] =2E_xE_y\sin(\delta_y-\delta_x)
+\mathbf{e}_D &= \frac{1}{\sqrt{2}} (\mathbf{e}_x+ \mathbf{e}_y),\\
+\mathbf{e}_{\thickbar{D}} &= \frac{1}{\sqrt{2}} (\mathbf{e}_y - \mathbf{e}_x).
 \end{align}
 \end{subequations}
+This linear polarization basis is a $ 45^\circ $ rotation from the $ (\mathbf{e}_x,\mathbf{e}_y) $ basis in the $ xy $ plane. 
+One can decompose the $ \mathbf{E} $ vector in the diagonal linear polarization basis by $\mathbf{E} = \mathcal{E}_D\mathbf{e}_D + \mathcal{E}_{\thickbar{D}}\mathbf{e}_{\thickbar{D}}=E_De^{i\delta_D}\mathbf{e}_D + E_{\thickbar{D}}e^{i\delta_{\thickbar{D}}}\mathbf{e}_{\thickbar{D}} $, where $ \delta_D $ and $ \delta_{\bar{D}} $ are the phases of the two components.
+
+The polarization state of light can be fully described by the Stokes vector $ \mathbf{S}= (S_0, S_1,S_2,S_3) $~\cite{Born1999Principles,Jackson1975}, 
+where the Stokes vector components can be defined using the real amplitudes of the electric field components in those polarization bases:
+\begin{subequations}\label{eq:S_intensitydiff}
+\begin{align}
+S_0 &= E_H^2+E_V^2 = E_+^2+E_-^2 = E_D^2+E_{\thickbar{D}}^2,\\
+S_1 &= E_H^2-E_V^2,\\
+S_2 &= E_D^2-E_{\thickbar{D}}^2,\\
+S_3 &= E_+^2-E_-^2. %=E_L^2-E_R^2
+\end{align}
+\end{subequations}
+Above, we have replaced $ x\rightarrow H $ and $ y\rightarrow V $.
+Given that $ E_i^2 (i=H,V,L,R,D,\thickbar{D})$ are intensity components proportional to the photon fluxes of the linear and circular polarization components, $ S_0 $ is proportional to the total flux of the light, $ S_1 $ is proportional to the photon flux difference between the $ x $- and $ y $-polarization components, $ S_2 $ is proportional to the photon flux difference of the $ D $- and $ \thickbar{D} $-polarization components, and $ S_3 $ is proportional to the photon flux difference of the two circular-polarization components of the light. 
+We summarize more details of the polarization state of light and properties of Stokes vectors in Appendix~\ref{chap:polarizationstokesvectors} for your reference.
+
+In experiments, one can use waveplates and beam splitters to decompose field components in a given polarization basis, and use a pair of photon detectors to measure the photon flux of the corresponding orthogonal polarization components.
+If we know the total power or intensity of the light, by measuring the photon flux difference in different polarization bases, one can find the normalized Stokes vector components and hence the polarization state of the light. 
+This defines the \emph{polarization spectroscopy technique}\index{polarization spectroscopy}~\cite{Deutsch2010a,Salvail2013}.
+The Stokes vector components of the light uniquely map the polarization state to a vector on the \Poincare sphere (see Fig.~\ref{fig:Poincaresphere}).
 
 \begin{figure}[!tpb] % Poincare sphere.
    \centering\makebox[\textwidth]{
@@ -133,49 +126,32 @@ S_3 &= 2\im\left[ (\mathbf{e}_x\cdot \mathbf{E})^*(\mathbf{e}_y\cdot \mathbf{E})
    \label{fig:Poincaresphere}
 \end{figure}
 
-Similarly, in the circular polarization basis $ (\mathbf{e}_+,\mathbf{e}_-) $, the Stokes vector components can be given by
-\begin{subequations}\label{eq:S_circularbasis}
+For a completely polarized light\footnote{ The Stokes parameters of a partially polarized light satisfy $ S_0^2>S_1^2+S_2^2+S_3^2 $. For ``natural light" or completely unpolarized light, the Stokes parameters satisfy $ S_1=S_2=S_3=0 $. Such, the degree of polarization is defined by $ R=\frac{\sqrt{S_1^2+S_2^2+S_3^2}}{S_0} \le 1$. Throughout this dissertation work, the degree of polarization is not our concern, and we assume that the length of Stokes vectors are properly normalized.}, the Stokes parameters satisfy~\cite{Born1999Principles}
 \begin{align}
-S_0 &= |\mathbf{e}_+^*\cdot \mathbf{E}|^2+|\mathbf{e}_-^*\cdot \mathbf{E}|^2 =E_+^2+E_-^2\\
-S_1 &= 2\re\left[ (\mathbf{e}_+^*\cdot \mathbf{E})^*(\mathbf{e}_-^*\cdot \mathbf{E})\right] = 2E_+E_-\cos(\delta_--\delta_+)\\
-S_2 &= 2\im\left[ (\mathbf{e}_+^*\cdot \mathbf{E})^*(\mathbf{e}_-^*\cdot \mathbf{E})\right] =2E_+E_-\sin(\delta_--\delta_+)\\
-S_3 &= |\mathbf{e}_+^*\cdot \mathbf{E}|^2-|\mathbf{e}_-^*\cdot \mathbf{E}|^2 =E_+^2-E_-^2 %=E_L^2-E_R^2
+S_0^2=S_1^2+S_2^2+S_3^2,
 \end{align}
-\end{subequations}
- %(\qxd{Note: should the $S_3$ be $ E_R^2-E_L^2 $ instead?})
-The Stokes vector components are independent from the choice of basis. 
-One can choose another linear polarization basis, namely, the diagonal polarization basis $ (\mathbf{e}_D,\mathbf{e}_{\thickbar{D}}) $ basis with 
-\begin{subequations}\label{eq:eDeDbar}
+fixing one degree of freedom of the Stokes vectors. That leaves three independent variables to be specified to fully describe the polarization state of a light.
+For example, in the linear polarization basis, the real amplitudes $ E_x $, $ E_y $ and the relative phase $ \delta_x-\delta_y $ uniquely define the polarization state of the light.
+The phase difference between the two linear components of the field, $ \phi=\delta_x-\delta_y $, determines the helicity. 
+The amplitudes of the two field components determine the polarization magnitude and the polarization angle from the $ x $ axis~\cite{Jackson1975}. 
+Similar rules can be found for using other polarization representation bases at large~\cite{Mecozzi2011Unified}. 
+On the \Poincare sphere, $ (S_1,S_2,S_3) $ can be specified by the orientation angle $ \Psi (0\le \Psi \le \pi) $ of the ellipse projected onto the $ xy $ plane, and another angle $ \Theta (-\frac{\pi}{4}\le \Theta \le \frac{\pi}{4}) $ which is the angle of the ellipse from the $ S_3 $ axis. 
+That is~\cite{Born1999Principles}
 \begin{align}
-\mathbf{e}_D &= \frac{1}{\sqrt{2}} (\mathbf{e}_x+ \mathbf{e}_y),\\
-\mathbf{e}_{\thickbar{D}} &= \frac{1}{\sqrt{2}} (\mathbf{e}_y - \mathbf{e}_x),
+S_1 &= S_0\cos(2\Theta)\cos(2\Psi)\\
+S_2 &= S_0\cos(2\Theta)\sin(2\Psi)\\
+S_3 &= S_0\sin(2\Theta).
 \end{align}
-\end{subequations}
-which is a $ 45^\circ $ rotation from the $ (\mathbf{e}_x,\mathbf{e}_y) $ Cartesian basis in the $ xy $ plane. The $ \mathbf{E} $ vector can then be written as  \begin{align}
-\mathbf{E} = \mathcal{E}_D\mathbf{e}_D + \mathcal{E}_{\thickbar{D}}\mathbf{e}_{\thickbar{D}}=E_De^{i\delta_D}\mathbf{e}_D + E_{\thickbar{D}}e^{i\delta_{\thickbar{D}}}\mathbf{e}_{\thickbar{D}} .\label{eq:E_Dbasis}
-\end{align}
-Plugging Eqs.~\eqref{eq:eDeDbar} and~\eqref{eq:E_Dbasis} into Eq.~\eqref{eq:S2_xybasis}, one can find that in the diagonal polarization basis
-\begin{align}\label{eq:S2_Dbasis}
-S_2 = E_D^2-E_{\thickbar{D}}^2.
-\end{align}
-%\qxd{(Comment: why not $ E_{\thickbar{D}}^2-E_{D}^2 $?)}
-Based on the expressions of Stokes vectors in different bases or Eqs.~(\ref{eq:S_xybasis},~\ref{eq:S_circularbasis} and~\ref{eq:S2_Dbasis}), we can find the relation between those Stokes vector components and the intensity of field components $ E_i^2 $ in different bases as follows:
-\begin{subequations}\label{eq:S_intensitydiff}
-\begin{align}
-S_0 &= E_H^2+E_V^2 = E_+^2+E_-^2 = E_D^2+E_{\thickbar{D}}^2,\\
-S_1 &= E_H^2-E_V^2,\\
-S_2 &= E_D^2-E_{\thickbar{D}}^2,\\
-S_3 &= E_+^2-E_-^2. %=E_L^2-E_R^2
-\end{align}
-\end{subequations}
-Above, we have replaced $ x\rightarrow H $ and $ y\rightarrow V $.
-Given the intensity components, $ E_i^2 (i=H,V,L,R,D,\thickbar{D})$ are proportional to the photon fluxes of the linear and circular polarization components, $ S_0 $ is proportional to the total flux of the light, $ S_1 $ is proportional to the photon flux difference in the $ x $- and $ y $-polarization components, $ S_2 $ is proportional to the photon flux difference of the $ D $- and $ \thickbar{D} $-polarization components, and $ S_3 $ is proportional to the photon flux difference of the $ L $- and $ R $-polarization components of the light. 
-Given the total photon flux of the light, one can use waveplates and beam splitters to decompose field components and a pair of photon detectors that measure the photon flux in orthogonal polarization bases to find the normalized Stokes vector components and hence measure the polarization state of the light. 
-This defines the \emph{polarization spectroscopy technique}\index{polarization spectroscopy}~\cite{Deutsch2010a,Salvail2013}.
+The factor of 2 reflects the symmetry of polarization. For example, a linear polarization with an oscillation vector along the positive $ x $ direction is the same as that along the negative $ x $ direction. 
+
+When the polarization magnitude $S_0$ is fixed, we only need two free variables $ \Theta $ and $ \Psi $ to specify a state of a completely polarized light. On the \Poincare sphere, one can specify a state of polarization from a given initial state by two consecutive rotations around two orthogonal axes. 
+The rotation around the $ S_1 $, $ S_2 $ or an arbitrary linear polarization axis is physically generated by the \emph{birefringence effect}\index{birefringence effect}.
+The rotation around the $ S_3 $ axis is generated by the \emph{Faraday effect}\index{Faraday effect} (see Fig.~\ref{fig:polarizationspectroscopy}). 
+With these two polarization transformation effects, one can generate an arbitrary polarization state of light from an initial state. 
 
 \subsection{Polarization spectroscopy on waveguide interfaces}
-In this dissertation, we will be focusing on the atom-light interfaces with nanophotonic waveguides. 
-We assume that the waveguide is designed so that the polarization of a transverse light beam in free space is adiabatically coupled to a unique mode of the waveguide when the light travels through the waveguide. 
+Now, we turn on to atom-light interfaces with nanophotonic waveguides. 
+We assume that a waveguide is designed so that the polarization of a transverse light beam in free space can be adiabatically coupled to a unique mode of the waveguide when the light travels through the waveguide. 
 When the light exits the waveguide, the mode of the waveguide can again adiabatically recovers to a unique polarization state of a transverse light in free space~\cite{Nayak2007}. 
 The adiabatic connection between the light's polarization states in free space and the modes in the waveguide region applies identically to the processes of incidence to and exiting from the waveguide. 
 We also assume that the dispersive and distortion effects solely due to the waveguide have been compensated before the polarization state measurement or can be extracted out from the measurement result so that we can focus on the effects caused by atom-light interaction in the nanophotonic waveguide region. 
@@ -194,31 +170,8 @@ Although we will keep as general as possible, for simplicity, we will only look 
 
 
 \subsection{Birefringence and Faraday effects caused by atom-light interactions}
-Let us first step back a little bit. 
-For a completely polarized light\footnote{ The Stokes parameters of a partially polarized light satisfy $ S_0^2>S_1^2+S_2^2+S_3^2 $. For ``natural light" or completely unpolarized light, the Stokes parameters satisfy $ S_1=S_2=S_3=0 $. Such, the degree of polarization is defined by $ R=\frac{\sqrt{S_1^2+S_2^2+S_3^2}}{S_0} \le 1$. Throughout this dissertation work, the degree of polarization is not our concern, and we assume that the length of Stokes vectors are properly normalized.}, the Stokes parameters satisfy the relation~\cite{Born1999Principles}
-\begin{align}
-S_0^2=S_1^2+S_2^2+S_3^2,
-\end{align}
-fixing one degree of freedom of the Stokes vectors. That leaves three independent variables to be specified to fully describe the polarization state of a light.
-For example, in the linear polarization basis, $ E_x $, $ E_y $ and $ \delta_x-\delta_y $ uniquely define the polarization state of the light.
-The phase difference between the two linear components of the field, $ \phi=\delta_x-\delta_y $, determines the helicity. 
-The amplitudes of the two field components determine the polarization magnitude and the polarization angle from the $ x $ axis. 
-Similar rules can be found for using other polarization representation bases at large~\cite{Mecozzi2011Unified}. 
-On the \Poincare sphere, $ (S_1,S_2,S_3) $ can be specified by the orientation angle $ \Psi (0\le \Psi \le \pi) $ of the ellipse projected onto the $ xy $ plane, and another angle $ \Theta (-\frac{\pi}{4}\le \Theta \le \frac{\pi}{4}) $ which is the angle of the ellipse from the $ S_3 $ axis. 
-That is~\cite{Born1999Principles}
-\begin{align}
-S_1 &= S_0\cos(2\Theta)\cos(2\Psi)\\
-S_2 &= S_0\cos(2\Theta)\sin(2\Psi)\\
-S_3 &= S_0\sin(2\Theta).
-\end{align}
-The factor of 2 reflects the symmetry of polarization. For example, a linear polarization with an oscillation vector along the positive $ x $ direction is the same as that along the negative $ x $ direction. 
 
-When the polarization magnitude $S_0$ is fixed, we only need two free variables $ \Theta $ and $ \Psi $ to specify a state of a completely polarized light. On the \Poincare sphere, one can specify a state of polarization from a given initial state by two consecutive rotations around two orthogonal axes. 
-The rotation around the $ S_1 $, $ S_2 $ or an arbitrary linear polarization axis is physically generated by the \emph{birefringence effect}\index{birefringence effect}.
-The rotation around the $ S_3 $ axis is generated by the \emph{Faraday effect}\index{Faraday effect} (see Fig.~\ref{fig:polarizationspectroscopy}). 
-With these two polarization rotation effects, one can generate an arbitrary polarization state of light from an initial state. 
-
-Consider a light beam propagates through a cloud of atoms and generates a birefringence rotation on its polarization state. This process is possible if there is a relative speed difference of the light propagation along two orthogonal directions which are usually defined as the \emph{fast axis}\index{fast axis} and \emph{slow axis}\index{slow axis}. Correspondingly, the effective index of refraction due to the atom-light interaction along the two directions are different and denoted by $ n_f $ and $ n_s $ with $ 1\le n_f<n_s $, respectively. Therefore, there is a phase difference $ \phi $ after the light propagates by a distance $ L $, where 
+Consider a laser beam propagates through a cloud of atoms and generates a birefringence rotation on its polarization state. This process is possible if there is a relative speed difference of the light propagation along two orthogonal directions which are usually defined as the \emph{fast axis}\index{fast axis} and \emph{slow axis}\index{slow axis}. Correspondingly, the effective index of refraction due to the atom-light interaction along the two directions are different and denoted by $ n_f $ and $ n_s $ with $ 1\le n_f<n_s $, respectively. Therefore, there is a phase difference $ \phi $ after the light propagates by a distance $ L $, where 
 \begin{align}
 \phi= k(n_f-n_s)L.
 \end{align}
@@ -877,7 +830,7 @@ This generates a strong birefringence effect even with a scalar polarizability o
 % ########################### Apendix ##########################################
 %</polarizationstokesvectors>
 \chapter{Polarization states of light and the Stokes vector representation}\label{chap:polarizationstokesvectors}
-\subsection{Polarization states of light}
+\section{Polarization states of light}
 
 In free space, light is a transverse field. The polarization state of light\index{polarization} can be fully described by the amplitudes and relative phase of two orthogonal electric field components, $ \mathbf{E}_x $ and $ \mathbf{E}_y $:~\cite{Jackson1975}
 \begin{subequations}
@@ -896,17 +849,7 @@ A light is said to be \emph{circularly polarized}\index{polarization!circular po
 \mathbf{E}=E_0(\mathbf{e}_x \pm i\mathbf{e}_y)e^{i(k_0z-\omega_0 t)}
 \end{align}
 with $ E_0 $ the common real amplitude. Taking any point $ \br_0=(x_0,y_0,z_0) $ in space, the combined polarization vector $ \mathbf{e}_l(z_0)=(\mathbf{e}_x \pm i\mathbf{e}_y)e^{i(k_0z_0-\omega_0 t)} $ sweeps a complete circle at an angular frequency $ \omega_0 $.
-%Directionality of the field is defined from Equation (2.5) [Note: you should label the equations that will be referenced, but I've avoided doing so here in case I accidentally cause a name collision], with the upper sign corresponding to the $ (\mathbf{e}_x + i\mathbf{e}_y) $ basis indicating that the rotation is clockwise if the observer is hit by the propagating light. The light in this case is said to be \emph{left-circularly polarized}\index{polarization!circular polarization!left-circular polarization} in optics, and has a \emph{positive helicity}\index{polarization!positive helicity} in modern physics. Correspondingly, the lower sign, $ (\mathbf{e}_x - i\mathbf{e}_y) $, indicates the light is counterclockwise rotating at a fixed point and is \emph{right-circularly polarized}\index{polarization!circular polarization!right-circular polarization}, and \emph{negative helicity}\index{polarization!negative helicity}. 
-We define the circular polarization basis by the complex orthogonal unit vectors
-\begin{align}\label{eq:epm}
-\mathbf{e}_{\pm}=\frac{1}{\sqrt{2}}(\mathbf{e}_x \pm i\mathbf{e}_y)
-\end{align}
-with properties
-\begin{align}
-\mathbf{e}_q\cdot \mathbf{e}_{q'}^* &=\delta_{q,q'}\\
-\mathbf{e}_q^* &=\mathbf{e}_{-q}
-\end{align}
-where the field has been decomposed into the $ q=\pm $ components by 
+Using the circular polarization basis vectors, $ \mathbf{e}_\pm $, defined by Eq.~\eqref{eq:epm}, the electric field can be rewrite as 
 \begin{align} 
 \mathbf{E}&=\sum_q \mathcal{E}_q\mathbf{e}_q=\mathcal{E}_+ \mathbf{e}_+ +\mathcal{E}_-\mathbf{e}_-\\
 &=\mathcal{E}_L\mathbf{e}_++\mathcal{E}_R\mathbf{e}_- 
@@ -930,7 +873,7 @@ When $ \mathcal{E}_+ $ and $ \mathcal{E}_- $ have different magnitudes yet the s
 When the two complex amplitudes in the circular polarization basis have a phase difference, $ \phi $, or $ \mathcal{E}_+/\mathcal{E}_-=re^{i\phi} $, then the traced ellipse of the $ \mathcal{E} $ vector has its principal axes rotated by an angle $ \phi/2 $ from the $ \mathbf{e}_x $ and $ \mathbf{e}_y $ axes. 
 The real parameter $ r $ is the ellipticity\index{polarization!ellipticity} of the ellipse of the $ \mathbf{E} $ vector trace. For $ r=\pm 1 $, we recover the linear polarization case. 
 
-\subsection{Stokes vectors and polarization measurement}
+\section{Stokes vectors and polarization measurement}
 
 To help visualize the polarization state of the light, we rewrite the field amplitudes\footnote{In the terminology of modern physics, they are also the components of Jones vectors defining a polarized light~\cite{Born1999Principles}.} in the linear and circular polarization bases by
 \begin{align}
@@ -947,32 +890,6 @@ S_3 &= 2\im\left[ (\mathbf{e}_x\cdot \mathbf{E})^*(\mathbf{e}_y\cdot \mathbf{E})
 \end{align}
 \end{subequations}
 
-\begin{figure}[!tpb] % Poincare sphere.
-   \centering\makebox[\textwidth]{
-   %\includegraphics[width=0.55\textwidth]{../media/Figs/poincaresphere_initialS1_Faradayrot_crystal}}
-   \begin{minipage}[h]{\linewidth}
-    %\begin{tabular}{*{2}{b{0.2\textwidth-2\tabcolsep}}}
-     \subfloat[h][]{
-       %\input{fig/nanofiber_peakxi_rp_NA2500.tex}
-       \includegraphics[width=0.4\linewidth]{../media/Figs/poincaresphere_initialS2_birefringencerot_crystal}
-       \label{fig:poincaresphere_initialS2_birefringencerot_crystal}
-       }
-       \hfill
-     \subfloat[h][]{
-         \label{fig:poincaresphere_initialS2_Faradayrot_crystal}
-         \includegraphics[width=0.4\linewidth]{../media/Figs/poincaresphere_initialS2_Faradayrot_crystal}
-         %\input{fig/nanofiber_C1_y.tex}
-         }
-   \end{minipage}}
-   \caption[Birefringence and Faraday rotations of the polarization state of light represented on the \Poincare sphere.]{Birefringence (a) and Faraday (b) rotations of the polarization state of light represented on the \Poincare sphere. A state of polarization of light can be represented as a vector $ \mathbf{S}=(S_0,S_1,S_2,S_3) $ with the Stokes parameter $ S_0 $ defining the radius of the sphere. 
-   $ S_1 $, $ S_2 $ and $ S_3 $ directions correspond to a horizontal-linear ($ H $), diagonal-linear ($ D $) and circular ($ R $, with positive helicity) polarization states of light. 
-   We consider a polarization state initially represented by the $ S_2 $ vector. 
-   (a) If the Stokes vector rotes around $ S_1 $ or other linear-polarization axis by some angle $ \varphi $, we call this rotation as a birefringence rotation and the polarization state becomes elliptical afterwards. 
-   (b) If the Stokes vector rotates about $ S_3 $ axis on the equator by some angle $ \varphi $, we call this a Faraday rotation and the helicity of the polarization state remains. 
-   }
-   \label{fig:Poincaresphere}
-\end{figure}
-
 Similarly, in the circular polarization basis $ (\mathbf{e}_+,\mathbf{e}_-) $, the Stokes vector components can be given by
 \begin{subequations}\label{eq:S_circularbasis}
 \begin{align}
@@ -984,14 +901,8 @@ S_3 &= |\mathbf{e}_+^*\cdot \mathbf{E}|^2-|\mathbf{e}_-^*\cdot \mathbf{E}|^2 =E_
 \end{subequations}
  %(\qxd{Note: should the $S_3$ be $ E_R^2-E_L^2 $ instead?})
 The Stokes vector components are independent from the choice of basis. 
-One can choose another linear polarization basis, namely, the diagonal polarization basis $ (\mathbf{e}_D,\mathbf{e}_{\thickbar{D}}) $ basis with 
-\begin{subequations}\label{eq:eDeDbar}
-\begin{align}
-\mathbf{e}_D &= \frac{1}{\sqrt{2}} (\mathbf{e}_x+ \mathbf{e}_y),\\
-\mathbf{e}_{\thickbar{D}} &= \frac{1}{\sqrt{2}} (\mathbf{e}_y - \mathbf{e}_x),
-\end{align}
-\end{subequations}
-which is a $ 45^\circ $ rotation from the $ (\mathbf{e}_x,\mathbf{e}_y) $ Cartesian basis in the $ xy $ plane. The $ \mathbf{E} $ vector can then be written as  \begin{align}
+One can choose another linear polarization basis, namely, the diagonal polarization basis $ (\mathbf{e}_D,\mathbf{e}_{\thickbar{D}}) $ defined by Eq.~\eqref{eq:eDeDbar}. 
+The $ \mathbf{E} $ vector can then be written as  \begin{align}
 \mathbf{E} = \mathcal{E}_D\mathbf{e}_D + \mathcal{E}_{\thickbar{D}}\mathbf{e}_{\thickbar{D}}=E_De^{i\delta_D}\mathbf{e}_D + E_{\thickbar{D}}e^{i\delta_{\thickbar{D}}}\mathbf{e}_{\thickbar{D}} .\label{eq:E_Dbasis}
 \end{align}
 Plugging Eqs.~\eqref{eq:eDeDbar} and~\eqref{eq:E_Dbasis} into Eq.~\eqref{eq:S2_xybasis}, one can find that in the diagonal polarization basis
@@ -1000,7 +911,7 @@ S_2 = E_D^2-E_{\thickbar{D}}^2.
 \end{align}
 %\qxd{(Comment: why not $ E_{\thickbar{D}}^2-E_{D}^2 $?)}
 Based on the expressions of Stokes vectors in different bases or Eqs.~(\ref{eq:S_xybasis},~\ref{eq:S_circularbasis} and~\ref{eq:S2_Dbasis}), we can find the relation between those Stokes vector components and the intensity of field components $ E_i^2 $ in different bases as follows:
-\begin{subequations}\label{eq:S_intensitydiff}
+\begin{subequations}\label{eq:S_intensitydiff_appendix}
 \begin{align}
 S_0 &= E_H^2+E_V^2 = E_+^2+E_-^2 = E_D^2+E_{\thickbar{D}}^2,\\
 S_1 &= E_H^2-E_V^2,\\
@@ -1009,9 +920,6 @@ S_3 &= E_+^2-E_-^2. %=E_L^2-E_R^2
 \end{align}
 \end{subequations}
 Above, we have replaced $ x\rightarrow H $ and $ y\rightarrow V $.
-Given the intensity components, $ E_i^2 (i=H,V,L,R,D,\thickbar{D})$ are proportional to the photon fluxes of the linear and circular polarization components, $ S_0 $ is proportional to the total flux of the light, $ S_1 $ is proportional to the photon flux difference in the $ x $- and $ y $-polarization components, $ S_2 $ is proportional to the photon flux difference of the $ D $- and $ \thickbar{D} $-polarization components, and $ S_3 $ is proportional to the photon flux difference of the $ L $- and $ R $-polarization components of the light. 
-Given the total photon flux of the light, one can use waveplates and beam splitters to decompose field components and a pair of photon detectors that measure the photon flux in orthogonal polarization bases to find the normalized Stokes vector components and hence measure the polarization state of the light. 
-This defines the \emph{polarization spectroscopy technique}\index{polarization spectroscopy}~\cite{Deutsch2010a,Salvail2013}.
 
 %<*polarizationstokesvectors>
 
