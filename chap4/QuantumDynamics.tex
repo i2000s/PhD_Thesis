@@ -295,7 +295,7 @@ as the transfer state\index{state!transfer state}. In the $ \{\ket{\uparrow},\ke
 
 Processing in the same way as for the clock space, the total atom-light interaction Hamiltonian can be projected onto the stretched qutrit subspace and can be simplified to the form of Eq.~\eqref{eq:heff_chifS}.
 
-Worth noting that, if there is only a transverse linearly polarized electric field at the atom positions, the Hamiltonian may only remain one dominant non-zero term, $ \chi_{33}\hat{F}_z\hat{S}_3 $, which yields a Faraday effect with coupling strength $ \chi_{33} $ due to a vector coupling between the atoms and light.
+Worth noting that, if there is only a transverse linearly polarized electric field at the atom positions, the Hamiltonian may only remain one dominant non-zero term, $ \chi_{33}\hat{F}_z\hat{S}_3 $, which yields a Faraday effect\index{Faraday effect} with coupling strength $ \chi_{33} $ due to a vector coupling between the atoms and light.
 Especially when the detuning of the probe is large, we can ignore the tensor coupling strength related to $ C_{jj'ff'}^{(2)} $ terms in Eq.\eqref{eq:chippp} as the tensor interaction strength ($ \sim 1/\Delta^2 $) is relatively small compared to the vector interaction strength ($ \sim 1/\Delta $)~\cite{Deutsch2010a}. 
 Knowing the form of the Faraday interaction coupling strength $ \chi_{33} $, we can optimize the measurement geometry so that the cooperativity of the Faraday interaction reaches its maximum value. We will discuss more in Chapter~\ref{chap:Faraday}.
 
@@ -423,8 +423,8 @@ Above, we have assumed there is a pairwise exchange symmetry among atoms so that
 
 % Rewrite the Hamiltonian in the Stokes and collective spin representation. 
 \section{Spin squeezing induced by QND measurement}
-To explain how a quantum measurement can generate a spin squeezed state, we consider the polarization spectroscopy measurement setup that the measurement of the light's polarization state is used to infer the state of atoms (spins). We take the example of a birefringence-rotation--based QND measurement and spin squeezing protocol to map the collective operators to the quatratures of a phase space plane under the \emph{Holstein-Primakoff approximation}\index{Holstein-Primakoff approximation}. 
-A similar analog has been done for a Faraday-rotation--based spin squeezing protocol in Refs.~\cite{Norris2014,Baragiola2014Open}. 
+To explain how a quantum measurement can generate a spin squeezed state, we consider the polarization spectroscopy measurement setup that the measurement of the light's polarization state is used to infer the state of atoms (spins). We take the example of a birefringence-rotation--based QND measurement\index{birefringence effect} and spin squeezing protocol to map the collective operators to the quatratures of a phase space plane under the \emph{Holstein-Primakoff approximation}\index{Holstein-Primakoff approximation}. 
+A similar analog has been done for a Faraday-rotation--based spin squeezing protocol\index{Faraday effect} in Refs.~\cite{Norris2014,Baragiola2014Open}. 
 
 The measurement setting is the following. 
 $ N_A $ atoms are trapped on the $ x $ axis of a waveguide on a two-side chain of optical lattices. All atoms are prepared to be the $ \ket{\uparrow_x}=(\ket{\uparrow}+\ket{\downarrow})/\sqrt{2} $ state in the clock space. The probe light is initially polarized along the diagonal direction of the $ xy $ plane and is adiabatically connected to the $ D $ mode of the waveguide. As we will discuss in Chapter~\ref{chap:birefringence}, the guided modes will experience a birefringence rotation on the \Poincare sphere under some magic frequency~\cite{Qi2016}. 
@@ -448,7 +448,7 @@ The interaction Hamiltonian can been derived in Eq.~\eqref{eq:Heffupdown}.
 %\end{align}
 %The minimum uncertainty for $ \ket{J,M=\pm J} $ gives $ \Delta J_\perp=\Delta J_x=\Delta J_y = \sqrt{\frac{J}{2}} $ while $ \expect{J_\parallel}=\expect{J_z^2}=M^2=J^2 $. 
 
-This birefringence measurement protocol uses an input laser with the polarization state $ \vec{D}=\left( \vec{H}+\vec{V}\right)/\sqrt{2} $, which is pointing along the $ S_2 $ direction on the \Poincare sphere. For a large number of photon flux incidence, we can set 
+This birefringence\index{birefringence effect} measurement protocol uses an input laser with the polarization state $ \vec{D}=\left( \vec{H}+\vec{V}\right)/\sqrt{2} $, which is pointing along the $ S_2 $ direction on the \Poincare sphere. For a large number of photon flux incidence, we can set 
 \begin{subequations}\label{eqs:cohaHV}
 \begin{align}
 \hat{a}_H &\rightarrow i\sqrt{\frac{\dot{N}_L}{2}} + \hat{a}_H\\
@@ -504,11 +504,11 @@ H_{\rm eff} = \hbar \Big\{ & \big( \chi_{H,\uparrow} + \chi_{H,\downarrow} + \ch
 + & \left[ \big( \chi_{H,\uparrow} - \chi_{H,\downarrow}\big) + \big(\chi_{V,\uparrow} - \chi_{V,\downarrow} \big) \right] \hat{J}_z \hat{S}_0 \nonumber \\
 + & \left[ \big( \chi_{H,\uparrow} - \chi_{H,\downarrow}\big) - \big(\chi_{V,\uparrow} - \chi_{V,\downarrow} \big) \right]  \hat{J}_z \hat{S}_1\Big\}
 \end{align}
-The first term is an overall scalar shift and thus does not contribute to the relative dynamics.  The second term is a constant birefringence and can be cancelled with a compensating waveplate as long as the atom number remains constant. 
+The first term is an overall scalar shift and thus does not contribute to the relative dynamics.  The second term is a constant birefringence\index{birefringence effect} and can be canceled with a compensating waveplate as long as the atom number remains constant. 
 %which is usually the case when the trapping time is fairly large compared to the measurement time. Typically, if we choose to have the atoms on the bisection line of the $ x $- and $ y $-axes, we would have the coupling strengthen canceled. It will also remove the forth term in the equation above. The first two terms can be also be canceled when we have the detuning approximately equally biased for the $ f=3 $ and $ f=4 $ ground states. 
 %For example, we  can choose $ \Delta_3=-4.6 $ GHz and $ \Delta_4=4.6 $ GHz to the $ 6P_{1/2} $ excited state sublevels to satisfy this condition, where the hyperfine splitting of the excited state can be ignored ($ ~500 $ MHz) compared to the detuning. However, we would like to leave the choice of detuning to control the third and fourth terms as will be discussed consequently. 
 
-The final term describes the QND Faraday interaction we wish to isolate (similar to the Faraday interaction since we choose to use the $ x $ axis as the quantization axis), but this requires dealing with the third term that describes the effect of the scalar light shift on the rotation of the pseudo-spin, which injects photon fluctuation noise to the measurement signal.  Cancelling the third term amounts to enforcing the condition that
+The final term describes the QND Faraday interaction\index{Faraday effect} we wish to isolate (similar to the Faraday interaction since we choose to use the $ x $ axis as the quantization axis), but this requires dealing with the third term that describes the effect of the scalar light shift on the rotation of the pseudo-spin, which injects photon fluctuation noise to the measurement signal.  Cancelling the third term amounts to enforcing the condition that
 \begin{align}\label{eq:magiccondition}
 	\chi_{H,\uparrow} - \chi_{H,\downarrow} = \chi_{V,\downarrow} - \chi_{V,\uparrow} ,
 \end{align}
