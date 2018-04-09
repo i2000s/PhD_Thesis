@@ -263,7 +263,7 @@ where $v_g$ is the group velocity, and $ \beta_0 $ is the propagation constant o
 where $\hat{\tensor{\boldsymbol{\alpha}}}{}^{(n)}$ is the atomic polarizability operator of the $n$th atom, and 
 \begin{equation}
 		\tensor{\mathbf{G}}^{(+)}_g(\br,\br'_n; \omega_0) =  2\pi i \frac{\omega_0}{v_g } \sum_{p} \mathbf{u}_{p} (\br_\perp)\mathbf{u}^*_{p} 
-(\br_{\perp}^\prime) e^{i \beta_0(z-z'_n)}  \label{Eq::GreensGuided}
+(\br_{\perp}^\prime) e^{i \beta_0(z-z'_n)}  \label{Eq::GreensGuided_chap6}
 \end{equation}
 is the dyadic Green's function for a dipole to radiate into the forward-propagating guided mode.  In principle, the Green's function for an $N_A$-atom chain decomposes into collective sub- and superradiant normal modes~\cite{Asenjo-Garcia2017Atom,Asenjo-Garcia2017Exponential}, but in the far-detuning limit, these are all equally excited.  The result is equivalent to the symmetric mode of independently radiating dipoles.  \FloatBarrier The input-output relation for the mode operators then reads~\cite{Qi2016}
 \begin{equation}
@@ -705,7 +705,7 @@ In general, to include the $ n $-body correlations, $ \sum_i^n\left(\!\begin{arr
 %===================APPENDIX: Relationships between collective spin operators and microscopic operators =====================%
 \chapter{Relationships between some collective operators and the first- and second-moments in the symmetric subspace} \label{Appendix::collectivespinoperators}
 
-\qxd{Possible Todo: Relations between collective angular momentum operators and microscopic $\sigma_{ba}$ operators in the qubit and qutrit symmetric subspace. See handwritten notes: QND measurement and spin squeezing using Faraday interactions (part IV).}
+%\qxd{Possible Todo: Relations between collective angular momentum operators and microscopic $\sigma_{ba}$ operators in the qubit and qutrit symmetric subspace. See handwritten notes: QND measurement and spin squeezing using Faraday interactions (part IV).}
 
 We use the following relations to calculate the collective operator dynamics once the equations of microscopic operators, $ \hat{\sigma}_{ba}$ and $ \expect{\Delta\sigma_i\Delta\sigma_j} $, are solved.
 \begin{subequations}
@@ -739,7 +739,7 @@ d\expect{\Delta f_z^2}|_{QN\!D} &= -\kappa \left[\expect{\Delta f_z^2}+(N_A-1)\e
 \end{align} 
 It seems the spin squeezing dynamics is purely determined by the $ \expect{\Delta f_z^2} $ and $ \expect{\Delta f_z^{(1)}\Delta f_z^{(2)} }$, but in deriving the equations for the full set of operator basis elements considering both the optical pumping and QND measurement contributions, all operators become coupled to each other, which doesn't have a nice general form to be easily coded in a computer program. Also, since it involves more approximations than using the $ \hat{\sigma}_{ba} $ representation, we only use this approach to verify our results, but not to generate the final simulation results presented in this piece of dissertation work.
 
-%</collectiveandmicroscopicoprators>
+%</collectiveandmicroscopicoperators>
 
 %\end{appendix}
 
