@@ -360,7 +360,7 @@ This is known as the \emph{shot noise limit}\index{noise!short noise limit}.
 %\hat{\rho} &= \int P(\theta,\phi) \ketbra{\theta,\phi} \mathrm{d}\Omega ,
 %\end{align}
 %where $ \mathrm{d}\Omega=\sin\theta \mathrm{d}\theta \mathrm{d}\phi $ is the solid angle differential element, and $ P(\theta,\phi) $ is the probability distribution function. In our case, we only consider SCS and spin squeezed states, both of which are Gaussian. The typical representations like P-representation, Q-representation and Wigner-representation of those states are always positive and Gaussian. One can pick anyone of the representations to visualize the probability distribution as a function of $ (\theta,\phi) $ on a generalized Block sphere for the $ 2J+1 $ dimensional collective spin state space. In contrast to the usual Bloch sphere mapping the spin-$ \frac{1}{2} $ or qubit states, the position of the collective spin state on the the generalized Bloch sphere only indicates the mean spin direction and its fluctuation.  
-In the SCS case, the isotropic angular uncertainty on the generalized Bloch sphere 
+In the SCS case, the isotropic angular uncertainty on the generalized Bloch sphere\index{Bloch sphere} 
 %$ \Delta \phi=\Delta \theta $, and 
 can be defined by the ratio of the uncertainty of the perpendicular spin direction $ \Delta J_\perp $ to the mean spin length $ J $:
 \begin{align}\label{eq:deltaphiJ}
@@ -375,11 +375,11 @@ The collective spin state becomes a spin squeezed state (SSS) when the uncertain
 \Delta J_{\perp_1} \Delta J_{\perp_2} &= \frac{J}{2}\\
 \Delta J_{\perp_1} = \Delta J_{\perp,min} &< \sqrt{J/2},
 \end{align}
-where $ \Delta J_{\perp_1} = \Delta J_{\perp,min} $ and $ \Delta J_{\perp_2} = \Delta J_{\perp,max} $ are the two principle axis of the uncertainty shadow on the generalized Bloch sphere. 
+where $ \Delta J_{\perp_1} = \Delta J_{\perp,min} $ and $ \Delta J_{\perp_2} = \Delta J_{\perp,max} $ are the two principle axis of the uncertainty shadow on the generalized Bloch sphere\index{Bloch sphere}. 
 %On the generalized Bloch sphere, a SCS can be visualized as a blur of circle area on the surface of the sphere. 
 %In contrast, a Dicke state is a perfect circle surrounding the sphere with a single project eigenvalue on one axis of the Bloch sphere, which indicates the uncertainty on one direction is zero. 
 %A spin squeezed state is a squeezed round or similar to an elliptical blur area on the sphere. It looks like an interim state between a coherent state and a Dicke state.
-We plot a SCS, a SSS and a Dicke state on the Bloch sphere in Fig.~\ref{fig:collectivestatesonblochsphere}.
+We plot a SCS\index{state!spin coherent state}, a SSS\index{state!spin squeezed state} and a Dicke state\index{state!Dicke state} on the Bloch sphere\index{Bloch sphere} in Fig.~\ref{fig:collectivestatesonblochsphere}.
 
 A SSS can be created by the nonlinear effect of measurement backaction. We can model this by a weak measurement of one spin component, defined by the Kraus operators~\cite{Deutsch2010a}
 \begin{align}\label{KrausOpSq}
@@ -405,7 +405,7 @@ where $ \Delta J_{out}^2 =\frac{\Delta J_{in}^2}{1+\xi} $, $ \bar{M}(m)=\frac{m}
 
 For a general spin $ F $ system, a squeezed spin state\index{squeezed spin state} may satisfy $ \Delta F_1\Delta F_2=\frac{1}{2} $ and $ \Delta F_1<\Delta F_2 $, where $ \hat{F}_1 $ and $ \hat{F}_2 $ are two collective spin operators. 
 Similar to Eq.~\eqref{eq:deltaphiJ}, the isotropic angular uncertainty of the spin-$ F $ system is $ \Delta \phi=  {\Delta F_\perp }/{\expect{\hat{F}_\parallel}}$,
-where $ \hat{F}_\parallel $ and $ \hat{F}_\perp $ are the collective atomic angular momentum operators parallel with and perpendicular to the total atomic angular momentum vector on the generalized Bloch sphere, respectively.
+where $ \hat{F}_\parallel $ and $ \hat{F}_\perp $ are the collective atomic angular momentum operators parallel with and perpendicular to the total atomic angular momentum vector on the generalized Bloch sphere\index{Bloch sphere}, respectively.
 We call the operator that yields the smaller quadrature as the atomic angular momentum operator $ \hat{F}_\perp $ and 
 recall the spin squeezing parameter defined by Wineland {\emph{et al.}}~\cite{Wineland1992,Baragiola2014},
 \begin{align}\label{eq:zeta2_general}
@@ -423,9 +423,12 @@ Above, we have assumed there is a pairwise exchange symmetry among atoms so that
 
 % Rewrite the Hamiltonian in the Stokes and collective spin representation. 
 \section{Spin squeezing induced by QND measurement}
-To explain how a quantum measurement can generate a spin squeezed state, we consider the polarization spectroscopy measurement setup that the measurement of the light's polarization state is used to infer the state of atoms (spins). We take the example of a birefringence-rotation--based quantum measurement and spin squeezing protocol as an example to map the collective operators to the quatratures of a phase space plane under the \emph{Holstein-Primakoff approximation}\index{Holstein-Primakoff approximation}. A similar analog has been done for a common Faraday-rotation--based spin squeezing protocol~\cite{Norris2014,Baragiola2014Open}. 
+To explain how a quantum measurement can generate a spin squeezed state, we consider the polarization spectroscopy measurement setup that the measurement of the light's polarization state is used to infer the state of atoms (spins). We take the example of a birefringence-rotation--based QND measurement and spin squeezing protocol to map the collective operators to the quatratures of a phase space plane under the \emph{Holstein-Primakoff approximation}\index{Holstein-Primakoff approximation}. 
+A similar analog has been done for a Faraday-rotation--based spin squeezing protocol in Refs.~\cite{Norris2014,Baragiola2014Open}. 
 
-The measurement geometry is the following. $ N_A $ atoms are trapped on the $ x $ axis of a waveguide on a two-side chain of optical lattices. All atoms are prepared to be the $ \ket{\uparrow_x}=(\ket{\uparrow}+\ket{\downarrow})/\sqrt{2} $ state in the clock space. The probe light is initially polarized along the diagonal direction of the $ xy $ plane and is adiabatically connected to the $ D $ mode of the waveguide. As we will discuss in Chapter~\ref{chap:birefringence}, the guided modes will experience a birefringence rotation on the \Poincare sphere under some magic frequency~\cite{Qi2016}. We consider an $ S_3 $ measurement of the output light to determine the $ J_z $ project of the collective spin state. 
+The measurement setting is the following. 
+$ N_A $ atoms are trapped on the $ x $ axis of a waveguide on a two-side chain of optical lattices. All atoms are prepared to be the $ \ket{\uparrow_x}=(\ket{\uparrow}+\ket{\downarrow})/\sqrt{2} $ state in the clock space. The probe light is initially polarized along the diagonal direction of the $ xy $ plane and is adiabatically connected to the $ D $ mode of the waveguide. As we will discuss in Chapter~\ref{chap:birefringence}, the guided modes will experience a birefringence rotation on the \Poincare sphere under some magic frequency~\cite{Qi2016}. 
+We consider an $ S_3 $ measurement of the output light to determine the $ J_z $ project of the collective spin state. 
 The interaction Hamiltonian can been derived in Eq.~\eqref{eq:Heffupdown}.
 
 %We define the pseudo-spin operator in the corresponding clock space for one atom as $ \mathbf{j}=\frac{\boldsymbol{\sigma}}{2} $. We will use  the following spin components, which can be expressed as
@@ -464,7 +467,7 @@ where each operator has a classical part associated with the photon flux number,
 \hat{S}_2 &\approx \frac{\dot{N}_L}{2},\\
 \hat{S}_0 &\approx \frac{\dot{N}_L}{2},
 \end{align}
-where we have defined $ \hat{a}_{\bar{D}} = \frac{\hat{a}_H -\hat{a}_V}{\sqrt{2}} $ as the photon annihilation operator of the anti-diagonal linearly polarized light modes, and $ \hat{P}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}-\hat{a}_{\bar{D}\dg}}{i\sqrt{2}} $ and $ \hat{X}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}+\hat{a}_{\bar{D}\dg}}{\sqrt{2}} $ as the two quadratures in the phase space of the complex amplitude represented by $ \hat{a}_{\bar{D}} $. The approximation we made above is known as \emph{Holstein-Primakoff approximation}\index{approximation!Holstein-Primakoff approximation}. Using this approximation, the uncertainty area on the \Poincare sphere can be mapped to a flat phase plane. 
+where we have defined $ \hat{a}_{\bar{D}} = \frac{\hat{a}_H -\hat{a}_V}{\sqrt{2}} $ as the photon annihilation operator of the anti-diagonal linearly polarized light modes, and $ \hat{P}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}-\hat{a}_{\bar{D}\dg}}{i\sqrt{2}} $ and $ \hat{X}_{\bar{D}}=\frac{\hat{a}_{\bar{D}}+\hat{a}_{\bar{D}\dg}}{\sqrt{2}} $ as the two quadratures in the phase space of the complex amplitude represented by $ \hat{a}_{\bar{D}} $. The approximation we made above is known as \emph{Holstein-Primakoff approximation}\index{Holstein-Primakoff approximation}. Using this approximation, the uncertainty area on the \Poincare sphere can be mapped to a flat phase plane. 
 
 
 Notice that, the $ \hat{S}_1 $ and $ \hat{S}_3 $ still satisfy the usual $ SU(2) $ Lie algebra relationship that 
@@ -875,7 +878,7 @@ with $\hat{\chi}_{pp'} $ defined in Eq.\eqref{eq:chippp}.
 %\qxd{Double check the cited equation after the main text is done. Maybe I can define $ \hat{\chi}_{pp'}$ in this appendix.}
 
 \section{Extension to arbitrary elliptical polarization basis}
-Using the isomorphic properties of \Poincare sphere and Block sphere, one can show that the linear polarization basis rotation transformation defined in the $ \{\ket{H},\ket{V} \} $ basis (see Eq.~\eqref{eq:nnbarRHV}) can be mapped to a the Pauli rotation around the $ z $ axis in the $ x $ basis on the Bloch sphere. To further extend the rotation transformation from the $ \{\ket{H},\ket{V} \} $ basis to arbitrary orthogonal elliptical polarization basis, one may need to make the following steps in order to use the known transformation relationships in the Block sphere:
+Using the isomorphic properties of \Poincare sphere and Block sphere, one can show that the linear polarization basis rotation transformation defined in the $ \{\ket{H},\ket{V} \} $ basis (see Eq.~\eqref{eq:nnbarRHV}) can be mapped to a the Pauli rotation around the $ z $ axis in the $ x $ basis on the Bloch sphere\index{Bloch sphere}. To further extend the rotation transformation from the $ \{\ket{H},\ket{V} \} $ basis to arbitrary orthogonal elliptical polarization basis, one may need to make the following steps in order to use the known transformation relationships in the Block sphere:
 
 1. Define the transformation Pauli matrices in the $ x $ basis, that is to define 
 \begin{align}
@@ -893,7 +896,7 @@ i & 0
 \end{array}\!\!\right).
 \end{align}
 
-2. Map the south pole of the Bloch sphere to the $ \ket{R} $ state and the north pole to the $ \ket{L'} $ state, where the left circular polarization state $ \ket{L}=-i\ket{L'} $. As a result, the elliptical polarization state in optics will have a phase difference as we map them to the new Bloch sphere.
+2. Map the south pole of the Bloch sphere\index{Bloch sphere} to the $ \ket{R} $ state and the north pole to the $ \ket{L'} $ state, where the left circular polarization state $ \ket{L}=-i\ket{L'} $. As a result, the elliptical polarization state in optics will have a phase difference as we map them to the new Bloch sphere.
 
 On the new ``Bloch sphere", an arbitrary orthogonal polarization basis $ \{ \ket{p},\ket{\bar{p}} \} $ can be transformed from the $ \{\ket{H},\ket{V} \} $ basis by an rotation $ \Theta $ around the unit $ \mathbf{n} $ vector with a coordinate corresponding to a point on the ``Bloch sphere". That is 
 \begin{align}
