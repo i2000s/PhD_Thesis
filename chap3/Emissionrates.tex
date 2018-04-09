@@ -215,19 +215,23 @@ The $\hat{f}_i$ operators are dimensionless hyperfine spin operators satisfying
 		[\hat{f}_i, \hat{f}_j] = i \varepsilon_{ijk} \hat{f}_k,
 	\end{align}
 with total angular moment $f$ for each ground hyperfine manifold.  The tensor rank-$ K $ coefficients, $ C_{j'ff'}^{(K)} $, are~\cite{Deutsch2010a}
+\begin{subequations}\label{eq:Cjpffp}
 		\begin{align}
 			C_{j' f f'}^{(0)} &= (-1)^{3f - f' + 1} \frac{1}{ \sqrt{3} } \frac{2f'+1}{\sqrt{2f+1}}  \left\{ \begin{array}{ccc} f& 1 & f' \\ 1 & f & 0 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
 			C_{j' f f'}^{(1)} &= (-1)^{3f - f' } \sqrt{\frac{3}{ 2} } \frac{2f'+1}{ \sqrt{f(f+1)(2f+1)} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 1 \end{array} \right\} |o^{j' f'}_{j f}|^2, \\
-			C_{j' f f'}^{(2)} &= (-1)^{3f - f' } \frac{\sqrt{30} (2f'+1)}{\sqrt{ f(f+1)(2f+1)(2f-1)(2f+3))} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 2 \end{array} \right\} |o^{j' f'}_{j f}|^2 .
+			C_{j' f f'}^{(2)} &=  \frac{(-1)^{3f - f' } \sqrt{30} (2f'+1)}{\sqrt{ f(f+1)(2f+1)(2f-1)(2f+3))} }  \left\{ \begin{array}{ccc} f & 1 & f' \\ 1 & f & 2 \end{array} \right\} |o^{j' f'}_{j f}|^2 .
 		\end{align}	
+\end{subequations}
 These coefficients depend on the fine-structure quantum numbers $\{j, j'\}$ through the relative oscillator strengths, $o^{j' f'}_{j f}$, given in \erf{Eq::OscStrength}. In the cases that some ground or excited state levels are fixed, we might remove the $ j' $ or $ f $ occupants in the subscripts of $ C_{j'ff'}^{(K)} $.
 
 If the detuning is very large compared to the excited hyperfine splitting, the detuning becomes independent of $f'$ (essentially $\delta_{f'}/\Delta \rightarrow 0$).  Then, the sums over the tensor coefficients in Eqs.~\eqref{Eq::GenPolarizability} can be calculated explicitly to yield
+\begin{subequations}\label{eq:Cjpf}
 	\begin{align}
 		C_{j' f}^{(0)} &\equiv \sum_{f'} C_{j' f f'}^{(0)} =   \frac{2^{j'-1/2}}{3} \label{Eq::ScalarCoefSum}, \\ 
 		C_{j' f}^{(1)} &\equiv  \sum_{f'} C_{j' f f'}^{(1)} = (-1)^{j'-1/2} \frac{g_f}{3}, \\
 		C_{j' f}^{(2)} &\equiv  \sum_{f'} C_{j' f f'}^{(2)} = 0. \label{Eq::Rank2Sum}
 	\end{align}
+\end{subequations}
 The Land\'{e} g-factor\index{Land\'{e} g-factor}, $ g_f $, depends on the ground state manifold:  $g_f = 1/f_{\uparrow}$ for $f_{\uparrow} = i + 1/2$ and $g_f = -1/f_{\uparrow}$ for $f_{\downarrow} = i - 1/2$. %in which the $ \uparrow $ and $ \downarrow $ levels should be equally divided in the $ f $ hyperfine manifold for alkali atoms, in general.  
 In this far-detuned limit, we see that the $C_{j' f f'}^{(2)}$ coefficients sum to zero and the rank-2 terms in \erf{Eq::GenPolarizability} vanish,
 	\begin{equation} \label{Eq::GenPolarizability}
