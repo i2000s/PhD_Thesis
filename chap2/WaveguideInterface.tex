@@ -673,7 +673,7 @@ As a concrete example, we can consider the case that the atom is placed at $ z'=
 \begin{align}
 \mathbf{E}_0(\br) &= E_0n_{e\!f\!f} \mathbf{u}_{p=+,b=+} (\br) = E_0n_{e\!f\!f} \mathbf{u}_{++} (r\!_\perp)e^{i\phi+i\beta_0 z}. 
 \end{align}
-We have defined an effective index of refraction of the waveguide medium based on the normalization condition of the guided modes, Eq.~\eqref{eq:normalu},
+We have defined an effective index of refraction of the waveguide medium based on the normalization condition of the guided modes, Eq.~\eqref{eq:eigenmodeorthog},
 \begin{align}
 n_{e\!f\!f} = \sqrt{\frac{\int\! \mathrm{d}^2\br\!_\perp n^2 (\br_\perp) {\mathbf{u}_{p,b}}^*(\br_\perp)\cdot \mathbf{u}_{p,b}(\br_\perp) }{\int\! \mathrm{d}^2\br\!_\perp {\mathbf{u}_{p,b}}^*(\br_\perp)\cdot \mathbf{u}_{p,b}(\br_\perp)}}= \frac{1}{\sqrt{\int\! \mathrm{d}^2\br\!_\perp {\mathbf{u}_{p,b}}^*(\br_\perp)\cdot \mathbf{u}_{p,b}(\br_\perp)}}
 \end{align}
@@ -828,7 +828,7 @@ This generates a strong birefringence effect even with a scalar polarizability o
 
 \appendix
 % ########################### Apendix ##########################################
-%</polarizationstokesvectors>
+%<*polarizationstokesvectors>
 \chapter{Polarization states of light and the Stokes vector representation}\label{chap:polarizationstokesvectors}
 \section{Polarization states of light}
 
@@ -921,7 +921,7 @@ S_3 &= E_+^2-E_-^2. %=E_L^2-E_R^2
 \end{subequations}
 Above, we have replaced $ x\rightarrow H $ and $ y\rightarrow V $.
 
-%<*polarizationstokesvectors>
+%</polarizationstokesvectors>
 
 %<*guidedunguidedmodes>
 \chapter{Guided and unguided modes of a waveguide}\label{chap:guidedunguidedmodes}
@@ -1615,7 +1615,7 @@ which leads to
 G_0(\mathbf{k},\mathbf{k}') =\frac{4\pi k_0^2 e^{-i\mathbf{k}\cdot(\br-\br')}}{k^2-k_0^2}.
 \end{align}
 When we transfer the $ k $-space solution to the real 3D $ \br $ space, we obtain the valid scalar Green's function solutions of a point source:
-\begin{align}
+\begin{align}\label{scalarG}
 G_0(\br,\br') =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
 \end{align}
 where the $ \pm $ signs correspond to the outgoing ($+$, due to causality) and incoming ($-$) propagating spherical waves from the point source. The different signs are obtained by choosing different contour integrals in the inverse transformation. We use the positive frequency or the outgoing solution for our radiation problem due to causality. With this scalar Green's function, we can find the vector potential by
@@ -1630,7 +1630,7 @@ In the meantime, if we plug in the Lorentz Gauge transformation relation, Eq.~\r
 \end{align}
 
 Comparing with the wave equation based on Eq.~\ref{eq:Maxwellwithsource2}:
-\begin{align}\label{eq:freespacewaveeq}
+\begin{align}\label{eq:freespacewaveeq_general}
 -\left[\nabla\times\nabla\times +\frac{\omega_0^2}{c^2}\right]\boldsymbol{\mathcal{E}}(\br) =  -4\pi\! \frac{\omega_0^2}{c^2}\! \tensor{\boldsymbol{\chi}}(\br)\! \cdot\! \boldsymbol{\mathcal{E}}(\br)=-i4\pi\frac{\omega_0}{c^2}\mathcal{J},
 \end{align}
 where we have set $ n=1 $ for the vacuum medium from Eq.~\eqref{eq:Maxwellwithsource2}, we define a dyadic Green's function $ \tensor{\mathbf{G}}(\br,\br') $ by 
@@ -1663,8 +1663,10 @@ This is the Green's function of a free dipole in a homogeneous background expres
 \end{align}
 where $ \boldsymbol{\mathcal{E}}_0(\br) $ is an input field (if any) propagating in the free background medium. Eq.~(\ref{eq:EGFTinteq}) is the quadrature with a dipole point-source that solves for the electric field $ \boldsymbol{\mathcal{E}} $. Corresponding to the free-propagating field $ \boldsymbol{\mathcal{E}}_0 $, we define the scattering term due to the presence of the source by
 \begin{align}
-\boldsymbol{\mathcal{E}}_s(\br) &= \int_V \GFT(\br,\br') \tensor{\boldsymbol{\chi}}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}(\br') \mathrm{d}^3 r'. \label{eq:Escattint}
+\boldsymbol{\mathcal{E}}_s(\br) &= \int_V \GFT(\br,\br') \tensor{\boldsymbol{\chi}}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}(\br') \mathrm{d}^3 r' \label{eq:Escattint}\\
+&=  \int_V\GFT(\br,\br')\cdot \mathbf{d}(\br') \mathrm{d}^3r',\label{EGd}
 \end{align}
+where we have defined a dipole source $\mathbf{d}(\br')= \tensor{\boldsymbol{\chi}}(\br')\! \cdot\! \boldsymbol{\mathcal{E}}(\br') $.
 
 In general, scattering problems cannot be solved analytically, due to the presence of the complicated scattered field and medium geometries. By the use of Green's function method, we have converted our differential equation for the scattered field into volume integral equations. One can use Eq.~(\ref{eq:EGFTinteq}) in order to solve a general scattering problem with arbitrary boundary condition and source distributions. 
 %This can be done by placing the sources in a well-characterized volumes of media. 
@@ -1884,7 +1886,7 @@ Note that we have dropped the subscript $ 0 $ for $ k_0 $, $ \beta_0 $ and $ \om
 \label{fig:dipolemomentumtransmission}
 \end{figure}
 
-Using the expansion of the free-space scalar Green's function (Eq.~\eqref{scalarG}) for the space $ \left(r\!_\perp <r_\perp ^{\prime}\right) $ that 
+Using the expansion of the free-space scalar Green's function [Eq.~\eqref{scalarG}] for the space $ \left(r\!_\perp <r_\perp ^{\prime}\right) $ that 
 \begin{align}
 \frac{G_0(\br,\br')}{k^2} &={\frac{{e^{ik{\left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}{{{%
 \left| {{\rm {\bf r}}-{\rm {\bf {r}^{\prime }}}}\right| }}}}\nonumber\\
@@ -2120,7 +2122,7 @@ Since both $ h $ and $ p $ are functions of $ \beta $, the equation above is com
 
 Numerically, the $ \beta_0 $ solved from the radiation problem is indistinguishable with the one solved from the nanofiber's eigenmode equation in the regime we are interested in.
 
-Next, we solve for the guided modes contributions to the longitudinal components of the fields by applying the residual theorem to Eqs.~\cite{ET0RRes} and~\cite{BT0RRes} and differentiating the denominator that generates poles evaluated at $ \beta_{1,m=\pm 1} $. %\textcolor{red}{(Q: are those poles all of order 1?)} 
+Next, we solve for the guided modes contributions to the longitudinal components of the fields by applying the residual theorem to Eqs.~\eqref{ET0RRes} and~\eqref{BT0RRes} and differentiating the denominator that generates poles evaluated at $ \beta_{1,m=\pm 1} $. %\textcolor{red}{(Q: are those poles all of order 1?)} 
 All transverse components of the fields can be obtained from the longitudinal components using the relations of Eq.~\ref{EHzgauss}. 
 %Sample numerical calculations has been performed, and results are documented in the NanofiberProjectPlots.pdf (Dropbox folder, \url{Nanofiber/Code/Matlab/Plots}). The primary plots show that there are phase shifts for the transmitted and reflected lights so that the mode profile is not symmetric to the $ x $ axis where the atom lies on; the reflected light field has a backaction on the atom tending to move it off the trapping point; the $ m=\pm 1 $ modes are not balanced... 
 Our results were checked by reproducing the decay rates provided in Ref.~\cite{Klimov2004}. 

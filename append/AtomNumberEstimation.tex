@@ -13,10 +13,44 @@ If we want to estimate the state of the collective
 spins, we need to estimate the number of atoms sitting in the $ \ket{\uparrow} $ and $ \ket{\downarrow} 
 $ states employing a dispersive QND measurement technique which has been well developed for the 
 free-space atomic ensembles. For our system, the forth term of the Hamiltonian in 
-Equ.~\eqref{eq:JScoupling} empowers us the possibility of measuring the atomic states without 
+Eq.~\eqref{eq:JScoupling} empowers us the possibility of measuring the atomic states without 
 destroying them with an $ \hat{S}_3=\frac{1}{2i}(\hat{a}_H^\dagger\hat{a}_V - 
 \hat{a}_V^\dagger\hat{a}_H) $ homodyne measurement. Yet, the third term of the Hamiltonian becomes 
-a source of noise term that brings in photon number fluctuation noise into the measurement result. We want to find a magic wavelength of the probe light which allows us to totally remove the third term. For simplicity, we call the third line of the Hamiltonian as $ \hat{H}^3_{\rm eff} $ and its coefficient before the $ \hat{J}_3\hat{S}_0 $ or the corresponding coupling strength as $ \chi_3 $; similarly, we label with the number $ 4 $ for the fourth term of the Hamiltonian and its strength of coupling. We also denote the coupling strength in the fourth term of the Hamiltonian as $ \chi_{\rm eff} $ for the purpose of designing the measurement protocol.
+a source of noise term that injects photon number fluctuation noise into the measurement result. 
+We want to find a magic wavelength of the probe light that allows us to totally remove the third term. 
+For simplicity, we call the third line of the Hamiltonian as $ \hat{H}^3_{\rm eff} $ and its coefficient before the $ \hat{J}_3\hat{S}_0 $ or the corresponding coupling strength as $ \chi_3 $. 
+Similarly, we label with the number $ 4 $ for the fourth term of the Hamiltonian and its strength of coupling. 
+We also denote the coupling strength in the fourth term of the Hamiltonian as $ \chi_{\rm eff} $ for the purpose of designing the measurement protocol.
+
+As one toy model to facilitate discussions in this appendix, we suppose the probe laser is in a detuning regime below the lower frequency side of the $ D_1 $ line transition lines so that the detuning from the ground $ 6S_{1/2} $ $ \ket{f=4} $ hyperfine level to the excited $ 6P_{1/2} $ $ \ket{f'=3} $ hyperfine level is far greater than the hyperfine structure splitting of the excited states. 
+We may be able to ignore the tensor component and the imaginary part of the atomic polarizability, as well as the higher level of excited states above the $ 6P_{1/2} $ energy levels. 
+Baring that the vector component of the polarizability for the clock state vanishes, we only have the scalar coefficient $C_{j' f}^{(0)} =1/3  $ [see Eq.~\eqref{Eq::ScalarCoefSum}] non-zero.~\footnote{Similar case for the $ D_2 $ line, which gives $ C_{j' f}^{(0)} =2/3 $.} Therefore, the atomic polarizability tensors defined in Eq.~\eqref{eq:alphaupdown} can be given by
+\begin{align}
+\tensor{\boldsymbol{\alpha}}_{\uparrow} &\approx\sum_{f'=3,4}\frac{\alpha_0(\Delta_{4,f'})}{3}\unittensor \\
+\tensor{\boldsymbol{\alpha}}_{\downarrow} &\approx\sum_{f'=3,4}\frac{\alpha_0(\Delta_{3,f'})}{3}\unittensor,
+\end{align}
+with $ \alpha_0(\Delta_{f,f'})=-\frac{3\lambda_{j'j}^3}{32\pi^3} \frac{\Gamma}{\Delta_{f,f'}} $. In our case, we can make $ \lambda_{j'j}\approx\lambda= \frac{2\pi c}{\omega_0}$. Therefore, we have
+\begin{align}
+\frac{2\pi\omega_0}{v_g}\alpha_0(\Delta_{f,f'})=-\frac{n_g\sigma_0}{4} \frac{\Gamma}{\Delta_{f,f'}}
+\end{align}
+with the 3D atomic on-resonance cross section $ \sigma_0= \frac{3\lambda^2}{2\pi}  $. 
+
+The coupling strengths defined in Eq.~\eqref{eq:chiHVUD_2} for $ D_1 $ line probing can then be written as
+\begin{align}
+\chi_{H,\uparrow} &=   \frac{1}{2} \sum_{f'} \chi_{H0}(f',4) C_{j',f',4}^{(0)}  =  \frac{1}{2} \sum_{f'} \frac{\chi_{H0}(f',4)}{3} \label{chiHUp}  \\
+\chi_{H,\downarrow} &=   \frac{1}{2} \sum_{f'} \chi_{H0}(f',3)  C_{j',f',3}^{(0)} = \frac{1}{2} \sum_{f'} \frac{\chi_{H0}(f',3) }{3} \label{chiHDown}\\
+\chi_{V,\uparrow} &=   \frac{1}{2} \sum_{f'} \chi_{V0}(f',4)  C_{j',f',4}^{(0)}  =   \frac{1}{2} \sum_{f'} \frac{\chi_{V0}(f',4)}{3}\label{chiVUp}  \\
+\chi_{V,\downarrow} &=   \frac{1}{2} \sum_{f'} \chi_{V0}(f',3)  C_{j',f',3}^{(0)}=   \frac{1}{2} \sum_{f'} \frac{\chi_{V0}(f',3) }{3} \label{chiVDown}
+\end{align}
+and 
+\begin{align}
+\chi_{H0}(f',f) &= \left( \frac{ \sigma_0}{A_{ef\!f}^H} \right) \left( \frac{\Gamma}{2 \Delta_{f,f'}} \right)\\
+\chi_{V0}(f',f) &= \left( \frac{ \sigma_0}{A_{ef\!f}^V} \right) \left( \frac{\Gamma}{2 \Delta_{f,f'}} \right)\\
+A_{ef\!f}^H &= \frac{1}{n_g|\mathbf{u}_{H}(r^\prime\!\!_\perp,\phi')|^2}\\
+A_{ef\!f}^V &= \frac{1}{n_g | \mathbf{u}_{V}(r^\prime\!\!_\perp,\phi')|^2}.\label{eq:AeffV}
+\end{align}
+Considering the relations between $ \Gamma_{1D} $ and $ \Gamma_0 $ (the same as the $ \Gamma $ above, for now) from Eq.~\eqref{Gamma1DGammavac_appendix}, Eqs.~\eqref{chiHUp} and~\eqref{chiHDown} are equivalent to Eq.~\eqref{phaseshiftGamma1D} derived from the Green function method with scalar polarizability. The scalar polarizability factor of $ C_{j',f',f}^{(0)}=\frac{1}{3} $ in Eq.~\eqref{chiHUp} through Eq.~\eqref{chiVDown} indicates the possibility of transitions back into the clock states. This factor can be absorbed into the atomic scattering cross section by treating the scattering cross section as an average over all possible quantum transitions. 
+Again, do not use the equations above for normal cases, since this is just a toy model to explore possible contradictories.
 
 
 \section{Magic wavelength does not exist with merely scalar polarizability using a simple strategy}
@@ -27,7 +61,7 @@ restricted the atomic ground state within the $ 6S_{1/2} $ $ F=3 $ ($ \ket{\down
 \ket{\uparrow} $) clock state space\index{state!clock state} which rules out the vector contribution of 
 the atomic polarizability. Therefore, the atomic polarizability only has a scalar polarizability effect for this problem. 
 
-From the definition of the coupling strength of various $ \chi $'s (Equs.~\eqref{chiHUp} through~\eqref{eq:AeffV}), one can show that, for $ D_1 $ line, 
+From the definition of the coupling strength of various $ \chi $'s [from Eq.~\eqref{chiHUp} to Eq.~\eqref{eq:AeffV}], one can show that, for $ D_1 $ line, 
 \begin{align}
 \chi_H \equiv \chi_{H,\uparrow} - \chi_{H,\downarrow} &= \frac{1}{3}\sum_{f'} \left(\frac{\sigma_0}{A_{\rm eff}^H} \right) \left(\frac{\Gamma}{4\Delta_{4f'}} - \frac{\Gamma}{4\Delta_{3f'}} \right) \nonumber\\
 &= \frac{\Gamma_H}{3} \left(\frac{1}{\Delta_{43}}+\frac{1}{\Delta_{44}} - \frac{1}{\Delta_{33}}-\frac{1}{\Delta_{34}} \right) = \frac{\Gamma_H}{3}\Delta_-,\label{eq:chiH}\\
@@ -36,14 +70,14 @@ From the definition of the coupling strength of various $ \chi $'s (Equs.~\eqref
 \end{align}
 where $ \Delta_{ff'} $ is the detuning relative to the $ f\leftrightarrow f' $ transition gap, and $ \Delta_- = \left(\frac{1}{\Delta_{43}}+\frac{1}{\Delta_{44}} - \frac{1}{\Delta_{33}}-\frac{1}{\Delta_{34}} \right) $ is a common factor existing in both $ \chi_H $ and $ \chi_V $ quantities. $ \Gamma_H $ ($ \Gamma_V $) is the decay rate coupled to the forward propagating $ H $ ($ V $) mode of the nanofiber. 
 
-To find the \emph{magic wavelength}\index{magic wavelength}, we need to make the coupling strength factor of the third term of the Hamiltonian in Equ.~\eqref{eq:JScoupling} equal to zero. That is to say,
+To find the \emph{magic wavelength}\index{magic wavelength}, we need to make the coupling strength factor of the third term of the Hamiltonian in Eq.~\eqref{eq:JScoupling} equal to zero. That is to say,
 \begin{align}
 \chi_H+\chi_V=\frac{1}{3}\left(\Gamma_H + \Gamma_V \right)\Delta_- = 0.
 \end{align}
 We can see that $ \frac{1}{3}\left(\Gamma_H + \Gamma_V \right) $ is always positive and does not 
 depending on wavelength. Therefore, we have to let $ \Delta_-=0 $ to find the "\textit{magic 
 wavelength}"\index{magic wavelength}. From the definition of $ \chi_H $ and $ \chi_V $ 
-(Equs.~\eqref{eq:chiH} and~\eqref{eq:chiV}) and the Hamiltonian (Equ.~\eqref{eq:JScoupling}), we can 
+(Eqs.~\eqref{eq:chiH} and~\eqref{eq:chiV}) and the Hamiltonian (Eq.~\eqref{eq:JScoupling}), we can 
 find that $ \chi_H=\chi_V=0 $ and the forth term of the Hamiltonian, which is what we want to keep, also 
 becomes zero. Hence, via identifying a magic wavelength and to remove the photon flux noise in the 
 measurement is invalid for our initial design. Maybe we can say, the \emph{magic wavelength}\index{magic wavelength} does not 
@@ -61,7 +95,7 @@ where $\chi_{\rm eff} = \chi_{H} - \chi_{V}=\frac{\Gamma_H-\Gamma_V}{3}\Delta_-$
 Since we can treat the atomic polarizability as a scalar for our dispersive case, we have 
 \begin{align}
 \Gamma_H &= 2\pi \sum_g \frac{|\mathbf{u}_H(\br')\cdot \mathbf{d}_{eg}|^2}{\hbar}\left(\frac{\omega_0}{v_g} \right) \\
-&\propto \sum_g \tr \left\{(\mathbf{d}_{eg}^*\mathbf{d}_{eg})\cdot \mathrm{Im} [\GFT_H^*(\br',\br')] \right\}  = \sum_f \tr \left[ \alpha_f \eye\cdot \mathrm{Im} [\mathbf{G}_H^*(\br',\br')]  \right],
+&\propto \sum_g \tr \left\{(\mathbf{d}_{eg}^*\mathbf{d}_{eg})\cdot \mathrm{Im} [\GFT_H^*(\br',\br')] \right\}  = \sum_f \tr \left[ \alpha_f \eye\cdot \mathrm{Im} [\GFT_H^*(\br',\br')]  \right],
 \end{align}
 where the atomic polarizability for the ground state $ f $ is defined as $ \alpha_f=\alpha_0(\Delta_{ff'})C_{j'f}^{(0)} $ is a scalar constant for the clock state. Using the emission surface technique introduced in Sec.~\ref{sec:geometryofemission}, the equivalent dipole momentum is pointed along $ [1,1,1]/\sqrt{3} $ direction on the principle emission coordinate system induced by the fiber $ H $-mode field. Since the $ H $ mode only has $ r\!_\perp $ and $ z $ components for an atom on the $ H $ axis, the field only couples to the corresponding $ \mathbf{e}_x $ and $ \mathbf{e}_z $ two dipole orientations with a normalization factor $ 1/3 $ for the $ D_1 $ line transitions. Similar conclusion applies to the $ \Gamma_V $ calculation yet with a $ y $ coupling. One can also consider this problem in the perspective of quantum jumps. Since all quantum transitions ($ \pi$ and $\sigma_\pm $) have the same possibility ($C_{j'ff'}^{(0)}=C_{j'f}^{(0)}=1/3 $), the decay rate is only determined by the non-zero field components with corresponding quantum transition probability. The final result does not depend on how we define the quantization axis while the details of calculation might be. 
 

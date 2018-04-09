@@ -24,7 +24,7 @@ Given an input light that adiabatically connects to the forward-propagating quas
 		\hat{a}_{p}(z,t) =\frac{1}{\sqrt{2 \pi}}  \int_0^{\infty}\!\!\!\!\! d \omega \, \hat{a}_{p}(\omega) e^{i[\beta_0 z- (\omega-\omega_0) t ]}, 
 	\end{align}
 that satisfy the free-field commutation relations,
-	\begin{equation} \label{Eq::InputOutputCommutation}
+	\begin{equation} \label{Eq::InputOutputCommutation_a}
 		\big[\hat{a}_{p}(z,t),\hat{a}^\dag_{p'}(z',t')\big]=\delta_{p,p'}  \delta(t-t'-(z-z')/v_g).
 	\end{equation}
 The corresponding positive-frequency electric field operators in the orthogonal mode basis can be defined as
@@ -58,14 +58,14 @@ with the light-atom interaction Hamiltonian with one atom given by
 %&=\hbar\sum_{i,j=0} \chi_{ij}\hat{f}_i\hat{S}_j,
 \end{align}
 where $\poltens$ is the atomic tensor polarizability operator, given in \erf{Eq::AtomicPolarizabilityF}, for each atom trapped near the waveguide surface at position $\mathbf{r}'_\perp$ in the transverse plane. Here, we ignore any effects of atomic motion and treat the atoms as localized at fixed positions in space. We have also defined $ \hat{S}_i $ as the Stokes vector operators of the light indicating its polarization, which are the quantum counterparts of the classical definition in Eq.~\eqref{eq:S_xybasis}. The vector Stokes operators that describe the polarization of the propagating fields in the quasilinear $HV$-basis are given as below:
-\begin{subequations}\label{Eq::StokesComponents}
+\begin{subequations}\label{Eq::StokesComponents_general}
 	\begin{align} 
 		\hat{S}_1(t) & = \smallfrac{1}{2}\big[ \hat{a}^\dag_H(t) \hat{a}_H(t)-\hat{a}^\dag_V(t) \hat{a}_V(t) \big], \\
 	 	\hat{S}_2(t) & = \smallfrac{1}{2}\big[ \hat{a}^\dag_H(t) \hat{a}_V(t)+\hat{a}^\dag_V(t) \hat{a}_H(t) \big], \\ 
 		\hat{S}_3(t) & = \smallfrac{1}{2i}\big[ \hat{a}^\dag_H(t) \hat{a}_V(t) -\hat{a}^\dag_V(t) \hat{a}_H(t) \big],
 	\end{align}
 \end{subequations}
-that satisfy equal-$z$ commutation relations following from \erf{Eq::InputOutputCommutation},
+that satisfy equal-$z$ commutation relations following from \erf{Eq::InputOutputCommutation_a},
 	\begin{equation} \label{Eq::StokesCommutation}
 		\big[\hat{S}_i(t), \hat{S}_j(t')\big] =i \epsilon_{ijk} \delta(t-t')  \hat{S}_k(t).
 	\end{equation}
@@ -225,17 +225,19 @@ where the coupling strengths are defined as
 \end{align}
 \end{subequations}
 By defining 
+\begin{subequations}\label{eq:alphaupdown}
 \begin{align}
-\tensor{\alpha}_{\uparrow} &=\bra{f=4,m=0}\poltens\ket{f=4,m=0},\\
-\tensor{\alpha}_{\downarrow} &=\bra{f=3,m=0}\poltens\ket{f=3,m=0},
+\tensor{\boldsymbol{\alpha}}_{\uparrow} &=\bra{f=4,m=0}\poltens\ket{f=4,m=0},\\
+\tensor{\boldsymbol{\alpha}}_{\downarrow} &=\bra{f=3,m=0}\poltens\ket{f=3,m=0},
 \end{align}
+\end{subequations}
 Eq.~\eqref{eq:chiHVUD_1} can be simplified into the following form:
-\begin{subequations}
+\begin{subequations}\label{eq:chiHVUD_2}
 \begin{align}
-\chi_{H,\uparrow} &=  -\frac{2\pi\omega_0}{v_g} \mathbf{u}^*_{H}(r^\prime\!\!_\perp,\phi') \cdot\tensor{\alpha}_{\uparrow}\cdot \mathbf{u}_{H}(r^\prime\!\!_\perp,\phi') \\
-\chi_{H,\downarrow} &=  -\frac{2\pi\omega_0}{v_g} \mathbf{u}^*_{H}(r^\prime\!\!_\perp,\phi') \cdot\tensor{\alpha}_{\downarrow}\cdot \mathbf{u}_{H}(r^\prime\!\!_\perp,\phi') \\
-\chi_{V,\uparrow} &=  -\frac{2\pi\omega_0}{v_g}  \mathbf{u}^*_{V}(r^\prime\!\!_\perp,\phi') \cdot\tensor{\alpha}_{\uparrow}\cdot \mathbf{u}_{V}(r^\prime\!\!_\perp,\phi')  \\
-\chi_{V,\downarrow} &=  -\frac{2\pi\omega_0}{v_g}  \mathbf{u}^*_{V}(r^\prime\!\!_\perp,\phi') \cdot\tensor{\alpha}_{\downarrow}\cdot \mathbf{u}_{V}(r^\prime\!\!_\perp,\phi'). 
+\chi_{H,\uparrow} &=  -\frac{2\pi\omega_0}{v_g} \mathbf{u}^*_{H}(r^\prime\!\!_\perp,\phi') \cdot\tensor{\boldsymbol{\alpha}}_{\uparrow}\cdot \mathbf{u}_{H}(r^\prime\!\!_\perp,\phi') \\
+\chi_{H,\downarrow} &=  -\frac{2\pi\omega_0}{v_g} \mathbf{u}^*_{H}(r^\prime\!\!_\perp,\phi') \cdot\tensor{\boldsymbol{\alpha}}_{\downarrow}\cdot \mathbf{u}_{H}(r^\prime\!\!_\perp,\phi') \\
+\chi_{V,\uparrow} &=  -\frac{2\pi\omega_0}{v_g}  \mathbf{u}^*_{V}(r^\prime\!\!_\perp,\phi') \cdot\tensor{\boldsymbol{\alpha}}_{\uparrow}\cdot \mathbf{u}_{V}(r^\prime\!\!_\perp,\phi')  \\
+\chi_{V,\downarrow} &=  -\frac{2\pi\omega_0}{v_g}  \mathbf{u}^*_{V}(r^\prime\!\!_\perp,\phi') \cdot\tensor{\boldsymbol{\alpha}}_{\downarrow}\cdot \mathbf{u}_{V}(r^\prime\!\!_\perp,\phi'). 
 \end{align}
 \end{subequations}
 
@@ -412,10 +414,10 @@ recall the spin squeezing parameter defined by Wineland {\emph{et al.}}~\cite{Wi
 requires to calculate the expectation value $ \expect{\hat{F}_\parallel} $ and the variance $ \Delta F_\perp^2 $. 
 Assume the atom number is $ N_A $, these two collective quantities can be decomposed into microscopic quantities by 
 \begin{align}
-\expect{\Delta F_\perp^2} &= N_A \expect{\Delta f_\perp^2}+\frac{N_A(N_A-1)}{2}\left. \expect{\Delta f_\perp^{(i)}\Delta f_\perp^{(j)}}_s\right|_{i\neq j}\label{eq:DeltaFz2}\\
-\expect{\hat{F}_\parallel } &= \sum_i^{N_A} \expect{\hat{f}_\parallel ^{(i)}}=N_A \expect{\hat{f}_\parallel},\label{eq:expectFx}
+\expect{\Delta F_\perp^2} &= N_A \expect{\Delta f_\perp^2}+\frac{N_A(N_A-1)}{2}\left. \expect{\Delta f_\perp^{(i)}\Delta f_\perp^{(j)}}_s\right|_{i\neq j}\label{eq:DeltaFz2_general}\\
+\expect{\hat{F}_\parallel } &= \sum_i^{N_A} \expect{\hat{f}_\parallel ^{(i)}}=N_A \expect{\hat{f}_\parallel},\label{eq:expectFx_general}
 \end{align}
-where the first term of Eq.~\eqref{eq:DeltaFz2} and Eq.~\eqref{eq:expectFx} are solely determined by a symmetric sum over $N_A$ identical spin-$f$ single-body operators, $ \hat{f}_\perp=\hat{f}_\perp^{(i)} $ and $ \hat{f}_\parallel=\hat{f}_\parallel^{(i)} $ with atom labels $ i=1,\cdots,N_A $; the second term of Eq.~\eqref{eq:DeltaFz2} is determined by symmetric two-body covariance terms, $ \left.\expect{\Delta f_\perp^{(i)}\Delta f_\perp^{(j)}}_s\right|_{i\neq j}=\expect{\Delta f_\perp^{(1)}\Delta f_\perp^{(2)}}_s\equiv \expect{\hat{f}_\perp^{(1)}\hat{f}_\perp^{(2)}}_s-\left( \expect{\hat{f}_\perp^{(1)}} \expect{\hat{f}_\perp^{(1)}}\right)_s $, which correspond to the pairwise entanglement among atoms and eventually yield spin squeezing~\cite{Wang2003Spin}.
+where the first term of Eq.~\eqref{eq:DeltaFz2_general} and Eq.~\eqref{eq:expectFx_general} are solely determined by a symmetric sum over $N_A$ identical spin-$f$ single-body operators, $ \hat{f}_\perp=\hat{f}_\perp^{(i)} $ and $ \hat{f}_\parallel=\hat{f}_\parallel^{(i)} $ with atom labels $ i=1,\cdots,N_A $; the second term of Eq.~\eqref{eq:DeltaFz2_general} is determined by symmetric two-body covariance terms, $ \left.\expect{\Delta f_\perp^{(i)}\Delta f_\perp^{(j)}}_s\right|_{i\neq j}=\expect{\Delta f_\perp^{(1)}\Delta f_\perp^{(2)}}_s\equiv \expect{\hat{f}_\perp^{(1)}\hat{f}_\perp^{(2)}}_s-\left( \expect{\hat{f}_\perp^{(1)}} \expect{\hat{f}_\perp^{(1)}}\right)_s $, which correspond to the pairwise entanglement among atoms and eventually yield spin squeezing~\cite{Wang2003Spin}.
 Above, we have assumed there is a pairwise exchange symmetry among atoms so that we only care about the symmetrized quantities like $ \expect{\Delta f_\perp^{(1)}\Delta f_\perp^{(2)}}_s=\left(\expect{\Delta f_\perp^{(1)}\Delta f_\perp^{(2)}} + \expect{\Delta f_\perp^{(2)}\Delta f_\perp^{(1)}} \right)/2 $. 
 
 
@@ -627,7 +629,7 @@ Therefore, without considering the decoherence effect, a larger coupling strengt
 %\mathcal{L}\left[ \hat{\rho} \right] &= \hat{F}_\perp\hat{\rho}\hat{F}_\perp-\frac{1}{2}\left(\hat{\rho}\hat{F}_\perp^2+\hat{F}_\perp^2\hat{\rho} \right)=\frac{1}{2}\left[\hat{F}_\perp,\left[\hat{\rho},\hat{F}_\perp \right] \right].
 %\end{align}
 %
-%With the equations of motion defined above, one can then solve the expectation values of collective operators and their covariances. Once we solve the time-dependent quantities of $ \expect{\Delta F_\perp^2} $ and $ \expect{\hat{F}_\parallel} $ based on Eqs.~\eqref{eq:DeltaFz2} and~\eqref{eq:expectFx}, the dynamics of spin squeezing can then be determined using Eq.~\eqref{eq:zeta2_general}. 
+%With the equations of motion defined above, one can then solve the expectation values of collective operators and their covariances. Once we solve the time-dependent quantities of $ \expect{\Delta F_\perp^2} $ and $ \expect{\hat{F}_\parallel} $ based on Eqs.~\eqref{eq:DeltaFz2_general} and~\eqref{eq:expectFx_general}, the dynamics of spin squeezing can then be determined using Eq.~\eqref{eq:zeta2_general}. 
 %Solving only the collective operator dynamics may not help us understand the physics process in the single-atom level. 
 %In practice, to study the correlations and self-evolutions of atoms due to the measurement backaction, we usually solve the microscopic operator dynamics of $ \hat{f}_i $ and their two-body covariances. Even better to be computational efficient, we can also solve the dynamics of the expectation values of the one-body $ \hat{\sigma}_{ba}=\ket{b}\bra{a} $ operators and the two-body covariances $ \expect{\Delta \sigma_{ba}^{(1)}\Delta\sigma_{dc}^{(2)}}  $. Using the microscopic operator dynamics solution, we can easily find the collective operator and spin squeezing dynamics based on their definitions. 
 %
@@ -668,7 +670,7 @@ Therefore, without considering the decoherence effect, a larger coupling strengt
 
 %<*basistransfHS>
 
-\chapter{Spin-polarization coupling Hamiltonian and Stokes vectors under coordinate transformation}\label{chap:basistransfHS}
+\chapter[Hamiltonian and Stokes vectors under coordinate transformation]{Spin-polarization coupling Hamiltonian and Stokes vectors under coordinate transformation}\label{chap:basistransfHS}
 In this appendix, we will derive the equations of Stokes vector operators and spin-polarization interaction Hamiltonian due to polarization basis transformations.
 A general basis transformation theory will be derived in the context of linear-polarization basis transformations, and will then be applied to the linear $ D/\bar{D} $- and circular $ R/L $-bases cases.
 
@@ -714,7 +716,7 @@ Written in the matrix form in the operator space,
 where $ \hat{\mathbf{a}}_{n,\bar{n}}^\dagger=[\hat{a}_n^\dagger;\hat{a}_{\bar{n}}^\dagger] $ and $ \hat{\mathbf{a}}_{H,V}^\dagger=[\hat{a}_H^\dagger;\hat{a}_V^\dagger] $ are the creation operator vectors in the $ \{n,\bar{n} \} $ and $ \{H,V \} $ bases, respectively. These creation operators create photons in corresponding polarization basis. The annihilation operator vectors, $ \hat{\mathbf{a}}_{n,\bar{n}} =[\hat{a}_n;\hat{a}_{\bar{n}}]$, can be defined correspondingly.
 In our notation, we use the $ [\cdot ;\cdots] $ notation to indicate $ 1\times n $ vectors as general matrices, where the semi-comma (``;") sign separates matrix elements in different rows and the comma (``,") sign separates matrix elements in different columns.
 
-Using the definition in the $ \{ H,V\} $-basis of the Stokes operators (Eq.\eqref{eq:SopinaHVbasis}) and the annihilation operator basis transformation relationships above, one can rewrite the Stokes operators in the $ \{\mathbf{e}_n, \mathbf{e}_{\bar{n}}\} $ basis by
+Using the definition in the $ \{ H,V\} $-basis of the Stokes operators [Eq.\eqref{Eq::StokesComponents_general}] and the annihilation operator basis transformation relationships above, one can rewrite the Stokes operators in the $ \{\mathbf{e}_n, \mathbf{e}_{\bar{n}}\} $ basis by
 \begin{subequations}\label{eq:Snnbar}
 \begin{align}
 \hat{S}_0 &= \frac{1}{2}\left[\left(\!\begin{array}{cc}\hat{a}_n^\dagger,& \hat{a}_{\bar{n}}^\dagger\end{array} \!\right)\bullet\mathbf{R}^{-1}_{[1,:]}{}^\dagger(\theta)\bullet\mathbf{R}^{-1}_{[1,:]}(\theta)\bullet
