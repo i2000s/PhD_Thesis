@@ -243,7 +243,7 @@ where $ \unittensor $ is the unit tensor, $ b=\pm $ denotes the propagation dire
 \subsubsection{Solving the eigenmodes for a nanofiber and \SWG}
 As an example, a typical optical nanofiber has a cylindrical cross-section of radius $ a $. We use $ a=225 $nm, $ n_1=1.4496 $ as a constant in the core region ($ r_\perp\le a $) and $ n_2=1.0000 $ in the vacuum clad region ($ r_\perp>a $), where we have set the $ z $ axis to be the symmetric center of the nanofiber and $ r_\perp =\sqrt{x^2+y^2} $.
 Another nanophotonic waveguide is a waveguide with a square cross section, which we call a square waveguide. The waveguide has a width of $ w=300 $nm, $ n_1=2.0 $ for an ideal Si$_3$N$_4$ core medium $ (|x|\le w/2,|y|\le w/2) $, and the clad is also the vacuum\footnote{Details about our choice of the \SWG are in Appendix~\ref{chap:choozingSWGs}.}.
-In both cases, only the fundamental guided modes are allowed to propagate through the waveguide. That is, the allowed guided modes have a single propagation constant\index{propagation constant} or projected wavenumber $ \beta_0 \,(n_1k_0<\beta_0<n_2k_0)$ with wavenumber\index{wave number} $k_0=2\pi/\lambda=\omega_0/c $, where $\omega_0$ is the angular frequency of the electric field, and $ c $ is the speed of light in a vacuum.
+In both cases, only the fundamental guided modes are allowed to propagate through the waveguide. That is, the allowed guided modes have a single propagation constant\index{propagation constant} or projected wavenumber $ \beta_0 \,(n_1k_0<\beta_0<n_2k_0)$ with wavenumber\index{wavenumber} $k_0=2\pi/\lambda=\omega_0/c $, where $\omega_0$ is the angular frequency of the electric field, and $ c $ is the speed of light in a vacuum.
 
 The fundamental modes of the nanofiber are the \HE-modes with degeneracy in propagation directions $ b=\pm $ and polarizations of two labeled by $ p $. 
 For a single-mode \SWG, the quasi-\TE and the quasi-\TM modes together with a similar degeneracy in propagation directions and polarizations of two.
@@ -304,7 +304,7 @@ For the \SWG and general geometries, we solve the eigenmodes using a numerical m
 The wave equations are discretized to a set of linear equations. The eigenmodes are found by solving the eigenvalue problem defined by the boundary condition in the frequency domain. 
 It is fairly efficient when we have a fixed frequency point. 
 We verify the accuracy of the BEM calculation with the nanofiber case since we know the analytical solution. Then we use BEM to solve the eigenmodes for the \SWG geometry. 
-By find the propagation constant $ \beta $ of the guided eigenmode as varying $ \omega $, we can solve for the group velocity $ v_g=\left.\dd{\omega}{\beta}\right|_{\beta=\beta_0} $ and the group index of refraction $n_g = \frac{c}{v_g}=\left.\dd{\beta}{k}\right|_{\beta=\beta_0}$.
+By find the propagation constant $ \beta $ of the guided eigenmode as varying $ \omega $, we can solve for the group velocity $ v_g=\left.\dd{\omega}{\beta}\right|_{\beta=\beta_0} $ and the group index of refraction\index{group index of refraction} $n_g = \frac{c}{v_g}=\left.\dd{\beta}{k}\right|_{\beta=\beta_0}$.
 
 
 
@@ -400,7 +400,7 @@ G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
 \end{align}
 The details of solving the free-space Green's function and techniques we are going to use, including Born approximation~\cite{Gubernatis1977Born} and other general methods of solving a radiation problem, can be found in Appendix~\ref{chap:freespacegreenfunction}. 
 
-The output field as Lippmann-Schwinger equation\index{Lippmann-Schwinger eqation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $
+The output field as Lippmann-Schwinger equation\index{Lippmann-Schwinger equation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $
 \begin{subequations}
 \begin{align}\label{eq:Lippmann-Schwinger}
 \mathbf{E}(\br) &=\mathbf{E}_0(\br)+ \sum_n^{N_A} \GFT(\br,\br'_n)\cdot \tensor{\boldsymbol{\alpha}}{}^{(n)}\cdot \mathbf{E}(\br'_n)\\
@@ -1246,7 +1246,7 @@ Inside the nanofiber the transverse wavevector is real, $k_\perp = q$, where $q=
 
 If $ \beta $ is a pure imaginary number, the field will have an exponential decay amplitude on the $ z $ direction, and will spread the energy away from the fiber axis. Reference~\cite{Snyder1983Optical} denotes the modes with pure imaginary $ \beta $ as evanescent modes. If $ \beta $ has both real and imaginary parts, the modes are denoted as leaky modes, which are combinations of radiation modes and evanescent modes. Except for the case that the incident light is highly directed at the complementary critical angle $ \theta_c $ of geometric optics, the radiation modes part alone can propagate for a long distance along the fiber axis. In our nanofiber system, we only consider the bound and radiation modes. The ranges of some waveguide parameters are given in Table~\ref{tab:fiberparameters}. 
 In the table, we have defined the normalized wave number\cite{Snyder1983Optical}, or 
-$V$-number\index{$V$-number} 
+$V$-number\index{V-number@$V$-number} 
 of a fiber as $V  = 
 k_f a \mathrm{NA}$.  Here $k_f=\frac{2\pi}{\lambda}$, is the free space wave number, $a$ is the radius 
 of the core of the fiber, and $\mathrm{NA}$ is the numerical aperture\index{numerical aperture} of 
@@ -1323,7 +1323,7 @@ h_{11} &= \sqrt{k_0^2 n_1^2-\beta_{11}^2},\\
 q_{11} &= \sqrt{\beta^2_{11}-k_0^2 n_2^2}.
 \end{align}
 \end{subequations}
-Here, $ k_0 $ is the vacuum wavenumber\index{wavevector!vacuum wavenumber} of the incident light,$ f=\pm$ indicates forward ($+$) or backward ($-$) propagation direction, $ \phi $ denotes the azimuthal angle in the transverse plane, $ \varphi_0 $ indicates the polarization axis for the incident polarization relative to the $ x  $ axis, $ n_1 $ and $ n_2 $ are the refractive indices\index{refractive index}\index{index of refraction} of inside and outside the nanofiber, respectively, $ \beta_{11} $ is the mode propagation constant, $ 1/h_{11} $ is the characteristic decay length for the guided mode inside the fiber, $ 1/q_{11} $ is the characteristic decay length outside the fiber; $ A $ is the real-valued amplitude for the linearly polarized input, $ J_l $ and $ K_l  $ are the $ l $-th Bessel function of the first kind\index{Bessel function!Bessel function of the first kind} and the modified Bessel function of the second kind\index{Bessel function!modified Bessel function of the second kind}, respectively. As shown in Equs.~\ref{Ertrga} and~\ref{Ertrla}, we can factorize $ \mathbf{E}^g(r_\perp,\phi,z,t) $ as $ \mathbf{E}^g(r_\perp,\phi,z,t)= \boldsymbol{\mathcal{E}}^g(\br)e^{i\omega t} $. 
+Here, $ k_0 $ is the vacuum wavenumber\index{wavenumber} of the incident light,$ f=\pm$ indicates forward ($+$) or backward ($-$) propagation direction, $ \phi $ denotes the azimuthal angle in the transverse plane, $ \varphi_0 $ indicates the polarization axis for the incident polarization relative to the $ x  $ axis, $ n_1 $ and $ n_2 $ are the refractive indices\index{refractive index}\index{index of refraction} of inside and outside the nanofiber, respectively, $ \beta_{11} $ is the mode propagation constant, $ 1/h_{11} $ is the characteristic decay length for the guided mode inside the fiber, $ 1/q_{11} $ is the characteristic decay length outside the fiber; $ A $ is the real-valued amplitude for the linearly polarized input, $ J_l $ and $ K_l  $ are the $ l $-th Bessel function of the first kind\index{Bessel function!Bessel function of the first kind} and the modified Bessel function of the second kind\index{Bessel function!modified Bessel function of the second kind}, respectively. As shown in Equs.~\ref{Ertrga} and~\ref{Ertrla}, we can factorize $ \mathbf{E}^g(r_\perp,\phi,z,t) $ as $ \mathbf{E}^g(r_\perp,\phi,z,t)= \boldsymbol{\mathcal{E}}^g(\br)e^{i\omega t} $. 
 
 Using the coordinate system transformation relationships
 \begin{align}
@@ -1444,7 +1444,7 @@ n_{e\!f\!f} &=\frac{\int \mathrm{d}\br\!_\perp n^2(\br\!_\perp) |\boldsymbol{\ma
 {\int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^a\!\!r\!_\perp\mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 + \int_0^{2\pi}\!\! \mathrm{d} \phi \int_a^\infty\!\!r\!_\perp \mathrm{d}r\!_\perp|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2}\\
 &= \frac{n_1^2P_1+n_2^2P_2}{P_1+P_2}.
 \end{align}
-Notice that the group index of refraction is not the same as the $ n_{e\!f\!f} $ defined above. We will discuss group velocity and group index of refraction of a waveguide in Secs.~\ref{sec:groupvelocity} and~\ref{sec:eigenmodesofwaveguides}.
+Notice that the group index of refraction\index{group index of refraction} is not the same as the $ n_{e\!f\!f} $ defined above. We will discuss group velocity and group index of refraction of a waveguide in Secs.~\ref{sec:groupvelocity} and~\ref{sec:eigenmodesofwaveguides}.
 
 \section{Solution of guided eigenmodes}
 Following the normalization condition in Eq.~\eqref{eq:eigenmodeorthog} when $ \mu=\mu' $, one can solve for the guided eigenmodes. 
@@ -1490,7 +1490,7 @@ For a guided mode in a waveguide, the phase index of refraction, $n_p$, is defin
 \begin{align}
 n_p &= \left.\frac{\beta}{k}\right|_{\beta=\beta_0}.
 \end{align}
-Correspondingly, the group velocity, $v_g$, and group index of refraction, $n_g$, for a guided mode in a waveguide can be given by
+Correspondingly, the group velocity, $v_g$, and group index of refraction\index{group index of refraction}, $n_g$, for a guided mode in a waveguide can be given by
 \begin{align}
 v_g &= \left.\dd{\omega}{\beta}\right|_{\beta=\beta_0},\\
 n_g &= \frac{c}{v_g}=\left.\dd{\beta}{k}\right|_{\beta=\beta_0}.
@@ -1512,14 +1512,14 @@ We differentiate the equation above with respect to $ \beta $ on both sides, and
 {\pp{f}{h}\pp{h}{\beta}+\pp{f}{q}\pp{q}{\beta}+\pp{f}{\beta}}.
 \end{align}
 
-Physically, the group index of refraction indicates the waveguide dispersion for a given propagating mode. Here, we can ignore the material dispersion due to the small response delay of the silica molecules of the waveguide substrate. Since the waveguide dispersion is merely a property of the waveguide, the presence of the radiating atom does not affect the group index of refraction at all (we have checked numerically through solving the eigen function of $ \beta $ in presence of an atom). 
+Physically, the group index of refraction\index{group index of refraction} indicates the waveguide dispersion for a given propagating mode. Here, we can ignore the material dispersion due to the small response delay of the silica molecules of the waveguide substrate. Since the waveguide dispersion is merely a property of the waveguide, the presence of the radiating atom does not affect the group index of refraction at all (we have checked numerically through solving the eigen function of $ \beta $ in presence of an atom). 
 
 From the perspective of energy flow, the group velocity can also be given by
 \begin{align}
 v_g&=\frac{P}{W}.
 \end{align}
 %The physical interpretation of group and phase velocity of a waveguide mode can be found in the notes on \emph{Group velocity of the nanofiber}\satomi{Reference the section}. 
-The effective zig-zag ray model is also described in the notes for understanding the mechanism of group and phase index of refractions. For our nanofiber case, the $ D_2 $ transition line of Cs atoms does not have a strong enhancement of group index of refraction for the guided mode, compared to the phase index of refraction. The $ D_1 $ line has a relatively strong enhancement of group index since the wave can penetrate into the clad much deeper compared to the $ D_2 $ line case. 
+The effective zig-zag ray model is also described in the notes for understanding the mechanism of group and phase index of refractions. For our nanofiber case, the $ D_2 $ transition line of Cs atoms does not have a strong enhancement of group index of refraction\index{group index of refraction} for the guided mode, compared to the phase index of refraction. The $ D_1 $ line has a relatively strong enhancement of group index since the wave can penetrate into the clad much deeper compared to the $ D_2 $ line case. 
 
 
 %</eigenmodes>
@@ -2245,10 +2245,10 @@ preferred waveguie size for our study.
          %\input{fig/square waveguide_C1_y.tex}
          }
    \end{minipage}
-\caption[Optimal choice of waveguide width to tolerate fabrication imperfections.]{Group index of refraction with changing width of a square waveguide ($ n_1=2.0,\,w=300 $ nm) at cesium's D1 line (a) and D2 line (b). Group indices of refraction and the phase indices of refraction for the fundamental quasi-\TE and quasi-\TM modes of an imperfect \SWG with a side changing its length ($ x $ axis) at the D1 line (c) and the D2 line (d).}\label{fig:ng_rect_dwg}
+\caption[Optimal choice of waveguide width to tolerate fabrication imperfections.]{Group index of refraction with changing width of a square waveguide ($ n_1=2.0,\,w=300 $ nm) at cesium's D1 line (a) and D2 line (b). Group indices of refraction and the phase indices of refraction\index{phase index of refraction} for the fundamental quasi-\TE and quasi-\TM modes of an imperfect \SWG with a side changing its length ($ x $ axis) at the D1 line (c) and the D2 line (d).}\label{fig:ng_rect_dwg}
 \end{figure}
 
-In the figure, (a) and (b) show that the group index of refraction $n_g$ reaches the
+In the figure, (a) and (b) show that the group index of refraction\index{group index of refraction} $n_g$ reaches the
 peak value at $\sim 300$ nm for both D1 line (a) and D2 line (b). The plateaus
 at the $300$ nm $x$-axis value of the $n_g$ curves as a function
 of the width of a square waveguide, indicating that $n_g$ will be the most
@@ -2257,7 +2257,7 @@ imperfection may not be a big issue to worry about in our case.
 
 In Fig.~\ref{fig:ng_rect_dwg}, (c) and (d), one side of the waveguide is fixed at $300$ nm while
 varying the other side from $200$ nm to $400$ nm. The the phase index
-of refraction ($\beta/k$) and the group index of fraction ($n_g$) for the
+of refraction ($\beta/k$) and the group index of fraction\index{group index of refraction} ($n_g$) for the
 non-degenerate fundamental quasi-\TE and quasi-\TM modes are plotted. Our formulas of
 effective mode areas for spin squeezing should be modified for the
 non-degenerate mode case. We merely give the followling brief outline for the modification here: the $n_g$ in the formula of the effective interaction mode area for our Faraday spin squeezing protocol~\cite{Qi2017Enhanced}, $A_{\rm Far}$, should be replaced with the geometric average of $n_g^{TE}$ and $n_g^{TM}$, that is $\sqrt{n_g^{V} \times n_g^{H}}$ when $V$ and $H$ modes are the quasi-\TE and quasi-\TM modes; the equation for the  input mode area, $A_0$, maintains its original form. In the end,
