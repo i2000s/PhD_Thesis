@@ -12,6 +12,7 @@
 *.brf
 *.loc
 *.lof
+*.lot
 *.pdf
 *.bak
 *.sav
