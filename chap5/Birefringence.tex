@@ -8,7 +8,7 @@
 
 %<*birefringenceprotocol>
 
-\chapter{QND measurement and spin squeezing using the birefringence effect}\label{chap:birefringence}
+\chapter[Dispersive response theory, QND measurement and spin squeezing]{Dispersive response theory with applications to quantum nondemolition measurement and spin squeezing of atoms near a nanofiber}\label{chap:birefringence}
 \section{Introduction}
 
 Strong coupling between atoms and photons is at the heart of many quantum information processing protocols including efficient generation of remote entanglement \cite{Duan2001, Julsgaard2001Experimental}, quantum data storage and retrieval \cite{ Eisaman2005Electromagnetically}, and QND measurements \cite{Eckert2008Quantum}.  
@@ -154,7 +154,7 @@ One can couple strongly to few atoms at the center by tightly focusing the beam 
 
 The off-diagonal terms in the transmission matrix, \erf{Eq::PolarizationTransformation}, describe the polarization transformation. For example, if we take the polarization of the modes to be the quasilinear, $p = \{H,V\}$ as defined in \erf{Eq::QuasilinearModes}, then $t_{HV} \equiv \chi_{\rm Far}$ is the rotation angle of the Stokes vector on the Poincar\'{e} sphere corresponding to the Faraday effect \cite{Hammerer2010, Deutsch2010a}.  
 The phase difference in that basis, $\delta  \phi_H - \delta \phi_V$, corresponds to birefringence induced on the guided mode and $t_{HV}$ to Faraday rotation.  
-Analyzed in the quasicircular polarization modes ($p=\pm$), given in \erf{Eq::QuasicircularModes}, the differential phase $\delta \phi_+ -\delta  \phi_-$ corresponds to Faraday rotation and $t_{+-}$ to birefringence.  
+Analyzed in the quasicircular polarization modes ($p=\pm$), given in \erf{Eq::QuasicircularModes}, the differential phase $\delta \phi_+ -\delta  \phi_-$ corresponds to Faraday rotation and $t_{+-}$ to birefringence\index{birefringence effect}.  
 We make use of such polarization transformations as a means to nondestructively measure the atoms and generate collective spin squeezing.
 
 	
@@ -293,7 +293,7 @@ We employ this dispersive response for QND measurement of atoms, as we describe 
 
 
 %============== SECITON: QND Measurement ==============%
-\section{QND measurement of atoms} \label{Sec::QNDMeasurement}
+\section{QND measurement of atoms based on the birefringence effect} \label{Sec::QNDMeasurement}
 
 %========= FIGURE: Geometry (coupling strength, magic wavelength, area and detuning) =========%
 \begin{figure}[t]
@@ -372,7 +372,7 @@ where the operator $\hat{\tensor{\mbf{A}}}(f,f') = \sum_{i,j} \hat{A}_{ij}(f,f')
 \end{align}
 Here, $\charpol = -\frac{\sigma_0}{8\pi k_0}\frac{\Gamma }{\Delta_{ff'}+i\Gamma/2}$ is the characteristic dynamic polarizability where $\sigma_0 = 3 \lambda^2/2\pi$ is the resonant scattering cross section, $\hat{\mathbf{f}}$ is the atomic  spin operator in hyperfine multiplet $f$, and $C_{ff'}^{(K)}$ are coefficients for irreducible rank-$K$ components defined in \cite{Deutsch2010a}. 
 
-In addition to the atomic tensor response, the nanofiber geometry gives rise to unique features of polarization spectroscopy not present in free space.  The spatial anisotropy of the intensity for the quasilinearly polarized guided modes leads to unequal scattering of the $H$ and $V$ modes, producing \emph{intrinsic} birefringence even for a purely scalar atomic polarizability.  
+In addition to the atomic tensor response, the nanofiber geometry gives rise to unique features of polarization spectroscopy not present in free space.  The spatial anisotropy of the intensity for the quasilinearly polarized guided modes leads to unequal scattering of the $H$ and $V$ modes, producing \emph{intrinsic} birefringence\index{birefringence effect} even for a purely scalar atomic polarizability.  
 In particular, atoms trapped on the quasi-$H$ axis leads to a phase delay of this mode relative to the fast quasi-$V$ axis. 
 This birefringence was exploited by Dawkins {\em et al.} \cite{Dawkins2011} as a mechanism for implementing a dispersive QND measurement of the number of atoms trapped around the nanofiber, as we treat in the next section. 
 
@@ -394,7 +394,7 @@ This birefringent interaction induces a rotation of the Stokes vector  around th
 	\end{equation}
 characterized by an effective area, $\Abir^{-1} \equiv (n_g/2) \big[ |\mathbf{u}_{H}(\br'_\perp)|^2 - |\mathbf{u}_{V}(\br'_\perp)| ^2 \big]$. In this case, the polarizability of the atom can be treated as a scalar, since the atoms do not have a preferred state of photons to emit. Therefore, Eq.~\ref{eq:birefringencerotang} characterizes the rotation angle of the polarization state of the light, $ \varphi $, on the \Poincare sphere due to the interaction with one atom. With $ N_A $ atoms, the total rotation angle of the light on the \Poincare sphere is proportional to $ \varphi_N=N_A\varphi $, scaled by the power of the input light. 
 
-Dawkins {\em et al.} \cite{Dawkins2011} used this interaction to make a dispersive measurement of $N_A$ via birefringence polarimetry in the usual way: launching linearly polarized light at 45$^\circ$ to the quasi-$H$ axis, $\mbf{u}_\inp = (\mbf{u}_H + \mbf{u}_V )/\sqrt{2}$, and measuring the differential power between the guided right-and left-circularly polarized photons. 
+Dawkins {\em et al.} \cite{Dawkins2011} used this interaction to make a dispersive measurement of $N_A$ via birefringence\index{birefringence effect} polarimetry in the usual way: launching linearly polarized light at 45$^\circ$ to the quasi-$H$ axis, $\mbf{u}_\inp = (\mbf{u}_H + \mbf{u}_V )/\sqrt{2}$, and measuring the differential power between the guided right-and left-circularly polarized photons. 
 Thus, the integrated measurement is described by the operator $\hat{\mathcal{M}} \equiv \int_0^T dt' \hat{S}^{\rm out}_3(t').$  The shot-noise variance of the polarimeter, $\shotnoise =  \chiN^2 \dot{N}_L T$ for integration time $T$,  determines the fundamental resolution of the polarimeter.  
 The smallest detectable atom number using this dispersive measurement is thus, $\delta N_A \sim ( \chiN^2 \dot{N}_L T)^{-1/2}$ \cite{Smith2003a}. We provide the detailed analysis in Appendix~\ref{sec:birefringenceresolution}. 
 In an ideal setting, $\delta N_A$ can always be reduced by increasing the integration time, but in practice this time is limited by atom loss. As a coarse approximation we take this time to be $T=\gamma_s^{-1}$, where $\gamma_s$ is the photon scattering rate in free space, and assume perfect quantum efficiency of the detectors.  
@@ -453,7 +453,7 @@ where the coupling strength between an atom in the clock subspace and a photon w
 	\end{equation}
 and $f = \{4,3\}$ labels $\{\uparrow,\downarrow\}$.  
 The diagonal terms in the polarizability tensor are the same for atoms at positions above and below the nanofiber, and thus all atoms contribute equally. 
-In addition, a constant birefringence proportional to $ \hat{J}_0\hat{S}_1 $ is neglected here as it can be canceled with a compensating waveplate. 
+In addition, a constant birefringence\index{birefringence effect} proportional to $ \hat{J}_0\hat{S}_1 $ is neglected here as it can be canceled with a compensating waveplate. 
 Finally, the first term in \erf{Eq::ClockHamiltonian} does not affect polarization spectroscopy, but will act to rotate the pseudo-spin around the $J_z$ axis of the generalized Bloch sphere\index{Bloch sphere} proportional to classical intensity fluctuations.
 While this does not affect the squeezing of projection noise\index{noise!projection noise} in $\hat{J}_z$, it affects the metrologically relevant squeezing by adding uncertainty to the direction of the mean spin.  By choosing a ``magic frequency" at which the light shifts on the two clock states\index{state!clock state} are equal, 
 	\begin{align} \label{Eq::MagicWavelengthCondition}
@@ -739,7 +739,7 @@ This work was support by the AFOSR, under grant Y600242, and the NSF, under gran
 
 %<*atomnumberdetection>
 \chapter[Minimum detectable atom number in a measurement protocol]{Minimum detectable atom number using the birefringence effect of a nanofiber}\label{sec:birefringenceresolution}
-The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence spectroscopy analysis for our nanofiber case.
+The Faraday spectroscopy theory for optical lattice has been published in Ref.~\cite{Smith2003a}. Following this thread, we present the birefringence\index{birefringence effect} spectroscopy analysis for our nanofiber case.
 
 \section[Shot-noise limit and minimum detectable atom number]{Shot-noise limit and minimum detectable \\ atom number}
 To measure the Stocks vector rotation angle on the \Poincare sphere, that is the transformation of the polarization of the light, we launch a probe light along the bisection line between $ x $ and $ y $ axes, and trap the atom on the $ x $ axis, and then measure the output powers of the counterclockwise-rotating ($ \sigma_+ $) and the clockwise-rotating ($ \sigma_- $) components of the output. From Eq.~\eqref{eq:birefringencerotang} and considering the quantum transition factor factor in the Hamiltonian, Eq.~\eqref{Eq::RotationAngle}, the total differential phase shift between the $ \sigma_+ $ and $ \sigma_- $ components of the probed traveling light interacted with $ N_A $ atoms can be given by
@@ -928,7 +928,7 @@ As shorthands, we also denote $ \gamma_{\tilde{f}f}=\gamma_{\tilde{f}\rightarrow
 
 %<*birefringencemotioneq>
 %===================APPENDIX: Equations of motion =====================%
-\chapter[Equations of motion for the moments]{Derivation of the equations of motion for the moments} \label{Appendix::OpticalPumping}	
+\chapter[Equations of motion for the few-body moments]{Derivation of the equations of motion for the few-body moments} \label{Appendix::OpticalPumping}	
 
 In this Appendix we derive the equations of motion for the correlation functions that define the metrologically relevant squeezing parameter, $\xi^2 = N_A \Delta J_z^2/\expt{\hat{J}_x}^2$.  
 We seek the time evolution of the one and two-body correlation functions:
@@ -1200,7 +1200,7 @@ Notice that, since the equations for those covariances have not considered measu
 
 
 \section{Approximations and the physical interpretation of coefficients}
-To estimation of the solution of the $ \Delta J_z^2 $ equation above, we may assume $ \expect{\hat{J}_z}\approx 0 $ and $ \expect{\hat{N}_C}=N_A $. 
+To estimation of the solution of the $ \Delta J_z^2 $ equation above, we may assume $ \expect{\hat{J}_z}\approx 0 $ and $ \expect{\hat{N}_C}=N_A $ as constant. 
 The $ \Delta J_z^2 $ equation can be rewritten in the following general form
 \begin{align}
 	\frac{d x}{d t} = -A x^2 - B x + C
@@ -1253,8 +1253,7 @@ D &\!= \frac{- \left(-\frac{AC }{\Gamma_{\rm loss}^2 }\right)^{\frac{ B}{\Gamma_
 &\times\! \left\{\!\!\Gamma_{\rm loss}  e^{\!\Gamma_{\rm loss}  t}\! \left[\!(2 A d \!\!+\!\! B) \, _0\!\tilde{F}\!_1\!\!\left(\!;\!\frac{B}{\Gamma_{\rm loss} }\!+\!1;\!\frac{A C e^{\!-\Gamma_{\rm loss} t}}{\Gamma_{\rm loss} ^2}\!\right)\!\!+\!\!\Gamma_{\rm loss}  \, _0\!\tilde{F}\!_1\!\left(\!;\!\frac{B}{\Gamma_{\rm loss} }\!;\!\frac{A C e^{\!-\Gamma_{\rm loss} t}}{\Gamma_{\rm loss} ^2}\!\right)\!\right]\right. \nonumber\\
 &\quad \quad \left. +A C \, _0\!\tilde{F}_1\!\!\left(\!;\!\frac{B}{\Gamma_{\rm loss} }\!+\! 2;\!\frac{A C e^{-\Gamma_{\rm loss} t }}{\Gamma_{\rm loss} ^2}\!\right)\!\right\}.
 \end{align}
-Above, $ I_n(z) $ are the Bessel functions of the first kind, $ \Gamma(z) $ is the Euler gamma function, $ _0F_1(;b;z) $ are the confluent hypergeometric functions, and $ _0\tilde{F}_1(;,b;z) $ are the regularized confluent hypergeometric functions. 
-The solution is obtained in \emph{Mathematica}. 
+Above, $ I_n(z) $ are the Bessel functions of the first kind\index{Bessel function!Bessel function of the first kind}, $ \Gamma(z) $ is the Euler gamma function\index{Euler gamma function}, $ _0F_1(;b;z) $ are the confluent hypergeometric functions\index{confluent hypergeometric function}, and $ _0\tilde{F}_1(;,b;z) $ are the regularized confluent hypergeometric functions\index{regularized confluent hypergeometric function}\footnote{This problem is solved in \emph{Mathematica} (version 10).}. 
 
 To obtain the solution for $ \Delta J_z^2(t) $ exactly, numerical methods can be applied to the full set of equations discussed above in this section. 
 The variance, $\Delta J_z^2 $, can be characterized by the normalized rate $ \gamma_{\rm norm}= \sqrt{B^2 + 4 AC}$ or by the characteristic decay rate $ \gamma_s $. 
@@ -1268,12 +1267,16 @@ In the end, for a weak measurement, $ \hat{J}_\perp\approx \hat{J}_z $ and $ \ha
 %In the plots, we have normalized the time scale in accordance to $ 1/\gamma_{\rm norm} $, where $ \gamma_{\rm norm} = \sqrt{ (\gamma_{44} +\gamma_{33} -\gamma_{43} -\gamma_{34} -2\gamma_s^+ )^2 -\kappa [\frac{1}{2}(\gamma_{44} +\gamma_{33} -3\gamma_{43} -3\gamma_{34}) -\gamma_s^+ ] N_A } $.
 
 
-Since the optical depth per atom in the nanofiber case is orders of magnitude higher than the free-space QND measurement case, the correlations between atoms are strong. Therefore, equations of motions are inevitably coupled to each other. The two approximations above about the equation of $ \Delta J_z^2 $ have a big deviation from the exact solution. However, we can still make the following approximation as being verified numerically. 
+Since the optical depth per atom in the nanofiber case is orders of magnitude higher than the free-space QND measurement case, the correlations between atoms are strong. Therefore, equations of motions are inevitably coupled to each other. 
+The two approximations above about the equation of $ \Delta J_z^2 $ have a big deviation from the exact solution. 
+However, we can still make the following approximation as being verified numerically. 
 During the measurement period, the atom number is fixed and hence one can ignore the quantum nature of atom number operators--that is no fluctuation and correlations with the atom number operator. In our equations, for example, $ \expect{\hat{J}_z\hat{N}_C}=\expect{\hat{J}_z}\expect{\hat{N}_C}= \expect{\hat{J}_z}N_C$ or $ \expect{\hat{\mathbbm{1}}_C\hat{\sigma}_z}+\expect{\hat{\sigma}_z\hat{\mathbbm{1}}_C}=2\expect{\hat{\sigma}_z} $.
 We also have $ \Delta N_C=0 $ and can vanish terms like $ \expect{\Delta N_C\Delta N_C} $ in our equations of motion.
 
-Now, we considering the physics meaning of different coefficients in the exact equations of motion. 
-The $ \gamma_\uparrow $ and $ \gamma_\downarrow $ coefficients come from the imaginary part of the effective Hamiltonian and should indicate the population loss from the $ \ket{\uparrow} $ and $ \ket{\downarrow} $ respectively; the other rates from the expectation values of jump operators, like $ \gamma_{34} $, are the optical pumping terms indicating coherence refeeding from one sublevel to another for the collective spins. Since the process we consider is not trace-preserving and the atomic state will be polarized in the end, from the equation of $ \expect{\hat{N}_C} $, one can interpret the coefficient associated with the $ \expect{\hat{N}_C} $ as the loss rate while the coefficient associated with the $ \expect{\hat{J}_z} $ as the polarization rate. Therefore, we define
+Now, we consider the physics meaning of different coefficients in the exact equations of motion. 
+The $ \gamma_\uparrow $ and $ \gamma_\downarrow $ coefficients come from the imaginary part of the effective Hamiltonian and should indicate the population loss from the $ \ket{\uparrow} $ and $ \ket{\downarrow} $, respectively. 
+Other rates from the expectation values of jump operators, like $ \gamma_{34} $, are the optical pumping terms indicating coherence refeeding from one sublevel to another for the collective spins. 
+Since the spin dynamics in the clock space are not trace-preserving and the atomic state will be polarized slightly, from the equation of $ \expect{\hat{N}_C} $, one can interpret the coefficient associated with the $ \expect{\hat{N}_C} $ as the loss rate while the coefficient associated with the $ \expect{\hat{J}_z} $ as the polarization rate. Therefore, we define
 \begin{align}
 \gamma_{\rm{loss},\uparrow} &\equiv \gamma_\uparrow - (\gamma_{44}+\gamma_{43})=\gamma_\uparrow - \big(\gammauu + \gammadu \big), \\
 \gamma_{\rm{loss},\downarrow} &\equiv \gamma_\downarrow - (\gamma_{33}+\gamma_{34})=\gamma_\downarrow - \big(\gammadd + \gammaud \big),\\
@@ -1285,7 +1288,7 @@ $ \gamma_{\rm{loss},\uparrow} $ is the total rate of population loss for the sta
 There are two important features of this map that are not typical in a QND measurement of an ensemble of spin-1/2 particles.  First, since $\gamma_{\rm{loss},\uparrow} \neq \gamma_{\uparrow \rightarrow \downarrow}$ and  $\gamma_{\rm{loss},\downarrow} \neq \gamma_{\downarrow \rightarrow \uparrow}$, the map is {\em not} trace preserving to account for atoms optically pumped out of the clock subspace.  
 In addition, since $\gamma_{\rm{loss},\uparrow} \neq \gamma_{\rm{loss},\downarrow}$, optical pumping will lead to a polarization of the mean along $\hat{J}_z$, different from the value found in a usual QND measurement.
 
-Similarly, one can introduce $\tilde{\gamma}_\uparrow  \equiv \gamma_\uparrow - \gamma_{\uparrow \rightarrow \uparrow}$ as the rate of optical pumping out of the state $\ket{\uparrow}$ without considering the optical self-refeeding effect, and similarly for $\tilde{\gamma}_\downarrow$. Then one can define 
+Similarly, we introduce $\tilde{\gamma}_\uparrow  \equiv \gamma_\uparrow - \gamma_{\uparrow \rightarrow \uparrow}$ as the rate of optical pumping out of the state $\ket{\uparrow}$ excluding the optical self-refeeding effect, and we definite  $\tilde{\gamma}_\downarrow$ for the $ \ket{\downarrow} $. Then one can define 
 \begin{align}
 \Gamma'_1 &= \frac{\tilde{\gamma}_\uparrow + \tilde{\gamma}_\downarrow}{2}\\
 \Gamma'_2 &= \frac{\tilde{\gamma}_\uparrow - \tilde{\gamma}_\downarrow}{2},
