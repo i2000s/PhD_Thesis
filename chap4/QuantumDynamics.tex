@@ -116,7 +116,7 @@ magnetic field fluctuations, which make the clock state space useful for impleme
 	\ket{\uparrow} &\equiv \ket{f = 4,m = 0}, \\
  	\ket{\downarrow} &\equiv \ket{f = 3,m=0},
 \end{align}
-where $ m $ are the quantum numbers of the projected $ f $ manifold sublevels.
+where $ m $ are the quantum numbers of the projected $ f $ manifold sublevels (see Fig.~\ref{fig:D1line_F3F4}).
 If we define a subspace in the $ x $ basis that 
 \begin{align}
 \ket{\uparrow_x} = \frac{1}{\sqrt{2}}(\ket{\uparrow}+\ket{\downarrow}),\\
@@ -137,6 +137,12 @@ defines the collective measurement operators, where $ \hat{\mathbf{j}}^{(n)} $ i
 %Note that, in discussing the QND measurement protocols in Chapter~\ref{chap:birefringence}, we define operators in the $ z $ basis instead, and $ \hat{J}_z $ becomes the spin squeezing operator. But the physics is the same.
 
 %Not to go into too much details, below, we briefly review two approaches to simplify the light-shift Hamiltonian using the Clebsch-Gordan coefficients and the irreducible tensor representation, respectively. Some basic properties of the clock space will also be discussed.
+\begin{figure}[!tbp]
+\centering\makebox[\textwidth]{
+\includegraphics[width=0.8\textwidth]{../media/Figs/D1line_F3F4}}
+\caption[D1 line transitions in the clock space.]{D1 line transitions in the clock space. The red dashed lines show quantum transitions connected to an excited state on the $ 6P_{1/2} $ levels and a ground state on the $ 6S_{1/2} $ levels (probabilities on the lines) of the $ \ket{\uparrow}=\ket{f=4,m=0} $ clock state (left) and the $\ket{\downarrow}=\ket{f=3,m=0}$ clock state (right). 
+Transitions between $ \ket{\uparrow} $ and $ \ket{f'=4,m=0} $, and between $ \ket{\downarrow} $ and $ \ket{f'=3,m=0} $ are forbidden. $ \sigma_\pm $ transitions are symmetric for both clock states and connect the two clock states. }\label{fig:D1line_F3F4}
+\end{figure}
 
 We consider the case that the atoms are placed at points on the $ x $ axis and a $ D $ mode of light is propagating through the waveguide. There are two useful properties of the system with atoms in the clock space.
 
@@ -233,7 +239,7 @@ Eq.~\eqref{eq:chiHVUD_1} can be simplified into the following form:
 \end{align}
 \end{subequations}
 
-Second, it can be proven that, restricted in the clock state subspace, the vector component of the atomic polarizability vanishes due to the symmetry of quantum transitions, which eliminates the vector light shift of the Hamiltonian represented in Eq.~\eqref{Eq::LightShiftHam_irep}. 
+Second, it can be proven that, restricted in the clock state subspace, the vector component of the atomic polarizability vanishes due to the symmetry of quantum transitions (see Fig.~\ref{fig:D1line_F3F4}), which eliminates the vector light shift of the Hamiltonian represented in Eq.~\eqref{Eq::LightShiftHam_irep}. 
 
 
 %These can be expanded using the irreducible tensor representation. 
@@ -246,7 +252,13 @@ Second, it can be proven that, restricted in the clock state subspace, the vecto
 %In experiments, one could cancel some coupling terms through technical tricks and only remain one major term for QND and spin squeezing applications. We will discussion these details in Chapter~\ref{chap:birefringence}.
 
 \subsection{Stretched states and their squeezing subspaces}
-Another useful atomic state of the alkali atoms is the \emph{stretched state}\index{state!stretched state}, which is defined as a hyperfine state of $ \ket{f,m=f} $. 
+\begin{figure}[!tbp]
+\centering\makebox[\textwidth]{
+\includegraphics[width=0.75\textwidth]{../media/Figs/D2line_stretchstates}}
+\caption[D2 line transitions in the magnetic stretched state space.]{Magnetic stretched state space and some D2 line transitions between $ f=4 $ and $ f'=5 $ manifolds (red dashed lines). }\label{fig:D2line_stretchstates}
+\end{figure}
+
+Another useful atomic state of the alkali atoms is the \emph{magnetic stretched state}\index{state!stretched state}, which is defined as a hyperfine state of $ \ket{f,m=f} $ (see Fig.~\ref{fig:D2line_stretchstates}). 
 It has the largest magnetic quantum number and be relatively easily prepared with persistent $ \sigma $ pumping transitions, which makes the stretched state a good candidate for precise QND measurements.
 In the $ 6S_{1/2} $ ground state levels, we define the fiducial state\index{state!fiducial state} in the $ x $ basis that
 \begin{align}
