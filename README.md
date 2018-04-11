@@ -28,6 +28,9 @@ A PDF called `main.pdf` should be generated in the `main` folder.
 To compile in a GUI editor, use the parameters defined in the `main/Makefile` code for `pdflatex`, `LuaLaTeX` and other commands.
 Chapters can be compiled separately using the `.tex` files in the chapter folders.
 
+## To Cite
+[![DOI](https://zenodo.org/badge/91208437.svg)](https://zenodo.org/badge/latestdoi/91208437)
+
 ## Table of Content:
 
 + Chapter 1: Introduction
