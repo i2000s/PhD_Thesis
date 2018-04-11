@@ -51,7 +51,7 @@ Chapters can be compiled separately using the `.tex` files in the chapter folder
     + 2.3 Dispersive light response in the perspective of Green's function
         + 2.3.1 Eigenmodes of a dielectric waveguide
         + 2.3.2 Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide
-        + 2.3.3 Example Green's function of the nanober
+        + 2.3.3 Example Green's function of the nanofiber
     + 2.4 Phase shift and polarizability transformation
         + 2.4.1 Compare to the free-space case
 
@@ -60,11 +60,11 @@ Chapters can be compiled separately using the `.tex` files in the chapter folder
         + 3.1.1 Dipole oscillation and emission of polarized light
         + 3.1.2 Polarizability of alkali atoms
         + 3.1.3 Irreducible tensor representation of atomic polarizability
-    + 3.2 Modication of decay rates of atomic transitions
+    + 3.2 Modification of decay rates of atomic transitions
         + 3.2.1 Free-dipole decay rates of multiplets and equivalent dipole method
         + 3.2.2 Waveguide-mediated decay rates
     + 3.3 Geometric effects of dielectric waveguide interfaces
-        + 3.3.1 Modied decay rates from the perspective of waveguide geometry
+        + 3.3.1 Modified decay rates from the perspective of waveguide geometry
         + 3.3.2 Enhanced anisotropy of guided modes with different geometries of waveguides
 
 + Chapter 4: QND measurement and spin squeezing using nanowaveguides
@@ -72,7 +72,7 @@ Chapters can be compiled separately using the `.tex` files in the chapter folder
     + 4.2 Atom-light coupling with waveguide modes
     + 4.3 Some special states of alkali atoms
         + 4.3.1 Clock states and clock space
-        + 4.3.2 Stretched states and their squeezing subspaces
+        + 4.3.2 Stretched states and their squeezing subspace
         + 4.3.3 Spin coherent states, Dicke states and spin squeezed states
     + 4.4 Spin squeezing induced by QND measurement
 
