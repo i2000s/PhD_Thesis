@@ -17,16 +17,21 @@ Some of my handwritten notes that may or may not be included in this thesis are 
 Dissertation submission release should be before the middle of May, 2018.
 
 ## Build
-Dependence: [LaTeX 2e](https://www.latex-project.org/get/), [GNU Make](https://www.gnu.org/software/make/).
+Dependence: [LaTeX 2e](https://www.latex-project.org/get/), [GNU Make](https://www.gnu.org/software/make/), and [Git](https://git-scm.com/downloads).
 
-Compile the whole thesis:
+To compile the whole thesis:
 ```
+git submodule update
 cd main && make all && make clean
 ```
 A PDF called `main.pdf` should be generated in the `main` folder.
+The first line of the command is to download the bibliography file.
 
 To compile in a GUI editor, use the parameters defined in the `main/Makefile` code for `pdflatex`, `LuaLaTeX` and other commands.
 Chapters can be compiled separately using the `.tex` files in the chapter folders.
+
+## To Cite
+[![DOI](https://zenodo.org/badge/91208437.svg)](https://zenodo.org/badge/latestdoi/91208437)
 
 ## Table of Content:
 
