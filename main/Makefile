@@ -5,7 +5,7 @@
 # where /MINGW is where MinGW is installed. The line ending should be LF.
 PROJECT=main
 LATEXFLAGS?=-interaction=nonstopmode -file-line-error -shell-escape
-TEMPSUFFS=ps log aux out dvi bbl blg auxlock brf idx ilg ind lof toc
+TEMPSUFFS=ps log aux out dvi bbl blg auxlock brf idx ilg ind lof toc lot
 
 #pdf: ps
 #	$(foreach proj,$(PROJECT),ps2pdf ${proj}.ps;)
@@ -35,6 +35,7 @@ TEMPSUFFS=ps log aux out dvi bbl blg auxlock brf idx ilg ind lof toc
 all:
 	$(foreach proj,$(PROJECT), pdflatex $(LATEXFLAGS) $(proj); \
 	bibtex $(proj)||true; \
+	pdflatex $(LATEXFLAGS) $(proj); \
 	pdflatex $(LATEXFLAGS) $(proj); \
 	pdflatex $(LATEXFLAGS) $(proj);)
 
