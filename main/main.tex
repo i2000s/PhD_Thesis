@@ -10,11 +10,7 @@
 
 % % % % % % % % % % % % % % % % % % %
 
-% Title Page
-%\title{Dispersive quantum interface with atoms and nanophotonic waveguides}
-%\author{Xiaodong Qi}
-
-\makeindex
+\makeindex[columns=2, title=Index, intoc]
 
 \begin{document}
 \frontmatter
@@ -65,7 +61,7 @@
 
 \listoffigures
 
-%\listoftables
+\listoftables
 
 \input{../inputs/listofsymbols}
 
@@ -101,6 +97,7 @@
 \ExecuteMetaData[../chap7/Conclusion.tex]{conclusion}
 
 \appendix
+\addcontentsline{toc}{chapter}{Appendices}
 
 \ExecuteMetaData [../chap2/WaveguideInterface.tex]{polarizationstokesvectors}
 
@@ -154,6 +151,7 @@
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \backmatter
+\addcontentsline{toc}{chapter}{References}
 %\bibliographystyle{amsplain}
 \bibliographystyle{../styles/abbrv-alpha-letters-links}
 %\bibliographystyle{unsrt}
