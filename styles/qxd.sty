@@ -4,14 +4,14 @@
 %#####################################################################################
 %## general 
 \RequirePackage{pdfpages} %This is used to include the approval page.
-\pdfminorversion=6 %This prevents the PDFLaTeX Warning: Found pdf version 1.6, allowed maximum 1.5.
+\pdfminorversion=7 %This prevents the PDFLaTeX Warning: Found pdf version 1.7, allowed maximum 1.6.
 \RequirePackage{microtype}% reduce the number of badboxes?
 \RequirePackage{graphicx}
 \RequirePackage[margin=10pt]{caption} 
 \RequirePackage{catchfilebetweentags} % This is a very handy package that allows one 
 % to capture a part of a file surrounded by the tags %<*tag> and %</tag>. 
 %\RequirePackage{epstopdf}
-%\RequirePackage{geometry}
+%\RequirePackage{geometry} %\geometry{left=1.5in, bottom=1in, top=1in, right=1in}
 %\RequirePackage{epsfig}
 \RequirePackage{standalone}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -229,6 +229,7 @@
 \RequirePackage[all]{hypcap}%fix problems with figures and tables of the 'hyperref' package
 \RequirePackage{cleveref}% Package hperref works wrongly within the 'subequations' environment without this.
 \hypersetup{
+    linktocpage, % linktoc=all, % Enable this option if you prefer colored Table of Content items.
     colorlinks, linkcolor={dark-red},
     citecolor={dark-blue}, urlcolor={medium-blue}
 } %These setups replace the ugly and distracting red and green boxes of the 'hyperref' package with colored texts. 
