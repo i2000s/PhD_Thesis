@@ -22,7 +22,7 @@ Dependence: [LaTeX 2e](https://www.latex-project.org/get/), [GNU Make](https://w
 To compile the whole thesis:
 ```
 git submodule update
-cd main && make all && make clean
+cd main && make all clean
 ```
 A PDF called `main.pdf` should be generated in the `main` folder.
 The first line of the command is to download the bibliography file.
