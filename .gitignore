@@ -19,6 +19,7 @@
 .dropbox
 desktop.ini
 *.png
+/tikzconvert
 
 # Figures not to ignore.
 !chap5/Fig1.pdf
