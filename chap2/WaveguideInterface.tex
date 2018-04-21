@@ -135,7 +135,8 @@ For example, in the linear polarization basis, the real amplitudes $ E_x $, $ E_
 The phase difference between the two linear components of the field, $ \phi=\delta_x-\delta_y $, determines the helicity. 
 The amplitudes of the two field components determine the polarization magnitude and the polarization angle from the $ x $ axis~\cite{Jackson1975}. 
 Similar rules can be found for using other polarization representation bases at large~\cite{Mecozzi2011Unified}. 
-On the \Poincare sphere, $ (S_1,S_2,S_3) $ can be specified by the orientation angle $ \Psi (0\le \Psi \le \pi) $ of the ellipse projected onto the $ xy $ plane, and another angle $ \Theta (-\frac{\pi}{4}\le \Theta \le \frac{\pi}{4}) $ which is the angle of the ellipse from the $ S_3 $ axis. 
+In real space, the trace of the light's polarization vector projected onto the plane perpendicular to the propagation direction is an ellipse, in general. 
+On the \Poincare sphere, $ (S_1,S_2,S_3) $ can be specified by the orientation angle $ \Psi (0\le \Psi \le \pi) $ of the ellipse projected onto the real-space $ xy $ plane, and another angle $ \Theta (-\frac{\pi}{4}\le \Theta \le \frac{\pi}{4}) $ which is the angle of the ellipse from the real-space $ z $ axis. 
 That is~\cite{Born1999Principles}
 \begin{align}
 S_1 &= S_0\cos(2\Theta)\cos(2\Psi)\\
@@ -246,7 +247,7 @@ Another nanophotonic waveguide is a waveguide with a square cross section, which
 In both cases, only the fundamental guided modes are allowed to propagate through the waveguide. That is, the allowed guided modes have a single propagation constant\index{propagation constant} or projected wavenumber $ \beta_0 \,(n_1k_0<\beta_0<n_2k_0)$ with wavenumber\index{wavenumber} $k_0=2\pi/\lambda=\omega_0/c $, where $\omega_0$ is the angular frequency of the electric field, and $ c $ is the speed of light in a vacuum.
 
 The fundamental modes of the nanofiber are the \HE-modes with degeneracy in propagation directions $ b=\pm $ and polarizations of two labeled by $ p $. 
-For a single-mode \SWG, the quasi-\TE and the quasi-\TM modes together with a similar degeneracy in propagation directions and polarizations of two.
+For a single-mode \SWG, the quasi-\TE and the quasi-\TM modes together have a similar degeneracy as the \HE-modes of the nanofiber in propagation directions and polarizations.
 
 To calculate the eigenmodes of a dielectric waveguide, one may find analytical solutions if the waveguide has a solvable symmetry--like the cylindrical nanofiber, or one has to rely on numerical tools in most general cases--like the \SWG. 
  
@@ -392,12 +393,17 @@ A special case of the dyadic Green's function\index{dyadic Green's function} is 
 \end{align}
 with a scalar Green's function 
 \begin{align}
-G_0(\br,\br';\omega_0) =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},\label{eq:G0rrp}
+G_0(\br,\br';\omega_0) =k_0^2\frac{e^{\pm ik_0 |\mathbf{r}-\br'|}}{|\br-\br'|},\label{eq:G0rrp}
 \end{align}
-where we only need to keep the positive frequency solution for outgoing radiations. This result reflects the fact that the field responded at $ \br $ is a free spherical wave coming out from a point dipole source as we can recognize from basic electromagnetism. This solution is a key to solve radiation problems and normalize modified decay rates of atoms in the presence of a waveguide as we will discuss later. When $ \br\rightarrow \br' $ or the field responded at the dipole position, the real part of the Green's function diverges yet the imaginary part of $ G_0(\br,\br') $ takes the form
+where we only need to keep the positive frequency solution for outgoing radiations. This result reflects the fact that the field responded at $ \br $ is a free spherical wave coming out from a point dipole source as we can recognize from basic electromagnetism. This solution is a key to solve radiation problems and normalize modified decay rates of atoms in the presence of a waveguide as we will discuss later. When $ \br\rightarrow \br' $ or when the detection position is the dipole position, the real part of the Green's function diverges yet the imaginary part of $ \GFT(\br',\br') $ takes the form
+\begin{align}
+\im\left[\GFT(\br',\br')\right] = G_0\unittensor,
+\end{align}
+with the diagonal elements
 \begin{align}\label{eq:G0}
-G_0=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
+G_0=\im\left[\mathbf{e}_n\cdot  \GFT(\br',\br')\cdot \mathbf{e}_n^*\right]=\frac{2}{3}k_0^3,
 \end{align}
+where $ \mathbf{e}_n $ is an arbitrary unit vector.
 The details of solving the free-space Green's function and techniques we are going to use, including Born approximation~\cite{Gubernatis1977Born} and other general methods of solving a radiation problem, can be found in Appendix~\ref{chap:freespacegreenfunction}. 
 
 The output field as Lippmann-Schwinger equation\index{Lippmann-Schwinger equation} (the first line in the equation below) after interacting with $ N_A $ atoms placed at $ \br'=\br'_n (n=1,2,\cdots,N_A) $
@@ -1616,9 +1622,9 @@ G_0(\mathbf{k},\mathbf{k}') =\frac{4\pi k_0^2 e^{-i\mathbf{k}\cdot(\br-\br')}}{k
 \end{align}
 When we transfer the $ k $-space solution to the real 3D $ \br $ space, we obtain the valid scalar Green's function solutions of a point source:
 \begin{align}\label{scalarG}
-G_0(\br,\br') =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|},
+G_0(\br,\br') =k_0^2\frac{e^{\pm i\mathbf{k}_0\cdot (\mathbf{r}-\br')}}{|\br-\br'|}=k_0^2\frac{e^{\pm ik_0 |\mathbf{r}-\br'|}}{|\br-\br'|},
 \end{align}
-where the $ \pm $ signs correspond to the outgoing ($+$, due to causality) and incoming ($-$) propagating spherical waves from the point source. The different signs are obtained by choosing different contour integrals in the inverse transformation. We use the positive frequency or the outgoing solution for our radiation problem due to causality. With this scalar Green's function, we can find the vector potential by
+where the $ \pm $ signs correspond to the outgoing ($+$, due to causality) and incoming ($-$) propagating spherical waves from the point source, and the wave is propagating along the $ \br-\br' $ direction with wavenumber $ k_0 $. The different signs are obtained by choosing different contour integrals in the inverse transformation. We use the positive frequency or the outgoing solution for our radiation problem due to causality. With this scalar Green's function, we can find the vector potential by
 \begin{align}
 \mathbf{A} (\br) &= \frac{c}{\omega_0^2} \int_V \mathcal{J}(\br')G_0(\br,\br')\mathrm{d}^3 r'.\label{eq:freespaceAG0int}
 \end{align}
@@ -1653,7 +1659,7 @@ Substituting this into Eq.~\ref{eq:freespaceEA} and using Eq.~\ref{eq:freespaceE
 \mathbf{G}_x (\br,\br') &= \left[1+ \frac{1}{k_0^2}\nabla\nabla\cdot \right]G_0(\br,\br')\mathbf{e}_x.
 \end{align}
 One can derive similar equations for $ \mathbf{G}_y $ and $ \mathbf{G}_z $. By the definition $ \nabla\cdot\left[G_0\unittensor \right]=\nabla G_0 $, one can rewrite the vector equations of the Green's function above into the full tensor form by
-\begin{align}
+\begin{align}\label{eq:GFThomG0}
 \GFT(\br,\br') &=  \left[\unittensor + \frac{1}{k_0^2}\nabla\nabla \right]G_0(\br,\br').
 \end{align}
 This is the Green's function of a free dipole in a homogeneous background expressed in terms of the scalar Green's function $ G_0(\br,\br') $. Then the field can be expanded as a volume integral by
@@ -1698,13 +1704,35 @@ where $ \boldsymbol{\alpha}(\br') $ denotes the polarizability of atoms or dipol
 Usually, verification is required to determine if the perturbation fields are much weaker than the field $ \boldsymbol{\mathcal{E}}_0 $ before using Born series. 
 Depending on the problem, $ \GFT(\br,\br') $ can be in any explicit form, and can usually be solved by solely using the boundary condition of the problem.
 
-Back to the scattering problem with a homogeneous medium background, when $ \br\rightarrow \br' $ or when we measure the self-induced field at the point source's position $ \br' $, the real part of the Green's function is divergent. However, the imaginary part can be calculated. At that position, the tensor Green's function is reduced to the scalar Green's function, and the imaginary part can be calculated by first extracting the imaginary part of the Green's function in the Fourier domain or the $ k $-space following Eq.~(\ref{eq:Gkk'equation}). Then the inverse transform is taken back to the real 3D space by using the corresponding contour integral part (assuming outgoing radiation part). One can show that at the atom position, the imaginary part reads
-\begin{align}
-\mathrm{Im}\left[ \GFT_0 (\br^\prime\!_\perp, \br^\prime\!_\perp) \right] &=  G_0\unittensor,
+Back to the scattering problem with the vacuum background, when $ \br\rightarrow \br' $ or when we measure the self-induced field at the point source's position $ \br' $, the real part of the Green's function diverges while the imaginary part is finite.
+This can be proven as below.
+We define $ \mathbf{R}=\br-\br' $ with amplitude $ R=|\br-\br'| $ and substitute the positive frequency solution of $ G_0(\br,\br') $ [Eq.~\eqref{scalarG}] into Eq.~\eqref{eq:GFThomG0} to write~\cite{Novotny2012}
+\begin{align}\label{eq:GFThomexpand}
+\GFT(\br,\br') &= \frac{k_0^2\exp(ik_0R)}{R}\left[ \left( 1 \!+\! \frac{ik_0R \!-\! 1}{k_0^2R^2}\right)\!\unittensor \!+\! \left(\frac{3 \!-\! i3k_0R\!-\! k_0^2R^2}{k_0^2R^2} \right)\!\frac{\mathbf{R}\mathbf{R}}{R^2}\right].
 \end{align}
-where we have defined
+In the $ R\rightarrow 0 $ limit, we can expand
 \begin{align}
-G_0 &=\im\left[ G_0(\br',\br')\right]=\frac{2}{3}k_0^3.
+\exp(ik_0R) = 1+ ik_0R-\frac{(k_0R)^2}{2}-\frac{i(k_0R)^3}{6}+\cdots 
+\end{align}
+Above, terms with higher order than $ R^3 $ will not contribute to $ \lim_{\br\rightarrow\br'} \GFT(\br,\br') $ based on Eq.~\eqref{eq:GFThomexpand}. 
+Therefore, the real part of the vacuum Green's tensor [Eq.~\eqref{eq:GFThomexpand}] in the $ R\rightarrow 0 $ limit becomes
+\begin{align}
+\lim_{R\rightarrow 0} \re\left[\GFT(\br,\br')\right] &=\lim_{R\rightarrow 0}k_0^2\left[\left(\frac{1}{R}-\frac{1}{k_0^2R^3} \right)\unittensor +\left(\frac{3-k_0^2R^2}{k_0^2R^3} \right)\frac{\mathbf{R}\mathbf{R}}{R^2}\right.\nn\\
+&\quad\left. -\frac{1}{R}\unittensor + \frac{3}{R}\frac{\mathbf{R}\mathbf{R}}{R^2}+\frac{1}{2R}\unittensor -\frac{3}{2R}\frac{\mathbf{R}\mathbf{R}}{R^2} + O(R)  \right]\nn\\
+&= \lim_{R\rightarrow 0} k_0^2\left[\left(\frac{1}{2R}-\frac{1}{k_0^2R^3} \right)\unittensor + \left(\frac{3}{k_0^2R^3}+\frac{1}{2R} \right)\frac{\mathbf{R}\mathbf{R}}{R^2} +O(R)\right]\nn\\
+&= \infty.
+\end{align}
+Correspondly, the imaginary part in the $ R\rightarrow 0 $ limit becomes
+\begin{align}
+\lim_{R\rightarrow 0} \im\left[\GFT(\br,\br')\right] &=\mathrm{Im}\left[ \GFT_0 (\br^\prime, \br^\prime) \right]= \frac{2k_0^3}{3}\unittensor =G_0\unittensor,
+\end{align}
+%At that position, the tensor Green's function is reduced to the scalar Green's function, and the imaginary part can be calculated by first extracting the imaginary part of the Green's function in the Fourier domain or the $ k $-space following Eq.~(\ref{eq:Gkk'equation}). Then the inverse transform is taken back to the real 3D space by using the corresponding contour integral part (assuming outgoing radiation part). One can show that at the atom position, the imaginary part reads
+%\begin{align}
+%\mathrm{Im}\left[ \GFT_0 (\br^\prime, \br^\prime) \right] &=  G_0\unittensor,
+%\end{align}
+where we have defined the imaginary part of the Green's tensor projected onto an arbitrary unit vector $ \mathbf{e}_n $ by
+\begin{align}\label{eq:G0_app}
+G_0 &=\im\left[\mathbf{e}_n\cdot  \GFT(\br',\br')\cdot \mathbf{e}_n^*\right]=\mathbf{e}_n\cdot \im\left[ \GFT(\br',\br')\right]\cdot \mathbf{e}_n^*=\frac{2}{3}k_0^3.
 \end{align}
 
 Note that, using different conventions of Green's function or units might result in a different expression. For example, without the factor of $ k_0^2 $ when defining the Green's function equation, $ G_0= \frac{2}{3}k_0 $ (the usual Gauss units); or in the SI units, $ G_0=\frac{\varepsilon_0 k_0^3}{6\pi} $~\cite{Novotny2012}. One can prove that, if the dipole is radiating in a homogeneous medium with index of refraction $ n $, then in $ G_0 $, $ k_0 $ needs to be replaced with $ nk_0 $. Other equations can be adapted from our framework straightforwardly.
