@@ -307,8 +307,8 @@ Now, we consider some states of collective spins that will be used for collectiv
 Spin coherent states are the most classical-like quantum state of a collective spin system, which has maximum projection along some axis $ \hat{\mathbf{n}} $. For example, we consider a $ N $-spin-$ \frac{1}{2} $ system in a spin coherent state\index{state!spin coherent state} (SCS) with all spins in $ \ket{\uparrow} $ along the $ x $ axis:
 \begin{subequations}\label{eq:SCSJx}
 \begin{align}
-\ket{J,M_x=J} &=\ket{\uparrow_x}^{\otimes N} = \left(\frac{\ket{\uparrow}+\ket{\downarrow}}{\sqrt{2}}\right)^{\otimes N}\\
-&= \sum_{M=-J}^J \left( \begin{matrix}N\\ M \end{matrix} \right) \left( \frac{1}{\sqrt{2}}\right)^{N-M} \left( \frac{1}{\sqrt{2}}\right)^{M} \ket{J,M}
+\ket{J=\frac{N}{2},M_x=J} &=\ket{\uparrow_x}^{\otimes N} = \left(\frac{\ket{\uparrow}+\ket{\downarrow}}{\sqrt{2}}\right)^{\otimes N}\\
+&= \frac{1}{2^J}\sum_{M=-J}^J  \sqrt{\left( \begin{smallmatrix}2J\\ J+M \end{smallmatrix} \right)} \ket{J,M}
 \end{align}
 \end{subequations}
 which is a binomial distribution of all eigenstates $ \ket{J,M} $. 
@@ -347,11 +347,12 @@ where $ \tau = \tan \frac{\theta}{2}e^{-i\phi} $.
 When $ \theta=\frac{\pi}{2} $, $ \tau=\frac{1}{\sqrt{2}}e^{-i\phi} $, $ J_z =0$ and the probability distribution of magnetic sublevels obeys the binomial distribution of a fair coin as shown in the example earlier. 
 \begin{align}
 P_M &= |\bravket{J,M}{\theta=\frac{\pi}{2}}|^2\\
-&=\left( \begin{matrix} 2J\\ M+J\end{matrix}\right) \left(\frac{1}{2} \right)^{2J}\left(\frac{1}{2} \right)^{M+J} \Rightarrow \frac{1}{\sqrt{\pi J}} e^{-\frac{M^2}{J}} \quad \text{for} J\rightarrow\infty.
+&=\left( \begin{matrix} 2J\\ M+J\end{matrix}\right) \left(\frac{1}{2} \right)^{2J}\left(\frac{1}{2} \right)^{M+J} 
+\approx \frac{1}{\sqrt{\pi J}} e^{-\frac{M^2}{J}} \quad \text{for } J\rightarrow\infty.
 \end{align}
 The central limit theorem was applied in the last step to retrieve the Gaussian distribution function with mean zero and variance $ J/2 $. As can be seen, the SCS gives the minimum uncertainty for the $ J_\perp $:
 \begin{align}
-\expect{\Delta J_\perp} &= \frac{J}{2}=\frac{N}{4}.
+\expect{\Delta J_\perp^2} &= \frac{J}{2}=\frac{N}{4}.
 \end{align} 
 This is known as the \emph{shot noise limit}\index{noise!short noise limit}. 
 
