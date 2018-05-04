@@ -10,7 +10,7 @@
 
 \chapter{Atom-waveguide interface}\label{chap:waveguideinterfaces}
 \section{Introduction}
-In this chapter, we review the semiclassical theory of the interaction of the electromagnetic field (treated classically) with an atom trapped near the surface of a waveguide.  We consider the case that only one atom is trapped nearby a waveguide. As will be discussed later, in the dispersive regime, the interaction from many atoms can be treated as a sum of the interactions from all individual atoms. To be specific, for this chapter, we consider the following scenario: a laser beam propagates through a waveguide along the $ z $ direction; an alkali atom (cesium, for example) is trapped at $ \mathbf{r}_{\rm atom} =\mathbf{r}'$ in the evanescent field of the waveguide~\footnote{We will use the prime ($ ' $) notation to indicate the position of a photon emitter.} and responds to the guided optical field dispersively. In the dynamics, we consider dispersive phase shift of the light and ignore intensity attenuation in photon detections. Effectively, the presence of the atom outside of the waveguide changes the index of refraction\index{index of refraction} of the waveguide. 
+In this chapter, we review the semiclassical theory of the interaction of the electromagnetic field (treated classically) with an atom trapped near the surface of a waveguide.  We consider the case that only one atom is trapped nearby a waveguide. As will be discussed later, in the dispersive regime, the interaction from many atoms can be treated as a sum of the interactions from all individual atoms. To be specific, for this chapter, we consider the following scenario: a laser beam propagates through a waveguide along the $ z $ direction; an alkali atom (cesium, for example) is trapped at $ \mathbf{r}_{\rm atom} =\mathbf{r}'$ in the evanescent field of the waveguide~\footnote{We will use the prime ($ ' $) notation to indicate the position of a photon emitter.} and responds to the guided optical field dispersively. In the dynamics, we consider the dispersive phase shift of the light and ignore intensity attenuation in photon detections. Effectively, the presence of the atom outside of the waveguide changes the index of refraction\index{index of refraction} of the waveguide. 
 The dispersive light shift applies when the saturation parameter is small,
 \begin{align}
 s=\frac{\Omega^2/4}{\Delta^2+\Gamma^2/4}\ll 1,
@@ -23,8 +23,8 @@ where $ \Omega $ is the Rabi frequency, $ \Gamma $ is the spontaneous emission r
 \caption[Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide.]{Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide. In the dispersive regime and when the atoms are placed a few hundred nm away from each other, the effect of the unguided radiation from the atoms can be ignored, and the photon scatterings among atoms are also negligible. For a quantum-measurement--targeted research, we mainly care about how the atomic emissions are modified by the waveguide interface and coupled to the guided modes to be detected at the measurement apparatus. Color contour on the left-hand part is an illustration of one guided mode intensity distribution of an optical nanofiber, which leaks into the free space to interact with atoms and propagates through the fiber. }\label{fig:trappedatomradiation}
 \end{figure}
 
-In this chapter, we will first outline the basic concept of the polarization state of light and introduce the experimental setup to characterize the dispersive light shift interaction, which is called \emph{polarization spectroscopy}\index{polarization spectroscopy}.
-The theme of this dissertation is based on the atom-light interactions which includes two aspects: how the light responds to the presence of the atoms, and how the atoms' properties modified by the light. For the light response aspect, we will derive a general theory in the language of Green's function to formulate the atom-light interaction mainly from the semi-classical perspective where the light is treated as a continuous wave while the atom has discrete level structures. 
+In this chapter, we will first outline the basic concept of the polarization state of light and introduce the experimental setup to characterize the dispersive light shift interaction based on \emph{polarization spectroscopy}\index{polarization spectroscopy}.
+The theme of this dissertation relates to the atom-light interactions including two aspects: how the light responds to the presence of the atoms, and how the atoms' properties are modified by the light. For the light response aspect, we will derive a general theory in the language of Green's function to formulate the atom-light interaction mainly from the semi-classical perspective where the light is treated as a continuous wave while the atom has discrete level structures. 
 Figure~\ref{fig:trappedatomradiation} shows a nanofiber interface.
 
 For the atoms' response, we will extend the definition of the polarizability of atoms from a classical oscillator picture to the multiple-level quantum representation, and then introduce the Purcell effect~\cite{Purcell1946} and derive the modified spontaneous decay rates of atoms in the presence of a waveguide using the Green's function language. 
@@ -35,7 +35,7 @@ At the end of this chapter, we will conclude with some geometric explanations on
 
 \subsection{Measuring the polarization state of light in free space}
 
-The electric field of a free-propagating monochromatic light can be expressed in the Cartesian coordinate system by~\cite{Jackson1975}
+The electric field of a monochromatic plane wave, freely propagating in $ z $ direction, can be expressed in the Cartesian coordinate system by
 \begin{align}
 \mathbf{E}(\br,t) = \mathbf{E}_x(\br,t) + \mathbf{E}_y (\br,t),
 \end{align}
@@ -48,7 +48,7 @@ where the $ x $ and $ y $ components
 \end{subequations}
 with complex amplitudes $ \mathcal{E}_{0x} $ and $ \mathcal{E}_{0y} $ in the linear polarization basis supported by the direction vectors $ \mathbf{e}_x $ and $ \mathbf{e}_y $.
 We define the propagation direction of the light is along the $ z $ axis. 
-Depending on the relative amplitude and phase between the $ x $ and $ y $ components, the polarization state of the light can be \emph{linear}\index{polarization!linear polarization}, \emph{circular}\index{polarization!circular polarization} and elliptical\index{polarization!elliptical polarization}~\cite{Jackson1975}.
+Depending on the relative amplitude and phase between the $ x $ and $ y $ components, the polarization state of the light can be \emph{linear}\index{polarization!linear polarization}, \emph{circular}\index{polarization!circular polarization} and elliptical\index{polarization!elliptical polarization}.
 For the convenience of describing the polarization state of light, we define the following polarization bases. 
 
 First, we define the circular polarization basis by the complex orthogonal unit vectors
@@ -151,9 +151,9 @@ The rotation around the $ S_3 $ axis is generated by the \emph{Faraday effect}\i
 With these two polarization transformation effects, one can generate an arbitrary polarization state of light from an initial state. 
 
 \subsection{Polarization spectroscopy on waveguide interfaces}
-Now, we turn on to atom-light interfaces with nanophotonic waveguides. 
+Now, we turn to the atom-light interface with nanophotonic waveguides. 
 We assume that a waveguide is designed so that the polarization of a transverse light beam in free space can be adiabatically coupled to a unique mode of the waveguide when the light travels through the waveguide. 
-When the light exits the waveguide, the mode of the waveguide can again adiabatically recovers to a unique polarization state of a transverse light in free space~\cite{Nayak2007}. 
+When the light exits the waveguide, the mode of the waveguide can again adiabatically transfers to a unique polarization state of a transverse light in free space~\cite{Nayak2007}. 
 The adiabatic connection between the light's polarization states in free space and the modes in the waveguide region applies identically to the processes of incidence to and exiting from the waveguide. 
 We also assume that the dispersive and distortion effects solely due to the waveguide have been compensated before the polarization state measurement or can be extracted out from the measurement result so that we can focus on the effects caused by atom-light interaction in the nanophotonic waveguide region. 
 We label the waveguide mode by the polarization state of the free-space light to which the mode is adiabatically connected. 
@@ -167,12 +167,12 @@ For instance, an $ H $ mode of a nanofiber indicates the mode adiabatically conn
    \label{fig:polarizationspectroscopy}
 \end{figure}
 
-Although we will keep as general as possible, for simplicity, we will only look at single-mode waveguides that only allow degenerate fundamental modes to propagate. The rest of this dissertation will be focusing on the atom-light interaction in the nanophotonic waveguide region and the design of particular quantum measurement protocols. There are two basic light-response effects to be introduced in the following section: the \emph{birefringence effect}\index{birefringence effect} and the \emph{Faraday effect}\index{Faraday effect}.
+Although we will keep our analysis as general as possible, for simplicity, we will only look at single-mode waveguides that only allow degenerate fundamental modes to propagate. The rest of this dissertation will be focusing on the atom-light interaction in the nanophotonic waveguide region and the design of particular quantum measurement protocols. There are two basic light-response effects to be introduced in the following section: the \emph{birefringence effect}\index{birefringence effect} and the \emph{Faraday effect}\index{Faraday effect}.
 
 
 \subsection{Birefringence and Faraday effects caused by atom-light interactions}
 
-Consider a laser beam propagates through a cloud of atoms and generates a birefringence rotation on its polarization state. This process is possible if there is a relative speed difference of the light propagation along two orthogonal directions which are usually defined as the \emph{fast axis}\index{fast axis} and \emph{slow axis}\index{slow axis}. Correspondingly, the effective index of refraction due to the atom-light interaction along the two directions are different and denoted by $ n_f $ and $ n_s $ with $ 1\le n_f<n_s $, respectively. Therefore, there is a phase difference $ \phi $ after the light propagates by a distance $ L $, where 
+Consider a laser beam that propagates through a cloud of atoms and generates a birefringence rotation on its polarization state. This process is possible if there is a relative speed difference of the light propagation along two orthogonal linear polarizations which are usually defined as the \emph{fast axis}\index{fast axis} and the \emph{slow axis}\index{slow axis}. Correspondingly, the effective index of refraction due to the atom-light interaction along the two directions are different and denoted by $ n_f $ and $ n_s $ with $ 1\le n_f<n_s $, respectively. Therefore, there is a phase difference $ \phi $ after the light propagates by a distance $ L $, where 
 \begin{align}
 \phi= k(n_f-n_s)L.
 \end{align}
@@ -195,7 +195,7 @@ In the next section, we will look into the properties of the bare waveguide mode
 
 \section{Dispersive light response in the perspective of Green's function}
 \subsection{Eigenmodes of a dielectric waveguide}\label{sec:eigenmodesofwaveguides}
-We assume a waveguide infinitely long with uniform profile of refractive index through the fiber axis. For a nanophotonic waveguide that can trap atoms using its evanescent field, its dimension of the cross-section is smaller than the wavelength $ \lambda $ of the probe (typically, around $ \lambda=894 $ nm or $852  $ nm, which are the D1 and D2 lines of cesium atoms). 
+We assume an infinitely long waveguide with a uniform profile of refractive index through the fiber axis. For a nanophotonic waveguide that can trap atoms using its evanescent field, its dimension of the cross-section is smaller than the wavelength $ \lambda $ of the probe (typically, around $ \lambda=894 $ nm or $852  $ nm, which are the D1 and D2 lines of cesium atoms). 
 We assume the waveguide is a linear medium with no absorption to the guided modes. The refractive bulk index\index{refractive index} of the waveguide can be given by
 \begin{align}
 n_0(\br_\perp) = \begin{cases} 
@@ -217,7 +217,7 @@ In general, $\mathcal{E}$ is a complex scalar constant and $\mathbf{u}(\br_\perp
 
 The eigenmodes of a waveguide include both guided (bound) and radiation (unbound or unguided) modes, based on the corresponding waveguide boundary condition problem governed by the Maxwell equations~\cite{Jackson1975}. 
 
-We use subscript $ \mu={j,\beta,p} $ to indicate generic guided eigenmodes, $ \mathbf{u}_\mu (\br) $, in which $ j=1 $ and $ \beta=\beta_0 $ for single-mode waveguides. 
+We use subscript $ \mu=(b,j,\beta,p) $ to indicate generic guided eigenmodes, $ \mathbf{u}_\mu (\br) $, in which $ j=1 $ and $ \beta=\beta_0 $ for single-mode waveguides, and  $ b=\pm $ denotes the propagation direction.
 We use mode index $ \nu=(\omega,\beta,m,p) $ to indicate unguided eigenmodes, $ \mathbf{u}_\nu(r\!_\perp ) $, where $ m=0,\,\pm 1,\,\pm 2,\cdots $ is the mode index, and $p=\pm$ denotes the polarization pattern.
 One can show that (see Appendix~\ref{chap:guidedunguidedmodes}), for a guided mode, $ n_2k_0< \beta<n_1 k_0 $; for an unguided mode, $ 0<\beta <n_2 k_0 $. 
 
@@ -231,10 +231,10 @@ These eigenmodes satisfy the orthogonality condition,
 and have dimension $1/\sqrt{A}$, where $ A $ is the area for the corresponding mode with $ \beta=\beta' $~\cite{LeKien2014}.
 The completeness relations of these eigenmodes can be given by
 \begin{align}
-\sum_{b,p}\int \mathrm{d}\mathbf{k} \,n^2(\br_\perp)\mathbf{u}_{\mu}(r\!_\perp )\mathbf{u}_{\mu}^*(r'\!_\perp ) &= \unittensor\delta^T(r\!_\perp-r'\!_\perp),\\
-\sum_{m,p}\int \mathrm{d}\mathbf{k} \, n^2(\br_\perp)\mathbf{u}_{\nu}(r\!_\perp )\mathbf{u}_{\nu}^*(r'\!_\perp ) &=\unittensor\delta^T(r\!_\perp-r'\!_\perp),
+\sum_{b,p,j}\! n^2(\br_\perp)\mathbf{u}_{\mu}(r\!_\perp )\mathbf{u}_{\mu}^*(r'\!_\perp ) \!+\!
+\sum_{m,p}\!\int \!\!\mathrm{d}\beta \, n^2(\br_\perp)\mathbf{u}_{\nu}(r\!_\perp )\mathbf{u}_{\nu}^*(r'\!_\perp ) &=\unittensor\delta^T(r\!_\perp-r'\!_\perp),
 \end{align}
-where $ \unittensor $ is the unit tensor, $ b=\pm $ denotes the propagation direction, and $\delta^T(r\!_\perp-r'\!_\perp)$ is the delta function for transverse fields.
+where $ \unittensor $ is the unit tensor, and $\delta^T(r\!_\perp-r'\!_\perp)$ is the delta function for transverse fields.
 
 %The orthogonality conditions of the guided and radiation modes can be summarized as follows: 
 %\begin{align}
@@ -242,18 +242,19 @@ where $ \unittensor $ is the unit tensor, $ b=\pm $ denotes the propagation dire
 %\end{align}
 
 \subsubsection{Solving the eigenmodes for a nanofiber and \SWG}
-As an example, a typical optical nanofiber has a cylindrical cross-section of radius $ a $. We use $ a=225 $nm, $ n_1=1.4496 $ as a constant in the core region ($ r_\perp\le a $) and $ n_2=1.0000 $ in the vacuum clad region ($ r_\perp>a $), where we have set the $ z $ axis to be the symmetric center of the nanofiber and $ r_\perp =\sqrt{x^2+y^2} $.
-Another nanophotonic waveguide is a waveguide with a square cross section, which we call a square waveguide. The waveguide has a width of $ w=300 $nm, $ n_1=2.0 $ for an ideal Si$_3$N$_4$ core medium $ (|x|\le w/2,|y|\le w/2) $, and the clad is also the vacuum\footnote{Details about our choice of the \SWG are in Appendix~\ref{chap:choozingSWGs}.}.
+As an example, consider a typical optical nanofiber with a cylindrical cross-section of radius $ a $. We use $ a=225 $nm, $ n_1=1.4496 $ as a constant in the core region ($ r_\perp\le a $) and $ n_2=1.0000 $ in the vacuum clad region ($ r_\perp>a $), where we have set the $ z $ axis to be the symmetric center of the nanofiber and $ r_\perp =\sqrt{x^2+y^2} $.
+We will also study another nanophotonic waveguide with a square cross section, which we call a square waveguide. The waveguide has a width of $ w=300 $nm, $ n_1=2.0 $ for an ideal Si$_3$N$_4$ core medium $ (|x|\le w/2,|y|\le w/2) $, and the clad is also the vacuum\footnote{Details about our choice of the \SWG are in Appendix~\ref{chap:choozingSWGs}.}.
 In both cases, only the fundamental guided modes are allowed to propagate through the waveguide. That is, the allowed guided modes have a single propagation constant\index{propagation constant} or projected wavenumber $ \beta_0 \,(n_1k_0<\beta_0<n_2k_0)$ with wavenumber\index{wavenumber} $k_0=2\pi/\lambda=\omega_0/c $, where $\omega_0$ is the angular frequency of the electric field, and $ c $ is the speed of light in a vacuum.
 
-The fundamental modes of the nanofiber are the \HE-modes with degeneracy in propagation directions $ b=\pm $ and polarizations of two labeled by $ p $. 
-For a single-mode \SWG, the quasi-\TE and the quasi-\TM modes together have a similar degeneracy as the \HE-modes of the nanofiber in propagation directions and polarizations.
+The fundamental modes of the cylindrical nanofiber are the \HE-modes with degeneracy in propagation directions $ b=\pm $ and polarizations of two labeled by $ p $~\cite{Kien2004}. 
+For a single-mode \SWG, the quasi-\TE and the quasi-\TM modes~\cite{Lee2017Characterizations} together have a similar degeneracy as the \HE-modes of the nanofiber in propagation directions and polarizations.
 
-To calculate the eigenmodes of a dielectric waveguide, one may find analytical solutions if the waveguide has a solvable symmetry--like the cylindrical nanofiber, or one has to rely on numerical tools in most general cases--like the \SWG. 
+To calculate the eigenmodes of a dielectric waveguide, one may find analytical solutions if the waveguide has a solvable symmetry--like the cylindrical nanofiber. 
+In other cases such as for the square waveguide, one has to rely on numerical tools. 
  
 
 
-The solution of the electric field and the fundamental eigenmodes of a cylindrical fiber have been solved in previous works~\cite{Snyder1983Optical,LeKien2014}. We provide a brief review of the method to solve the fiber problem in Appendix~\ref{chap:fibereigenmodes} with solutions of the \HE eigenmodes and its group velocity. The radiation mode solution is less used in this dissertation and can be found in, for example, Ref.~\cite{LeKien2014}. 
+The electric field for the fundamental eigenmodes of a cylindrical fiber have been solved in previous works~\cite{Snyder1983Optical,LeKien2014}. We provide a brief review of the method to solve the fiber problem in Appendix~\ref{chap:fibereigenmodes} with solutions of the \HE eigenmodes and its group velocity. The unguided or radiation mode solution is less used in this dissertation and can be found in, for example, Ref.~\cite{LeKien2014}. 
 
 A relatively simple form for the guided eigenmodes of a nanofiber can be expressed in a cylindrical basis $(r_\perp, \phi, z)$ with longitudinal unit vector $\mathbf{e}_z$, oriented along the waveguide axis.  
 The transverse unit vectors are related to their fixed Cartesian counterparts via the relations
@@ -285,7 +286,7 @@ These modes are expressed in terms of real-valued functions $ \left[u_{r_{\!\per
 
 We plot the non-zero mode component parts of the quasilinear $ H$ and $ V $ modes of a nanofiber in Fig.~\ref{fig:nanofiber_HVmode_E_xy}.
 These eigenmodes usually have non-zero longitudinal component. 
-Moreover, if we place an atom on the $ x $ axis ($ \phi'=0 $), the forward-propagating $ H $ and $ V $ modes at the atom position have the following form:
+Moreover, if we place an atom on the $ x $ axis ($ \phi'=0 $), the forward-propagating $ H $ and $ V $ modes at the atom position have the following form,
 \begin{subequations}\label{eq:uHVrx}
 \begin{align}
 \mbf{u}_{H}(\mathbf{r}'_\perp) = & \sqrt{2} \big[ \mathbf{e}_{r_{\!\perp}} u_{r_{\!\perp}}(r_\perp') +  i \mathbf{e}_z  u_z(r_\perp') \big] \\
@@ -300,8 +301,8 @@ Putting the atom on the $ y $ axis gives a similar result by exchanging the $ H 
 \includegraphics[width=12cm]{../media/Figs/swg_HVmode_absE_xy}}
 \caption[Non-zero $ H $- and $ V $-mode components of a square waveguide in the $xy $ plane.]{Non-zero $ H $ and $ V $ mode components of a \SWG in the $xy $ plane. The first (second) row plots the $ H $($ V $)-mode components $\left| \re\left[u_x(\br) \right]\right| $, $\left| \re\left[u_y(\br) \right]\right| $, and $ \left|\im\left[u_z(\br) \right]\right| $ from left to right. Amplitudes are normalized to the maximum value of all component parts. The white lines outline the profile of the square waveguide on each subplot. }\label{fig:swg_HVmode_E_xy}
 \end{figure}
-ref
-For the \SWG and general geometries, we solve the eigenmodes using a numerical method called \emph{Boundary Element Method}\index{Boundary Element Method} or BEM~\cite{Fallahkhair2008}. This method divides the regions close to the waveguide boundaries into finite grids and solve the wave equations by matching the boundary conditions on the grids. 
+
+For the \SWG and general geometries, we solve the eigenmodes using a numerical method called \emph{Boundary Element Method}\index{Boundary Element Method} or BEM~\cite{Fallahkhair2008}. This method divides the regions close to the waveguide boundaries into finite grids, and we solve the wave equations by matching the boundary conditions on the grids. 
 The wave equations are discretized to a set of linear equations. The eigenmodes are found by solving the eigenvalue problem defined by the boundary condition in the frequency domain. 
 It is fairly efficient when we have a fixed frequency point. 
 We verify the accuracy of the BEM calculation with the nanofiber case since we know the analytical solution. Then we use BEM to solve the eigenmodes for the \SWG geometry. 
@@ -339,7 +340,7 @@ The quasicircular polarization mode bases can be found from the $ H $ and $ V $ 
 In other words, a quasilinear mode can be decomposed into the quasicircular mode bases, Fig.~\ref{fig:Modes_Rot45LR_fiber}.
 We find that the $ H $ mode component has a much stronger intensity at the atom position than the $ V $ mode component as shown in Fig.~\ref{fig:Modes_Rot45HV_fiber}, if we place an atom on the $ x $ axis.
 This property of \emph{mode anisotropy}\index{anisotropy of waveguide modes} in azimuthal direction is intrinsic to the waveguides but does not exist in freely propagating fundamental Gaussian laser beams typically used in atom-light coupling experiments. In contrast, the decomposed $ R $ and $ L $ modes at the atom position have the same intensity. 
-As we will see later, we can choose a good mode basis based on the atomic internal structure and fully utilize the isotropic property of waveguide modes, which is the key to optimally designing some quantum operations and yields great advantages for the nanophotonic waveguides over the free-space atom-light quantum interface. For now, we pave some necessary foundations.
+As we will see later, we can choose a good mode basis based on the atomic internal structure and fully utilize the isotropic property of waveguide modes, which is the key to optimally designing some quantum operations and yields great advantages for the nanophotonic waveguides over the free-space atom-light quantum interface. For now, we lay some necessary foundations.
 
 \begin{figure}
 \centering\makebox[\textwidth]{
