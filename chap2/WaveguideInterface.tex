@@ -1735,6 +1735,11 @@ where we have defined the imaginary part of the Green's tensor projected onto an
 \begin{align}\label{eq:G0_app}
 G_0 &=\im\left[\mathbf{e}_n\cdot  \GFT(\br',\br')\cdot \mathbf{e}_n^*\right]=\mathbf{e}_n\cdot \im\left[ \GFT(\br',\br')\right]\cdot \mathbf{e}_n^*=\frac{2}{3}k_0^3.
 \end{align}
+Similar to local density of states used in the scattering problems described by the \sch equation with a finite potential barrier, one can define the photonic \emph{total local density of states}\index{local density of states} by~\cite{Moroz1995Density}
+\begin{align}
+\rho(\br',\omega_0) &= \frac{2\omega_0}{\pi c^2} \im \left\{\tr\left[\GFT(\br',\br';\omega_0) \right]\right\}=\frac{6\omega_0}{\pi c^2}G_0,
+\end{align}
+where the prefactor $ \frac{2\omega_0}{c^2} $ originates from the fact that the analog of the energy $ E $ used in the \sch equation is $ E=\frac{\omega_0^2}{c^2} $ and hence $ dE=\frac{2\omega_0}{c^2}d\omega_0 $. 
 
 Note that, using different conventions of Green's function or units might result in a different expression. For example, without the factor of $ k_0^2 $ when defining the Green's function equation, $ G_0= \frac{2}{3}k_0 $ (the usual Gauss units); or in the SI units, $ G_0=\frac{\varepsilon_0 k_0^3}{6\pi} $~\cite{Novotny2012}. One can prove that, if the dipole is radiating in a homogeneous medium with index of refraction $ n $, then in $ G_0 $, $ k_0 $ needs to be replaced with $ nk_0 $. Other equations can be adapted from our framework straightforwardly.
 

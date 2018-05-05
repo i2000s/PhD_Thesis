@@ -15,18 +15,18 @@
 \chapter{Spontaneous emission of atoms near a nanophotonic waveguide}\label{chap:emissionrates} 
 
 In Chapter 2, we treated the electromagnetic field classically, and neglected how the atom's decay is modified due to the presence of the nearby dielectric. 
-Though the resulting estimate of dispersive response is a good approximation in many cases, the model we have used may be too rough to study other quantum effects, given that the polarizability of the atom was assumed to be a scalar and the modification of the atomic decay rate did not account for the detailed internal structure of the atom. 
+Though the resulting estimate of the dispersive response is a good approximation in many cases, the model we have used may be too rough to study other quantum effects, given that the polarizability of the atom was assumed to be a scalar and the modification of the atomic decay rate did not account for the detailed internal structure of the atom. 
 In this chapter, we develop a detailed theory of the polarizability of atoms and the modification of atomic decay rates due to external field, from classical to quantum description. 
 
 \section{Polarizability of atoms}
 \subsection{Dipole oscillation and emission of polarized light}
-In this subsection, we present a simple model to show how the polarizability of alkali atoms are modified by an external field. Again, we assume the intrinsic polarizability of an atom is a scalar $ \alpha $, and a light shines at the atom through an arbitrary interface of media, which can be fully characterized by the dyadic Green's function $ \GFT(\br,\br') $. 
+In this subsection, we present a simple model to show how the response of alkali atoms are modified by the presence of a nearby dielectric.  This is a well-studied subject in nanophotonics~\cite{Novotny2012}. To begin with, we assume the intrinsic polarizability of an atom is a scalar $ \alpha $, and a light shines at the atom through an arbitrary interface of media, which can be fully characterized by the dyadic Green's function $ \GFT(\br,\br') $. 
 Using the Lippmann-Schwinger equation, Eq.~\eqref{eq:Lippmann-Schwinger}, the resulting electric field at the atom position is given by
 \begin{align}
 \mathbf{E}(\br') 
 &=\mathbf{E}_0(\br')+ \alpha \GFT(\br,\br') \cdot \mathbf{E}(\br').\label{eq:EoutG}
 \end{align}
-Note that, in the context of nanophotonic waveguides, the dyadic Green's function can be decomposed into the free-dipole, reflective and transmissive mode contributions as defined in Eq.~\eqref{eq:GFTdecomp0RT} denoted by the subscripts, $ 0 $, $ R $ and $ T $, respectively. By treating the atom as a classical oscillator of a single electron around the nucleus, a self-consistent equation for an atom at $ \br' $ excited by an incident optical field may be given by 
+Note that, in the context of nanophotonic waveguides, the dyadic Green's function can be decomposed into the free-dipole, reflective and transmissive mode contributions as defined in Eq.~\eqref{eq:GFTdecomp0RT} denoted by the subscripts, $ 0 $, $ R $ and $ T $, respectively. By treating the atom as a classical Lorentz oscillator of a single electron around the nucleus, a self-consistent equation for an atom at $ \br' $ excited by an incident optical field may be given by 
 \begin{align}
 (-\omega^2+\omega_0^2)\br' &= -\frac{e}{m}\mathbf{E}(\br')\\
 &=-\frac{e}{m}\left[\mathbf{E}_0(\br')+ {\alpha}\GFT(\br',\br')\cdot  \mathbf{E}(\br') \right],\label{eq:rEG}
@@ -57,7 +57,7 @@ d &=\frac{\frac{e^2}{2m\omega_0}}{-\Delta-\frac{ e^2}{2m\omega_0}\mathbf{e}_d\cd
 where we have defined the Lamb shift $ \delta \Delta= \frac{e^2}{2m\omega_0}\re\left[\mathbf{e}_d\cdot\GFT(\br',\br')\cdot \mathbf{e}_d \right]$ with the radiation reaction decay rate 
 \begin{align}
 \Gamma &= \frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT(\br',\br')\cdot \mathbf{e}_d\right]\\
-&= \Gamma_0 + \delta \Gamma,
+&= \Gamma_0 + \delta \Gamma,\label{Eq:Gamma0delta}
 \end{align}
 the natural linewidth $ \Gamma_0 =\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_0(\br',\br')\cdot \mathbf{e}_d\right] $, and the shift in the decay rate $ \delta\Gamma=\frac{e^2}{m\omega_0}\im\left[\mathbf{e}_d\cdot\GFT_R(\br',\br')\cdot \mathbf{e}_d\right] $. The scalar $ E_0(\br') $ is the projection of the incident field at $ \br' $ onto the direction that the dipole oscillates. 
 Comparing Eq.~\eqref{eq:dE0expanded} with Eq.~\eqref{eq:dalphaE0}, we obtain the modified scalar atomic polarizability 
@@ -78,6 +78,7 @@ Hence the classical natural linewidth of an atom can be given by
 \end{align}
 where $ k_0=\omega_0/c $, and $ r_{class}= \frac{e^2\omega_0}{mc^2}$ is the classical radius of the atom. 
 This classical model of the natural linewidth differs from the quantum Einstein-$A$ coefficient only through the ``oscillator strength" $f_0=\frac{2m\omega_0}{\hbar e^2}|d_{eg}|^2 $.
+Equation~\eqref{Eq:Gamma0delta} can then be understood as a modification of the local density of states (LDOS)\index{local density of states} of the vacuum in a Fermi's golden rule calculation~\cite{Novotny2012}.
 
 
 %\section{Polarizability of alkali atoms}
@@ -106,13 +107,13 @@ In the frequency domain, we define
 &= \sum_e \left[ \frac{i\hat{\mathbf{d}}_{eg}}{ \omega -\omega_{eg}-i\Gamma_{eg}/2 } + \frac{i\hat{\mathbf{d}}_{ge}}{ - \omega-\omega_{eg}-i\Gamma_{eg}/2}\right].
 \end{align}
 
-We consider a radiation reaction that an atom is polarized in response to a traveling guided-mode electric field operator $ \hat{\mathbf{E}}_0(t)=\frac{1}{2}\left[\hat{\mathbf{E}}^{(+)}_0e^{-i\omega t} +  \hat{\mathbf{E}}^{(-)}_0e^{i\omega t}\right] $. 
+We consider that an atom is polarized in response to a traveling guided-mode electric field operator $ \hat{\mathbf{E}}_0(t)=\frac{1}{2}\left[\hat{\mathbf{E}}^{(+)}_0e^{-i\omega t} +  \hat{\mathbf{E}}^{(-)}_0e^{i\omega t}\right] $. 
 %with the guided mode labeled by an index $ \mu = (\omega,f,p)$
 %\begin{align}
 %\hat{\mathbf{E}}^{(+)}_0 &= \sqrt{\frac{\hbar \omega}{v_g}} \hat{a}_\mu \mathbf{u}_{\mu} (r\!_\perp) e^{if\beta z+ip\phi},
 %\end{align} 
 %where $ \mathbf{u}_{\mu} (r\!_\perp)=\mathbf{u}_\mu(r\!_\perp,\omega) $  is one of the normalized guided modes of the nanofiber. 
-The induced dipole moment can be given by
+Assuming linear response, the induced dipole moment is given by
 \begin{align}
 \hat{\mathbf{d}}(t) 
 %&= \frac{1}{2} \left[\boldsymbol{\alpha}^*(\omega)e^{i\omega t} +\boldsymbol{\alpha}(\omega)e^{-i\omega t} \right] \hat{\mathbf{E}}_0\\
@@ -248,6 +249,15 @@ The atomic decay rate\index{decay rate} or spontaneous emission rate\index{spont
 \Gamma_e &= \frac{2}{\hbar}\sum_g \bra{g}\hat{\mathbf{d}}\ket{e} \cdot \mathrm{Im}\left[\tensor{\mathbf{G}}(\br',\br';\omega_{eg}) \right]\cdot \bra{e}\hat{\mathbf{d}}\ket{g}\label{eq:Gamma_e}
 \end{align}
 with the total Green's function tensor contributed from the guided modes and radiation modes, $ \tensor{\mathbf{G}}(\br',\br';\omega_{eg})=\tensor{\mathbf{G}}_{gyd}(\br',\br';\omega_{eg})+\tensor{\mathbf{G}}_{rad}(\br',\br';\omega_{eg}) $.
+If we set the dipole moment $ \mathbf{d}=\bra{g}\hat{\mathbf{d}}\ket{e} $ oriented along the $ \mathbf{e}_n $ direction, and define the partial LDOS due to the dipole  by~\cite{Moroz1995Density,Novotny2012}\footnote{Also see Appendix~\ref{chap:freespacegreenfunction} for the total photonic LDOS.}
+\begin{align}
+\rho_n(\br',\omega_0) &= \frac{2\omega_0}{\pi c^2} \mathbf{e}_n\cdot \im \left[\GFT(\br',\br';\omega_0) \right]\cdot \mathbf{e}_n^*,
+\end{align}
+the spontaneous emission rate can also be rewritten as
+\begin{align}
+\Gamma_e &= \frac{\pi c^2}{\hbar\omega_0}|\mathbf{d}|^2\rho_n.
+\end{align}
+
 
 Let us consider the decay rate of an atom in free space first.
 
