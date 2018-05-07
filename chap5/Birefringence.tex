@@ -139,9 +139,9 @@ We focus here on the transmitted fields whose interference with the input field 
 For weak scattering the diagonal terms, $t_{p p} \approx \sqrt{1-R_p}e^{i \delta \phi_p}$, determine the phase shift and attenuation induced on each polarization mode,
 \begin{subequations}
 	\begin{align}
-		 \delta \phi_p &= \frac{2 \pi k_0}{A_{\rm in}} {\rm Re}(\alpha_{pp}),  \label{Eq::PhaseShift} \\
-		R_p &=  \frac{4 \pi k_0}{A_{\rm in}} {\rm Im}(\alpha_{pp}) .\label{Eq::Attenuation} 
-	\end{align} 
+		 \delta \phi_p &= \frac{2 \pi k_0}{A_{\rm in}} \re(\alpha_{pp}),  \label{Eq::PhaseShift} \\
+		R_p &=  \frac{4 \pi k_0}{A_{\rm in}} \im(\alpha_{pp}) .\label{Eq::Attenuation}
+	\end{align}
 \end{subequations}
 Here, the $\{p,p'\}$-element of the tensor polarizability is given by, $\alpha_{pp'} \equiv \mathbf{e}^*_{p'} \cdot \tensor{\boldsymbol{\alpha}}\cdot \mathbf{e}_{p}$, with unit vectors for each of the forward-propagating mode functions,\linebreak[4] $\mathbf{e}_{p}\equiv \mathbf{u}_{+,p}(\br'_\perp)/|\mathbf{u}_{+,p}(\br'_\perp)|$. 
 
@@ -221,11 +221,8 @@ Integrating the field equations,
 \begin{subequations}\label{eq:aout1}
 \begin{align}
 \hat{a}_\mu(t) &= \hat{a}_\mu(t_0) e^{-i\omega (t-t_0)} +i \sum_{e,g} g_{\mu,e,g}^* \int_{t_0}^t 
-\mathrm{d} t' e^{-i\omega (t-t')}\hat{\sigma}_{ge}(t'), \label{Eq::aguidedEOM}
-\end{align}
-\begin{align}
-\hat{a}_\nu (t) &= \hat{a}_\nu (t_0) e^{-i\omega (t-t_0)} +i \sum_{e,g} g_{\nu,e,g}^* \int_{t_0}^t \mathrm{d} 
-t' e^{-i\omega (t-t')}\hat{\sigma}_{ge}(t'),
+\mathrm{d} t'\, e^{-i\omega (t-t')}\hat{\sigma}_{ge}(t'), \label{Eq::aguidedEOM}\\
+\hat{a}_\nu (t) &= \hat{a}_\nu (t_0) e^{-i\omega (t-t_0)} +i \sum_{e,g} g_{\nu,e,g}^* \int_{t_0}^t \mathrm{d}t'\, e^{-i\omega (t-t')}\hat{\sigma}_{ge}(t'),
 \end{align}
 \end{subequations}
 substituting into \erf{Eq::dsigma}, and making the usual Markov\linebreak[4] approximation \cite{LeKien2005a} gives an expression for the ground-excited coherences.   This yields
