@@ -20,7 +20,7 @@ where $ \Omega $ is the Rabi frequency, $ \Gamma $ is the spontaneous emission r
 \begin{figure}
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.85\textwidth]{../media/Figs/NanofiberTrappedAtoms}}
-\caption[Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide.]{Guided and radiative photon emissions from atoms trapped next to a nanophotonic waveguide. In the dispersive regime and when the atoms are placed a few hundred nm away from each other, the effect of the unguided radiation from the atoms can be ignored, and the photon scatterings among atoms are also negligible. For a quantum-measurement--targeted research, we mainly care about how the atomic emissions are modified by the waveguide interface and coupled to the guided modes to be detected at the measurement apparatus. Color contour on the left-hand part is an illustration of one guided mode intensity distribution of an optical nanofiber, which leaks into the free space to interact with atoms and propagates through the fiber. }\label{fig:trappedatomradiation}
+\caption[Guided and unguided photon emissions from atoms trapped next to a nanophotonic waveguide.]{Guided and unguided photon emissions from atoms trapped next to a nanophotonic waveguide. In the dispersive regime and when the atoms are placed a few hundred nm away from each other, the effect of the unguided radiation from the atoms can be ignored, and the photon scatterings among atoms are also negligible. For a quantum-measurement--targeted research, we mainly care about how the atomic emissions are modified by the waveguide interface and coupled to the guided modes to be detected at the measurement apparatus. Color contour on the left-hand part is an illustration of one guided mode intensity distribution of an optical nanofiber, which leaks into the free space to interact with atoms and propagates through the fiber. }\label{fig:trappedatomradiation}
 \end{figure}
 
 In this chapter, we will first outline the basic concept of the polarization state of light and introduce the experimental setup to characterize the dispersive light shift interaction based on \emph{polarization spectroscopy}\index{polarization spectroscopy}.
@@ -215,9 +215,9 @@ where $ b=\pm $ indicates the propagating direction, and $\boldsymbol{\mathcal{E
 with $\mathcal{E}_0$ determining the field amplitude and $\mathbf{u}(\br_\perp)$ as the polarization vector at $ \br_\perp=(x,y)=(r_\perp,\phi) $ in either Cartesian or cylindrical coordinate system.
 In general, $\mathcal{E}$ is a complex scalar constant and $\mathbf{u}(\br_\perp)$ is a complex vector normalized to the energy flux or the power across a transverse plane. The spatial dependent part of the field $ \mathbf{u}(\br_\perp)e^{ib\beta z} $ can be written as a linear combination of the \emph{eigenmodes}\index{eigenmode} supported by the waveguide.
 
-The eigenmodes of a waveguide include both guided (bound) and radiation (unbound or unguided) modes, based on the corresponding waveguide boundary condition problem governed by the Maxwell equations~\cite{Jackson1975}. 
+The eigenmodes of a waveguide include both guided (bound) and unguided (unbound or radiation) modes, based on the corresponding waveguide boundary condition problem governed by the Maxwell equations~\cite{Jackson1975}. 
 
-We use subscript $ \mu=(b,j,\beta,p) $ to indicate generic guided eigenmodes, $ \mathbf{u}_\mu (\br) $, in which $ j=1 $ and $ \beta=\beta_0 $ for single-mode waveguides, and  $ b=\pm $ denotes the propagation direction.
+We use subscript $ \mu=(\omega,j,b,p) $ to indicate generic guided eigenmodes, $ \mathbf{u}_\mu (\br) $, in which $ j=1 $ and $ \beta=\beta_0 $ for single-mode waveguides, and  $ b=\pm $ denotes the propagation direction.
 We use mode index $ \nu=(\omega,\beta,m,p) $ to indicate unguided eigenmodes, $ \mathbf{u}_\nu(r\!_\perp ) $, where $ m=0,\,\pm 1,\,\pm 2,\cdots $ is the mode index, and $p=\pm$ denotes the polarization pattern.
 One can show that (see Appendix~\ref{chap:guidedunguidedmodes}), for a guided mode, $ n_2k_0< \beta<n_1 k_0 $; for an unguided mode, $ 0<\beta <n_2 k_0 $. 
 
@@ -471,12 +471,12 @@ where $ d^{(j)}(\br') $ is the dipole moment of a dipole at $ \br' $ with an ori
 Therefore, the key to calculate the dyadic Green's function in this approach is to solve the field emitted by a normalized dipole in the presence of the waveguide in the frequency domain. In fact, there are many ways to calculate the fields with a dipole source in a medium. 
 
 \textbf{Analytical solutions:} The field can be analytically solved only if the waveguide has some special geometry. A nanofiber geometry is one example that can be solved analytically.  
-In Appendix~\ref{sec:boundrad}, we provide some details of solving the $ \mathbf{E}(\br) $ field radiated from three orthogonal unit dipoles by decomposing the dipole radiation function described by Eq.~\eqref{eq:G0rrp} into the cylindrical coordinate basis. We solve the guided mode and the radiation mode contributions via finding residues of poles and contour integrals of branch cuts. In the end, complex integrations are simplified to be over the real axis to assuming the waveguide is lossless. 
-Using this method, we are able to decompose the responding Green's tensor outside of the waveguide to a part due to free-dipole radiation, $ \GFT_0(\br,\br') $, and a part due to the reflection from the waveguide interface, $ \GFT_R(\br,\br') $; and we interpret the Green's tensor responding inside of the waveguide medium, $ \GFT_T(\br,\br') $, as a result of mode transmission. Each part is calculated by projecting the total dipole radiation into the corresponding orthonormal modes. Therefore, the dyadic Green's function\index{dyadic Green's function} can be written as
+In Appendix~\ref{sec:boundrad}, we provide some details of solving the $ \mathbf{E}(\br) $ field radiated from three orthogonal unit dipoles by decomposing the dipole radiation function described by Eq.~\eqref{eq:G0rrp} into the cylindrical coordinate basis. We solve the guided mode and the unguided mode contributions via finding residues of poles and contour integrals of branch cuts. In the end, complex integrations are simplified to be over the real axis to assuming the waveguide is lossless. 
+Using this method, we are able to decompose the responding Green's tensor outside of the waveguide to a part due to free-dipole radiation, $ \GFT_0(\br,\br') $, and a part due to the scattering from the waveguide interface, $ \GFT_S(\br,\br') $; and we interpret the Green's tensor responding inside of the waveguide medium, $ \GFT_T(\br,\br') $, as a result of mode transmission. Each part is calculated by projecting the total dipole radiation into the corresponding orthonormal modes. Therefore, the dyadic Green's function\index{dyadic Green's function} can be written as
 \begin{align}\label{eq:GFTdecomp0RT}
 \GFT(\br,\br') = \left\{ 
 \begin{array}{lc}
-\GFT_0(\br,\br')+\GFT_R(\br,\br'), & \br\text{ outside of the waveguide}\\
+\GFT_0(\br,\br')+\GFT_S(\br,\br'), & \br\text{ outside of the waveguide}\\
 \GFT_T(\br,\br'), & \br\text{ inside the waveguide}
 \end{array}\right..
 \end{align}
@@ -485,12 +485,15 @@ As an extension to this mode decomposition method, we decompose a plane wave int
 
 \textbf{Numerical methods:} For most geometries of waveguides, an analytical solution is not always available, and we have to use numerical methods, including finite-difference time-domain (FDTD) method\index{FDTD method}~\cite{Taflove2005}, boundary-element method (BEM)\index{BEM} for radiation problems~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}, finite-element method (FEM)\index{FEM} and so on. 
 
-The FDTD method solves the Maxwell equations by dividing the real space under consideration completely into regular Yee-cell grids and transforming the differential equations into a linear equation system on those grid points in the time domain. I have used this method to study quantum dynamics and the photon emission spectrum of a many-body system involving nanophotonic cavities for my master's thesis~\cite{Qi2012}. From my past experience, the FDTD method requires a large computer memory or a long simulation time to perform first-principle time evolution of the field propagation matching the boundary conditions, and then Fourier transform the results into the frequency domain for the dyadic Green's function that we want. Since we only need to calculate the dyadic Green's function at a particular frequency point, this method is an overkilling. Also, it cannot easily separate the guided mode and the radiation mode contributions to help us develop some insights and simplify the simulation with some reasonable approximations. 
+The FDTD method solves the Maxwell equations by dividing the real space under consideration completely into regular Yee-cell grids and transforming the differential equations into a linear equation system on those grid points in the time domain. I have used this method to study quantum dynamics and the photon emission spectrum of a many-body system involving nanophotonic cavities for my master's thesis~\cite{Qi2012}. From my past experience, the FDTD method requires a large computer memory or a long simulation time to perform first-principle time evolution of the field propagation matching the boundary conditions, and then Fourier transform the results into the frequency domain for the dyadic Green's function that we want. Since we only need to calculate the dyadic Green's function at a particular frequency point, this method is an overkilling. Also, it cannot easily separate the guided mode and the unguided mode contributions to help us develop some insights and simplify the simulation with some reasonable approximations. 
 
-On the other hand, BEM evolves the Maxwell equations as a linear system in the $ \beta $ (projected wave vector) space, which makes it possible to separate the guided and the radiation mode contributions based on the range of $ \beta $ (see Section~\ref{sec:eigenmodesofwaveguides}). 
+On the other hand, BEM evolves the Maxwell equations as a linear system in the $ \beta $ (projected wave vector) space, which makes it possible to separate the guided and the unguided mode contributions based on the range of $ \beta $ (see Section~\ref{sec:eigenmodesofwaveguides}). 
 This method expresses electromagnetic field in terms of charges and currents distributed on the surfaces and interfaces of the structure under consideration. 
 The boundary conditions for the electromagnetic field yields a set of linear integral equations, with unknown charges and currents, which are eventually solved self-consistently in the presence of the external incident field from the dipole source by discretizing the integrals with a finite set of boundary points (elements). 
 The only assumption in this method is that the different media involved in the structures under study are described by frequency-dependent local dielectric functions, which is valid for our problem and we can use constant index of refractions. Therefore, the complexity of BEM only scales quadratically with respect to the points on the boundary elements, not on the full simulation space as the FDTD method does, which makes BEM computational efficient to solve our problem. FEM has a computational complexity between FDTD method and BEM, by using a flexible meshing trick to simplify the calculations yet not as much as BEM does. 
+
+To understand the deduction of computational complexity of this method, one can think about the BEM as a method that works in a ``dressed'' picture and absorbs the influence of boundary conditions fully into induced charges and currents at finite points. 
+Therefore, the troubles of evolving Maxwell equations over the full grids as encountered by FDTD, FEM and other numerical methods are avoided in BEM. 
 
 For our study, we decide to use a BEM program to simulate the electromagnetic field due to a unit dipole for the nanofiber geometry first to check the accuracy against our analytical solution, and then apply this method to the \SWG case. 
 Since the field components in the $ z $ direction only yield a phase difference compared to the $ z=0 $ plane, we can fully solve our radiation problem on a 2D plane. 
@@ -498,26 +501,28 @@ With boundary points set for every $ 5 $--$ 6 $ nm away from each other on the b
 We use $ \Delta \beta = 0.01k_0 $ to sample the $ \beta $-space calculations. One issue of this approach is that we have to make the medium of the waveguide ``imperfect" to avoid a divergent problem when we calculate the field response at the guided mode condition point $ \beta=\beta_0 $. 
 We set $ n_1(\br_\perp\in \text{waveguide region})=n_1+i\delta n_1 $, where $ n_1 $ is the the real bulk index of refraction of the waveguide and $ \delta n_1 $ gives a small fake non-radiative loss (we find $ \delta n_1\sim 0.001 $ or $ 0.01 $ might be good enough). Without this treatment, since the field at $ \beta=\beta_0 $ is a delta function, the result will diverge. To calculate the field response at the dipole position, which will be used for the modified decay rate calculation, we only calculate the induced electric field for a similar reason of the divergence of the real part of the Green's function. 
 
-In BEM, the Green's function tensor response at the dipole position at $ \omega_0 $ due to the radiation modes can be decomposed into the free-dipole or homogeneous radiation contribution and the induced-dipole radiation contribution, that is 
-\begin{align} \GFT_{rad}(\br',\br';\omega_0)=\GFT_0(\br',\br';\omega_0)+\GFT_{ind,rad}(\br',\br';\omega_0).
+Since BEM is sensitive to sharp edges in finding the induced current or charge distribution, we use smooth curves to replace the sharp corners in simulating the radiation problems for the \SWG boundary condition. 
+
+In BEM, the Green's function tensor response at the dipole position at $ \omega_0 $ due to the unguided modes can be decomposed into the free-dipole or homogeneous radiation contribution and the induced-dipole radiation contribution coupled to the unguided modes, that is 
+\begin{align} \GFT_{ung}(\br',\br';\omega_0)=\GFT_0(\br',\br';\omega_0)+\GFT_{ind,ung}(\br',\br';\omega_0).
 \end{align}
 To not be confused, when $ \br' $ is outside of the waveguide, Eq.~\eqref{eq:GFTdecomp0RT} implies that 
 \begin{align}
-\GFT_R(\br',\br';\omega_0) &= \GFT_{ind,gyd}(\br',\br';\omega_0) + \GFT_{ind,rad}(\br',\br';\omega_0). 
+\GFT_S(\br',\br';\omega_0) &= \GFT_{ind,gyd}(\br',\br';\omega_0) + \GFT_{ind,ung}(\br',\br';\omega_0). 
 \end{align}
-That is, the reflection part of Green's tensor includes both the guided ($ gyd $) and the radiation ($ rad $) parts that are calculated by integrating over different ranges of $ \beta $. 
-For a single-mode waveguide, with a unit dipole orientated along $j$ direction placed at $ \br' $, the induced-dipole radiation Green's tensor elements can be calculated by~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}
+That is, the scattering part of Green's tensor includes both the guided ($ gyd $) and the radiation or unguided ($ ung $) parts that are calculated by integrating over different ranges of $ \beta $. 
+For a single-mode waveguide, with a unit dipole orientated along $j$ direction placed at $ \br' $, the induced-dipole radiation Green's tensor elements coupled to unguided modes can be calculated by~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}
 \begin{align}
 G_{ind,gyd}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\left[\int_{-n_1k_0}^{-n_2k_0} d\beta E_j^i(\mathbf{r}') +\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\right]\nn\\
 &=\frac{4k_0^2}{3\pi^2}\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\\
-G_{ind,rad}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\int_{-n_2k_0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')=\frac{4k_0^2}{3\pi^2}\int_{0}^{n_2k_0} d\beta E_j^i(\mathbf{r}') \label{eq:BEMGindij}
+G_{ind,ung}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\int_{-n_2k_0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')=\frac{4k_0^2}{3\pi^2}\int_{0}^{n_2k_0} d\beta E_j^i(\mathbf{r}') \label{eq:BEMGindij}
 \end{align}
 where $ E_j^i(\mathbf{r}') $ is the $i$-th electric field component measured at the dipole position. 
 To calculate the guided-mode-induced Green's tensor using the first equation above, we need to give an artificial loss to the medium, that is to make the permittivity of the waveguide as
 \begin{align}
 \varepsilon(\br_\perp) = n^2(\br_\perp) + i\delta n(\br_\perp),
 \end{align}
-where $ \delta n(\br_\perp) $ is a small real number in the waveguide region and zero outside. Same for the radiation-mode-induced Green's tensor calculation. 
+where $ \delta n(\br_\perp) $ is a small real number in the waveguide region and zero outside. Same for the unguided-mode-induced Green's tensor calculation. 
 In practice, it is tricky to find a proper artificial loss to obtain an accurate value for the guided-mode-induced Green's tensor--especially when $ \beta_0 $ is close to the integration limit points; and even trickier to use the equation for the guided-mode-induced Green's tensor calculation to find the contribution from a particular guided mode if the waveguide allows multiple guided modes. 
 So, we decide to use the eigenmode decomposition method to calculate the guided-mode-induced Green's tensor, which will be introduced next.
 However, the calculation for the unguided-mode-induced Green's tensor equation [Eq.~\eqref{eq:BEMGindij}] is quite robust to the choice of artificial material loss, since the artificial loss is solely set for avoiding the divergent problem of the guided modes and does not bring in new radiations. 
@@ -559,21 +564,23 @@ where $\tilde{\delta}^{(T)}(\br-\br')$ is the delta function for generalized tra
 	\end{align}
 where the eigenvalues appear as $\omega_\eta^2 = c^2 k_\eta^2$.  The sum includes both guided and unguided contributions. That is,
 \begin{align}
-\tensor{\mathbf{G}}{}^{(T)}(\br,\br'; \omega_0) = \tensor{\mathbf{G}}_g(\br,\br'; \omega_0)+\tensor{\mathbf{G}}_{rad}(\br,\br'; \omega_0),
+\tensor{\mathbf{G}}{}^{(T)}(\br,\br'; \omega_0) = \tensor{\mathbf{G}}_{gyd}(\br,\br'; \omega_0)+\tensor{\mathbf{G}}_{ung}(\br,\br'; \omega_0),
 \end{align}
-where $ \tensor{\mathbf{G}}_g $ is the guided-mode-induced dyadic Green's function, and $ \tensor{\mathbf{G}}_{rad} $ the unguided-mode-induced dyadic Green's function\index{dyadic Green's function}.
+where $ \tensor{\mathbf{G}}_{gyd} $ is the guided-mode-induced dyadic Green's function, and $ \tensor{\mathbf{G}}_{ung} $ the unguided-mode-induced dyadic Green's function\index{dyadic Green's function}.
 
-For the dielectric waveguides we are interested in, the guided modes are $\mathbf{f}_\mu (\br) = \mathbf{u}_\mu (\br_\perp) e^{i\beta z}/\sqrt{2 \pi}$, with indices $\mu=\{j, \beta , p\}$ for the $j$th guided mode with propagation constant $\beta$ at frequency $\omega_\mu=\omega(\beta)$ and polarization $p$.  The transverse mode functions are normalized according to $\int d^2 \mbf{r}_\perp \, n^2(r_\perp)\mathbf{u}^*_\mu (\br_\perp) \cdot \mathbf{u}_{\mu'} (\br_\perp)\big|_{\beta = \beta'} = \delta_{j,j'}\delta_{p,p'}$ and have the dimension of $1/\sqrt{A}$ \cite{LeKien2014}. Similarly, one can define the transverse unguided modes in a similar way with indices $ \nu=\{\omega,\beta,m,p \} $, where $ m=0,\pm 1, \pm 2,\cdots $ is the mode index, and $ p=\pm $ indicates the polarization patterns. The unguided modes, $ \mathbf{u}_\nu (\br_\perp) $, are normalized according to $ \int\mathrm{d}^2\br_\perp n^2(\br_\perp)\left[\mathbf{u}_{\nu}(r\!_\perp )\cdot\mathbf{u}_{\nu'}^*(r\!_\perp )\right]_{\beta=\beta',m=m'} =\delta(\omega-\omega')\delta_{pp'} $. 
+\begin{sloppypar}
+For the dielectric waveguides we are interested in, the guided modes are $\mathbf{f}_\mu (\br) = \mathbf{u}_\mu (\br_\perp) e^{i\beta z}/\sqrt{2 \pi}$, with indices $\mu=\{\omega,j,\beta p\}$ for the $j$th guided mode with propagation constant $\beta$ at frequency $\omega_\mu=\omega(\beta)$ and polarization $p$.  The transverse mode functions are normalized according to $\int d^2 \mbf{r}_\perp \, n^2(r_\perp)\mathbf{u}^*_\mu (\br_\perp) \cdot \mathbf{u}_{\mu'} (\br_\perp)\big|_{\beta = \beta'} = \delta_{j,j'}\delta_{p,p'}$ and have the dimension of $1/\sqrt{A}$ \cite{LeKien2014}. Similarly, one can define the transverse unguided modes in a similar way with indices $ \nu=\{\omega,\beta,m,p \} $, where $ m=0,\pm 1, \pm 2,\cdots $ is the mode index, and $ p=\pm $ indicates the polarization patterns. The unguided modes, $ \mathbf{u}_\nu (\br_\perp) $, are normalized according to $ \int\mathrm{d}^2\br_\perp n^2(\br_\perp)\left[\mathbf{u}_{\nu}(r\!_\perp )\cdot\mathbf{u}_{\nu'}^*(r\!_\perp )\right]_{\beta=\beta',m=m'} =\delta(\omega-\omega')\delta_{pp'} $. 
+\end{sloppypar}
 
 We consider nanophotonic waveguides that support only the lowest $ j=1 $ fundamental guided modes at the relevant frequency $\omega_0$, and hence we can drop the $ j $ index.  In this case there are four guided modes: two polarizations $p$, each with propagation constant $\beta(\omega_0) = \pm\beta_0$ corresponding to forward and backward propagation.  The guided mode contribution to the dyadic Greens function is then 
 	\begin{equation} \label{Eq::GreensEigenmodes}
-		\tensor{\mathbf{G}}\!_g(\br,\br'; \omega_0) \!=\!\! \int_{\!-\infty}^\infty\!\!\!\! \mathrm{d} \beta \!\sum_{p}\! 
+		\tensor{\mathbf{G}}\!_{gyd}(\br,\br'; \omega_0) \!=\!\! \int_{\!-\infty}^\infty\!\!\!\! \mathrm{d} \beta \!\sum_{p}\! 
 \frac{-2\omega_0^2}{\omega_0^2\!\!-\!\omega^2(\beta)} \mathbf{u}_\mu (\br\!_\perp)\mathbf{u}^*_\mu 
 (\br_{\!\perp}^\prime) e^{i\beta(\!z\!-\!z'\!)},
 	\end{equation}
 and the unguided mode contribution part of the dyadic Green's function\index{dyadic Green's function} can be given by 
 \begin{align}\label{Eq::GreensunguidedEigenmodes}
-\tensor{\mathbf{G}}_{rad}(\br,\br'; \omega_0) \!=\!\! \int_{\!-\infty}^\infty\!\!\!\! \mathrm{d} \beta \!\sum_{m,p}\! 
+\tensor{\mathbf{G}}_{ung}(\br,\br'; \omega_0) \!=\!\! \int_{\!-\infty}^\infty\!\!\!\! \mathrm{d} \beta \!\sum_{m,p}\! 
 \frac{-2\omega_0^2}{\omega_0^2\!\!-\!\omega^2(\beta)} \mathbf{u}_\nu (\br\!_\perp)\mathbf{u}^*_\nu 
 (\br_{\!\perp}^\prime) e^{i\beta(\!z\!-\!z'\!)},
 \end{align}
@@ -581,17 +588,17 @@ where $ \omega(\beta)$ is the frequency of the mode for a given $\beta$.
 Based on the division of the guided and unguided modes we have discussed in Sec.~\ref{sec:eigenmodesofwaveguides}, the guided modes only exist when $ n_2k_0<|\beta|<n_1k_0 $ with the sign of $ \beta $ indicating the direction of propagation, and the unguided modes exist when $ -n_2k_0<\beta<n_2k_0 $. Therefore, we can transfer the integration over $ \beta $ into a contour integral around discrete poles within regions of $ (-n_1k_0,-n_2k_0) $ and $ (n_2k_0,n_1k_0) $ for the guided-mode Green's function, and an integration from $ -n_2k_0 $ to $ n_2k_0 $ for the unguided-mode Green's function using a similar trick discussed in Appendix~\ref{sec:boundrad} and illustrated in Fig.~\ref{fig:integralpaths} for a lossless waveguide. 
 
 We first focus here on the guided mode contribution to the Green's function. 
-We define $v_g= \vert d\omega/d\beta \vert_{\beta=\beta_0}$ as the group velocity at $\omega_0$ so that the dispersion expansion of $ \omega_\beta $ around $ \omega_0 $ yields 
+In general, we define $v_g= \vert d\omega/d\beta \vert_{\beta=\beta_0}$ as the group velocity at $\omega_0$ so that the dispersion expansion of $ \omega_\beta $ around $ \omega_0 $ yields 
 \begin{align}
 \omega(\beta) &=\omega_0 + \dd{\omega_\beta}{\beta}(\beta-b\beta_0) +\cdots = \omega_0 + bv_g(\beta-b\beta_0) +\cdots\\
 \Rightarrow \omega(\beta) - \omega_0 &= bv_g(\beta-b\beta_0) +\cdots
 \end{align}
-where $b=\pm$ indicates the propagation direction. 
+where we have explicitly separated the propagation direction $b=\pm$ from the propagation constant $ \beta $ and set $ \beta $ non-negative in the $ \omega(\beta) $ equations above. 
 For $z>z'$ ($z<z'$), the contribution of the guided modes to the retarded (causal) Green's function is found by the 
 usual displacement of the pole on the positive (negative) $\beta$ axis into the upper (lower) half of 
 the complex plane. The result for $z \neq z'$ is \cite{MangaRao2007Single}
 	\begin{align} 
-		\tensor{\mathbf{G}}^{(+)}_g(\br,\br'; \omega_0) = &2\pi i \sum_{b,p}  {\rm Res}\vert_{\beta =b\beta_0} 
+		\tensor{\mathbf{G}}^{(+)}_{gyd}(\br,\br'; \omega_0) = &2\pi i \sum_{b,p}  {\rm Res}\vert_{\beta =b\beta_0} 
 \left[\frac{-2 \omega_0^2 }{ \omega_0^2-\omega^2(\beta)}\right]  \mathbf{u}_{b\beta_0, p} 
 (\br_\perp)\mathbf{u}^*_{b\beta_0, p} (\br_{\perp}^\prime)e^{ib \beta_0 (z-z')} \nonumber \\
 = & 2\pi i \frac{\omega_0}{v_g } \sum_{b,p} \mathbf{u}_\mu (\br_\perp)\mathbf{u}^*_\mu
@@ -612,19 +619,19 @@ Radiative properties of a scatterer (the decay rate and energy level shift) are 
 \end{equation}
 Only the positive-frequency component contributes to the $\delta$-function, and it follows that the Green's function tensor at $\br = \br'$ is imaginary, which determines the resonant Purcell enhancement of spontaneous emission into the guided modes~\cite{Dung2000, Fussell2005Decay, Chen2010Finite} and can be given by
 	\begin{equation}\label{Eq::ImGreenLocal_general}
-		\tensor{\mathbf{G}}^{(+)}_g(\br',\br'; \omega_0=\omega_{eg}) = i\pi \frac{\omega_{eg}}{v_g } \sum_{b, p} 
+		\tensor{\mathbf{G}}^{(+)}_{gyd}(\br',\br'; \omega_0=\omega_{eg}) = i\pi \frac{\omega_{eg}}{v_g } \sum_{b, p} 
 		\mathbf{u}_\mu (\br_{\!\perp}^\prime)\mathbf{u}^*_\mu (\br_{\!\perp}^\prime),
 	\end{equation}
 where $\omega_{eg}$ is the resonance frequency of the atomic scatterer.  The energy level shift of the scatterer due to its proximity to the dielectric is found from the real part of the Green's function at $\br = \br'$. 
-To find the total modified spontaneous emission rate and energy level shift one must include the unguided radiation modes \cite{LeKien2005a} or employ other representations of the Green's function \cite{Klimov2004}.  
+To find the total modified spontaneous emission rate and energy level shift, one must include the unguided modes \cite{LeKien2005a} or employ other representations of the Green's function \cite{Klimov2004}.  
 
-Applying a similar process, we provide--without details of proofs--the radiation mode contribution to the positive-frequency Green's function tensor to be~\cite{LeKien2005a}
+Applying a similar process, we provide--without details of proofs--the unguided mode contribution to the positive-frequency Green's function tensor to be~\cite{LeKien2005a}
 \begin{align}
-\GFT_{rad}^{(+)} (\br,\br';\omega_0)&= i2\pi \omega_0  \int_{-n_2k_0}^{n_2k_0}\!\!\!\mathrm{d}\beta\sum_{b,m,p} \mathbf{u}_\nu (\br_{\!\perp}^\prime)\mathbf{u}^*_\nu (\br_{\!\perp}^\prime) e^{i b\beta(z-z')} \Theta \big( b(z-z') \big)
+\GFT_{ung}^{(+)} (\br,\br';\omega_0)&= i2\pi \omega_0  \int_{-n_2k_0}^{n_2k_0}\!\!\!\mathrm{d}\beta\sum_{b,m,p} \mathbf{u}_\nu (\br_{\!\perp}^\prime)\mathbf{u}^*_\nu (\br_{\!\perp}^\prime) e^{i b\beta(z-z')} \Theta \big( b(z-z') \big)
 \end{align} 
-for $ z\neq z' $; and for $ \br=\br' $, the imaginary part of the Green's function due to radiation modes can be given by
+for $ z\neq z' $; and for $ \br=\br' $, the imaginary part of the Green's function due to unguided modes can be given by
 \begin{align}
-\im\left[\GFT_{rad}^{(+)}(\br',\br';\omega_0=\omega_{eg})\right] &= \pi \omega_{eg}  \int_{-n_2k_0}^{n_2k_0}\!\!\!\mathrm{d}\beta\sum_{m,p} \mathbf{u}_\nu (\br_{\!\perp}^\prime)\mathbf{u}^*_\nu (\br_{\!\perp}^\prime).
+\im\left[\GFT_{ung}^{(+)}(\br',\br';\omega_0=\omega_{eg})\right] &= \pi \omega_{eg}  \int_{-n_2k_0}^{n_2k_0}\!\!\!\mathrm{d}\beta\sum_{m,p} \mathbf{u}_\nu (\br_{\!\perp}^\prime)\mathbf{u}^*_\nu (\br_{\!\perp}^\prime).
 \end{align} 
 With these expressions of Green's function components, we can calculate the modified spontaneous emission rates of an optical dipole next to a nanofiber (which will be discussed later in this chapter). Our results recover the spontaneous emission rate calculations presented in Ref.~\cite{LeKien2005a} based on the Heisenberg-Langevin equations of quantum dynamics, for example. 
 
@@ -636,7 +643,7 @@ Combining these two methods also makes the decomposition of the dyadic Green's f
 For some other numerical solvers for the radiation problems, like the FDTD method, can only calculate the total dyadic Green's function\index{dyadic Green's function}. To separate out the unguided mode contribution, one can subtract the total dyadic Green's function by the guided mode contribution computed using the eigenmode decomposition approach if the guided modes are known. 
 
 \subsection{Example Green's function of the nanofiber}
-\includefig{../media/Figs/GFTz0x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=0 $ plane. The calculation follows Appendix~\ref{sec:boundrad}. A dipole source (marked as $ \times $) is placed at $\br'=(r^\prime_\perp=2a,\phi'=0,z'=0) $ position or $ r'_\perp=2a $ from the fiber axis, where $a=225 $ nm is the radius of the nanofiber. The position of the observer is chosen to be in the $ z=0 $ plane. The wavelength is set to be $ \lambda=852 $ nm, which is the D2 line of cesium atoms. All values are normalized to the vacuum Green's function, $ G_0$, by Eq.~\eqref{eq:G0}. The value labeled for each subplot is the maximum value of the corresponding Green's function tensor element among all data points in the transverse plane excluding the dipole position. The radiation modes are calculated up to $ |m|=8 $.}
+\includefig{../media/Figs/GFTz0x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=0 $ plane. The calculation follows Appendix~\ref{sec:boundrad}. A dipole source (marked as $ \times $) is placed at $\br'=(r^\prime_\perp=2a,\phi'=0,z'=0) $ position or $ r'_\perp=2a $ from the fiber axis, where $a=225 $ nm is the radius of the nanofiber. The position of the observer is chosen to be in the $ z=0 $ plane. The wavelength is set to be $ \lambda=852 $ nm, which is the D2 line of cesium atoms. All values are normalized to the vacuum Green's function, $ G_0$, by Eq.~\eqref{eq:G0}. The value labeled for each subplot is the maximum value of the corresponding Green's function tensor element among all data points in the transverse plane excluding the dipole position. The unguided modes are calculated up to $ |m|=8 $.}
 {$\mathrm{abs}{\left[ G_{ij}(\mathbf{r},\mathbf{r}')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $ and $ z=0\lambda$.}{!tbp}
 
 \includefig{../media/Figs/GFTz1x2a}{0.95\linewidth}{The absolute value of the total dyadic Green's function's elements $ G_{ij}(\br,\br') $ in the $ z=\lambda $ plane. Same as Fig.~\ref{../media/Figs/GFTz0x2a} but observed in the $ z=\lambda $ plane.}
@@ -657,18 +664,19 @@ For some other numerical solvers for the radiation problems, like the FDTD metho
 \includefig{../media/Figs/GFTgz0x2a}{0.95\linewidth}{The absolute value of the \emph{guided-mode-induced} dyadic Green's function's elements\index{dyadic Green's function} $ G^g_{ij}(\br,\br') $ observed in the transverse plane. Settings are the same as Fig.~\ref{../media/Figs/GFTz0x2a} but for the guided mode contribution part only. Absolute values of the elements are the same for all $ z $ slices. For the purpose of comparison, the Green's function elements are plotted with only the forwarding propagation part.}
 {$\mathrm{abs}{\left[ G_{ij}^g(\mathbf{r},\mathbf{r}')\right]}$ contour plots in the transverse plane with $ r^\prime_\perp=2a $.}{!tbp}
 
-Now, we apply the radiation problem solver to calculate the elements of the dyadic Green's function\index{dyadic Green's function} of an atom trapped near a nanofiber at $ r'\!_\perp=2a $ from the fiber axis, and see if the radiation mode contributions vanish after a long propagation distance. The contour plots of the absolute values of the Green's function tensor elements are shown in Figs.~\ref{../media/Figs/GFTz0x2a} through~\ref{../media/Figs/GFTz100x2a} for slices at $ z=0,1,2,5,10, $ and $ 100\lambda $ with a dipole source fixed at $ r'\!_\perp=2a $ position on the $ x $-axis. The maximum values of each tensor element are also notated in the plots normalized to the imaginary part of the scalar Green's function in the vacuum ($ G_0 $ defined in Eq.~\eqref{eq:G0}, which indicates how the radiation mode contributions dissipate along the propagation direction. Note that, since the Green's function diverges at the source position, to find the maximum values shown in the plots we have excluded the source position. 
+Now, we apply the radiation problem solver to calculate the elements of the dyadic Green's function\index{dyadic Green's function} of an atom trapped near a nanofiber at $ r'\!_\perp=2a $ from the fiber axis, and see if the unguided mode contributions vanish after a long propagation distance. The contour plots of the absolute values of the Green's function tensor elements are shown in Figs.~\ref{../media/Figs/GFTz0x2a} through~\ref{../media/Figs/GFTz100x2a} for slices at $ z=0,1,2,5,10, $ and $ 100\lambda $ with a dipole source fixed at $ r'\!_\perp=2a $ position on the $ x $-axis. The maximum values of each tensor element are also notated in the plots normalized to the imaginary part of the scalar Green's function in the vacuum ($ G_0 $ defined in Eq.~\eqref{eq:G0}, which indicates how the unguided mode contributions dissipate along the propagation direction. Note that, since the Green's function diverges at the source position, to find the maximum values shown in the plots we have excluded the source position. 
 
-We see the maximum value oscillates a little bit in the near distance, due to the interference between the free-dipole radiation and the reflected field from the fiber interface, and then decays with the remaining amplitude inversely proportional to the propagation distance as the reflected field dies out in a long distance.
+We see the maximum value oscillates a little bit in the near distance, due to the interference between the free-dipole radiation and the scattered field from the fiber interface, and then decays with the remaining amplitude inversely proportional to the propagation distance as the scattered field dies out in a long distance.
 This only leaves over the free-dipole radiation and the guided mode contributions in a long distance. To demonstrate that the pattern left in a distant $ z $ slice is mainly the guided mode contribution, we plot the guided mode contribution in Fig.~\ref{../media/Figs/GFTgz0x2a}, which has a constant amplitude over the $ z $ slices. At $ z=10\lambda $ (Fig.~\ref{../media/Figs/GFTz10x2a}), the total Green's function tensor has already been very close to the bare forward-propagating guided-mode Green's function tensor. 
-At $ z=100\lambda $ (Fig.~\ref{../media/Figs/GFTz100x2a}), the radiation modes have essentially completely dissipated into free space. 
+At $ z=100\lambda $ (Fig.~\ref{../media/Figs/GFTz100x2a}), the unguided modes have essentially completely dissipated into free space. 
 Considering the photon detectors to measure the transported signal being at least centimeters away from the nanofiber region, we can safely ignore the influence of the unguided field to the measurement results. 
 
-In sum, given the two approaches, we can compute the dyadic Green's function\index{dyadic Green's function} for arbitrary nanophotonic waveguides and decompose the total Green's function into its guided and unguided mode components. The strategies of the computation and the decomposition only depend on the availability of software and computer resources, and one can combine the two approaches for fast and accurate calculations. We also show that the radiation modes does not propagate long enough to affect the measurement signal. In the next section, we will assume the dyadic Green's function is known and study the dispersive response theory of the guided light in a semi-classical scenario.
+In sum, given the two approaches, we can compute the dyadic Green's function\index{dyadic Green's function} for arbitrary nanophotonic waveguides and decompose the total Green's function into its guided and unguided mode components. The strategies of the computation and the decomposition only depend on the availability of software and computer resources, and one can combine the two approaches for fast and accurate calculations. We also show that the unguided modes does not propagate long enough to affect the measurement signal. In the next section, we will assume the dyadic Green's function is known and study the dispersive response theory of the guided light in a semi-classical scenario.
 
 
 \section{Phase shift and polarizability transformation}
 Now, we can formulate the theory of light response due to the presence of a waveguide next to atoms. We assume that the atoms interact with the light equally for all polarization states of the light, that is, to treat the atomic polarizability as a scalar in this section, and study the influence of a nanophotonic waveguide, as an example, by comparing the light response to the free-space case. A generalized light response theory including a tensor polarizability will be drawn in Chapter~\ref{chap:birefringence}. 
+As a shorthand, we denote $ \GFT_g(\br,\br')\equiv \GFT_{gyd}(\br,\br') $ and $ \GFT_r(\br,\br')\equiv\GFT_{ung}(\br,\br') $.
 
 We start with the electric field defined in Eq.~\eqref{eq:EGFTnatoms}, and rewrite the output field by only considering the guided-mode dyadic Green's function\index{dyadic Green's function} responding from a single atom source placed at $ \br' $. The output field
 \begin{align}
@@ -932,7 +940,7 @@ Above, we have replaced $ x\rightarrow H $ and $ y\rightarrow V $.
 
 %<*guidedunguidedmodes>
 \chapter{Guided and unguided modes of a waveguide}\label{chap:guidedunguidedmodes}
-Below, we sketch out the condition to divide the guided and radiation modes using an analogy to the \sch equation and based on the total internal reflection condition.
+Below, we sketch out the condition to divide the guided and unguided modes using an analogy to the \sch equation and based on the total internal reflection condition.
 
 \section{Wave equations as a scattering problem in analogy}
 If we want to fully calculate the eigenmodes of a waveguide, we need to consider both the electric and magnetic fields, the spatial parts of which are governed by the wave equations
@@ -984,7 +992,7 @@ we can conclude that the mode equation (Eq.~\ref{eigenpsi}) is basically an eige
 V_{ef\!f}=-k^2\varepsilon(\br\!_\perp) &\sim V(\br\!_\perp),\\
 -\beta^2 &\sim E.
 \end{align}
-With these analogies, we find that the guided modes dictated by the wave equation should correspond to the bound eigenstates of the trapping potential problem obeying the \sch equation; likewise, the radiation modes of the wave equation correspond to unbound states in the scattering problem following the \sch equation. In details, for the time-independent \sch problem, if $ 0<E\leq V $, then the eigenstates are bounded and have discrete solutions with respect to $ E $; if $ E>V $, then the resulting states is unbound and have continuous solutions of energy. For the waveguide's eigenmodes, similarly, we can also use the relative position of $ V_{ef\!f} $ and $ -\beta^2 $ to classify the bound and radiation modes. 
+With these analogies, we find that the guided modes dictated by the wave equation should correspond to the bound eigenstates of the trapping potential problem obeying the \sch equation; likewise, the unguided modes of the wave equation correspond to unbound states in the scattering problem following the \sch equation. In details, for the time-independent \sch problem, if $ 0<E\leq V $, then the eigenstates are bounded and have discrete solutions with respect to $ E $; if $ E>V $, then the resulting states is unbound and have continuous solutions of energy. For the waveguide's eigenmodes, similarly, we can also use the relative position of $ V_{ef\!f} $ and $ -\beta^2 $ to classify the guided and unguided modes. 
 
 Let us consider the concrete case of a nanofiber with step-function-like permittivity as a function of $ r_\perp $. The analogy of trapping potentials of the wave equation is illustrated in Fig.~\ref{Figs/scatteredmode}. In the regime $ n_2k<\beta<n_1k $, the eigenmodes have discrete solutions with respect to $ \beta $, which yield $ \beta=\beta_0 $ for a single-mode fiber; in the $ 0<\beta<n_2k $ regime, the eigenmode solutions are continuous with respect to $ \beta $. Similar result applies to the \SWG case. 
 
@@ -1054,7 +1062,7 @@ Let us consider the concrete case of a nanofiber with step-function-like permitt
 \end{figure}
 
 \section{Categorizing eigenmodes based on the total internal reflection condition}
-The division of guided and radiation modes based on the value of $ \beta $ can also be roughly understood in the perspective of geometric optics as elucidated in Fig.~\ref{fig:Fibermodes}. We regard $ \beta $ as the $ z $-projected wave number of a wave vector of the light ray on the $ \vec{k} $ direction. If the ray is incident in an angle that satisfies the total internal reflection condition (in our case, $ k_0<\beta<n_1k_0 $ with $ n_2=1 $), the corresponding modes are guided; otherwise, the modes are unguided with the light leaking out and decaying along $ z $.
+The division of guided and unguided modes based on the value of $ \beta $ can also be roughly understood in the perspective of geometric optics as elucidated in Fig.~\ref{fig:Fibermodes}. We regard $ \beta $ as the $ z $-projected wave number of a wave vector of the light ray on the $ \vec{k} $ direction. If the ray is incident in an angle that satisfies the total internal reflection condition (in our case, $ k_0<\beta<n_1k_0 $ with $ n_2=1 $), the corresponding modes are guided; otherwise, the modes are unguided with the light leaking out and decaying along $ z $.
 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
@@ -1251,7 +1259,7 @@ The positive propagation constant, $\beta \equiv \beta(\omega)$, is determined f
 Above, $f'(x)$ indicates a derivative with respect to the argument $x$.
 Inside the nanofiber the transverse wavevector is real, $k_\perp = q$, where $q=\sqrt{\beta^2- n_2^2k^2}$, and outside the nanofiber it is purely imaginary, $k_\perp = i h$, where $h=\sqrt{n_1^2 k^2 - \beta^2}$.  
 
-If $ \beta $ is a pure imaginary number, the field will have an exponential decay amplitude on the $ z $ direction, and will spread the energy away from the fiber axis. Reference~\cite{Snyder1983Optical} denotes the modes with pure imaginary $ \beta $ as evanescent modes. If $ \beta $ has both real and imaginary parts, the modes are denoted as leaky modes, which are combinations of radiation modes and evanescent modes. Except for the case that the incident light is highly directed at the complementary critical angle $ \theta_c $ of geometric optics, the radiation modes part alone can propagate for a long distance along the fiber axis. In our nanofiber system, we only consider the bound and radiation modes. The ranges of some waveguide parameters are given in Table~\ref{tab:fiberparameters}. 
+If $ \beta $ is a pure imaginary number, the field will have an exponential decay amplitude on the $ z $ direction, and will spread the energy away from the fiber axis. Reference~\cite{Snyder1983Optical} denotes the modes with pure imaginary $ \beta $ as evanescent modes. If $ \beta $ has both real and imaginary parts, the modes are denoted as leaky modes, which are combinations of unguided modes and evanescent modes. Except for the case that the incident light is highly directed at the complementary critical angle $ \theta_c $ of geometric optics, the unguided modes part alone can propagate for a long distance along the fiber axis. In our nanofiber system, we only consider the bound and unbound modes. The ranges of some waveguide parameters are given in Table~\ref{tab:fiberparameters}. 
 In the table, we have defined the normalized wave number\cite{Snyder1983Optical}, or 
 $V$-number\index{V-number@$V$-number} 
 of a fiber as $V  = 
@@ -1265,10 +1273,10 @@ different modes labeled with $ j $, we always have $V_j^2=a^2(h_j^2+q_j^2)$ and 
 frequencies, as $ a\rightarrow 0 $.  The cutoff frequency is found from $V = a\omega (\Delta)^{1/2}/c =2.405$ for silicon fiber.  
 Only the lowest HE mode, $\mathrm{HE}_{11}$, has no cutoff frequency as $ a\rightarrow 0 $.  For $0 < V < 2.405$, which is the case of the nanofiber we are studying, it is the only mode that propagates in the 
 fiber. For fixed $ \varepsilon_f $, in the range that $ 0\leq \beta \leq 
-k\sqrt{\varepsilon_f} $, we can distinguish the radiation and guided mode as follows:
+k\sqrt{\varepsilon_f} $, we can distinguish the unguided and guided mode as follows:
 \begin{align}
 \begin{cases}
-0\leq \beta < k, &\rightarrow \text{\emph{unbound/radiation modes;}}\\
+0\leq \beta < k, &\rightarrow \text{\emph{unguided/radiation modes;}}\\
 k< \beta \leq k \sqrt{\varepsilon_f}, &\rightarrow \exists \text{ a},\, \text{HE}_{11}\, \text{\emph{is the only 
 guided mode.}}
 \end{cases}
@@ -1437,7 +1445,7 @@ Also, to quantize the traveling field of waveguide modes, we can define the norm
 \begin{align}
 N_g &= \int_0^{2\pi} \!\!\mathrm{d} \phi \int_0^\infty\!\!\mathrm{d}r\!_\perp r\!_\perp\,  n^2(\br\!_\perp)|\boldsymbol{\mathcal{E}}^g(\br\!_\perp)|^2 = 2\pi A^2 a^2 (n_1^2P_1 + n_2^2P_2),
 \end{align}
-where the factor $ A $ is defined in Eq.~\eqref{eq:A} related to the input power. The full expression of radiation modes of the nanofiber system can also be found in Ref.~\cite{LeKien2005a}.
+where the factor $ A $ is defined in Eq.~\eqref{eq:A} related to the input power. The full expression of unguided modes of the nanofiber system can also be found in Ref.~\cite{LeKien2005a}.
 
 For some cases, the total power $ P $ can also be defined as
 \begin{align}
@@ -1750,18 +1758,18 @@ We use the expression of $ G_0 $ to normalize the waveguide-modified spontaneous
 
 %<*nanofiberradiationproblem>
 
-\chapter[Dipole radiations coupled to an optical nanofiber]{Dipole radiation coupled to the guided and radiation modes of an optical nanofiber}\label{sec:boundrad}
-In our study, it is critical to separate the guided mode and the radiation mode. In this section, we present in detail a light propagation theory in the scenario of a nanofiber with a trapped atom. 
+\chapter[Dipole radiations coupled to an optical nanofiber]{Dipole radiations coupled to the guided and unguided modes of an optical nanofiber}\label{sec:boundrad}
+In our study, it is critical to separate the guided mode and the unguided mode. In this section, we present in detail a light propagation theory in the scenario of a nanofiber with a trapped atom. 
 
 Considering that the atom emits photons around the nanofiber, the total electric field in our problem 
 can be written as 
 \begin{align}\label{Esrt0}
 \boldsymbol{\mathcal{E}}(\br) = \boldsymbol{\mathcal{E}}_{source}(\br) + 
 \boldsymbol{\mathcal{E}}_{fiber}(\br)=\boldsymbol{\mathcal{E}}_{source}(\br) + 
-\boldsymbol{\mathcal{E}}_{ref}(\br) +\boldsymbol{\mathcal{E}}_{tran}(\br),
+\boldsymbol{\mathcal{E}}_{scatt}(\br) +\boldsymbol{\mathcal{E}}_{tran}(\br),
 \end{align}
 where $ \boldsymbol{\mathcal{E}}_{source} $ is the electric field generated by the atom source, and $ \boldsymbol{\mathcal{E}}_{fiber} $ is the field due to the presence of the nanofiber that includes the 
-reflected electrical field $ \boldsymbol{\mathcal{E}}_{ref}(\br) $ (outside the nanofiber) and transmitted field $ 
+scattered electrical field $ \boldsymbol{\mathcal{E}}_{scatt}(\br) $ (outside the nanofiber) and transmitted field $ 
 \boldsymbol{\mathcal{E}}_{tran}(\br) $ (inside the nanofiber). 
 
 
@@ -1777,12 +1785,12 @@ nanofiber. Eq.~\eqref{Esrt0} can be rewritten as
 \boldsymbol{\mathcal{E}}_{ref}(\br)+\boldsymbol{\mathcal{E}}_{tran}(\br)\\
 &=
 	\begin{cases}
-	  \boldsymbol{\mathcal{E}}_{dipole} (\br)+ \boldsymbol{\mathcal{E}}_{ref}(\br) & r\!_\perp \geq a,\\
+	  \boldsymbol{\mathcal{E}}_{dipole} (\br)+ \boldsymbol{\mathcal{E}}_{scatt}(\br) & r\!_\perp \geq a,\\
 	  \boldsymbol{\mathcal{E}}_{tran}(\br) & r\!_\perp<a.
 	\end{cases} \\
 &=
 	\begin{cases}
-		  \boldsymbol{\mathcal{E}}^{(0)} (\br)+ \boldsymbol{\mathcal{E}}^{(R)}(\br) & r\!_\perp \geq a,\\
+		  \boldsymbol{\mathcal{E}}^{(0)} (\br)+ \boldsymbol{\mathcal{E}}^{(S)}(\br) & r\!_\perp \geq a,\\
 		  \boldsymbol{\mathcal{E}}^{(T)}(\br) & r\!_\perp<a.
 		\end{cases} \label{Etotalfiber}
 \end{align}
@@ -1795,7 +1803,7 @@ For longitudinal components of the electric and magnetic fields, we expand them 
 &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} c_{m\beta} J_m (hr\!_\perp),\\
 % + B_{m\beta} Y_m(hr\!_\perp)\right],\\
 \mathcal{E}^{(0)}_{z} &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp)\\
-\mathcal{E}^{(R)}_z &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(R)}_{z,m\beta}(r\!_\perp)\\
+\mathcal{E}^{(S)}_z &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(S)}_{z,m\beta}(r\!_\perp)\\
 &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
 \end{align}
 \end{subequations}
@@ -1805,11 +1813,11 @@ For longitudinal components of the electric and magnetic fields, we expand them 
 &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} d_{m\beta} J_m (hr\!_\perp),\\
 % + E_{m\beta} Y_m(hr\!_\perp)\right],\\
 \mathcal{B}^{(0)}_{z} &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp)\\
-\mathcal{B}^{(R)}_z &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(R)}_{z,m\beta}(r\!_\perp)\\
+\mathcal{B}^{(S)}_z &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(S)}_{z,m\beta}(r\!_\perp)\\
 &= \sum_{m=-\infty}^\infty \int \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp),
 \end{align}
 \end{subequations}
-where the superscript indicate the field components of reflection ($R$), dipole oscillation in free space ($0$) and transmission ($ T $). Notice that we have chosen $ m=\pm 1 $, as the nanofiber can only support HE$_{11}$ modes. 
+where the superscript indicate the field components of scattering ($S$), dipole oscillation in free space ($0$) and transmission ($ T $). Notice that we have chosen $ m=\pm 1 $, as the nanofiber can only support HE$_{11}$ modes. 
 The $ r\!_\perp $ and $ \phi $ components of the fields can be obtained using Eq.~\eqref{EHzgauss}, and $ \mathcal{B}=\mathcal{H} $ in Gauss units for given $ m $. 
 Also notice, in the nanofiber case we study, we can define $ z'=0 $ and $ \phi'=0 $, and hence the factor $ e^{im(\phi-\phi') + i\beta (z-z')} $ in the equations above becomes $ e^{im\phi + i\beta z} $.
 
@@ -2051,17 +2059,17 @@ T &=hpak\left[ pJ_m(ha)\dd{}{(pa)}H_m^{(1)}(pa)-hn_1^2H_m^{(1)}(pa)\dd{}{(ha)}J_
 \centering
 \subfloat[]{\label{contourplot_lower}\includegraphics[scale=0.75]{../media/Figs/contourplot_lower}}
 \end{minipage}
-\caption[Contour integrations to decompose the guided and radiation modes of a dipole radiation problem in presence of a single mode waveguide.]{Integration paths. For the case that $ z>0 $, we can use the zero-valued contour integral path drawn in subfig.~\ref{contourplot_upper} to calculate the integration along path $ C_1 $. The simplified integration path by ignoring waveguide losses is given on the right-hand-side. It only contains the forward propagating mode contributions with radiation and guided mode components as divided through the real axis integral and the loop-hole integral. For the $ z<0 $ case, the contour integral analysis is given in subfig.~\ref{contourplot_lower}, which only includes the backward propagating mode contributions.}
+\caption[Contour integrations to decompose the guided and unguided modes of a dipole radiation problem in presence of a single mode waveguide.]{Integration paths. For the case that $ z>0 $, we can use the zero-valued contour integral path drawn in subfig.~\ref{contourplot_upper} to calculate the integration along path $ C_1 $. The simplified integration path by ignoring waveguide losses is given on the right-hand-side. It only contains the forward propagating mode contributions with unguided and guided mode components as divided through the real axis integral and the loop-hole integral. For the $ z<0 $ case, the contour integral analysis is given in subfig.~\ref{contourplot_lower}, which only includes the backward propagating mode contributions.}
 \label{fig:integralpath}
 \end{figure}
 
-Now, we only consider the $ m=\pm 1 $ modes, and hence Equs.~(\ref{ET0Rexpand},~\ref{BT0Rexpand}) and the corresponding $ \phi $ and $ r\!_\perp $ components can be explicitly expressed as contour integrals
+Now, we only consider the $ m=\pm 1 $ modes, and hence Eqs.~(\ref{ET0Rexpand},~\ref{BT0Rexpand}) and the corresponding $ \phi $ and $ r\!_\perp $ components can be explicitly expressed as contour integrals
 \begin{subequations}\label{ET0RC1}
 \begin{align}
 \mathcal{E}^{(T)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} c_{m\beta} J_m (hr\!_\perp),\\
 % + B_{m\beta} Y_m(hr\!_\perp)\right],\\
 \mathcal{E}^{(0)}_{z} &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp)\\
-\mathcal{E}^{(R)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
+\mathcal{E}^{(S)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
 \end{align}
 \end{subequations}
 \begin{subequations}\label{BT0RC1}
@@ -2069,26 +2077,26 @@ Now, we only consider the $ m=\pm 1 $ modes, and hence Equs.~(\ref{ET0Rexpand},~
 \mathcal{B}^{(T)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} d_{m\beta} J_m (hr\!_\perp),\\
 % + E_{m\beta} Y_m(hr\!_\perp)\right],\\
 \mathcal{B}^{(0)}_{z} &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp)\\
-\mathcal{B}^{(R)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
+\mathcal{B}^{(S)}_z &= \sum_{m=\pm 1} \int_{C_1} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
 \end{align}
 \end{subequations}
-To distinguish the guided and radiation modes contributions, we can use the integral path along $ C_1 $ (see Fig.~\ref{fig:integralpath}) and find the equivalent integral path avoiding the branch cuts and isolated poles, which will be discussed next. 
+To distinguish the guided and unguided modes contributions, we can use the integral path along $ C_1 $ (see Fig.~\ref{fig:integralpath}) and find the equivalent integral path avoiding the branch cuts and isolated poles, which will be discussed next. 
 
-For the free-dipole radiation components, the $ C_1 $ integral path is almost the real integral path from $ -\infty $ to the $ +\infty $ except for the branch point at $ \pm k $. The sign of $ \beta $ indicates the propagation direction of the field. The free-dipole components only yield the radiation mode contributions to the total Green's dyadic. This is because the dipole radiation only occurs outside of the fiber and always in the radiation potential zone according to the equivalent scattering potential model. 
+For the free-dipole radiation components, the $ C_1 $ integral path is almost the real integral path from $ -\infty $ to the $ +\infty $ except for the branch point at $ \pm k $. The sign of $ \beta $ indicates the propagation direction of the field. The free-dipole components only yield the unguided mode contributions to the total Green's dyadic. This is because the dipole radiation only occurs outside of the fiber and always in the radiation potential zone according to the equivalent scattering potential model. 
 
-For the reflection and transmission components of the field, there are poles in the $ a_{m\beta} $, $ b_{m\beta} $, $ c_{m\beta} $ and $ d_{m\beta} $ coefficients. There are also branch cuts hidden in the Bessel and Hankel function components of their expressions. Depending on the sign of $ (z-z') $, the integral paths and their simplification are shown in Fig.(\ref{fig:integralpath}). The guided modes are associated with poles, and hence can be represented as residues if asymptotic approximation can be made. Therefore, the guided mode contribution part of the reflection and transmission components can be given by
+For the scattering and transmission components of the field, there are poles in the $ a_{m\beta} $, $ b_{m\beta} $, $ c_{m\beta} $ and $ d_{m\beta} $ coefficients. There are also branch cuts hidden in the Bessel and Hankel function components of their expressions. Depending on the sign of $ (z-z') $, the integral paths and their simplification are shown in Fig.(\ref{fig:integralpath}). The guided modes are associated with poles, and hence can be represented as residues if asymptotic approximation can be made. Therefore, the guided mode contribution part of the scattering and transmission components can be given by
 \begin{subequations}\label{ET0RRes}
 \begin{align}
 \mathcal{E}^{(T)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}}  e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} c_{m\beta} J_m (hr\!_\perp),\\
 %\mathcal{E}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}},\\
-\mathcal{E}^{(R)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}} e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
+\mathcal{E}^{(S)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}} e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
 \end{align}
 \end{subequations}
 \begin{subequations}\label{BT0RRes}
 \begin{align}
 \mathcal{B}^{(T)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}} e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} d_{m\beta} J_m (hr\!_\perp),\\
 %\mathcal{B}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}}, \\
-\mathcal{B}^{(R)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}} e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
+\mathcal{B}^{(S)}_z &= \sum_{m=\pm 1} \oint_{\beta_{1,m}} e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
 \end{align}
 \end{subequations}
 %\begin{subequations}\label{ET0RRes}
@@ -2096,7 +2104,7 @@ For the reflection and transmission components of the field, there are poles in 
 %\mathcal{E}^{(T)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} c_{m\beta} J_m (hr\!_\perp)\right]_{\beta=\beta_{1,m}},\\
 %% + B_{m\beta} Y_m(hr\!_\perp)\right],\\
 %\mathcal{E}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}},\\
-%\mathcal{E}^{(R)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} a_{m\beta} H_m^{(1)} (pr\!_\perp)\right]_{\beta=\beta_{1,m}},
+%\mathcal{E}^{(S)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} a_{m\beta} H_m^{(1)} (pr\!_\perp)\right]_{\beta=\beta_{1,m}},
 %\end{align}
 %\end{subequations}
 %\begin{subequations}\label{BT0RRes}
@@ -2104,17 +2112,17 @@ For the reflection and transmission components of the field, there are poles in 
 %\mathcal{B}^{(T)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} d_{m\beta} J_m (hr\!_\perp)\right]_{\beta=\beta_{1,m}},\\
 %% + E_{m\beta} Y_m(hr\!_\perp)\right],\\
 %\mathcal{B}^{(0)}_{z} &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[  e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp)\right]_{\beta=\beta_{1,m}}, \\
-%\mathcal{B}^{(R)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} b_{m\beta} H_m^{(1)} (pr\!_\perp)\right]_{\beta=\beta_{1,m}}.
+%\mathcal{B}^{(S)}_z &= 2\pi i \sum_{m=\pm 1} \sum_{\beta_{1,m=\pm 1}}\mathrm{Res}\left[ e^{im(\phi\!-\!\phi') + i\beta (z\!-\!z')} b_{m\beta} H_m^{(1)} (pr\!_\perp)\right]_{\beta=\beta_{1,m}}.
 %\end{align}
 %\end{subequations}
 
-The radiation mode contributions of the reflection and transmission components are associated with the branch cuts $ C_2 $~\cite{Klimov2004} in Fig.(\ref{fig:integralpath}).
+The unguided mode contributions of the scattering and transmission components are associated with the branch cuts $ C_2 $~\cite{Klimov2004} in Fig.(\ref{fig:integralpath}).
 \begin{subequations}\label{ET0RC2}
 \begin{align}
 \mathcal{E}^{(T)}_z &= \sum_{m=\pm 1} \int_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} c_{m\beta} J_m (hr\!_\perp)\\
 &\approx \sum_{m=\pm 1} 2\int_{-n_2k}^{n_2k} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} c_{m\beta} J_m (hr\!_\perp),\\
 %\mathcal{E}^{(0)}_{z} &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{E}^{(0)}_{z,m\beta}(r\!_\perp),\\
-\mathcal{E}^{(R)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp)\\
+\mathcal{E}^{(S)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp)\\
 &\approx \sum_{m=\pm 1} 2\int_{-n_2k}^{n_2k} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} a_{m\beta} H_m^{(1)} (pr\!_\perp),
 \end{align}
 \end{subequations}
@@ -2123,13 +2131,13 @@ The radiation mode contributions of the reflection and transmission components a
 \mathcal{B}^{(T)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} d_{m\beta} J_m (hr\!_\perp)\\
 &\approx \sum_{m=\pm 1} 2\int_{-n_2k}^{n_2k} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} d_{m\beta} J_m (hr\!_\perp),\\
 %\mathcal{B}^{(0)}_{z} &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} \mathcal{B}^{(0)}_{z,m\beta}(r\!_\perp),\\
-\mathcal{B}^{(R)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp)\\
+\mathcal{B}^{(S)}_z &= \sum_{m=\pm 1} \oint_{C_2} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp)\\
 &\approx \sum_{m=\pm 1} 2\int_{-n_2k}^{n_2k} \mathrm{d}\beta e^{im(\phi-\phi') + i\beta (z-z')} b_{m\beta} H_m^{(1)} (pr\!_\perp).
 \end{align}
 \end{subequations}
-Above, the approximation works when the waveguide is lossless and hence the branch lines along the imaginary axis of the $ \beta $ plane can be ignored. The factor of $ 2 $ comes from the sign flip of the two branch lines parallel to the real axis in the $ \beta $ plane ($ 2=1-\mathrm{e}^{\pi i} $), and physically corresponds to the degeneracy of $ 2 $ degrees of freedom of the polarization of the radiation modes in the transverse plane. Although we use the integral limits $ -n_2k $ to $ n_2k $, in practice, it should be either $ 0 \rightarrow n_2k$ or $ -n_2k\rightarrow 0 $ depending on the propagation directions of interest. 
+Above, the approximation works when the waveguide is lossless and hence the branch lines along the imaginary axis of the $ \beta $ plane can be ignored. The factor of $ 2 $ comes from the sign flip of the two branch lines parallel to the real axis in the $ \beta $ plane ($ 2=1-\mathrm{e}^{\pi i} $), and physically corresponds to the degeneracy of $ 2 $ degrees of freedom of the polarization of the unguided modes in the transverse plane. Although we use the integral limits $ -n_2k $ to $ n_2k $, in practice, it should be either $ 0 \rightarrow n_2k$ or $ -n_2k\rightarrow 0 $ depending on the propagation directions of interest. 
 
-One can obtain the bound and radiation field components with the dipole oriented in $ z $, $ \phi $ and $ r\!_\perp $ directions by substituting the $ \bmc{E}^{(0)}_{m\beta}(r\!_\perp) $ expressions for corresponding cases into Eqs.~(\ref{ET0RRes}-\ref{BT0RC2}). 
+One can obtain the guided and unguided field components with the dipole oriented in $ z $, $ \phi $ and $ r\!_\perp $ directions by substituting the $ \bmc{E}^{(0)}_{m\beta}(r\!_\perp) $ expressions for corresponding cases into Eqs.~(\ref{ET0RRes}-\ref{BT0RC2}). 
 
 To calculate the guided modes, we need to calculate the residues at isolated poles with $ \beta_{1,m} $ and $ m=\pm 1 $. The poles can be found by using the condition that
 \begin{align}
@@ -2161,7 +2169,7 @@ All transverse components of the fields can be obtained from the longitudinal co
 %Sample numerical calculations has been performed, and results are documented in the NanofiberProjectPlots.pdf (Dropbox folder, \url{Nanofiber/Code/Matlab/Plots}). The primary plots show that there are phase shifts for the transmitted and reflected lights so that the mode profile is not symmetric to the $ x $ axis where the atom lies on; the reflected light field has a backaction on the atom tending to move it off the trapping point; the $ m=\pm 1 $ modes are not balanced... 
 Our results were checked by reproducing the decay rates provided in Ref.~\cite{Klimov2004}. 
 
-To calculate the total decay rate of the atom with the enhancement due to the radiation, we need to find out the functions describing the branch cuts and the integration path for the radiation modes. The equations defining the branch cut are given by
+To calculate the total decay rate of the atom with the enhancement due to the coupling to the unguided modes, we need to find out the functions describing the branch cuts and the integration path for the unguided modes. The equations defining the branch cut are given by
 \begin{align}\label{branchcutequ}
 \mathrm{Im}\left[p \right] &=0\\
 \mathrm{Im}\left[h\right] &=0.
@@ -2191,7 +2199,7 @@ Similarly, the condition for $ \mathrm{Im}[h]=0 $ gives the same result. To make
 \begin{align}
 xy&>\delta\epsilon>0.
 \end{align}
-By the physics condition of radiation mode, we also have 
+By the physics condition of unguided mode, we also have 
 \begin{align}
 -n_2k<x<n_2k.
 \end{align}
@@ -2206,22 +2214,22 @@ We illustrate the division of the guided and unguided mode contributions to the 
 \begin{figure}[!tbp]
 \centering\makebox[\textwidth]{
 \includegraphics[width=0.85\textwidth]{../media/Figs/integratepath_GF}}
-\caption[Integral paths for the dyadic Green's function calculations when loss is negligible.]{Integral paths for the dyadic Green's function\index{dyadic Green's function} calculations. Part (a) is the integral path for the dipole's free-space field contribution calculation [see, for example, Eq.~\eqref{ET0RC1}]. Part (b) is the integral path for the reflected and transmitted field contributions calculation [see, for example, Eq.~\eqref{ET0RC1}]. Part (c) is the integral path for the dyadic Green's function calculation using the eigenmode decomposition method [see Eqs.~\eqref{Eq::GreensEigenmodes} and~\eqref{Eq::GreensunguidedEigenmodes}]. The integral paths on the left-hand-side (in blue) indicate the backward propagating contributions, while the right-hand-side (in red) parts corresponding to the forward propagating contributions. For the eigenmode decomposition method in part (c), if one choose to use $ f=\pm 1 $ to indicate the propagation direction, then only the $ \beta>0 $ portion of integral path will be applied. }
+\caption[Integral paths for the dyadic Green's function calculations when loss is negligible.]{Integral paths for the dyadic Green's function\index{dyadic Green's function} calculations. Part (a) is the integral path for the dipole's free-space field contribution calculation [see, for example, Eq.~\eqref{ET0RC1}]. Part (b) is the integral path for the scattered and transmitted field contributions calculation [see, for example, Eq.~\eqref{ET0RC1}]. Part (c) is the integral path for the dyadic Green's function calculation using the eigenmode decomposition method [see Eqs.~\eqref{Eq::GreensEigenmodes} and~\eqref{Eq::GreensunguidedEigenmodes}]. The integral paths on the left-hand-side (in blue) indicate the backward propagating contributions, while the right-hand-side (in red) parts corresponding to the forward propagating contributions. For the eigenmode decomposition method in part (c), if one choose to use $ f=\pm 1 $ to indicate the propagation direction, then only the $ \beta>0 $ portion of integral path will be applied. }
 \label{fig:integralpaths}
 \end{figure}
 
-As shown in section~\ref{sec:eigenmodesofwaveguides}, the guided and radiation modes contribution to the dyadic Green's function\index{dyadic Green's function} can be distinguished through the choice of integration paths. Fig.~\ref{fig:integralpaths}, part (a) shows the integral path to calculate the dipole free-space contribution which does not yield guided mode contribution to the total dyadic Green's function. Part (b) shows the loop and real-valued integral paths of the guided and radiation mode-divisions to the reflected and transmitted field components. The $ \mathrm{Re}(\beta)<0 $ and $ \mathrm{Re}(\beta)>0 $ parts correspond to the backward and forward propagating contributions, respectively. Part (c) of the figure indicates the path using the eigenmode decomposition method in the case where the sign of $ \mathrm{Re}(\beta) $ indicates the propagation directions. Depending on the propagation directions, we should choose the right integral paths for the corresponding methods adopted, and different methods should yield the same result. 
+As shown in section~\ref{sec:eigenmodesofwaveguides}, the guided and unguided modes contribution to the dyadic Green's function\index{dyadic Green's function} can be distinguished through the choice of integration paths. Fig.~\ref{fig:integralpaths}, part (a) shows the integral path to calculate the dipole free-space contribution which does not yield guided mode contribution to the total dyadic Green's function. Part (b) shows the loop and real-valued integral paths of the guided and unguided mode-divisions to the scattered and transmitted field components. The $ \mathrm{Re}(\beta)<0 $ and $ \mathrm{Re}(\beta)>0 $ parts correspond to the backward and forward propagating contributions, respectively. Part (c) of the figure indicates the path using the eigenmode decomposition method in the case where the sign of $ \mathrm{Re}(\beta) $ indicates the propagation directions. Depending on the propagation directions, we should choose the right integral paths for the corresponding methods adopted, and different methods should yield the same result. 
 
 
-With all of the field components solved given a dipole vector, the dyadic Green's function\index{dyadic Green's function} can be calculated with three parts: the part due to free-dipole radiation, $ \GFT_0(\br,\br') $, the field reflection part due to the presence of the waveguide interface, $ \GFT_R(\br,\br') $, and the part due to mode transmission through the waveguide, $ \GFT_T(\br,\br') $. The former two parts generate the unguided mode contribution to the total dyadic Green's function, and the third part forms the guided mode contribution to the total dyadic Green's function. The $ ij $-th components of the three parts of the dyadic Green's function\index{dyadic Green's function} can then be calculated by (see Eq.~\eqref{eq:GFTijEd})
+With all of the field components solved given a dipole vector, the dyadic Green's function\index{dyadic Green's function} can be calculated with three parts: the part due to free-dipole radiation, $ \GFT_0(\br,\br') $, the field scattering part due to the presence of the waveguide interface, $ \GFT_S(\br,\br') $, and the part due to mode transmission through the waveguide, $ \GFT_T(\br,\br') $. The former two parts generate the unguided mode contribution to the total dyadic Green's function, and the third part forms the guided mode contribution to the total dyadic Green's function. The $ ij $-th components of the three parts of the dyadic Green's function\index{dyadic Green's function} can then be calculated by (see Eq.~\eqref{eq:GFTijEd})
 \begin{align}
 G_0^{ij}(\br,\br') &= \frac{\mathcal{E}_i^{(0)}(\br)}{d_j(\br')},\\
-G_R^{ij}(\br,\br') &= \frac{\mathcal{E}_i^{(R)}(\br)}{d_j(\br')},\\
+G_R^{ij}(\br,\br') &= \frac{\mathcal{E}_i^{(S)}(\br)}{d_j(\br')},\\
 G_T^{ij}(\br,\br') &= \frac{\mathcal{E}_i^{(T)}(\br)}{d_j(\br')},
 \end{align}
-where $ \mathcal{E}_i^{(A)}\,(A=0,R,T) $ are the $ i $-th free-dipole radiation, and interface reflection and mode transmission electric components due to the corresponding dipole $ d_j $ orientated along the $ \mathbf{e}_j $ direction. The total dyadic Green's function\index{dyadic Green's function} is
+where $ \mathcal{E}_i^{(A)}\,(A=0,S,T) $ are the $ i $-th free-dipole radiation, and interface scattering and mode transmission electric components due to the corresponding dipole $ d_j $ orientated along the $ \mathbf{e}_j $ direction. The total dyadic Green's function\index{dyadic Green's function} is
 \begin{align}
-\GFT(\br,\br')=\GFT_0(\br,\br')+\GFT_R(\br,\br')+\GFT_T(\br,\br') .
+\GFT(\br,\br')=\GFT_0(\br,\br')+\GFT_S(\br,\br')+\GFT_T(\br,\br') .
 \end{align} 
 
 

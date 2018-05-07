@@ -81,7 +81,7 @@ where $\unittens$ is the unit tensor.
 
 The solution for the Green's function $\tensor{\mathbf{G}}(\br ,\br' ; \omega_0)$, following from Maxwell's equations,  
 has been studied previously \cite{Sakoda1996Optical,Sondergaard2001,Wubs2004}.
-In Chapter 2, we have also derived the eigenmode decomposition solutions for the dyadic Green's function of a nanophotonic waveguide and shown that the radiation modes do not contribute to the sign measured at the end of the waveguide. 
+In Chapter 2, we have also derived the eigenmode decomposition solutions for the dyadic Green's function of a nanophotonic waveguide and shown that the unguided modes do not contribute to the sign measured at the end of the waveguide. 
 As we are interested here in the forward-scattered components that lead to phase shifts and polarization transformations, we apply the eigenmode decomposition approach derived in Chapter 2 to directly calculate a nanofiber's $\tensor{\mathbf{G}}(\br ,\br' ; \omega_0)$ using the fiber's normal modes and study how the guided modes respond to atoms with a tensor polarizability. 
 
 We treat an optical nanofiber of radius $a$ with step-index profile,
@@ -165,14 +165,14 @@ The Lippmann-Schwinger solution, \erf{Eq::ScatteredField}, determines the input-
 In this section we connect this with the fully quantum mechanical description of dispersive atomic response and input-output relations for the quantized guided modes.  
 Following Ref. \cite{LeKien2005a}, we use a Heisenberg-Langevin approach for one-dimensional systems.  
 
-The positive frequency component of the quantized electric field operator decomposes into guided and radiation (unguided) modes, $\hat{\mathbf{E}}^{(+)}=\hat{\mathbf{E}}_g^{(+)}+\hat{\mathbf{E}}_{r}^{(+)}$, where
+The positive frequency component of the quantized electric field operator decomposes into guided and unguided (radiation) modes, $\hat{\mathbf{E}}^{(+)}=\hat{\mathbf{E}}_g^{(+)}+\hat{\mathbf{E}}_{r}^{(+)}$, where
 \begin{subequations}
 	\begin{align}
 		\hat{\mathbf{E}}_g^{(+)}(\br) &= \sum_{b,p} \int_0^{\infty}\!\!\!\!\!  \mathrm{d}\omega \sqrt{\frac{ \hbar \omega}{ v_g}} \; \awg \mathbf{u}_\mu (\br\!_\perp) e^{i b\beta(\omega) z } ,\label{Eq::QuantizedElectricField} \\
 		\hat{\mathbf{E}}_r^{(+)}(\br) &= \sum_{m,p}\int_0^{\infty}\!\!\!\!\! \mathrm{d}\omega   \int_{-kn_2}^{kn_2}\mathrm{d}\beta \, \sqrt{ \hbar \omega}\;\awr \mathbf{u}_\nu (\br\!_\perp) e^{i\beta(\omega) z }.
 	\end{align}
 \end{subequations}
-The HE$_{11}$ guided modes are specified by $\mu =(\omega, b, p)$, where $\omega$ is the mode frequency,  $p$ is the polarization, and the propagation direction $b=\pm$ corresponds to wavenumber $b \beta (\omega)$.  The radiation modes are specified by  $\nu=(\omega, \beta, m, p)$, where $m$ is the azimuthal (angular momentum) quantum number, $p$ labels the two orthogonal polarizations, and longitudinal propagation constant $\beta$ can vary continuously from $-kn_2$ to $kn_2$, with $k = \omega/c$ \cite{Sondergaard2001,LeKien2005a}.  
+The HE$_{11}$ guided modes are specified by $\mu =(\omega, b, p)$, where $\omega$ is the mode frequency,  $p$ is the polarization, and the propagation direction $b=\pm$ corresponds to wavenumber $b \beta (\omega)$.  The unguided modes are specified by  $\nu=(\omega, \beta, m, p)$, where $m$ is the azimuthal (angular momentum) quantum number, $p$ labels the two orthogonal polarizations, and longitudinal propagation constant $\beta$ can vary continuously from $-kn_2$ to $kn_2$, with $k = \omega/c$ \cite{Sondergaard2001,LeKien2005a}.  
 The creation/annihilation operators satisfy the usual continuous-mode commutation relations, $[\hat{a}_\mu, \hat{a}^\dag_{\mu'} ] = \delta_{b,b'} \delta_{p,p'} \delta ( \omega - \omega ') $ and $[\hat{a}_\nu ,\hat{a}^\dag_{\nu'} ] = \delta_{m,m'} \delta_{p,p'} \delta ( \omega - \omega ')  \delta ( \beta - \beta') $.
 
 The Hamiltonian for the system is
@@ -200,7 +200,7 @@ where the atomic dipole operator is projected between excited and ground subspac
 		\hat{\sigma}_{eg}+ \sum_{m,p} \int_0^{\infty}\!\!\!\!\!\mathrm{d}\omega \! \int_{-kn_2}^{kn_2}\mathrm{d}\beta \,  \hbar 
 g_{\nu, e,g}\, \hat{a}_\nu \, \hat{\sigma}_{eg}\right) + {H.c.},
 	\end{equation}
-where the coupling constants for guided/radiation modes are
+where the coupling constants for guided and unguided (radiation) modes are
 \begin{subequations} \label{Eq::CouplingConstants}
 	\begin{align}
 		\hbar g_{\mu, e,g} &= \sqrt{\frac{\hbar \omega}{ v_g  }}\, \bra{e} \hat{\mathbf{d}} \ket{g} 
@@ -860,7 +860,7 @@ where $u_0$ is set by the normalization condition, $\int d^2 \mathbf{r}_\perp n(
 		s = \frac{1/(q^2 a^2)^{2} + 1/(h^2 a^2)^{2}}{[J'_1(ha)/haJ_x(ha) + K'_1(qa)/qaK_1(qa)]}.
 	\end{align}  
 Of particular interest is the $z$-component, \erf{Eq::zprofile}, which can become appreciable.  Note that the phase convention in Eqs. (\ref{Eq::QuasicircularModes}-\ref{Eq::ProfileFunctions}) has been chosen to emphasize properties of the quasilinear modes and differs from that of \emph{Le Kien et al.} -- for instance in Ref. \cite{LeKien2014Propagation}.  
-Further details about the guided-mode fields inside the nanofiber ($r_\perp\leq a$), the radiation (unguided) modes, and the quantized form of both can be found in Refs. \cite{Sondergaard2001, Tong2004, Kien2004, LeKien2005a, Vetsch2010Opticala}.
+Further details about the guided-mode fields inside the nanofiber ($r_\perp\leq a$), the unguided (radiation) modes, and the quantized form of both can be found in Refs. \cite{Sondergaard2001, Tong2004, Kien2004, LeKien2005a, Vetsch2010Opticala}.
 
 
 
