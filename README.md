@@ -3,7 +3,7 @@ See the front-matter page for license information. Most of previous publications
 
 # Dispersive Quantum Interface with Atoms and Nanophotonic Waveguides
 
-***Work in progress***. [Comments](https://github.com/i2000s/PhD_Thesis/issues) and editorial inputs are highly welcome!
+[Comments](https://github.com/i2000s/PhD_Thesis/issues) and [editorial inputs](https://github.com/i2000s/PhD_Thesis/pulls) are highly welcome!
 
 Some data of plots are compiled into TikZ files.
 Some data and scripts can be found in our previous paper repositories, for example, including [the repo for our Faraday spin squeezing protocol paper](https://github.com/CQuIC/FaradaySqueezingProtocol) (CC By 4.0),
