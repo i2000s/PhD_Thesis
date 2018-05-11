@@ -1,7 +1,7 @@
 # README
 See the front-matter page for license information. Most of previous publications may be open-source (see below).
 
-# Dispersive quantum interface with atoms and nanophotonic waveguides
+# Dispersive Quantum Interface with Atoms and Nanophotonic Waveguides
 
 ***Work in progress***. [Comments](https://github.com/i2000s/PhD_Thesis/issues) and editorial inputs are highly welcome!
 
@@ -11,10 +11,10 @@ and [the repo for the simulations of Green's tensors and spontaneous emission ra
 
 Some of my handwritten notes that may or may not be included in this thesis are in the `temp` folder.
 
-## Release plan
-[Pre-release](https://github.com/i2000s/PhD_Thesis/releases) on April 10, 2018.
+## Releases:
+[Latest release](https://github.com/i2000s/PhD_Thesis/releases) on May 10, 2018.
 
-Dissertation submission release should be before the middle of May, 2018.
+Dissertation submission pre-release: April 10, 2018.
 
 ## Build
 Dependence: [LaTeX 2e](https://www.latex-project.org/get/), [GNU Make](https://www.gnu.org/software/make/), and [Git](https://git-scm.com/downloads).
@@ -40,7 +40,6 @@ Chapters can be compiled separately using the `.tex` files in the chapter folder
     + 1.2 Our toolbox: Atom-waveguide interface
     + 1.3 Quantum measurement, entanglement and spin squeezing with an atomic ensemble
     + 1.4 Outline of This Dissertation
-    + 1.5 Other Works
 
 + Chapter 2: Atom-waveguide interface
     + 2.1 Introduction
@@ -51,7 +50,7 @@ Chapters can be compiled separately using the `.tex` files in the chapter folder
     + 2.3 Dispersive light response in the perspective of Green's function
         + 2.3.1 Eigenmodes of a dielectric waveguide
         + 2.3.2 Dyadic Green's functions of dipole radiations in presence of a dielectric waveguide
-        + 2.3.3 Example Green's function of the nanofiber
+        + 2.3.3 Example Green's function of the nanofiber
     + 2.4 Phase shift and polarizability transformation
         + 2.4.1 Compare to the free-space case
 
@@ -60,11 +59,11 @@ Chapters can be compiled separately using the `.tex` files in the chapter folder
         + 3.1.1 Dipole oscillation and emission of polarized light
         + 3.1.2 Polarizability of alkali atoms
         + 3.1.3 Irreducible tensor representation of atomic polarizability
-    + 3.2 Modification of decay rates of atomic transitions
+    + 3.2 Modification of decay rates of atomic transitions
         + 3.2.1 Free-dipole decay rates of multiplets and equivalent dipole method
         + 3.2.2 Waveguide-mediated decay rates
     + 3.3 Geometric effects of dielectric waveguide interfaces
-        + 3.3.1 Modified decay rates from the perspective of waveguide geometry
+        + 3.3.1 Modified decay rates from the perspective of waveguide geometry
         + 3.3.2 Enhanced anisotropy of guided modes with different geometries of waveguides
 
 + Chapter 4: QND measurement and spin squeezing using nanowaveguides
@@ -78,7 +77,7 @@ Chapters can be compiled separately using the `.tex` files in the chapter folder
 
 + Chapter 5: Dispersive response theory, QND measurement and spin squeezing
     + 5.1 Introduction
-    + 5.2 Dyadic Green's function and input-output field response
+    + 5.2 Dyadic Green's function and input-output field response
     + 5.3 Heisenberg-Langevin-picture solution and atomic response
     + 5.4 QND measurement of atoms based on the birefringence effect
         + 5.4.1 Dispersive atom number measurement
