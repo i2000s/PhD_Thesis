@@ -12,9 +12,13 @@ and [the repo for the simulations of Green's tensors and spontaneous emission ra
 Some of my handwritten notes that may or may not be included in this thesis are in the `temp` folder.
 
 ## Releases:
-[Latest release](https://github.com/i2000s/PhD_Thesis/releases) on May 10, 2018.
++ [Latest release](https://github.com/i2000s/PhD_Thesis/releases) -- v1.0.1 (May 17, 2018): 
+    + update official graduation month to July as requested.
+    + add minor notes on some technical points.
 
-Dissertation submission pre-release: April 10, 2018.
++ v1.0 (May 10, 2018): official submission attempt.
+
++ Dissertation submission pre-release for committee review: April 10, 2018.
 
 ## Build
 Dependence: [LaTeX 2e](https://www.latex-project.org/get/), [GNU Make](https://www.gnu.org/software/make/), and [Git](https://git-scm.com/downloads).
