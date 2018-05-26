@@ -173,8 +173,8 @@ The wavelength of the transition $\lambda_{j' j}$ and the spontaneous emission r
 	\begin{align}\label{eq:Gamma0jjp}
 		\Gamma_0 = \frac{1}{\hbar} \frac{4}{3} \frac{\omega_{j j'}^3}{c^3} | \bra{ j' }| d | \ket{ j } |^2.
 	\end{align}
-We will prove this result in the next section.
-One could define a slightly different characteristic polarizability using a different detuning in \erf{Eq::DetuningChoice}, such as the fine-structure splitting on the $j \rightarrow j'$ transition.
+We will prove this result in the next section\footnote{In the SI units, one should divide our formulas of spontaneous emission rates by $ 4\pi \epsilon_0 $ to find the values in $ 2\pi\times $Hz.}.
+One could also define a slightly different characteristic polarizability using a different detuning than \erf{Eq::DetuningChoice}, such as the fine-structure splitting on the $j \rightarrow j'$ transition.
 
 The atomic polarizability tensor in \erf{Eq::PTensorGen} can then be written in terms of the dimensionless dipole operators and the characteristic polarizability,
 \begin{align} \label{Eq::AtomicPolarizabilityF}
@@ -320,7 +320,8 @@ Therefore, Eq.~\eqref{eq:Gamma_0} becomes
 \end{align}
 If we want to calculate the decay rate from $ j'\rightarrow j $, and ignore the frequency difference between transitions to different $ f $ hyperfine levels of the same fine structure $ j $ level, we use $ \sum_{m,f} \left| o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m}\right|^2=1 $ by definition and obtain
 \begin{align}
-\Gamma_0^{j'\rightarrow j} &= \frac{2}{\hbar}\sum_{f,m} G_0\left| \bra{ j' }| d | \ket{ j }\right|^2  \left| o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m}\right|^2  = \frac{2}{\hbar} G_0\left| \bra{ j' }| d | \ket{ j }\right|^2 \label{eq:Gamma0jpj_G0}\\
+\Gamma_0^{j'\rightarrow j} &\equiv \left.\sum_{(f,m)\in j}\Gamma_0^{f',m'\rightarrow f,m}\right|_{(f',m')\in j'} \equiv \sum_{f,m}\Gamma_0^{m'\rightarrow m}\\
+&= \frac{2}{\hbar}\sum_{f,m} G_0\left| \bra{ j' }| d | \ket{ j }\right|^2  \left| o_{jf}^{j'f'}C_{f'm'}^{f,m;1,q=m'-m}\right|^2  = \frac{2}{\hbar} G_0\left| \bra{ j' }| d | \ket{ j }\right|^2 \label{eq:Gamma0jpj_G0}\\
 &= \frac{4}{3\hbar} \frac{\omega_{jj'}^3}{c^3}\left| \bra{ j' }| d | \ket{ j }\right|^2,\label{eq:Gamma0jpj}
 \end{align}
 where $ \omega_{jj'} $ is the resonance frequency between $ j' $ and $ j $ levels.
