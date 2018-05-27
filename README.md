@@ -35,7 +35,7 @@ git submodule update
 cd main && make all clean
 ```
 A PDF called `main.pdf` should be generated in the `main` folder.
-The first line of the command is to download the bibliography file.
+The first two lines of the command is to download the bibliography file.
 
 To compile in a GUI editor, use the parameters defined in the `main/Makefile` code for `pdflatex`, `LuaLaTeX` and other commands.
 Chapters can be compiled separately using the `.tex` files in the chapter folders.
