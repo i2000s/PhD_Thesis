@@ -12,7 +12,12 @@ and [the repo for the simulations of Green's tensors and spontaneous emission ra
 Some of my handwritten notes that may or may not be included in this thesis are in the `temp` folder.
 
 ## Releases:
-+ [Latest release](https://github.com/i2000s/PhD_Thesis/releases) -- v1.0.1 (May 17, 2018): 
++ [Latest release](https://github.com/i2000s/PhD_Thesis/releases) -- v1.0.2 (May 26, 2018):
+    + submit to the university repository for official release.
+    + fix the compiling process instruction.
+    + add some notes on the conventions of reduced matrix elements.
+
++ v1.0.1 (May 17, 2018):
     + update official graduation month to July as requested.
     + add minor notes on some technical points.
 
@@ -25,6 +30,7 @@ Dependence: [LaTeX 2e](https://www.latex-project.org/get/), [GNU Make](https://w
 
 To compile the whole thesis:
 ```
+git submodule init
 git submodule update
 cd main && make all clean
 ```
