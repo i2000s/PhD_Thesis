@@ -12,8 +12,11 @@ and [the repo for the simulations of Green's tensors and spontaneous emission ra
 Some of my handwritten notes that may or may not be included in this thesis are in the `temp` folder.
 
 ## Releases:
-+ [Latest release](https://github.com/i2000s/PhD_Thesis/releases) -- v1.0.2 (May 26, 2018):
++ [Latest release](https://github.com/i2000s/PhD_Thesis/releases) -- v1.0.3 (June 7, 2018):
+    + Use a general form of Green's tensors and mention the specific case for the BEM program we use in a footnote.
     + submit to the university repository for official release.
+
++ v1.0.2 (May 26, 2018):
     + fix the compiling process instruction.
     + add some notes on the conventions of reduced matrix elements.
 
