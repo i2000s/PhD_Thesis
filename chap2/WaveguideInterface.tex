@@ -514,11 +514,11 @@ To not be confused, when $ \br' $ is outside of the waveguide, Eq.~\eqref{eq:GFT
 That is, the scattering part of Green's tensor includes both the guided ($ gyd $) and the radiation or unguided ($ ung $) parts that are calculated by integrating over different ranges of $ \beta $. 
 For a single-mode waveguide, with a unit dipole orientated along $j$ direction placed at $ \br' $, the induced-dipole radiation Green's tensor elements coupled to unguided modes can be calculated by~\cite{GarciadeAbajo1998Relativistic,GarciadeAbajo2002Retarded}
 \begin{align}
-G_{ind,gyd}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\left[\int_{-n_1k_0}^{-n_2k_0} d\beta E_j^i(\mathbf{r}') +\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\right]\nn\\
-&=\frac{4k_0^2}{3\pi^2}\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\\
-G_{ind,ung}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{2k_0^2}{3\pi^2}\int_{-n_2k_0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')=\frac{4k_0^2}{3\pi^2}\int_{0}^{n_2k_0} d\beta E_j^i(\mathbf{r}') \label{eq:BEMGindij}
+G_{ind,gyd}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{1}{2\pi}\left[\int_{-n_1k_0}^{-n_2k_0} d\beta E_j^i(\mathbf{r}') +\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\right]\nn\\
+&=\frac{1}{\pi}\int_{n_2k_0}^{n_1k_0} d\beta E_j^i(\mathbf{r}')\label{eq:BEMGindgydij}\\
+G_{ind,ung}^{ij}(\mathbf{r}',\mathbf{r}')&=\frac{1}{2\pi}\int_{-n_2k_0}^{n_2k_0} d\beta E_j^i(\mathbf{r}')=\frac{1}{\pi}\int_{0}^{n_2k_0} d\beta E_j^i(\mathbf{r}') \label{eq:BEMGindij}
 \end{align}
-where $ E_j^i(\mathbf{r}') $ is the $i$-th electric field component measured at the dipole position. 
+where $ E_j^i(\mathbf{r}') $ is the $i$-th electric field component measured at the dipole position\footnote{Note that Eqs.~\eqref{eq:BEMGindgydij} and~\eqref{eq:BEMGindij} are given formally consistent with Eq.~\ref{eq:GFTijEd} while absorbing the unit of dipole moment into the measured field $ E_j^i(\br') $. Not to be confused, the Green's functions should really be in the units of electric field over dipole moment. Numerically, these equations of Green's function tensor elements may have different forms depending on how the ``unit'' dipole is defined in concrete simulations. For those who use the same BEM program this dissertation employed, the prefactor $ 1/2\pi $ in Eqs.~\eqref{eq:BEMGindgydij} and~\eqref{eq:BEMGindij} should be replaced by $ \frac{2k_0^2}{3\pi^2} $ following a variant of Gaussian-atomic unit convention that the BEM program obeys.}. 
 To calculate the guided-mode-induced Green's tensor using the first equation above, we need to give an artificial loss to the medium, that is to make the permittivity of the waveguide as
 \begin{align}
 \varepsilon(\br_\perp) = n^2(\br_\perp) + i\delta n(\br_\perp),
@@ -527,7 +527,7 @@ where $ \delta n(\br_\perp) $ is a small real number in the waveguide region and
 In practice, it is tricky to find a proper artificial loss to obtain an accurate value for the guided-mode-induced Green's tensor--especially when $ \beta_0 $ is close to the integration limit points; and even trickier to use the equation for the guided-mode-induced Green's tensor calculation to find the contribution from a particular guided mode if the waveguide allows multiple guided modes. 
 So, we decide to use the eigenmode decomposition method to calculate the guided-mode-induced Green's tensor, which will be introduced next.
 However, the calculation for the unguided-mode-induced Green's tensor equation [Eq.~\eqref{eq:BEMGindij}] is quite robust to the choice of artificial material loss, since the artificial loss is solely set for avoiding the divergent problem of the guided modes and does not bring in new radiations. 
-If we want to calculate $ \GFT(\br,\br') $, Eq.~\eqref{eq:BEMGindij} holds if we replace $ E_j^i(\br') $ with $ E_j^i(\br) $. 
+If we want to calculate $ \GFT(\br,\br') $, Eqs.~\eqref{eq:BEMGindgydij} and~\eqref{eq:BEMGindij} hold if we replace $ E_j^i(\br') $ with $ E_j^i(\br) $. 
  
 
 \subsubsection{b. The \emph{eigenmode-decomposition} approach}
